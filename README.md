@@ -1,8 +1,27 @@
 ### Descripcion de oferta y/o servicios:
 
->Slow Motion ofrece peliculas y series a aquellos clientes que extrañan el Videoclub de la esquina de nuestra casa. Orientado a estas personas que ven innecesario adquirir una suscripcion en sitios que solo les ofrece esa opcion, ya que no lo necesitan para mas que ver una pelicula algun que otro fin de semana. Por un precio menor a una suscripcion mensual en los mensionados sitios pueden adquirir el alquiler o venta de una pelicula o serie.
+>Slow Motion ofrece peliculas y series a aquellos clientes que extrañan el Videoclub de la esquina de nuestra casa. Orientado a estas personas que ven innecesario adquirir una suscripcion en sitios que solo les ofrece esa opcion, ya que no lo necesitan para mas que ver una pelicula algun que otro fin de semana. Por un precio menor a una suscripcion mensual en los mencionados sitios pueden adquirir el alquiler o venta de una pelicula o serie.
 
----
+-
+
+___
+### Sitios de referencia
+1. [Netflix]
+<https://www.netflix.com>
+*La plataforma mas elegida por excelencia, variedad y calidad*
+2. [Disney Plus]
+<https://www.disneyplus.com>
+ *Se destaca por su coleccion de peliculas y series exitosas*
+ 3. [Star Plus]
+ <https://www.starplus.com>
+ *Contiene series iconicas*
+ 4. [Amazon Prime Video]
+ <https://primevideo.com>
+ *muy buena relacion de precio y calidad*
+ 5. [HBO MAX]
+ <https://hbomax.com>
+ *Series y peliculas de renombre*
+
 
 ### Integrantes del equipo:
 
