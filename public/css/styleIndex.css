@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@1,700&family=Staatliches&display=swap');
+
+:root {
+    --black: #000000;
+    --blue: #2940D3;
+    --lightblue: #39A9CB;
+    --lightblack: #232323;
+    --yellow: #FFEDA3;
+    --averia: 'Averia Sans Libre', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    ;
+}
+
+body {
+    background-color: var(--lightblack);
+}
+
+header {
+    background-color: var(--black);
+    border: 1px solid var(--lightblue);
+    height: 3.5rem;
+    width: 100vw;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+header .logo{
+    display: inline-block
+}
+header .logo img{
+    height: 40px;
+}
+header .slowMotion {
+    display: inline-block;
+}
+header .slowMotion p {
+    font-family: var(--averia);
+    color: var(--blue);
+}
+
+.carousel {
+    height: 10rem;
+    width: 90vw;
+    margin: 1rem 5vw 1rem;
+    background-color: violet;
+}
+
+.options {
+    height: 2rem;
+    width: 80vw;
+    background-color: var(--yellow);
+    margin: 1rem 10vw 1rem;
+    border-radius: 120px;
+}
+
+footer {
+    height: 5rem;
+    width: 100vw;
+    border: 1px solid var(--lightblue);
+
+}
