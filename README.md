@@ -6,15 +6,15 @@
 
 ___
 ### Sitios de referencia
-**1. [Netflix](https://www.netflix.com)**
+1. **[Netflix](https://www.netflix.com)**
     *Nos inspiramos en esta plataforma por su paleta de colores y diseño*
-**2. [Disney Plus](https://www.disneyplus.com)**
+2. **[Disney Plus](https://www.disneyplus.com)**
     *Se destaca por su coleccion de peliculas y series exitosas*
-**3. [Google Play Películas](https://www.play.google.com)**
+3. **[Google Play Películas](https://www.play.google.com)**
     *Contiene un formato de abonar series sin suscripción*
-**4. [Amazon Prime Video](https://primevideo.com)**
+4. **[Amazon Prime Video](https://primevideo.com)**
     *muy buena relacion de precio y calidad*
-**5. [HBO MAX](https://hbomax.com)**
+5. **[HBO MAX](https://hbomax.com)**
     *Series y peliculas de renombre*
 
 ___
