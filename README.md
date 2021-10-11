@@ -13,7 +13,7 @@ ___
 3. **[Google Play Películas](https://www.play.google.com)**
     *Contiene un formato de abonar series sin suscripción*
 4. **[Amazon Prime Video](https://primevideo.com)**
-    *muy buena relacion de precio y calidad*
+    *Muy buena relacion de precio y calidad*
 5. **[HBO MAX](https://hbomax.com)**
     *Series y peliculas de renombre*
 
