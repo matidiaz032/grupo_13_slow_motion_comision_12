@@ -24,3 +24,10 @@ ___
 - **Ivana Paola Benitez**, con fecha de nacimiento: 11/10/1986, en la ciudad de La Plata - Buenos Aires, Argentina; le gusta la música y pasar tiempo con su familia.
 - **Matias Ezequiel Diaz**, con fecha de nacimiento: 07/08/1997, en la ciudad de Lanus Oeste - Buenos Aires, Argentina; le gusta el deporte, la musica, los juegos y la tecnologia, constantemente desarrollandose para poder trabajar como programador.
 - **Angel Guillermo Montaña**, con fecha de nacimiento: 22/09/1992, en la ciudad de Rawson - San Juan, Argentina; amante de las motocicletas, el rock, el basket y el pádel, estudiante autodidacta eterno, sueña con viajar por el mundo y trabajar como programador.
+
+___
+### Plataforma para organizacion del trabajo:
+
+- **[Trello] (https://trello.com/)
+
+___
