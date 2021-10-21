@@ -11,7 +11,7 @@ ___
 *Nos inspiramos en esta plataforma por su paleta de colores y diseño*
 2. [Disney Plus]
 <https://www.disneyplus.com>
- *Se destaca por su coleccion de peliculas y series exitosas*
+ *Se destaca por su coleccion de peliculas y series exitosas*e  eea1dqv se
  3. [Google Play Películas]
  <https://www.play.google.com>
  *Contiene un formato de abonar series sin suscripción*
