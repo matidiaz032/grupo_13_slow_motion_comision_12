@@ -1,0 +1,18 @@
+@import url('normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@1,700&family=Staatliches&display=swap');
+@import url('./header.css');
+@import url('home.css');
+
+:root {
+    --black: #000000;
+    --blue: #2940D3;
+    --lightblue: #39A9CB;
+    --lightblack: #232323;
+    --yellow: #FFEDA3;
+    --averia: 'Averia Sans Libre', cursive;
+    --staatliches: 'Staatliches', cursive;
+}
+
+body {
+    background-color: var(--lightblack);
+}
