@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@1,700&family=Staatliches&display=swap');
+
+:root {
+    --black: #000000;
+    --blue: #2940D3;
+    --lightblue: #39A9CB;
+    --lightblack: #232323;
+    --yellow: #FFEDA3;
+    --averia: 'Averia Sans Libre', cursive;
+    --staatliches: 'Staatliches', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    ;
+}
+
+body {
+    background-color: var(--lightblack);
+}
+
+header {
+    display: flex;
+    background-color: var(--black);
+    border: 0.125rem solid var(--lightblue);
+    height: 3.5rem;
+    width: 100vw;
+    border-bottom-left-radius: 0.625rem;
+    border-bottom-right-radius: 0.625rem;
+    justify-content: space-between;
+}
+
+header .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 1rem 0px;
+}
+header .logo img{
+    height: 2.5rem;
+}
+
+header .logo p {
+    font-family: var(--staatliches);
+    color: var(--blue);
+    text-align: center;
+    text-shadow: 0px 0px 0.5rem var(--blue), 0px 0px 0.5rem var(--blue);
+    margin-left: 0.5rem;
+}
+
+header .optFoot {
+    display: flex;
+}
+header .optFoot .cart {
+    display: flex;
+    color: var(--blue);
+    align-items: center;
+    margin: 0px 0.5rem 0px;
+}
+
+header .optFoot .menu {
+    color: var(--yellow);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px 0.5rem 0px;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel img {
+    width: 90vw;
+    height: 13rem;
+}
+
+.options {
+    flex-direction: column;
+    height: 1.8rem;
+    width: 86vw;
+    background-color: var(--yellow);
+    margin: 1.5rem 7vw;
+    border-radius: 120px;
+}
+
+footer {
+    height: 5rem;
+    width: 100vw;
+    border: 1px solid var(--lightblue);
+
+}
