@@ -1,0 +1,19 @@
+.index .carousel {
+    display: flex;
+    justify-content: center;
+}
+
+.index .carousel img {
+    width: 90vw;
+    height: 13rem;
+}
+
+.index .options {
+    flex-direction: column;
+    height: 1.8rem;
+    width: 86vw;
+    background-color: var(--yellow);
+    margin: 1.5rem 7vw;
+    border-radius: 120px;
+}
+

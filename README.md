@@ -28,6 +28,6 @@ ___
 ___
 ### Plataforma para organizacion del trabajo:
 
-- **[Trello] (https://trello.com/)
+- **[Trello]** (https://trello.com/)
 
 ___
