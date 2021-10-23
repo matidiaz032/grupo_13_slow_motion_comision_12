@@ -1,12 +1,12 @@
 header {
     display: flex;
     background-color: var(--black);
-    border: 0.125rem solid var(--lightblue);
     height: 3.5rem;
-    width: 100vw;
-    border-bottom-left-radius: 0.625rem;
-    border-bottom-right-radius: 0.625rem;
+    width: 99.7vw;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
     justify-content: space-between;
+    box-shadow: 0px -13px 27px 9px rgba(57,169,203,1);
 }
 
 header .logo{
@@ -15,21 +15,31 @@ header .logo{
     align-items: center;
     margin: 0px 1rem 0px;
 }
-header .logo img{
+
+header .logo .logA {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo .logA img{
     height: 2.5rem;
 }
 
-header .logo p {
+header .logo .logA p {
+    display: flex;
+    width: 3.75rem;
     font-family: var(--staatliches);
     color: var(--blue);
     text-align: center;
-    text-shadow: 0px 0px 0.5rem var(--blue), 0px 0px 0.5rem var(--blue);
-    margin-left: 0.5rem;
+    text-shadow: 0px 0px 0.5rem var(--blue), 
 }
 
 header .optFoot {
     display: flex;
 }
+
 header .optFoot .cart {
     display: flex;
     color: var(--blue);
@@ -43,4 +53,146 @@ header .optFoot .menu {
     align-items: center;
     flex-wrap: wrap;
     margin: 0px 0.5rem 0px;
+}
+
+header .optFoot .RegAndLog {
+    display: none;
+}
+header .nav {
+    display: none;
+}
+
+@media (min-width: 768px) {
+
+    header {
+        height: 5.25rem;
+    }
+
+    header .logo {
+        flex-direction: column;
+        margin: 0 0.5rem 0 0.5rem;
+        width: 6rem;
+    }
+
+    header .logo .logA {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header .logo .logA img {
+        height: 3rem;
+    }
+    header .logo .logA p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0;
+        width: 6rem;
+        font-size: 20px;
+    }
+
+    header .nav {
+        display: flex;
+        width: 20rem;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 1rem;
+        font-family: var(--averia);
+    }
+
+    header .nav a {
+        text-decoration: none;
+        color: var(--lightblue);
+    }
+    header .nav .in {
+        height: 10px;
+        width: 4.375rem;
+    }
+
+    header .optFoot {
+        margin-right: 0.5rem;
+    }
+
+    header .optFoot .menu {
+        display: none;
+    }
+    
+    header .optFoot .cart { 
+        font-size: 20px;
+    }
+
+    header .optFoot .RegAndLog {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        font-family: var(--averia);
+        margin-left: 0.5rem;
+    }
+    
+    header .optFoot .RegAndLog a{
+        color: var(--lightblue);
+        text-decoration: none;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    
+    header {
+        height: 7.5rem;
+        box-shadow: 0px -10px 27px 9px rgba(57,169,203,1);
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+    }
+
+    header .logo {
+        flex-direction: column;
+        margin-left: 3rem;
+        width: 9rem;
+    }
+
+    header .logo .logA {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header .logo .logA img {
+        height: 4.5rem;
+    }
+    header .logo .logA p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0;
+        width: 9rem;
+        font-size: 31px;
+    }
+    
+    header .nav {
+        width: 60vw;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    header .nav .in {
+        height: 20px;
+        width: 18vw;
+    }
+
+    header .optFoot .cart { 
+        font-size: 35px;
+    }
+    
+    header .optFoot .RegAndLog {
+        margin-left: 2rem;
+    }
+
+    header .optFoot .RegAndLog a{
+        color: var(--lightblue);
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+
+
 }
