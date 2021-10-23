@@ -10,6 +10,9 @@ app.use(express.static("public"));
 app.get('/', function (req, res){
     res.sendFile(path.join(__dirname, './views/index.html'))
 });
+app.get('/productDetail', function (req, res){
+    res.sendFile(path.join(__dirname, './views/productDetail.html'))
+});
 
 // Server
 app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
