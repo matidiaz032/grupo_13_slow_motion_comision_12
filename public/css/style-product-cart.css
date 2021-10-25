@@ -1,0 +1,34 @@
+@import url("/css/style.css");
+@import url("/css/header.css");
+@import url("/css/footer.css");
+
+ul {
+    list-style: none;
+}
+
+.section-cart {
+    display: block;
+    height: 1.8rem;
+    width: 86vw;
+    background-color: var(--yellow);
+    margin: 1.5rem 7vw;
+    border-radius: 120px;
+    box-shadow: 1px 1px 8px 0 var(--lightblue);
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.options__list {
+    align-items: center;
+    margin: auto;
+    
+}
+
+.options__list a {
+    text-decoration: none;
+    color: var(--lightblue);
+}

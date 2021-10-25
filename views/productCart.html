@@ -5,27 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Cart</title>
-    <link rel="stylesheet" href="/public/css/normalize.css">
-    <link rel="stylesheet" href="/public/css/style-product-car.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/9e18ac83e0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="div-header">
-        <header class="header-contain">
-            <ul class="ul-header">
-                <li class="header__li"><a href="index.html"><img src="/public/img/Blanco.svg" alt=""></a></li>
-                <span class="header__li">SLOW<br>MOTION</span>
-                <li class="header__li"><i class="fas fa-shopping-cart"></i></li>
-                <li class="header__li"><i class="fas fa-bars"></i></li>
-            </ul>
-        </header>
-        <nav>
-
-        </nav>
+    <header>
+        <div class="logo">
+            <a class="logA" href="index.html">
+                <img src="/img/Blanco.svg" alt="">
+                <p>SLOW MOTION</p>
+            </a>
+        </div>
+        <div class="nav">
+            <a href="">Peliculas</a>
+            <a href="">Series</a>
+            <a href="">Favoritos</a>
+            <input class="in" type="text" placeholder="Buscar...">
+        </div>
+        <div class="optFoot">
+            <div class="cart">
+                <a href="productCart.html">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+            <div class="RegAndLog">
+                <a href="">Ingresar</a>
+                <a href="">Registrarse</a>
+            </div>
+            <nav class="menu">
+                <i class="fas fa-align-justify"></i>
+            </nav>
+        </div>
+    </header>
+    <!--Section de opciones de carrito-->
+    <div class="section-cart">
+        <div class="options">
+            <span class="options__list"><a href="#">Carrito</a></span>
+            <span class="options__list"><a href="#">Historial</a></span>
+            <span class="options__list"><a href="#">Mis compras</a></span>
+        </div>
     </div>
-    <footer>
-
-    </footer>
-
+    <!--Section de articulos de carrito-->
+    <div>
+        <div><img src="" alt=""></div>
+        <div>$250<br><span></span></div>
+        <div><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti porro ea nemo iure voluptatem veritatis accusantium, minima sed reprehenderit architecto quod totam sequi aliquam dicta dolorum! Enim deleniti nesciunt quae.</p></div>
+    </div>
+    <div>
+        <div><img src="" alt=""></div>
+        <div>$250<br><span></span></div>
+        <div><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti porro ea nemo iure voluptatem veritatis accusantium, minima sed reprehenderit architecto quod totam sequi aliquam dicta dolorum! Enim deleniti nesciunt quae.</p></div>
+    </div>
 </body>
 </html>

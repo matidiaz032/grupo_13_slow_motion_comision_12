@@ -16,7 +16,9 @@ app.get('/login', function (req, res){
 app.get('/productDetail', function (req, res){
     res.sendFile(path.join(__dirname, './views/productDetail.html'));
 });
-
+app.get('/productCart', function (req, res){
+    res.sendFile(path.join(__dirname, './views/productCart.html'));
+});
 // Server
 app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
 http://localhost:${PORT}`));
