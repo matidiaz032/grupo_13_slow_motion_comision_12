@@ -1,0 +1,54 @@
+footer {
+    display: flex;
+    height: 4rem;
+    width: 99.7vw;
+    align-items: center;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 0px 13px 27px 9px rgba(57,169,203,1);
+}
+
+footer .container-logo-texto {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer .container-logo-texto .logo {
+    padding: 0 10px;
+}
+
+footer .logo .logA img{
+    height: 2rem;
+}
+
+footer .texto-footer {
+    font-family: var(--averia);
+    font-size: 0.5rem;
+    color: var(--blue);
+}
+
+footer .links-footer {
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+    font-family: var(--staatliches);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+}
+
+footer .links-footer a {
+    text-decoration: none;
+    color: var(--lightblue);
+}
+
+footer .links-footer .links-varios, footer .links-footer .links-redes-sociales {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+footer .links-redes-sociales .link-logo img {
+    width: 12px;
+}

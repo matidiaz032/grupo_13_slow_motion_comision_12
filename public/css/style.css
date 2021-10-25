@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@1,700&family=Staatliches&display=swap');
 @import url('header.css');
 @import url('home.css');
+@import url('footer.css');
 
 :root {
     --black: #000000;
