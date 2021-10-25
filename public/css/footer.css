@@ -52,3 +52,22 @@ footer .links-footer .links-varios, footer .links-footer .links-redes-sociales {
 footer .links-redes-sociales .link-logo img {
     width: 12px;
 }
+
+/* Tablet */
+@media(min-width: 768px) {
+    footer {
+        height: 4.5rem;
+    }
+
+    footer .logo .logA img {
+        height: 2.5rem;
+    }
+
+    footer .texto-footer {
+        font-size: 0.8rem;
+    }
+
+    footer .links-footer {
+        font-size: 0.8rem;
+    }
+}
