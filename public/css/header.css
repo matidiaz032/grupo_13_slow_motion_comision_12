@@ -1,88 +1,95 @@
-header {
+.conteinHeader {
+    display: flex;
+    justify-content: center;
+}
+
+.conteinHeader header {
     display: flex;
     background-color: var(--black);
     height: 3.5rem;
-    width: 99.7vw;
+    width: 99.5vw;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     justify-content: space-between;
     box-shadow: 0px -13px 27px 9px rgba(57,169,203,1);
 }
 
-header .logo{
+.conteinHeader header .logo{
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0px 1rem 0px;
 }
 
-header .logo .logA {
+.conteinHeader header .logo .logA {
     text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-header .logo .logA img{
+.conteinHeader header .logo .logA img{
     height: 2.5rem;
 }
 
-header .logo .logA p {
+.conteinHeader header .logo .logA p {
     display: flex;
     width: 3.75rem;
     font-family: var(--staatliches);
     color: var(--blue);
     text-align: center;
-    text-shadow: 0px 0px 0.5rem var(--blue), 
+    text-shadow: 0px 0px 1rem var(--blue),  0px 0px 0.2rem var(--blue)
 }
 
-header .optFoot {
+.conteinHeader header .optFoot {
     display: flex;
 }
 
-header .optFoot .cart {
+.conteinHeader header .optFoot .cart {
     display: flex;
     color: var(--blue);
     align-items: center;
     margin: 0px 0.5rem 0px;
+    font-size: 1.5rem;
 }
 
-header .optFoot .menu {
+.conteinHeader header .optFoot .menu {
     color: var(--yellow);
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     margin: 0px 0.5rem 0px;
+    font-size: 1.5rem;
 }
 
-header .optFoot .RegAndLog {
+.conteinHeader header .optFoot .RegAndLog {
     display: none;
 }
-header .nav {
+.conteinHeader header .nav {
     display: none;
 }
 
 @media (min-width: 768px) {
 
-    header {
+    .conteinHeader header {
         height: 5.25rem;
     }
 
-    header .logo {
+    .conteinHeader header .logo {
         flex-direction: column;
         margin: 0 0.5rem 0 0.5rem;
         width: 6rem;
     }
 
-    header .logo .logA {
+    .conteinHeader header .logo .logA {
         display: flex;
         flex-direction: column;
     }
 
-    header .logo .logA img {
+    .conteinHeader header .logo .logA img {
         height: 3rem;
     }
-    header .logo .logA p {
+    .conteinHeader header .logo .logA p {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -91,37 +98,36 @@ header .nav {
         font-size: 20px;
     }
 
-    header .nav {
+    .conteinHeader header .nav {
         display: flex;
         width: 20rem;
         justify-content: space-between;
-        align-items: flex-end;
-        margin-bottom: 1rem;
+        align-items: center;
         font-family: var(--averia);
     }
 
-    header .nav a {
+    .conteinHeader header .nav a {
         text-decoration: none;
         color: var(--lightblue);
     }
-    header .nav .in {
+    .conteinHeader header .nav .in {
         height: 10px;
         width: 4.375rem;
     }
 
-    header .optFoot {
+    .conteinHeader header .optFoot {
         margin-right: 0.5rem;
     }
 
-    header .optFoot .menu {
+    .conteinHeader header .optFoot .menu {
         display: none;
     }
     
-    header .optFoot .cart { 
+    .conteinHeader header .optFoot .cart { 
         font-size: 20px;
     }
 
-    header .optFoot .RegAndLog {
+    .conteinHeader header .optFoot .RegAndLog {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -130,7 +136,7 @@ header .nav {
         margin-left: 0.5rem;
     }
     
-    header .optFoot .RegAndLog a{
+    .conteinHeader header .optFoot .RegAndLog a{
         color: var(--lightblue);
         text-decoration: none;
     }
@@ -139,59 +145,58 @@ header .nav {
 
 @media (min-width: 1024px) {
     
-    header {
-        height: 7.5rem;
+    .conteinHeader header {
+        height: 6rem;
         box-shadow: 0px -10px 27px 9px rgba(57,169,203,1);
         border-bottom-left-radius: 1.5rem;
         border-bottom-right-radius: 1.5rem;
     }
 
-    header .logo {
+    .conteinHeader header .logo {
         flex-direction: column;
         margin-left: 3rem;
         width: 9rem;
     }
 
-    header .logo .logA {
+    .conteinHeader header .logo .logA {
         display: flex;
         flex-direction: column;
     }
 
-    header .logo .logA img {
-        height: 4.5rem;
+    .conteinHeader header .logo .logA img {
+        height: 4rem;
     }
-    header .logo .logA p {
+    .conteinHeader header .logo .logA p {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0 0;
         width: 9rem;
-        font-size: 31px;
+        font-size: 28px;
     }
     
-    header .nav {
+    .conteinHeader header .nav {
         width: 60vw;
-        margin-bottom: 1.5rem;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
-    header .nav .in {
+    .conteinHeader header .nav .in {
         height: 20px;
         width: 18vw;
     }
 
-    header .optFoot .cart { 
-        font-size: 35px;
+    .conteinHeader header .optFoot .cart { 
+        font-size: 28px;
     }
     
-    header .optFoot .RegAndLog {
-        margin-left: 2rem;
+    .conteinHeader header .optFoot .RegAndLog {
+        margin-left: 1.5rem;
     }
 
-    header .optFoot .RegAndLog a{
+    .conteinHeader header .optFoot .RegAndLog a{
         color: var(--lightblue);
         text-decoration: none;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
 
