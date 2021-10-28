@@ -2,14 +2,16 @@
 @import url("/css/header.css");
 @import url("/css/footer.css");
 
-ul {
-    list-style: none;
+.body-cart {
+    background: var(--lightblack);
+}
+
+.section-cart-desktop {
+    display: none;
 }
 
 .section-cart {
-    display: block;
     height: 1.8rem;
-    width: 86vw;
     background-color: var(--yellow);
     margin: 1.5rem 7vw;
     border-radius: 120px;
@@ -20,15 +22,337 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-top: 4px;
 }
 
 .options__list {
     align-items: center;
     margin: auto;
-    
 }
 
 .options__list a {
     text-decoration: none;
     color: var(--lightblue);
+}
+
+.detail-cart {
+    margin: 15px 0;
+}
+
+.section__article {
+    display: flex;
+}
+
+.box__movie {
+    width: 100vw;
+}
+
+.box__movie:first-child {
+    width: 200px;
+    height: 100px;
+    background-image: url('/img/peliculas/Anabelle\ 940x1392.jpg');
+    background-size: 100% 100%;
+    border-radius: 35%;
+    margin: 11px;
+    box-shadow: 1px 1px 8px 0 #000;
+    filter: contrast(115%) brightness(1);
+}
+
+/* .box__movie img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border: none;
+    filter: brightness(1);
+} */
+
+.box__movie:nth-child(2) {
+    width: 40%;
+    color: var(--yellow);
+    text-align: center;
+    margin: 25px 1px;
+}
+
+.box__movie .price {
+    background-color: var(--yellow);
+    color: var(--lightblue);
+    border-radius: 50%;
+    font-size: 25px;
+    padding: 5px;
+    box-shadow: 1px 1px 8px 0 var(--lightblue);
+}
+
+.box__movie .type-add {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.box__movie:last-child{
+    color: var(--yellow);
+    font-size: 13px;
+    padding-left: 10px;
+}
+
+.box__movie h1 {
+    color: var(--blue);
+}
+
+.box__movie p {
+    padding-right: 5px;
+}
+
+.modify-selection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin: 0 25px;
+    color: var(--lightblack);
+}
+
+.modify-selection .delete {
+    background: transparent;
+    font-size: 12px;
+    border: none;
+    border-bottom: 1px solid var(--yellow);
+    color: var(--blue);
+}
+
+.modify-selection .modify {
+    background: transparent;
+    font-size: 12px;
+    border: none;
+    border-bottom: 1px solid var(--yellow);
+    color: var(--blue);
+}
+
+.total-cart {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.total-cart .price-total {
+    color: var(--yellow);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    margin: 3px 0;
+    padding: 2px 0;
+}
+
+.total-cart .keep-buying {
+    background: transparent;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid var(--yellow);
+    color: var(--blue);
+    margin: 15px 0;
+}
+
+.total-cart .to-pay {
+    width: 107px;
+    height: 35px;
+    background: var(--yellow);
+    color: var(--blue);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 900;
+    padding: 5px;
+    margin: 0 5px;
+    box-shadow: 1px 1px 8px 0 var(--lightblue);
+    border: none;
+    border-radius: 10%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+    .section-cart {
+        display: none;
+    }
+
+    .section-cart-desktop {
+    display: block;
+    height: 1.8rem;
+    width: 86vw;
+    background-color: var(--yellow);
+    margin: 1.5rem 7vw;
+    border-radius: 120px;
+    box-shadow: 1px 1px 8px 0 var(--lightblue);
+    }
+
+    .options-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-top: 4px;
+    }
+
+    .options__list-desktop {
+        align-items: center;
+        margin: auto;
+    }
+
+    .options__list-desktop a {
+        text-decoration: none;
+        color: var(--lightblue);
+    }
+
+    .modify-selection {
+        justify-content: space-between;
+        padding: 0 10px;
+        margin: 0 30px;
+    }
+    
+    .box__movie:first-child {
+        width: 400px;
+        height: 200px;
+        background-image: url('/img/peliculas/Anabelle\ 940x1392.jpg');
+        background-size: 100% 100%;
+        border-radius: 35%;
+        box-shadow: 1px 1px 8px 0 #000;
+        filter: contrast(115%) brightness(1);
+    }
+
+    .box__movie .price {
+        display: inline-block;
+        font-size: 35px;
+        padding: 20px;
+        margin-top: 15px;
+    }
+
+    .box__movie .type-add {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 15px;
+        margin-top: 50px;
+    }
+
+    .box__movie:last-child{
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .modify-selection .delete {
+        font-size: 15px;
+        padding: 0 5px;
+        margin: 0 35px;
+    }
+
+    .modify-selection .modify {
+        font-size: 15px;
+        padding: 0 5px;
+        margin: 0 35px;
+    }
+
+    .total-cart .price-total {
+        font-size: 18px;
+    }
+
+    .total-cart .keep-buying {
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+    .total-cart .to-pay {
+        margin: auto;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    .section-cart {
+        display: none;
+    }
+
+    .section-cart-desktop {
+    display: block;
+    height: 1.8rem;
+    width: 86vw;
+    background-color: var(--yellow);
+    margin: 1.5rem 7vw;
+    border-radius: 120px;
+    box-shadow: 1px 1px 8px 0 var(--lightblue);
+    }
+
+    .options-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-top: 4px;
+    }
+
+    .options__list-desktop {
+        align-items: center;
+        margin: auto;
+    }
+
+    .options__list-desktop a {
+        text-decoration: none;
+        color: var(--lightblue);
+    }
+    
+    .box__movie:first-child {
+        width: 600px;
+        height: 300px;
+    }
+
+    .box__movie:nth-child(2) {
+        margin: auto 1px;
+    }
+
+    .box__movie .price {
+        font-size: 55px;
+    }
+
+    .box__movie .type-add {
+        display: inline-block;
+        font-size: 15px;
+        margin-top: 50px;
+    }
+
+    .box__movie:last-child{
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .modify-selection {
+        justify-content: space-between;
+        padding: 0 10px;
+        margin: 0 45px;
+    }
+
+    .modify-selection .delete {
+        font-size: 20px;
+        padding: 0 15px;
+        margin: 0 65px;
+    }
+
+    .modify-selection .modify {
+        font-size: 20px;
+        padding: 0 15px;
+        margin: 0 65px;
+    }
+
+    .total-cart .price-total {
+        font-size: 20px;
+        margin: 10px auto;
+    }
+
+    .total-cart .keep-buying {
+        font-size: 20px;
+        text-transform: uppercase;
+        margin: 10px auto;
+    }
+
+    .total-cart .to-pay {
+        margin: 10px auto;
+    }
+
 }

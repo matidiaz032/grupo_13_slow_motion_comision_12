@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/9e18ac83e0.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="body-cart">
     <header>
         <div class="logo">
             <a class="logA" href="index.html">
@@ -37,7 +37,7 @@
             </nav>
         </div>
     </header>
-    <!--Section de opciones de carrito-->
+    <!--Shopping cart options section-->
     <div class="section-cart">
         <div class="options">
             <span class="options__list"><a href="#">Carrito</a></span>
@@ -45,16 +45,48 @@
             <span class="options__list"><a href="#">Mis compras</a></span>
         </div>
     </div>
-    <!--Section de articulos de carrito-->
-    <div>
-        <div><img src="" alt=""></div>
-        <div>$250<br><span></span></div>
-        <div><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti porro ea nemo iure voluptatem veritatis accusantium, minima sed reprehenderit architecto quod totam sequi aliquam dicta dolorum! Enim deleniti nesciunt quae.</p></div>
+    <div class="section-cart-desktop">
+        <div class="options-desktop">
+            <span class="options__list-desktop"><a href="#">Carrito</a></span>
+            <span class="options__list-desktop"><a href="#">Historial</a></span>
+            <span class="options__list-desktop"><a href="#">Mis compras</a></span>
+            <span class="options__list-desktop"><a href="#">Ayuda</a></span>
+        </div>
     </div>
-    <div>
-        <div><img src="" alt=""></div>
-        <div>$250<br><span></span></div>
-        <div><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti porro ea nemo iure voluptatem veritatis accusantium, minima sed reprehenderit architecto quod totam sequi aliquam dicta dolorum! Enim deleniti nesciunt quae.</p></div>
+    <!--Item details section-->
+    <div class="detail-cart">
+        <div class="section__article">
+            <div class="box__movie"><!--<img src="/img/peliculas/Anabelle 940x1392.jpg" alt="">--></div>
+            <div class="box__movie"><span class="price">$250</span><br><span class="type-add" id="selection">Alquiler</span></div>
+            <div class="box__movie">
+                <h1 class="title-movie">Anabelle</h1>
+                <p>Doce años después de la muerte de su hija y aún tremendamente doloridos por su perdida, <b>ver mas...</b> <!-- un fabricante de muñecas y su mujer acogen en su casa a una monja y a seis niñas huérfanas. Allí, la muñeca Annabelle, poseída por un espíritu, ataca a las niñas huérfanas.--></p>
+            </div>
+        </div>
+        <div class="modify-selection">
+            <button type="button" class="delete" id="delete-product">Eliminar</button>
+            <button type="button" class="modify" id="modify-selection">Modificar seleccion</button>
+        </div>
+    </div>
+    <div class="detail-cart">
+        <div class="section__article">
+            <div class="box__movie"><!--<img src="/img/peliculas/Anabelle 940x1392.jpg" alt="">--></div>
+            <div class="box__movie"><span class="price">$250</span><br><span class="type-add">Alquiler</span></div>
+            <div class="box__movie">
+                <h1 class="title-movie">Anabelle</h1>
+                <p>Doce años después de la muerte de su hija y aún tremendamente doloridos por su perdida, <b>ver mas...</b> <!-- un fabricante de muñecas y su mujer acogen en su casa a una monja y a seis niñas huérfanas. Allí, la muñeca Annabelle, poseída por un espíritu, ataca a las niñas huérfanas.--></p>
+            </div>
+        </div>
+        <div class="modify-selection">
+            <button type="button" class="delete">Eliminar</button>
+            <button type="button" class="modify">Modificar seleccion</button>
+        </div>
+    </div>
+    <!--total section to pay for purchase-->
+    <div class="total-cart">
+        <span class="price-total">Precio total: $750</span>
+        <button type="button" class="keep-buying">Seguir comprando</button>
+        <button type="button" class="to-pay">Pagar</button>
     </div>
 </body>
 </html>
