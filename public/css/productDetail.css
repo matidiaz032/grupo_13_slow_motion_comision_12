@@ -1,0 +1,12 @@
+.Resumen {
+    color: aliceblue;
+}
+.Titulo {
+    color: var(--lightblue);
+}
+.Secciones {
+    color: var(--lightblue);
+}
+.Calificaciones {
+    color: var(--blue);
+}

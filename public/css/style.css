@@ -3,6 +3,7 @@
 @import url('header.css');
 @import url('home.css');
 @import url('style-product-cart.css');
+@import url('footer.css');
 
 :root {
     --black: #000000;
