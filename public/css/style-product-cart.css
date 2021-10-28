@@ -2,6 +2,10 @@
 @import url("/css/header.css");
 @import url("/css/footer.css");
 
+*:hover {
+ cursor: default;
+}
+
 .body-cart {
     background: var(--lightblack);
 }
@@ -34,6 +38,10 @@
 .options__list a {
     text-decoration: none;
     color: var(--lightblue);
+}
+
+span a:hover {
+    text-shadow: 1px 1px 2px var(--black);
 }
 
 .detail-cart {
@@ -128,6 +136,16 @@
     color: var(--blue);
 }
 
+.delete:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.modify:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
 .total-cart {
     display: flex;
     flex-direction: column;
@@ -154,6 +172,11 @@
     margin: 15px 0;
 }
 
+.keep-buying:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
 .total-cart .to-pay {
     width: 107px;
     height: 35px;
@@ -168,6 +191,12 @@
     box-shadow: 1px 1px 8px 0 var(--black);
     border: none;
     border-radius: 10%;
+}
+
+.to-pay:hover {
+    cursor: pointer;
+    background: var(--lightblue);
+    color: var(--yellow);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px){
