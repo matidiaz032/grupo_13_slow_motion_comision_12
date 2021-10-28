@@ -15,7 +15,7 @@
     background-color: var(--yellow);
     margin: 1.5rem 7vw;
     border-radius: 120px;
-    box-shadow: 1px 1px 8px 0 var(--lightblue);
+    box-shadow: 1px 1px 8px 0 var(--black);
 }
 
 .options {
@@ -55,7 +55,7 @@
     background-size: 100% 100%;
     border-radius: 35%;
     margin: 11px;
-    box-shadow: 1px 1px 8px 0 #000;
+    box-shadow: 1px 1px 8px 0 var(--black);
     filter: contrast(115%) brightness(1);
 }
 
@@ -80,7 +80,7 @@
     border-radius: 50%;
     font-size: 25px;
     padding: 5px;
-    box-shadow: 1px 1px 8px 0 var(--lightblue);
+    box-shadow: 1px 1px 8px 0 var(--black);
 }
 
 .box__movie .type-add {
@@ -164,8 +164,8 @@
     font-size: 25px;
     font-weight: 900;
     padding: 5px;
-    margin: 0 5px;
-    box-shadow: 1px 1px 8px 0 var(--lightblue);
+    margin: 20px 5px;
+    box-shadow: 1px 1px 8px 0 var(--black);
     border: none;
     border-radius: 10%;
 }
@@ -215,7 +215,7 @@
         background-image: url('/img/peliculas/Anabelle\ 940x1392.jpg');
         background-size: 100% 100%;
         border-radius: 35%;
-        box-shadow: 1px 1px 8px 0 #000;
+        box-shadow: 1px 1px 8px 0 var(--black);
         filter: contrast(115%) brightness(1);
     }
 
@@ -260,7 +260,7 @@
     }
 
     .total-cart .to-pay {
-        margin: auto;
+        margin: 20px auto;
     }
 
 }
@@ -352,7 +352,7 @@
     }
 
     .total-cart .to-pay {
-        margin: 10px auto;
+        margin: 20px auto;
     }
 
 }
