@@ -7,6 +7,7 @@
 .index .carousel .carouselImg {
     object-fit: cover;
     width: 90vw;
+    border: 0.1px solid var(--lightblack);
 }
 
 .index .carousel .carouselImgDesktop {
@@ -27,6 +28,68 @@
     background-color: var(--yellow);
 }
 
+
+
+
+
+
+
+
+
+
+.index .products {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    font-size: 1.75rem;
+    font-family: var(--averia);
+}
+
+.index .products .film {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 2rem 0
+}
+
+.index .products .film .text {
+    margin: 2rem 0 1rem 0;
+}
+
+.index .products .film .text a{
+    color: var(--yellow);
+    text-decoration: none;
+    padding-left: 2rem;
+}
+
+.index .products .film .demo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 5vw;
+}
+
+.index .products .film .demo img{
+    width: 40vw;
+    object-fit: cover;
+    border: 0.1px solid var(--lightblack)
+}
+
+.index .products .film .demo .img3 {
+    display: none
+}
+
+.index .products .film3 {
+    display: none;
+}
+
+.index .products .film4 {
+    display: none;
+}
+
+
+
+
 @media (min-width: 768px) {
 
     .index .carousel .carouselImg {
@@ -43,7 +106,20 @@
         width: 75vw;
     }
     
+    .index .products .film .demo img{
+        width: 28vw;
+    }
+
+    .index .products .film .demo .img3 {
+        display: block;
+    }
+    
+    .index .products .film3 {
+        display: block;
+    }
 }
+
+
 
 
 @media (min-width: 1024px) {
@@ -56,10 +132,21 @@
         display: flex;
         object-fit: cover;
         width: 75vw;
+        border: 0.1px solid var(--lightblack);
     }
 
     .index .options .barOptions {
         width: 70vw;
+        height: 2rem;
         margin: 2rem 0;
     }
+
+    .index .products .film .demo img{
+        width: 28vw;
+    }
+
+    .index .products .film4 {
+        display: block;
+    }
+
 }
