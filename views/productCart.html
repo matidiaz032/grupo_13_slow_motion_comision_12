@@ -5,27 +5,128 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Cart</title>
-    <link rel="stylesheet" href="/public/css/normalize.css">
-    <link rel="stylesheet" href="/public/css/style-product-car.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/9e18ac83e0.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="div-header">
-        <header class="header-contain">
-            <ul class="ul-header">
-                <li class="header__li"><a href="index.html"><img src="/public/img/Blanco.svg" alt=""></a></li>
-                <span class="header__li">SLOW<br>MOTION</span>
-                <li class="header__li"><i class="fas fa-shopping-cart"></i></li>
-                <li class="header__li"><i class="fas fa-bars"></i></li>
-            </ul>
+<body class="body-cart">
+    <div class="conteinHeader">
+        <header>
+            <div class="logo">
+                <a class="logA" href="index.html">
+                    <img src="/img/Blanco.svg" alt="">
+                    <p>SLOW MOTION</p>
+                </a>
+            </div>
+            <div class="nav">
+                <a href="">Peliculas</a>
+                <a href="">Series</a>
+                <a href="">Favoritos</a>
+                <input class="in" type="text" placeholder="Buscar...">
+            </div>
+            <div class="optFoot">
+                <div class="cart">
+                    <a href="productCart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+                <div class="RegAndLog">
+                    <a href="">Ingresar</a>
+                    <a href="">Registrarse</a>
+                </div>
+                <nav class="menu">
+                    <i class="fas fa-align-justify"></i>
+                </nav>
+            </div>
         </header>
-        <nav>
-
-        </nav>
     </div>
+    <!--Shopping cart options section-->
+    <div class="section-cart">
+        <div class="options">
+            <span class="options__list"><a href="#">Carrito</a></span>
+            <span class="options__list"><a href="#">Historial</a></span>
+            <span class="options__list"><a href="#">Mis compras</a></span>
+        </div>
+    </div>
+    <div class="section-cart-desktop">
+        <div class="options-desktop">
+            <span class="options__list-desktop"><a href="#">Carrito</a></span>
+            <span class="options__list-desktop"><a href="#">Historial</a></span>
+            <span class="options__list-desktop"><a href="#">Mis compras</a></span>
+            <span class="options__list-desktop"><a href="#">Ayuda</a></span>
+        </div>
+    </div>
+    <!--Item details section-->
+    <div class="detail-cart">
+        <div class="section__article">
+            <div class="box__movie"><!--<img src="/img/peliculas/Anabelle 940x1392.jpg" alt="">--></div>
+            <div class="box__movie"><span class="price">$250</span><br><span class="type-add" id="selection">Alquiler</span></div>
+            <div class="box__movie">
+                <h1 class="title-movie">Anabelle</h1>
+                <p>Doce años después de la muerte de su hija y aún tremendamente doloridos por su perdida, <b>ver mas...</b> <!-- un fabricante de muñecas y su mujer acogen en su casa a una monja y a seis niñas huérfanas. Allí, la muñeca Annabelle, poseída por un espíritu, ataca a las niñas huérfanas.--></p>
+            </div>
+        </div>
+        <div class="modify-selection">
+            <button type="button" class="delete" id="delete-product">Eliminar</button>
+            <button type="button" class="modify" id="modify-selection">Modificar seleccion</button>
+        </div>
+    </div>
+    <div class="detail-cart">
+        <div class="section__article">
+            <div class="box__movie"><!--<img src="/img/peliculas/Anabelle 940x1392.jpg" alt="">--></div>
+            <div class="box__movie"><span class="price">$250</span><br><span class="type-add">Alquiler</span></div>
+            <div class="box__movie">
+                <h1 class="title-movie">Anabelle</h1>
+                <p>Doce años después de la muerte de su hija y aún tremendamente doloridos por su perdida, <b>ver mas...</b> <!-- un fabricante de muñecas y su mujer acogen en su casa a una monja y a seis niñas huérfanas. Allí, la muñeca Annabelle, poseída por un espíritu, ataca a las niñas huérfanas.--></p>
+            </div>
+        </div>
+        <div class="modify-selection">
+            <button type="button" class="delete">Eliminar</button>
+            <button type="button" class="modify">Modificar seleccion</button>
+        </div>
+    </div>
+    <!--total section to pay for purchase-->
+    <div class="total-cart">
+        <span class="price-total">Precio total: $750</span>
+        <button type="button" class="keep-buying">Seguir comprando</button>
+        <button type="button" class="to-pay">Pagar</button>
+    </div>
+    <!--Footer section-->
     <footer>
-
+        <div class="container-logo-texto">
+            <div class="logo">
+                <a class="logA" href="index.html">
+                    <img src="/img/Blanco.svg" alt="">
+                </a>
+            </div>
+            <div class="texto-footer">
+                <p>Bajo licencia del grupo 13 de la comisión 12, integrado por: Matias Diaz, Ivana Benitez, Angel Montaña, Elías Galeano</p>
+            </div>
+        </div>
+        <div class="links-footer">
+            <div class="links-varios">
+                <a href="">Acerca De</a>
+                <a href="">Ayuda</a>
+                <a href="">Contacto</a>
+            </div>
+            <div class="links-redes-sociales">
+                <div class="link-logo">
+                    <a href="">Facebook</a> 
+                    <img src="img/iconos/facebook-readonly.png" alt="Facebook logo">
+                </div>
+                <div class="link-logo">
+                    <a href="">Twitter</a>
+                    <img src="img/iconos/twitter-readonly.png" alt="Twitter logo">
+                </div>
+                <div class="link-logo">
+                    <a href="">Instagram</a>
+                    <img src="img/iconos/instagram-readonly.png" alt="Instagram logo">
+                </div>
+                <div class="link-logo">
+                    <a href="">Youtube</a>
+                    <img src="img/iconos/youtube-readonly.png" alt="Youtube logo">
+                </div>
+            </div>
+        </div>
     </footer>
-
 </body>
 </html>

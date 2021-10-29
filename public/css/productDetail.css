@@ -1,12 +1,35 @@
-.Resumen {
-    color: aliceblue;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-.Titulo {
-    color: var(--lightblue);
+main .contenedor-padre .box-1 img {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
 }
-.Secciones {
-    color: var(--lightblue);
+.contenedor-padre .box-2 {
+    position:absolute;
+    bottom: 2rem;
+    
+    
 }
-.Calificaciones {
-    color: var(--blue);
+    
+.contenedor-padre .box-2  .contenido  {
+    display: flex;
+    justify-content: space-evenly;
+}
+.contenedor-padre .box-2 .contenido .container-img{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+
+p {
+    color: var(--yellow);
+}
+
+}
+.seleccion {
+    color: var(--yellow);
 }
