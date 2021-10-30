@@ -1,7 +1,3 @@
-@import url("/css/style.css");
-@import url("/css/header.css");
-@import url("/css/footer.css");
-
 *:hover {
  cursor: default;
 }
@@ -306,7 +302,7 @@ span a:hover {
     background-color: var(--yellow);
     margin: 1.5rem 7vw;
     border-radius: 120px;
-    box-shadow: 1px 1px 8px 0 var(--lightblue);
+    box-shadow: 1px 1px 8px 0 var(--black);
     }
 
     .options-desktop {
