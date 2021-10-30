@@ -13,7 +13,7 @@
 .section-cart {
     height: 1.8rem;
     background-color: var(--yellow);
-    margin: 1.5rem 7vw;
+    margin: 76px 7vw 25px !important;
     border-radius: 120px;
     box-shadow: 1px 1px 8px 0 var(--black);
 }
@@ -61,6 +61,7 @@ span a:hover {
     margin: 11px;
     box-shadow: 1px 1px 8px 0 var(--black);
     filter: contrast(115%) brightness(1);
+    z-index: -1;
 }
 
 /* .box__movie img {
