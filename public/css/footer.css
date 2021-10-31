@@ -23,6 +23,8 @@ footer .container-logo-texto {
 
 footer .container-logo-texto .logo {
     padding: 0 10px;
+    width: 100%;
+    text-align: center;
 }
 
 footer .logo .logA img{
@@ -67,6 +69,10 @@ footer .links-redes-sociales .link-logo img {
 @media (min-width: 768px) {
     footer {
         height: 4.5rem;
+    }
+
+    footer .container-logo-texto .logo {
+        width: 50%;
     }
 
     footer .logo .logA img {
