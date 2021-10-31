@@ -4,6 +4,7 @@
 @import url('home.css');
 @import url('style-product-cart.css');
 @import url('footer.css');
+@import url('productDetail.css');
 
 :root {
     --black: #000000;
