@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,31 +8,30 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <title>SLOW MOTION</title>
 </head>
-
 <body class="index">
     <div class="conteinHeader">
         <header>
             <div class="logo">
-                <a class="logA" href="index.html">
+                <a class="logA" href="/">
                     <img src="/img/Blanco.svg" alt="">
                     <p>SLOW MOTION</p>
                 </a>
             </div>
             <div class="nav">
-                <a href="">Peliculas</a>
-                <a href="">Series</a>
-                <a href="">Favoritos</a>
+                <a href="/peliculas">Peliculas</a>
+                <a href="/series">Series</a>
+                <a href="favoritos">Favoritos</a>
                 <input class="in" type="text" placeholder="Buscar...">
             </div>
             <div class="optFoot">
                 <div class="cart">
-                    <a href="productCart.html">
+                    <a href="/productCart">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
                 </div>
                 <div class="RegAndLog">
-                    <a href="">Ingresar</a>
-                    <a href="">Registrarse</a>
+                    <a href="/login">Ingresar</a>
+                    <a href="/register">Registrarse</a>
                 </div>
                 <nav class="menu">
                     <i class="fas fa-align-justify"></i>
@@ -43,21 +41,25 @@
     </div>
     <section class="options">
         <div class="barOptions">
-            <a href="../"></a>
-            <i></i>
-            <i></i>
+            <input id="inpOpt" type="text" placeholder="Buscar...">
+            <nav id="navOpt">
+                <h3>Generos</h3>
+                <i class="fas fa-align-justify"></i>
+            </nav>
+            <a href=""><h3>Estrenos</h3></a>
+            <a href=""><h3>Ofertas</h3></a>
         </div>
     </section>
     </div>
     <section class="carousel">
-        <img class="carouselImg" src="./img/Peliculas/superbad.jpg" alt="">
-        <img class="carouselImgDesktop" src="./img/Peliculas/SamuraiX1920x750.jpg" alt="">
+            <img class="carouselImg" src="./img/Peliculas/superbad.jpg" alt="">
+            <img class="carouselImgDesktop" src="./img/Peliculas/SamuraiX1920x750.jpg" alt="">
     </section>
     <div class="products">
         <div class="film film1">
-            <h3 class="text"><a href="">Peliculas:</a></h3>
+            <h3 class="text"><a href="/peliculas">Peliculas:</a></h3>
             <nav class="demo">
-                <a href="">
+                <a href="/productDetail">
                     <img src="./img/Peliculas/Matrix720x1080.jpg" alt="">
                 </a>
                 <a href="">
@@ -69,7 +71,7 @@
             </nav>
         </div>
         <div class="film film2">
-            <h3 class="text"><a href="">Series:</a></h3>
+            <h3 class="text"><a href="/series">Series:</a></h3>
             <nav class="demo">
                 <a href="">
                     <img src="./img/Peliculas/Matrix720x1080.jpg" alt="">
@@ -83,7 +85,7 @@
             </nav>
         </div>
         <div class="film film3">
-            <h3 class="text"><a href="">En Oferta:</a></h3>
+            <h3 class="text"><a href="/ofert">En Oferta:</a></h3>
             <nav class="demo">
                 <a href="">
                     <img src="./img/Peliculas/Matrix720x1080.jpg" alt="">
@@ -97,7 +99,7 @@
             </nav>
         </div>
         <div class="film film4">
-            <h3 class="text"><a href="">Populares:</a></h3>
+            <h3 class="text"><a href="/popular">Populares:</a></h3>
             <nav class="demo">
                 <a href="">
                     <img src="./img/Peliculas/Matrix720x1080.jpg" alt="">
@@ -115,7 +117,7 @@
         <footer>
             <div class="container-logo-texto">
                 <div class="logo">
-                    <a class="logA" href="index.html">
+                    <a class="logA" href="/">
                         <img src="/img/Blanco.svg" alt="">
                     </a>
                 </div>
@@ -153,5 +155,4 @@
         </footer>
     </div>
 </body>
-
 </html>

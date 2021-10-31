@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Cart</title>
+    <title>Peliculas</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/9e18ac83e0.js" crossorigin="anonymous"></script>
 </head>
-<body class="body-cart">
+<body>
+    <!-- Header section -->
     <div class="conteinHeader">
         <header>
             <div class="logo">
@@ -39,7 +40,7 @@
             </div>
         </header>
     </div>
-    <!--Shopping cart options section-->
+    <!-- Options section -->
     <div class="section-cart">
         <div class="options">
             <span class="options__list"><a href="#">Estrenos</a></span>
@@ -55,42 +56,65 @@
             <span class="options__list-desktop"><a href="#">Ayuda</a></span>
         </div>
     </div>
-    <!--Item details section-->
-    <div class="detail-cart">
-        <div class="section__article">
-            <div class="box__movie"><!--<img src="/img/peliculas/Anabelle 940x1392.jpg" alt="">--></div>
-            <div class="box__movie"><span class="price">$250</span><br><span class="type-add" id="selection">Alquiler</span></div>
-            <div class="box__movie">
-                <h1 class="title-movie">Anabelle</h1>
-                <p>Doce años después de la muerte de su hija y aún tremendamente doloridos por su perdida, <b>ver mas...</b> <!-- un fabricante de muñecas y su mujer acogen en su casa a una monja y a seis niñas huérfanas. Allí, la muñeca Annabelle, poseída por un espíritu, ataca a las niñas huérfanas.--></p>
+    <!-- grid section movies -->
+    <div class="contain-grid">
+        <span class="gender__grid">Accion</span>
+        <div class="movies__section">
+            <div class="gender__movies"></div>
+            <div class="gender__movies"></div>
+            <div class="gender__movies"></div>
+            <div class="gender__movies"></div>
+            <div class="gender__movies"></div>
+            <div class="gender__movies">
+                <button type="button" class="see-more">Ver más</button>
             </div>
         </div>
-        <div class="modify-selection">
-            <button type="button" class="delete" id="delete-product">Eliminar</button>
-            <button type="button" class="modify" id="modify-selection">Modificar seleccion</button>
-        </div>
-    </div>
-    <div class="detail-cart">
-        <div class="section__article">
-            <div class="box__movie"><!--<img src="/img/peliculas/Anabelle 940x1392.jpg" alt="">--></div>
-            <div class="box__movie"><span class="price">$250</span><br><span class="type-add">Alquiler</span></div>
-            <div class="box__movie">
-                <h1 class="title-movie">Anabelle</h1>
-                <p>Doce años después de la muerte de su hija y aún tremendamente doloridos por su perdida, <b>ver mas...</b> <!-- un fabricante de muñecas y su mujer acogen en su casa a una monja y a seis niñas huérfanas. Allí, la muñeca Annabelle, poseída por un espíritu, ataca a las niñas huérfanas.--></p>
+        <span class="gender__grid">Accion / Comedia</span>
+            <div class="movies__section">
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies">
+                    <button type="button" class="see-more">Ver más</button>
+                </div>
             </div>
-        </div>
-        <div class="modify-selection">
-            <button type="button" class="delete">Eliminar</button>
-            <button type="button" class="modify">Modificar seleccion</button>
-        </div>
+            <span class="gender__grid">Comedias</span>
+            <div class="movies__section">
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies">
+                    <button type="button" class="see-more">Ver más</button>
+                </div>
+            </div>
+            <span class="gender__grid">Dibujos animados</span>
+            <div class="movies__section">
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies">
+                    <button type="button" class="see-more">Ver más</button>
+                </div>
+            </div>
+            <span class="gender__grid">Terror</span>
+            <div class="movies__section">
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies"></div>
+                <div class="gender__movies">
+                    <button type="button" class="see-more">Ver más</button>
+                </div>
+            </div>
     </div>
-    <!--total section to pay for purchase-->
-    <div class="total-cart">
-        <span class="price-total">Precio total: $750</span>
-        <button type="button" class="keep-buying">Seguir comprando</button>
-        <button type="button" class="to-pay">Pagar</button>
-    </div>
-    <!--Footer section-->
+    <!-- Footer section -->
     <footer>
         <div class="container-logo-texto">
             <div class="logo">
