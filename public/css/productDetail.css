@@ -5,7 +5,7 @@
 
 }
 
-.conteinHeader {
+.contain-body .conteinHeader {
     display: none;
 }
 
@@ -20,11 +20,16 @@
 .contenedor-padre  .corazon {
     display: flex;
     flex-direction: row;
+    position : absolute;
+    position: absolute;
+    right:30px;
+    bottom:20px;
     justify-content: flex-end;
+    color: var(--yellow);
 }
 .contenido .opcionesPelicula {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end; 
     margin-right: 1rem;
     margin-top: 0.5rem;
     font-family: var(--averia);
@@ -45,6 +50,9 @@
     justify-content: space-around;
     margin-top: 2rem;
     font-family: var(--averia);
+}
+.contenido .contenedor-estadisticas .estrella{
+    display: flex;
 }
 .contenido  .contenedor-estadisticas .espacios {
     height: 100%;
@@ -72,11 +80,49 @@
     top: 140px;
     left: 17px;
 }
+.contenedor .play{
+    position:absolute;
+    color:var(--yellow);
+    font-size: 3rem;
+}
 
 .contenido .botones {
     display: flex;
     justify-content: space-around;
     font-family: var(--staatliches);
-    color: var(--lightblue);
-    border-color: var(--yellow);
+    
+}
+.contenido .botones button {
+    background-color: var(--yellow);
+    color: var(--blue);
+    border-radius: 10px;
+    padding: 2px;
+}
+
+@media (min-width: 768px){
+
+    .contenido .opcionesPelicula p {
+    font-size: 2rem;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
 }
