@@ -25,7 +25,7 @@
     text-shadow: 0px 0px 1rem var(--blue),  0px 0px 0.2rem var(--blue)
 }
 
-.login-container {
+.forms-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,22 +33,26 @@
     margin: 1rem;
 }
 
-.login-container form {
+.forms-container form {
     width: 90%;
 }
 
-.login-container .form-title, .login-container .form-input-container .form-check, .login-container .form-input-container .link-form {
+.forms-container .title-center-register {
+    text-align: center;
+}
+
+.forms-container .form-title, .forms-container .form-input-container .form-check, .forms-container .form-input-container .link-form {
     color: var(--yellow);
 }
 
-.login-container .form-input-container {
+.forms-container .form-input-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 1rem 0 2rem 0;
 }
 
-.login-container .form-input-container .form-input input {
+.forms-container .form-input-container .form-input input {
     width: 100%;
     border-radius: 10px;
     background-color: var(--yellow);
@@ -56,30 +60,31 @@
     margin: 0.5rem 0px 1rem;
 }
 
-.login-container .form-input-container .form-input input::placeholder {
+.forms-container .form-input-container .form-input input::placeholder {
     color: var(--blue);
 }
 
-.login-container .form-input-container .form-check #recordarme {
+.forms-container .form-input-container .form-check #recordarme {
     background-color: var(--lightblue);
     margin: 0.5rem 0;
 }
 
-.login-container .form-input-container .link-form {
+.forms-container .form-input-container .link-form {
     margin: 1rem 0px;
     text-decoration: none;
 }
 
-.login-container .form-input-container .link-form:hover {
+.forms-container .form-input-container .link-form:hover {
     color: var(--lightblue);
 }
 
-.login-container .form-input-container .btn-enviar-form {
+.forms-container .form-input-container .btn-enviar-form {
     display: flex;
     justify-content: center;
+    padding-top: 1rem;
 }
 
-.login-container .form-input-container .btn-enviar-form .send-login {
+.forms-container .form-input-container .btn-enviar-form .send-login {
     font-family: var(--averia);
     color: var(--yellow);
     background-color: var(--lightblue);
@@ -88,7 +93,7 @@
     border: none;
 }
 
-.login-container .form-input-container .btn-enviar-form .send-login:hover {
+.forms-container .form-input-container .btn-enviar-form .send-login:hover {
     background-color: var(--blue);
 }
 
@@ -99,7 +104,7 @@
     .logo-container-forms .logo-forms img {
         max-width: 50%;
     }
-    .login-container form {
+    .forms-container form {
         width: 80%;
     }
 }
@@ -112,24 +117,24 @@
     .logo-container-forms .logo-forms p {
         font-size: 2.5rem;
     }
-    .login-container form {
+    .forms-container form {
         width: 70%;
         padding: 2rem;
         margin-bottom: 1rem;
         border: 3px solid var(--lightblue);
         background-color: #0E0E0E;
     }
-    .login-container .form-input-container {
+    .forms-container .form-input-container {
         margin: 1rem 0;
     }
-    .login-container .form-title {
+    .forms-container .form-title {
         text-align: center;
         font-size: 1.5rem;
     }
-    .login-container .form-input-container .form-input input, .login-container .form-input-container .form-check, .login-container .form-input-container .link-form, .login-container .form-input-container .btn-enviar-form .send-login {
+    .forms-container .form-input-container .form-input input, .forms-container .form-input-container .form-check, .forms-container .form-input-container .link-form, .forms-container .form-input-container .btn-enviar-form .send-login {
         font-size: 1.3rem;
     }
-    .login-container .form-input-container .btn-enviar-form .send-login {
+    .forms-container .form-input-container .btn-enviar-form .send-login {
         padding: 1rem 3rem;
     }
 }
