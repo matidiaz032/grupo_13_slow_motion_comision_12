@@ -7,13 +7,13 @@
 @import url('footer.css');
 @import url('indexMovie.css');
 @import url('indexSeries.css');
-
+@import url('productDetail.css');
 :root {
     --black: #000000;
     --blue: #2940D3;
     --lightblue: #39A9CB;
     --lightblack: #232323;
-    --yellow: #FFEDA3;
+    --yellow: #d8c371;
     --averia: 'Averia Sans Libre', cursive;
     --staatliches: 'Staatliches', cursive;
 }

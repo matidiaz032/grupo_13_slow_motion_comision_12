@@ -2,34 +2,81 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
 }
-main .contenedor-padre .box-1 img {
-    width: 100%;
-    height: 40%;
-    object-fit: cover;
+
+.conteinHeader {
+    display: none;
 }
-.contenedor-padre .box-2 {
-    position:absolute;
-    bottom: 2rem;
-    
-    
-}
-    
-.contenedor-padre .box-2  .contenido  {
+
+.contenedor-padre {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
-.contenedor-padre .box-2 .contenido .container-img{
-    width: 50%;
-    height: 50%;
-    object-fit: cover;
+.contenedor-padre .image-container {
+    position: relative;
 }
+.contenedor-padre  .corazon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.contenido .opcionesPelicula {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    font-family: var(--averia);
+    
+}
+.contenido .opcionesPelicula p {
+    color: var(--lightblue);
+    padding: 0 2px;
 
-p {
+}
+.contenido .opcionesPelicula .espacios {
     color: var(--yellow);
 }
+.contenido .contenedor-estadisticas {
+    color: var(--lightblue);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2rem;
+    font-family: var(--averia);
+}
+.contenido  .contenedor-estadisticas .espacios {
+    height: 100%;
+    color: var(--yellow);
 
 }
-.seleccion {
+.contenido .resumen-movie {
     color: var(--yellow);
+    text-align: justify;
+    margin: 3rem 1rem;
+    font-family: var(--averia);
+}
+.contenido .container-director {
+    color: var(--lightblue);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 2rem 0;
+    font-family: var(--averia);
+}
+.contenedor-box2 img {
+    width:5rem;
+    height: 5rem;
+    position:absolute ;
+    top: 140px;
+    left: 17px;
+}
+
+.contenido .botones {
+    display: flex;
+    justify-content: space-around;
+    font-family: var(--staatliches);
+    color: var(--lightblue);
+    border-color: var(--yellow);
 }
