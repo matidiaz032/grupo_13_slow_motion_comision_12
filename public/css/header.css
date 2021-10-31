@@ -101,7 +101,7 @@
 
     .conteinHeader header .nav {
         display: flex;
-        width: 20rem;
+        width: 50vw;
         justify-content: space-between;
         align-items: center;
         font-family: var(--averia);
@@ -112,8 +112,8 @@
         color: var(--lightblue);
     }
     .conteinHeader header .nav .in {
-        height: 10px;
-        width: 4.375rem;
+        height: 16px;
+        width: 6rem;
     }
 
     .conteinHeader header .optFoot {

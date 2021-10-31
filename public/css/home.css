@@ -15,40 +15,51 @@
 }
 
 .index .options {
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .index .options .barOptions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     height: 1.5rem;
     width: 86vw;
     margin: 1.5rem 0;
     border-radius: 120px;
     background-color: var(--yellow);
+    color: var(--blue);
+    font-family: var(--averia);
 }
 
 
+.index .options .barOptions #inpOpt {
+    display: flex;
+    width: 15vw;
+    height: 17px;
+}
 
+.index .options .barOptions a {
+    text-decoration: none;
+}
 
-
-
-
-
+.index .options .barOptions #navOpt {
+    display: none;
+}
 
 
 .index .products {
-    display: flex;
     flex-direction: column;
-    margin-top: 3rem;
-    font-size: 1.75rem;
+    font-size: 1.20rem;
     font-family: var(--averia);
 }
 
 .index .products .film {
     display: flex;
     flex-direction: column;
-    margin: 2rem 0 2rem 0
+    margin: 1rem 0 2rem 0;
 }
 
 .index .products .film .text {
@@ -58,13 +69,14 @@
 .index .products .film .text a{
     color: var(--yellow);
     text-decoration: none;
-    padding-left: 2rem;
+    padding-left: 10vw;
 }
 
 .index .products .film .demo {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
     padding: 0 5vw;
 }
@@ -95,20 +107,46 @@
     .index .carousel .carouselImg {
         width: 80vw;
     }
- 
+
+
+
+
+
     .index .options {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin-top: 5rem;
     }
 
     .index .options .barOptions {
         width: 75vw;
+        font-size: 17px;
     }
     
+    .index .options .barOptions #inpOpt {
+        display: none;
+    }
+    
+    .index .options .barOptions #navOpt {
+        display: flex
+    }
+
+    .index .options .barOptions #navOpt i{
+        padding: 3px;
+    }
+
+
+
+
+
     .index .products .film .demo img{
         width: 28vw;
+        transition: width 0.5s;
     }
+    
+    .index .products .film .demo img:hover{
+        width: 30vw;
+        transition: width 2s;
+    }
+
 
     .index .products .film .demo .img3 {
         display: block;
@@ -131,18 +169,27 @@
     .index .carousel .carouselImgDesktop {
         display: flex;
         object-fit: cover;
-        width: 75vw;
+        width: 83vw;
         border: 0.1px solid var(--lightblack);
+    }
+
+    .index .options {
+        margin-top: 6rem;
     }
 
     .index .options .barOptions {
         width: 70vw;
         height: 2rem;
         margin: 2rem 0;
+        font-size: 18px;
     }
 
-    .index .products .film .demo img{
-        width: 28vw;
+    .index .products {
+        font-size: 2rem;
+    }
+
+    .index .products .film {
+        margin: 2rem 0 2rem 0
     }
 
     .index .products .film4 {

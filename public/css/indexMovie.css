@@ -1,0 +1,257 @@
+@import url("/css/style.css");
+@import url("/css/header.css");
+@import url("/css/footer.css");
+
+*:hover {
+ cursor: default;
+}
+
+.section-cart-desktop {
+    display: none;
+}
+
+.section-cart {
+    height: 1.8rem;
+    background-color: var(--yellow);
+    margin: 1.5rem 7vw;
+    border-radius: 120px;
+    box-shadow: 1px 1px 8px 0 var(--black);
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-top: 4px;
+}
+
+.options__list {
+    align-items: center;
+    margin: auto;
+}
+
+.options__list a {
+    text-decoration: none;
+    color: var(--lightblue);
+}
+
+span a:hover {
+    text-shadow: 1px 1px 2px var(--black);
+}
+
+.contain-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.contain-grid .gender__grid {
+    font-size: 25px;
+    color: var(--yellow);
+    padding: 10px 0;
+    text-align: left;
+}
+
+.movies__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.gender__movies {
+    margin: 10px 0;
+}
+
+.gender__movies:first-child {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/EndGame356x512.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/MortalKombat720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(4) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/SamuraiX720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(5) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/ZonaDeRiesgo350x445.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:last-child {
+    width: 150px;
+    height: 150px;
+}
+
+.gender__movies:last-child .see-more {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: var(--yellow);
+    text-align: center;
+}
+
+/* .gender__movies:nth-child(6) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(7) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(8) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(9) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(10) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(11) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(12) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(13) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(14) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(15) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(16) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(17) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(18) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(19) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(20) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(21) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(22) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(23) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:nth-child(24) {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+}
+
+.gender__movies:last-child {
+    width: 150px;
+    height: 150px;
+    background-image: url('/img/peliculas/Matrix720x1080.jpg');
+    background-size: 100% 100%;
+} */

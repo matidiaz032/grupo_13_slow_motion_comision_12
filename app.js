@@ -19,6 +19,12 @@ app.get('/productDetail', function (req, res){
 app.get('/productCart', function (req, res){
     res.sendFile(path.join(__dirname, './views/productCart.html'));
 });
+app.get('/indexMovies', function (req, res){
+    res.sendFile(path.join(__dirname, './views/indexMovies.html'));
+});
+app.get('/indexSeries', function (req, res){
+    res.sendFile(path.join(__dirname, './views/indexSeries.html'));
+});
 // Server
 app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
 http://localhost:${PORT}`));
