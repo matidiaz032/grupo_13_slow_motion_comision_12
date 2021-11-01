@@ -6,7 +6,7 @@
     background: var(--lightblack);
 }
 
-.section-cart-desktop {
+.section-cartDesktop {
     display: none;
 }
 
@@ -55,22 +55,18 @@ span a:hover {
 .box__movie:first-child {
     width: 200px;
     height: 100px;
-    background-image: url('/img/peliculas/Anabelle\ 940x1392.jpg');
-    background-size: 100% 100%;
-    border-radius: 35%;
     margin: 11px;
     box-shadow: 1px 1px 8px 0 var(--black);
     filter: contrast(115%) brightness(1);
+    clip-path: circle(50% at 50% 50%);
     z-index: -1;
 }
 
-/* .box__movie img {
+.box__movie img {
     height: 100%;
     width: 100%;
-    object-fit: contain;
-    border: none;
-    filter: brightness(1);
-} */
+    box-shadow: 1px 1px 8px 0 var(--black);
+}
 
 .box__movie:nth-child(2) {
     width: 40%;
@@ -201,14 +197,14 @@ span a:hover {
         display: none;
     }
 
-    .section-cart-desktop {
+    .section-cartDesktop {
     display: block;
     height: 1.8rem;
     width: 86vw;
     background-color: var(--yellow);
-    margin: 1.5rem 7vw;
+    margin: 6.5rem auto 1.5rem;
     border-radius: 120px;
-    box-shadow: 1px 1px 8px 0 var(--lightblue);
+    box-shadow: 1px 1px 8px 0 var(--black);
     }
 
     .options-desktop {
@@ -232,17 +228,12 @@ span a:hover {
     .modify-selection {
         justify-content: space-between;
         padding: 0 10px;
-        margin: 0 30px;
+        margin: 0 37px;
     }
     
     .box__movie:first-child {
         width: 400px;
         height: 200px;
-        background-image: url('/img/peliculas/Anabelle\ 940x1392.jpg');
-        background-size: 100% 100%;
-        border-radius: 35%;
-        box-shadow: 1px 1px 8px 0 var(--black);
-        filter: contrast(115%) brightness(1);
     }
 
     .box__movie .price {
@@ -296,12 +287,12 @@ span a:hover {
         display: none;
     }
 
-    .section-cart-desktop {
+    .section-cartDesktop {
     display: block;
     height: 1.8rem;
     width: 86vw;
     background-color: var(--yellow);
-    margin: 1.5rem 7vw;
+    margin: 9rem auto 1.5rem;
     border-radius: 120px;
     box-shadow: 1px 1px 8px 0 var(--black);
     }
@@ -351,7 +342,7 @@ span a:hover {
     .modify-selection {
         justify-content: space-between;
         padding: 0 10px;
-        margin: 0 45px;
+        margin: 0 35px;
     }
 
     .modify-selection .delete {
