@@ -191,6 +191,10 @@
 } 
 
     @media (min-width: 1024px) {
+
+        .contain-body .conteinHeader {
+            display: flex;
+        }
      
         .contenedor-padre {
             width: 100%;
@@ -232,6 +236,11 @@
             bottom: -122px ;
         }
 
+        .contenedor-padre .image-container img  {
+            object-fit: cover;
+            width: 100%;
+            margin-top: 6rem;
+        }
 
 
     
