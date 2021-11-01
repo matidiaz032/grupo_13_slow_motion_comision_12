@@ -1,19 +1,4 @@
 
-.index .carousel {
-    display: flex;
-    justify-content: center;
-}
-
-.index .carousel .carouselImg {
-    object-fit: cover;
-    width: 90vw;
-    border: 0.1px solid var(--lightblack);
-}
-
-.index .carousel .carouselImgDesktop {
-    display: none;
-}
-
 .index .options {
     margin-top: 3rem;
     display: flex;
@@ -43,11 +28,67 @@
 
 .index .options .barOptions a {
     text-decoration: none;
+    color: var(--blue);
+    transition-property: text-shadow;
+    transition-duration: 3s;
+    transition-delay: 0s;
+    text-shadow: 0px 0px 3px var(--black),  0px 0px 3px var(--black);
+}
+
+.index .options .barOptions a:hover {
+    transition-property: text-shadow;
+    transition-duration: 1s;
+    transition-delay: 0s;
+    text-shadow: 0px 0px 0px white,  0px 0px 0px white;
 }
 
 .index .options .barOptions #navOpt {
     display: none;
 }
+
+
+
+.index .carousel {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.index .carousel ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    
+    animation: cambio 15s infinite alternate linear;
+}
+
+.index .carousel li {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.index .carousel img {
+    width: 91%;
+    border-color: var(--lightblack);
+}
+
+@keyframes cambio {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+    
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+    
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+
 
 
 .index .products {
@@ -70,7 +111,19 @@
     color: var(--yellow);
     text-decoration: none;
     padding-left: 10vw;
+    transition-property: text-shadow;
+    transition-duration: 3s;
+    transition-delay: 0s;
+    text-shadow: 0px 0px 4px white,  0px 0px 4px white;
 }
+
+.index .products .film .text a:hover {
+    transition-property: text-shadow;
+    transition-duration: 3s;
+    transition-delay: 0s;
+    text-shadow: 0px 0px 0px white,  0px 0px 0px white;
+}
+
 
 .index .products .film .demo {
     display: flex;
@@ -100,8 +153,6 @@
 }
 
 
-
-
 @media (min-width: 768px) {
 
     .index .carousel .carouselImg {
@@ -126,8 +177,20 @@
     }
     
     .index .options .barOptions #navOpt {
-        display: flex
+        display: flex;
+        transition-property: text-shadow;
+        transition-duration: 3s;
+        transition-delay: 0s;
+        text-shadow: 0px 0px 3px var(--black),  0px 0px 3px var(--black);
     }
+
+    .index .options .barOptions #navOpt:hover {
+        transition-property: text-shadow;
+        transition-duration: 1s;
+        transition-delay: 0s;
+        text-shadow: 0px 0px 0px var(--black),  0px 0px 0px var(--black);
+    }
+    
 
     .index .options .barOptions #navOpt i{
         padding: 3px;
