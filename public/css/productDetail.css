@@ -207,14 +207,34 @@
         
         .contenido .botones {
         
-            margin-top: 4rem;
+            margin-top: 4rem;                                   
+        }
+        .contenedor-box2 img {
+            margin-top: 23rem;
+        }
+
+        .fa-play::before {
+            margin-top: 11rem;
+        }
+
+        .contenido .resumen-movie {
+            font-size: 3rem;
+            margin-top: 11rem;
+            margin: 2rem;
+        }
+     
+        
+        .contenido .contenedor-estadisticas {
+            margin-top: 15rem;
+        }
+
+        .contenedor-padre  .corazon {
+            bottom: -122px ;
+        }
 
 
 
-
-
-
-    }
+    
 
 
     
