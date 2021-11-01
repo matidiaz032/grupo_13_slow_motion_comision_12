@@ -29,6 +29,17 @@
 .index .options .barOptions a {
     text-decoration: none;
     color: var(--blue);
+    transition-property: text-shadow;
+    transition-duration: 3s;
+    transition-delay: 0s;
+    text-shadow: 0px 0px 3px var(--black),  0px 0px 3px var(--black);
+}
+
+.index .options .barOptions a:hover {
+    transition-property: text-shadow;
+    transition-duration: 1s;
+    transition-delay: 0s;
+    text-shadow: 0px 0px 0px white,  0px 0px 0px white;
 }
 
 .index .options .barOptions #navOpt {
@@ -100,7 +111,19 @@
     color: var(--yellow);
     text-decoration: none;
     padding-left: 10vw;
+    transition-property: text-shadow;
+    transition-duration: 3s;
+    transition-delay: 0s;
+    text-shadow: 0px 0px 4px white,  0px 0px 4px white;
 }
+
+.index .products .film .text a:hover {
+    transition-property: text-shadow;
+    transition-duration: 3s;
+    transition-delay: 0s;
+    text-shadow: 0px 0px 0px white,  0px 0px 0px white;
+}
+
 
 .index .products .film .demo {
     display: flex;
@@ -154,8 +177,20 @@
     }
     
     .index .options .barOptions #navOpt {
-        display: flex
+        display: flex;
+        transition-property: text-shadow;
+        transition-duration: 3s;
+        transition-delay: 0s;
+        text-shadow: 0px 0px 3px var(--black),  0px 0px 3px var(--black);
     }
+
+    .index .options .barOptions #navOpt:hover {
+        transition-property: text-shadow;
+        transition-duration: 1s;
+        transition-delay: 0s;
+        text-shadow: 0px 0px 0px var(--black),  0px 0px 0px var(--black);
+    }
+    
 
     .index .options .barOptions #navOpt i{
         padding: 3px;

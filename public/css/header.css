@@ -110,7 +110,19 @@
     .conteinHeader header .nav a {
         text-decoration: none;
         color: var(--lightblue);
+        transition-property: font-size;
+        transition-duration: 3s;
+        transition-delay: 0s;
+        font-size: 16px;
     }
+    
+    .conteinHeader header .nav a:hover {
+        transition-property: font-size;
+        transition-duration: 1s;
+        transition-delay: 0s;
+        font-size: 20px;
+    }
+
     .conteinHeader header .nav .in {
         height: 16px;
         width: 6rem;
@@ -140,6 +152,17 @@
     .conteinHeader header .optFoot .RegAndLog a{
         color: var(--lightblue);
         text-decoration: none;
+        transition-property: font-size;
+        transition-duration: 3s;
+        transition-delay: 0s;
+        font-size: 16px;
+    }
+    
+    .conteinHeader header .optFoot .RegAndLog a:hover {
+        transition-property: font-size;
+        transition-duration: 1s;
+        transition-delay: 0s;
+        font-size: 20px;
     }
 
 }
@@ -178,7 +201,20 @@
     
     .conteinHeader header .nav {
         width: 60vw;
-        font-size: 1.2rem;
+    }
+
+    .conteinHeader header .nav a {
+        transition-property: font-size;
+        transition-duration: 3s;
+        transition-delay: 0s;
+        font-size: 19px;
+    }
+    
+    .conteinHeader header .nav a:hover {
+        transition-property: font-size;
+        transition-duration: 1s;
+        transition-delay: 0s;
+        font-size: 27px;
     }
 
     .conteinHeader header .nav .in {
@@ -197,8 +233,17 @@
     .conteinHeader header .optFoot .RegAndLog a{
         color: var(--lightblue);
         text-decoration: none;
-        font-size: 1.2rem;
+        transition-property: font-size;
+        transition-duration: 3s;
+        transition-delay: 0s;
+        font-size: 20px;
     }
-
+    
+    .conteinHeader header .optFoot .RegAndLog a:hover {
+        transition-property: font-size;
+        transition-duration: 1s;
+        transition-delay: 0s;
+        font-size: 30px;
+    }
 
 }
