@@ -22,8 +22,8 @@
     flex-direction: row;
     position : absolute;
     position: absolute;
-    right:30px;
-    bottom:20px;
+    right:13px;
+    bottom:10px;
     justify-content: flex-end;
     color: var(--yellow);
 }
@@ -72,6 +72,7 @@
     justify-content: space-around;
     margin: 2rem 0;
     font-family: var(--averia);
+    margin-top: -1rem;
 }
 .contenedor-box2 img {
     width:5rem;
@@ -79,17 +80,32 @@
     position:absolute ;
     top: 140px;
     left: 17px;
+    z-index: 0;
 }
-.contenedor .play{
-    position:absolute;
-    color:var(--yellow);
+.contenedor .play {
     font-size: 3rem;
+    z-index: 10;
+    position: relative;
+}
+.fa-play::before{
+    position: absolute;
+    color: var(--lightblue);
+    font-size: 25px;
+    opacity: 0.4;
+    left: 50px;
+    top: 169px;
+
+}
+.contenedor .play i {
+    z-index:11;
+    width: 50px;
 }
 
 .contenido .botones {
     display: flex;
     justify-content: space-around;
     font-family: var(--staatliches);
+    border: var(--lightblue);
     
 }
 .contenido .botones button {
@@ -98,6 +114,31 @@
     border-radius: 10px;
     padding: 2px;
 }
+@media (min-width: 350px){
+
+    .contenedor-box2 img {
+        top: 175px;
+
+    }
+    .fa-play::before {
+        top: 205px;
+    }
+
+}
+
+/* mobile L*/
+@media (min-width: 425px){
+
+    .contenedor-box2 img {
+        top: 197px;
+
+    }
+    .fa-play::before {
+        top: 224px;
+    }
+
+}
+
 
 @media (min-width: 768px){
 
@@ -105,24 +146,77 @@
     font-size: 2rem;
     }
     
+    .contenedor-padre .image-container img  {
+        object-fit: cover;
+        width: 100%;
+
+    }
+    .contenido .contenedor-estadisticas {
+        font-size: 2rem;
+    }
+
+    .contenedor-box2 img {
+        top: 155px;
+
+
+    }
+    .fa-play::before {
+        top: 409px;
+        font-size: 59px;
+        left:103px;
+        
+    }
+    
+    .contenido .resumen-movie {
+        font-size: 2rem;
+    }
+    
+    .contenido .container-director {
+        font-size: 2rem;
+    }
+    
+    .contenido .botones {
+        font-size: 3rem;
+        margin-top: 6rem;
+    }
+    
+    .contenedor-padre  .corazon {
+        font-size: 3rem ;
+    }
+    .contenedor-box2 img {
+        margin-top: 12rem;
+        width: 13rem;
+        height: 11rem;
+    }
+} 
+
+    @media (min-width: 1024px) {
+     
+        .contenedor-padre {
+            width: 100%;
+        }
+
+        .contenido .container-director {
+            font-size: 3rem;
+        }
+
+        .contenido .resumen-movie {
+            font-size: 3rem;
+            
+        }
+        
+        .contenido .botones {
+        
+            margin-top: 4rem;
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
+    }
 
 
     
 
-    
 }
