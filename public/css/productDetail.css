@@ -5,6 +5,10 @@
 
 }
 
+.contenido {
+    margin-bottom: 2rem;
+}
+
 .contain-body .conteinHeader {
     display: none;
 }
@@ -27,13 +31,16 @@
     justify-content: flex-end;
     color: var(--yellow);
 }
+
+.contenedor-padre  .corazon i{
+    margin: 0 5px 0 5px;
+}
+
 .contenido .opcionesPelicula {
     display: flex;
-    justify-content: flex-end; 
-    margin-right: 1rem;
-    margin-top: 0.5rem;
+    justify-content: space-around; 
+    margin-top: 2rem;
     font-family: var(--averia);
-    
 }
 .contenido .opcionesPelicula p {
     color: var(--lightblue);
@@ -53,6 +60,7 @@
 }
 .contenido .contenedor-estadisticas .estrella{
     display: flex;
+    color: var(--yellow);
 }
 .contenido  .contenedor-estadisticas .espacios {
     height: 100%;
@@ -113,11 +121,25 @@
     
 }
 .contenido .botones button {
-    background-color: var(--yellow);
-    color: var(--blue);
+    background-color: var(--lightblue);
+    color: var(--yellow);
     border-radius: 10px;
-    padding: 2px;
+    padding: 0.5rem 1.5rem;
 }
+
+.contenido .icons {
+    display: none;
+}
+
+.contenido .title {
+    display: flex;
+    color:var(--lightblue);
+    justify-content: center;
+    font-family: var(--staatliches);
+    font-size: 1.5rem;
+}
+
+
 @media (min-width: 350px){
 
     .contenedor-box2 img {
@@ -127,7 +149,6 @@
     .fa-play::before {
         top: 205px;
     }
-
 }
 
 /* mobile L*/
@@ -171,6 +192,10 @@
         
     }
     
+
+    .contenido .opcionesPelicula{
+        margin-top: 11%;
+    }
     .contenido .resumen-movie {
         font-size: 2rem;
     }
@@ -192,6 +217,11 @@
         width: 13rem;
         height: 11rem;
     }
+
+    .contenido .title {
+        margin-top: 1.5rem;
+        font-size: 2.5rem;
+    }
 } 
 
     @media (min-width: 1024px) {
@@ -206,6 +236,30 @@
 
         .contenido {
             margin-top: 7rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contenido .title {
+            color: var(--lightblue);
+            font-size: 3rem;
+            font-family: var(--staatliches);
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+        .contenido .opcionesPelicula{
+            order: 1;
+            justify-content: flex-start;
+            flex-direction: column;
+            margin-left: 30px;
+            margin-top: 10%;
+        }
+
+        .contenido .opcionesPelicula .espacios {
+            display: none;
         }
 
         .contenido .contein-options {
@@ -262,17 +316,28 @@
 
 
         .contenido .container-director {
-            font-size: 3rem;
+            font-size: 2rem;
+            width: 60%;
+            margin-left: 35%;
+            margin-top: 15px;
         }
 
         .contenido .resumen-movie {
-            font-size: 3rem;
-            
+            font-size: 2rem;
+            width: 60%;
+            margin-top: 0;
+            margin: 0;
+            margin-left: 35%;
         }
         
         .contenido .botones {
-        
-            margin-top: 4rem;                                   
+            order: 2;
+            margin-top: 4rem;                             
+        }
+
+        .contenedor-box2 {
+            position: static;
+            display: flex;
         }
         .contenedor-box2 img {
             width: 300px;
@@ -284,14 +349,7 @@
         .fa-play::before {
             margin-top: 11rem;
         }
-
-        .contenido .resumen-movie {
-            font-size: 3rem;
-            margin-top: 11rem;
-            margin: 2rem;
-        }
-     
-        
+  
         .contenido .contenedor-estadisticas {
             margin-top: 15rem;
         }
@@ -318,5 +376,26 @@
         .contenido .title {
             font-family: var(--staatliches);
             
+        }
+
+        .contenido .icons{
+            display: flex;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--blue);
+            margin-left: 30%;
+        }
+
+        .contenido .icons a{
+            font-size: 1.5rem;
+            text-decoration: none;
+            margin-right: 5%;
+        }
+        .contenido .icons a:link, .contenido .icons a:visited {
+            color: var(--blue);
+        }
+
+        .contenido .icons i{
+            font-size: 3rem;
         }
 }
