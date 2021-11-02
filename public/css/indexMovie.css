@@ -29,7 +29,7 @@
 
 .options__list a {
     text-decoration: none;
-    color: var(--lightblue);
+    color: var(--blue);
 }
 
 span a:hover {
@@ -46,9 +46,12 @@ span a:hover {
 
 .contain-grid .gender__grid, .gender__grid-2, 
 .gender__grid-3, .gender__grid-4, .gender__grid-5 {
+    font-family: var(--averia);
+    font-weight: bold;
     font-size: 25px;
     color: var(--yellow);
     padding: 10px;
+    text-shadow: 0px 0px 4px white, 0px 0px 4px white;
 }
 
 .movies__section {

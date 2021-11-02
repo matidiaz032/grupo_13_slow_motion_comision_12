@@ -5,6 +5,10 @@
 
 }
 
+.contenido {
+    margin-bottom: 2rem;
+}
+
 .contain-body .conteinHeader {
     display: none;
 }
@@ -27,13 +31,16 @@
     justify-content: flex-end;
     color: var(--yellow);
 }
+
+.contenedor-padre  .corazon i{
+    margin: 0 5px 0 5px;
+}
+
 .contenido .opcionesPelicula {
     display: flex;
-    justify-content: flex-end; 
-    margin-right: 1rem;
-    margin-top: 0.5rem;
+    justify-content: space-around; 
+    margin-top: 2rem;
     font-family: var(--averia);
-    
 }
 .contenido .opcionesPelicula p {
     color: var(--lightblue);
@@ -53,6 +60,7 @@
 }
 .contenido .contenedor-estadisticas .estrella{
     display: flex;
+    color: var(--yellow);
 }
 .contenido  .contenedor-estadisticas .espacios {
     height: 100%;
@@ -101,6 +109,10 @@
     width: 50px;
 }
 
+.contenido .barOptions {
+    display: none;
+}
+
 .contenido .botones {
     display: flex;
     justify-content: space-around;
@@ -109,11 +121,25 @@
     
 }
 .contenido .botones button {
-    background-color: var(--yellow);
-    color: var(--blue);
+    background-color: var(--lightblue);
+    color: var(--yellow);
     border-radius: 10px;
-    padding: 2px;
+    padding: 0.5rem 1.5rem;
 }
+
+.contenido .icons {
+    display: none;
+}
+
+.contenido .title {
+    display: flex;
+    color:var(--lightblue);
+    justify-content: center;
+    font-family: var(--staatliches);
+    font-size: 1.5rem;
+}
+
+
 @media (min-width: 350px){
 
     .contenedor-box2 img {
@@ -123,7 +149,6 @@
     .fa-play::before {
         top: 205px;
     }
-
 }
 
 /* mobile L*/
@@ -167,6 +192,10 @@
         
     }
     
+
+    .contenido .opcionesPelicula{
+        margin-top: 11%;
+    }
     .contenido .resumen-movie {
         font-size: 2rem;
     }
@@ -188,6 +217,11 @@
         width: 13rem;
         height: 11rem;
     }
+
+    .contenido .title {
+        margin-top: 1.5rem;
+        font-size: 2.5rem;
+    }
 } 
 
     @media (min-width: 1024px) {
@@ -197,37 +231,125 @@
         }
      
         .contenedor-padre {
-            width: 100%;
+            display: none;
         }
 
-        .contenido .container-director {
+        .contenido {
+            margin-top: 7rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contenido .title {
+            color: var(--lightblue);
             font-size: 3rem;
+            font-family: var(--staatliches);
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+        .contenido .opcionesPelicula{
+            order: 1;
+            justify-content: flex-start;
+            flex-direction: column;
+            margin-left: 30px;
+            margin-top: 10%;
+        }
+
+        .contenido .opcionesPelicula .espacios {
+            display: none;
+        }
+
+        .contenido .contein-options {
+            display: flex;
+            justify-content: center;
+        }
+        .contenido .contein-options .barOptions {
+            margin-top: 7rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 3rem;
+            width: 86vw;
+            margin: 1.5rem 0;
+            border-radius: 120px;
+            background-color: var(--yellow);
+            color: var(--blue);
+            font-family: var(--averia);
+        }
+            
+        .contenido .contein-options .barOptions a {
+                text-decoration: none;
+                color: var(--blue);
+                transition-property: text-shadow;
+                transition-duration: 3s;
+                transition-delay: 0s;
+                text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
+            }
+            
+            .contenido .contein-options .barOptions a:hover {
+                transition-property: text-shadow;
+                transition-duration: 1s;
+                transition-delay: 0s;
+                text-shadow: 0px 0px 0px black,  0px 0px 0px black;
+            }
+        
+            .contein-options .barOptions #navOpt{
+                display: flex;
+                transition-property: text-shadow;
+                transition-duration: 3s;
+                transition-delay: 0s;
+                text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
+            }
+        
+            .contein-options .barOptions #navOpt i{
+                margin-left: 5px;
+            }
+            .index .contein-options .barOptions #navOpt:hover {
+                transition-property: text-shadow;
+                transition-duration: 1s;
+                transition-delay: 0s;
+                text-shadow: 0px 0px 0px var(--black),  0px 0px 0px var(--black);
+            }
+
+
+        .contenido .container-director {
+            font-size: 2rem;
+            width: 60%;
+            margin-left: 35%;
+            margin-top: 15px;
         }
 
         .contenido .resumen-movie {
-            font-size: 3rem;
-            
+            font-size: 2rem;
+            width: 60%;
+            margin-top: 0;
+            margin: 0;
+            margin-left: 35%;
         }
         
         .contenido .botones {
-        
-            margin-top: 4rem;                                   
+            order: 2;
+            margin-top: 4rem;                             
+        }
+
+        .contenedor-box2 {
+            position: static;
+            display: flex;
         }
         .contenedor-box2 img {
-            margin-top: 23rem;
+            width: 300px;
+            height: 350px;
+            left: 30px;
+            top: 75px;
         }
 
         .fa-play::before {
             margin-top: 11rem;
         }
-
-        .contenido .resumen-movie {
-            font-size: 3rem;
-            margin-top: 11rem;
-            margin: 2rem;
-        }
-     
-        
+  
         .contenido .contenedor-estadisticas {
             margin-top: 15rem;
         }
@@ -242,10 +364,38 @@
             margin-top: 6rem;
         }
 
+        .fa-play::before{
+            left: 171px;
+            top: 231px;
+        }
 
-    
+        .contenido .contenedor-estadisticas {
+            display: none;
+        }
 
+        .contenido .title {
+            font-family: var(--staatliches);
+            
+        }
 
-    
+        .contenido .icons{
+            display: flex;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--blue);
+            margin-left: 30%;
+        }
 
+        .contenido .icons a{
+            font-size: 1.5rem;
+            text-decoration: none;
+            margin-right: 5%;
+        }
+        .contenido .icons a:link, .contenido .icons a:visited {
+            color: var(--blue);
+        }
+
+        .contenido .icons i{
+            font-size: 3rem;
+        }
 }
