@@ -101,6 +101,10 @@
     width: 50px;
 }
 
+.contenido .barOptions {
+    display: none;
+}
+
 .contenido .botones {
     display: flex;
     justify-content: space-around;
@@ -197,8 +201,65 @@
         }
      
         .contenedor-padre {
-            width: 100%;
+            display: none;
         }
+
+        .contenido {
+            margin-top: 7rem;
+        }
+
+        .contenido .contein-options {
+            display: flex;
+            justify-content: center;
+        }
+        .contenido .contein-options .barOptions {
+            margin-top: 7rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 3rem;
+            width: 86vw;
+            margin: 1.5rem 0;
+            border-radius: 120px;
+            background-color: var(--yellow);
+            color: var(--blue);
+            font-family: var(--averia);
+        }
+            
+        .contenido .contein-options .barOptions a {
+                text-decoration: none;
+                color: var(--blue);
+                transition-property: text-shadow;
+                transition-duration: 3s;
+                transition-delay: 0s;
+                text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
+            }
+            
+            .contenido .contein-options .barOptions a:hover {
+                transition-property: text-shadow;
+                transition-duration: 1s;
+                transition-delay: 0s;
+                text-shadow: 0px 0px 0px black,  0px 0px 0px black;
+            }
+        
+            .contein-options .barOptions #navOpt{
+                display: flex;
+                transition-property: text-shadow;
+                transition-duration: 3s;
+                transition-delay: 0s;
+                text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
+            }
+        
+            .contein-options .barOptions #navOpt i{
+                margin-left: 5px;
+            }
+            .index .contein-options .barOptions #navOpt:hover {
+                transition-property: text-shadow;
+                transition-duration: 1s;
+                transition-delay: 0s;
+                text-shadow: 0px 0px 0px var(--black),  0px 0px 0px var(--black);
+            }
+
 
         .contenido .container-director {
             font-size: 3rem;
@@ -214,7 +275,10 @@
             margin-top: 4rem;                                   
         }
         .contenedor-box2 img {
-            margin-top: 23rem;
+            width: 300px;
+            height: 350px;
+            left: 30px;
+            top: 75px;
         }
 
         .fa-play::before {
@@ -242,10 +306,17 @@
             margin-top: 6rem;
         }
 
+        .fa-play::before{
+            left: 171px;
+            top: 231px;
+        }
 
-    
+        .contenido .contenedor-estadisticas {
+            display: none;
+        }
 
-
-    
-
+        .contenido .title {
+            font-family: var(--staatliches);
+            
+        }
 }
