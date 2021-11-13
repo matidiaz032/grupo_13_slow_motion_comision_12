@@ -52,16 +52,24 @@
     margin: 1rem 0 2rem 0;
 }
 
+.forms-container .form-input-container .form-input {
+    margin-bottom: 1rem;
+}
+
 .forms-container .form-input-container .form-input input {
     width: 100%;
     border-radius: 10px;
     background-color: var(--yellow);
     padding: 1rem;
-    margin: 0.5rem 0px 1rem;
+    margin: 0.5rem 0px 0.5rem;
 }
 
 .forms-container .form-input-container .form-input input::placeholder {
     color: var(--blue);
+}
+
+.forms-container .form-input-container .form-input small {
+    color: red;
 }
 
 .forms-container .form-input-container .form-check #recordarme {
