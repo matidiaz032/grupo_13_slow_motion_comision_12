@@ -7,10 +7,7 @@
 
 .contenido {
     margin-bottom: 2rem;
-}
-
-.contain-body .conteinHeader {
-    display: none;
+    margin-top: 3.5rem;
 }
 
 .contenedor-padre {
@@ -45,7 +42,6 @@
 .contenido .opcionesPelicula p {
     color: var(--lightblue);
     padding: 0 2px;
-
 }
 .contenido .opcionesPelicula .espacios {
     color: var(--yellow);
@@ -167,8 +163,12 @@
 
 @media (min-width: 768px){
 
+    .contenido {
+        margin-top: 5.25rem;
+    }
+
     .contenido .opcionesPelicula p {
-    font-size: 2rem;
+    font-size: 1.7rem;
     }
     
     .contenedor-padre .image-container img  {
@@ -205,7 +205,7 @@
     }
     
     .contenido .botones {
-        font-size: 3rem;
+        font-size: 2rem;
         margin-top: 6rem;
     }
     
@@ -255,7 +255,7 @@
             justify-content: flex-start;
             flex-direction: column;
             margin-left: 30px;
-            margin-top: 10%;
+            margin-top: 5%;
         }
 
         .contenido .opcionesPelicula .espacios {
@@ -332,7 +332,7 @@
         
         .contenido .botones {
             order: 2;
-            margin-top: 4rem;                             
+            margin-top: 2rem;                             
         }
 
         .contenedor-box2 {
