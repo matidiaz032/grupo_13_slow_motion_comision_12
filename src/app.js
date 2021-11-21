@@ -6,14 +6,19 @@ let path = require('path');
 // Middlewares
 app.use(express.static("public"));
 
-// Routes
-app.get('/', function (req, res){
-    res.sendFile(path.join(__dirname, './views/index.html'))
-});
-app.get('/login', function (req, res){
-    res.sendFile(path.join(__dirname, './views/login.html'));
-});
-app.get('/register', function (req, res){
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'))
+
+
+    /* Enrutadores */
+let indexRouter = require('./routes/indexRouter');
+let loginRouter = require('./routes/loginRouter.js')
+
+    /* Routes */
+app.use('/', indexRouter)
+app.use('/login', loginRouter)
+
+/* app.get('/register', function (req, res){
     res.sendFile(path.join(__dirname, './views/register.html'))
 });
 app.get('/productDetail', function (req, res){
@@ -27,7 +32,9 @@ app.get('/indexMovies', function (req, res){
 });
 app.get('/indexSeries', function (req, res){
     res.sendFile(path.join(__dirname, './views/indexSeries.html'));
-});
-// Server
+}); */
+
+
+    /* Server */
 app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
 http://localhost:${PORT}`));
