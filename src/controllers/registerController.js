@@ -1,7 +1,7 @@
 let controller = {
     index: (req, res) => {
-        res.render('login', {
-            title: 'Login'
+        res.render('register', {
+            title: 'Register'
         })
     }
 }
