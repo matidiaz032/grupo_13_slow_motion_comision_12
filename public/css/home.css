@@ -28,14 +28,12 @@
     text-decoration: none;
     color: var(--blue);
     transition-property: text-shadow;
-    transition-duration: 3s;
     transition-delay: 0s;
     text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
 }
 
 .index .options .barOptions a:hover {
     transition-property: text-shadow;
-    transition-duration: 1s;
     transition-delay: 0s;
     text-shadow: 0px 0px 0px black,  0px 0px 0px black;
 }
@@ -185,12 +183,12 @@
 
     .index .products .film .demo img {
         width: 28vw;
-        transition: width 0.5s;
+
     }
     
     .index .products .film .demo img:hover {
         width: 30vw;
-        transition: width 2s;
+        
     }
 
 
