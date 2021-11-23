@@ -1,6 +1,6 @@
 let controller = {
     index: (req, res) => {
-        res.render('indexSeries', {
+        res.render('./product/indexSeries', {
             title: 'Series'
         })
     }
