@@ -1,11 +1,10 @@
-    <%- include('partials/head') %> 
+    <%- include('../partials/head') %>
 
 <body>
 
-    <!-- Header section -->
-    <%- include('partials/header') %> 
+    <%- include('../partials/header') %> 
 
-    <!-- Options section -->
+    <!--Shopping cart options section-->
     <div class="section-cart">
         <div class="options">
             <span class="options__list"><a href="#">Estrenos</a></span>
@@ -21,7 +20,8 @@
             <span class="options__list-desktop"><a href="#">Ayuda</a></span>
         </div>
     </div>
-    <!-- grid section movies -->
+
+    <!-- grid section series -->
     <div class="contain-grid">
         <span class="gender__grid">Accion</span>
         <div class="movies__section">
@@ -31,7 +31,9 @@
             <div class="gender__movies"></div>
             <div class="gender__movies"></div>
             <div class="gender__movies">
-                <button type="button" class="see-more">Ver más</button>
+                <button type="button" class="see-more">
+                    <p>Ver más</p>
+                </button>
             </div>
         </div>
         <span class="gender__grid-2">Accion / Comedia</span>
@@ -79,7 +81,8 @@
                 </div>
             </div>
     </div>
-    <!-- Footer section -->
-    <%- include('partials/footer')  %>
+
+    <!-- Footer -->
+    <%- include('../partials/footer')  %>
 </body>
 </html>
