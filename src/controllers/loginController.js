@@ -1,6 +1,6 @@
 let controller = {
     index: (req, res) => {
-        res.render('login', {
+        res.render('./users/login', {
             title: 'Login'
         })
     }
