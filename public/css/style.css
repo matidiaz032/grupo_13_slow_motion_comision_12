@@ -8,6 +8,7 @@
 @import url('indexMovie.css');
 @import url('indexSeries.css');
 @import url('productDetail.css');
+@import url('admin.css');
 :root {
     --black: #000000;
     --blue: #2940D3;

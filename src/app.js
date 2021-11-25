@@ -17,6 +17,7 @@ let seriesRouter = require('./routes/seriesRouter.js')
 let moviesRouter = require('./routes/moviesRouter.js')
 let cartRouter = require('./routes/cartRouter.js')
 let detailRouter = require('./routes/detailRouter.js')
+let adminRouter = require('./routes/adminRouter')
 
     /* Routes */
 app.use('/', indexRouter)
@@ -26,6 +27,7 @@ app.use('/series', seriesRouter)
 app.use('/movies', moviesRouter)
 app.use('/cart', cartRouter)
 app.use('/detail', detailRouter)
+app.use('/admin', adminRouter)
 
     /* Server */
 app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
