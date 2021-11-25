@@ -3,6 +3,12 @@
 /* Document
    ========================================================================== */
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -22,6 +28,7 @@
   
   body {
     margin: 0;
+    padding: 0;
   }
   
   /**
@@ -77,6 +84,15 @@
     background-color: transparent;
   }
   
+  /**
+   * 1. Remove the border style ul.
+   */
+
+   ul {
+     list-style: none;
+     text-decoration: none;
+   }
+
   /**
    * 1. Remove the bottom border in Chrome 57-
    * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
@@ -147,6 +163,7 @@
   
   img {
     border-style: none;
+    max-width: 100%;
   }
   
   /* Forms

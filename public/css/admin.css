@@ -1,0 +1,145 @@
+.body-admin {
+    background: linear-gradient(45deg, #000000, #2940D3);
+}
+
+.contain-header {
+    width: 10vw;
+    height: 100vh;
+    font-size: 28px;
+    color: #fff;
+    background: var(--lightblack);
+    position: fixed;
+}
+
+.menu-header {
+    display: none;
+}
+
+.header-mobile {
+    width: 10vw;
+    height: 100vh;
+}
+
+.nav-header {
+    width: 10vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    position: absolute;
+}
+
+.nav-header .checkbtn {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    padding: 269px 0;
+}
+
+.flex-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: var(--lightblack);
+    left: -100px;
+    transition: all 1s;
+}
+
+.flex-list .li__flex-items {
+    margin: 4px;
+    padding: 4px;
+}
+
+.flex-list .li__flex-items a {
+    padding: 0 10px;
+    font-size: 15px;
+}
+
+.flex-list .li__flex-items a i {
+    padding: 0 10px;
+    font-size: 15px;
+}
+
+#check {
+    display: none;    
+}
+
+#check:checked ~ .flex-list {
+    left: 0;
+}
+
+.img {
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.img img {
+    display: inline-block;
+    width: 65%;
+    height: 65%;
+    margin: auto 0 auto 32px;
+}
+
+.img span {
+    color: var(--yellow);
+    margin: auto 0 auto 32px
+}
+
+.database { 
+    height: 100vh;   
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 30px;
+}
+
+.database .products {
+    width: 75vw;
+    height: 20vh;
+}
+
+.database .products .section__database {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #000, #232323);
+    border-radius: 20px;
+}
+
+.section__database .button-options {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    padding: 33px;
+}
+
+.section__database .button-options a {
+    display: inline-block;
+    color: #fff;
+    padding: 0 7px;
+    margin: 0 7px;
+}
+
+.section__database .button-options a i {
+    width: 54px;
+    height: 40px;
+    font-size: 40px;
+    padding: 0 7px;
+}
+
+.button-options a span {
+    display: none;
+}
+
+a span:hover {
+    display: inline-block;
+    color: #fff;
+}

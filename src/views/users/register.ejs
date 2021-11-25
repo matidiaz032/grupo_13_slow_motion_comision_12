@@ -1,0 +1,51 @@
+    <%- include('../partials/head') %>
+    
+<body>
+    <main>
+        <div class="logo-container-forms">
+            <a class="logo-forms" href="/">
+                <img src="/img/Blanco.svg" alt="Logo Slow Motion">
+                <p>SLOW MOTION</p>
+            </a>
+        </div>
+        <div class="forms-container">
+            <form action="">
+                <div class="form-title title-center-register">
+                    <h2>Crear Cuenta</h2>
+                </div>
+                <div class="form-input-container">
+                    <div class="form-input">
+                        <input type="text" name="nombre" placeholder="Nombre">
+                        <small>Debe ingresar un nombre</small>                   
+                    </div>
+                    <div class="form-input">
+                        <input type="text" name="apellido" placeholder="Apellido">
+                        <small>Debe ingresar un apellido</small>
+                    </div>
+                    <div class="form-input">
+                        <input type="text" name="username" placeholder="Nombre de usuario">
+                        <small>Debe ingresar un nombre de usuario</small>
+                    </div>
+                    <div class="form-input">
+                        <input type="email" name="email" placeholder="Correo Electronico">
+                        <small>Debe ingresar un email valido</small>
+                    </div>
+                    <div class="form-input">
+                        <input type="password" name="pass" placeholder="Contraseña">
+                        <small>Debe ingresar una contraseña que contenga 8 digitos, numeros y letras.</small>
+                    </div>
+                    <div class="form-input">
+                        <input type="password" name="pass-confirm" placeholder="Repetir Contraseña">
+                        <small>Las contraseñas no coinciden</small>
+                    </div>
+                    <div class="btn-enviar-form">
+                        <input class="send-login" type="button" value="Iniciar Sesión">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <%- include('../partials/footer')  %>
+</body>
+</html>

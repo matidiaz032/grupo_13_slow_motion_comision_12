@@ -1,19 +1,242 @@
+.index .options {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index .options .barOptions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 1.5rem;
+    width: 86vw;
+    margin: 1.5rem 0;
+    border-radius: 120px;
+    background-color: var(--yellow);
+    color: var(--blue);
+    font-family: var(--averia);
+}
+
+.index .options .barOptions #inpOpt {
+    display: flex;
+    width: 15vw;
+    height: 17px;
+}
+
+.index .options .barOptions a {
+    text-decoration: none;
+    color: var(--blue);
+    transition-property: text-shadow;
+    transition-delay: 0s;
+    text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
+}
+
+.index .options .barOptions a:hover {
+    transition-property: text-shadow;
+    transition-delay: 0s;
+    text-shadow: 0px 0px 0px black,  0px 0px 0px black;
+}
+
+.index .options .barOptions #navOpt {
+    display: none;
+}
+
 .index .carousel {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.index .carousel ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    
+    animation: cambio 15s infinite alternate linear;
+}
+
+.index .carousel li {
+    width: 100%;
+    list-style: none;
     display: flex;
     justify-content: center;
 }
 
-.index .carousel img {
-    width: 90vw;
-    height: 13rem;
+.index .carousel ul li a {
+    width: 91%;
+    border-color: var(--lightblack);
 }
 
-.index .options {
+@keyframes cambio {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+    
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+    
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+}
+
+.index .products {
     flex-direction: column;
-    height: 1.8rem;
-    width: 86vw;
-    background-color: var(--yellow);
-    margin: 1.5rem 7vw;
-    border-radius: 120px;
+    font-size: 1.20rem;
+    font-family: var(--averia);
 }
 
+.index .products .film {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 2rem 0;
+}
+
+.index .products .film .text {
+    margin: 2rem 0 1rem 0;
+}
+
+.index .products .film .text a {
+    color: var(--yellow);
+    text-decoration: none;
+    padding-left: 10vw;
+    transition-property: text-shadow;
+    transition-duration: 3s;
+    transition-delay: 0s;
+    text-shadow: 0px 0px 3px white,  0px 0px 3px white;
+}
+
+.index .products .film .text a:hover {
+    transition-property: text-shadow;
+    transition-duration: 3s;
+    transition-delay: 0s;
+    text-shadow: 0px 0px 0px white,  0px 0px 0px white;
+}
+
+.index .products .film .demo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 5vw;
+}
+
+.index .products .film .demo img {
+    width: 40vw;
+    object-fit: cover;
+    border: 0.1px solid var(--lightblack)
+}
+
+.index .products .film .demo .img3 {
+    display: none
+}
+
+.index .products .film3 {
+    display: none;
+}
+
+.index .products .film4 {
+    display: none;
+}
+
+
+@media (min-width: 768px) {
+
+    .index .carousel .carouselImg {
+        width: 80vw;
+    }
+
+    .index .options {
+        margin-top: 5rem;
+    }
+
+    .index .options .barOptions {
+        width: 75vw;
+        font-size: 17px;
+    }
+    
+    .index .options .barOptions #inpOpt {
+        display: none;
+    }
+    
+    .index .options .barOptions #navOpt {
+        display: flex;
+        transition-property: text-shadow;
+        transition-duration: 3s;
+        transition-delay: 0s;
+        text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
+    }
+
+    .index .options .barOptions #navOpt:hover {
+        transition-property: text-shadow;
+        transition-duration: 1s;
+        transition-delay: 0s;
+        text-shadow: 0px 0px 0px black,  0px 0px 0px black;
+    }
+    
+    .index .options .barOptions #navOpt i {
+        padding: 3px;
+    }
+
+    .index .products .film .demo img {
+        width: 28vw;
+
+    }
+    
+    .index .products .film .demo img:hover {
+        width: 30vw;
+        
+    }
+
+
+    .index .products .film .demo .img3 {
+        display: block;
+    }
+    
+    .index .products .film3 {
+        display: block;
+    }
+}
+
+
+
+
+@media (min-width: 1024px) {
+
+    .index .carousel .carouselImg {
+        display: none;
+    }
+
+    .index .carousel .carouselImgDesktop {
+        display: flex;
+        object-fit: cover;
+        width: 83vw;
+        border: 0.1px solid var(--lightblack);
+    }
+
+    .index .options {
+        margin-top: 6rem;
+    }
+
+    .index .options .barOptions {
+        width: 70vw;
+        height: 2rem;
+        margin: 2rem 0;
+        font-size: 18px;
+    }
+
+    .index .products {
+        font-size: 2rem;
+    }
+
+    .index .products .film {
+        margin: 2rem 0 2rem 0
+    }
+
+    .index .products .film4 {
+        display: block;
+    }
+}
