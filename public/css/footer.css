@@ -5,7 +5,7 @@
 
 footer {
     display: flex;
-    height: 4rem;
+    height: 5rem;
     width: 97.5vw;
     align-items: center;
     background-color: black;
@@ -59,6 +59,10 @@ footer .links-footer .links-varios, footer .links-footer .links-redes-sociales {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+footer .links-footer .links-redes-sociales .link-logo {
+    padding: .1rem;
 }
 
 footer .links-redes-sociales .link-logo img {
