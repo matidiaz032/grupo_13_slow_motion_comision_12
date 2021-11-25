@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-.productDetail {
-    width: ;
-    height: ;
-    padding: ;
-    margin: auto;
-=======
 * {
     padding: 0;
     margin: 0;
@@ -410,5 +403,4 @@
         .contenido .icons i{
             font-size: 3rem;
         }
->>>>>>> a0c399f428eb819e51a688fca0fbba5718931e50
 }
