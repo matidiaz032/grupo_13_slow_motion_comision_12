@@ -18,6 +18,9 @@ let moviesRouter = require('./routes/moviesRouter.js')
 let cartRouter = require('./routes/cartRouter.js')
 let detailRouter = require('./routes/detailRouter.js')
 let adminRouter = require('./routes/adminRouter')
+let adminMovieRouter = require('./routes/adminMovieRouter')
+let adminSeriesRouter = require('./routes/adminSeriesRouter')
+let usersDataRouter = require('./routes/usersDataRouter')
 
     /* Routes */
 app.use('/', indexRouter)
@@ -28,7 +31,9 @@ app.use('/movies', moviesRouter)
 app.use('/cart', cartRouter)
 app.use('/detail', detailRouter)
 app.use('/admin', adminRouter)
-
+app.use('/adminmovie', adminMovieRouter)
+app.use('/adminseries', adminSeriesRouter)
+app.use('/users', usersDataRouter)
     /* Server */
 app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
 http://localhost:${PORT}`));

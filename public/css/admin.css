@@ -1,4 +1,5 @@
 .body-admin {
+    width: 100vw;
     background: linear-gradient(45deg, #000000, #2940D3);
 }
 
@@ -7,7 +8,6 @@
     height: 100vh;
     font-size: 28px;
     color: #fff;
-    background: var(--lightblack);
     position: fixed;
 }
 
@@ -26,14 +26,21 @@
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
-    position: absolute;
+    position: relative;
+    background: var(--black);
 }
 
 .nav-header .checkbtn {
     display: block;
     width: 100%;
     height: 100vh;
-    padding: 269px 0;
+    padding: 269px 9px;
+    background: var(--black);
+    z-index: 200;
+}
+
+.checkbtn .fa-bars {
+    display: none;
 }
 
 .flex-list {
@@ -43,24 +50,37 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    background: var(--lightblack);
+    background: var(--black);
     left: -100px;
     transition: all 1s;
 }
 
 .flex-list .li__flex-items {
-    margin: 4px;
-    padding: 4px;
+    display: inline-block;
+    width: 96vw;
+    margin: 15px 0 21px 26px;
+    padding: 20px 0;
 }
 
-.flex-list .li__flex-items a {
-    padding: 0 10px;
-    font-size: 15px;
+.flex-list .li__flex-items .ref-decoration {
+    border-bottom: 1px solid var(--blue);
+    color: var(--yellow);
+    padding: 10px 0;
+    text-decoration: none;
+}
+
+.ref-decoration:hover {
+    background: #fff;
+    color: var(--black) !important;
 }
 
 .flex-list .li__flex-items a i {
     padding: 0 10px;
-    font-size: 15px;
+    font-size: 30px;
+}
+
+.flex-list .li__flex-items a span {
+    font-size: 25px;
 }
 
 #check {
@@ -68,7 +88,7 @@
 }
 
 #check:checked ~ .flex-list {
-    left: 0;
+    left: 320px;
 }
 
 .img {
@@ -84,6 +104,8 @@
     width: 65%;
     height: 65%;
     margin: auto 0 auto 32px;
+    filter: drop-shadow(2px 4px 6px black);
+    z-index: -1;
 }
 
 .img span {
@@ -104,6 +126,8 @@
 .database .products {
     width: 75vw;
     height: 20vh;
+    border: none;
+    background: transparent;
 }
 
 .database .products .section__database {
@@ -111,6 +135,10 @@
     height: 100%;
     background: linear-gradient(-45deg, #000, #232323);
     border-radius: 20px;
+}
+
+.database .products .section__database:hover {
+    background: #fff;
 }
 
 .section__database .button-options {
@@ -121,25 +149,157 @@
     padding: 33px;
 }
 
-.section__database .button-options a {
+.section__database a {
     display: inline-block;
-    color: #fff;
+    color: var(--yellow);
     padding: 0 7px;
     margin: 0 7px;
 }
 
-.section__database .button-options a i {
-    width: 54px;
-    height: 40px;
+.section__database a:hover {
+    color: #000;
+}
+
+.section__database .button-options i {
     font-size: 40px;
     padding: 0 7px;
 }
 
-.button-options a span {
+.button-options span {
     display: none;
 }
 
-a span:hover {
+.block-footer {
+    display: block;
+    width: 100vw;
+    height: 10vh;
+    background: transparent;
+    box-shadow: none;
+}
+
+.flex-copyright {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px 0 0 15px;
+}
+
+.flex-copyright p {
     display: inline-block;
-    color: #fff;
+    font-size: 16px;
+    color: var(--yellow);
+    margin: 9px 7px;
+}
+
+.flex-copyright img {
+    width: 30px;
+    z-index: -1;
+    filter: drop-shadow(2px 4px 6px #000);
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .contain-header {
+        width: 100vw;
+        height: 10vh;
+        display: block;
+        background: var(--black);
+    }
+
+    .menu-header {
+        display: none;
+    }
+
+    .header-mobile {
+        width: 100vw;
+        height: 10vh;
+    }
+
+    .nav-header {
+        width: 100vw;
+        height: 100%;
+        padding: 10px 0;
+        margin: 0 0 10px 0;
+        flex-direction: row-reverse;
+    }
+
+    .nav-header .checkbtn {
+        display: inline-block;
+        font-size: 30px;
+        padding: 2px;
+        margin: 2px 13px 2px 0;
+        width: 5%;
+        height: 57%;
+    }
+
+    .checkbtn .fa-angle-right {
+        display: none;
+    }
+
+    .checkbtn .fa-bars {
+        display: inline-block;
+    }
+
+    .flex-list {
+        top: -1000px;
+        left: 43px;
+        margin-top: 12px;
+        z-index: -1;
+        justify-content: space-evenly;
+    }
+
+    #check:checked ~ .flex-list {
+        top: 0;
+        left: 43px;
+    }
+
+    .flex-list .li__flex-items {
+        width: 100vw;
+        display: block;
+        margin: 0 20px;
+    }
+
+    .img {
+        margin: 55px 0 0;
+    }
+
+    .section__database .button-options {
+        padding: 28px;
+    }
+
+    .section__database .button-options i {
+        font-size: 3em;
+    }
+
+}
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    
+    /* .header-mobile {
+        display: none;
+    }
+
+    .header-desktop {
+        width: 100vw;
+        height: 12vh;
+        display: flex;
+        flex-wrap: wrap;
+        background: var(--black);
+        border-end-end-radius: 25px;
+        border-bottom-left-radius: 25px;
+        justify-content: space-evenly;
+        align-content: center;
+    }
+
+    .header-desktop .special-input {
+        
+    }
+
+    .header-desktop .menu-header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: center;
+    } */
 }

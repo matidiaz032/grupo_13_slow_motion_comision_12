@@ -1,7 +1,7 @@
 let controller = {
     index: (req, res) => {
-        res.render('administrator', {
-            title: 'Admin - Page'
+        res.render('adminMovies', {
+            title: 'Admin - Page : Movie'
         })
     }
 }
