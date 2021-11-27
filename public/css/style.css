@@ -10,6 +10,9 @@
 @import url('productDetail.css');
 @import url('admin.css');
 @import url('profile.css');
+@import url('sinLog.css');
+
+
 :root {
     --black: #000000;
     --blue: #2940D3;
