@@ -10,8 +10,14 @@
 @import url('productDetail.css');
 @import url('admin.css');
 @import url('profile.css');
+<<<<<<< HEAD
 @import url('adminMovie.css');
 @import url('adminSeries.css');
+=======
+@import url('sinLog.css');
+
+
+>>>>>>> e7cbb515f9e70770ba298d1cf830718117578ee1
 :root {
     --black: #000000;
     --blue: #2940D3;

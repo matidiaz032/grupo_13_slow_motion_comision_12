@@ -18,24 +18,9 @@
     font-family: var(--averia);
 }
 
-.index .options .barOptions #inpOpt {
-    display: flex;
-    width: 15vw;
-    height: 17px;
-}
-
 .index .options .barOptions a {
     text-decoration: none;
     color: var(--blue);
-    transition-property: text-shadow;
-    transition-delay: 0s;
-    text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
-}
-
-.index .options .barOptions a:hover {
-    transition-property: text-shadow;
-    transition-delay: 0s;
-    text-shadow: 0px 0px 0px black,  0px 0px 0px black;
 }
 
 .index .options .barOptions #navOpt {
@@ -102,17 +87,6 @@
     color: var(--yellow);
     text-decoration: none;
     padding-left: 10vw;
-    transition-property: text-shadow;
-    transition-duration: 3s;
-    transition-delay: 0s;
-    text-shadow: 0px 0px 3px white,  0px 0px 3px white;
-}
-
-.index .products .film .text a:hover {
-    transition-property: text-shadow;
-    transition-duration: 3s;
-    transition-delay: 0s;
-    text-shadow: 0px 0px 0px white,  0px 0px 0px white;
 }
 
 .index .products .film .demo {
@@ -164,40 +138,22 @@
     
     .index .options .barOptions #navOpt {
         display: flex;
-        transition-property: text-shadow;
-        transition-duration: 3s;
-        transition-delay: 0s;
-        text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
     }
 
-    .index .options .barOptions #navOpt:hover {
-        transition-property: text-shadow;
-        transition-duration: 1s;
-        transition-delay: 0s;
-        text-shadow: 0px 0px 0px black,  0px 0px 0px black;
-    }
-    
     .index .options .barOptions #navOpt i {
         padding: 3px;
     }
 
     .index .products .film .demo img {
         width: 28vw;
-
     }
-    
-    .index .products .film .demo img:hover {
-        width: 30vw;
-        
-    }
-
 
     .index .products .film .demo .img3 {
         display: block;
     }
     
     .index .products .film3 {
-        display: block;
+        display: flex;
     }
 }
 
@@ -228,6 +184,30 @@
         font-size: 18px;
     }
 
+    .index .options .barOptions a {
+        transition-property: text-shadow;
+        transition-delay: 0s;
+        text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
+    }
+    
+    .index .options .barOptions a:hover {
+        transition-property: text-shadow;
+        transition-delay: 0s;
+        text-shadow: 0px 0px 0px black,  0px 0px 0px black;
+    }
+
+    .index .options .barOptions #navOpt {
+        transition-property: text-shadow;
+        transition-delay: 0s;
+        text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
+    }
+
+    .index .options .barOptions #navOpt:hover {
+        transition-property: text-shadow;
+        transition-delay: 0s;
+        text-shadow: 0px 0px 0px black,  0px 0px 0px black;
+    }
+
     .index .products {
         font-size: 2rem;
     }
@@ -236,7 +216,32 @@
         margin: 2rem 0 2rem 0
     }
 
-    .index .products .film4 {
-        display: block;
+    .index .products .film .text a {
+        padding-left: 10vw;
+        transition-property: text-shadow;
+        transition-duration: 3s;
+        transition-delay: 0s;
+        text-shadow: 0px 0px 3px white,  0px 0px 3px white;
     }
+    
+    .index .products .film .text a:hover {
+        transition-property: text-shadow;
+        transition-duration: 3s;
+        transition-delay: 0s;
+        text-shadow: 0px 0px 0px white,  0px 0px 0px white;
+    }
+
+    .index .products .film .demo{
+        justify-content: space-between;
+        margin: 0.5rem 0;
+    }
+
+    .index .products .film .demo img:hover {
+        transform: scale(1.05);
+    }
+
+    .index .products .film4 {
+        display: flex;
+    }
+
 }
