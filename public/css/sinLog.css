@@ -1,0 +1,168 @@
+.sinLog {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.sinLog .header-sinLog {
+    background-color: transparent;
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+}
+
+.sinLog .header-sinLog .btn-header {
+    background-color: var(--lightblue);
+    font-family: var(--averia);
+    font-size: 14px;
+    padding: 0.5rem 0.25rem;
+    margin: 0 0.25rem;
+    border-radius: 0.5rem;
+    color: var(--yellow);
+}
+
+.sinLog .header-sinLog .btn-header:hover {
+    background-color: var(--yellow);
+    color: var(--lightblue);
+}
+
+
+
+
+
+
+.sinLog .contain-section1 .section1 {
+    display: flex;
+    max-width: 95vw;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.sinLog .contain-section1 .section1 .img {
+    height: 18rem;
+    width: 31vw;
+    background-size: 100% 100%;
+    box-shadow: inset 0px -30px 20px -7px rgba(0,0,0,1), inset 0px 20px 20px -7px rgba(0,0,0,1);
+}
+
+.sinLog .contain-section1 .section1 .img1 {
+    background-image: url('../img/peliculas/luca.jpg');
+}
+
+.sinLog .contain-section1 .section1 .img2 {
+    background-image: url('../img/peliculas/blackPanther.jpg');
+}
+
+.sinLog .contain-section1 .section1 .img3 {
+    background-image: url('../img/peliculas/joker700.jpg');
+}
+
+.sinLog .contain-section1 .section1 .img4 {
+    background-image: url('../img/peliculas/unEspiayMedio.jpg');
+    display: none;
+}
+
+
+
+
+
+
+.sinLog .contain-section1 .logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    height: 12rem;
+    width: 100%;
+    top: 3rem;
+}
+
+.sinLog .contain-section1 .logo #description1 {
+    width: 60vw;
+    color: var(--blue);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 1.1rem;
+    font-family: var(--averia);
+    text-align: center;
+}
+
+.sinLog .contain-section1 .logo .logA {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sinLog .contain-section1 .logo .logA img{
+    height: 5rem;
+}
+
+.sinLog .contain-section1 .logo .logA p {
+    display: flex;
+    width: 3.75rem;
+    font-size: 2rem;
+    font-family: var(--staatliches);
+    color: var(--blue);
+    text-align: center;
+    text-shadow: 0px 0px 1rem var(--blue),  0px 0px 0.2rem black
+}
+
+
+
+
+
+.sinLog .contain-section2 .section2 {
+    display: flex;
+    max-width: 95vw;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.sinLog .contain-section2 .section2 .img {
+    height: 18rem;
+    width: 31vw;
+    background-size: 100% 100%;
+    box-shadow: inset 0px -30px 20px -7px rgba(0,0,0,1), inset 0px 20px 20px -7px rgba(0,0,0,1);
+}
+
+.sinLog .contain-section2 .section2 .img1 {
+    background-image: url('../img/peliculas/luca.jpg');
+}
+
+.sinLog .contain-section2 .section2 .img2 {
+    background-image: url('../img/peliculas/blackPanther.jpg');
+}
+
+.sinLog .contain-section2 .section2 .img3 {
+    background-image: url('../img/peliculas/joker700.jpg');
+}
+
+.sinLog .contain-section2 .section2 .img4 {
+    background-image: url('../img/peliculas/unEspiayMedio.jpg');
+    display: none;
+}
+
+.sinLog .contain-section2 .logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    height: 12rem;
+    width: 100%;
+    top: 3rem;
+}
+
+.sinLog .contain-section2 .logo #description2 {
+    width: 60vw;
+    color: var(--blue);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 1.1rem;
+    font-family: var(--averia);
+    text-align: center;
+}

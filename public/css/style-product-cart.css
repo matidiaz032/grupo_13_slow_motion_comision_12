@@ -3,6 +3,7 @@
 }
 
 .body-cart {
+    width: 100vw;
     background: var(--black);
 }
 
@@ -45,6 +46,8 @@ span a:hover {
 }
 
 .purchase-detail {
+    display: block;
+    width: 100vw;
     background: var(--lightblack);
 }
 
@@ -223,12 +226,34 @@ span a:hover {
     border-radius: 15px;
 }
 
-
-
 .to-pay:hover {
     cursor: pointer;
     background: var(--blue);
 }
+
+/* .purchase-detail {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    background: var(--lightblack);
+}
+
+.purchase-detail .detail-cart {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.purchase-detail .detail-cart .section__article {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.purchase-detail .detail-cart .section__article .box__movie {
+    width: 100%;
+} */
 
 @media only screen and (min-width: 768px) and (max-width: 1023px){
     .section-cart {
@@ -267,6 +292,11 @@ span a:hover {
         text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
     }
     
+
+    .detail-cart {
+        height: 65vh;
+    }
+
     .section__article {
         align-items: flex-start;
     }
@@ -368,14 +398,21 @@ span a:hover {
         text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
     }
 
+    .purchase-detail {
+        width: 100vw
+    }
+
+    .detail-cart {
+        height: 78vh;
+    }
+
     .section__article {
         align-items: flex-start;
     }
     
     .box__movie:first-child {
-        width: 600px;
-        height: 300px;
-        margin: auto 0;
+        width: 475px;
+        height: 250px;
     }
 
     .box__movie:nth-child(2) {
@@ -383,19 +420,19 @@ span a:hover {
     }
 
     .box__movie .price {
-        font-size: 55px;
+        font-size: 45px;
     }
 
     .box__movie .type-add {
         display: inline-block;
         font-size: 15px;
-        margin-top: 50px;
+        margin-top: 15px;
     }
 
     .box__movie:last-child{
-        font-size: 15px;
+        font-size: 10px;
         padding: 10px;
-        margin: 120px 0;
+        margin: 10px 0;
     }
 
     .box__movie .title-movie {
@@ -409,19 +446,19 @@ span a:hover {
     .modify-selection {
         justify-content: center;
         padding: 10px;
-        margin: 10px 35px;
+        margin: 10px 0;
     }
 
     .modify-selection .delete {
-        font-size: 20px;
+        font-size: 1em;
         padding: 15px;
-        margin: 0 65px;
+        margin: 0 50px;
     }
 
     .modify-selection .modify {
-        font-size: 20px;
+        font-size: 1em;
         padding: 15px;
-        margin: 0 65px;
+        margin: 0 50px;
     }
 
     .total-cart {

@@ -9,6 +9,12 @@
 @import url('indexSeries.css');
 @import url('productDetail.css');
 @import url('admin.css');
+@import url('profile.css');
+@import url('adminMovie.css');
+@import url('adminSeries.css');
+@import url('sinLog.css');
+
+
 :root {
     --black: #000000;
     --blue: #2940D3;

@@ -18,6 +18,11 @@ let moviesRouter = require('./routes/moviesRouter.js')
 let cartRouter = require('./routes/cartRouter.js')
 let detailRouter = require('./routes/detailRouter.js')
 let adminRouter = require('./routes/adminRouter')
+let profileRouter = require('./routes/profileRouter')
+let usersDataRouter = require('./routes/usersDataRouter')
+let adminSeriesRouter = require('./routes/adminSeriesRouter')
+let adminMovieRouter = require('./routes/adminMovieRouter')
+let sinLogRouter = require('./routes/sinLogRouter.js')
 
     /* Routes */
 app.use('/', indexRouter)
@@ -28,6 +33,11 @@ app.use('/movies', moviesRouter)
 app.use('/cart', cartRouter)
 app.use('/detail', detailRouter)
 app.use('/admin', adminRouter)
+app.use('/profile', profileRouter)
+app.use('/adminmovies', adminMovieRouter)
+app.use('/adminseries', adminSeriesRouter)
+app.use('/motionusers', usersDataRouter)
+app.use('/sinLog', sinLogRouter)
 
     /* Server */
 app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
