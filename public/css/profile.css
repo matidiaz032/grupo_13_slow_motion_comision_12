@@ -47,8 +47,25 @@
 .user-profile .container-user-favorite .user-favorites {
     display: flex;
     padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.user-profile .container-user-favorite h3 {
+    padding: .5rem 1rem;
 }
 
 .user-profile .container-user-favorite .user-favorites img {
-    width: 80%;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .user-profile .profile-container {
+        margin-top: 7rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .user-profile .profile-container {
+        margin-top: 8rem;
+    }
 }
