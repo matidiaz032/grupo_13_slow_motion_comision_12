@@ -23,6 +23,7 @@ let usersDataRouter = require('./routes/usersDataRouter')
 let adminSeriesRouter = require('./routes/adminSeriesRouter')
 let adminMovieRouter = require('./routes/adminMovieRouter')
 let sinLogRouter = require('./routes/sinLogRouter.js')
+let formRouter = require('./routes/formRouter')
 
     /* Routes */
 app.use('/', indexRouter)
@@ -38,6 +39,7 @@ app.use('/adminmovies', adminMovieRouter)
 app.use('/adminseries', adminSeriesRouter)
 app.use('/motionusers', usersDataRouter)
 app.use('/sinLog', sinLogRouter)
+app.use('/form', formRouter)
 
     /* Server */
 app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}

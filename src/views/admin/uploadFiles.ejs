@@ -1,0 +1,39 @@
+<%- include('../partials/head') %>
+<body class="admin-form">
+    <div class="form__files-desktop">
+        <div class="form-caption">
+            <form action="" method="post" class="upload-files">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="Nombre" id="nombre">
+                <label for="description">Descripcion:</label>
+                <textarea type="text" name="description" id="comentario">contenido</textarea>
+                <label for="image">Cargar imagen de portada</label>
+                <input type="file" name="image" accept=".jpg">
+                <label for="category">Seleccione una categoria:</label>
+                <select name="category" id="category">
+                    <option value="1">Terror</option>
+                    <option value="2">Suspenso</option>
+                    <option value="3">Dibujo animados</option>
+                    <option value="4">Accion</option>
+                    <option value="5">Comedia</option>
+                </select>
+                <label for="idiom">Idioma</label>
+                <select name="idiom" id="idiom">
+                    <option value="1">Español</option>
+                    <option value="2">Ingles</option>
+                    <option value="3">otro odioma</option>
+                </select>
+                <label for="price">Indique su precio $:</label>
+                <input type="number" name="price" id="price">
+            </form>
+        </div>
+    </div>
+    <div class="form__files">
+        <div class="error">
+            <p>
+                Lo siento, solo es posible cargar archivos desde su ordenador
+            </p>
+        </div>
+    </div>
+</body>
+</html>
