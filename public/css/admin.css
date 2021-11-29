@@ -154,7 +154,7 @@
     height: 100%;
     display: block;
     text-align: center;
-    /* padding: 33px;  */
+    padding: 33px; 
 }
 
 .section__database a {
