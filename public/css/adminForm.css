@@ -32,13 +32,38 @@
 
 @media only screen and (min-width:1024px) and (max-width:1440px) {
     
-    .form__files:last-child {
+    .form__files {
         display: none;
     }
 
-    .form__files:first-child {
+    .form__files-desktop {
         display: block;
-        width: 50%;
-        height: 50%;
+        width: 100%;
+        height: 100%;
+        padding: 3% 25%;
+    }
+
+    .form__files-desktop .form-caption {
+        display: block;
+        
+    }
+
+    .form__files-desktop .form-caption .upload-files {
+        background: var(--lightblack);
+        border-radius: 25px;
+        width: 600px;
+        display: flex;
+        height: 500px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .form__files-desktop .form-caption .upload-files label {
+        color: var(--yellow);
+        margin: 0;
+        padding: 0;
     }
 }
