@@ -23,8 +23,12 @@ let controller = {
         res.render('./admin/uploadFiles', {
             title: 'Admin - Page : Form'
         })
+    },
+    statistics: (req, res) => {
+        res.render('./admin/adminStatistics', {
+            title: 'Admin - Page : statistics'
+        })
     }
-
 }
 
 module.exports = controller

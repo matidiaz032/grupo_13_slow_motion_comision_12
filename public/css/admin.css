@@ -1,6 +1,7 @@
 .body-admin {
     width: 100vw;
     background: linear-gradient(45deg, #000000, #2940D3);
+    overflow-x: hidden;
 }
 
 .contain-header {
@@ -353,6 +354,7 @@
         border-radius: 25px;
         font-size: 20px;
         padding: 0 5px;
+        font-family: var(--averia);
     }
 
     .header-desktop .icons-options {

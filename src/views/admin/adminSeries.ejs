@@ -1,6 +1,10 @@
 <%- include('../partials/head') %>
 
-<body class="body-admin-series">
+<body class="body-admin">
+    <!-- Header -->
+    <%- include ('../partials/adminHeader') %>
+    <!-- Logo mobile and tablet -->
+    <%- include ('../partials/logoMobileAdmin') %> 
     <div class="all-section-series">
         <section class="statistic__series">
             <article class="table__statistic-series">
@@ -53,13 +57,21 @@
         <section class="statistic__series">
             <article class="addition-board">
                 <a href="#">
-                    <span class="addition-delete">agregar o eliminar Series
+                    <span class="addition">Agregar Series
                         <i class="fas fa-plus-circle"></i>
+                    </span>
+                </a>
+            </article>
+            <article class="delete-board">
+                <a href="#">
+                    <span class="delete">Eliminar Series
+                        <i class="fas fa-minus"></i>
                     </span>
                 </a>
             </article>
         </section>
     </div>
+    <!-- Footer -->
     <%- include('../partials/adminFooter') %>
 </body>
 </html>
