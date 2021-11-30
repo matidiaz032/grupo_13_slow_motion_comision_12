@@ -34,12 +34,12 @@ ___
  
 ## Enlace a la retrospectiva
 
--[Sprint 1](/retroalimentacion-weekly/sprint1.md)
+-[Sprint 1](./sprint1.md)
 
 
--[Sprint 2](/retroalimentacion-weekly/sprint2.md)
+-[Sprint 2](./sprint2.md)
 
 
--[Sprint 3](/retroalimentacion-weekly/weekly.md)
+-[Sprint 3](./weekly.md)
 
 
