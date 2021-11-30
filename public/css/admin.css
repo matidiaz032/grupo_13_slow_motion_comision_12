@@ -140,6 +140,7 @@
     border: none;
     background: transparent;
     padding: 5px 0;
+    margin-top: 12vh;   /* Agregado */
 }
 
 .database .products .section__database {
@@ -389,12 +390,14 @@
         flex-direction: row;
         flex-wrap: wrap;
         padding: 0;
+        margin-bottom: 30vh; /* Agregado */
     }
 
     .body-admin .database .products {
         width: 50%;
         height: 50%;
         padding: 10px;
+        margin-top: 12vh;  /* Agregado */
     }
 
 }
