@@ -18,6 +18,11 @@ let controller = {
         res.render('./admin/motionUsers', {
             title: 'Admin - Page : Users'
         })
+    },
+    form: (req, res) => {
+        res.render('./admin/uploadFiles', {
+            title: 'Admin - Page : Form'
+        })
     }
 
 }

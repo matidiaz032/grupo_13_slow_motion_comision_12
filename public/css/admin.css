@@ -179,7 +179,6 @@
 
 .block-footer {
     display: block;
-    width: 100vw;
     height: 10vh;
     background: transparent;
     box-shadow: none;
@@ -206,7 +205,7 @@
 }
 
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
 
     .contain-header {
         width: 100vw;
@@ -287,6 +286,11 @@
 }
 @media only screen and (min-width: 1024px) /* and (max-width: 1440px) */ {
     
+    .contain-header {
+        width: 100vw;
+        height: 10vh;
+    }
+
     .header-mobile {
         width: 0;
         height: 0;
