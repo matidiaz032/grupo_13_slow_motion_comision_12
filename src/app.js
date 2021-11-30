@@ -20,7 +20,6 @@ let detailRouter = require('./routes/detailRouter.js')
 let adminRouter = require('./routes/adminRouter')
 let profileRouter = require('./routes/profileRouter')
 let sinLogRouter = require('./routes/sinLogRouter.js')
-let formRouter = require('./routes/formRouter')
 
     /* Routes */
 app.use('/', indexRouter)
@@ -33,7 +32,6 @@ app.use('/detail', detailRouter)
 app.use('/admin', adminRouter)
 app.use('/profile', profileRouter)
 app.use('/sinLog', sinLogRouter)
-app.use('/form', formRouter)
 
     /* Server */
 app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
