@@ -61,6 +61,7 @@
     background: var(--black);
     left: -100px;
     transition: all 1s;
+    font-family: var(--averia);
 }
 
 .flex-list .li__flex-items {
@@ -103,7 +104,7 @@
     display: flex;
     width: 100%;
     height: 20vh;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
 }
 
@@ -118,7 +119,8 @@
 
 .img span {
     color: var(--yellow);
-    margin: auto 0 auto 32px
+    margin: auto 0 auto 32px;
+    font-family: var(--averia);
 }
 
  .database { 
@@ -136,6 +138,7 @@
     height: 20vh;
     border: none;
     background: transparent;
+    padding: 5px 0;
 }
 
 .database .products .section__database {
@@ -188,7 +191,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 5px 0 0 15px;
+    margin: 39px 0 0 15px;
 }
 
 .flex-copyright p {
@@ -196,6 +199,7 @@
     font-size: 16px;
     color: var(--yellow);
     margin: 9px 7px;
+    font-family: var(--averia);
 }
 
 .flex-copyright img {
@@ -389,10 +393,6 @@
         width: 50%;
         height: 50%;
         padding: 10px;
-    }
-
-    .products .section__database a {
-        /* margin: 27px 7px; */
     }
 
 }
