@@ -121,15 +121,15 @@
     margin: auto 0 auto 32px
 }
 
- .database { 
-    /* height: 10rem; */   
+.database { 
+    height: 100vh;   
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-around;
     padding-left: 30px;
-} 
+}
 
 .database .products {
     width: 75vw;
@@ -150,11 +150,11 @@
 }
 
 .section__database .button-options {
-     width: 100%;
+    width: 100%;
     height: 100%;
     display: block;
     text-align: center;
-    /* padding: 33px;  */
+    padding: 33px;
 }
 
 .section__database a {
@@ -366,7 +366,7 @@
 
     .database {
         width: 100vw;
-        /*height: 66vh;*/
+        height: 66vh;
         flex-direction: row;
         flex-wrap: wrap;
         padding: 0;
@@ -379,7 +379,7 @@
     }
 
     .products .section__database a {
-        /* margin: 27px 7px; */
+        margin: 27px 7px;
     }
 
 }
