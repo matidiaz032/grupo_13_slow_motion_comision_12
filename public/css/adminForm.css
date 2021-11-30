@@ -1,0 +1,96 @@
+ .form__files-desktop {
+    display: none;
+}
+
+.form__files {
+    padding: 7.1em 0;
+    margin: 0 0 0 2em;
+}
+
+.form__files .error {
+        width: 100%;
+        height: 100px;
+        border: none;
+        border-radius: 25px;
+        background: var(--lightblack)
+}
+
+
+.form__files .error p {
+    color: var(--yellow);
+    font-family: var(--averia);
+    padding: 37px 14px;
+    text-align: center;
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px) {
+    .form__files {
+        margin: 0 1em;
+    }
+}
+
+@media only screen and (min-width:1024px) /* and (max-width:1440px) */ { 
+    
+    .form__files {
+        display: none;
+    }
+
+    .form__files-desktop {
+        display: block;
+        width: 97%;
+        height: 100%;
+    }
+
+    .form__files-desktop .form-caption {
+        padding: 0 0 0 70px;
+    }
+
+    .form__files-desktop .form-caption .upload-files {
+        background: linear-gradient(45deg, #000, #232323);
+        border-radius: 25px;
+        width: 500px;
+        display: flex;
+        height: 500px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-around;
+        align-items: flex-start;
+        box-shadow: 1px 1px 8px 0 var(--black);
+        margin: 0 auto;
+        font-family: var(--averia);
+    }
+
+    .form__files-desktop .form-caption .upload-files .contain__date {
+        width: 400px;
+        color: var(--yellow);
+    }
+
+    .form__files-desktop .form-caption .upload-files .contain__date label {
+        color: var(--yellow);
+        margin: 0;
+        padding: 0;
+    }
+
+    .form__files-desktop .form-caption .upload-files .contain__date .input {
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+    }
+
+    .form__files-desktop .form-caption .upload-files .contain__date .input:first-child {
+        width: 400px;
+        padding: 6px 15px;
+    }
+
+    .form__files-desktop .form-caption .upload-files .contain__date .input-enter {
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        padding: 6px 15px;
+    }
+}
