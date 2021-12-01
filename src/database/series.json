@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "titulo": "Avengers",
+        "archivo": [
+            {
+                "temporada1": {
+                    "capitulo1": "jsdhahjkfb.mp4",
+                    "capitulo2": "jsdhahjkfb.mp4",
+                    "capitulo3": "jfdkhasjkfhjsdalhfjsda.mp4"
+                },
+                "temporada2": {
+                    "capitulo1": "jsdhahjkfb.mp4"
+                },
+                "temporada3": {
+                    "capitulo1": "jsdhahjkfb.mp4"
+                }
+            }
+        ],
+        "descripcion": "Los Vengadores fueron un equipo compuesto por personas extraordinarias, individuos alterados u otras características especiales, que se encargaba de proteger la Tierra de las amenazas internacionales o alienígenas. ... Más adelante, el equipo ganó nuevos reclutas y se trasladó al Centro de los Nuevos Vengadores.",
+        "imagen": "./../public/img/peliculas/EndGame356x512.jpg",
+        "genero": "Ciencia Ficcion",
+        "precio": 500,
+        "idioma": "Ingles",
+        "anio": "2015",
+        "director": "Juancito el carpintero",
+        "subtitulo": {
+            "ingles": true,
+            "espaniol": true
+        }
+    }
+]
