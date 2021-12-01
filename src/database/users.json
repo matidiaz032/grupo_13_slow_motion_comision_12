@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "nombre": "Matias",
+        "apellido": "Diaz",
+        "email": "matidiazee@gmail.com",
+        "categoria": "admin",
+        "telefono": "08106669955",
+        "avatar": "./../public/img/default-avatar.jpg"
+    }
+]

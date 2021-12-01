@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "titulo": "Avengers",
+        "archivo": {
+            "1": "jsdhahjkfb.mp4"
+        },
+        "descripcion": "Después de los eventos devastadores de Avengers: Infinity War, el universo está en ruinas debido a las acciones de Thanos, el Titán Loco. Con la ayuda de los aliados que quedaron, los Vengadores deberán reunirse una vez más para intentar detenerlo y restaurar el orden en el universo de una vez por todas.",
+        "imagen": "./../public/img/peliculas/EndGame356x512.jpg",
+        "genero": "Ciencia Ficcion",
+        "precio": 500,
+        "idioma": "Ingles",
+        "anio": "2015",
+        "director": "Anthony y Joe Russo",
+        "subtitulo": {
+            "ingles": true,
+            "espaniol": true
+        }
+    }
+]
