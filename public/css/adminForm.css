@@ -3,7 +3,7 @@
 }
 
 .form__files {
-    padding: 7.1em 0;
+    padding: 7.1em 0 9.4em;
     margin: 0 0 0 2em;
 }
 
@@ -25,6 +25,7 @@
 
 @media only screen and (min-width:768px) and (max-width:1024px) {
     .form__files {
+        padding-bottom: 6em;
         margin: 0 1em;
     }
 }
