@@ -102,32 +102,6 @@
     },
     {
         "id": "5",
-        "titulo": "Anabelle 2",
-        "archivo": {
-            "1": "default.mp4"
-        },
-        "descripcion": "Doce años después de la muerte de su hija y aún tremendamente doloridos por su perdida, un fabricante de muñecas y su mujer acogen en su casa a una monja y a seis niñas huérfanas. Allí, la muñeca Annabelle, poseída por un espíritu, ataca a las niñas huérfanas.",
-        "imagen": "./../public/img/peliculas/BlackPanther.jpg",
-        "genero": "Terror",
-        "duracion": "1h 49m",
-        "Valoracion": "4.7",
-        "precio": {
-            "compra": "700",
-            "alquiler" : "350"
-        },
-        "idioma": {
-            "original": "ingles",
-            "doblaje": "latino",
-            "subtitulo": "latino"
-        },
-        "anio": "2017",
-        "director": "David F. Sandberg",
-        "subtitulo": {
-            "ingles": true
-        }
-    },
-    {
-        "id": "6",
         "titulo": "The Simpsons",
         "archivo": {
             "1": "default.mp4"
