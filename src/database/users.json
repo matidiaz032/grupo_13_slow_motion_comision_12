@@ -1,11 +1,38 @@
 [
     {
         "id": 1,
+        "nombre": "Elias",
+        "apellido": "Galeano",
+        "email": "matidiazee@gmail.com",
+        "categoria": "admin",
+        "telefono": "+54 9 1164232503",
+        "avatar": "./../public/img/default-avatar.jpg"
+    },
+    {
+        "id": 2,
         "nombre": "Matias",
         "apellido": "Diaz",
         "email": "matidiazee@gmail.com",
         "categoria": "admin",
-        "telefono": "08106669955",
+        "telefono": "+54 9 1144089956",
+        "avatar": "./../public/img/default-avatar.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Ivana",
+        "apellido": "Benitez",
+        "email": "matidiazee@gmail.com",
+        "categoria": "admin",
+        "telefono": "+54 9 2216384600",
+        "avatar": "./../public/img/default-avatar.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Guillermo",
+        "apellido": "Montaña",
+        "email": "AngelGuillermoMontania@gmail.com",
+        "categoria": "admin",
+        "telefono": "+54 9 2644576693",
         "avatar": "./../public/img/default-avatar.jpg"
     }
 ]
