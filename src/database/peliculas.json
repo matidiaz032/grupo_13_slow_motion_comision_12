@@ -100,6 +100,8 @@
             "ingles": true
         }
     },
+    
+    
     {
         "id": "5",
         "titulo": "The Simpsons",
@@ -125,5 +127,141 @@
         "subtitulo": {
             "ingles": true
         }
+    },
+
+    {
+        "id": "6",
+        "titulo": "Cruella",
+        "archivo": {
+            "1": "default.mp4"
+        },
+        "descripcion": "Decidida a convertirse en una exitosa diseñadora de moda, una joven y creativa estafadora llamada Estella se asocia con un par de ladrones para sobrevivir en las calles de Londres.",
+        "imagen": "./../public/img/peliculas/Cruella.jpg",
+        "genero": "Comedia",
+        "duracion": "1h 27m",
+        "Valoracion": "4.7",
+        "precio": {
+            "compra": "700",
+            "alquiler" : "350"
+        },
+        "idioma": {
+            "original": "inglés",
+            "doblaje": "latino",
+            "subtitulo": "latino"
+        },
+        "anio": "2021",
+        "director": "Craig Gilespie",
+        "subtitulo": {
+            "ingles": true
+        }
+    },
+
+    {
+        "id": "7 ",
+        "titulo": "Luca",
+        "archivo": {
+            "1": "default.mp4"
+        },
+        "descripcion": "Luca es un monstruo marino que vive debajo de un pueblo de la costa italiana. Cuando sale a la superficie, adquiere una apariencia humana, y conoce a un nuevo amigo, igual que él. Juntos emprenden una aventura entre humanos que odian a los monstruos.",
+        "imagen": "./../public/img/peliculas/luca.jpg",
+        "genero": "Infantil",
+        "duracion": "1h 35m",
+        "Valoracion": "6.9",
+        "precio": {
+            "compra": "700",
+            "alquiler" : "350"
+        },
+        "idioma": {
+            "original": "Latino",
+            "doblaje": "inglés",
+            "subtitulo": "null"
+        },
+        "anio": "2021",
+        "director": "Enrico Casarosa",
+        "subtitulo": {
+            "ingles": true
+        }
+    },
+
+    {
+        "id": "8 ",
+        "titulo": "Mortal Kombat",
+        "archivo": {
+            "1": "default.mp4"
+        },
+        "descripcion": "Cole Young, el luchador de MMA, acostumbrado a recibir palizas por dinero, desconoce su ascendencia, y tampoco sabe por qué el emperador Shang Tsung de Outworld ha enviado a su mejor guerrero, Sub-Zero, un Cryomancer sobrenatural, para dar caza a Cole",
+        "imagen": "./../public/img/peliculas/Mortalkombat720x1080.jpg",
+        "genero": "Acción",
+        "duracion": "1h 50m",
+        "Valoracion": "7.1",
+        "precio": {
+            "compra": "700",
+            "alquiler" : "350"
+        },
+        "idioma": {
+            "original": "Inglés",
+            "doblaje": "Latino",
+            "subtitulo": "espaniol"
+        },
+        "anio": "2021",
+        "director": "Simon McQuoid",
+        "subtitulo": {
+            "ingles": true
+        }
+    },
+
+    {
+        "id": "9 ",
+        "titulo": "Bajo el mismo techo",
+        "archivo": {
+            "1": "default.mp4"
+        },
+        "descripcion": "Nadia y Adrián se divorcian, pero tienen que seguir viviendo juntos bajo el mismo techo al no lograr vender su casa y no tener suficiente dinero para irse a otro sitio.",
+        "imagen": "./../public/img/peliculas/BajoMismoTecho.jpg",
+        "genero": "Comedia",
+        "duracion": "1h 37m",
+        "Valoracion": "6.1",
+        "precio": {
+            "compra": "700",
+            "alquiler" : "350"
+        },
+        "idioma": {
+            "original": "Espaniol",
+            "doblaje": "inglés",
+            "subtitulo": "espaniol"
+        },
+        "anio": "2019",
+        "director": "Juana Macias",
+        "subtitulo": {
+            "ingles": true
+        }
+    },
+
+    {
+        "id": "10 ",
+        "titulo": "Bajo el mismo techo",
+        "archivo": {
+            "1": "default.mp4"
+        },
+        "descripcion": "Nadia y Adrián se divorcian, pero tienen que seguir viviendo juntos bajo el mismo techo al no lograr vender su casa y no tener suficiente dinero para irse a otro sitio.",
+        "imagen": "./../public/img/peliculas/BajoMismoTecho.jpg",
+        "genero": "Comedia",
+        "duracion": "1h 37m",
+        "Valoracion": "6.1",
+        "precio": {
+            "compra": "700",
+            "alquiler" : "350"
+        },
+        "idioma": {
+            "original": "Espaniol",
+            "doblaje": "inglés",
+            "subtitulo": "espaniol"
+        },
+        "anio": "2019",
+        "director": "Juana Macias",
+        "subtitulo": {
+            "ingles": true
+        }
     }
+    
 ]
