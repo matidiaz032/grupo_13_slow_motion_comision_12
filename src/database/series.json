@@ -1,214 +1,235 @@
 [
     {
         "id": 1,
-        "titulo": "Black Mirror",
-        "temporadas": [
+        "title": "Black Mirror",
+        "seasons": [
             {
-                "temporada1": {
+                "season1": {
                     "capitulo1": "jsdhahjkfb.mp4",
                     "capitulo2": "jsdhahjkfb.mp4",
                     "capitulo3": "jfdkhasjkfhjsdalhfjsda.mp4"
                 },
-                "temporada2": {
+                "season2": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 },
-                "temporada3": {
+                "season3": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 }
             }
         ],
-        "trailer": "archivo.jpeg",
-        "descripcion": "El lado oscuro de la era tecnológica en la que se vive: la paranoia de ser vigilados como en un panóptico, los usos terroristas de las nuevas herramientas y su relación con la experiencia cotidiana.",
-        "imagen": "./../public/img/series/BlackMirror720x1080.jpg",
-        "genero": "Ciencia Ficcion",
-        "precio": 500,
-        "idioma": "Inglés",
-        "anio": "2011",
-        "director": "Charlie Brooker",
-        "subtitulo": {
-            "ingles": true,
-            "espaniol": true
-        }
+        "trailer": "seasons.jpeg",
+        "description": "El lado oscuro de la era tecnológica en la que se vive: la paranoia de ser vigilados como en un panóptico, los usos terroristas de las nuevas herramientas y su relación con la experiencia cotidiana.",
+        "image": "/img/series/BlackMirror720x1080.jpg",
+        "gender": "Ciencia Ficcion",
+        "price": {
+            "buy": "900",
+            "rental" : "450"
+        },
+        "idiom": {
+            "original": "ingles",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2011",
+        "director": "Charlie Brooker"
     }, 
     {
         "id": 2,
-        "titulo": "Friends",
-        "archivo": [
+        "title": "Friends",
+        "seasons": [
             {
-                "temporada1": {
+                "season1": {
                     "capitulo1": "jsdhahjkfb.mp4",
                     "capitulo2": "jsdhahjkfb.mp4",
                     "capitulo3": "jfdkhasjkfhjsdalhfjsda.mp4"
                 },
-                "temporada2": {
+                "season2": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 },
-                "temporada3": {
+                "season3": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 }
             }
         ],
-        "descripcion": "Tres hombres y tres mujeres jóvenes son mejores amigos y viven en el mismo conjunto de apartamentos. Ellos enfrentan la vida y el amor en la ciudad de Nueva York y se involucran en los asuntos personales de los demás, donde incluso a veces intercambian novios o novias, lo que algunas veces genera situaciones que las personas comunes quizás nunca experimentan, especialmente durante las rupturas.",
-        "imagen": "./../public/img/series/friends.jpg",
-        "genero": "Comedia",
-        "precio": 500,
-        "idioma": "Inglés",
-        "anio": "2011",
-        "director": "Gary Halvorson,Kevin S. Bright ,Gail Mancuso, Michael Lembeck",
-        "subtitulo": {
-            "ingles": true,
-            "espaniol": true
-        }
+        "description": "Tres hombres y tres mujeres jóvenes son mejores amigos y viven en el mismo conjunto de apartamentos. Ellos enfrentan la vida y el amor en la ciudad de Nueva York y se involucran en los asuntos personales de los demás, donde incluso a veces intercambian novios o novias, lo que algunas veces genera situaciones que las personas comunes quizás nunca experimentan, especialmente durante las rupturas.",
+        "image": "/img/series/friends.jpg",
+        "gender": "Comedia",
+        "price": {
+            "buy": "800",
+            "rental" : "400"
+        },
+        "idiom": {
+            "original": "ingles",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2011",
+        "director": "Gary Halvorson,Kevin S. Bright ,Gail Mancuso, Michael Lembeck"
     },
     {
         "id": 3,
-        "titulo": "Sex Education",
-        "archivo": [
+        "title": "Sex Education",
+        "seasons": [
             {
-                "temporada1": {
+                "season1": {
                     "capitulo1": "jsdhahjkfb.mp4",
                     "capitulo2": "jsdhahjkfb.mp4",
                     "capitulo3": "jfdkhasjkfhjsdalhfjsda.mp4"
                 },
-                "temporada2": {
+                "season2": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 },
-                "temporada3": {
+                "season3": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 }
             }
         ],
-        "descripcion": "Sex Education gira en torno a Otis, un adolescente calificado como bicho raro en el instituto, a lo que se le une el hecho de ser virgen. Sin embargo, este vive con su madre sexóloga, por lo que siempre ha tenido un amplio conocimiento respecto al tema.",
-        "imagen": "./../public/img/series/sexEducation.jpg",
-        "genero": "Drama",
-        "precio": 500,
-        "idioma": "Inglés",
-        "anio": "2019",
-        "director": "Ben Taylor",
-        "subtitulo": {
-            "ingles": true,
-            "espaniol": true
-        }
+        "description": "Sex Education gira en torno a Otis, un adolescente calificado como bicho raro en el instituto, a lo que se le une el hecho de ser virgen. Sin embargo, este vive con su madre sexóloga, por lo que siempre ha tenido un amplio conocimiento respecto al tema.",
+        "image": "/img/series/sexEducation.jpg",
+        "gender": "Drama",
+        "price": {
+            "buy": "700",
+            "rental" : "350"
+        },
+        "idiom": {
+            "original": "ingles",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2019",
+        "director": "Ben Taylor"
     },
     {
         "id": 4,
-        "titulo": "Vikings",
-        "archivo": [
+        "title": "Vikings",
+        "seasons": [
             {
-                "temporada1": {
+                "season1": {
                     "capitulo1": "jsdhahjkfb.mp4",
                     "capitulo2": "jsdhahjkfb.mp4",
                     "capitulo3": "jfdkhasjkfhjsdalhfjsda.mp4"
                 },
-                "temporada2": {
+                "season2": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 },
-                "temporada3": {
+                "season3": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 }
             }
         ],
-        "descripcion": "El vikingo Ragnar Lothbrok es un joven agricultor y hombre de familia que se siente frustrado por las políticas de Earl Haraldson, el conde del lugar que envía a sus invasores vikingos al este de los países bálticos y Rusia, cuyos residentes son pobres como los escandinavos. Ragnar prefiere ir al oeste, al otro lado del océano, para descubrir nuevas civilizaciones. Con la ayuda de su amigo Floki, Ragnar construye una flota de barcos que lo ayudará a alcanzar el mundo occidental. A través de los años Ragnar, que dice ser un descendiente directo del dios Odín, continúa luchando con Earl hasta que los dos se enfrentan en la última batalla por la supremacía.",
-        "imagen": "./../public/img/series/Vikings1920x1080.jpg",
-        "genero": "Drama",
-        "precio": 500,
-        "idioma": "Inglés",
-        "anio": "2013",
-        "director": "Michael Hirst",
-        "subtitulo": {
-            "ingles": true,
-            "espaniol": true
-        }
+        "description": "El vikingo Ragnar Lothbrok es un joven agricultor y hombre de familia que se siente frustrado por las políticas de Earl Haraldson, el conde del lugar que envía a sus invasores vikingos al este de los países bálticos y Rusia, cuyos residentes son pobres como los escandinavos. Ragnar prefiere ir al oeste, al otro lado del océano, para descubrir nuevas civilizaciones. Con la ayuda de su amigo Floki, Ragnar construye una flota de barcos que lo ayudará a alcanzar el mundo occidental. A través de los años Ragnar, que dice ser un descendiente directo del dios Odín, continúa luchando con Earl hasta que los dos se enfrentan en la última batalla por la supremacía.",
+        "image": "/img/series/Vikings1920x1080.jpg",
+        "gender": "Drama",
+        "price": {
+            "buy": "800",
+            "rental" : "400"
+        },
+        "idiom": {
+            "original": "ingles",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2013",
+        "director": "Michael Hirst"
     },
     {
         "id": 5,
-        "titulo": "Paw Patrol",
-        "archivo": [
+        "title": "Paw Patrol",
+        "seasons": [
             {
-                "temporada1": {
+                "season1": {
                     "capitulo1": "jsdhahjkfb.mp4",
                     "capitulo2": "jsdhahjkfb.mp4",
                     "capitulo3": "jfdkhasjkfhjsdalhfjsda.mp4"
                 },
-                "temporada2": {
+                "season2": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 },
-                "temporada3": {
+                "season3": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 }
             }
         ],
-        "descripcion": "Un grupo de seis perritos de rescate dirigidos por un chico experto en tecnología llamado Ryder, tienen muchas aventuras con la patrulla de cachorros, ningún trabajo es demasiado grande y ningún cachorro muy pequeño para proteger a la comunidad.",
-        "imagen": "./../public/img/series/PawPatrol.jpg",
-        "genero": "Infantil",
-        "precio": 500,
-        "idioma": "Latino",
-        "anio": "2013",
-        "director": "Callan Brunker",
-        "subtitulo": {
-            "ingles": true,
-            "espaniol": true
-        }
+        "description": "Un grupo de seis perritos de rescate dirigidos por un chico experto en tecnología llamado Ryder, tienen muchas aventuras con la patrulla de cachorros, ningún trabajo es demasiado grande y ningún cachorro muy pequeño para proteger a la comunidad.",
+        "image": "/img/series/PawPatrol.jpg",
+        "gender": "Infantil",
+        "price": {
+            "buy": "500",
+            "rental" : "250"
+        },
+        "idiom": {
+            "original": "ingles",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2013",
+        "director": "Callan Brunker"
     },
     {
         "id": 6,
-        "titulo": "Paw Patrol",
-        "archivo": [
+        "title": "Paw Patrol",
+        "seasons": [
             {
-                "temporada1": {
+                "season1": {
                     "capitulo1": "jsdhahjkfb.mp4",
                     "capitulo2": "jsdhahjkfb.mp4",
                     "capitulo3": "jfdkhasjkfhjsdalhfjsda.mp4"
                 },
-                "temporada2": {
+                "season2": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 },
-                "temporada3": {
+                "season3": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 }
             }
         ],
-        "descripcion": "Un grupo de seis perritos de rescate dirigidos por un chico experto en tecnología llamado Ryder, tienen muchas aventuras con la patrulla de cachorros, ningún trabajo es demasiado grande y ningún cachorro muy pequeño para proteger a la comunidad.",
-        "imagen": "./../public/img/series/PawPatrol.jpg",
-        "genero": "Infantil",
-        "precio": 600,
-        "idioma": "Latino",
-        "anio": "2013",
-        "director": "Callan Brunker",
-        "subtitulo": {
-            "ingles": true,
-            "espaniol": true
-        }
+        "description": "Un grupo de seis perritos de rescate dirigidos por un chico experto en tecnología llamado Ryder, tienen muchas aventuras con la patrulla de cachorros, ningún trabajo es demasiado grande y ningún cachorro muy pequeño para proteger a la comunidad.",
+        "image": "/img/series/PawPatrol.jpg",
+        "gender": "Infantil",
+        "price": {
+            "buy": "500",
+            "rental" : "250"
+        },
+        "idiom": {
+            "original": "ingles",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2013",
+        "director": "Callan Brunker"
     },
     {
         "id": 7,
-        "titulo": "Game of Trhones",
-        "archivo": [
+        "title": "Game of Trhones",
+        "seasons": [
             {
-                "temporada1": {
+                "season1": {
                     "capitulo1": "jsdhahjkfb.mp4",
                     "capitulo2": "jsdhahjkfb.mp4",
                     "capitulo3": "jfdkhasjkfhjsdalhfjsda.mp4"
                 },
-                "temporada2": {
+                "season2": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 },
-                "temporada3": {
+                "season3": {
                     "capitulo1": "jsdhahjkfb.mp4"
                 }
             }
         ],
-        "descripcion": "Está basada en la serie de novelas Canción de Hielo y Fuego del escritor George R. R. Martin y su trama se centra en las violentas luchas dinásticas entre varias familias nobles por el control del Trono de Hierro del continente de Poniente.",
-        "imagen": "./../public/img/series/PawPatrol.jpg",
-        "genero": "Infantil",
-        "precio": 800,
-        "idioma": "Inglés",
-        "anio": "2011",
-        "director": "Alan Taylor,Alex Graves,Mark Mylod,Jeremy Podeswa",
-        "subtitulo": {
-            "ingles": true,
-            "espaniol": true
-        }
+        "description": "Está basada en la serie de novelas Canción de Hielo y Fuego del escritor George R. R. Martin y su trama se centra en las violentas luchas dinásticas entre varias familias nobles por el control del Trono de Hierro del continente de Poniente.",
+        "image": "/img/series/PawPatrol.jpg",
+        "gender": "Infantil",
+        "price": {
+            "buy": "900",
+            "rental" : "450"
+        },
+        "idiom": {
+            "original": "ingles",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2011",
+        "director": "Alan Taylor,Alex Graves,Mark Mylod,Jeremy Podeswa"
     }
 ]
 

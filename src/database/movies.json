@@ -1,0 +1,214 @@
+[
+    {
+        "id": "1",
+        "title": "Avengers, End Game",
+        "trailer": "default.mp4",
+        "description": "Después de los eventos devastadores de Avengers: Infinity War, el universo está en ruinas debido a las acciones de Thanos, el Titán Loco. Con la ayuda de los aliados que quedaron, los Vengadores deberán reunirse una vez más para intentar detenerlo y restaurar el orden en el universo de una vez por todas.",
+        "image": "/img/peliculas/EndGame356x512.jpg",
+        "gender": "Ciencia Ficcion",
+        "duration": "3h 2m",
+        "appreciation": "4.5",
+        "price": {
+            "buy": "800",
+            "rental" : "400"
+        },
+        "idiom": {
+            "original": "ingles",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2019",
+        "director": "Anthony y Joe Russo"
+    },
+    {
+        "id": "2",
+        "title": "Black Panther",
+        "trailer": "default.mp4",
+        "description": "Hace millones de años, un meteorito de poderoso vibranium impactó en África. Cuando llegó la era del hombre, la mayoría de los habitantes de aquel territorio se unieron bajo el mando de un guerrero chamán que, gracias al vibranium, adquirió fuerza, velocidad e instinto sobrehumano, convirtiéndose en el primer Black Panther.",
+        "image": "/img/peliculas/BlackPanther.jpg",
+        "gender": "Ciencia Ficcion",
+        "duration": "2h 15m",
+        "appreciation": "4.6",
+        "price": {
+            "buy": "800",
+            "rental" : "400"
+        },
+        "idiom": {
+            "original": "ingles",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2018",
+        "director": "Ryan Coogler"
+    },
+    {
+        "id": "3",
+        "title": "Comando Especial",
+        "trailer": "default.mp4",
+        "description": "Cuando los policías Schmidt y Jenko se unen a la unidad secreta Jump Street, ellos usan sus apariencias juveniles para trabajar de forma encubierta como estudiantes de preparatoria. Ellos cambian sus placas y armas por mochilas e intentan eliminar a un grupo narcotraficante. Schmidt y Jenko descubren que la preparatoria ya no es lo mismo y deben enfrentarse al terror y la ansiedad de la adolescencia que creían haber superado.",
+        "image": "/img/peliculas/Anabelle940x1392.jpg",
+        "gender": "Comedia",
+        "duration": "1h 49m",
+        "appreciation": "4.7",
+        "price": {
+            "buy": "600",
+            "rental" : "300"
+        },
+        "idiom": {
+            "original": "ingles",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2012",
+        "director": "Phil Lord"
+    },
+    {
+        "id": "4",
+        "title": "Anabelle 2",
+        "trailer": "default.mp4",
+        "description": "Doce años después de la muerte de su hija y aún tremendamente doloridos por su perdida, un fabricante de muñecas y su mujer acogen en su casa a una monja y a seis niñas huérfanas. Allí, la muñeca Annabelle, poseída por un espíritu, ataca a las niñas huérfanas.",
+        "image": "/img/peliculas/BlackPanther.jpg",
+        "gender": "Terror",
+        "duration": "1h 49m",
+        "appreciation": "4.7",
+        "price": {
+            "buy": "700",
+            "rental" : "350"
+        },
+        "idiom": {
+            "original": "ingles",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2017",
+        "director": "David F. Sandberg"
+    },
+    {
+        "id": "5",
+        "title": "The Simpsons",
+        "trailer": "default.mp4",
+        "description": "La combinación de Homero, su nuevo puerco mascota, y un silo lleno de excremento podrían provocar un desastre que amenace no solo a Springfield, sino al mundo entero. Una muchedumbre enojada llega a la casa de los Simpson y divide a la familia. Con el destino de la Tierra en juego, Homero se prepara para intentar redimirse con la intención de salvar al mundo y ganarse el perdón de Marge.",
+        "image": "/img/peliculas/BlackPanther.jpg",
+        "gender": "Animacion",
+        "duration": "1h 27m",
+        "appreciation": "4.7",
+        "price": {
+            "buy": "700",
+            "rental" : "350"
+        },
+        "idiom": {
+            "original": "ingles",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2007",
+        "director": "David Silverman"
+    },
+    {
+        "id": "6",
+        "title": "Cruella",
+        "trailer": "default.mp4",
+        "description": "Decidida a convertirse en una exitosa diseñadora de moda, una joven y creativa estafadora llamada Estella se asocia con un par de ladrones para sobrevivir en las calles de Londres.",
+        "image": "/img/peliculas/Cruella.jpg",
+        "gender": "Comedia",
+        "duration": "1h 27m",
+        "appreciation": "4.7",
+        "price": {
+            "buy": "700",
+            "rental" : "350"
+        },
+        "idiom": {
+            "original": "inglés",
+            "translated": "latino",
+            "subtitle": "latino"
+        },
+        "age": "2021",
+        "director": "Craig Gilespie"
+    },
+    {
+        "id": "7 ",
+        "title": "Luca",
+        "trailer": {
+            "1": "default.mp4"
+        },
+        "description": "Luca es un monstruo marino que vive debajo de un pueblo de la costa italiana. Cuando sale a la superficie, adquiere una apariencia humana, y conoce a un nuevo amigo, igual que él. Juntos emprenden una aventura entre humanos que odian a los monstruos.",
+        "image": "/img/peliculas/luca.jpg",
+        "gender": "Infantil",
+        "duration": "1h 35m",
+        "appreciation": "6.9",
+        "price": {
+            "buy": "700",
+            "rental" : "350"
+        },
+        "idiom": {
+            "original": "Latino",
+            "translated": "inglés",
+            "subtitle": "null"
+        },
+        "age": "2021",
+        "director": "Enrico Casarosa"
+    },
+    {
+        "id": "8 ",
+        "title": "Mortal Kombat",
+        "trailer": "default.mp4",
+        "description": "Cole Young, el luchador de MMA, acostumbrado a recibir palizas por dinero, desconoce su ascendencia, y tampoco sabe por qué el emperador Shang Tsung de Outworld ha enviado a su mejor guerrero, Sub-Zero, un Cryomancer sobrenatural, para dar caza a Cole",
+        "image": "/img/peliculas/Mortalkombat720x1080.jpg",
+        "gender": "Acción",
+        "duration": "1h 50m",
+        "appreciation": "7.1",
+        "price": {
+            "buy": "700",
+            "rental" : "350"
+        },
+        "idiom": {
+            "original": "Inglés",
+            "translated": "Latino",
+            "subtitle": "espagel"
+        },
+        "age": "2021",
+        "director": "Simon McQuoid"
+    },
+    {
+        "id": "9 ",
+        "title": "Bajo el mismo techo",
+        "trailer": "default.mp4",
+        "description": "Nadia y Adrián se divorcian, pero tienen que seguir viviendo juntos bajo el mismo techo al no lograr vender su casa y no tener suficiente dinero para irse a otro sitio.",
+        "image": "/img/peliculas/BajoMismoTecho.jpg",
+        "gender": "Comedia",
+        "duration": "1h 37m",
+        "appreciation": "6.1",
+        "price": {
+            "buy": "700",
+            "rental" : "350"
+        },
+        "idiom": {
+            "original": "Espagel",
+            "translated": "inglés",
+            "subtitle": "espagel"
+        },
+        "age": "2019",
+        "director": "Juana Macias"
+    },
+    {
+        "id": "10 ",
+        "title": "Bajo el mismo techo",
+        "trailer": "default.mp4",
+        "description": "Nadia y Adrián se divorcian, pero tienen que seguir viviendo juntos bajo el mismo techo al no lograr vender su casa y no tener suficiente dinero para irse a otro sitio.",
+        "image": "/img/peliculas/BajoMismoTecho.jpg",
+        "gender": "Comedia",
+        "duration": "1h 37m",
+        "appreciation": "6.1",
+        "price": {
+            "buy": "700",
+            "rental" : "350"
+        },
+        "idiom": {
+            "original": "Espagel",
+            "translated": "inglés",
+            "subtitle": "espagel"
+        },
+        "age": "2019",
+        "director": "Juana Macias"
+    }
+]

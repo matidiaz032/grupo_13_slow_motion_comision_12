@@ -1,11 +1,11 @@
-const peliculas  = require('../database/peliculas');
+const movies  = require('../database/movies');
 const series = require('../database/series');
 
 let controller = {
     movies: (req, res) => {
         res.render('./product/indexMovies', {
             title: 'Movies',
-            peliculas
+            movies
         })
     },
     series: (req, res) => {
