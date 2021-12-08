@@ -2,11 +2,9 @@
     {
         "id": "1",
         "titulo": "Avengers, End Game",
-        "archivo": {
-            "1": "default.mp4"
-        },
+        "trailer": "default.mp4",
         "descripcion": "Después de los eventos devastadores de Avengers: Infinity War, el universo está en ruinas debido a las acciones de Thanos, el Titán Loco. Con la ayuda de los aliados que quedaron, los Vengadores deberán reunirse una vez más para intentar detenerlo y restaurar el orden en el universo de una vez por todas.",
-        "imagen": "./../public/img/peliculas/EndGame356x512.jpg",
+        "imagen": "/img/peliculas/EndGame356x512.jpg",
         "genero": "Ciencia Ficcion",
         "duracion": "3h 2m",
         "Valoracion": "4.5",
@@ -25,11 +23,9 @@
     {
         "id": "2",
         "titulo": "Black Panther",
-        "archivo": {
-            "1": "default.mp4"
-        },
+        "trailer": "default.mp4",
         "descripcion": "Hace millones de años, un meteorito de poderoso vibranium impactó en África. Cuando llegó la era del hombre, la mayoría de los habitantes de aquel territorio se unieron bajo el mando de un guerrero chamán que, gracias al vibranium, adquirió fuerza, velocidad e instinto sobrehumano, convirtiéndose en el primer Black Panther.",
-        "imagen": "./../public/img/peliculas/BlackPanther.jpg",
+        "imagen": "/img/peliculas/BlackPanther.jpg",
         "genero": "Ciencia Ficcion",
         "duracion": "2h 15m",
         "Valoracion": "4.6",
@@ -51,11 +47,9 @@
     {
         "id": "3",
         "titulo": "Comando Especial",
-        "archivo": {
-            "1": "default.mp4"
-        },
+        "trailer": "default.mp4",
         "descripcion": "Cuando los policías Schmidt y Jenko se unen a la unidad secreta Jump Street, ellos usan sus apariencias juveniles para trabajar de forma encubierta como estudiantes de preparatoria. Ellos cambian sus placas y armas por mochilas e intentan eliminar a un grupo narcotraficante. Schmidt y Jenko descubren que la preparatoria ya no es lo mismo y deben enfrentarse al terror y la ansiedad de la adolescencia que creían haber superado.",
-        "imagen": "./../public/img/peliculas/Anabelle940x1392.jpg",
+        "imagen": "/img/peliculas/Anabelle940x1392.jpg",
         "genero": "Comedia",
         "duracion": "1h 49m",
         "Valoracion": "4.7",
@@ -77,11 +71,9 @@
     {
         "id": "4",
         "titulo": "Anabelle 2",
-        "archivo": {
-            "1": "default.mp4"
-        },
+        "trailer": "default.mp4",
         "descripcion": "Doce años después de la muerte de su hija y aún tremendamente doloridos por su perdida, un fabricante de muñecas y su mujer acogen en su casa a una monja y a seis niñas huérfanas. Allí, la muñeca Annabelle, poseída por un espíritu, ataca a las niñas huérfanas.",
-        "imagen": "./../public/img/peliculas/BlackPanther.jpg",
+        "imagen": "/img/peliculas/BlackPanther.jpg",
         "genero": "Terror",
         "duracion": "1h 49m",
         "Valoracion": "4.7",
@@ -100,16 +92,12 @@
             "ingles": true
         }
     },
-    
-    
     {
         "id": "5",
         "titulo": "The Simpsons",
-        "archivo": {
-            "1": "default.mp4"
-        },
+        "trailer": "default.mp4",
         "descripcion": "La combinación de Homero, su nuevo puerco mascota, y un silo lleno de excremento podrían provocar un desastre que amenace no solo a Springfield, sino al mundo entero. Una muchedumbre enojada llega a la casa de los Simpson y divide a la familia. Con el destino de la Tierra en juego, Homero se prepara para intentar redimirse con la intención de salvar al mundo y ganarse el perdón de Marge.",
-        "imagen": "./../public/img/peliculas/BlackPanther.jpg",
+        "imagen": "/img/peliculas/BlackPanther.jpg",
         "genero": "Animacion",
         "duracion": "1h 27m",
         "Valoracion": "4.7",
@@ -128,15 +116,14 @@
             "ingles": true
         }
     },
-
     {
         "id": "6",
         "titulo": "Cruella",
-        "archivo": {
+        "trailer": {
             "1": "default.mp4"
         },
         "descripcion": "Decidida a convertirse en una exitosa diseñadora de moda, una joven y creativa estafadora llamada Estella se asocia con un par de ladrones para sobrevivir en las calles de Londres.",
-        "imagen": "./../public/img/peliculas/Cruella.jpg",
+        "imagen": "/img/peliculas/Cruella.jpg",
         "genero": "Comedia",
         "duracion": "1h 27m",
         "Valoracion": "4.7",
@@ -155,15 +142,14 @@
             "ingles": true
         }
     },
-
     {
         "id": "7 ",
         "titulo": "Luca",
-        "archivo": {
+        "trailer": {
             "1": "default.mp4"
         },
         "descripcion": "Luca es un monstruo marino que vive debajo de un pueblo de la costa italiana. Cuando sale a la superficie, adquiere una apariencia humana, y conoce a un nuevo amigo, igual que él. Juntos emprenden una aventura entre humanos que odian a los monstruos.",
-        "imagen": "./../public/img/peliculas/luca.jpg",
+        "imagen": "/img/peliculas/luca.jpg",
         "genero": "Infantil",
         "duracion": "1h 35m",
         "Valoracion": "6.9",
@@ -182,15 +168,14 @@
             "ingles": true
         }
     },
-
     {
         "id": "8 ",
         "titulo": "Mortal Kombat",
-        "archivo": {
+        "trailer": {
             "1": "default.mp4"
         },
         "descripcion": "Cole Young, el luchador de MMA, acostumbrado a recibir palizas por dinero, desconoce su ascendencia, y tampoco sabe por qué el emperador Shang Tsung de Outworld ha enviado a su mejor guerrero, Sub-Zero, un Cryomancer sobrenatural, para dar caza a Cole",
-        "imagen": "./../public/img/peliculas/Mortalkombat720x1080.jpg",
+        "imagen": "/img/peliculas/Mortalkombat720x1080.jpg",
         "genero": "Acción",
         "duracion": "1h 50m",
         "Valoracion": "7.1",
@@ -209,15 +194,14 @@
             "ingles": true
         }
     },
-
     {
         "id": "9 ",
         "titulo": "Bajo el mismo techo",
-        "archivo": {
+        "trailer": {
             "1": "default.mp4"
         },
         "descripcion": "Nadia y Adrián se divorcian, pero tienen que seguir viviendo juntos bajo el mismo techo al no lograr vender su casa y no tener suficiente dinero para irse a otro sitio.",
-        "imagen": "./../public/img/peliculas/BajoMismoTecho.jpg",
+        "imagen": "/img/peliculas/BajoMismoTecho.jpg",
         "genero": "Comedia",
         "duracion": "1h 37m",
         "Valoracion": "6.1",
@@ -236,15 +220,14 @@
             "ingles": true
         }
     },
-
     {
         "id": "10 ",
         "titulo": "Bajo el mismo techo",
-        "archivo": {
+        "trailer": {
             "1": "default.mp4"
         },
         "descripcion": "Nadia y Adrián se divorcian, pero tienen que seguir viviendo juntos bajo el mismo techo al no lograr vender su casa y no tener suficiente dinero para irse a otro sitio.",
-        "imagen": "./../public/img/peliculas/BajoMismoTecho.jpg",
+        "imagen": "/img/peliculas/BajoMismoTecho.jpg",
         "genero": "Comedia",
         "duracion": "1h 37m",
         "Valoracion": "6.1",
@@ -263,5 +246,4 @@
             "ingles": true
         }
     }
-    
 ]

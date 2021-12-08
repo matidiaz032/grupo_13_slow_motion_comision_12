@@ -25,11 +25,13 @@
     <div class="contain-grid">
         <span class="gender__grid">Accion</span>
         <div class="movies__section">
-            <div class="gender__movies"></div>
-            <div class="gender__movies"></div>
-            <div class="gender__movies"></div>
-            <div class="gender__movies"></div>
-            <div class="gender__movies"></div>
+            <% peliculas.forEach(movie => { %>
+                <div>
+                    <a href="<%- movie.id %>">
+                        <img src="<%- movie.imagen %> " alt="">
+                    </a>
+                </div>
+            <% }) %>
             <div class="gender__movies">
                 <button type="button" class="see-more">Ver más</button>
             </div>

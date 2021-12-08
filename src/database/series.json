@@ -2,7 +2,7 @@
     {
         "id": 1,
         "titulo": "Black Mirror",
-        "archivo": [
+        "temporadas": [
             {
                 "temporada1": {
                     "capitulo1": "jsdhahjkfb.mp4",
@@ -17,6 +17,7 @@
                 }
             }
         ],
+        "trailer": "archivo.jpeg",
         "descripcion": "El lado oscuro de la era tecnológica en la que se vive: la paranoia de ser vigilados como en un panóptico, los usos terroristas de las nuevas herramientas y su relación con la experiencia cotidiana.",
         "imagen": "./../public/img/series/BlackMirror720x1080.jpg",
         "genero": "Ciencia Ficcion",
@@ -28,9 +29,7 @@
             "ingles": true,
             "espaniol": true
         }
-    },
-
-    
+    }, 
     {
         "id": 2,
         "titulo": "Friends",
@@ -61,7 +60,6 @@
             "espaniol": true
         }
     },
-
     {
         "id": 3,
         "titulo": "Sex Education",
@@ -92,7 +90,6 @@
             "espaniol": true
         }
     },
-
     {
         "id": 4,
         "titulo": "Vikings",
@@ -123,7 +120,6 @@
             "espaniol": true
         }
     },
-
     {
         "id": 5,
         "titulo": "Paw Patrol",
@@ -154,7 +150,6 @@
             "espaniol": true
         }
     },
-
     {
         "id": 6,
         "titulo": "Paw Patrol",
@@ -185,7 +180,6 @@
             "espaniol": true
         }
     },
-
     {
         "id": 7,
         "titulo": "Game of Trhones",
@@ -216,9 +210,6 @@
             "espaniol": true
         }
     }
-
-
-
 ]
 
 

@@ -1,10 +1,14 @@
 let express = require('express');
 let app = express();
-const PORT = 3000;
 let path = require('path');
+const methodOverride = require('method-override');
+const PORT = 3000;
 
 // Middlewares
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))

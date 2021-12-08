@@ -1,6 +1,6 @@
-const peliculasJSON = require(".peliculas.json");
-const seriesJSON = require(".series.json");
-const usersJSON = require(".users.json");
+const peliculasJSON = require("./peliculas.json");
+const seriesJSON = require("./series.json");
+const usersJSON = require("./users.json");
 
 const peliculas = JSON.parse(peliculasJSON);
 const series = JSON.parse(seriesJSON);
