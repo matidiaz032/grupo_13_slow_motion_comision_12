@@ -15,26 +15,16 @@ app.set('views', path.join(__dirname, 'views'))
 
     /* Enrutadores */
 let indexRouter = require('./routes/indexRouter');
-let loginRouter = require('./routes/loginRouter.js')
-let registerRouter = require('./routes/registerRouter.js')
-let seriesRouter = require('./routes/seriesRouter.js')
-let moviesRouter = require('./routes/moviesRouter.js')
-let cartRouter = require('./routes/cartRouter.js')
-let detailRouter = require('./routes/detailRouter.js')
+let usersRouter = require('./routes/usersRouter');
+let productsRouter = require('./routes/productsRouter');
 let adminRouter = require('./routes/adminRouter')
-let profileRouter = require('./routes/profileRouter')
 let sinLogRouter = require('./routes/sinLogRouter.js')
 
     /* Routes */
 app.use('/', indexRouter)
-app.use('/login', loginRouter)
-app.use('/register', registerRouter)
-app.use('/series', seriesRouter)
-app.use('/movies', moviesRouter)
-app.use('/cart', cartRouter)
-app.use('/detail', detailRouter)
+app.use('/users', usersRouter)
+app.use('/products', productsRouter)
 app.use('/admin', adminRouter)
-app.use('/profile', profileRouter)
 app.use('/sinLog', sinLogRouter)
 
     /* Server */
