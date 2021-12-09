@@ -6,54 +6,54 @@
     <%- include ('../partials/logoMobileADmin') %>
     <div class="form__files-desktop">
         <div class="form-caption">
-            <form action="" method="post" class="upload-files">
+            <form action="/admin/form" method="post" class="upload-files">
                 <div class="contain__date">
-                    <input type="text" name="Nombre" id="nombre" placeholder="Nombre" required class="input">
+                    <input type="text" name="name" id="nombre" placeholder="Nombre" class="input">
                 </div>
                 <div class="contain__date">
-                    <textarea type="text" name="description" id="comentario" placeholder="Descripcion" required class="input"></textarea>
+                    <textarea type="text" name="description" id="comentario" placeholder="Descripcion" class="input"></textarea>
                 </div>
                 <div class="contain__date">
-                    <label for="movie-series">A subir:</label>
-                    <select name="movie-series" id="movie-series" required class="input">
+                    <label for="movieSeries">A subir:</label>
+                    <select name="movieSeries" id="movieSeries" class="input">
                         <option></option>
-                        <option value="1">Pelicula</option>
-                        <option value="2">Serie</option>
+                        <option value="movie">Pelicula</option>
+                        <option value="serie">Serie</option>
                     </select>
                 </div>
                 <div class="contain__date">
-                    <label for="category">Genero:</label>
-                    <select name="category" id="category" required class="input">
+                    <label for="gender">Genero:</label>
+                    <select name="gender" id="gender" class="input">
                         <option></option>
-                        <option value="1">Terror</option>
-                        <option value="2">Suspenso</option>
-                        <option value="3">Dibujo animados</option>
-                        <option value="4">Accion</option>
-                        <option value="5">Comedia</option>
+                        <option value="terror">Terror</option>
+                        <option value="suspenso">Suspenso</option>
+                        <option value="dibujos animados">Dibujo animados</option>
+                        <option value="accion">Accion</option>
+                        <option value="comedia">Comedia</option>
                     </select>
                 </div>
                 <div class="contain__date">
                     <label for="idiom">Idioma</label>
-                    <select name="idiom" id="idiom" required class="input">
+                    <select name="idiom" id="idiom" class="input">
                         <option></option>
-                        <option value="1">Español</option>
-                        <option value="2">Ingles</option>
-                        <option value="3">otro odioma</option>
+                        <option value="español">Español</option>
+                        <option value="ingles">Ingles</option>
+                        <option value="otro">otro odioma</option>
                     </select>
                 </div>
                 <div class="contain__date">
                     <label for="image">Cargar imagen de portada</label>
-                    <input type="file" name="image" accept=".jpg" required class="input">
+                    <input type="file" name="image" accept=".jpg" class="input">
                 </div>
                 <div class="contain__date">
-                    <label for="video">Cargar video</label>
-                    <input type="file" name="video" accept=".dvd" required class="input">
+                    <label for="video">Pegar URL</label>
+                    <input type="url" name="video" class="input">
                 </div>
                 <div class="contain__date">
-                    <input type="number" name="price" id="price" placeholder="Indique su precio $$$" required class="input">
+                    <input type="number" name="price" id="price" placeholder="Indique su precio $$$" class="input">
                 </div>
                 <div class="contain__date">
-                    <input type="submit" value="Cargar" required class="input-enter">
+                    <input type="submit" value="Cargar" class="input-enter">
                 </div>
             </form>
         </div>
