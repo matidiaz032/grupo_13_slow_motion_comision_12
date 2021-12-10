@@ -1,5 +1,9 @@
-const movies  = require('../database/movies');
-const series = require('../database/series');
+const fs = require("fs");
+const path = require("path");
+
+const moviesFilePath = path.join(__dirname, "../database/movies.json");
+const movies = JSON.parse(fs.readFileSync(moviesFilePath, "utf-8"));
+const writeJson = db => fs.writeFileSync(moviesFilePath, JSON.stringify(db),'utf-8');
 
 let controller = {
     index: (req, res) => {
@@ -28,7 +32,7 @@ let controller = {
         })
     },
     store: (req, res) => {
-        const { name, description, movieSeries, gender, idiom, image, video, price } = req.body;
+        const { name, description, duration, appreciation, age, director, movieSeries, gender, idiom, image, video, price } = req.body;
         let lastId = 1;
         let uploadType = movieSeries;
 
@@ -44,15 +48,21 @@ let controller = {
             id: lastId + 1,
             title: name,
             trailer: video,
+            duration,
+            appreciation,
+            age,
+            director,
             description,
-            image,
+            image: 'default.jpg',
             gender,
             price,
             idiom
         }
 
         movies.push(newMovie)
-        res.send(movies)
+        writeJson(movies)
+
+        res.redirect('/admin')
     },
     statistics: (req, res) => {
         res.render('./admin/adminStatistics', {
