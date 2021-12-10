@@ -38,7 +38,7 @@ let controller = {
 
         if (uploadType === 'movie') {
             movies.forEach(movie => {
-                if (movie.id == lastId) {
+                if (movie.id > lastId) {
                     lastId = movie.id
                 }
             });

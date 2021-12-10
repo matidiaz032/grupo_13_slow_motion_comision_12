@@ -14,9 +14,12 @@ let controller = {
             series
         })
     },
-    detail: (req, res) => {
-        res.render('./product/productDetail', {
+    detail: (req,res)=>{
+        let id = +req.params.id;
+        /* let detailProduct = products.find(product =>product.id ===id) */
+        res.render('product/productDetail', {
             title: 'Product Detail'
+            /* detailProduct */
         })
     },
     cart: (req, res) => {
