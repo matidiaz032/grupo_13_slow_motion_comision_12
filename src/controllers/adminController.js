@@ -2,8 +2,12 @@ const fs = require("fs");
 const path = require("path");
 
 const moviesFilePath = path.join(__dirname, "../database/movies.json");
+const seriesFilePath = path.join(__dirname, "../database/series.json");
+const genresFilePath = path.join(__dirname, "../database/genres.json");
 const movies = JSON.parse(fs.readFileSync(moviesFilePath, "utf-8"));
-const writeJson = db => fs.writeFileSync(moviesFilePath, JSON.stringify(db),'utf-8');
+const series = JSON.parse(fs.readFileSync(seriesFilePath, "utf-8"));
+const genres = JSON.parse(fs.readFileSync(genresFilePath, "utf-8"));
+const writeJson = (path, db) => fs.writeFileSync(path, JSON.stringify(db),'utf-8');
 
 let controller = {
     index: (req, res) => {
@@ -28,7 +32,8 @@ let controller = {
     },
     upload: (req, res) => {
         res.render('./admin/uploadFiles', {
-            title: 'Admin - Page : Form'
+            title: 'Admin - Page : Form',
+            genres
         })
     },
     store: (req, res) => {
@@ -42,25 +47,28 @@ let controller = {
                     lastId = movie.id
                 }
             });
-        }
 
-        let newMovie = {
-            id: lastId + 1,
-            title: name,
-            trailer: video,
-            duration,
-            appreciation,
-            age,
-            director,
-            description,
-            image: 'default.jpg',
-            gender,
-            price,
-            idiom
+            let newMovie = {
+                id: +lastId + 1,
+                title: name,
+                description,
+                trailer: video,
+                duration,
+                appreciation,
+                age,
+                director,
+                idiom,
+                image: 'default.jpg',
+                gender: +gender,
+                price: {
+                    buy: +price[0],
+                    rental: +price[1]
+                }
+            }
+    
+            movies.push(newMovie)
+            writeJson(moviesFilePath, movies)
         }
-
-        movies.push(newMovie)
-        writeJson(movies)
 
         res.redirect('/admin')
     },

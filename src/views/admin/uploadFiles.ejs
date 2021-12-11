@@ -10,7 +10,6 @@
                 <div class="contain__date">
                     <label for="movieSeries">A subir:</label>
                     <select name="movieSeries" id="movieSeries" class="input" required>
-                        <option></option>
                         <option value="movie">Pelicula</option>
                         <!-- <option value="serie">Serie</option> -->
                     </select>
@@ -30,12 +29,9 @@
                 <div class="contain__date">
                     <label for="gender">Genero:</label>
                     <select name="gender" id="gender" class="input" required>
-                        <option></option>
-                        <option value="terror">Terror</option>
-                        <option value="suspenso">Suspenso</option>
-                        <option value="dibujos animados">Dibujo animados</option>
-                        <option value="accion">Accion</option>
-                        <option value="comedia">Comedia</option>
+                        <% genres.forEach(genre => { %>
+                            <option value="<%- genre.id %>"><%- genre.name %></option> 
+                        <% }) %>
                     </select>
                 </div>
                 <div class="contain__date">
