@@ -5,74 +5,50 @@
     <%- include ('../partials/adminHeader') %>
     <!-- Logo mobile and tablet -->
     <%- include ('../partials/logoMobileAdmin') %>
-    <div class="all-section-movie">
-        <section class="statistic__movies">
-            <article class="table__statistic-movies">
-                <div class="info__statistic-movies">
-                    <h2 class="title__statistic-movies">Informacion de peliculas</h2>
-                    <div class="dashboard-movies">
-                        <div class="dashboard-info-movies"></div>
-                        <div class="information">
-                            <span class="info__movies amount">Total de peliculas :</span>
-                            <span class="info__movies spain">Peliculas en español :</span>
-                            <span class="info__movies english">Peliculas en ingles :</span>
-                            <span class="info__movies languages">Peliculas en otro idioma :</span>
-                        </div>
-                    </div>
+    
+
+    <!-- Movies section -->
+    <main class="moviesInformation">
+        <div class="flex-information">
+            <div class="title-id">
+                <p class="id-product">Id</p>
+            </div>
+            <div class="title-name">
+                <p class="name-product">Titulo</p>
+            </div>
+            <div class="title-option">
+                <p class="option-product">Opcion</p>
+                <!-- <div class="option-product">
+                    <a href=""><i class="far fa-edit"></i></a>
                 </div>
-            </article>
-        </section>
-        <section class="statistic__movies">
-            <article class="table__statistic-movies">
-                <div class="info__statistic-movies">
-                    <h2 class="title__statistic-movies">Peliculas compradas</h2>
-                    <div class="dashboard-movies">
-                        <div class="dashboard-info-movies"></div>
-                        <div class="information">
-                            <span class="info__movies bought">Total de peliculas :</span>
-                            <span class="info__movies bought-spain">Peliculas en español :</span>
-                            <span class="info__movies bought-english">Peliculas en ingles :</span>
-                            <span class="info__movies bought-languages">Peliculas en otro idioma :</span>
-                        </div>
-                    </div>
+                <div>
+                    <form action="" method="POST">
+                        <button type="submit" class="delete-movie"><i class="far fa-trash-alt"></i></button>
+                    </form>
+                </div> -->
+            </div>
+        </div>
+        <% movies.forEach(movie => { %>
+            <div class="table-movie">
+                <div class="title-id">
+                    <p><%- movie.id %></p>
                 </div>
-            </article>
-        </section>
-        <section class="statistic__movies">
-            <article class="table__statistic-movies">
-                <div class="info__statistic-movies">
-                    <h2 class="title__statistic-movies">Peliculas alquiladas</h2>
-                    <div class="dashboard-movies">
-                        <div class="dashboard-info-movies"></div>
-                        <div class="information">
-                            <span class="info__movies rented-amount">Total de peliculas :</span>
-                            <span class="info__movies rented-spain">Peliculas en español :</span>
-                            <span class="info__movies rented-english">Peliculas en ingles :</span>
-                            <span class="info__movies rented-languages">Peliculas en otro idioma :</span>
-                        </div>
-                    </div>
+                <div class="title-name">
+                    <p><%- movie.title %></p>
                 </div>
-            </article>
-        </section>
-        <section class="statistic__movies">
-            <article class="addition-board">
-                <a href="/admin/form">
-                    <span class="addition">
-                        Agregar peliculas
-                        <i class="fas fa-plus-circle"></i>
-                    </span>
-                </a>
-            </article>
-            <article class="delete-board">
-                <a href="/admin/form">
-                    <span class="delete">
-                        Eliminar peliculas
-                        <i class="fas fa-minus"></i>
-                    </span>
-                </a>
-            </article>
-        </section>
-    </div>
+                <div class="option-product">
+                    <a href="/admin/products/movie/<%- movie.id %>/edit"><i class="far fa-edit"></i></a>
+                </div>
+                <div>
+                    <form action="" method="POST">
+                        <button type="submit" class="delete-movie"><i class="far fa-trash-alt"></i></button>
+                    </form>
+                </div>
+            </div>
+        <% }) %>
+    </main>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
     <!-- Footer -->
     <%- include('../partials/adminFooter') %>
 </body>

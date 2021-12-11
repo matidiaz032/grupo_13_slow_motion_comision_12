@@ -1,0 +1,144 @@
+.all-section-movie, .all-section-series {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 1em;
+}
+
+.statistic__movies, .statistic__series {
+    width: 83%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    background: var(--black);
+    justify-content: space-evenly;
+    margin: 1em auto 0;
+    box-shadow: 1px 1px 8px 0 var(--black);
+}
+
+.table__statistic-movies, .table__statistic-series {
+    width: 90%;
+    height: 90%;
+    margin: 1em auto;
+    background: var(--black)
+}
+
+.table__statistic-movies .info__statistic-movies, .table__statistic-series .info__statistic-series {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background: linear-gradient(45deg, #000, #232323);
+}
+
+.table__statistic-movies .info__statistic-movies .title__statistic-movies, .table__statistic-series .info__statistic-series .title__statistic-series {
+    display: block;
+    color: var(--yellow);
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+.table__statistic-movies .info__statistic-movies .dashboard-movies, .table__statistic-series .info__statistic-series .dashboard__series {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-evenly;
+}
+
+.table__statistic-movies .info__statistic-movies .dashboard-movies .dashboard-info-movies, .table__statistic-series .info__statistic-series .dashboard__series .dashboard__info-series {
+    width: 84%;
+    height: 205px;
+    background: var(--blue);
+    border-radius: 50%;
+    margin: 15px 8%;
+}
+
+.table__statistic-movies .info__statistic-movies .dashboard-movies .information, .table__statistic-series .info__statistic-series .dashboard__series .information-series {
+    display: flex;
+    flex-direction: column;
+}
+
+.table__statistic-movies .info__statistic-movies .dashboard-movies .information span, .table__statistic-series .info__statistic-series .dashboard__series .information-series span {
+    color: var(--yellow);
+    padding: 3px 5px;
+    font-family: var(--averia);
+}
+
+.statistic__movies:last-child, .statistic__series:last-child {
+    padding: 1em 0;
+    margin-bottom: 1em;
+
+}
+
+.addition-board, .delete-board {
+    display: block;
+    width: 90%;
+    height: 2em;
+    border-radius: 25px;
+    background: var(--lightblack);
+    margin: 5px 0;
+}
+
+.addition-board a, .delete-board a {
+    text-decoration: none;
+    color: var(--yellow);
+}
+
+.addition-board a .addition, .delete-board a .delete {
+    text-align: center;
+    display: block;
+    padding: 7px 0;
+    font-family: var(--averia);
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px){
+
+    .table__statistic-movies .info__statistic-movies .dashboard-movies, .table__statistic-series .info__statistic-series .dashboard__series {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .table__statistic-movies .info__statistic-movies .dashboard-movies .dashboard-info-movies, .table__statistic-series .info__statistic-series .dashboard__series .dashboard__info-series {
+        width: 50%;
+        height: 300px;
+        padding: 2% 0;
+    }
+
+    .table__statistic-movies .info__statistic-movies .dashboard-movies .information, .table__statistic-series .info__statistic-series .dashboard__series .information-series {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
+
+@media only screen and (min-width:1024px) and (max-width:1440px) {
+    .all-section-movie, .all-section-series {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .statistic__movies, .statistic__series {
+        width: 45vw;
+        padding: 0 0 1em 0;
+    }
+
+    .table__statistic-movies .info__statistic-movies .dashboard-movies .dashboard-info-movies, .table__statistic-series .info__statistic-series .dashboard__series .dashboard__info-series {
+        width: 84%;
+        height: 350px;
+        padding: 0;
+    }
+    
+    .table__statistic-movies .info__statistic-movies .dashboard-movies .information, .table__statistic-series .info__statistic-series .dashboard__series .information-series {
+        margin: 0 1em;
+    }
+
+    .table__statistic-movies .info__statistic-movies .dashboard-movies .information span, .table__statistic-series .info__statistic-series .dashboard__series .information-series span {
+        width: 350px;
+        padding: 1em;
+    } 
+}

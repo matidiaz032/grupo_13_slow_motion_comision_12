@@ -5,72 +5,23 @@
     <%- include ('../partials/adminHeader') %>
     <!-- Logo mobile and tablet -->
     <%- include ('../partials/logoMobileAdmin') %> 
-    <div class="all-section-series">
-        <section class="statistic__series">
-            <article class="table__statistic-series">
-                <div class="info__statistic-series">
-                    <h2 class="title__statistic-series">Informacion de Series</h2>
-                    <div class="dashboard__series">
-                        <div class="dashboard__info-series"></div>
-                        <div class="information-series">
-                            <span class="info__series">Total de series :</span>
-                            <span class="info__series spain">series en español :</span>
-                            <span class="info__series english">series en ingles :</span>
-                            <span class="info__series languages">series en otro idioma :</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <section class="statistic__series">
-            <article class="table__statistic-series">
-                <div class="info__statistic-series">
-                    <h2 class="title__statistic-series">Series compradas</h2>
-                    <div class="dashboard__series">
-                        <div class="dashboard__info-series"></div>
-                        <div class="information-series">
-                            <span class="info__series-amount">Total de series :</span>
-                            <span class="info__series-amount spain">series en español :</span>
-                            <span class="info__series-amount english">series en ingles :</span>
-                            <span class="info__series-amount languages">series en otro idioma :</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <section class="statistic__series">
-            <article class="table__statistic-series">
-                <div class="info__statistic-series">
-                    <h2 class="title__statistic-series">Series alquiladas</h2>
-                    <div class="dashboard__series">
-                        <div class="dashboard__info-series"></div>
-                        <div class="information-series">
-                            <span class="info__series-rented">Total de series :</span>
-                            <span class="info__series-rented spain">series en español :</span>
-                            <span class="info__series-rented english">series en ingles :</span>
-                            <span class="info__series-rented languages">series en otro idioma :</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <section class="statistic__series">
-            <article class="addition-board">
-                <a href="/admin/form">
-                    <span class="addition">Agregar Series
-                        <i class="fas fa-plus-circle"></i>
-                    </span>
-                </a>
-            </article>
-            <article class="delete-board">
-                <a href="/admin/form">
-                    <span class="delete">Eliminar Series
-                        <i class="fas fa-minus"></i>
-                    </span>
-                </a>
-            </article>
-        </section>
-    </div>
+    
+    <!-- Series section -->
+    <main class="moviesInformation">
+        <div class="flex-Information">
+            <div class="title-id">
+                <p class="id-product"></p>
+            </div>
+            <div class="title-name">
+                <p class="name-product"></p>
+            </div>
+            <div class="title-option">
+                <p class="option-product"></p>
+            </div>
+        </div>
+    </main>
+
+
     <!-- Footer -->
     <%- include('../partials/adminFooter') %>
 </body>

@@ -17,12 +17,20 @@ let controller = {
     },
     movies: (req, res) => {
         res.render('./admin/adminMovies', {
-            title: 'Admin - Page : Movie'
+            title: 'Admin - Page : Movie',
+            movies: movies,
+            mov: function (lastMovieId) {
+            return movies.filter(movie => movie.id === lastMovieId)
+            }
         })
     },
     series: (req, res) => {
         res.render('./admin/adminSeries', {
-            title: 'Admin - Page : Series'
+            title: 'Admin - Page : Series',
+            series: series,
+            ser: function (lastSeriesId) {
+            return series.filter(series => series.id === lastSeriesId)
+            }
         })
     },
     motionUsers: (req, res) => {
@@ -69,7 +77,7 @@ let controller = {
             movies.push(newMovie)
             writeJson(moviesFilePath, movies)
         }
-
+        
         res.redirect('/admin')
     },
     statistics: (req, res) => {
