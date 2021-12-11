@@ -1,33 +1,138 @@
-[{
-    "id": 1,
-    "title": "Spiderman",
-    "description": "Carga de prueba de la primer pelicula mediante el form",
-    "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
-    "duration": "2hs 30min",
-    "appreciation": "5.0",
-    "age": "2021-12",
-    "director": "Matias Diaz",
-    "idiom": ["ingles", "español"],
-    "image": "default.jpg",
-    "gender": 3,
-    "price": {
-        "buy": 1000,
-        "rental": 500
+[
+    {
+        "id": 1,
+        "title": "Spiderman",
+        "description": "Edicion de prueba 123456",
+        "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
+        "duration": "2hs 30min",
+        "appreciation": "5.0",
+        "age": "2021-12",
+        "director": "Matias Diaz",
+        "idiom": "ingles",
+        "image": "default.jpg",
+        "gender": 3,
+        "price": {
+            "buy": 50,
+            "rental": 5
+        }
+    },
+    {
+        "id": 2,
+        "title": "Prueba carga",
+        "description": "a",
+        "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
+        "duration": "2",
+        "appreciation": "2",
+        "age": "2020-01",
+        "director": "a",
+        "idiom": "ingles",
+        "image": "FreeGuy183x275.jpg",
+        "gender": 1,
+        "price": {
+            "buy": 3,
+            "rental": 2
+        }
+    },
+    {
+        "id": 3,
+        "title": "Angel Guillermo",
+        "description": "dsafdsadwsa",
+        "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+        "duration": "1h 15m",
+        "appreciation": "7",
+        "age": "2021-10",
+        "director": "dsada",
+        "idiom": "ingles",
+        "image": "FreeGuy183x275.jpg",
+        "gender": 1,
+        "price": {
+            "buy": 659,
+            "rental": 659
+        }
+    },
+    {
+        "id": 4,
+        "title": "Angel Guillermo",
+        "description": "dsadasfa",
+        "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+        "duration": "1h 15m",
+        "appreciation": "7",
+        "age": "2021-03",
+        "director": "dsada",
+        "idiom": "ingles",
+        "image": "21jumpstreet.jpg",
+        "gender": 3,
+        "price": {
+            "buy": 659,
+            "rental": 1500
+        }
+    },
+    {
+        "id": 5,
+        "title": "Angel Guillermo",
+        "description": "dsagag",
+        "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+        "duration": "1h 15m",
+        "appreciation": "9",
+        "age": "2021-12",
+        "director": "dsada",
+        "idiom": "ingles",
+        "image": "21jumpstreet.jpg",
+        "gender": 3,
+        "price": {
+            "buy": 1500,
+            "rental": 5446
+        }
+    },
+    {
+        "id": 6,
+        "title": "Angel Guillermo",
+        "description": "fdsaffa",
+        "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+        "duration": "1h 15m",
+        "appreciation": "9",
+        "age": "2021-05",
+        "director": "fdsa",
+        "idiom": "ingles",
+        "image": "21jumpstreet.jpg",
+        "gender": 3,
+        "price": {
+            "buy": 1500,
+            "rental": 659
+        }
+    },
+    {
+        "id": 7,
+        "title": "dsafdaf",
+        "description": "fsdafsdad",
+        "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+        "duration": "1h 15m",
+        "appreciation": "7",
+        "age": "2021-05",
+        "director": "dsada",
+        "idiom": "ingles",
+        "image": "FreeGuy183x275.jpg",
+        "gender": 1,
+        "price": {
+            "buy": 1500,
+            "rental": 659
+        }
+    },
+    {
+        "id": 8,
+        "title": "dsafa",
+        "description": "fdsafdsafdsa",
+        "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+        "duration": "1h 15m",
+        "appreciation": "6",
+        "age": "2021-04",
+        "director": "dsada",
+        "idiom": "ingles",
+        "image": "blackPanther.jpg",
+        "gender": 2,
+        "price": {
+            "buy": 5446,
+            "rental": 500000
+        }
     }
-}, {
-    "id": 2,
-    "title": "Prueba carga",
-    "description": "a",
-    "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
-    "duration": "2",
-    "appreciation": "2",
-    "age": "2020-01",
-    "director": "a",
-    "idiom": "ingles",
-    "image": "default.jpg",
-    "gender": 1,
-    "price": {
-        "buy": 3,
-        "rental": 2
-    }
-}]
+]

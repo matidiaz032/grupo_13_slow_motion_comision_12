@@ -23,72 +23,24 @@
     </div>
     <!-- grid section movies -->
     <div class="contain-grid">
-        <div class="contain-list">
-            <span class="gender__grid">Ciencia Ficcion</span>
-            <div class="movies__section">
-                <% let moviesFiction = movies.filter(elem => elem.gender === "Ciencia Ficcion")
-                moviesFiction.forEach(movie => { %>
-                    <div class="contain-img">
-                        <a href="<%- movie.id %>">
-                            <img src="<%- movie.image %> " alt="">
-                        </a>
+        <% gender.forEach(gender => { %>
+            <div class="contain-list">
+                <span class="gender__grid"><%- gender.name %></span>
+                <div class="movies__section">
+                    <% movies.forEach(elem => {
+                        if(gender.id === elem.gender) { %>
+                        <div class="contain-img">
+                            <a href="/products/productDetail/<%- elem.id %>">
+                                <img src="/img/peliculas/<%- elem.image %>" alt="">
+                            </a>
+                        </div>
+                    <% } }) %>
+                    <div>
+                        <button type="button" class="see-more">Ver más</button>
                     </div>
-                <% }) %>
-                <div>
-                    <button type="button" class="see-more">Ver más</button>
                 </div>
             </div>
-        </div>
-        <div class="contain-list">
-            <span class="gender__grid">Comedia</span>
-            <div class="movies__section">
-                <% let moviesComedy = movies.filter(elem => elem.gender === "Comedia")
-                moviesComedy.forEach(movie => { %>
-                    <div class="contain-img">
-                        <a href="<%- movie.id %>">
-                            <img src="<%- movie.image %> " alt="">
-                        </a>
-                    </div>
-                <% }) %>
-                <div>
-                    <button type="button" class="see-more">Ver más</button>
-                </div>
-            </div>
-        </div>
-        <div class="contain-list">
-            <span class="gender__grid">Terror</span>
-            <div class="movies__section">
-                <% let moviesTerror = movies.filter(elem => elem.gender === "Terror")
-                moviesTerror.forEach(movie => { %>
-                    <div class="contain-img">
-                        <a href="<%- movie.id %>">
-                            <img src="<%- movie.image %> " alt="">
-                        </a>
-                    </div>
-                <% }) %>
-                <div>
-                    <button type="button" class="see-more">Ver más</button>
-                </div>
-            </div>
-        </div>
-        <div class="contain-list">
-            <span class="gender__grid">Animacion</span>
-            <div class="movies__section">
-                <% let moviesAnim = movies.filter(elem => elem.gender === "Animacion")
-                moviesAnim.forEach(movie => { %>
-                    <div class="contain-img">
-                        <a href="<%- movie.id %>">
-                            <img src="<%- movie.image %> " alt="">
-                        </a>
-                    </div>
-                <% }) %>
-                <div>
-                    <button type="button" class="see-more">Ver más</button>
-                </div>
-            </div>
-        </div>
-       
-
+        <% }) %>
     </div>
     <!-- Footer section -->
     <%- include('../partials/footer')  %>

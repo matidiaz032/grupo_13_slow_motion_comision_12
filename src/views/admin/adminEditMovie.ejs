@@ -1,0 +1,82 @@
+<%- include('../partials/head') %>
+<body class="body-admin">
+    <!-- Header-->
+    <%- include ('../partials/adminHeader') %>
+    <!-- Logo mobile and tablet -->
+    <%- include ('../partials/logoMobileADmin') %>
+    <div class="form__files-desktop">
+        <div class="form-caption">
+            <form action="/admin/products/movie/<%- product.id %>?_method=PUT" method="post" class="upload-files">
+                <div class="contain__date">
+                    <label for="movieSeries">A subir:</label>
+                    <select name="movieSeries" id="movieSeries" class="input" required>
+                        <option value="movie">Pelicula</option>
+                        <!-- <option value="serie">Serie</option> -->
+                    </select>
+                </div>
+                <div class="contain__date">
+                    <input type="text" name="name" id="nombre" placeholder="Nombre" class="input" value='<%- product.title %>'>
+                </div>
+                <div class="contain__date">
+                    <textarea type="text" name="description" id="comentario" placeholder="Descripción" class="input"><%- product.description %></textarea required>
+                </div>
+                <div class="contain__date">
+                    <input type="datetime" name="duration" id="duration" placeholder="Duración" class="input" value="<%- product.duration %>">
+                </div>
+                <div class="contain__date">
+                    <input type="number" name="appreciation" id="appreciation" placeholder="Calificación" class="input" value='<%-product.appreciation  %>'>
+                </div>
+                <div class="contain__date">
+                    <label for="gender">Genero:</label>
+                    <select name="gender" id="gender" class="input" required>
+                        <% genres.forEach(genre => { %>
+                            <option value="<%- genre.id %>"><%- genre.name %></option> 
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="contain__date">
+                    <label for="year">Año:</label>
+                    <input type="month" name="age" id="age" placeholder="Año" class="input" value="<%- product.age %>">
+                </div>
+                <div class="contain__date">
+                    <input type="text" name="director" id="director" placeholder="Director" class="input" value="<%- product.director %>">
+                </div>
+                <div class="contain__date">
+                    <label for="idiom">Idioma:</label>
+                    <div class="form-check-container">
+                        <input type="checkbox" name="idiom" value="ingles" checked>Ingles
+                        <input type="checkbox" name="idiom" value="español">Español
+                        <input type="checkbox" name="idiom" value="otro">Otro idioma
+                    </div>
+                </div>
+                <div class="contain__date">
+                    <label for="image">Cargar imagen de portada</label>
+                    <input type="file" name="image" accept=".jpg" class="input">
+                </div>
+                <div class="contain__date">
+                    <label for="video">Pegar URL del trailer</label>
+                    <input type="url" name="video" class="input" value="<%- product.trailer %>">
+                </div>
+                <div class="contain__date">
+                    <input type="number" name="price" id="buyPrice" placeholder="Precio de venta" class="input" value="<%- product.price.buy %>">
+                </div>
+                <div class="contain__date">
+                    <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input" value="<%- product.price.rental %>">
+                </div>
+                <div class="contain__date">
+                    <input type="submit" value="Cargar" class="input-enter">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="form__files">
+        <div class="error">
+            <p>
+                Lo siento, solo es posible cargar archivos desde su ordenador
+            </p>
+        </div>
+    </div>
+    <!-- Footer -->
+    <%- include ('../partials/adminFooter') %>
+</body>
+</html>

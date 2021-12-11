@@ -76,6 +76,47 @@ let controller = {
         res.render('./admin/adminStatistics', {
             title: 'Admin - Page : statistics'
         })
+    },
+    editMovie: (req, res) => {
+        let product = movies.find(elem => elem.id === Number(req.params.id))
+        res.render('./admin/adminEditMovie', {
+            title: 'Edit',
+            product,
+            genres
+        })
+    },
+    editSerie: (req, res) => {
+
+    },
+    editSuccessMovie: (req, res) => {
+        const { name, description, duration, appreciation, age, director, movieSeries, gender, idiom, image, video, price } = req.body;
+
+        movies.forEach(element => {
+            if(element.id === Number(req.params.id)){
+                element.id = element.id,
+                element.title = name,
+                element.description = description,
+                element.trailer = video,
+                element.duration = duration,
+                element.appreciation = appreciation,
+                element.age = age,
+                element.director = director,
+                element.idiom = idiom,
+                element.image = 'default.jpg',
+                element.gender = Number(gender)
+                element.price = {
+                    buy: +price[0],
+                    rental: +price[1]
+                }
+            }
+        })
+
+        writeJson(moviesFilePath, movies)
+
+        res.redirect('/admin')
+    },
+    editSuccessSerie: (req, res) => {
+
     }
 }
 
