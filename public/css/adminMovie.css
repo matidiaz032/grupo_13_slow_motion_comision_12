@@ -2,13 +2,13 @@
     width: 85%;
     height: 1.5em;
     margin: 1em 0 0 2.5em;
-    background: linear-gradient(-45deg, #fff, #232323);
 }
 
 .moviesInformation .flex-information {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
+    background: linear-gradient(-45deg, #fff, #232323);
 }
 
 .moviesInformation .flex-information .title-id {
@@ -45,6 +45,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
+    background: linear-gradient(45deg, #232323, #d8c371);
 }
 
 .moviesInformation .table-movie .title-id {
@@ -71,5 +72,7 @@
     flex-grow: .2;
 }
 
-@media only screen and (min-width:768px) and (max-width:1024px){}
+@media only screen and (min-width:768px) and (max-width:1024px){
+    
+}
 @media only screen and (min-width:1024px) and (max-width:1440px) {}

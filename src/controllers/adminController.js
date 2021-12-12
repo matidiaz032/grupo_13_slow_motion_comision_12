@@ -198,19 +198,6 @@ let controller = {
         writeJson(moviesFilePath, movies)
         res.redirect('/admin/movies')
     }
-    // fatality: (req, res) => {
-    //     let idSucursal = +req.params.id;
-
-    //     getSucursales.forEach(sucursal => {
-    //         if(sucursal.id === idSucursal){
-    //             let sucursalAEliminar = getSucursales.indexOf(sucursal)
-    //             getSucursales.splice(sucursalAEliminar, 1)
-    //         }
-    //     })
-
-    //     writeJson(getSucursales)
-    //     res.redirect('/admin/sucursales')
-    // }
 }
 
 module.exports = controller
