@@ -78,7 +78,7 @@ let controller = {
             movies.push(newMovie)
             writeJson(moviesFilePath, movies)
         } else if(uploadType === 'serie') {
-
+            
         }
         
         res.redirect('/admin')

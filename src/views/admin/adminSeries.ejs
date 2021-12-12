@@ -6,20 +6,46 @@
     <!-- Logo mobile and tablet -->
     <%- include ('../partials/logoMobileAdmin') %> 
     
-    <!-- Series section -->
+    <!-- Movies section -->
     <main class="moviesInformation">
-        <div class="flex-Information">
+        <div class="flex-information">
             <div class="title-id">
-                <p class="id-product"></p>
+                <p class="id-product">Id</p>
             </div>
             <div class="title-name">
-                <p class="name-product"></p>
+                <p class="name-product">Titulo</p>
             </div>
             <div class="title-option">
-                <p class="option-product"></p>
+                <p class="option-product">Opcion</p>
+                <!-- <div class="option-product">
+                    <a href=""><i class="far fa-edit"></i></a>
+                </div>
+                <div>
+                    <form action="" method="POST">
+                        <button type="submit" class="delete-movie"><i class="far fa-trash-alt"></i></button>
+                    </form>
+                </div> -->
             </div>
         </div>
+            <div class="table-movie">
+                <div class="title-id">
+                    <p><%- serie.id %></p>
+                </div>
+                <div class="title-name">
+                    <p><%- serie.title %></p>
+                </div>
+                <div class="option-product">
+                    <a href="/admin/products/movie/<%- serie.id %>/edit"><i class="far fa-edit"></i></a>
+                </div>
+                <div>
+                    <form action="" method="POST">
+                        <button type="submit" class="delete-movie"><i class="far fa-trash-alt"></i></button>
+                    </form>
+                </div>
+            </div>
+        <% }) %>
     </main>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
     <!-- Footer -->
