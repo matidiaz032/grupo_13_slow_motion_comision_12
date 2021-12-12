@@ -27,6 +27,7 @@ app.use('/products', productsRouter)
 app.use('/admin', adminRouter)
 app.use('/sinLog', sinLogRouter)
 
-    /* Server */
+    /* Server  */
 app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
 http://localhost:${PORT}`));
+
