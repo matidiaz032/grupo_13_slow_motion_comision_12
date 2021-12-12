@@ -8,7 +8,7 @@
         <div class="contenedor-padre">
 
             <div class="image-container">
-            <img src="/img/peliculas/Cruella.jpg" alt="">
+            <img src="/img/peliculas/<%= detailMovie.image%>" alt="">
             <div class="corazon">
             <i class="fas fa-heart"></i>
             <i class="fas fa-shopping-cart"></i>
@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="title">
-        <h3>Cruella</h3>
+        <h3><%= detailMovie%></h3>
     </div>
         <div class="contenedor-box2">
 
@@ -48,7 +48,7 @@
         <div class="contenedor-estadisticas">
             <div>
                 <div class="estrella">
-                <h5>4.3 </h5>
+                <h5><%= detailMovie.appreciation%> </h5>
                 <i class="fas fa-star"></i>
             </div>
                 <p>Calificación</p>
@@ -60,20 +60,18 @@
             </div>
             <p class="espacios">|</p>
             <div class="estadisticas">
-                <h5>3Hs25m</h5>
+                <h5><%= detailMovie.duration%></h5>
                 <p>Duración</p>
 
             </div>
         </div>
         <div class="resumen-movie">
-            <p>En el misterioso pueblo de Derry, un malvado payaso
-                llamado Pennywise vuelve 27 años después para atormentar a los ya adultos miembros del Club de los
-                Perdedores, que ahora están más alejados unos de otros.</p>
+            <p><%= detailMovie.description%></p>
 
         </div>
         <div class="container-director">
-            <h5>Director:James Cameron</h5>
-            <h5>Año: 2021</h5>
+            <h5><%= detailMovie.director%></h5>
+            <h5><%= detailMovie.age %> </h5>
             <h5>Género:Familiar</h5>
         </div>
         <div class="icons">
