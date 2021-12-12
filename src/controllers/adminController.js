@@ -38,18 +38,23 @@ let controller = {
             title: 'Admin - Page : Users'
         })
     },
-    upload: (req, res) => {
-        res.render('./admin/uploadFiles', {
-            title: 'Admin - Page : Form',
+    uploadMovie: (req, res) => {
+        res.render('./admin/uploadFileMovies', {
+            title: 'Admin - Page : Form Movies',
             genres
         })
     },
-    store: (req, res) => {
-        const { name, description, duration, appreciation, age, director, movieSeries, gender, idiom, image, video, price } = req.body;
+    // uploadSeries: (req, res) => {
+    //     res.render('./admin/uploadFileSeries', {
+    //         title: 'Admin - Page : Form Series',
+    //     })
+    // },
+    storeMovies: (req, res) => {
+        const { title, description, duration, appreciation, age, director, uploadProduct, gender, idiom, image, video, price} = req.body;
         let lastId = 1;
-        let uploadType = movieSeries;
+        let uploadType = uploadProduct;
 
-        if (uploadType === 'movie') {
+        if (uploadType === "movies") {
             movies.forEach(movie => {
                 if (movie.id > lastId) {
                     lastId = movie.id
@@ -58,7 +63,7 @@ let controller = {
 
             let newMovie = {
                 id: +lastId + 1,
-                title: name,
+                title,
                 description,
                 trailer: video,
                 duration,
@@ -76,15 +81,40 @@ let controller = {
     
             movies.push(newMovie)
             writeJson(moviesFilePath, movies)
+            res.redirect('/admin/movies')
         }
-        
-        res.redirect('/admin')
     },
-    statistics: (req, res) => {
-        res.render('./admin/adminStatistics', {
-            title: 'Admin - Page : statistics'
-        })
-    },
+    // storeSeries: (req, res) => {
+    //     const { title, seasons, video, description, image, genres, price, idiom, age, director, uploadProduct} = req.body;
+    //     let lastId = 1;
+    //     let uploadType = uploadProduct;
+
+    //     if (uploadType === "series") {
+    //         series.forEach(serie => {
+    //             if (serie.id > lastId) {
+    //                 lastId = serie.id
+    //             }
+    //         });
+
+    //         let newSerie = {
+    //             id: +lastId + 1,
+    //             title,
+    //             seasons,
+    //             trailer: video,
+    //             description,
+    //             image: 'default.png',
+    //             genres,
+    //             price: {
+    //                 buy: +price[0],
+    //                 rental: +price[1]
+    //             }
+    //         }
+
+    //         series.push(newSerie)
+    //         writeJson(seriesFilePath, series)
+    //         res.redirect('/admin/series')
+    //     }
+    // },
     editMovie: (req, res) => {
         let product = movies.find(elem => elem.id === Number(req.params.id))
         res.render('./admin/adminEditMovie', {
@@ -125,7 +155,33 @@ let controller = {
     },
     editSuccessSerie: (req, res) => {
 
+    },
+    deleteProduct: (req, res) => {
+        let idMovie = +req.params.id;
+
+        movies.forEach(movie => {
+            if(movie.id === idMovie){
+                let deleteMovie = movies.indexOf(movie)
+                movies.splice(deleteMovie, 1)
+            }
+        })
+
+        writeJson(moviesFilePath, movies)
+        res.redirect('/admin/movies')
     }
+    // fatality: (req, res) => {
+    //     let idSucursal = +req.params.id;
+
+    //     getSucursales.forEach(sucursal => {
+    //         if(sucursal.id === idSucursal){
+    //             let sucursalAEliminar = getSucursales.indexOf(sucursal)
+    //             getSucursales.splice(sucursalAEliminar, 1)
+    //         }
+    //     })
+
+    //     writeJson(getSucursales)
+    //     res.redirect('/admin/sucursales')
+    // }
 }
 
 module.exports = controller

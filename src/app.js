@@ -17,8 +17,8 @@ app.set('views', path.join(__dirname, 'views'))
 let indexRouter = require('./routes/indexRouter');
 let usersRouter = require('./routes/usersRouter');
 let productsRouter = require('./routes/productsRouter');
-let adminRouter = require('./routes/adminRouter')
-let sinLogRouter = require('./routes/sinLogRouter.js')
+let adminRouter = require('./routes/adminRouter');
+let sinLogRouter = require('./routes/sinLogRouter.js');
 
     /* Routes */
 app.use('/', indexRouter)
