@@ -69,7 +69,7 @@ let controller = {
                 director,
                 idiom,
                 subtitle,
-                image: 'default.jpg',
+                image: 'default.png',
                 gender: +gender,
                 price: {
                     buy: +price[0],
@@ -83,9 +83,9 @@ let controller = {
 
         /* Add series */
          else if(uploadType === 'serie') {
-            series.forEach(movie => {
-                if (series.id > lastId) {
-                    lastId = series.id
+            series.forEach(serie => {
+                if (serie.id > lastId) {
+                    lastId = serie.id
                 }
             });
 
@@ -100,7 +100,7 @@ let controller = {
                 director,
                 idiom,
                 subtitle,
-                image: 'default.jpg',
+                image: 'default.png',
                 gender: +gender,
                 price: {
                     buy: +price[0],
