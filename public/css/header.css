@@ -64,6 +64,60 @@
     font-size: 1.5rem;
 }
 
+.conteinHeader header .optFoot .menu .desactive i{
+    font-size: 1rem;
+}
+
+.conteinHeader header .optFoot .menu .options-menu {
+    display: none;
+}
+
+.conteinHeader header .optFoot .menu .active {
+    display: block;
+    position: absolute;
+    background-color: #000000d0;
+    height: 15rem;
+    width: 8rem;
+    right: 1rem;
+    top: 3rem;
+    border-radius: 1rem;
+    border: solid 1px var(--black);
+    padding: 0.3rem 0.5rem;
+    animation: openMenu 0.5s linear;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes openMenu{
+    from {height: 1rem; width: 1rem;}
+    to {height: 15rem; width: 8rem;}
+}
+
+.conteinHeader header .optFoot .menu .options-menu .list-item {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    animation: openList 0.5s linear;
+}
+
+@keyframes openList{
+    from {font-size: 0rem;}
+    to {font-size: 1rem;}
+}
+.conteinHeader header .optFoot .menu .options-menu .list-item a{
+    color: var(--yellow);
+}
+
+.conteinHeader header .optFoot .menu .options-menu .list-item #search-header{
+    width: 6rem;
+    animation: openInput 0.5s linear;
+}
+
+@keyframes openInput{
+    from {width: 0rem;}
+    to {width: 6rem;}
+}
+
 .conteinHeader header .optFoot .RegAndLog {
     display: none;
 }

@@ -1,37 +1,314 @@
 [
     {
         "id": 1,
-        "title": "Black Mirror",
-        "seasons": [
-            {
-                "season1": {
-                    "capitulo1": "jsdhahjkfb.mp4",
-                    "capitulo2": "jsdhahjkfb.mp4",
-                    "capitulo3": "jfdkhasjkfhjsdalhfjsda.mp4"
-                },
-                "season2": {
-                    "capitulo1": "jsdhahjkfb.mp4"
-                },
-                "season3": {
-                    "capitulo1": "jsdhahjkfb.mp4"
-                }
-            }
-        ],
-        "trailer": "seasons.jpeg",
-        "description": "El lado oscuro de la era tecnológica en la que se vive: la paranoia de ser vigilados como en un panóptico, los usos terroristas de las nuevas herramientas y su relación con la experiencia cotidiana.",
-        "image": "/img/series/BlackMirror720x1080.jpg",
-        "gender": "Ciencia Ficcion",
+        "title": "Spiderman",
+        "description": "Edicion de prueba 123456",
+        "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
+        "duration": "2hs 30min",
+        "appreciation": "5.0",
+        "age": "2021-12",
+        "director": "Matias Diaz",
+        "idiom": "ingles",
+        "subtitle": "latino",
+        "image": "CasaDePapel720x1080.jpg",
+        "gender": 3,
         "price": {
-            "buy": "900",
-            "rental" : "450"
+            "buy": 50,
+            "rental": 5
         },
-        "idiom": {
-            "original": "ingles",
-            "translated": "latino",
-            "subtitle": "latino"
+        "seasons": {
+            "season1": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            },
+            "season2": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj"
+            },
+            "season3": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            }
+        }
+    },
+    {
+        "id": 2,
+        "title": "Prueba de edicion serie",
+        "description": "HELLO WORLD!!",
+        "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
+        "duration": "No se si llegemos a terminar el sprint",
+        "appreciation": "2",
+        "age": "2020-01",
+        "director": "a",
+        "idiom": "ingles",
+        "subtitle": "latino",
+        "image": "BlackMirror720x1080.jpg",
+        "gender": 1,
+        "price": {
+            "buy": 500000000,
+            "rental": 2000000
         },
-        "age": "2011",
-        "director": "Charlie Brooker"
+        "seasons": {
+            "season1": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            },
+            "season2": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj"
+            },
+            "season3": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            }
+        }
+    },
+    {
+        "id": 3,
+        "title": "Angel Guillermo",
+        "description": "dsafdsadwsa",
+        "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+        "duration": "1h 15m",
+        "appreciation": "7",
+        "age": "2021-10",
+        "director": "dsada",
+        "idiom": "ingles",
+        "subtitle": "latino",
+        "image": "BlackMirror720x1080.jpg",
+        "gender": 1,
+        "price": {
+            "buy": 659,
+            "rental": 659
+        },
+        "seasons": {
+            "season1": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            },
+            "season2": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj"
+            },
+            "season3": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            }
+        }
+    },
+    {
+        "id": 4,
+        "title": "Angel Guillermo",
+        "description": "dsadasfa",
+        "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+        "duration": "1h 15m",
+        "appreciation": "7",
+        "age": "2021-03",
+        "director": "dsada",
+        "idiom": "ingles",
+        "subtitle": "latino",
+        "image": "CasaDePapel720x1080.jpg",
+        "gender": 3,
+        "price": {
+            "buy": 659,
+            "rental": 1500
+        },
+        "seasons": {
+            "season1": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            },
+            "season2": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj"
+            },
+            "season3": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            }
+        }
+    },
+    {
+        "id": 5,
+        "title": "Angel Guillermo",
+        "description": "dsagag",
+        "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+        "duration": "1h 15m",
+        "appreciation": "9",
+        "age": "2021-12",
+        "director": "dsada",
+        "idiom": "ingles",
+        "subtitle": "latino",
+        "image": "CasaDePapel720x1080.jpg",
+        "gender": 3,
+        "price": {
+            "buy": 1500,
+            "rental": 5446
+        },
+        "seasons": {
+            "season1": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            },
+            "season2": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj"
+            },
+            "season3": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            }
+        }
+    },
+    {
+        "id": 6,
+        "title": "Angel Guillermo",
+        "description": "fdsaffa",
+        "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+        "duration": "1h 15m",
+        "appreciation": "9",
+        "age": "2021-05",
+        "director": "fdsa",
+        "idiom": "ingles",
+        "subtitle": "latino",
+        "image": "CasaDePapel720x1080.jpg",
+        "gender": 3,
+        "price": {
+            "buy": 1500,
+            "rental": 659
+        },
+        "seasons": {
+            "season1": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            },
+            "season2": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj"
+            },
+            "season3": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            }
+        }
+    },
+    {
+        "id": 7,
+        "title": "dsafdaf",
+        "description": "fsdafsdad",
+        "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+        "duration": "1h 15m",
+        "appreciation": "7",
+        "age": "2021-05",
+        "director": "dsada",
+        "idiom": "ingles",
+        "subtitle": "latino",
+        "image": "BlackMirror720x1080.jpg",
+        "gender": 1,
+        "price": {
+            "buy": 1500,
+            "rental": 659
+        },
+        "seasons": {
+            "season1": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            },
+            "season2": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj"
+            },
+            "season3": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            }
+        }
+    },
+    {
+        "id": 8,
+        "title": "dsafa",
+        "description": "fdsafdsafdsa",
+        "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+        "duration": "1h 15m",
+        "appreciation": "6",
+        "age": "2021-04",
+        "director": "dsada",
+        "idiom": "ingles",
+        "subtitle": "latino",
+        "image": "Dark720x1080.jpg",
+        "gender": 2,
+        "price": {
+            "buy": 5446,
+            "rental": 500000
+        },
+        "seasons": {
+            "season1": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            },
+            "season2": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj"
+            },
+            "season3": {
+                "chapter1": "dsahjkldhlasj",
+                "chapter2": "dsahjkldhlasj",
+                "chapter3": "dsahjkldhlasj",
+                "chapter4": "dsahjkldhlasj",
+                "chapter5": "dsahjkldhlasj"
+            }
+        }
     }
 ]
-
