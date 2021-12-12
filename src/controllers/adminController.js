@@ -39,16 +39,18 @@ let controller = {
         })
     },
     upload: (req, res) => {
+
         res.render('./admin/uploadFiles', {
             title: 'Admin - Page : Form',
             genres
         })
     },
     store: (req, res) => {
-        const { name, description, duration, appreciation, age, director, movieSeries, gender, idiom, subtitle, image, video, price } = req.body;
+        const { name, description, duration, appreciation, seasons, age, director, movieSeries, gender, idiom, subtitle, image, video, price } = req.body;
         let lastId = 1;
         let uploadType = movieSeries;
 
+        /* Add movies */
         if (uploadType === 'movie') {
             movies.forEach(movie => {
                 if (movie.id > lastId) {
@@ -77,8 +79,37 @@ let controller = {
     
             movies.push(newMovie)
             writeJson(moviesFilePath, movies)
-        } else if(uploadType === 'serie') {
-            
+        }
+
+        /* Add series */
+         else if(uploadType === 'serie') {
+            series.forEach(movie => {
+                if (series.id > lastId) {
+                    lastId = series.id
+                }
+            });
+
+            let newSerie = {
+                id: +lastId + 1,
+                title: name,
+                description,
+                trailer: video,
+                appreciation,
+                seasons: +seasons,
+                age,
+                director,
+                idiom,
+                subtitle,
+                image: 'default.jpg',
+                gender: +gender,
+                price: {
+                    buy: +price[0],
+                    rental: +price[1]
+                }
+            }
+    
+            series.push(newSerie)
+            writeJson(seriesFilePath, series)
         }
         
         res.redirect('/admin')

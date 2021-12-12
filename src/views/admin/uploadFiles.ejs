@@ -9,9 +9,9 @@
             <form action="/admin/form" method="post" class="upload-files">
                 <div class="contain__date">
                     <label for="movieSeries">A subir:</label>
-                    <select name="movieSeries" id="movieSeries" class="input" required>
-                        <option value="movie">Pelicula</option>
-                        <option value="serie">Serie</option>
+                    <select name="movieSeries" id="movieSeries" class="input" onchange="showHide()" required>
+                        <option value="movie" id="selectMovie">Pelicula</option>
+                        <option value="serie" id="selectSerie">Serie</option>
                     </select>
                 </div>
                 <div class="contain__date">
@@ -20,6 +20,11 @@
                 <div class="contain__date">
                     <textarea type="text" name="description" id="comentario" placeholder="Descripción" class="input"></textarea required>
                 </div>
+                
+                    <div class="contain__date">
+                        <input type="number" name="seasons" id="seasons" placeholder="Temporadas" class="input" hidden required>
+                    </div>
+               
                 <div class="contain__date">
                     <input type="datetime" name="duration" id="duration" placeholder="Duración" class="input" required>
                 </div>
@@ -85,5 +90,6 @@
     </div>
     <!-- Footer -->
     <%- include ('../partials/adminFooter') %>
+    <script src="/js/uploadFiles.js"></script>
 </body>
 </html>
