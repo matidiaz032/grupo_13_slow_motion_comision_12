@@ -50,7 +50,6 @@ let controller = {
         let lastId = 1;
         let uploadType = movieSeries;
 
-        /* Add movies */
         if (uploadType === 'movie') {
             movies.forEach(movie => {
                 if (movie.id > lastId) {
@@ -79,10 +78,7 @@ let controller = {
     
             movies.push(newMovie)
             writeJson(moviesFilePath, movies)
-        }
-
-        /* Add series */
-         else if(uploadType === 'serie') {
+        } else if(uploadType === 'serie') {
             series.forEach(serie => {
                 if (serie.id > lastId) {
                     lastId = serie.id

@@ -143,4 +143,21 @@
         "buy": 100,
         "rental": 50
     }
+}, {
+    "id": 10,
+    "title": "Carga 2",
+    "description": "2",
+    "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
+    "duration": "2hs",
+    "appreciation": "2",
+    "age": "2222-02",
+    "director": "akka",
+    "idiom": ["ingles", "español"],
+    "subtitle": "no",
+    "image": "default.png",
+    "gender": 2,
+    "price": {
+        "buy": 56,
+        "rental": 22
+    }
 }]
