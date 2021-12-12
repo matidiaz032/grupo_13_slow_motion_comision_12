@@ -17,7 +17,7 @@
 
 .moviesInformation .flex-information .title-id .id-product {
     text-align: center;
-    padding: 5% 1em;
+    padding: 5% 0;
     font-family: var(--averia);
 }
 
@@ -49,6 +49,7 @@
 }
 
 .moviesInformation .table-movie .title-id {
+    width: 0;
     flex-grow: .7;
 }
 
@@ -72,7 +73,36 @@
     flex-grow: .2;
 }
 
+.moviesInformation .table-movie .option-product a i {
+    color: var(--black);
+    padding: 5px;
+}
+
+.moviesInformation .table-movie .element-delete form .delete-movie {
+    background: transparent;
+    border: none;
+}
+
+.moviesInformation .table-movie .element-delete form .delete-movie i {
+    color: var(--black);
+    background: transparent;
+    padding: 5px;
+}
+
 @media only screen and (min-width:768px) and (max-width:1024px){
     
+    .moviesInformation .table-movie .title-id {
+        width: 0;
+        flex-grow: .5;
+    }
+
+    .moviesInformation .table-movie .option-product a i {
+        padding: 15px;
+    }
+
+    .moviesInformation .table-movie .element-delete form .delete-movie i {
+        padding: 15px;
+    }
+
 }
 @media only screen and (min-width:1024px) and (max-width:1440px) {}

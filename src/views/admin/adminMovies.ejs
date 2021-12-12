@@ -39,7 +39,7 @@
                 <div class="option-product">
                     <a href="/admin/products/movie/<%- movie.id %>/edit"><i class="far fa-edit"></i></a>
                 </div>
-                <div>
+                <div class="element-delete">
                     <form action="/admin/deleteProduct/<%- movie.id %>?_method=DELETE" method="POST">
                         <button type="submit" class="delete-movie"><i class="far fa-trash-alt"></i></button>
                     </form>

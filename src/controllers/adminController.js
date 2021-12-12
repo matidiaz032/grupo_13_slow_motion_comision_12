@@ -197,7 +197,13 @@ let controller = {
 
         writeJson(moviesFilePath, movies)
         res.redirect('/admin/movies')
-    }
+    },
+    statistics: (req, res) => {
+        res.render('./admin/adminStatistics', {
+            title: 'Admin - Page : Estadisticas',
+            movies: movies,
+        }
+    )}
 }
 
 module.exports = controller

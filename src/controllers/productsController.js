@@ -19,20 +19,17 @@ let controller = {
     serialMovie: (req,res)=>{
         let id = +req.params.id;
         let detailMovie = movies.find(movie =>movie.id ===id) 
-        res.render('product/productDetail', {
+        res.render('product/productDetailMovie', {
             title: 'Movie Detail',
             detailMovie
-        
         })
     },
     serialSerie: (req,res)=>{
         let id = +req.params.id;
         let detailSerie = series.find(serie =>serie.id ===id) 
-        res.render('product/productDetail', {
+        res.render('product/productDetailSerie', {
             title: 'Serie Detail',
             detailSerie
-            
-         
         })
     }, 
     
