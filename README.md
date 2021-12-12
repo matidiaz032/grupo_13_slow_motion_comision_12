@@ -28,18 +28,24 @@ ___
 ___
 ### Plataforma para organizacion del trabajo:
 
-- **[Trello]** (https://trello.com/)
+- **[Trello]**(https://trello.com/)
 
 ___
  
 ## Enlace a la retrospectiva
 
--[Sprint 1](./sprint1.md)
+-[Sprint 1](./feedback-weekly.md/retro1Sprint.md)
 
 
--[Sprint 2](./sprint2.md)
+-[Sprint 1](./feedback-weekly.md/retro2Sprint2.md)
+
+[Weekly 2](./feedback-weekly.md/weekly2Sprint.md)
 
 
--[Sprint 3](./weekly.md)
+-[Sprint 3](./feedback-weekly.md/retro3Sprint.md)
+[Weekly 4](./feedback-weekly.md/weekly3Sprint.md)
+
+
+
 
 
