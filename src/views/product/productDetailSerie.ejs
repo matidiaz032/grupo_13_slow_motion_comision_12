@@ -1,4 +1,4 @@
- <%- include('../partials/head') %> 
+<%- include('../partials/head') %> 
 
 <body class="contain-body">
     
@@ -8,7 +8,7 @@
         <div class="contenedor-padre">
 
             <div class="image-container">
-            <img src="/img/peliculas/<%= detailMovie.image%>" alt="">
+            <img src="/img/series/<%= detailSerie.image%>" alt="">
             <div class="corazon">
             <i class="fas fa-heart"></i>
             <i class="fas fa-shopping-cart"></i>
@@ -28,27 +28,27 @@
         </div>
     </div>
     <div class="title">
-        <h3><%= detailMovie%></h3>
+        <h3><%= detailSerie.title %></h3>
     </div>
         <div class="contenedor-box2">
 
-            <img src="/img/peliculas/cruela480x282.jpg">
+            <img src="/img/series/<%= detailSerie.image%>">
             <div class="play">
             <i class="fas fa-play"></i>
             </div>
 
         </div>
         <div class="opcionesPelicula">
-            <p>Idioma:</p>
+            <p>Idioma: <%- detailSerie.idiom %></p>
             <p class="espacios">|</p>
-            <p>Subtítulos:</p>
+            <p>Subtítulos: <%- detailSerie.subtitle %></p>
             <p class="espacios">|</p>
-            <p>Calidad:</p>
+            <p>Calidad: <%- detailSerie.appreciation %></p>
         </div>
         <div class="contenedor-estadisticas">
             <div>
                 <div class="estrella">
-                <h5><%= detailMovie.appreciation%> </h5>
+                <h5><%= detailSerie.appreciation%> </h5>
                 <i class="fas fa-star"></i>
             </div>
                 <p>Calificación</p>
@@ -60,18 +60,18 @@
             </div>
             <p class="espacios">|</p>
             <div class="estadisticas">
-                <h5><%= detailMovie.duration%></h5>
+                <h5><%= detailSerie.duration%></h5>
                 <p>Duración</p>
 
             </div>
         </div>
         <div class="resumen-movie">
-            <p><%= detailMovie.description%></p>
+            <p><%= detailSerie.description%></p>
 
         </div>
         <div class="container-director">
-            <h5><%= detailMovie.director%></h5>
-            <h5><%= detailMovie.age %> </h5>
+            <h5><%= detailSerie.director%></h5>
+            <h5><%= detailSerie.age %> </h5>
             <h5>Género:Familiar</h5>
         </div>
         <div class="icons">

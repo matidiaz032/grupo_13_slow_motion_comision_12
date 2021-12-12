@@ -27,6 +27,7 @@
         "age": "2020-01",
         "director": "a",
         "idiom": "ingles",
+        "subtitle": "latino",
         "image": "21jumpstreet.jpg",
         "gender": 3,
         "price": {
@@ -44,6 +45,7 @@
         "age": "2021-10",
         "director": "dsada",
         "idiom": "ingles",
+        "subtitle": "latino",
         "image": "FreeGuy183x275.jpg",
         "gender": 1,
         "price": {
@@ -61,6 +63,7 @@
         "age": "2021-03",
         "director": "dsada",
         "idiom": "ingles",
+        "subtitle": "latino",
         "image": "21jumpstreet.jpg",
         "gender": 3,
         "price": {
@@ -78,6 +81,7 @@
         "age": "2021-12",
         "director": "dsada",
         "idiom": "ingles",
+        "subtitle": "latino",
         "image": "21jumpstreet.jpg",
         "gender": 3,
         "price": {
@@ -95,6 +99,7 @@
         "age": "2021-05",
         "director": "fdsa",
         "idiom": "ingles",
+        "subtitle": "latino",
         "image": "21jumpstreet.jpg",
         "gender": 3,
         "price": {
@@ -112,6 +117,7 @@
         "age": "2021-05",
         "director": "dsada",
         "idiom": "ingles",
+        "subtitle": "latino",
         "image": "FreeGuy183x275.jpg",
         "gender": 1,
         "price": {
@@ -129,6 +135,7 @@
         "age": "2021-04",
         "director": "dsada",
         "idiom": "ingles",
+        "subtitle": "latino",
         "image": "blackPanther.jpg",
         "gender": 2,
         "price": {
