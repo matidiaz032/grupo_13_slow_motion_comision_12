@@ -45,7 +45,7 @@ let controller = {
         })
     },
     store: (req, res) => {
-        const { name, description, duration, appreciation, age, director, movieSeries, gender, idiom, image, video, price } = req.body;
+        const { name, description, duration, appreciation, age, director, movieSeries, gender, idiom, subtitle, image, video, price } = req.body;
         let lastId = 1;
         let uploadType = movieSeries;
 
@@ -66,6 +66,7 @@ let controller = {
                 age,
                 director,
                 idiom,
+                subtitle,
                 image: 'default.jpg',
                 gender: +gender,
                 price: {
@@ -76,6 +77,8 @@ let controller = {
     
             movies.push(newMovie)
             writeJson(moviesFilePath, movies)
+        } else if(uploadType === 'serie') {
+
         }
         
         res.redirect('/admin')
