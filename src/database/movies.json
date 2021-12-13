@@ -1,1 +1,148 @@
-[{"id":4,"title":"Angel Guillermo","description":"dsadasfa","trailer":"https://www.youtube.com/watch?v=xjDjIWPwcPU","duration":"1h 15m","appreciation":"7","age":"2021-03","director":"dsada","idiom":"ingles","image":"21jumpstreet.jpg","gender":3,"price":{"buy":659,"rental":1500}},{"id":5,"title":"Angel Guillermo","description":"dsagag","trailer":"https://www.youtube.com/watch?v=xjDjIWPwcPU","duration":"1h 15m","appreciation":"9","age":"2021-12","director":"dsada","idiom":"ingles","image":"21jumpstreet.jpg","gender":3,"price":{"buy":1500,"rental":5446}},{"id":6,"title":"Angel Guillermo","description":"fdsaffa","trailer":"https://www.youtube.com/watch?v=xjDjIWPwcPU","duration":"1h 15m","appreciation":"9","age":"2021-05","director":"fdsa","idiom":"ingles","image":"21jumpstreet.jpg","gender":3,"price":{"buy":1500,"rental":659}},{"id":7,"title":"dsafdaf","description":"fsdafsdad","trailer":"https://www.youtube.com/watch?v=xjDjIWPwcPU","duration":"1h 15m","appreciation":"7","age":"2021-05","director":"dsada","idiom":"ingles","image":"FreeGuy183x275.jpg","gender":1,"price":{"buy":1500,"rental":659}},{"id":8,"title":"dsafa","description":"fdsafdsafdsa","trailer":"https://www.youtube.com/watch?v=xjDjIWPwcPU","duration":"1h 15m","appreciation":"6","age":"2021-04","director":"dsada","idiom":"ingles","image":"blackPanther.jpg","gender":2,"price":{"buy":5446,"rental":500000}},{"id":9,"title":"prueba","description":"Hola","trailer":"https://www.youtube.com/watch?v=r6t0czGbuGI","duration":"1h","appreciation":"4.0","age":"2010-04","director":"Otra prueba","idiom":["ingles","español"],"subtitle":"yes","image":"default.jpg","gender":2,"price":{"buy":100,"rental":50}}]
+[{
+    "id": 4,
+    "title": "Angel Guillermo",
+    "description": "dsadasfa",
+    "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+    "duration": "1h 15m",
+    "appreciation": "7",
+    "age": "2021-03",
+    "director": "dsada",
+    "idiom": "ingles",
+    "image": "21jumpstreet.jpg",
+    "gender": 3,
+    "price": {
+        "buy": 659,
+        "rental": 1500
+    }
+}, {
+    "id": 5,
+    "title": "Angel Guillermo",
+    "description": "dsagag",
+    "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+    "duration": "1h 15m",
+    "appreciation": "9",
+    "age": "2021-12",
+    "director": "dsada",
+    "idiom": "ingles",
+    "image": "21jumpstreet.jpg",
+    "gender": 3,
+    "price": {
+        "buy": 1500,
+        "rental": 5446
+    }
+}, {
+    "id": 6,
+    "title": "Angel Guillermo",
+    "description": "fdsaffa",
+    "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+    "duration": "1h 15m",
+    "appreciation": "9",
+    "age": "2021-05",
+    "director": "fdsa",
+    "idiom": "ingles",
+    "image": "21jumpstreet.jpg",
+    "gender": 3,
+    "price": {
+        "buy": 1500,
+        "rental": 659
+    }
+}, {
+    "id": 7,
+    "title": "dsafdaf",
+    "description": "fsdafsdad",
+    "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+    "duration": "1h 15m",
+    "appreciation": "7",
+    "age": "2021-05",
+    "director": "dsada",
+    "idiom": "ingles",
+    "image": "FreeGuy183x275.jpg",
+    "gender": 1,
+    "price": {
+        "buy": 1500,
+        "rental": 659
+    }
+}, {
+    "id": 8,
+    "title": "dsafa",
+    "description": "fdsafdsafdsa",
+    "trailer": "https://www.youtube.com/watch?v=xjDjIWPwcPU",
+    "duration": "1h 15m",
+    "appreciation": "6",
+    "age": "2021-04",
+    "director": "dsada",
+    "idiom": "ingles",
+    "image": "blackPanther.jpg",
+    "gender": 2,
+    "price": {
+        "buy": 5446,
+        "rental": 500000
+    }
+}, {
+    "id": 9,
+    "title": "prueba",
+    "description": "Hola",
+    "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
+    "duration": "1h",
+    "appreciation": "4.0",
+    "age": "2010-04",
+    "director": "Otra prueba",
+    "idiom": ["ingles", "español"],
+    "subtitle": "yes",
+    "image": "default.jpg",
+    "gender": 2,
+    "price": {
+        "buy": 100,
+        "rental": 50
+    }
+}, {
+    "id": 10,
+    "title": "prueba de imagen",
+    "description": "a",
+    "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
+    "duration": "2",
+    "appreciation": "5",
+    "age": "2002-02",
+    "director": "matias",
+    "idiom": ["ingles", "español"],
+    "subtitle": "yes",
+    "image": "default.jpg",
+    "gender": 2,
+    "price": {
+        "buy": 100,
+        "rental": 40
+    }
+}, {
+    "id": 11,
+    "title": "prueba de imagen 3",
+    "description": "3",
+    "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
+    "duration": "3",
+    "appreciation": "3",
+    "age": "3333-03",
+    "director": "3",
+    "idiom": "ingles",
+    "subtitle": "yes",
+    "gender": 9,
+    "price": {
+        "buy": 100,
+        "rental": 50
+    }
+}, {
+    "id": 12,
+    "title": "Prueba de carga de imagen en movie",
+    "description": "prueba",
+    "trailer": "",
+    "duration": "1h",
+    "appreciation": "5.0",
+    "age": "2020-04",
+    "director": "Prueba",
+    "idiom": ["ingles", "español"],
+    "subtitle": "yes",
+    "image": "1639414329610.jpg",
+    "gender": 2,
+    "price": {
+        "buy": 100,
+        "rental": 50
+    }
+}]

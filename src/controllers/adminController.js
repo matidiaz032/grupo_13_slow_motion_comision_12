@@ -46,7 +46,7 @@ let controller = {
         })
     },
     store: (req, res) => {
-        const { name, description, duration, appreciation, seasons, age, director, movieSeries, gender, idiom, subtitle, image, video, price } = req.body;
+        const { name, description, duration, appreciation, seasons, age, director, movieSeries, gender, idiom, subtitle, video, price } = req.body;
         let lastId = 1;
         let uploadType = movieSeries;
 
@@ -68,7 +68,7 @@ let controller = {
                 director,
                 idiom,
                 subtitle,
-                image: 'default.jpg',
+                image: req.file ? req.file.filename : 'default.jpg',
                 gender: +gender,
                 price: {
                     buy: +price[0],
@@ -97,7 +97,7 @@ let controller = {
                 director,
                 idiom,
                 subtitle,
-                image: 'default.jpg',
+                image: req.file ? req.file.filename : 'default.jpg',
                 gender: +gender,
                 price: {
                     buy: +price[0],
