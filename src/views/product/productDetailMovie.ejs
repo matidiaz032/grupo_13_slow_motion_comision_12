@@ -30,7 +30,7 @@
             <h3><%= detailMovie.title %></h3>
         </div>
             <div class="contenedor-box2">
-                <img src="/img/peliculas/<%= detailMovie.image%>">
+                <img src="/img/products-image/<%= detailMovie.image%>">
                 <div class="play">
                     <i class="fas fa-play"></i>
                 </div>
@@ -38,7 +38,7 @@
             <div class="opcionesPelicula">
                 <p>Idioma: <%- detailMovie.idiom %></p>
                 <p class="espacios">|</p>
-                <p>Subtítulos: <%- detailSerie.subtitle %></p>
+                <p>Subtítulos: <%- detailMovie.subtitle %></p>
                 <p class="espacios">|</p>
                 <p>Calidad: HD</p>
             </div>
@@ -71,7 +71,7 @@
             </div>
             <div class="icons">
                 <a href=""><i class="fas fa-heart"></i> Añadir a favoritos</a>
-                <a href=""><i class="fas fa-cart-plus"></i> Añadir a carrito</a>
+                <a href="/products/cart"><i class="fas fa-cart-plus"></i> Añadir a carrito</a>
             </div>
             <div class="botones">
                 <button type="button" class="compra" id="comprar-serie" onclick="location.href='/products/cart'">COMPRAR</button>
