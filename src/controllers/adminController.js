@@ -69,7 +69,7 @@ let controller = {
                 id: +lastId + 1,
                 title: name,
                 description,
-                trailer: video,
+                trailer: video.substr(32),
                 duration,
                 appreciation,
                 seasons: +seasons,
@@ -147,7 +147,7 @@ let controller = {
                 element.id = element.id,
                 element.title = name,
                 element.description = description,
-                element.trailer = video,
+                element.trailer = video.substr(31),
                 element.duration = duration,
                 element.appreciation = appreciation,
                 element.age = age,
@@ -167,7 +167,31 @@ let controller = {
         res.redirect('/admin')
     },
     editSuccessSerie: (req, res) => {
+        const { name, description, seasons, appreciation, age, director, movieSeries, gender, idiom, image, video, price } = req.body;
 
+        series.forEach(element => {
+            if(element.id === Number(req.params.id)){
+                element.id = element.id,
+                element.title = name,
+                element.description = description,
+                element.trailer = video.substr(31),
+                element.seasons = +seasons
+                element.appreciation = appreciation,
+                element.age = age,
+                element.director = director,
+                element.idiom = idiom,
+                element.image = 'default.jpg',
+                element.gender = Number(gender)
+                element.price = {
+                    buy: +price[0],
+                    rental: +price[1]
+                }
+            }
+        })
+
+        writeJson(seriesFilePath, series)
+
+        res.redirect('/admin')
     },
     deleteProduct: (req, res) => {
         let idMovie = +req.params.id;

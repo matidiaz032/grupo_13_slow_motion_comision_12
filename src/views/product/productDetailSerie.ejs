@@ -8,49 +8,47 @@
         <div class="contenedor-padre">
 
             <div class="image-container">
-            <img src="/img/series/<%= detailSerie.image%>" alt="">
-            <div class="corazon">
-            <i class="fas fa-heart"></i>
-            <i class="fas fa-shopping-cart"></i>
+                <iframe src="https://www.youtube.com/embed/<%- detailSerie.trailer %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="corazon">
+                    <i class="fas fa-heart"></i>
+                    <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
         </div>
+        <div class="contein-options">
+            <div class="barOptions">
+                <nav id="navOpt">
+                    <h3>Generos</h3>
+                    <i class="fas fa-align-justify"></i>
+                </nav>
+                <a href=""><h3>Historial</h3></a>
+                <a href=""><h3>Lista de deseos</h3></a>
+                <a href=""><h3>Estrenos</h3></a>
+                <a href=""><h3>Ofertas</h3></a>
+            </div>
         </div>
-    </div>
-    <div class="contein-options">
-        <div class="barOptions">
-            <nav id="navOpt">
-                <h3>Generos</h3>
-                <i class="fas fa-align-justify"></i>
-            </nav>
-            <a href=""><h3>Historial</h3></a>
-            <a href=""><h3>Lista de deseos</h3></a>
-            <a href=""><h3>Estrenos</h3></a>
-            <a href=""><h3>Ofertas</h3></a>
+        <div class="title">
+            <h3><%= detailSerie.title %></h3>
         </div>
-    </div>
-    <div class="title">
-        <h3><%= detailSerie.title %></h3>
-    </div>
         <div class="contenedor-box2">
-
             <img src="/img/series/<%= detailSerie.image%>">
             <div class="play">
-            <i class="fas fa-play"></i>
+                <i class="fas fa-play"></i>
             </div>
-
         </div>
         <div class="opcionesPelicula">
             <p>Idioma: <%- detailSerie.idiom %></p>
             <p class="espacios">|</p>
             <p>Subtítulos: <%- detailSerie.subtitle %></p>
             <p class="espacios">|</p>
-            <p>Calidad: <%- detailSerie.appreciation %></p>
+            <p>Calidad: HD</p>
         </div>
         <div class="contenedor-estadisticas">
             <div>
                 <div class="estrella">
-                <h5><%= detailSerie.appreciation%> </h5>
-                <i class="fas fa-star"></i>
-            </div>
+                    <h5><%= detailSerie.appreciation%> </h5>
+                    <i class="fas fa-star"></i>
+                </div>
                 <p>Calificación</p>
             </div>
             <p class="espacios">|</p>
@@ -60,35 +58,30 @@
             </div>
             <p class="espacios">|</p>
             <div class="estadisticas">
-                <h5><%= detailSerie.duration%></h5>
-                <p>Duración</p>
-
+                <h5><%= detailSerie.seasons%></h5>
+                <p>Temporadas</p>
             </div>
         </div>
         <div class="resumen-movie">
             <p><%= detailSerie.description%></p>
-
         </div>
         <div class="container-director">
-            <h5><%= detailSerie.director%></h5>
-            <h5><%= detailSerie.age %> </h5>
-            <h5>Género:Familiar</h5>
+            <h5>Director: <%= detailSerie.director%></h5>
+            <h5>Año: <%= detailSerie.age.substr(0,4) %> </h5>
+            <h5>Género: <%- genre.name %> </h5>
         </div>
         <div class="icons">
             <a href=""><i class="fas fa-heart"></i> Añadir a favoritos</a>
             <a href=""><i class="fas fa-cart-plus"></i> Añadir a carrito</a>
         </div>
-
         <div class="botones">
-            <button type="button" class="compra" id="comprar-serie">COMPRAR</button>
-            <button type="button" class="alquilo" id="alquilo-serie">ALQUILAR</button>
+            <button type="button" class="compra" id="comprar-serie" onclick="location.href='/products/cart'">COMPRAR</button>
+            <button type="button" class="alquilo" id="alquilo-serie" onclick="location.href='/products/cart'">ALQUILAR</button>
         </div>
-
     </main>
 
     <%- include('../partials/footer')  %>
 
 </body>
-
 </html>
 

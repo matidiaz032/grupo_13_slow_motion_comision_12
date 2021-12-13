@@ -49,7 +49,7 @@ span a:hover {
     cursor: pointer;
 }
 
-.indexMovies .gender__grid{
+.indexProducts .gender__grid{
     font-family: var(--averia);
     font-weight: bold;
     font-size: 1.7rem;
@@ -59,44 +59,52 @@ span a:hover {
     margin-left: 1rem;
 }
 
-.indexMovies .contain-grid {
+.indexProducts .contain-grid {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     margin-bottom: 1rem;
 }
 
-.indexMovies .contain-grid .contain-list {
+.indexProducts .contain-grid .contain-list {
     width: 100%;
     margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
 }
 
-.indexMovies .contain-grid .contain-list .movies__section {
+.indexProducts .contain-grid .contain-list .movies__section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.indexMovies .contain-grid .contain-list .movies__section .contain-img {
+.indexProducts .contain-grid .contain-list .movies__section .contain-img {
     width: 30vw;
     height: 13rem;
     margin: 0.5rem 0.2rem;
 }
 
-.indexMovies .contain-grid .contain-list .movies__section .contain-img img{
+.indexProducts .contain-grid .contain-list .movies__section .contain-img img{
     width: 100%;
     height: 100%;
     box-shadow: 0px 0px 14px -3px rgb(255,255,255);
     border-radius: 0.3rem
 }
 
-.indexMovies .contain-grid .contain-list .movies__section .contain-img img {
+.indexProducts .contain-grid .contain-list .movies__section .see-more {
+    color: var(--lightblue);
+    background-color: transparent;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    font-family: var(--averia);
     border-radius: 0.3rem;
 }
 
+.indexProducts .contain-grid .contain-list .movies__section .see-more:hover {
+    border: dotted;
+}
 
 @media (min-width: 768px) {
     .section-cart {
@@ -115,20 +123,20 @@ span a:hover {
 
 
 
-    .indexMovies .gender__grid{
+    .indexProducts .gender__grid{
         font-size: 2rem;
         margin-left: 2rem;
     }
     
-    .indexMovies .contain-grid {
+    .indexProducts .contain-grid {
         margin-bottom: 2rem;
     }
     
-    .indexMovies .contain-grid .contain-list {
+    .indexProducts .contain-grid .contain-list {
         margin-bottom: 1.5rem;
     }
     
-    .indexMovies .contain-grid .contain-list .movies__section .contain-img {
+    .indexProducts .contain-grid .contain-list .movies__section .contain-img {
         height: 20rem;
     }
     
@@ -136,17 +144,18 @@ span a:hover {
 
 @media (min-width: 1024px) {
     
-    .indexMovies .gender__grid{
+    .indexProducts .gender__grid{
         font-size: 3rem;
     }
 
-    .indexMovies .contain-grid .contain-list .movies__section .contain-img {
-        height: 35rem;
+    .indexProducts .contain-grid .contain-list .movies__section .contain-img {
+        width: 20vw;
+        height: 20rem;
         box-shadow: 0px 0px 17px -1px rgb(255,255,255);
         border-radius: 0.5rem
     }
 
-    .indexMovies .contain-grid .contain-list .movies__section .contain-img img {
+    .indexProducts .contain-grid .contain-list .movies__section .contain-img img {
         border-radius: 0.5rem;
     }
 }

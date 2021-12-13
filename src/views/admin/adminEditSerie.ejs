@@ -14,7 +14,7 @@
                     <textarea type="text" name="description" id="comentario" placeholder="Descripción" class="input"><%- product.description %></textarea required>
                 </div>
                 <div class="contain__date">
-                    <input type="datetime" name="duration" id="duration" placeholder="Duración" class="input" value="<%- product.duration %>">
+                    <input type="number" name="seasons" id="seasons" placeholder="Temporadas" class="input" value="<%- product.seasons %>" style="display: block;" hidden>
                 </div>
                 <div class="contain__date">
                     <input type="number" name="appreciation" id="appreciation" placeholder="Calificación" class="input" value='<%-product.appreciation  %>'>

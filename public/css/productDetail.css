@@ -20,9 +20,9 @@
     height: 8rem;
 }
 
-.contenedor-padre .image-container img{
+.contenedor-padre .image-container iframe{
     width: 100%;
-    height: 100%;
+    height: 8rem;
 }
 
 .contenedor-padre  .corazon {
@@ -36,6 +36,10 @@
     color: var(--yellow);
 }
 
+.contenedor-padre  .corazon a {
+    color: var(--yellow);
+}
+
 .contenedor-padre  .corazon i{
     margin: 0 5px 0 5px;
 }
@@ -43,13 +47,14 @@
 .contenido .opcionesPelicula {
     display: flex;
     justify-content: space-around; 
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-family: var(--averia);
 }
 .contenido .opcionesPelicula p {
     color: var(--lightblue);
     padding: 0 2px;
 }
+
 .contenido .opcionesPelicula .espacios {
     color: var(--yellow);
 }
@@ -144,9 +149,11 @@
 .contenido .title {
     display: flex;
     color:var(--lightblue);
-    justify-content: center;
+    justify-content: flex-start;
     font-family: var(--staatliches);
     font-size: 1.5rem;
+    margin-left: 7rem;
+    margin-right: 2rem;
 }
 
 
@@ -185,20 +192,20 @@
     font-size: 1.7rem;
     }
     
-    .contenedor-padre .image-container img  {
-        object-fit: cover;
+    .contenedor-padre .image-container iframe{
         width: 100%;
-
+        height: 16rem;
     }
+
     .contenido .contenedor-estadisticas {
         font-size: 2rem;
     }
 
     .contenedor-box2 img {
-        top: 155px;
+        top: 70px;
     }
     .fa-play::before {
-        top: 409px;
+        top: 325px;
         font-size: 59px;
         left:103px;
         
@@ -206,7 +213,7 @@
     
 
     .contenido .opcionesPelicula{
-        margin-top: 11%;
+        margin-top: 5%;
     }
     .contenido .resumen-movie {
         font-size: 2rem;
@@ -231,8 +238,9 @@
     }
 
     .contenido .title {
-        margin-top: 1.5rem;
+        margin-top: 10rem;
         font-size: 2.5rem;
+        margin-left: 15rem;
     }
 } 
 
@@ -257,7 +265,9 @@
             font-size: 3rem;
             font-family: var(--staatliches);
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
+            margin-top: 4rem;
+            margin-left: 25rem;
         }
 
 
@@ -267,7 +277,7 @@
             justify-content: flex-start;
             flex-direction: column;
             margin-left: 30px;
-            margin-top: 5%;
+            margin-top: 2%;
         }
 
         .contenido .opcionesPelicula .espacios {
@@ -353,9 +363,9 @@
         }
         .contenedor-box2 img {
             width: 300px;
-            height: 275px;
+            height: 300px;
             left: 30px;
-            top: 75px;
+            top: 20px;
         }
 
         .fa-play::before {
@@ -378,7 +388,7 @@
 
         .fa-play::before{
             left: 171px;
-            top: 231px;
+            top: 150px;
         }
 
         .contenido .contenedor-estadisticas {
