@@ -6,7 +6,7 @@
     <%- include ('../partials/logoMobileADmin') %>
     <div class="form__files-desktop">
         <div class="form-caption">
-            <form action="/admin/form" method="post" class="upload-files">
+            <form action="/admin/form" method="post" class="upload-files" enctype="multipart/form-data">
                 <div class="contain__date">
                     <label for="movieSeries">A subir:</label>
                     <select name="movieSeries" id="movieSeries" class="input" onchange="showHide()" required>

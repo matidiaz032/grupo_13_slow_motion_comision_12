@@ -1,4 +1,5 @@
 let express = require('express');
+let multer = require('multer');
 let router = express.Router();
 const controller = require('../controllers/adminController.js');
 
