@@ -6,44 +6,39 @@
     <!-- Logo mobile and tablet -->
     <%- include ('../partials/logoMobileAdmin') %> 
     
-    <!-- Movies section -->
-    <main class="moviesInformation">
-        <div class="flex-information">
-            <div class="title-id">
-                <p class="id-product">Id</p>
+    <!-- Series section -->
+    <main class="seriesInformation">
+        <div class="information-series">
+            <div class="series-id">
+                <p class="idProduct-series">Id</p>
             </div>
-            <div class="title-name">
-                <p class="name-product">Titulo</p>
+            <div class="titleName-series">
+                <p class="nameProduct-series">Titulo</p>
             </div>
-            <div class="title-option">
-                <p class="option-product">Opcion</p>
-                <!-- <div class="option-product">
-                    <a href=""><i class="far fa-edit"></i></a>
-                </div>
-                <div>
-                    <form action="" method="POST">
-                        <button type="submit" class="delete-movie"><i class="far fa-trash-alt"></i></button>
-                    </form>
-                </div> -->
+            <div class="titleOption-series">
+                <p class="optionProduct-series">Opcion</p>
             </div>
         </div>
-            <div class="table-movie">
-                <div class="title-id">
-                    <p><%- serie.id %></p>
+        <div class="capsule-series"></div>
+            <% series.forEach(series => { %>
+                <div class="table-series">
+                    <div class="titleSeries-id">
+                        <p><%- series.id %></p>
+                    </div>
+                    <div class="titleSeries-name">
+                        <p><%- series.title %></p>
+                    </div>
+                    <div class="optionSeries-product">
+                        <a href="/admin/products/serie/<%- series.id %>/edit"><i class="far fa-edit"></i></a>
+                    </div>
+                    <div class="element-series-delete">
+                        <form action="/admin/deleteProductSerie/<%- series.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="delete-series"><i class="far fa-trash-alt"></i></button>
+                        </form>
+                    </div>
                 </div>
-                <div class="title-name">
-                    <p><%- serie.title %></p>
-                </div>
-                <div class="option-product">
-                    <a href="/admin/products/movie/<%- serie.id %>/edit"><i class="far fa-edit"></i></a>
-                </div>
-                <div>
-                    <form action="" method="POST">
-                        <button type="submit" class="delete-movie"><i class="far fa-trash-alt"></i></button>
-                    </form>
-                </div>
-            </div>
-        <% }) %>
+            <% }) %>
+        </div>
     </main>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 

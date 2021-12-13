@@ -57,8 +57,34 @@ let controller = {
         let uploadType = movieSeries;
 
         if (uploadType === 'movie') {
-            
-} else if(uploadType === 'serie') {
+            movies.forEach(movie => {
+                if (movie.id > lastId) {
+                    lastId = movie.id
+                }
+            });
+
+            let newMovie = {
+                id: +lastId + 1,
+                title: name,
+                description,
+                trailer: video.substr(32),
+                duration,
+                appreciation,
+                age,
+                director,
+                idiom,
+                subtitle,
+                image: req.file ? req.file.filename : 'default.jpg',
+                gender: +gender,
+                price: {
+                    buy: +price[0],
+                    rental: +price[1]
+                }
+            }
+    
+            movies.push(newMovie)
+            writeJson(moviesFilePath, movies)
+        } else if(uploadType === 'serie') {
             series.forEach(series => {
                 if (series.id > lastId) {
                     lastId = series.id
@@ -77,7 +103,7 @@ let controller = {
                 director,
                 idiom,
                 subtitle,
-                image: 'default.jpg',
+                image: req.file ? req.file.filename : 'default.jpg',
                 gender: +gender,
                 price: {
                     buy: +price[0],
@@ -193,9 +219,8 @@ let controller = {
 
         res.redirect('/admin')
     },
-    deleteProduct: (req, res) => {
+    deleteProductMovie: (req, res) => {
         let idMovie = +req.params.id;
-
         movies.forEach(movie => {
             if(movie.id === idMovie){
                 let deleteMovie = movies.indexOf(movie)
@@ -205,6 +230,18 @@ let controller = {
 
         writeJson(moviesFilePath, movies)
         res.redirect('/admin/movies')
+    },
+    deleteProductSerie: (req, res) => {
+        let idSerie = +req.params.id;
+        series.forEach(serie => {
+            if(serie.id === idSerie){
+                let deleteSerie = series.indexOf(serie)
+                series.splice(deleteSerie, 1)
+            }
+        })
+
+        writeJson(seriesFilePath, series)
+        res.redirect('/admin/series')
     }
 }
 

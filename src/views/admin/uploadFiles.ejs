@@ -6,10 +6,10 @@
     <%- include ('../partials/logoMobileADmin') %>
     <div class="form__files-desktop">
         <div class="form-caption">
-            <form action="/admin/form" method="post" class="upload-files">
+            <form action="/admin/form" method="post" class="upload-files" enctype="multipart/form-data">
                 <div class="contain__date">
                     <label for="movieSeries">A subir:</label>
-                    <select name="movieSeries" id="movieSeries" class="input" onchange="showHide()" required>
+                    <select name="movieSeries" id="movieSeries" class="input" onchange="showHide()" >
                         <option value="movie" id="selectMovie">Pelicula</option>
                         <option value="serie" id="selectSerie">Serie</option>
                     </select>
@@ -21,9 +21,9 @@
                     <textarea type="text" name="description" id="comentario" placeholder="Descripción" class="input"></textarea required>
                 </div>
                 
-                <div class="contain__date">
-                    <input type="number" name="seasons" id="seasons" placeholder="Temporadas" class="input" hidden>
-                </div>
+                    <div class="contain__date">
+                        <input type="number" name="seasons" id="seasons" placeholder="Temporadas" class="input" hidden>
+                    </div>
                
                 <div class="contain__date">
                     <input type="datetime" name="duration" id="duration" placeholder="Duración" class="input">
@@ -62,8 +62,8 @@
                     </div>
                 </div>
                 <div class="contain__date">
-                    <label for="image">Cargar imagen de portada</label>
-                    <input type="file" name="image" accept=".jpg" class="input">
+                    <label for="productImage">Cargar imagen de portada</label>
+                    <input type="file" name="productImage" class="input">
                 </div>
                 <div class="contain__date">
                     <label for="video">Pegar URL del trailer</label>
