@@ -1,10 +1,11 @@
-    <%- include('../partials/head') %>
+<%- include('../partials/head') %> 
 
-<body>
+<body class="indexMovies">
 
+    <!-- Header section -->
     <%- include('../partials/header') %> 
 
-    <!--Shopping cart options section-->
+    <!-- Options section -->
     <div class="section-cart">
         <div class="options">
             <span class="options__list"><a href="#">Estrenos</a></span>
@@ -20,73 +21,28 @@
             <span class="options__list-desktop"><a href="#">Ayuda</a></span>
         </div>
     </div>
-
-    <!-- grid section series -->
+    <!-- grid section movies -->
     <div class="contain-grid">
-        <span class="gender__grid">Accion</span>
-        <div class="movies__section">
-            <% 
-                let seriesAction = series.filter(serie => serie.genero === 'action')
-                series.forEach(serie => { %>
-                <div>
-                    <a href="<%- serie.id %>">
-                        <img src="<%- serie.image %> " alt="">
-                    </a>
-                </div>
-            <% }) %>
-            <div class="gender__movies">
-                <button type="button" class="see-more">
-                    <p>Ver más</p>
-                </button>
-            </div>
-        </div>
-        <span class="gender__grid-2">Accion / Comedia</span>
-            <div class="movies__section">
-                <div class="gender__movies-2"></div>
-                <div class="gender__movies-2"></div>
-                <div class="gender__movies-2"></div>
-                <div class="gender__movies-2"></div>
-                <div class="gender__movies-2"></div>
-                <div class="gender__movies-2">
-                    <button type="button" class="see-more">Ver más</button>
+        <% gender.forEach(gender => { %>
+            <div class="contain-list">
+                <span class="gender__grid"><%- gender.name %></span>
+                <div class="movies__section">
+                    <% series.forEach(elem => {
+                        if(gender.id === elem.gender) { %>
+                        <div class="contain-img">
+                            <a href="/products/serialSerie/<%- elem.id %>">
+                                <img src="/img/series/<%- elem.image %>" alt="">
+                            </a>
+                        </div>
+                    <% } }) %>
+                    <div>
+                        <button type="button" class="see-more">Ver más</button>
+                    </div>
                 </div>
             </div>
-            <span class="gender__grid-3">Comedias</span>
-            <div class="movies__section">
-                <div class="gender__movies-3"></div>
-                <div class="gender__movies-3"></div>
-                <div class="gender__movies-3"></div>
-                <div class="gender__movies-3"></div>
-                <div class="gender__movies-3"></div>
-                <div class="gender__movies-3">
-                    <button type="button" class="see-more">Ver más</button>
-                </div>
-            </div>
-            <span class="gender__grid-4">Dibujos animados</span>
-            <div class="movies__section">
-                <div class="gender__movies-4"></div>
-                <div class="gender__movies-4"></div>
-                <div class="gender__movies-4"></div>
-                <div class="gender__movies-4"></div>
-                <div class="gender__movies-4"></div>
-                <div class="gender__movies-4">
-                    <button type="button" class="see-more"> Ver más </button>
-                </div>
-            </div>
-            <span class="gender__grid-5">Terror</span>
-            <div class="movies__section">
-                <div class="gender__movies-5"></div>
-                <div class="gender__movies-5"></div>
-                <div class="gender__movies-5"></div>
-                <div class="gender__movies-5"></div>
-                <div class="gender__movies-5"></div>
-                <div class="gender__movies-5">
-                    <button type="button" class="see-more">Ver más</button>
-                </div>
-            </div>
+        <% }) %>
     </div>
-
-    <!-- Footer -->
+    <!-- Footer section -->
     <%- include('../partials/footer')  %>
 </body>
 </html>

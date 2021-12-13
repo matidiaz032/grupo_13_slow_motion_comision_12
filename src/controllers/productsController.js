@@ -13,7 +13,8 @@ let controller = {
     series: (req, res) => {
         res.render('./product/indexSeries', {
             title: 'Series',
-            series
+            series,
+            gender
         })
     },
     serialMovie: (req,res)=>{
