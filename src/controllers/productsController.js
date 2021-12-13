@@ -4,17 +4,37 @@ const gender = require('../database/genres')
 
 let controller = {
     movies: (req, res) => {
+        let genderFilter = []
+        gender.forEach(gender => {
+            movies.forEach(movie => {
+                if(gender.id === movie.gender && !genderFilter.includes(gender)
+                ) {
+                    genderFilter.push(gender)
+                }
+            });
+        })
+
         res.render('./product/indexMovies', {
             title: 'Movies',
             movies,
-            gender
+            genderFilter
         })
     },
     series: (req, res) => {
+        let genderFilter = []
+        gender.forEach(gender => {
+            series.forEach(serie => {
+                if(gender.id === serie.gender && !genderFilter.includes(gender)
+                ) {
+                    genderFilter.push(gender)
+                }
+            });
+        })
+        
         res.render('./product/indexSeries', {
             title: 'Series',
             series,
-            gender
+            genderFilter
         })
     },
     serialMovie: (req,res)=>{

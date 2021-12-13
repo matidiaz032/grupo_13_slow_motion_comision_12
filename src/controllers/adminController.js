@@ -47,7 +47,7 @@ let controller = {
     },
 
     store: (req, res) => {
-        const { name, description, duration, appreciation, seasons, age, director, movieSeries, gender, idiom, subtitle, image, video, price } = req.body;
+        const { name, description, duration, appreciation, seasons, age, director, movieSeries, gender, idiom, subtitle, video, price } = req.body;
         let lastId = 1;
         let uploadType = movieSeries;
 
@@ -62,7 +62,7 @@ let controller = {
                 id: +lastId + 1,
                 title: name,
                 description,
-                trailer: video.substr(video.indexOf('=')),
+                trailer: video.substr(video.indexOf('=') + 1),
                 duration,
                 appreciation,
                 age,
@@ -90,8 +90,7 @@ let controller = {
                 id: +lastId + 1,
                 title: name,
                 description,
-                trailer: video.substr(video.indexOf('=')),
-                duration,
+                trailer: video.substr(video.indexOf('=') + 1),
                 appreciation,
                 seasons: +seasons,
                 age,

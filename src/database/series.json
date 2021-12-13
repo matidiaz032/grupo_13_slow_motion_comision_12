@@ -2,18 +2,17 @@
     "id": 1,
     "title": "The Walking Dead",
     "description": "The Walking Dead tiene lugar después del inicio de un apocalipsis zombi mundial. Los zombis, coloquialmente llamados «caminantes», se arrastran hacia los humanos vivos y otras criaturas para comerlos; se sienten atraídos por el ruido, como los disparos, y por diferentes aromas, por ejemplo humanos.",
-    "trailer": "uwgohmYnDu0",
-    "duration": "2hs 30min",
+    "trailer": "=uwgohmYnDu0&t=6s",
     "appreciation": "4",
+    "seasons": 11,
     "age": "2010-10",
     "director": "Frank Darabont",
     "idiom": ["ingles", "español"],
     "subtitle": "Latino",
-    "image": "default.jpg",
-    "gender": 8,
+    "image": "1639438310216.jpg",
+    "gender": 9,
     "price": {
-        "buy": 400,
-        "rental": 250
-    },
-    "seasons": 11
+        "buy": 800,
+        "rental": 450
+    }
 }]
