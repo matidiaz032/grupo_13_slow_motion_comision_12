@@ -68,7 +68,7 @@ let controller = {
                 director,
                 idiom,
                 subtitle,
-                image: 'default.png',
+                image: 'default.jpg',
                 gender: +gender,
                 price: {
                     buy: +price[0],
@@ -79,9 +79,9 @@ let controller = {
             movies.push(newMovie)
             writeJson(moviesFilePath, movies)
         } else if(uploadType === 'serie') {
-            series.forEach(serie => {
-                if (serie.id > lastId) {
-                    lastId = serie.id
+            series.forEach(series => {
+                if (series.id > lastId) {
+                    lastId = series.id
                 }
             });
 
@@ -90,13 +90,14 @@ let controller = {
                 title: name,
                 description,
                 trailer: video,
+                duration,
                 appreciation,
                 seasons: +seasons,
                 age,
                 director,
                 idiom,
                 subtitle,
-                image: 'default.png',
+                image: 'default.jpg',
                 gender: +gender,
                 price: {
                     buy: +price[0],
@@ -197,13 +198,7 @@ let controller = {
 
         writeJson(moviesFilePath, movies)
         res.redirect('/admin/movies')
-    },
-    statistics: (req, res) => {
-        res.render('./admin/adminStatistics', {
-            title: 'Admin - Page : Estadisticas',
-            movies: movies,
-        }
-    )}
+    }
 }
 
 module.exports = controller
