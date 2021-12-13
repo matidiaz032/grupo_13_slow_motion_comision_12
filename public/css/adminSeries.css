@@ -1,3 +1,130 @@
-@media only screen and (min-width:768px) and (max-width:1024px){}
+.seriesInformation {
+    width: 85%;
+    height: 1.5em;
+    margin: 1em 0 0 2.5em;
+}
 
-@media only screen and (min-width:1024px) and (max-width:1440px) {}
+.seriesInformation .information-series {
+    width: 100%;
+    height: 2em;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background: linear-gradient(-45deg, #fff, #232323);
+}
+
+.seriesInformation .information-series .series-id {
+    flex-grow: .7;
+}
+
+.seriesInformation .information-series .series-id .idProduct-series {
+    text-align: center;
+    padding: 5% 0;
+    font-family: var(--averia);
+}
+
+.seriesInformation .information-series .titleName-series {
+    flex-grow: 2;
+}
+
+.seriesInformation .information-series .titleName-series .nameProduct-series {
+    text-align: center;
+    padding: 2% 0;
+    font-family: var(--averia);
+}
+
+.seriesInformation .information-series .titleOption-series {
+    flex-grow: .2;
+}
+
+.seriesInformation .information-series .titleOption-series .optionProduct-series {
+    text-align: center;
+    padding: 5% 0;
+    font-family: var(--averia);
+}
+
+.seriesInformation .table-series {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    background: linear-gradient(45deg, #232323, #d8c371);
+}
+
+.seriesInformation .table-series .series-id {
+    width: 0;
+    flex-grow: .7;
+    margin: auto;
+}
+
+.seriesInformation .table-series .series-id p {
+    width: 2em;
+    text-align: center;
+    padding: 5% 0;
+    font-family: var(--averia);
+}
+
+.seriesInformation .table-series .titleName-series {
+    flex-grow: 2;
+}
+
+.seriesInformation .table-series .titleName-series p {
+    width: auto;
+    text-align: center;
+    padding: 2% 0;
+    font-family: var(--averia);
+}
+
+.seriesInformation .table-series .titleOption-series {
+    flex-grow: .2;
+}
+
+.seriesInformation .table-series .optionProduct-series a i {
+    color: var(--black);
+    padding: 5px;
+}
+
+.seriesInformation .table-series .element-series-delete form .delete-series {
+    background: transparent;
+    border: none;
+}
+
+.seriesInformation .table-series .element-series-delete form .delete-series i {
+    color: var(--black);
+    background: transparent;
+    padding: 5px;
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px){
+
+    .seriesInformation {
+        margin: 1em auto 0;
+    }
+    
+    .seriesInformation .table-series .series-id {
+        width: 0;
+        flex-grow: .5;
+    }
+
+    .seriesInformation .table-series .series-id p {
+        width: 12em;
+    }
+
+    .seriesInformation .table-series .titleName-series p {
+        padding: 5% 0;
+    }
+
+    .seriesInformation .table-series .optionProduct-series a i {
+        padding: 15px;
+    }
+
+    .seriesInformation .table-series .element-series-delete form .delete-series i {
+        padding: 15px;
+    }
+
+}
+@media only screen and (min-width:1024px) and (max-width:1440px) {
+
+    .seriesInformation {
+        margin: 1em auto 0;
+    }
+}

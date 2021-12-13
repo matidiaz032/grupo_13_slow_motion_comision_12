@@ -186,9 +186,8 @@ let controller = {
 
         res.redirect('/admin')
     },
-    deleteProduct: (req, res) => {
+    deleteProductMovie: (req, res) => {
         let idMovie = +req.params.id;
-
         movies.forEach(movie => {
             if(movie.id === idMovie){
                 let deleteMovie = movies.indexOf(movie)
@@ -198,6 +197,18 @@ let controller = {
 
         writeJson(moviesFilePath, movies)
         res.redirect('/admin/movies')
+    },
+    deleteProductSerie: (req, res) => {
+        let idSerie = +req.params.id;
+        series.forEach(serie => {
+            if(serie.id === idSerie){
+                let deleteSerie = series.indexOf(serie)
+                series.splice(deleteSerie, 1)
+            }
+        })
+
+        writeJson(seriesFilePath, series)
+        res.redirect('/admin/series')
     }
 }
 
