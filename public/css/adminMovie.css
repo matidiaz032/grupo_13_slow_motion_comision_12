@@ -1,10 +1,12 @@
 .moviesInformation {
     width: 85%;
     height: 1.5em;
-    margin: 1em 0 0 2.5em;
+    margin: 1em 0 89.7% 2.5em;
 }
 
 .moviesInformation .flex-information {
+    width: 100%;
+    height: 2em;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -51,9 +53,11 @@
 .moviesInformation .table-movie .title-id {
     width: 0;
     flex-grow: .7;
+    margin: auto;
 }
 
 .moviesInformation .table-movie .title-id p {
+    width: 2em;
     text-align: center;
     padding: 5% 0;
     font-family: var(--averia);
@@ -64,6 +68,7 @@
 }
 
 .moviesInformation .table-movie .title-name p {
+    width: auto;
     text-align: center;
     padding: 2% 0;
     font-family: var(--averia);
@@ -90,10 +95,22 @@
 }
 
 @media only screen and (min-width:768px) and (max-width:1024px){
+
+    .moviesInformation {
+        margin: 1em auto 60%;
+    }
     
     .moviesInformation .table-movie .title-id {
         width: 0;
         flex-grow: .5;
+    }
+
+    .moviesInformation .table-movie .title-id p {
+        width: 12em;
+    }
+
+    .moviesInformation .table-movie .title-name p {
+        padding: 5% 0;
     }
 
     .moviesInformation .table-movie .option-product a i {
@@ -105,4 +122,21 @@
     }
 
 }
-@media only screen and (min-width:1024px) and (max-width:1440px) {}
+@media only screen and (min-width:1024px) and (max-width:1440px) {
+
+    .moviesInformation {
+        margin: 1em auto 40%;
+    }
+    
+    /* .moviesInformation .table-movie .title-name {
+        padding: 30px 0;
+    }
+
+    .moviesInformation .table-movie .option-product a i {
+        padding: 40px;
+    }
+
+    .moviesInformation .table-movie .element-delete form .delete-movie i {
+        padding: 40px;
+    } */
+}
