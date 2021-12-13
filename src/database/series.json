@@ -1,3 +1,20 @@
-[{
-    
-}]
+[
+    {
+        "id": 1,
+        "title": "Zombieland",
+        "description": "Después de que un virus transforma a la mayoría de las personas en zombis, los humanos sobrevivientes deben luchar contra los muertos vivientes hambrientos. Cuatro sobrevivientes, Tallahassee y sus amigos, Columbus, Wichita y Little Rock, respetan una serie de reglas de supervivencia y estrategias para matar zombis mientras se dirigen a un refugio seguro en Los Ángeles.",
+        "trailer": "8m9EVP8X7N8",
+        "duration": "1h 28min",
+        "appreciation": "4",
+        "age": "2009-10",
+        "director": "Ruben Fleischer",
+        "idiom": ["ingles", "español"],
+        "subtitle": "Latino",
+        "image": "1639426332396.jpg",
+        "gender": 9,
+        "price": {
+            "buy": 800,
+            "rental": 500
+        }
+    }
+]
