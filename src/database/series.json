@@ -310,5 +310,70 @@
                 "chapter5": "dsahjkldhlasj"
             }
         }
+    },
+    {
+        "id": 2,
+        "title": "Serie prueba",
+        "description": "prueba",
+        "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
+        "appreciation": "5.0",
+        "seasons": 6,
+        "age": "2020-04",
+        "director": "Director prueba",
+        "idiom": [
+            "ingles",
+            "español",
+            "otro"
+        ],
+        "subtitle": "no",
+        "image": "default.jpg",
+        "gender": 1,
+        "price": {
+            "buy": 43,
+            "rental": 22
+        }
+    },
+    {
+        "id": 9,
+        "title": "Carga 2",
+        "description": "2",
+        "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
+        "appreciation": "2",
+        "seasons": 6,
+        "age": "2222-02",
+        "director": "akka",
+        "idiom": [
+            "ingles",
+            "español"
+        ],
+        "subtitle": "no",
+        "image": "default.png",
+        "gender": 2,
+        "price": {
+            "buy": 56,
+            "rental": 22
+        }
+    },
+    {
+        "id": 2,
+        "title": "Spiderman",
+        "description": "2",
+        "trailer": "https://www.youtube.com/watch?v=r6t0czGbuGI",
+        "duration": "2",
+        "appreciation": "2",
+        "seasons": 22,
+        "age": "0002-02",
+        "director": "2",
+        "idiom": [
+            "ingles",
+            "español"
+        ],
+        "subtitle": "yes",
+        "image": "default.jpg",
+        "gender": 1,
+        "price": {
+            "buy": 43,
+            "rental": 22
+        }
     }
 ]
