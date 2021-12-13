@@ -38,39 +38,45 @@ let controller = {
             title: 'Admin - Page : Users'
         })
     },
-    uploadMovie: (req, res) => {
-        res.render('./admin/uploadFileMovies', {
-            title: 'Admin - Page : Form Movies',
+    upload: (req, res) => {
+
+        res.render('./admin/uploadFiles', {
+            title: 'Admin - Page : Form',
             genres
         })
     },
+
     // uploadSeries: (req, res) => {
     //     res.render('./admin/uploadFileSeries', {
     //         title: 'Admin - Page : Form Series',
     //     })
     // },
-    storeMovies: (req, res) => {
-        const { title, description, duration, appreciation, age, director, uploadProduct, gender, idiom, image, video, price} = req.body;
+    store: (req, res) => {
+        const { name, description, duration, appreciation, seasons, age, director, movieSeries, gender, idiom, subtitle, image, video, price } = req.body;
         let lastId = 1;
-        let uploadType = uploadProduct;
+        let uploadType = movieSeries;
 
-        if (uploadType === "movies") {
-            movies.forEach(movie => {
-                if (movie.id > lastId) {
-                    lastId = movie.id
+        if (uploadType === 'movie') {
+            
+} else if(uploadType === 'serie') {
+            series.forEach(series => {
+                if (series.id > lastId) {
+                    lastId = series.id
                 }
             });
 
-            let newMovie = {
+            let newSerie = {
                 id: +lastId + 1,
-                title,
+                title: name,
                 description,
                 trailer: video,
                 duration,
                 appreciation,
+                seasons: +seasons,
                 age,
                 director,
                 idiom,
+                subtitle,
                 image: 'default.jpg',
                 gender: +gender,
                 price: {
@@ -79,10 +85,12 @@ let controller = {
                 }
             }
     
-            movies.push(newMovie)
-            writeJson(moviesFilePath, movies)
-            res.redirect('/admin/movies')
+            series.push(newSerie)
+            writeJson(seriesFilePath, series)
         }
+        
+        res.redirect('/admin')
+    
     },
     // storeSeries: (req, res) => {
     //     const { title, seasons, video, description, image, genres, price, idiom, age, director, uploadProduct} = req.body;
@@ -174,19 +182,6 @@ let controller = {
         writeJson(moviesFilePath, movies)
         res.redirect('/admin/movies')
     }
-    // fatality: (req, res) => {
-    //     let idSucursal = +req.params.id;
-
-    //     getSucursales.forEach(sucursal => {
-    //         if(sucursal.id === idSucursal){
-    //             let sucursalAEliminar = getSucursales.indexOf(sucursal)
-    //             getSucursales.splice(sucursalAEliminar, 1)
-    //         }
-    //     })
-
-    //     writeJson(getSucursales)
-    //     res.redirect('/admin/sucursales')
-    // }
 }
 
 module.exports = controller
