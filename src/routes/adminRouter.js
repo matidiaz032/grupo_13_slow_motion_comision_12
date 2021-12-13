@@ -13,6 +13,7 @@ router.get('/products/movie/:id/edit', controller.editMovie);
 router.get('/products/serie/:id/edit', controller.editSerie);
 router.put('/products/movie/:id', controller.editSuccessMovie);
 router.put('/products/serie/:id', controller.editSuccessSerie);
-router.delete('/deleteProduct/:id', controller.deleteProduct);
+router.delete('/deleteProductMovie/:id', controller.deleteProductMovie);
+router.delete('/deleteProductSerie/:id', controller.deleteProductSerie);
 
 module.exports = router;

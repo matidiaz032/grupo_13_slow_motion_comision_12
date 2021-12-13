@@ -1,7 +1,7 @@
 .moviesInformation {
     width: 85%;
     height: 1.5em;
-    margin: 1em 0 89.7% 2.5em;
+    margin: 1em 0 0 2.5em;
 }
 
 .moviesInformation .flex-information {
@@ -97,7 +97,7 @@
 @media only screen and (min-width:768px) and (max-width:1024px){
 
     .moviesInformation {
-        margin: 1em auto 60%;
+        margin: 1em auto 0;
     }
     
     .moviesInformation .table-movie .title-id {
@@ -125,18 +125,6 @@
 @media only screen and (min-width:1024px) and (max-width:1440px) {
 
     .moviesInformation {
-        margin: 1em auto 40%;
+        margin: 1em auto 0;
     }
-    
-    /* .moviesInformation .table-movie .title-name {
-        padding: 30px 0;
-    }
-
-    .moviesInformation .table-movie .option-product a i {
-        padding: 40px;
-    }
-
-    .moviesInformation .table-movie .element-delete form .delete-movie i {
-        padding: 40px;
-    } */
 }

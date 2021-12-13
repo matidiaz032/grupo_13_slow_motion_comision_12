@@ -18,34 +18,28 @@
             </div>
             <div class="title-option">
                 <p class="option-product">Opcion</p>
-                <!-- <div class="option-product">
-                    <a href=""><i class="far fa-edit"></i></a>
-                </div>
-                <div>
-                    <form action="" method="POST">
-                        <button type="submit" class="delete-movie"><i class="far fa-trash-alt"></i></button>
-                    </form>
-                </div> -->
             </div>
         </div>
-        <% movies.forEach(movie => { %>
-            <div class="table-movie">
-                <div class="title-id">
-                    <p><%- movie.id %></p>
+        <div class="capsule-table">
+            <% movies.forEach(movie => { %>
+                <div class="table-movie">
+                    <div class="title-id">
+                        <p><%- movie.id %></p>
+                    </div>
+                    <div class="title-name">
+                        <p><%- movie.title %></p>
+                    </div>
+                    <div class="option-product">
+                        <a href="/admin/products/movie/<%- movie.id %>/edit"><i class="far fa-edit"></i></a>
+                    </div>
+                    <div class="element-delete">
+                        <form action="/admin/deleteProductMovie/<%- movie.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="delete-movie"><i class="far fa-trash-alt"></i></button>
+                        </form>
+                    </div>
                 </div>
-                <div class="title-name">
-                    <p><%- movie.title %></p>
-                </div>
-                <div class="option-product">
-                    <a href="/admin/products/movie/<%- movie.id %>/edit"><i class="far fa-edit"></i></a>
-                </div>
-                <div class="element-delete">
-                    <form action="/admin/deleteProduct/<%- movie.id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="delete-movie"><i class="far fa-trash-alt"></i></button>
-                    </form>
-                </div>
-            </div>
-        <% }) %>
+            <% }) %>
+        </div>
     </main>
 
     <!-- Footer -->
