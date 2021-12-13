@@ -46,11 +46,6 @@ let controller = {
         })
     },
 
-    // uploadSeries: (req, res) => {
-    //     res.render('./admin/uploadFileSeries', {
-    //         title: 'Admin - Page : Form Series',
-    //     })
-    // },
     store: (req, res) => {
         const { name, description, duration, appreciation, seasons, age, director, movieSeries, gender, idiom, subtitle, image, video, price } = req.body;
         let lastId = 1;
@@ -118,37 +113,7 @@ let controller = {
         res.redirect('/admin')
     
     },
-    // storeSeries: (req, res) => {
-    //     const { title, seasons, video, description, image, genres, price, idiom, age, director, uploadProduct} = req.body;
-    //     let lastId = 1;
-    //     let uploadType = uploadProduct;
-
-    //     if (uploadType === "series") {
-    //         series.forEach(serie => {
-    //             if (serie.id > lastId) {
-    //                 lastId = serie.id
-    //             }
-    //         });
-
-    //         let newSerie = {
-    //             id: +lastId + 1,
-    //             title,
-    //             seasons,
-    //             trailer: video,
-    //             description,
-    //             image: 'default.png',
-    //             genres,
-    //             price: {
-    //                 buy: +price[0],
-    //                 rental: +price[1]
-    //             }
-    //         }
-
-    //         series.push(newSerie)
-    //         writeJson(seriesFilePath, series)
-    //         res.redirect('/admin/series')
-    //     }
-    // },
+    
     editMovie: (req, res) => {
         let product = movies.find(elem => elem.id === Number(req.params.id))
         res.render('./admin/adminEditMovie', {
