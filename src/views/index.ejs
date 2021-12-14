@@ -43,58 +43,42 @@
         <div class="film film1">
             <h3 class="text"><a href="/products/movies">Peliculas:</a></h3>
             <nav class="demo">
-                <a href="/products/detail">
-                    <img src="./img/Peliculas/Matrix720x1080.jpg" alt="">
-                </a>
-                <a href="/products/detail">
-                    <img src="./img/Peliculas/MortalKombat720x1080.jpg" alt="">
-                </a>
-                <a class='img3' href="/products/detail">
-                    <img src="./img/Peliculas/SamuraiX720x1080.jpg" alt="">
-                </a>
+                <% movies3.forEach(elem => { %>
+                    <a href="/products/SerialMovie/<%- elem.id %> ">
+                        <img src="./img/products-images/<%- elem.image %>" alt="">
+                    </a>
+                <% }) %> 
             </nav>
         </div>
         <div class="film film2">
-            <h3 class="text"><a href="/series">Series:</a></h3>
+            <h3 class="text"><a href="/products/series">Series:</a></h3>
             <nav class="demo">
-                <a href="/products/detail">
-                    <img src="./img/series/GameOfThrones720x1080n2.jpg" alt="">
-                </a>
-                <a href="/products/detail">
-                    <img src="./img/series/Dark720x1080.jpg" alt="">
-                </a>
-                <a class='img3' href="/products/detail">
-                    <img src="./img/series/CasaDePapel720x1080.jpg" alt="">
-                </a>
+                <% series3.forEach(elem => {%>
+                        <a href="/products/SerialMovie/<%- elem.id %> ">
+                            <img src="./img/products-images/<%- elem.image %>" alt="">
+                        </a>
+                <% }) %> 
             </nav>
         </div>
         <div class="film film3">
             <h3 class="text"><a href="/ofert">En Oferta:</a></h3>
             <nav class="demo">
-                <a href="/products/detail">
-                    <img src="./img/series/BlackMirror720x1080.jpg" alt="">
-                </a>
-                <a href="/products/detail">
-                    <img src="./img/series/WestWorld720x1080.jpg" alt="">
-                </a>
-                <a class='img3' href="/products/detail">
-                    <img src="./img/peliculas/cincoCorazones.jpg" alt="">
-                </a>
+                <% moviesSeriesFilter.forEach(elem => {%>
+                    <a href="/products/SerialMovie/<%- elem.id %> ">
+                        <img src="./img/products-images/<%- elem.image %>" alt="">
+                    </a>
+                <% }) %> 
             </nav>
         </div>
         <div class="film film4">
             <h3 class="text"><a href="/popular">Populares:</a></h3>
             <%-  %> 
             <nav class="demo">
-                <a href="/products/detail/series o a peliculas??">
-                    <img src="./img/series/deathnote.jpg" alt="">
-                </a>
-                <a href="/products/detail">
-                    <img src="./img/series/maradona.jpg" alt="">
-                </a>
-                <a class='img3' href="/products/detail">
-                    <img src="./img/Peliculas/blackPanther.jpg" alt="">
-                </a>
+                <% ofers.forEach(elem => {%>
+                    <a href="/products/SerialMovie/<%- elem.id %> ">
+                        <img src="./img/products-images/<%- elem.image %>" alt="">
+                    </a>
+                <% }) %> 
             </nav>
         </div>
     </div>

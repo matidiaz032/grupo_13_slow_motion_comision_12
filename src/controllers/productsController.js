@@ -13,7 +13,6 @@ let controller = {
                 }
             });
         })
-
         res.render('./product/indexMovies', {
             title: 'Movies',
             movies,
