@@ -19,7 +19,7 @@
                 <p class="optionProduct-series">Opcion</p>
             </div>
         </div>
-        <div class="capsule-series"></div>
+        <div class="capsule-series">
             <% series.forEach(series => { %>
                 <div class="table-series">
                     <div class="titleSeries-id">
@@ -40,8 +40,14 @@
             <% }) %>
         </div>
     </main>
+
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+    <div class="add-product-series">
+        <div class="button-product-series">
+            <a href="/admin/form"><i class="fas fa-upload"></i><p>Subir series</p></a>
+        </div>
+    </div>
 
     <!-- Footer -->
     <%- include('../partials/adminFooter') %>

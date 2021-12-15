@@ -78,20 +78,57 @@
     flex-grow: .2;
 }
 
-.seriesInformation .table-series .optionProduct-series a i {
+.capsule-series .table-series .optionSeries-product a i {
     color: var(--black);
     padding: 5px;
 }
 
-.seriesInformation .table-series .element-series-delete form .delete-series {
+.capsule-series .table-series .element-series-delete form .delete-series {
     background: transparent;
     border: none;
 }
 
-.seriesInformation .table-series .element-series-delete form .delete-series i {
+.capsules-series .table-series .element-series-delete form .delete-series i {
     color: var(--black);
     background: transparent;
     padding: 5px;
+}
+
+.add-product-series {
+    width: 10em;
+    margin: 2em 5em 4em;
+}
+
+.add-product-series .button-product-series {
+    width: 80%;
+    height: 2em;
+    margin: 0 10% 0 20%;
+    padding: 0 5%;
+}
+
+.add-product-series .button-product-series a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+    background: linear-gradient(45deg, #39A9CB, #d8c371);
+    border-radius: 2em;
+    border: 1px solid var(--black);
+    box-shadow: 1px 1px 8px 0 var(--black);
+}
+
+.add-product-series .button-product-series a i {
+    border: none;
+    color: var(--lightblack);
+}
+
+.add-product-series .button-product-series a p {
+    border: none;
+    color: var(--lightblack);
+    font-family: var(--staatliches);
 }
 
 @media only screen and (min-width:768px) and (max-width:1024px){
@@ -121,10 +158,45 @@
         padding: 15px;
     }
 
+    .add-product-series {
+        width: 14em;
+        margin: 5% auto;
+    }
+
+    .add-product-series .button-product-series {
+        height: 3em;
+    }
+
+    .add-product-series .button-product-series a i {
+        font-size: 1.2em;
+    }
+
+    .add-product-series .button-product-series a p {
+        font-size: 1.3em;
+    }
+
 }
 @media only screen and (min-width:1024px) and (max-width:1440px) {
 
     .seriesInformation {
         margin: 1em auto 0;
     }
+
+    .add-product-series {
+        width: 14em;
+        margin: 5% auto;
+    }
+
+    .add-product-series .button-product-series {
+        height: 3em;
+    }
+
+    .add-product-series .button-product-series a i {
+        font-size: 1.2em;
+    }
+
+    .add-product-series .button-product-series a p {
+        font-size: 1.3em;
+    }
+    
 }
