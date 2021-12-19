@@ -63,7 +63,7 @@
         <div class="film film3">
             <h3 class="text"><a href="/ofert">En Oferta:</a></h3>
             <nav class="demo">
-                <% moviesSeriesFilter.forEach(elem => {%>
+                <% ofers.forEach(elem => {%>
                     <a href="/products/SerialMovie/<%- elem.id %> ">
                         <img src="./img/products-images/<%- elem.image %>" alt="">
                     </a>
@@ -74,7 +74,7 @@
             <h3 class="text"><a href="/popular">Populares:</a></h3>
             <%-  %> 
             <nav class="demo">
-                <% ofers.forEach(elem => {%>
+                <% popular.forEach(elem => {%>
                     <a href="/products/SerialMovie/<%- elem.id %> ">
                         <img src="./img/products-images/<%- elem.image %>" alt="">
                     </a>

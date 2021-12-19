@@ -64,6 +64,10 @@
     font-size: 1.5rem;
 }
 
+.conteinHeader header .optFoot .menu .iconBurguer i{
+    color: var(--blue)
+}
+
 .conteinHeader header .optFoot .menu .desactive i{
     font-size: 1rem;
 }
@@ -83,12 +87,11 @@
     border-radius: 1rem;
     border: solid 1px var(--black);
     padding: 0.3rem 0.5rem;
-    animation: openMenu 0.5s linear;
+    animation: openMenu 0.3s linear;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 @keyframes openMenu{
     from {height: 1rem; width: 1rem;}
     to {height: 15rem; width: 8rem;}
@@ -97,22 +100,23 @@
 .conteinHeader header .optFoot .menu .options-menu .list-item {
     font-size: 1rem;
     margin: 0.5rem 0;
-    animation: openList 0.5s linear;
+    animation: openList 0.3s linear;
 }
-
 @keyframes openList{
     from {font-size: 0rem;}
     to {font-size: 1rem;}
 }
+
 .conteinHeader header .optFoot .menu .options-menu .list-item a{
     color: var(--yellow);
+    text-decoration: none;
+    font-family: var(--averia);
 }
 
 .conteinHeader header .optFoot .menu .options-menu .list-item #search-header{
     width: 6rem;
-    animation: openInput 0.5s linear;
+    animation: openInput 0.3s linear;
 }
-
 @keyframes openInput{
     from {width: 0rem;}
     to {width: 6rem;}

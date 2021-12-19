@@ -6,45 +6,39 @@ const gender = require('../database/genres')
 
 let controller = {
     index: (req, res) => {
-        let count = 1;
+        let countOfers = 1;
+        let countPopular = 1;
         let moviesSeries = [
             ...movies,
             ...series
         ];
-        let moviesSeriesFilter = moviesSeries.filter(elem => {
-            if(count <= 3 && elem.id % 2 === 0) {
-                count++
+        let ofers = moviesSeries.filter(elem => {
+            if(countOfers <= 3 && elem.id % 2 === 0) {
+                countOfers++
                 return elem
             }
         });
-        let ofers = moviesSeries.filter(elem => {
-            if(count <= 3 && elem.id % 2 !== 0) {
-                count++
+        let popular = moviesSeries.filter(elem => {
+            if(countPopular <= 3 && elem.id % 2 !== 0) {
+                countPopular++
                 return elem
             }
         });
         let movies3 = movies.filter(elem => {
-            if(count <= 3) {
-                count++
+            if(elem.id <= 3) {
                 return elem
-            } else {
-                count = 1
             }
         });
         let series3 = series.filter(elem => {
-            if(count <= 3) {
-                count++
+            if(elem.id <= 3) {
                 return elem
-            } else {
-                count = 1
             }
         });
-        
         res.render('index', {
             title: 'SLOW MOTION',
             movies3,
             series3,
-            moviesSeriesFilter,
+            popular,
             ofers
         })
     }
