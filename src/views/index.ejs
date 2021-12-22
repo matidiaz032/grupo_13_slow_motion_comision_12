@@ -16,28 +16,20 @@
     </section>
     </div>
     <div class="carousel">
-        <ul>
-            <li>
-                <a href="/products/detail">
-                    <img src="./img/peliculas/SamuraiX1920x750.jpg" alt="File not found">
-                </a>
-            </li>
-            <li>
-                <a href="/products/detail">
-                    <img src="./img/peliculas/carritoVarios.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="/products/detail">
-                    <img src="./img/peliculas/carritoGreebland.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="/products/detail">
-                    <img src="./img/series/dbzcarrito.jpg" alt="">
-                </a>
-            </li>
-        </ul>
+        <div id="carousel">
+            <figure id="spinner">
+                <img src="./img/peliculas/Anabelle341x192.jpg" alt>
+                <img src="./img/peliculas/carritoelPermiso.jpg" alt>
+                <img src="./img/peliculas/carritoGreebland.jpg" alt>
+                <img src="./img/peliculas/carritoVarios.jpg" alt>
+                <img src="./img/series/dbzcarrito.jpg" alt>
+                <img src="./img/peliculas/thor-banner.jpg" alt>
+                <img src="./img/peliculas/Vikingos1280.jpg" alt>
+                <img src="./img/series/WestWorld1920x1080.jpg" alt>
+            </figure>
+        </div>
+    <span style="float:left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+    <span style="float:right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
     </div>
     <div class="products">
         <div class="film film1">
@@ -72,7 +64,6 @@
         </div>
         <div class="film film4">
             <h3 class="text"><a href="/popular">Populares:</a></h3>
-            <%-  %> 
             <nav class="demo">
                 <% popular.forEach(elem => {%>
                     <a href="/products/SerialMovie/<%- elem.id %> ">
@@ -84,5 +75,6 @@
     </div>
     <%- include('partials/footer')  %> 
     <%- include('partials/scripts.ejs') %>
+    <script src="/js/carousel.js"></script>
 </body>
 </html>

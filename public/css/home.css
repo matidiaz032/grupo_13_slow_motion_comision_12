@@ -5,6 +5,60 @@
     align-items: center;
 }
 
+
+
+
+
+.carousel div#carousel { 
+    perspective: 1200px; 
+    background: #100000; 
+    padding-top: 5%; 
+    font-size:0; 
+    margin-bottom: -4rem; 
+    overflow: hidden; 
+  }
+ .carousel figure#spinner { 
+    transform-style: preserve-3d; 
+    height: 300px; 
+    transform-origin: 50% 50% -700px; 
+    transition: 1s; 
+    object-fit: cover;
+  } 
+ .carousel figure#spinner img { 
+    width: 42%; max-width: 425px; 
+    height: 12rem;
+    position: absolute; left: 30%;
+    transform-origin: 50% 50% -700px;
+    outline:1px solid transparent; 
+    object-fit: fill;
+  }
+ .carousel figure#spinner img:nth-child(1) { transform:rotateY(0deg); 
+  }
+ .carousel figure#spinner img:nth-child(2) { transform: rotateY(-45deg); }
+ .carousel figure#spinner img:nth-child(3) { transform: rotateY(-90deg); }
+ .carousel figure#spinner img:nth-child(4) { transform: rotateY(-135deg); }
+ .carousel figure#spinner img:nth-child(5){ transform: rotateY(-180deg); }
+ .carousel figure#spinner img:nth-child(6){ transform: rotateY(-225deg); }
+ .carousel figure#spinner img:nth-child(7){ transform: rotateY(-270deg); }
+ .carousel figure#spinner img:nth-child(8){ transform: rotateY(-315deg); }
+ .carousel div#carousel ~ span { 
+    color: #fff; 
+    margin: 5%; 
+    display: inline-block; 
+    text-decoration: none; 
+    font-size: 2rem; 
+    transition: 0.6s color; 
+    position: relative; 
+    margin-top: -2rem; 
+    border-bottom: none; 
+    line-height: 0; }
+ .carousel div#carousel ~ span:hover { color: #888; cursor: pointer; }
+
+
+
+ 
+
+
 .index .options .barOptions {
     display: flex;
     justify-content: space-around;
@@ -204,6 +258,7 @@
         transition-property: text-shadow;
         transition-delay: 0s;
         text-shadow: 0px 0px 0px black,  0px 0px 0px black;
+        cursor: pointer;
     }
 
     .index .options .barOptions #navOpt {
@@ -216,6 +271,7 @@
         transition-property: text-shadow;
         transition-delay: 0s;
         text-shadow: 0px 0px 0px black,  0px 0px 0px black;
+        cursor: pointer;
     }
 
     .index .products {
@@ -239,6 +295,7 @@
         transition-duration: 3s;
         transition-delay: 0s;
         text-shadow: 0px 0px 0px white,  0px 0px 0px white;
+        cursor: pointer;
     }
 
     .index .products .film .demo{
@@ -255,6 +312,7 @@
 
     .index .products .film .demo img:hover {
         transform: scale(1.05);
+        cursor: pointer;
     }
 
     .index .products .film4 {

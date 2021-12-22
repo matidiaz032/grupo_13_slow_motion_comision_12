@@ -180,6 +180,7 @@
         transition-duration: 1s;
         transition-delay: 0s;
         font-size: 20px;
+        cursor: pointer;
     }
 
     .conteinHeader header .nav .in {
@@ -222,6 +223,7 @@
         transition-duration: 1s;
         transition-delay: 0s;
         font-size: 20px;
+        cursor: pointer;
     }
 
 }
@@ -239,6 +241,10 @@
         flex-direction: column;
         margin-left: 3rem;
         width: 9rem;
+    }
+
+    .conteinHeader header .logo:hover {
+        cursor: pointer;
     }
 
     .conteinHeader header .logo .logA {
@@ -274,6 +280,7 @@
         transition-duration: 1s;
         transition-delay: 0s;
         font-size: 27px;
+        cursor: pointer;
     }
 
     .conteinHeader header .nav .in {
@@ -303,6 +310,7 @@
         transition-duration: 1s;
         transition-delay: 0s;
         font-size: 28px;
+        cursor: pointer;
     }
 
 }
