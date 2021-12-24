@@ -1,7 +1,7 @@
-<%- include('../partials/head') %> 
-<body class="body-cart">  
-    <%- include('../partials/header') %> 
-    <!--Shopping cart options section-->
+<%- include('../partials/head') %>
+<body class="body-cart">
+    <%- include('../partials/header') %>
+    <br>
     <div class="section-cart">
         <div class="options">
             <span class="options__list"><a href="#">Estrenos</a></span>
@@ -17,66 +17,39 @@
             <span class="options__list-desktop"><a href="#">Ayuda</a></span>
         </div>
     </div>
-    <!--Item details section-->
-    <div class="purchase-detail"> 
-        <div class="detail-cart">
-            <div class="section__article">
+    <br>
+    <div class="purchase-detail">
+        <section class="detail-cart">
+            <article class="section__article">
                 <div class="box__movie">
-                    <img src="/img/peliculas/Anabelle940x1392.jpg" alt="">
+                    <div class="img">
+                        <img src="/img/peliculas/Anabelle341x192.jpg" alt="">
+                    </div>
                 </div>
                 <div class="box__movie">
-                    <span class="price">$250</span>
-                    <br><br>
-                    <span class="type-add" id="selection">Alquiler</span>
+                    <h1 class="type-add">alquiler</h1>
+                    <div class="price"><p>price</p></div>
                 </div>
                 <div class="box__movie">
-                    <h1 class="title-movie">Anabelle</h1>
-                    <p>Doce años después de la muerte de su hija y aún tremendamente doloridos por su perdida, <b>ver
-                            mas...</b>
-                        <!-- un fabricante de muñecas y su mujer acogen en su casa a una monja y a seis niñas huérfanas. Allí, la muñeca Annabelle, poseída por un espíritu, ataca a las niñas huérfanas.-->
-                    </p>
+                    <h1 class="title-product">annabelle</h1>
+                    <p class="android-p">lorem ipsum dolor, sit met...</p>
+                    <p class="tableDesktop-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, fugiat illo harum quod molestias omnis quasi molestiae commodi necessitatibus adipisci alias expedita accusamus ad similique quia tempora eos repellat itaque.</p>
                 </div>
-            </div>
-            <br>
+            </article>
             <div class="modify-selection">
-                <button type="button" class="delete" id="delete-product">Eliminar</button>
-                <button type="button" class="modify" id="modify-selection">Modificar seleccion</button>
+                <button class="delete"><i class="far fa-trash-alt"></i></button>
+                <button class="modify"><i class="far fa-edit"></i></button>
             </div>
-        </div>
-        <!-- <div class="detail-cart">
-            <div class="section__article">
-                <div class="box__movie">
-                    <img src="/img/peliculas/Anabelle940x1392.jpg" alt="">
-                </div>
-                <div class="box__movie">
-                    <span class="price">$250</span>
-                    <br><br>
-                    <span class="type-add">Alquiler</span>
-                </div>
-                <div class="box__movie">
-                    <h1 class="title-movie">Anabelle</h1>
-                    <p>Doce años después de la muerte de su hija y aún tremendamente doloridos por su perdida, <b>ver
-                        mas...</b> -->
-                        <!-- un fabricante de muñecas y su mujer acogen en su casa a una monja y a seis niñas huérfanas. Allí, la muñeca Annabelle, poseída por un espíritu, ataca a las niñas huérfanas.-->
-                    <!-- </p>
-                </div>
-            </div>
-            <br>
-            <div class="modify-selection">
-                <button type="button" class="delete">Eliminar</button>
-                <button type="button" class="modify">Modificar seleccion</button>
-            </div>
-        </div> -->
+        </section>
     </div>
-    <!--total section to pay for purchase-->
-    <div class="total-cart">
-        <span class="price-total">Precio total: $500</span>
-        <button type="button" class="keep-buying">Seguir comprando</button>
-        <button type="button" class="to-pay">Pagar</button>
-    </div>
-    <!--Footer section-->
-    <%- include('../partials/footer')  %>
-    <%- include('../partials/scripts.ejs') %>
-
+    <br>
+    <section class="total-cart">
+        <p class="price-total">Precio Totasl : $$$</p>
+        <p class="keep-buying">Seguir comprando</p>
+        <button class="to-pay">Pagar</button>
+    </section>
+    <br>
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>
 </body>
 </html>

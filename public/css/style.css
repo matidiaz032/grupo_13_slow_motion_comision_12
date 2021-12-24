@@ -14,6 +14,8 @@
 @import url('sinLog.css');
 @import url('adminForm.css');
 @import url('adminStatistics.css');
+@import url('adminHeader.css');
+@import url('adminFooter.css');
 
 :root {
     --black: #000000;

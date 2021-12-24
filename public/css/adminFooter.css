@@ -1,0 +1,26 @@
+.block-footer {
+    height: 3em;
+    display: block;
+    background: transparent;
+    box-shadow: none;
+}
+
+.flex-copyright {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-copyright p {
+    display: inline-block;
+    font-size: 16px;
+    color: var(--yellow);
+    margin: 9px 7px;
+    font-family: var(--averia);
+}
+
+.flex-copyright img {
+    width: 30px;
+    z-index: -1;
+    filter: drop-shadow(2px 4px 6px #000);
+}
