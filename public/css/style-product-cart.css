@@ -365,6 +365,7 @@ span a:hover {
 }
 
 @media only screen and (min-width: 1024px) {
+    
     .section-cart {
         display: none;
     }
@@ -401,88 +402,76 @@ span a:hover {
         text-shadow: 0px 0px 1px var(--black),  0px 0px 1px var(--black);
     }
 
-    /* .purchase-detail {
-        width: 100vw
+    .purchase-detail .detail-cart {
+        width: 90%;
+        margin: 0 auto;
     }
 
-    .detail-cart {
-        height: 78vh;
-    }
-
-    .section__article {
-        align-items: flex-start;
-    }
-    
-    .box__movie:first-child {
-        width: 475px;
-        height: 250px;
+    .box__movie .img img {
+        width: 70%;
+        height: 12em;
     }
 
     .box__movie:nth-child(2) {
-        margin: auto 0;
-    }
-
-    .box__movie .price {
-        font-size: 45px;
+        height: 12em;
+        justify-content: flex-start;
     }
 
     .box__movie .type-add {
-        display: inline-block;
-        font-size: 15px;
-        margin-top: 15px;
+        font-size: 1.5em;
+    }
+
+    .box__movie .price {
+        width: 6em;
+        height: 3em;
+        margin: 0 auto;
+    }
+
+    .box__movie .price p {
+        font-size: 1.7em;
     }
 
     .box__movie:last-child{
-        font-size: 10px;
-        padding: 10px;
-        margin: 10px 0;
+        height: 16em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 0.8em 1em;
     }
 
-    .box__movie .title-movie {
-        font-size: 2em;
+    .box__movie .android-p {
+        display: none;
     }
 
-    .box__movie p {
-        font-size: 2em;
+    .box__movie .title-product {
+        font-size: 1.7em;
+    }
+
+    .box__movie .tableDesktop-p {
+        display: block;
+        font-size: 1.5em;
+        height: auto;
     }
 
     .modify-selection {
-        justify-content: center;
-        padding: 10px;
-        margin: 10px 0;
+        width: 80%;
+        margin: 0.5em auto;
     }
 
     .modify-selection .delete {
         font-size: 1em;
-        padding: 15px;
-        margin: 0 50px;
     }
 
     .modify-selection .modify {
         font-size: 1em;
-        padding: 15px;
-        margin: 0 50px;
-    }
-
-    .total-cart {
-        margin: 15px 0;
     }
 
     .total-cart .price-total {
-        font-size: 20px;
-        margin: 10px auto;
+        font-size: 1.5em;
     }
 
     .total-cart .keep-buying {
-        font-size: 20px;
-        text-transform: uppercase;
-        padding: 10px;
-        margin: 10px auto;
+        font-size: 1.5em;
+        margin: auto;
     }
-
-    .total-cart .to-pay {
-        margin: 20px auto;
-        padding: 20px;
-        font-size: 2em;
-    } */
 }
