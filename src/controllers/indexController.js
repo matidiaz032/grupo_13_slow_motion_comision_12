@@ -41,6 +41,12 @@ let controller = {
             popular,
             ofers
         })
+    },
+    faq: (req,res)=>{
+        res.render("faq",{
+            title: "Ayuda",
+
+        })
     }
 }
 
