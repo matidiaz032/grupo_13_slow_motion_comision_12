@@ -7,7 +7,14 @@
         "contrasenia": null,
         "categoria": "admin",
         "telefono": "+54 9 1164232503",
-        "avatar": "./../public/img/default-avatar.jpg"
+        "fechaNacimiento": "",
+        "sexo": "",
+        "favoritos": "",
+        "avatar": "./../public/img/default-avatar.jpg",
+        "direccion": "",
+        "pais": "",
+        "provincia": "",
+        "ciudad": ""
     },
     {
         "id": 2,
@@ -17,7 +24,14 @@
         "contrasenia": null,
         "categoria": "admin",
         "telefono": "+54 9 1144089956",
-        "avatar": "./../public/img/default-avatar.jpg"
+        "fechaNacimiento": "",
+        "sexo": "",
+        "favoritos": "",
+        "avatar": "./../public/img/default-avatar.jpg",
+        "direccion": "",
+        "pais": "",
+        "provincia": "",
+        "ciudad": ""
     },
     {
         "id": 3,
@@ -27,7 +41,14 @@
         "contrasenia": null,
         "categoria": "admin",
         "telefono": "+54 9 2216384600",
-        "avatar": "./../public/img/default-avatar.jpg"
+        "fechaNacimiento": "",
+        "sexo": "",
+        "favoritos": "",
+        "avatar": "./../public/img/default-avatar.jpg",
+        "direccion": "",
+        "pais": "",
+        "provincia": "",
+        "ciudad": ""
     },
     {
         "id": 4,
@@ -37,6 +58,13 @@
         "contrasenia": null,
         "categoria": "admin",
         "telefono": "+54 9 2644576693",
-        "avatar": "./../public/img/default-avatar.jpg"
+        "fechaNacimiento": "",
+        "sexo": "",
+        "favoritos": "",
+        "avatar": "./../public/img/default-avatar.jpg",
+        "direccion": "",
+        "pais": "",
+        "provincia": "",
+        "ciudad": ""
     }
 ]
