@@ -6,7 +6,7 @@
     <%- include ('../partials/logoMobileADmin') %>
     <div class="form__files-desktop">
         <div class="form-caption">
-            <form action="/admin/products/serie/<%- product.id %>?_method=PUT" method="post" class="upload-files">
+            <form action="/admin/products/serie/<%- product.id %>?_method=PUT" method="post" class="upload-files" enctype="multipart/form-data">
                 <div class="contain__date">
                     <input type="text" name="name" id="nombre" placeholder="Nombre" class="input" value='<%- product.title %>'>
                 </div>
@@ -43,8 +43,8 @@
                     </div>
                 </div>
                 <div class="contain__date">
-                    <label for="image">Cargar imagen de portada</label>
-                    <input type="file" name="image" accept=".jpg" class="input">
+                    <label for="productImage">Cargar imagen de portada</label>
+                    <input type="file" name="productImage" class="input">
                 </div>
                 <div class="contain__date">
                     <label for="video">Pegar URL del trailer</label>

@@ -9,37 +9,55 @@
             </a>
         </div>
         <div class="forms-container">
-            <form action="">
+            <form action="/users/register" method="post" enctype="multipart/form-data">
                 <div class="form-title title-center-register">
                     <h2>Crear Cuenta</h2>
                 </div>
                 <div class="form-input-container">
                     <div class="form-input">
-                        <input type="text" name="nombre" placeholder="Nombre">
-                        <small>Debe ingresar un nombre</small>                   
+                        <input type="text" name="name" placeholder="Nombre" value="<%- locals.old && old.name %>">
+                        <% if (locals.errors && errors.name) { %>
+                            <small><%- errors.name.msg %></small>
+                        <% } %>                 
                     </div>
                     <div class="form-input">
-                        <input type="text" name="apellido" placeholder="Apellido">
-                        <small>Debe ingresar un apellido</small>
+                        <input type="text" name="lastName" placeholder="Apellido" value="<%- locals.old && old.lastName %>">
+                        <% if (locals.errors && errors.lastName) { %>
+                            <small><%= errors.lastName.msg %></small>
+                        <% } %>  
                     </div>
                     <div class="form-input">
-                        <input type="text" name="username" placeholder="Nombre de usuario">
-                        <small>Debe ingresar un nombre de usuario</small>
+                        <input type="text" name="userName" placeholder="Nombre de usuario" value="<%- locals.old && old.userName %>">
+                        <% if (locals.errors && errors.userName) { %>
+                            <small><%= errors.userName.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="form-input">
-                        <input type="email" name="email" placeholder="Correo Electronico">
-                        <small>Debe ingresar un email valido</small>
+                        <input type="email" name="email" placeholder="Correo Electronico" value="<%- locals.old && old.email %>">
+                        <% if (locals.errors && errors.email) { %>
+                            <small><%= errors.email.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="form-input">
-                        <input type="password" name="pass" placeholder="Contraseña">
-                        <small>Debe ingresar una contraseña que contenga 8 digitos, numeros y letras.</small>
+                        <input type="password" name="pass1" placeholder="Contraseña: Alfanumerico">
+                        <% if (locals.errors && errors.pass1) { %>
+                            <small><%= errors.pass1.msg %></small>
+                        <% } %>
                     </div>
                     <div class="form-input">
-                        <input type="password" name="pass-confirm" placeholder="Repetir Contraseña">
-                        <small>Las contraseñas no coinciden</small>
+                        <input type="password" name="pass2" placeholder="Repetir Contraseña">
+                        <% if (locals.errors && errors.pass2) { %>
+                            <small><%= errors.pass2.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="form-input">
+                        <input type="file" name="userImage" placeholder="Ingrese un avatar">
+                        <% if (locals.errors && errors.pass2) { %>
+                            <small><%= errors.pass2.msg %></small>
+                        <% } %>
                     </div>
                     <div class="btn-enviar-form">
-                        <input class="send-login" type="button" value="Iniciar Sesión">
+                        <input class="send-login" type="submit" value="Iniciar Sesión">
                     </div>
                 </div>
             </form>

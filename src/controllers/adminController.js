@@ -1,5 +1,15 @@
 const fs = require("fs");
 const path = require("path");
+const deleteImageEdit = (req, element) => {
+    if(req.file) {
+        if(element.image !== 'default.png') {
+            fs.unlinkSync(`./public/img/products-images/${element.image}`);
+            return req.file.filename
+        }
+        return req.file.filename
+    }
+    return element.image
+}
 
 const moviesFilePath = path.join(__dirname, "../database/movies.json");
 const seriesFilePath = path.join(__dirname, "../database/series.json");
@@ -8,6 +18,7 @@ const movies = JSON.parse(fs.readFileSync(moviesFilePath, "utf-8"));
 const series = JSON.parse(fs.readFileSync(seriesFilePath, "utf-8"));
 const genres = JSON.parse(fs.readFileSync(genresFilePath, "utf-8"));
 const writeJson = (path, db) => fs.writeFileSync(path, JSON.stringify(db),'utf-8');
+
 
 let controller = {
     index: (req, res) => {
@@ -69,7 +80,7 @@ let controller = {
                 director,
                 idiom,
                 subtitle,
-                image: req.file ? req.file.filename : 'default.jpg',
+                image: req.file ? req.file.filename : 'default.png',
                 gender: +gender,
                 price: {
                     buy: +price[0],
@@ -97,7 +108,7 @@ let controller = {
                 director,
                 idiom,
                 subtitle,
-                image: req.file ? req.file.filename : 'default.jpg',
+                image: req.file ? req.file.filename : 'default.png',
                 gender: +gender,
                 price: {
                     buy: +price[0],
@@ -130,21 +141,21 @@ let controller = {
         })
     },
     editSuccessMovie: (req, res) => {
-        const { name, description, duration, appreciation, age, director, movieSeries, gender, idiom, image, video, price } = req.body;
-
+        const { name, description, duration, appreciation, age, director, gender, idiom, subtitle, video, price } = req.body;
         movies.forEach(element => {
             if(element.id === Number(req.params.id)){
                 element.id = element.id,
                 element.title = name,
                 element.description = description,
-                element.trailer = video.substr(video.indexOf('=')),
+                element.trailer = video.substr(video.indexOf('=') + 1),
                 element.duration = duration,
                 element.appreciation = appreciation,
                 element.age = age,
                 element.director = director,
                 element.idiom = idiom,
-                element.image = 'default.jpg',
-                element.gender = Number(gender)
+                element.subtitle = subtitle,
+                element.image = deleteImageEdit(req, element),
+                element.gender = Number(gender),
                 element.price = {
                     buy: +price[0],
                     rental: +price[1]
@@ -157,20 +168,21 @@ let controller = {
         res.redirect('/admin')
     },
     editSuccessSerie: (req, res) => {
-        const { name, description, seasons, appreciation, age, director, movieSeries, gender, idiom, image, video, price } = req.body;
+        const { name, description, appreciation, seasons, age, director, gender, idiom, subtitle, video, price } = req.body;
 
         series.forEach(element => {
             if(element.id === Number(req.params.id)){
                 element.id = element.id,
                 element.title = name,
                 element.description = description,
-                element.trailer = video.substr(video.indexOf('=')),
+                element.trailer = video.substr(video.indexOf('=') + 1),
                 element.seasons = +seasons
                 element.appreciation = appreciation,
                 element.age = age,
                 element.director = director,
                 element.idiom = idiom,
-                element.image = 'default.jpg',
+                element.subtitle = subtitle,
+                element.image = deleteImageEdit(req, element),
                 element.gender = Number(gender)
                 element.price = {
                     buy: +price[0],
@@ -187,7 +199,7 @@ let controller = {
         let idMovie = +req.params.id;
         movies.forEach(movie => {
             if(movie.id === idMovie){
-                let deleteMovie = movies.indexOf(movie)
+                let deleteMovie = movies.indexOf(movie);
                 movies.splice(deleteMovie, 1)
             }
         })
