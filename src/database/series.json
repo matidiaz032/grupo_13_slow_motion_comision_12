@@ -3,17 +3,23 @@
         "id": 1,
         "title": "The Walking Dead",
         "description": "The Walking Dead tiene lugar después del inicio de un apocalipsis zombi mundial. Los zombis, coloquialmente llamados «caminantes», se arrastran hacia los humanos vivos y otras criaturas para comerlos; se sienten atraídos por el ruido, como los disparos, y por diferentes aromas, por ejemplo humanos.",
-        "trailer": "R1v0uFms68U",
+        "trailer": "=uwgohmYnDu0&t=6s",
         "appreciation": "4",
         "seasons": 11,
         "age": "2010-10",
         "director": "Frank Darabont",
-        "idiom": "ingles",
-        "image": "1640807983317.jpg",
-        "gender": 1,
+        "idiom": [
+            "ingles",
+            "español"
+        ],
+        "subtitle": "Latino",
+        "image": "1639438310216.jpg",
+        "gender": 9,
+        "subGender": "",
         "price": {
             "buy": 800,
-            "rental": 450
+            "rental": 450,
+            "discount": null
         }
     },
     {
@@ -32,9 +38,11 @@
         "subtitle": "Latino",
         "image": "1639449058940.jpg",
         "gender": 6,
+        "subGender": "",
         "price": {
             "buy": 900,
-            "rental": 550
+            "rental": 550,
+            "discount": null
         }
     },
     {
@@ -53,9 +61,11 @@
         "subtitle": "Latino",
         "image": "1639449936242.jpeg",
         "gender": 10,
+        "subGender": "",
         "price": {
             "buy": 600,
-            "rental": 350
+            "rental": 350,
+            "discount": null
         }
     },
     {
@@ -71,9 +81,11 @@
         "subtitle": "Latino",
         "image": "1639450111991.jpg",
         "gender": 1,
+        "subGender": "",
         "price": {
             "buy": 700,
-            "rental": 350
+            "rental": 350,
+            "discount": null
         }
     },
     {
@@ -93,9 +105,11 @@
         "subtitle": "Latino",
         "image": "1639450228326.png",
         "gender": 3,
+        "subGender": "",
         "price": {
             "buy": 800,
-            "rental": 500
+            "rental": 500,
+            "discount": null
         }
     }
 ]
