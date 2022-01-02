@@ -1,157 +1,153 @@
-[
-    {
-        "id": 1,
-        "title": "Zombieland",
-        "description": "Después de que un virus transforma a la mayoría de las personas en zombis, los humanos sobrevivientes deben luchar contra los muertos vivientes hambrientos. Cuatro sobrevivientes, Tallahassee y sus amigos, Columbus, Wichita y Little Rock, respetan una serie de reglas de supervivencia y estrategias para matar zombis mientras se dirigen a un refugio seguro en Los Ángeles.",
-        "trailer": "_1RNOEG_oE0",
-        "duration": "1h 28min",
-        "appreciation": "4",
-        "age": "2009-10",
-        "director": "Ruben Fleischer",
-        "idiom": "ingles",
-        "image": "1640807498369.jpg",
-        "gender": 1,
-        "price": {
-            "buy": 800,
-            "rental": 500
-        }
-    },
-    {
-        "id": 2,
-        "title": "Comando Especial",
-        "description": "Cuando los policías Schmidt y Jenko se unen a la unidad secreta Jump Street, ellos usan sus apariencias juveniles para trabajar de forma encubierta como estudiantes de preparatoria. Ellos cambian sus placas y armas por mochilas e intentan eliminar a un grupo narcotraficante. Schmidt y Jenko descubren que la preparatoria ya no es lo mismo y deben enfrentarse al terror y la ansiedad de la adolescencia que creían haber superado.",
-        "trailer": "BFwi5Uv3J4U",
-        "duration": "1h 49m",
-        "appreciation": "3",
-        "age": "2012-09",
-        "director": "Phil Lord",
-        "idiom": "ingles",
-        "image": "1640806412983.jpg",
-        "gender": 1,
-        "price": {
-            "buy": 700,
-            "rental": 500
-        }
-    },
-    {
-        "id": 3,
-        "title": "Ted",
-        "description": "Cuando John Bennett (Mark Wahlberg) era un niño pequeño, pidió el deseo de que Ted (Seth MacFarlane), su querido oso de peluche, cobrara vida. Treinta años más tarde, Ted continúa siendo el compañero de John, ante el disgusto de Lori (Mila Kunis), la novia de John. Aunque el disgusto de Lori se ve agravado por el constante consumo de la pareja de cerveza y marihuana, ella no es quien está más decepcionada con John; ya que puede necesitar la intervención del juguete de John para hacerlo madurar.",
-        "trailer": "_0RXbJtBk68",
-        "duration": "1h 46m",
-        "appreciation": "4",
-        "age": "2012-09",
-        "director": "Seth MacFarlane",
-        "idiom": [
-            "ingles",
-            "español"
-        ],
-        "subtitle": "Latino",
-        "image": "1639435604351.jpg",
-        "gender": 4,
-        "price": {
-            "buy": 600,
-            "rental": 350
-        }
-    },
-    {
-        "id": 4,
-        "title": "Superbad",
-        "description": "Seth (Jonah Hill) y Evan (Michael Cera), dos estudiantes co-dependientes de preparatoria, tienen grandes esperanzas en su fiesta de graduación: los jóvenes se sienten retados por la sociedad y planean divertirse en grande y conseguir chicas hermosas para finalmente poder integrarse con sus compañeros. La ansiedad por la separación y dos aburridos policías (Bill Hader, Seth Rogen) complican la misión de la pareja.",
-        "trailer": "4eaZ_48ZYog",
-        "duration": "1h 59m",
-        "appreciation": "5",
-        "age": "2007-11",
-        "director": "Greg Mottola",
-        "idiom": "ingles",
-        "subtitle": "Latino",
-        "image": "1639438686502.jpg",
-        "gender": 4,
-        "price": {
-            "buy": 800,
-            "rental": 500
-        }
-    },
-    {
-        "id": 5,
-        "title": "Un espia y medio",
-        "description": "Un agente de la CIA que solía sufrir acoso escolar se reencuentra con sus compañeros en una reunión de antiguos alumnos, aunque ahora él es musculoso y fuerte. Allí recluta al que era el chico más popular de la escuela, quien ahora tiene una vida monótona y predecible, para que le ayude en una peligrosa misión en la que ambos tendrán que arriesgarlo todo.",
-        "trailer": "eQnbwxzCzQ8",
-        "duration": "1h 54m",
-        "appreciation": "3",
-        "age": "2016-08",
-        "director": "Rawson Marshall Thurber",
-        "idiom": "ingles",
-        "subtitle": "Latino",
-        "image": "1639439204946.jpg",
-        "gender": 1,
-        "price": {
-            "buy": 750,
-            "rental": 300
-        }
-    },
-    {
-        "id": 6,
-        "title": "Godzilla",
-        "description": "Ford Brody es un experto de los marines que tiene que ir a Japón para rescatar a su padre. Pronto, los dos hombres se encuentran atrapados en el caos cuando Godzilla, el Rey de los Monstruos, aparece después de pasar décadas debajo del agua. El monstruo se enfrenta a malvadas criaturas que, animadas por la arrogancia científica del hombre, amenazan con destruir a toda la raza humana.",
-        "trailer": "O7aFGf94TiA",
-        "duration": "2h 3m",
-        "appreciation": "3",
-        "age": "2014-05",
-        "director": "Gareth Edwards",
-        "idiom": [
-            "ingles",
-            "español",
-            "otro"
-        ],
-        "subtitle": "No",
-        "image": "1639441608967.jpg",
-        "gender": 3,
-        "price": {
-            "buy": 600,
-            "rental": 350
-        }
-    },
-    {
-        "id": 7,
-        "title": "Thor Ragnarok",
-        "description": "Thor está preso en el otro extremo del universo. Necesita regresar a tiempo para evitar que la todopoderosa Hela destruya su mundo, pero para escapar de su confinamiento y evitar el apocalipsis tendrá que vencer antes al increíble Hulk en un torneo de gladiadores.",
-        "trailer": "ue80QwXMRHg",
-        "duration": "2h 10m",
-        "appreciation": "4",
-        "age": "2017-11",
-        "director": "Taika Waititi",
-        "idiom": [
-            "ingles",
-            "español"
-        ],
-        "subtitle": "Latino",
-        "image": "1639442417782.png",
-        "gender": 3,
-        "price": {
-            "buy": 800,
-            "rental": 450
-        }
-    },
-    {
-        "id": 8,
-        "title": "Suicide Squad",
-        "description": "La oficial del departamento de inteligencia de los EE.UU., Amanda Waller, ha convocado a un grupo de individuos dispares y viles que no tienen nada que perder. Este equipo, formado por los supervillanos más peligrosos, recibirán el arsenal más poderoso al alcance del gobierno y se enfrentarán a una complicada misión para derrotar a una enigmática entidad.",
-        "trailer": "CmRih_VtVAs&t=14s",
-        "duration": "2h 10m",
-        "appreciation": "2",
-        "age": "2016-08",
-        "director": "David Ayer",
-        "idiom": [
-            "ingles",
-            "español"
-        ],
-        "subtitle": "Latino",
-        "image": "1639446007440.jpg",
-        "gender": 3,
-        "price": {
-            "buy": 500,
-            "rental": 250
-        }
+[{
+    "id": 1,
+    "title": "Zombieland",
+    "description": "Después de que un virus transforma a la mayoría de las personas en zombis, los humanos sobrevivientes deben luchar contra los muertos vivientes hambrientos. Cuatro sobrevivientes, Tallahassee y sus amigos, Columbus, Wichita y Little Rock, respetan una serie de reglas de supervivencia y estrategias para matar zombis mientras se dirigen a un refugio seguro en Los Ángeles.",
+    "trailer": "8m9EVP8X7N8",
+    "duration": "1h 28min",
+    "appreciation": "4",
+    "age": "2009-10",
+    "director": "Ruben Fleischer",
+    "idiom": ["ingles", "español"],
+    "subtitle": "Latino",
+    "image": "1639426332396.jpg",
+    "gender": 9,
+    "subGender": "",
+    "price": {
+        "buy": 800,
+        "rental": 500,
+        "discount": null
     }
-]
+}, {
+    "id": 2,
+    "title": "Comando Especial",
+    "description": "Cuando los policías Schmidt y Jenko se unen a la unidad secreta Jump Street, ellos usan sus apariencias juveniles para trabajar de forma encubierta como estudiantes de preparatoria. Ellos cambian sus placas y armas por mochilas e intentan eliminar a un grupo narcotraficante. Schmidt y Jenko descubren que la preparatoria ya no es lo mismo y deben enfrentarse al terror y la ansiedad de la adolescencia que creían haber superado.",
+    "trailer": "BFwi5Uv3J4U",
+    "duration": "1h 49m",
+    "appreciation": "3",
+    "age": "2012-09",
+    "director": "Phil Lord",
+    "idiom": "ingles",
+    "subtitle": "Latino",
+    "image": "1639428117058.jpg",
+    "gender": 4,
+    "subGender": "",
+    "price": {
+        "buy": 700,
+        "rental": 500,
+        "discount": null
+    }
+}, {
+    "id": 3,
+    "title": "Ted",
+    "description": "Cuando John Bennett (Mark Wahlberg) era un niño pequeño, pidió el deseo de que Ted (Seth MacFarlane), su querido oso de peluche, cobrara vida. Treinta años más tarde, Ted continúa siendo el compañero de John, ante el disgusto de Lori (Mila Kunis), la novia de John. Aunque el disgusto de Lori se ve agravado por el constante consumo de la pareja de cerveza y marihuana, ella no es quien está más decepcionada con John; ya que puede necesitar la intervención del juguete de John para hacerlo madurar.",
+    "trailer": "_0RXbJtBk68",
+    "duration": "1h 46m",
+    "appreciation": "4",
+    "age": "2012-09",
+    "director": "Seth MacFarlane",
+    "idiom": ["ingles", "español"],
+    "subtitle": "Latino",
+    "image": "1639435604351.jpg",
+    "gender": 4,
+    "subGender": "",
+    "price": {
+        "buy": 600,
+        "rental": 350,
+        "discount": null
+    }
+}, {
+    "id": 4,
+    "title": "Superbad",
+    "description": "Seth (Jonah Hill) y Evan (Michael Cera), dos estudiantes co-dependientes de preparatoria, tienen grandes esperanzas en su fiesta de graduación: los jóvenes se sienten retados por la sociedad y planean divertirse en grande y conseguir chicas hermosas para finalmente poder integrarse con sus compañeros. La ansiedad por la separación y dos aburridos policías (Bill Hader, Seth Rogen) complican la misión de la pareja.",
+    "trailer": "4eaZ_48ZYog",
+    "duration": "1h 59m",
+    "appreciation": "5",
+    "age": "2007-11",
+    "director": "Greg Mottola",
+    "idiom": "ingles",
+    "subtitle": "Latino",
+    "image": "1639438686502.jpg",
+    "gender": 4,
+    "subGender": "",
+    "price": {
+        "buy": 800,
+        "rental": 500,
+        "discount": null
+    }
+}, {
+    "id": 5,
+    "title": "Un espia y medio",
+    "description": "Un agente de la CIA que solía sufrir acoso escolar se reencuentra con sus compañeros en una reunión de antiguos alumnos, aunque ahora él es musculoso y fuerte. Allí recluta al que era el chico más popular de la escuela, quien ahora tiene una vida monótona y predecible, para que le ayude en una peligrosa misión en la que ambos tendrán que arriesgarlo todo.",
+    "trailer": "eQnbwxzCzQ8",
+    "duration": "1h 54m",
+    "appreciation": "3",
+    "age": "2016-08",
+    "director": "Rawson Marshall Thurber",
+    "idiom": "ingles",
+    "subtitle": "Latino",
+    "image": "1639439204946.jpg",
+    "gender": 1,
+    "subGender": "",
+    "price": {
+        "buy": 750,
+        "rental": 300,
+        "discount": null
+    }
+}, {
+    "id": 6,
+    "title": "Godzilla",
+    "description": "Ford Brody es un experto de los marines que tiene que ir a Japón para rescatar a su padre. Pronto, los dos hombres se encuentran atrapados en el caos cuando Godzilla, el Rey de los Monstruos, aparece después de pasar décadas debajo del agua. El monstruo se enfrenta a malvadas criaturas que, animadas por la arrogancia científica del hombre, amenazan con destruir a toda la raza humana.",
+    "trailer": "O7aFGf94TiA",
+    "duration": "2h 3m",
+    "appreciation": "3",
+    "age": "2014-05",
+    "director": "Gareth Edwards",
+    "idiom": ["ingles", "español", "otro"],
+    "subtitle": "No",
+    "image": "1639441608967.jpg",
+    "gender": 3,
+    "subGender": "",
+    "price": {
+        "buy": 600,
+        "rental": 350,
+        "discount": null
+    }
+}, {
+    "id": 7,
+    "title": "Thor Ragnarok",
+    "description": "Thor está preso en el otro extremo del universo. Necesita regresar a tiempo para evitar que la todopoderosa Hela destruya su mundo, pero para escapar de su confinamiento y evitar el apocalipsis tendrá que vencer antes al increíble Hulk en un torneo de gladiadores.",
+    "trailer": "ue80QwXMRHg",
+    "duration": "2h 10m",
+    "appreciation": "4",
+    "age": "2017-11",
+    "director": "Taika Waititi",
+    "idiom": ["ingles", "español"],
+    "subtitle": "Latino",
+    "image": "1639442417782.png",
+    "gender": 3,
+    "subGender": "",
+    "price": {
+        "buy": 800,
+        "rental": 450,
+        "discount": null
+    }
+}, {
+    "id": 8,
+    "title": "Suicide Squad",
+    "description": "La oficial del departamento de inteligencia de los EE.UU., Amanda Waller, ha convocado a un grupo de individuos dispares y viles que no tienen nada que perder. Este equipo, formado por los supervillanos más peligrosos, recibirán el arsenal más poderoso al alcance del gobierno y se enfrentarán a una complicada misión para derrotar a una enigmática entidad.",
+    "trailer": "CmRih_VtVAs&t=14s",
+    "duration": "2h 10m",
+    "appreciation": "2",
+    "age": "2016-08",
+    "director": "David Ayer",
+    "idiom": ["ingles", "español"],
+    "subtitle": "Latino",
+    "image": "1639446007440.jpg",
+    "gender": 3,
+    "subGender": "",
+    "price": {
+        "buy": 500,
+        "rental": 250,
+        "discount": null
+    }
+}]
