@@ -11,7 +11,7 @@ y no puedo validar que la contrase;a sea estrictamente alfanumerico.  */
 
 router.get('/login', auth_userLogin,  controller.login);
 router.get('/register', controller.register);
-router.post('/register',registryValidator, upload.single('userImage'), controller.loadRegister);
+router.post('/register', upload.single('userImage'), registryValidator, controller.loadRegister);
 router.get('/profile', auth_userProfile, controller.profile);
 
 module.exports = router;

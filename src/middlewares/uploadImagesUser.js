@@ -10,6 +10,15 @@ const storage = multer.diskStorage({
         cb(null, newFilename);
     }
 })
-const upload = multer({ storage });
+
+const fileFilter = function(req, file,cb) {
+    if(!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)){
+        req.fileValidationError = "Debe cargar una imagen (.jpg, .jpeg, .png, .gif)";
+        return cb(null,false,req.fileValidationError);
+    }
+    cb(null,true);
+}
+
+const upload = multer({ storage, fileFilter });
 
 module.exports = upload

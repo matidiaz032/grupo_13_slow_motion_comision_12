@@ -46,11 +46,18 @@ let controller = {
                 name,
                 lastName,
                 userName,
-                email, 
+                email: email.toLowerCase(), 
                 pass: bcrypt.hashSync(pass1),
-                rol: "user",
+                rol: "ROL_ADMIN",
                 avatar: req.file ? req.file.filename : "default-avatar.jpg",
-                phone: null,
+                phone: '',
+                dateOfBirth: '',
+                gender: '',
+                favorites: '',
+                address: '',
+                country: '',
+                province: '',
+                city: '',
             }
     
             users.push(newUser)
