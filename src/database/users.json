@@ -5,7 +5,7 @@
         "apellido": "Galeano",
         "email": "galeanoeliasdavid@gmail.com",
         "contrasenia": null,
-        "categoria": "admin",
+        "categoria": "ROL_ADMIN",
         "telefono": "+54 9 1164232503",
         "avatar": "./../public/img/default-avatar.jpg"
     },
@@ -15,7 +15,7 @@
         "apellido": "Diaz",
         "email": "matidiazee@gmail.com",
         "contrasenia": null,
-        "categoria": "admin",
+        "categoria": "ROL_ADMIN",
         "telefono": "+54 9 1144089956",
         "avatar": "./../public/img/default-avatar.jpg"
     },
@@ -25,7 +25,7 @@
         "apellido": "Benitez",
         "email": "ivana@gmail.com",
         "contrasenia": null,
-        "categoria": "admin",
+        "categoria": "ROL_USER",
         "telefono": "+54 9 2216384600",
         "avatar": "./../public/img/default-avatar.jpg"
     },
@@ -35,7 +35,7 @@
         "apellido": "Montaña",
         "email": "AngelGuillermoMontania@gmail.com",
         "contrasenia": null,
-        "categoria": "admin",
+        "categoria": "ROL_ADMIN",
         "telefono": "+54 9 2644576693",
         "avatar": "./../public/img/default-avatar.jpg"
     }

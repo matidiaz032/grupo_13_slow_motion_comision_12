@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session'); // Express-session Module
 const app = express();
 const path = require('path');
 const morgan = require('morgan')
@@ -14,6 +15,13 @@ app.use(morgan('dev'))
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
+
+// configuration express-sessions
+app.use(session({
+    secret: 'gfdtrdthfhjgbhjkghkjgj165498465',
+    resave: false,
+    saveUninitialized: true
+}));
 
     /* Enrutadores */
 let indexRouter = require('./routes/indexRouter');

@@ -1,9 +1,10 @@
 let express = require('express');
 let router = express.Router();
 const controller = require('../controllers/adminController.js');
+const auth_adminCheck = require('../middlewares/auth_adminCheck.js');
 const upload = require('../middlewares/uploadImagesProduct')
 
-router.get('/', controller.index);
+router.get('/', auth_adminCheck, controller.index);
 router.get('/movies', controller.movies);
 router.get('/series', controller.series);
 router.get('/motionUsers', controller.motionUsers);
