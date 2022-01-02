@@ -13,24 +13,24 @@ let controller = {
             ...series
         ];
         let ofers = moviesSeries.filter(elem => {
-            if(countOfers <= 3 && elem.id % 2 === 0) {
+            if(countOfers <= 10 && elem.id % 2 === 0) {
                 countOfers++
                 return elem
             }
         });
         let popular = moviesSeries.filter(elem => {
-            if(countPopular <= 3 && elem.id % 2 !== 0) {
+            if(countPopular <= 10 && elem.id % 2 !== 0) {
                 countPopular++
                 return elem
             }
         });
         let movies3 = movies.filter(elem => {
-            if(elem.id <= 3) {
+            if(elem.id <= 10) {
                 return elem
             }
         });
         let series3 = series.filter(elem => {
-            if(elem.id <= 3) {
+            if(elem.id <= 10) {
                 return elem
             }
         });

@@ -52,8 +52,8 @@
                     </div>
                     <div class="form-input">
                         <input type="file" name="userImage" placeholder="Ingrese un avatar">
-                        <% if (locals.errors && errors.pass2) { %>
-                            <small><%= errors.pass2.msg %></small>
+                        <% if (locals.errors && errors.image) { %>
+                            <small><%= errors.image.msg %></small>
                         <% } %>
                     </div>
                     <div class="btn-enviar-form">

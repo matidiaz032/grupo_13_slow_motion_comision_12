@@ -2,7 +2,7 @@
     
 <body class="index">
 
-    <%- include('partials/header') %> 
+    <%- include('partials/header') %>
       
     <section class="options">
         <div class="barOptions">
@@ -28,53 +28,116 @@
                 <img src="./img/series/WestWorld1920x1080.jpg" alt>
             </figure>
         </div>
-    <span style="float:left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
-    <span style="float:right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
+    <span style="float:left" class="ss-icon" onclick="galleryspin('-')"><i class="fas fa-arrow-left"></i></span>
+    <span style="float:right" class="ss-icon" onclick="galleryspin('')"><i class="fas fa-arrow-right"></i></span>
     </div>
     <div class="products">
+
+
         <div class="film film1">
             <h3 class="text"><a href="/products/movies">Peliculas:</a></h3>
-            <nav class="demo">
-                <% movies3.forEach(elem => { %>
-                    <a href="/products/SerialMovie/<%- elem.id %> ">
-                        <img src="./img/products-images/<%- elem.image %>" alt="">
-                    </a>
-                <% }) %> 
-            </nav>
+
+
+            
+
+
+                <div class="row">
+                  <div class="row__inner">
+              
+                    <% movies3.forEach(elem => { %>
+                        <div class="tile">
+                            
+                            <div class="tile__media">
+                                <img class="tile__img" src="./img/products-images/<%- elem.image %>" />
+                            </div>
+                            <div class="tile__details">
+                                <div class="tile__title">
+                                    <%- elem.title %>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %> 
+              
+                  </div>
+                </div>
+              
+            
+
+
         </div>
         <div class="film film2">
             <h3 class="text"><a href="/products/series">Series:</a></h3>
-            <nav class="demo">
-                <% series3.forEach(elem => {%>
-                        <a href="/products/SerialMovie/<%- elem.id %> ">
-                            <img src="./img/products-images/<%- elem.image %>" alt="">
-                        </a>
-                <% }) %> 
-            </nav>
+
+            <div class="row">
+                <div class="row__inner">
+            
+                  <% series3.forEach(elem => { %>
+                      <div class="tile">
+                          
+                          <div class="tile__media">
+                              <img class="tile__img" src="./img/products-images/<%- elem.image %>" />
+                          </div>
+                          <div class="tile__details">
+                              <div class="tile__title">
+                                  <%- elem.title %>
+                              </div>
+                          </div>
+                      </div>
+                  <% }) %> 
+            
+                </div>
+              </div>
+
+
         </div>
         <div class="film film3">
             <h3 class="text"><a href="/ofert">En Oferta:</a></h3>
-            <nav class="demo">
-                <% ofers.forEach(elem => {%>
-                    <a href="/products/SerialMovie/<%- elem.id %> ">
-                        <img src="./img/products-images/<%- elem.image %>" alt="">
-                    </a>
-                <% }) %> 
-            </nav>
+            <div class="row">
+                <div class="row__inner">
+            
+                  <% popular.forEach(elem => { %>
+                      <div class="tile">
+                          
+                          <div class="tile__media">
+                              <img class="tile__img" src="./img/products-images/<%- elem.image %>" />
+                          </div>
+                          <div class="tile__details">
+                              <div class="tile__title">
+                                  <%- elem.title %>
+                              </div>
+                          </div>
+                      </div>
+                  <% }) %> 
+            
+                </div>
+              </div>
         </div>
         <div class="film film4">
             <h3 class="text"><a href="/popular">Populares:</a></h3>
-            <nav class="demo">
-                <% popular.forEach(elem => {%>
-                    <a href="/products/SerialMovie/<%- elem.id %> ">
-                        <img src="./img/products-images/<%- elem.image %>" alt="">
-                    </a>
-                <% }) %> 
-            </nav>
+            <div class="row">
+                <div class="row__inner">
+            
+                  <% ofers.forEach(elem => { %>
+                      <div class="tile">
+                          
+                          <div class="tile__media">
+                              <img class="tile__img" src="./img/products-images/<%- elem.image %>" />
+                          </div>
+                          <div class="tile__details">
+                              <div class="tile__title">
+                                  <%- elem.title %>
+                              </div>
+                          </div>
+                      </div>
+                  <% }) %> 
+            
+                </div>
+              </div>
         </div>
     </div>
     <%- include('partials/footer')  %> 
     <%- include('partials/scripts.ejs') %>
-    <script src="/js/carousel.js"></script>
+    <script src="./js/hammer.js"></script>
+    <script src="./js/carousel.js"></script>
 </body>
 </html>
