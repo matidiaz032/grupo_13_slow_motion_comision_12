@@ -6,6 +6,8 @@ const morgan = require('morgan')
 const methodOverride = require('method-override');
 const PORT = 3000;
 
+const auth_adminCheck = require('./middlewares/auth_adminCheck.js');
+
 // Middlewares
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
@@ -34,7 +36,7 @@ let sinLogRouter = require('./routes/sinLogRouter.js');
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/products', productsRouter)
-app.use('/admin', adminRouter)
+app.use('/admin', auth_adminCheck, adminRouter)
 app.use('/sinLog', sinLogRouter)
 
     /* Server  */
