@@ -19,16 +19,22 @@
                 </a>
             </div>
             <div class="RegAndLog">
-                <a href="/users/login">Ingresar</a>
-                <a href="/users/register">Registrarse</a>
+                <% if (typeof session.user !== "undefined") { %>
+                    <li class="list-item"><a href="/users/profile">Bienvenido <%= session.user.name %></a></li>
+                <% } else { %>
+                    <li class="list-item"><a href="/users/login">No estas logeado</a></li>
+                <% } %>
             </div>
             <nav class="menu" onclick="burguer()">
                 <div class="iconBurguer">
                     <i class="fas fa-align-justify" ></i>
                 </div>
                 <ul class="options-menu">
-                    <li class="list-item"><a href="/users/register">Registrarse</a></li>
-                    <li class="list-item"><a href="/users/login">Inicia Sesion</a></li>
+                    <% if (locals.user) { %>
+                        <li class="list-item"><a href="/users/profile">Bienvenido <%= locals.user.name %></a></li>
+                    <% } else { %>
+                        <h5>No estás logeado</h5>
+                    <% } %>    
                     <li class="list-item">
                         <form action="">
                             <input type="search-header" id="search-header">

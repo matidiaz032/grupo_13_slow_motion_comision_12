@@ -1,9 +1,9 @@
 const express = require('express');
-const session = require('express-session'); // Express-session Module
 const app = express();
 const path = require('path');
 const morgan = require('morgan')
 const methodOverride = require('method-override');
+const session = require('express-session'); // Express-session Module
 const PORT = 3000;
 
 // Middlewares

@@ -9,18 +9,27 @@
             </a>
         </div>
         <div class="forms-container">
-            <form action="">
+            <form action="/users/login" method="POST">
                 <div class="form-title">
                     <h2>Inicia Sesión</h2>
                 </div>
                 <div class="form-input-container">
                     <div class="form-input">
                         <input type="email" name="email" placeholder="Correo Electronico">
-                        <small>Su correo electronico no figura en nuestra base de datos</small>                   
+                        <% if (locals.errors && errors.email) { %>
+                            <small class="text-danger"> <%= errors.email.msg %>  </small>
+                        <% } %>                   
                     </div>
                     <div class="form-input">
                         <input type="password" name="password" placeholder="Contraseña">
-                        <small>Contraseña incorrecta</small>
+                        <% if (locals.errors && errors.password) { %>
+                            <small class="text-danger"> <%= errors.password.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="form-input">
+                        <% if (locals.errors && errors.custom) { %>
+                            <small class="text-danger"> <%= errors.custom.msg %></small>
+                        <% } %>
                     </div>
                     <div class="form-check">
                         <input type="checkbox" name="recordarme" id="recordarme">
@@ -28,7 +37,7 @@
                     </div>
                     <a class="link-form" href="register.html">¿Olvidaste tu contraseña?</a>
                     <div class="btn-enviar-form">
-                        <input class="send-login" type="button" value="Iniciar Sesión">
+                        <input class="send-login" type="submit" value="Iniciar Sesión">
                     </div>
                     <a class="link-form" href="/users/register">¿Primera vez aquí? Suscribirse.</a>
                 </div>

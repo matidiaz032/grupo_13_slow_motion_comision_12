@@ -39,13 +39,14 @@ let controller = {
             movies3,
             series3,
             popular,
-            ofers
+            ofers,
+            session: req.session
         })
     },
     faq: (req,res)=>{
         res.render("faq",{
             title: "Ayuda",
-
+            session: req.session
         })
     }
 }
