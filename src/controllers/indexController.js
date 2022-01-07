@@ -44,8 +44,8 @@ let controller = {
         })
     },
     faq: (req,res)=>{
-        res.render("faq",{
-            title: "Ayuda",
+        res.render("./faq", {
+            title: "Slow Motion : Ayuda",
             session: req.session
         })
     }
