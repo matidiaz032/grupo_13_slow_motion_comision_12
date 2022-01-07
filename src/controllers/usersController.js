@@ -35,7 +35,8 @@ let controller = {
         const errors = validationResult(req)
 
         if(errors.isEmpty()) {
-            let user = users.find(user => user.email === req.body.email);
+            
+            let user = users.find(user => user.email === req.body.email.toLowerCase());
 
             req.session.user = {
                 id: user.id,
@@ -44,6 +45,15 @@ let controller = {
                 email: user.email,
                 avatar: user.avatar,
                 rol: user.rol
+            }
+
+            if (req.body.recordarme) {
+                const TIME_IN_MILISECONDS = 600000
+                res.cookie('userSlowMotion', req.session.user, {
+                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                    httpOnly: true,
+                    secure: true
+                });
             }
 
             res.locals.user = req.session.user;
@@ -117,6 +127,13 @@ let controller = {
             title: 'User Profile',
             session: req.session
         })
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        if (req.cookies.userSlowMotion) {
+            res.cookie('userSlowMotion', '', { maxAge: -1 })
+        }
+        res.redirect('/');
     }
 }
 

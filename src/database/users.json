@@ -32,21 +32,4 @@
     "country": "",
     "province": "",
     "city": ""
-}, {
-    "id": 3,
-    "name": "test",
-    "lastName": "nuevo",
-    "userName": "testNuevo",
-    "email": "test@example.com",
-    "pass": "$2a$10$GrMCU6fuvzzKV2iqMO48OeP0TmFqQ2AAtiumANrgFQf4gdmIfF6KO",
-    "rol": "ROL_ADMIN",
-    "avatar": "default-avatar.jpg",
-    "phone": "",
-    "dateOfBirth": "",
-    "gender": "",
-    "favorites": "",
-    "address": "",
-    "country": "",
-    "province": "",
-    "city": ""
 }]

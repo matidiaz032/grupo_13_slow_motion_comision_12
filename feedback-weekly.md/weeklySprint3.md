@@ -1,5 +1,7 @@
 ### Weekly.MD
 
+## TERCER SPRINT   DAILY/WEEKLY
+
 - Antes de que el profesor diera inicio al tercer sprint, el equipo se ha anticipado y hemos hecho diferentes tareas con el fin de irnos anticipando sabiendo que se ibamos a tener menos tiempo para realizarlo.
 Es por ello, que hemos realizado las siguientes tareas de manera previa y en conjunto:
 °Pensar en una estructura de JSON

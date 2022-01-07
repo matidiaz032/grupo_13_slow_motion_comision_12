@@ -18,7 +18,7 @@ module.exports = [
 
     body('custom')
         .custom((value, {req}) => {
-            let user = users.find(user => user.email == req.body.email);
+            let user = users.find(user => user.email == req.body.email.toLowerCase());
 
             if(user && bcrypt.compareSync(req.body.password, user.pass)){
                 return true
