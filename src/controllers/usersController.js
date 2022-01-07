@@ -46,6 +46,15 @@ let controller = {
                 rol: user.rol
             }
 
+            if (req.body.recordarme) {
+                const TIME_IN_MILISECONDS = 600000
+                res.cookie('userSlowMotion', req.session.user, {
+                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                    httpOnly: true,
+                    secure: true
+                });
+            }
+
             res.locals.user = req.session.user;
 
             return res.redirect('/');
@@ -110,6 +119,13 @@ let controller = {
             title: 'User Profile',
             session: req.session
         })
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        if (req.cookies.userSlowMotion) {
+            res.cookie('userSlowMotion', '', { maxAge: -1 })
+        }
+        res.redirect('/');
     }
 }
 

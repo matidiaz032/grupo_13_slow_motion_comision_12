@@ -15,5 +15,6 @@ router.post('/login', loginValidator, controller.loadLogin);
 router.get('/register', controller.register);
 router.post('/register', upload.single('userImage'), registryValidator, controller.loadRegister);
 router.get('/profile', auth_userProfile, controller.profile);
+router.get('/logout', controller.logout);
 
 module.exports = router;
