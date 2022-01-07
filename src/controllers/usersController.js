@@ -21,13 +21,50 @@ const writeJson = (path, db) => fs.writeFileSync(path, JSON.stringify(db),'utf-8
 let controller = {
     login: (req, res) => {
         res.render('./users/login', {
-            title: 'Login'
+            title: 'Login',
+            session: req.session
         })
     },
     register: (req, res) => {
         res.render('./users/register', {
-            title: 'Register'
+            title: 'Register',
+            session: req.session
         })
+    },
+    loadLogin: (req, res) => {
+        const errors = validationResult(req)
+
+        if(errors.isEmpty()) {
+            let user = users.find(user => user.email === req.body.email);
+
+            req.session.user = {
+                id: user.id,
+                name: user.name,
+                lastName: user.lastName,
+                email: user.email,
+                avatar: user.avatar,
+                rol: user.rol
+            }
+
+            res.locals.user = req.session.user;
+
+            return res.redirect('/');
+
+        } else {
+            return res.render('./users/login', { 
+                title: 'Login',
+                errors: errors.mapped(),
+                session: req.session
+            });
+        }
+
+    },
+    logOut: (req, res) => {
+        req.session.destroy();
+        /* if(req.cookies.slowMotion){
+            res.cookie('slowMotion', "", { maxAge: -1 })
+        } */
+        res.redirect('/')
     },
     loadRegister: (req, res) => {
         const errors = validationResult(req)
@@ -70,12 +107,15 @@ let controller = {
                 title: 'Register',
                 errors: errors.mapped(),
                 old,
+                session: req.session
             })
         }
+
     },
     profile: (req, res) => {
         res.render('users/userProfile', {
-            title: 'User Profile'
+            title: 'User Profile',
+            session: req.session
         })
     }
 }
