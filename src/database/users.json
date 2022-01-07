@@ -1,1 +1,20 @@
-[{"id":1,"name":"Angel Guillermo","lastName":"Montaña","userName":"Angel","email":"angelguillermomontaa@gmail.com","pass":"$2a$10$qCkM/2wpUbj8oefkpzVb/.5NC1WUHEqiLEdkwJhI9yyM8xFe5Y3vS","rol":"ROL_ADMIN","avatar":"1641163498244.jpg","phone":"","dateOfBirth":"","gender":"","favorites":"","address":"","country":"","province":"","city":""}]
+[
+     {
+          "id": 1,
+          "name": "Angel Guillermo",
+          "lastName": "Montaña",
+          "userName": "Angel",
+          "email": "angelguillermomontaa@gmail.com",
+          "pass": "$2a$10$qCkM/2wpUbj8oefkpzVb/.5NC1WUHEqiLEdkwJhI9yyM8xFe5Y3vS",
+          "rol": "ROL_ADMIN",
+          "avatar": "1641163498244.jpg",
+          "phone": "",
+          "dateOfBirth": "",
+          "gender": "",
+          "favorites": "",
+          "address": "",
+          "country": "",
+          "province": "",
+          "city": ""
+     }
+]
