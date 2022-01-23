@@ -9,15 +9,15 @@
         </div>
         <div class="container-img-name">
             <div class="user-avatar">
-                <img src="img/iconos/default-avatar.jpg" alt="Avatar image">
+                <img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image">
             </div>
             <div class="user-name">
-                <h3>Matias Diaz</h3>
+                <h3><%= session.user.name %> <%= session.user.lastName %></h3>
             </div>
         </div>
         <div class="container-user-data">
             <div class="user-email">
-                <p>example@email.com</p>
+                <p><%= session.user.email %></p>
             </div>
             <div class="user-pass">
                 <p>********</p>

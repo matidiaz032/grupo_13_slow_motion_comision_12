@@ -16,7 +16,8 @@ let controller = {
         res.render('./product/indexMovies', {
             title: 'Movies',
             movies,
-            genderFilter
+            genderFilter,
+            session: req.session
         })
     },
     series: (req, res) => {
@@ -33,7 +34,8 @@ let controller = {
         res.render('./product/indexSeries', {
             title: 'Series',
             series,
-            genderFilter
+            genderFilter,
+            session: req.session
         })
     },
     serialMovie: (req,res)=>{
@@ -43,7 +45,8 @@ let controller = {
         res.render('product/productDetailMovie', {
             title: 'Movie Detail',
             detailMovie,
-            genre
+            genre,
+            session: req.session
         })
     },
     serialSerie: (req,res)=>{
@@ -53,13 +56,15 @@ let controller = {
         res.render('product/productDetailSerie', {
             title: 'Serie Detail',
             detailSerie,
-            genre
+            genre,
+            session: req.session
         })
     }, 
     
     cart: (req, res) => {
         res.render('./product/productCart', {
-            title: 'Cart'
+            title: 'Cart',
+            session: req.session
         })
     }
 }
