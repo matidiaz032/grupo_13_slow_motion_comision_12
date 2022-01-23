@@ -9,6 +9,7 @@ const cookieSession = require('./middlewares/cookieSession');
 const PORT = 3000;
 
 const auth_adminCheck = require('./middlewares/auth_adminCheck.js');
+const auth_users = require('./middlewares/auth_users.js');
 
 // Middlewares
 app.use(express.static("public"));
@@ -39,7 +40,7 @@ let sinLogRouter = require('./routes/sinLogRouter.js');
     /* Routes */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/products', productsRouter);
+app.use('/products', auth_users, productsRouter);
 app.use('/admin', auth_adminCheck, adminRouter);
 app.use('/sinLog', sinLogRouter);
 

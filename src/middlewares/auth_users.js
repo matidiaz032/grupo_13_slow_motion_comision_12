@@ -1,8 +1,7 @@
-const users = require('../database/users');
-
 module.exports = function(req,res,next) {
-    if(!req.originalUrl.includes("cart")) return next();
-    if(req.session.id === users.id && users.category === "ROL_USER" && !users.category === "ROL_ADMIN") return next();
-
-    res.redirect('/users/login');
+    if (req.session && req.session.user.rol === "ROL_USER")
+      return next();
+    else
+        //res.redirect('/users/login');
+        return res.sendStatus(401);
 }
