@@ -1,7 +1,7 @@
-const userRegister = require('../database/users')
-
 module.exports = function(req,res,next) {
-    if(!req.session.id === users.id && !users.category === users.category) return next();
+    if(req.session && req.session.user.rol === "ROL_USER" || req.session && req.session.user.rol === "ROL_ADMIN")
+    return next();
 
-    res.redirect('/users/register')
+    else
+        res.redirect('/users/register')
 }
