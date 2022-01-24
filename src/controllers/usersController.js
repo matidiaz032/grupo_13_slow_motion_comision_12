@@ -95,7 +95,7 @@ let controller = {
                 userName,
                 email: email.toLowerCase(), 
                 pass: bcrypt.hashSync(pass1),
-                rol: "ROL_ADMIN",
+                rol: "ROL_USER",
                 avatar: req.file ? req.file.filename : "default-avatar.jpg",
                 phone: '',
                 dateOfBirth: '',

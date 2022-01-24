@@ -1,4 +1,4 @@
-## 3 SPRINT
+## 4 SPRINT
 ### Conclusiones  de nuestro funcionamiento como equipo en el tercer Sprint
 
 *COMENZAR A HACER*: Acordar un horario para las reuniones daily y ser más equitativo con las tareas a repartir.
