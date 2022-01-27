@@ -76,6 +76,14 @@
     display: none;
 }
 
+.conteinHeader header .optFoot .menu .options-menu .avatar-header {
+    width: 75%;
+}
+
+.conteinHeader header .optFoot .menu .options-menu .avatar-header img {
+    border-radius: 50%;
+}
+
 .conteinHeader header .optFoot .menu .active {
     display: block;
     position: absolute;
@@ -296,6 +304,15 @@
         margin-left: 1.5rem;
     }
 
+    .conteinHeader header .optFoot .RegAndLog .avatar-header {
+        width: 12%;
+    }
+
+    .conteinHeader header .optFoot .RegAndLog .avatar-header img {
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
     .conteinHeader header .optFoot .RegAndLog a{
         color: var(--lightblue);
         text-decoration: none;
@@ -310,6 +327,12 @@
         transition-duration: 1s;
         transition-delay: 0s;
         font-size: 28px;
+        cursor: pointer;
+    }
+
+    .conteinHeader header .optFoot .RegAndLog .a-avatar img:hover {
+        border: 2px solid var(--lightblue);
+        border-radius: 50%;
         cursor: pointer;
     }
 
