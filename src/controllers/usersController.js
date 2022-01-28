@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require('express-validator')
+const { User } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 
 const deleteImageEdit = (req, element) => {
     if(req.file) {
@@ -120,6 +121,33 @@ let controller = {
                 session: req.session
             })
         }
+
+                /* Hecho con try catch, ver como se guardan */
+        /* if(errors.isEmpty()) {
+            const { name, lastName, userName, email, pass1} = req.body;
+            try {
+                let userCreate = await User.create({
+                    first_name: name,
+                    last_name: lastName,
+                    user_name: userName,
+                    email: email.toLowerCase(), 
+                    password: bcrypt.hashSync(pass1),
+                    avatar: req.file ? req.file.filename : "default-avatar.jpg",
+                })
+                console.log(userCreate)
+                res.send(userCreate)
+            } catch (error) {
+                res.send('no se creo el usuario')
+            }
+        } else {
+            let old = req.body;
+            res.render('./users/register', {
+                title: 'Register',
+                errors: errors.mapped(),
+                old,
+                session: req.session
+            })
+        } */
 
     },
     profile: (req, res) => {

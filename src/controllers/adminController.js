@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { Movie, Serie, Genre, Price } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 const deleteImageEdit = (req, element) => {
     if(req.file) {
         if(element.image !== 'default.png') {
@@ -179,6 +180,44 @@ let controller = {
         
         res.redirect('/admin')
     
+
+
+
+                /* Hecho con try catch, ver como se guardan aqui*/
+
+        /* if (uploadType === 'movie') {
+        try {
+            let movieCreate = await Movie.create({
+                title: name,
+                description,
+                trailer: video.substr(video.indexOf('=') + 1),
+                duration,
+                rating: appreciation,
+                age,
+                director,
+                idiom,
+                subtitle,
+                image: req.file ? req.file.filename : 'default.png',
+            });
+            let [genreCreate] = await Genre.findOrCreate({
+                where: {
+                    name: gender
+                }
+            });
+            let [priceCreate] = await Price.findOrCreate({
+                    where: {
+                        buy: price[0],
+                        rental: price[1],
+                        discount: price[2]
+                    }
+            })
+            await movieCreate.addGenre(genreCreate)
+            await priceCreate.addMovie(movieCreate)
+            res.send(movieCreate)
+        } catch (error) {
+            res.send('fallo la creacion de movie')
+        } */
+
     },
     
     editMovie: (req, res) => {
