@@ -186,7 +186,8 @@ let controller = {
         res.render('./admin/adminEditMovie', {
             title: 'Edit',
             product,
-            genres
+            genres,
+            session: req.session
         })
     },
     editSerie: (req, res) => {
@@ -194,7 +195,8 @@ let controller = {
         res.render('./admin/adminEditSerie', {
             title: 'Edit',
             product,
-            genres
+            genres,
+            session: req.session
         })
     },
     editSuccessMovie: (req, res) => {
