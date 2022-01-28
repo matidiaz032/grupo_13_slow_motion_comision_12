@@ -7,6 +7,7 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    margin: 0 0 1em;
 }
 
 .img a {
@@ -21,7 +22,7 @@
     display: inline-block;
     width: 65%;
     height: 65%;
-    margin: auto 0 auto 32px;
+    margin: auto 0 1% 11%;
     filter: drop-shadow(2px 4px 6px black);
     z-index: -1;
 }
@@ -85,8 +86,13 @@
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
 
-    .body-admin .img {
-        margin: 55px 0 0;
+    .body-admin .img a img {
+        display: inline-block;
+        width: 65%;
+        height: 65%;
+        margin: auto 0 0 5%;
+        filter: drop-shadow(2px 4px 6px black);
+        z-index: -1;
     }
 
     .products .section__database {
@@ -101,7 +107,8 @@
 @media only screen and (min-width: 1024px) /* and (max-width: 1440px) */ {
 
     .body-admin .img {
-        margin: 4em 0;
+        padding: 0 0 0 1em;
+        margin: 1em 0;
     }
 
     .database {
