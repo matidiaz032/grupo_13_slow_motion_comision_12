@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs");
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require('express-validator')
-const { User } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
+const { User, Rol } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 
 const deleteImageEdit = (req, element) => {
     if(req.file) {
@@ -77,10 +77,9 @@ let controller = {
         } */
         res.redirect('/')
     },
-    loadRegister: (req, res) => {
+    loadRegister: async (req, res) => {
         const errors = validationResult(req)
-
-        if(errors.isEmpty()) {
+        /* if(errors.isEmpty()) {
             const { name, lastName, userName, email, pass1} = req.body;
             let lastId = 0
             users.forEach(user => {
@@ -120,10 +119,10 @@ let controller = {
                 old,
                 session: req.session
             })
-        }
+        } */
 
                 /* Hecho con try catch, ver como se guardan */
-        /* if(errors.isEmpty()) {
+        if(errors.isEmpty()) {
             const { name, lastName, userName, email, pass1} = req.body;
             try {
                 let userCreate = await User.create({
@@ -134,10 +133,11 @@ let controller = {
                     password: bcrypt.hashSync(pass1),
                     avatar: req.file ? req.file.filename : "default-avatar.jpg",
                 })
-                console.log(userCreate)
-                res.send(userCreate)
+                let [rolCreate] = await Rol.findOrCreate({where: {type: 0}})
+                await rolCreate.addUser(userCreate)
+                res.send('user creado')
             } catch (error) {
-                res.send('no se creo el usuario')
+                res.redirect('/users/login')
             }
         } else {
             let old = req.body;
@@ -147,7 +147,7 @@ let controller = {
                 old,
                 session: req.session
             })
-        } */
+        }
 
     },
     profile: (req, res) => {

@@ -115,12 +115,12 @@ let controller = {
         })
     },
 
-    store: (req, res) => {
+    store: async (req, res) => {
         const { name, description, duration, appreciation, seasons, age, director, movieSeries, gender, idiom, subtitle, video, price } = req.body;
         let lastId = 1;
         let uploadType = movieSeries;
 
-        if (uploadType === 'movie') {
+        /* if (uploadType === 'movie') {
             movies.forEach(movie => {
                 if (movie.id > lastId) {
                     lastId = movie.id
@@ -178,46 +178,78 @@ let controller = {
             writeJson(seriesFilePath, series)
         }
         
-        res.redirect('/admin')
+        res.redirect('/admin') */
     
 
 
 
                 /* Hecho con try catch, ver como se guardan aqui*/
 
-        /* if (uploadType === 'movie') {
-        try {
-            let movieCreate = await Movie.create({
-                title: name,
-                description,
-                trailer: video.substr(video.indexOf('=') + 1),
-                duration,
-                rating: appreciation,
-                age,
-                director,
-                idiom,
-                subtitle,
-                image: req.file ? req.file.filename : 'default.png',
-            });
-            let [genreCreate] = await Genre.findOrCreate({
-                where: {
-                    name: gender
-                }
-            });
-            let [priceCreate] = await Price.findOrCreate({
+        if (uploadType === 'movie') {
+            try {
+                let movieCreate = await Movie.create({
+                    title: name,
+                    description,
+                    trailer: video.substr(video.indexOf('=') + 1),
+                    duration: Number(duration),
+                    rating: Number(appreciation),
+                    age,
+                    director,
+                    idiom,
+                    subtitle,
+                    image: req.file ? req.file.filename : 'default.png',
+                });
+                let [genreCreate] = await Genre.findOrCreate({
                     where: {
-                        buy: price[0],
-                        rental: price[1],
-                        discount: price[2]
+                        name: gender
                     }
-            })
-            await movieCreate.addGenre(genreCreate)
-            await priceCreate.addMovie(movieCreate)
-            res.send(movieCreate)
-        } catch (error) {
-            res.send('fallo la creacion de movie')
-        } */
-
+                });
+                let [priceCreate] = await Price.findOrCreate({
+                        where: {
+                            buy: price[0],
+                            rental: price[1],
+                            discount: price[2]
+                        }
+                })
+                await movieCreate.addGenre(genreCreate)
+                await priceCreate.addMovie(movieCreate)
+                res.redirect('/admin')
+            } catch (error) {
+                res.send('fallo la creacion de movie')
+            }
+        } else if(uploadType === 'serie') {
+            try {
+                let serieCreate = await Serie.create({
+                    title: name,
+                    description,
+                    trailer: video.substr(video.indexOf('=') + 1),
+                    seasons: Number(seasons),
+                    rating: Number(appreciation),
+                    age,
+                    director,
+                    idiom,
+                    subtitle,
+                    image: req.file ? req.file.filename : 'default.png',
+                });
+                let [genreCreate] = await Genre.findOrCreate({
+                    where: {
+                        name: gender
+                    }
+                });
+                let [priceCreate] = await Price.findOrCreate({
+                        where: {
+                            buy: price[0],
+                            rental: price[1],
+                            discount: price[2]
+                        }
+                })
+                await serieCreate.addGenre(genreCreate)
+                await priceCreate.addMovie(serieCreate)
+                res.redirect('/admin')
+            } catch (error) {
+                res.send('fallo la creacion de serie')
+            }
+        }
     },
     
     editMovie: (req, res) => {
