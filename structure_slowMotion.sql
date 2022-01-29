@@ -135,17 +135,18 @@ CREATE TABLE `movies` (
   `title` varchar(100) DEFAULT NULL,
   `description` varchar(500) DEFAULT NULL,
   `trailer` varchar(300) DEFAULT NULL,
-  `duration` int(10) unsigned DEFAULT NULL,
-  `rating` decimal(3,1) unsigned DEFAULT NULL,
+  `duration` int(11) DEFAULT NULL,
+  `rating` decimal(3,1) DEFAULT NULL,
   `age` date DEFAULT NULL,
   `director` tinytext DEFAULT NULL,
-  `idiom` tinytext DEFAULT NULL,
+  `idiom` tinytext DEFAULT 'ingles',
   `subtitle` tinytext DEFAULT NULL,
   `image` varchar(100) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   `priceId` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `title` (`title`),
   KEY `priceId` (`priceId`),
   CONSTRAINT `movies_ibfk_1` FOREIGN KEY (`priceId`) REFERENCES `prices` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -185,6 +186,31 @@ CREATE TABLE `prices` (
 LOCK TABLES `prices` WRITE;
 /*!40000 ALTER TABLE `prices` DISABLE KEYS */;
 /*!40000 ALTER TABLE `prices` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rols`
+--
+
+DROP TABLE IF EXISTS `rols`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rols` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` int(2) DEFAULT 0,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rols`
+--
+
+LOCK TABLES `rols` WRITE;
+/*!40000 ALTER TABLE `rols` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rols` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -290,7 +316,6 @@ CREATE TABLE `users` (
   `user_name` varchar(20) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
-  `rol` tinyint(2) DEFAULT NULL,
   `avatar` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `date_of_birth` datetime DEFAULT NULL,
@@ -301,8 +326,11 @@ CREATE TABLE `users` (
   `city` tinytext DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
+  `RolId` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
+  UNIQUE KEY `email` (`email`),
+  KEY `RolId` (`RolId`),
+  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`RolId`) REFERENCES `rols` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -328,4 +356,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-27 20:45:55
+-- Dump completed on 2022-01-28 19:08:53
