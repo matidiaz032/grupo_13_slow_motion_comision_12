@@ -45,6 +45,7 @@ footer .links-footer {
     font-family: var(--staatliches);
     font-size: 0.6rem;
     text-transform: uppercase;
+    height: 100%;
 }
 
 footer .links-footer a {
@@ -56,10 +57,23 @@ footer .links-footer a:hover {
     color: var(--yellow);
 }
 
-footer .links-footer .links-varios, footer .links-footer .links-redes-sociales {
+footer .links-footer .links-varios {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+footer .links-footer .links-redes-sociales {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+}
+
+footer .links-footer .links-redes-sociales .col-mobile {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly; 
 }
 
 footer .links-footer .links-redes-sociales .link-logo {

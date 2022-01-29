@@ -32,11 +32,20 @@
     align-items: center;
 }
 
+.user-edit-form {
+    width: 80%;
+}
+
 .user-profile .profile-container .container-user-data .user-edit {
     margin: 1rem 0;
 }
 
-.user-profile .profile-container .container-user-data .user-edit button {
+.forms-container .form-input-container .form-input .label-profile {
+    color: var(--lightblue);
+    font-size: 1.2rem;
+}
+
+.user-profile .profile-container .container-user-data .user-edit input {
     color: var(--yellow);
     background-color: var(--lightblue);
     border-radius: 1rem;
