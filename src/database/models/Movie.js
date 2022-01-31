@@ -34,6 +34,7 @@ module.exports = (sequelize) => {
             },
             subtitle: {
                   type: DataTypes.TEXT('tiny'),
+                  defaultValue: 'No'
             },
             image: {
                   type: DataTypes.STRING(100),

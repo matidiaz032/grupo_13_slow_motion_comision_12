@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { Movie, Serie, Genre, Price, Idiom } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
+const { Movie, Serie, Genre, Price, Idiom, Rol } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 const deleteImageEdit = (req, element) => {
     if(req.file) {
         if(element.image !== 'default.png') {
@@ -251,8 +251,8 @@ let controller = {
                             discount: price[2]
                         }
                 })
-                await serieCreate.addGenre(genreCreate)
-                await priceCreate.addMovie(serieCreate)
+                await serieCreate.addGenre(genreSearch)
+                await priceCreate.addSerie(serieCreate)
                 await serieCreate.addIdiom(idiomSearch)
                 res.redirect('/admin')
             } catch (error) {
@@ -375,6 +375,15 @@ let controller = {
             }
         })
         res.send(idiomCreate)
+    },
+    agregaUser: async (req, res) => {
+        const {user} = req.body
+        let [ rolCreate] = await Rol.findOrCreate({
+            where: {
+                type: user
+            }
+        })
+        res.send(rolCreate)
     }
 }
 

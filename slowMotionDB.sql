@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
--- Host: localhost    Database: slow_motion_db
+-- Host: localhost    Database: slow_motion_DB
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.4.22-MariaDB
 
@@ -143,6 +143,7 @@ CREATE TABLE `moviegenre` (
 
 LOCK TABLES `moviegenre` WRITE;
 /*!40000 ALTER TABLE `moviegenre` DISABLE KEYS */;
+INSERT INTO `moviegenre` VALUES (1,1),(1,6);
 /*!40000 ALTER TABLE `moviegenre` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -169,6 +170,7 @@ CREATE TABLE `movieidiom` (
 
 LOCK TABLES `movieidiom` WRITE;
 /*!40000 ALTER TABLE `movieidiom` DISABLE KEYS */;
+INSERT INTO `movieidiom` VALUES (1,1),(2,1);
 /*!40000 ALTER TABLE `movieidiom` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -188,7 +190,7 @@ CREATE TABLE `movies` (
   `rating` decimal(3,1) DEFAULT NULL,
   `age` date DEFAULT NULL,
   `director` tinytext DEFAULT NULL,
-  `subtitle` tinytext DEFAULT NULL,
+  `subtitle` tinytext DEFAULT 'No',
   `image` varchar(100) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
@@ -197,7 +199,7 @@ CREATE TABLE `movies` (
   UNIQUE KEY `title` (`title`),
   KEY `PriceId` (`PriceId`),
   CONSTRAINT `movies_ibfk_1` FOREIGN KEY (`PriceId`) REFERENCES `prices` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -206,6 +208,7 @@ CREATE TABLE `movies` (
 
 LOCK TABLES `movies` WRITE;
 /*!40000 ALTER TABLE `movies` DISABLE KEYS */;
+INSERT INTO `movies` VALUES (1,'Zombieland','Después de que un virus transforma a la mayoría de las personas en zombis, los humanos sobrevivientes deben luchar contra los muertos vivientes hambrientos. Cuatro sobrevivientes, Tallahassee y sus amigos, Columbus, Wichita y Little Rock, respetan una serie de reglas de supervivencia y estrategias para matar zombis mientras se dirigen a un refugio seguro en Los Ángeles.','4KLz9-lUOzo',88,4.0,'2009-10-01','Ruben Fleischer','Latino','1643647162608.jpg','2022-01-31 16:39:22','2022-01-31 16:39:23',1);
 /*!40000 ALTER TABLE `movies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,7 +225,7 @@ CREATE TABLE `prices` (
   `rental` int(11) DEFAULT NULL,
   `discount` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -231,6 +234,7 @@ CREATE TABLE `prices` (
 
 LOCK TABLES `prices` WRITE;
 /*!40000 ALTER TABLE `prices` DISABLE KEYS */;
+INSERT INTO `prices` VALUES (1,800,500,15),(2,1500,1000,30);
 /*!40000 ALTER TABLE `prices` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,7 +249,7 @@ CREATE TABLE `rols` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` int(2) DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -254,6 +258,7 @@ CREATE TABLE `rols` (
 
 LOCK TABLES `rols` WRITE;
 /*!40000 ALTER TABLE `rols` DISABLE KEYS */;
+INSERT INTO `rols` VALUES (1,0),(2,1),(3,2);
 /*!40000 ALTER TABLE `rols` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -306,6 +311,7 @@ CREATE TABLE `seriegenre` (
 
 LOCK TABLES `seriegenre` WRITE;
 /*!40000 ALTER TABLE `seriegenre` DISABLE KEYS */;
+INSERT INTO `seriegenre` VALUES (1,12);
 /*!40000 ALTER TABLE `seriegenre` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -332,6 +338,7 @@ CREATE TABLE `serieidiom` (
 
 LOCK TABLES `serieidiom` WRITE;
 /*!40000 ALTER TABLE `serieidiom` DISABLE KEYS */;
+INSERT INTO `serieidiom` VALUES (1,1),(2,1);
 /*!40000 ALTER TABLE `serieidiom` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -359,7 +366,7 @@ CREATE TABLE `series` (
   PRIMARY KEY (`id`),
   KEY `PriceId` (`PriceId`),
   CONSTRAINT `series_ibfk_1` FOREIGN KEY (`PriceId`) REFERENCES `prices` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -368,6 +375,7 @@ CREATE TABLE `series` (
 
 LOCK TABLES `series` WRITE;
 /*!40000 ALTER TABLE `series` DISABLE KEYS */;
+INSERT INTO `series` VALUES (1,'The Walking Dead','The Walking Dead tiene lugar después del inicio de un apocalipsis zombi mundial. Los zombis, coloquialmente llamados «caminantes», se arrastran hacia los humanos vivos y otras criaturas para comerlos; se sienten atraídos por el ruido, como los disparos, y por diferentes aromas, por ejemplo humanos.','uwgohmYnDu0&t=6s',11,4.1,'2010-10-01','Frank Darabont','Latino','1643649599697.jpg','2022-01-31 17:19:59','2022-01-31 17:20:00',2);
 /*!40000 ALTER TABLE `series` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -400,7 +408,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `email` (`email`),
   KEY `RolId` (`RolId`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`RolId`) REFERENCES `rols` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -409,11 +417,12 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Angel Guillermo','Montaña','Angel','angelguillermomontania@gmail.com','$2a$10$sB.dUv1ZPHnbi3PuyLDbJO10/Zj..eEWz5o8CZXvN1vAbaFa9OS56','1643649793062.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2022-01-31 17:23:13','2022-01-31 17:23:13',3);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'slow_motion_db'
+-- Dumping routines for database 'slow_motion_DB'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -425,4 +434,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-31  2:12:09
+-- Dump completed on 2022-01-31 14:24:10

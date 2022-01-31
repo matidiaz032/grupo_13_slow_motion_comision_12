@@ -133,11 +133,11 @@ let controller = {
                     password: bcrypt.hashSync(pass1),
                     avatar: req.file ? req.file.filename : "default-avatar.jpg",
                 })
-                let [rolCreate] = await Rol.findOrCreate({where: {type: 0}})
+                let rolCreate = await Rol.findOne({where: {type: 2}})
                 await rolCreate.addUser(userCreate)
                 res.redirect('/users/login')
             } catch (error) {
-                res.send('user creado')
+                res.send('user no creado')
             }
         } else {
             let old = req.body;

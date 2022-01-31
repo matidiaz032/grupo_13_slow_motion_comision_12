@@ -18,5 +18,6 @@ router.delete('/deleteProductMovie/:id', controller.deleteProductMovie);
 router.delete('/deleteProductSerie/:id', controller.deleteProductSerie);
 router.post('/genre', controller.agregaGeneros);
 router.post('/idiom', controller.agregaIdiomas)
+router.post('/user', controller.agregaUser)
 
 module.exports = router;
