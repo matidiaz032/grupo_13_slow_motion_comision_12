@@ -143,7 +143,7 @@ CREATE TABLE `moviegenre` (
 
 LOCK TABLES `moviegenre` WRITE;
 /*!40000 ALTER TABLE `moviegenre` DISABLE KEYS */;
-INSERT INTO `moviegenre` VALUES (1,1),(1,6);
+INSERT INTO `moviegenre` VALUES (1,1),(1,6),(2,1),(2,6),(3,6),(4,1),(4,5),(5,1),(5,6),(6,8);
 /*!40000 ALTER TABLE `moviegenre` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,7 +170,7 @@ CREATE TABLE `movieidiom` (
 
 LOCK TABLES `movieidiom` WRITE;
 /*!40000 ALTER TABLE `movieidiom` DISABLE KEYS */;
-INSERT INTO `movieidiom` VALUES (1,1),(2,1);
+INSERT INTO `movieidiom` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(2,1),(2,3),(2,4);
 /*!40000 ALTER TABLE `movieidiom` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,7 +199,7 @@ CREATE TABLE `movies` (
   UNIQUE KEY `title` (`title`),
   KEY `PriceId` (`PriceId`),
   CONSTRAINT `movies_ibfk_1` FOREIGN KEY (`PriceId`) REFERENCES `prices` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -208,7 +208,7 @@ CREATE TABLE `movies` (
 
 LOCK TABLES `movies` WRITE;
 /*!40000 ALTER TABLE `movies` DISABLE KEYS */;
-INSERT INTO `movies` VALUES (1,'Zombieland','Después de que un virus transforma a la mayoría de las personas en zombis, los humanos sobrevivientes deben luchar contra los muertos vivientes hambrientos. Cuatro sobrevivientes, Tallahassee y sus amigos, Columbus, Wichita y Little Rock, respetan una serie de reglas de supervivencia y estrategias para matar zombis mientras se dirigen a un refugio seguro en Los Ángeles.','4KLz9-lUOzo',88,4.0,'2009-10-01','Ruben Fleischer','Latino','1643647162608.jpg','2022-01-31 16:39:22','2022-01-31 16:39:23',1);
+INSERT INTO `movies` VALUES (1,'Zombieland','Después de que un virus transforma a la mayoría de las personas en zombis, los humanos sobrevivientes deben luchar contra los muertos vivientes hambrientos. Cuatro sobrevivientes, Tallahassee y sus amigos, Columbus, Wichita y Little Rock, respetan una serie de reglas de supervivencia y estrategias para matar zombis mientras se dirigen a un refugio seguro en Los Ángeles.','4KLz9-lUOzo',88,4.0,'2009-10-01','Ruben Fleischer','Latino','1643647162608.jpg','2022-01-31 16:39:22','2022-01-31 16:39:23',1),(2,'Comando Especial','Cuando los policías Schmidt y Jenko se unen a la unidad secreta Jump Street, ellos usan sus apariencias juveniles para trabajar de forma encubierta como estudiantes de preparatoria. Ellos cambian sus placas y armas por mochilas e intentan eliminar a un grupo narcotraficante. Schmidt y Jenko descubren que la preparatoria ya no es lo mismo y deben enfrentarse al terror y la ansiedad de la adolescencia que creían haber superado.','BFwi5Uv3J4U',109,7.0,'2012-03-01','Phil Lord','Latino','1643650583914.jpg','2022-01-31 17:36:23','2022-01-31 17:36:24',3),(3,'Ted','Cuando John Bennett (Mark Wahlberg) era un niño pequeño, pidió el deseo de que Ted (Seth MacFarlane), su querido oso de peluche, cobrara vida. Treinta años más tarde, Ted continúa siendo el compañero de John, ante el disgusto de Lori (Mila Kunis), la novia de John. Aunque el disgusto de Lori se ve agravado por el constante consumo de la pareja de cerveza y marihuana, ella no es quien está más decepcionada con John; ya que puede necesitar la intervención del juguete de John para hacerlo madurar.','_0RXbJtBk68',106,6.4,'2012-06-01','Seth MacFarlane','Latino','1643650946938.jpg','2022-01-31 17:42:27','2022-01-31 17:42:27',4),(4,'Thor Ragnarok','Thor está preso en el otro extremo del universo. Necesita regresar a tiempo para evitar que la todopoderosa Hela destruya su mundo, pero para escapar de su confinamiento y evitar el apocalipsis tendrá que vencer antes al increíble Hulk en un torneo de gladiadores.','ue80QwXMRHg',130,7.4,'2017-11-01','Taika Waititi','No','1643654038530.png','2022-01-31 18:33:58','2022-01-31 18:33:58',8),(5,'Un espia y medio','Un agente de la CIA que solía sufrir acoso escolar se reencuentra con sus compañeros en una reunión de antiguos alumnos, aunque ahora él es musculoso y fuerte. Allí recluta al que era el chico más popular de la escuela, quien ahora tiene una vida monótona y predecible, para que le ayude en una peligrosa misión en la que ambos tendrán que arriesgarlo todo.','eQnbwxzCzQ8',114,6.9,'2016-08-01','Rawson Marshall Thurber','Latino','1643654249644.jpg','2022-01-31 18:37:29','2022-01-31 18:37:29',9),(6,'Hasta el último hombre','La película está basada en la historia real del soldado del Ejército de EE. UU. Desmond Doss, un cristiano Adventista del Séptimo día, que se negó a portar armas en el frente, fue objeto de burla y persecución y que, a pesar de aquello, fue condecorado con la Medalla de Honor por el presidente Harry S. Truman, por haber salvado la vida a más de setenta y cinco hombres bajo el constante fuego enemigo en el acantilado de Maeda durante la brutal batalla de Okinawa, en la Segunda Guerra Mundial.','QJUsNs7tLFA',139,8.6,'2016-10-01','Mel Gibson','Latino','1643654992066.jpg','2022-01-31 18:49:52','2022-01-31 18:49:52',11);
 /*!40000 ALTER TABLE `movies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -225,7 +225,7 @@ CREATE TABLE `prices` (
   `rental` int(11) DEFAULT NULL,
   `discount` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -234,7 +234,7 @@ CREATE TABLE `prices` (
 
 LOCK TABLES `prices` WRITE;
 /*!40000 ALTER TABLE `prices` DISABLE KEYS */;
-INSERT INTO `prices` VALUES (1,800,500,15),(2,1500,1000,30);
+INSERT INTO `prices` VALUES (1,800,500,15),(2,1500,1000,30),(3,700,500,0),(4,650,400,0),(5,900,550,5),(6,1200,750,10),(7,600,350,0),(8,1300,750,40),(9,900,600,0),(10,1350,800,5),(11,850,600,10);
 /*!40000 ALTER TABLE `prices` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -311,7 +311,7 @@ CREATE TABLE `seriegenre` (
 
 LOCK TABLES `seriegenre` WRITE;
 /*!40000 ALTER TABLE `seriegenre` DISABLE KEYS */;
-INSERT INTO `seriegenre` VALUES (1,12);
+INSERT INTO `seriegenre` VALUES (1,12),(2,6),(2,8),(3,1),(3,11),(4,2),(5,8),(5,12);
 /*!40000 ALTER TABLE `seriegenre` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -338,7 +338,7 @@ CREATE TABLE `serieidiom` (
 
 LOCK TABLES `serieidiom` WRITE;
 /*!40000 ALTER TABLE `serieidiom` DISABLE KEYS */;
-INSERT INTO `serieidiom` VALUES (1,1),(2,1);
+INSERT INTO `serieidiom` VALUES (1,1),(1,2),(1,4),(1,5),(2,1),(2,2),(2,4),(2,5),(3,3);
 /*!40000 ALTER TABLE `serieidiom` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -366,7 +366,7 @@ CREATE TABLE `series` (
   PRIMARY KEY (`id`),
   KEY `PriceId` (`PriceId`),
   CONSTRAINT `series_ibfk_1` FOREIGN KEY (`PriceId`) REFERENCES `prices` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -375,7 +375,7 @@ CREATE TABLE `series` (
 
 LOCK TABLES `series` WRITE;
 /*!40000 ALTER TABLE `series` DISABLE KEYS */;
-INSERT INTO `series` VALUES (1,'The Walking Dead','The Walking Dead tiene lugar después del inicio de un apocalipsis zombi mundial. Los zombis, coloquialmente llamados «caminantes», se arrastran hacia los humanos vivos y otras criaturas para comerlos; se sienten atraídos por el ruido, como los disparos, y por diferentes aromas, por ejemplo humanos.','uwgohmYnDu0&t=6s',11,4.1,'2010-10-01','Frank Darabont','Latino','1643649599697.jpg','2022-01-31 17:19:59','2022-01-31 17:20:00',2);
+INSERT INTO `series` VALUES (1,'The Walking Dead','The Walking Dead tiene lugar después del inicio de un apocalipsis zombi mundial. Los zombis, coloquialmente llamados «caminantes», se arrastran hacia los humanos vivos y otras criaturas para comerlos; se sienten atraídos por el ruido, como los disparos, y por diferentes aromas, por ejemplo humanos.','uwgohmYnDu0&t=6s',11,4.1,'2010-10-01','Frank Darabont','Latino','1643649599697.jpg','2022-01-31 17:19:59','2022-01-31 17:20:00',2),(2,'Sex Education','Sex Education gira en torno a Otis, un adolescente calificado como \\\"bicho raro\\\" en el instituto, a lo que se le une el hecho de ser virgen. Sin embargo, este vive con su madre sexóloga, por lo que siempre ha tenido un amplio conocimiento respecto al tema.','mmksLpityps',3,8.3,'2019-01-01','Laurie Nunn','No','1643652935425.jpg','2022-01-31 18:15:35','2022-01-31 18:15:35',5),(3,'La casa de papel','Una banda organizada de ladrones se propone cometer el atraco del siglo en la Fábrica Nacional de Moneda y Timbre. Cinco meses de preparación quedarán reducidos a once días para poder llevar a cabo con éxito el gran golpe.','3y-6iaveY6c',3,7.8,'2017-05-01','Jesús Colmenar, Miguel Ángel Vivas','Latino','1643653404601.jpg','2022-01-31 18:23:24','2022-01-31 18:23:24',6),(4,'What if...?','El espacio explora lo que sucedería si los principales momentos de las películas del Universo Cinematográfico de Marvel ocurrieran de manera diferente.','DexqOGh_tzQ',1,6.8,'2021-08-01','Bryan Andrews','Latino','1643653718570.jpeg','2022-01-31 18:28:38','2022-01-31 18:28:39',7),(5,'La maldición de Hill House','En el verano de 1992, Hugh y Olivia Crain y sus cinco hijos, Steven, Shirley, Theodora, Luke y Eleanor (Nell), se mudaron a Hill House para renovar la mansión, venderla y construir su propia casa, diseñada por Olivia. Sin embargo, debido a reparaciones inesperadas, tienen que quedarse más tiempo, y empiezan a experimentar un creciente fenómeno paranormal, lo que resulta en una trágica pérdida y en la huida de la familia de la casa. Veintiséis años más tarde, los hermanos Crain y su padre distanc','KzGdybdOCY0',1,8.1,'2018-10-01','Mike Flanagan','Latino','1643654578805.jpg','2022-01-31 18:42:58','2022-01-31 18:42:59',10);
 /*!40000 ALTER TABLE `series` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -434,4 +434,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-31 14:24:10
+-- Dump completed on 2022-01-31 15:50:31
