@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { Movie, Serie, Genre, Price } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
+const { Movie, Serie, Genre, Price, Idiom } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 const deleteImageEdit = (req, element) => {
     if(req.file) {
         if(element.image !== 'default.png') {
@@ -116,7 +116,7 @@ let controller = {
     },
 
     store: async (req, res) => {
-        const { name, description, duration, appreciation, seasons, age, director, movieSeries, gender, idiom, subtitle, video, price } = req.body;
+        const { name, description, duration, appreciation, seasons, age, director, movieSeries, genre, idiom, subtitle, video, price } = req.body;
         let lastId = 1;
         let uploadType = movieSeries;
 
@@ -184,7 +184,6 @@ let controller = {
 
 
                 /* Hecho con try catch, ver como se guardan aqui*/
-
         if (uploadType === 'movie') {
             try {
                 let movieCreate = await Movie.create({
@@ -195,15 +194,19 @@ let controller = {
                     rating: Number(appreciation),
                     age,
                     director,
-                    idiom,
                     subtitle,
                     image: req.file ? req.file.filename : 'default.png',
                 });
-                let [genreCreate] = await Genre.findOrCreate({
+                let genreSearch = await Genre.findAll({
                     where: {
-                        name: gender
+                        name: genre
                     }
                 });
+                let idiomSearch = await Idiom.findAll({
+                    where: {
+                        name: idiom
+                    }
+                })
                 let [priceCreate] = await Price.findOrCreate({
                         where: {
                             buy: price[0],
@@ -211,8 +214,9 @@ let controller = {
                             discount: price[2]
                         }
                 })
-                await movieCreate.addGenre(genreCreate)
+                await movieCreate.addGenre(genreSearch)
                 await priceCreate.addMovie(movieCreate)
+                await movieCreate.addIdiom(idiomSearch)
                 res.redirect('/admin')
             } catch (error) {
                 res.send('fallo la creacion de movie')
@@ -227,15 +231,19 @@ let controller = {
                     rating: Number(appreciation),
                     age,
                     director,
-                    idiom,
                     subtitle,
                     image: req.file ? req.file.filename : 'default.png',
                 });
-                let [genreCreate] = await Genre.findOrCreate({
+                let genreSearch = await Genre.findAll({
                     where: {
-                        name: gender
+                        name: genre
                     }
                 });
+                let idiomSearch = await Idiom.findAll({
+                    where: {
+                        name: idiom
+                    }
+                })
                 let [priceCreate] = await Price.findOrCreate({
                         where: {
                             buy: price[0],
@@ -245,6 +253,7 @@ let controller = {
                 })
                 await serieCreate.addGenre(genreCreate)
                 await priceCreate.addMovie(serieCreate)
+                await serieCreate.addIdiom(idiomSearch)
                 res.redirect('/admin')
             } catch (error) {
                 res.send('fallo la creacion de serie')
@@ -348,6 +357,24 @@ let controller = {
 
         writeJson(seriesFilePath, series)
         res.redirect('/admin/series')
+    },
+    agregaGeneros: async (req, res) => {
+        const { gender } = req.body
+        let [genreCreate] = await Genre.findOrCreate({
+            where: {
+                name: gender
+            }
+        })
+        res.send(genreCreate)
+    },
+    agregaIdiomas: async (req, res) => {
+        const {idiom} = req.body
+        let [ idiomCreate] = await Idiom.findOrCreate({
+            where: {
+                name: idiom
+            }
+        })
+        res.send(idiomCreate)
     }
 }
 

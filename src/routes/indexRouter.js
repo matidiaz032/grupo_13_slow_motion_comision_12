@@ -7,4 +7,5 @@ router.get('/', controller.index);
 router.get('/faq', controller.faq);
 
 
+
 module.exports = router;

@@ -8,6 +8,7 @@ module.exports = (sequelize) => {
                   alowNull: false
                 },
       }, {
+            timestamps: false,
             sequelize: sequelize,
             modelName: 'genre'
       })

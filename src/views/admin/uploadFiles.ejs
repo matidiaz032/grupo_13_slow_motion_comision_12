@@ -32,13 +32,10 @@
                     <input type="number" step="any" name="appreciation" id="appreciation" placeholder="Calificación" class="input" required>
                 </div>
                 <div class="contain__date">
-                    <label for="gender">Genero:</label>
-                    <select name="gender" id="gender" class="input" required>
-                        <option value="Accion">Accion</option> 
-                        <option value="Comedia">Comedia</option> 
-                        <option value="Ciencia Ficcion">Ciencia Ficcion</option> 
-                        <option value="Terror">Terror</option> 
-                    </select>
+                    <label for="genre">Genero:</label>
+                        <% genres.forEach(genre => { %>
+                            <input type="checkbox" name="genre" value="<%- genre.name %>"><%- genre.name %></input> 
+                        <% }) %>
                 </div>
                 <div class="contain__date">
                     <label for="year">Año:</label>

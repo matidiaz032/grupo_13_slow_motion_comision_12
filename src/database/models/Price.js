@@ -16,6 +16,7 @@ module.exports = (sequelize) => {
                   default: 0
             }
       }, {
+            timestamps: false,
             sequelize: sequelize,
             modelName: 'price'
       })

@@ -135,9 +135,9 @@ let controller = {
                 })
                 let [rolCreate] = await Rol.findOrCreate({where: {type: 0}})
                 await rolCreate.addUser(userCreate)
-                res.send('user creado')
-            } catch (error) {
                 res.redirect('/users/login')
+            } catch (error) {
+                res.send('user creado')
             }
         } else {
             let old = req.body;
