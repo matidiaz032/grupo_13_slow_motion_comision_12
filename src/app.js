@@ -34,14 +34,14 @@ let indexRouter = require('./routes/indexRouter');
 let usersRouter = require('./routes/usersRouter');
 let productsRouter = require('./routes/productsRouter');
 let adminRouter = require('./routes/adminRouter');
-let sinLogRouter = require('./routes/sinLogRouter.js');
+let notFoundRouter = require('./routes/notFoundRouter.js');
 
     /* Routes */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-app.use('/admin', /* auth_adminCheck, */ adminRouter);
-app.use('*', sinLogRouter);
+app.use('/admin', auth_adminCheck, adminRouter);
+app.use('*', notFoundRouter);
 
 
 

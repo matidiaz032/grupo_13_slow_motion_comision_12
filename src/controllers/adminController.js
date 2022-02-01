@@ -1,6 +1,7 @@
 const fs = require("fs");
-const path = require("path");
-const { Movie, Serie, Genre, Price, Idiom, Rol } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
+/* const path = require("path"); */
+const { Op } = require('sequelize')
+const { Movie, Serie, Genre, Price, Idiom, Rol , User } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 const deleteImageEdit = (req, element) => {
     if(req.file) {
         if(element.image !== 'default.png') {
@@ -12,13 +13,13 @@ const deleteImageEdit = (req, element) => {
     return element.image
 }
 
-const moviesFilePath = path.join(__dirname, "../database/movies.json");
+/* const moviesFilePath = path.join(__dirname, "../database/movies.json");
 const seriesFilePath = path.join(__dirname, "../database/series.json");
 const genresFilePath = path.join(__dirname, "../database/genres.json");
 const movies = JSON.parse(fs.readFileSync(moviesFilePath, "utf-8"));
 const series = JSON.parse(fs.readFileSync(seriesFilePath, "utf-8"));
 const genres = JSON.parse(fs.readFileSync(genresFilePath, "utf-8"));
-const writeJson = (path, db) => fs.writeFileSync(path, JSON.stringify(db),'utf-8');
+const writeJson = (path, db) => fs.writeFileSync(path, JSON.stringify(db),'utf-8'); */
 
 
 let controller = {
@@ -28,21 +29,21 @@ let controller = {
         })
     },
     movies: (req, res) => {
-        res.render('./admin/adminMovies', {
-            title: 'Admin - Page : Movie',
-            movies: movies,
-            mov: function (lastMovieId) {
-            return movies.filter(movie => movie.id === lastMovieId)
-            }
-        })
+        Movie.findAll()
+            .then(data => {
+                res.render('./admin/adminMovies', {
+                    title: 'Admin - Page : Movie',
+                    movies: data,
+                })
+            })
     },
     series: (req, res) => {
-        res.render('./admin/adminSeries', {
-            title: 'Admin - Page : Series',
-            series: series,
-            ser: function (lastSeriesId) {
-            return series.filter(series => series.id === lastSeriesId)
-            }
+        Serie.findAll()
+            .then(data => {
+                res.render('./admin/adminSeries', {
+                    title: 'Admin - Page : Series',
+                    series: data,
+            })
         })
     },
     statistics: (req, res) => {
@@ -103,88 +104,34 @@ let controller = {
         })
     },
     motionUsers: (req, res) => {
-        res.render('./admin/motionUsers', {
-            title: 'Admin - Page : Users'
+        User.findAll({
+            where: {
+                [Op.or]: [
+                    {type: 0},
+                    {type: 1}
+                ]
+            }
+        }).then(data => {
+            res.render('./admin/motionUsers', {
+                title: 'Admin - Page : Users',
+                allUsers: data
+            })
         })
     },
     upload: (req, res) => {
-
-        res.render('./admin/uploadFiles', {
-            title: 'Admin - Page : Form',
-            genres
-        })
+        Promise.all([Genre.findAll(), Idiom.findAll()])
+            .then(data => {
+                res.render('./admin/uploadFiles', {
+                    title: 'Admin - Page : Form',
+                    genres: data[0],
+                    idioms: data[1]
+                })
+            })
+            .catch((error) => res.send('No cargaron idiomas y generos'))
     },
-
     store: async (req, res) => {
         const { name, description, duration, appreciation, seasons, age, director, movieSeries, genre, idiom, subtitle, video, price } = req.body;
-        let lastId = 1;
-        let uploadType = movieSeries;
-
-        /* if (uploadType === 'movie') {
-            movies.forEach(movie => {
-                if (movie.id > lastId) {
-                    lastId = movie.id
-                }
-            });
-
-            let newMovie = {
-                id: +lastId + 1,
-                title: name,
-                description,
-                trailer: video.substr(video.indexOf('=') + 1),
-                duration,
-                appreciation,
-                age,
-                director,
-                idiom,
-                subtitle,
-                image: req.file ? req.file.filename : 'default.png',
-                gender: +gender,
-                price: {
-                    buy: +price[0],
-                    rental: +price[1]
-                }
-            }
-    
-            movies.push(newMovie)
-            writeJson(moviesFilePath, movies)
-        } else if(uploadType === 'serie') {
-            series.forEach(series => {
-                if (series.id > lastId) {
-                    lastId = series.id
-                }
-            });
-
-            let newSerie = {
-                id: +lastId + 1,
-                title: name,
-                description,
-                trailer: video.substr(video.indexOf('=') + 1),
-                appreciation,
-                seasons: +seasons,
-                age,
-                director,
-                idiom,
-                subtitle,
-                image: req.file ? req.file.filename : 'default.png',
-                gender: +gender,
-                price: {
-                    buy: +price[0],
-                    rental: +price[1]
-                }
-            }
-    
-            series.push(newSerie)
-            writeJson(seriesFilePath, series)
-        }
-        
-        res.redirect('/admin') */
-    
-
-
-
-                /* Hecho con try catch, ver como se guardan aqui*/
-        if (uploadType === 'movie') {
+        if (movieSeries === 'movie') {
             try {
                 let movieCreate = await Movie.create({
                     title: name,
@@ -197,16 +144,17 @@ let controller = {
                     subtitle,
                     image: req.file ? req.file.filename : 'default.png',
                 });
-                let genreSearch = await Genre.findAll({
-                    where: {
-                        name: genre
-                    }
-                });
-                let idiomSearch = await Idiom.findAll({
-                    where: {
-                        name: idiom
-                    }
-                })
+                let genreIdiom = await Promise.all([Genre.findAll({
+                        where: {
+                            name: genre
+                        }
+                    }),
+                    Idiom.findAll({
+                        where: {
+                            name: idiom
+                        }
+                    })
+                ])
                 let [priceCreate] = await Price.findOrCreate({
                         where: {
                             buy: price[0],
@@ -214,14 +162,12 @@ let controller = {
                             discount: price[2]
                         }
                 })
-                await movieCreate.addGenre(genreSearch)
-                await priceCreate.addMovie(movieCreate)
-                await movieCreate.addIdiom(idiomSearch)
+                await Promise.all([movieCreate.addGenre(genreIdiom[0]), movieCreate.addIdiom(genreIdiom[1]), priceCreate.addMovie(movieCreate)])
                 res.redirect('/admin')
             } catch (error) {
                 res.send('fallo la creacion de movie')
             }
-        } else if(uploadType === 'serie') {
+        } else if(movieSeries === 'serie') {
             try {
                 let serieCreate = await Serie.create({
                     title: name,
@@ -234,16 +180,17 @@ let controller = {
                     subtitle,
                     image: req.file ? req.file.filename : 'default.png',
                 });
-                let genreSearch = await Genre.findAll({
-                    where: {
-                        name: genre
-                    }
-                });
-                let idiomSearch = await Idiom.findAll({
-                    where: {
-                        name: idiom
-                    }
-                })
+                let genreIdiom = await Promise.all([Genre.findAll({
+                        where: {
+                            name: genre
+                        }
+                    }),
+                Idiom.findAll({
+                        where: {
+                            name: idiom
+                        }
+                    })
+                ])
                 let [priceCreate] = await Price.findOrCreate({
                         where: {
                             buy: price[0],
@@ -251,112 +198,188 @@ let controller = {
                             discount: price[2]
                         }
                 })
-                await serieCreate.addGenre(genreSearch)
-                await priceCreate.addSerie(serieCreate)
-                await serieCreate.addIdiom(idiomSearch)
+                await Promise.all([serieCreate.addGenre(genreIdiom[0]), serieCreate.addIdiom(genreIdiom[1]), priceCreate.addSerie(serieCreate)])
                 res.redirect('/admin')
             } catch (error) {
                 res.send('fallo la creacion de serie')
             }
         }
     },
-    
-    editMovie: (req, res) => {
-        let product = movies.find(elem => elem.id === Number(req.params.id))
-        res.render('./admin/adminEditMovie', {
-            title: 'Edit',
-            product,
-            genres,
-            session: req.session
-        })
+    editMovie: async (req, res) => {
+        try {
+            let genreIdiom = await Promise.all([Genre.findAll(), Idiom.findAll()])
+            let product = await Movie.findByPk(req.params.id, {
+                include: [Price, {
+                    model: Genre,
+                    attributes: ['name'],
+                    through: {
+                        attributes: [],
+                    }
+                }, {
+                    model: Idiom,
+                    attributes: ['name'],
+                    through: {
+                        attributes: [],
+                    }
+                }],
+            })
+            res.render('./admin/adminEditMovie', {
+                title: 'Edit',
+                product,
+                genres: genreIdiom[0],
+                idioms: genreIdiom[1],
+                session: req.session
+            })
+        } catch (error) {
+            res.send('No se renderizo la pelicula buscada')
+        }
     },
-    editSerie: (req, res) => {
-        let product = series.find(elem => elem.id === Number(req.params.id))
-        res.render('./admin/adminEditSerie', {
-            title: 'Edit',
-            product,
-            genres,
-            session: req.session
-        })
+    editSerie: async (req, res) => {
+        try {
+            let genreIdiom = await Promise.all([Genre.findAll(), Idiom.findAll()])
+            let product = await Serie.findByPk(req.params.id, {
+                include: [Price, {
+                    model: Genre,
+                    attributes: ['name'],
+                    through: {
+                        attributes: [],
+                    }
+                }, {
+                    model: Idiom,
+                    attributes: ['name'],
+                    through: {
+                        attributes: [],
+                    }
+                }],
+            })
+            console.log('aca si llego')
+            res.render('./admin/adminEditSerie', {
+                title: 'Edit',
+                product,
+                genres: genreIdiom[0],
+                idioms: genreIdiom[1],
+                session: req.session
+            })
+        } catch (error) {
+            res.send('No se renderizo la serie buscada')
+        }
     },
-    editSuccessMovie: (req, res) => {
-        const { name, description, duration, appreciation, age, director, gender, idiom, subtitle, video, price } = req.body;
-        movies.forEach(element => {
-            if(element.id === Number(req.params.id)){
-                element.id = element.id,
-                element.title = name,
-                element.description = description,
-                element.trailer = video.substr(video.indexOf('=') + 1),
-                element.duration = duration,
-                element.appreciation = appreciation,
-                element.age = age,
-                element.director = director,
-                element.idiom = idiom,
-                element.subtitle = subtitle,
-                element.image = deleteImageEdit(req, element),
-                element.gender = Number(gender),
-                element.price = {
-                    buy: +price[0],
-                    rental: +price[1]
+    editSuccessMovie: async (req, res) => {
+        const { name, description, duration, appreciation, age, director, genre, idiom, subtitle, video, price } = req.body;
+        try {
+            let movieSearch = await Movie.findByPk(req.params.id)
+            await Promise.all([movieSearch.removeGenres(await movieSearch.getGenres()), movieSearch.removeIdioms(await movieSearch.getIdioms())])
+            let [priceCreate] = await Price.findOrCreate({
+                where: {
+                    buy: price[0],
+                    rental: price[1],
+                    discount: price[2]
                 }
-            }
-        })
-
-        writeJson(moviesFilePath, movies)
-
-        res.redirect('/admin')
-    },
-    editSuccessSerie: (req, res) => {
-        const { name, description, appreciation, seasons, age, director, gender, idiom, subtitle, video, price } = req.body;
-
-        series.forEach(element => {
-            if(element.id === Number(req.params.id)){
-                element.id = element.id,
-                element.title = name,
-                element.description = description,
-                element.trailer = video.substr(video.indexOf('=') + 1),
-                element.seasons = +seasons
-                element.appreciation = appreciation,
-                element.age = age,
-                element.director = director,
-                element.idiom = idiom,
-                element.subtitle = subtitle,
-                element.image = deleteImageEdit(req, element),
-                element.gender = Number(gender)
-                element.price = {
-                    buy: +price[0],
-                    rental: +price[1]
+            })
+            await Movie.update({
+                title: name,
+                description,
+                trailer: video.substr(video.indexOf('=') + 1),
+                duration: Number(duration),
+                rating: Number(appreciation),
+                age,
+                director,
+                subtitle,
+                image: deleteImageEdit(req, movieSearch),
+            },{
+                where: {id: req.params.id}
+            });
+            let genreSearch = await Genre.findAll({
+                where: {
+                    name: genre
                 }
-            }
-        })
-
-        writeJson(seriesFilePath, series)
-
-        res.redirect('/admin')
+            });
+            let idiomSearch = await Idiom.findAll({
+                where: {
+                    name: idiom
+                }
+            })
+            await Promise.all([movieSearch.addGenre(genreSearch), movieSearch.addIdiom(idiomSearch), priceCreate.addMovie(movieSearch)])
+            res.redirect('/admin')
+        } catch (error) {
+            res.send('no se modifico')
+        }
     },
-    deleteProductMovie: (req, res) => {
-        let idMovie = +req.params.id;
-        movies.forEach(movie => {
-            if(movie.id === idMovie){
-                let deleteMovie = movies.indexOf(movie);
-                movies.splice(deleteMovie, 1)
-            }
-        })
+    editSuccessSerie: async (req, res) => {
+        const { name, description, appreciation, seasons, age, director, genre, idiom, subtitle, video, price } = req.body;
 
-        writeJson(moviesFilePath, movies)
-        res.redirect('/admin/movies')
+        try {
+            let serieSearch = await Serie.findByPk(req.params.id)
+            await Promise.all([serieSearch.removeGenres(await serieSearch.getGenres()), serieSearch.removeIdioms(await serieSearch.getIdioms())])
+            let [priceCreate] = await Price.findOrCreate({
+                where: {
+                    buy: price[0],
+                    rental: price[1],
+                    discount: price[2]
+                }
+            })
+            await Serie.update({
+                title: name,
+                description,
+                trailer: video.substr(video.indexOf('=') + 1),
+                seasons: Number(seasons),
+                rating: Number(appreciation),
+                age,
+                director,
+                subtitle,
+                image: deleteImageEdit(req, serieSearch),
+            },{
+                where: {id: req.params.id}
+            });
+            let genreSearch = await Genre.findAll({
+                where: {
+                    name: genre
+                }
+            });
+            let idiomSearch = await Idiom.findAll({
+                where: {
+                    name: idiom
+                }
+            })
+            await Promise.all([serieSearch.addGenre(genreSearch), serieSearch.addIdiom(idiomSearch), priceCreate.addMovie(serieSearch)])
+            res.redirect('/admin')
+        } catch (error) {
+            res.send('no se modifico')
+        }
     },
-    deleteProductSerie: (req, res) => {
-        let idSerie = +req.params.id;
-        series.forEach(serie => {
-            if(serie.id === idSerie){
-                let deleteSerie = series.indexOf(serie)
-                series.splice(deleteSerie, 1)
-            }
-        })
-
-        writeJson(seriesFilePath, series)
-        res.redirect('/admin/series')
+    deleteProductMovie: async (req, res) => {
+        try {
+            let movieSearch = await Movie.findByPk(req.params.id)
+            await Promise.all([movieSearch.removeGenres(await movieSearch.getGenres()), movieSearch.removeIdioms(await movieSearch.getIdioms(), movieSearch.removeUsers(await movieSearch.getUsers()))])
+            fs.existsSync('./public/img/products-images/', movieSearch.image)
+            ? fs.unlinkSync(`./public/img/products-images/${movieSearch.image}`)
+            : console.log('No se encontró el archivo');
+            await Movie.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            res.redirect('/admin/movies')  
+        } catch (error) {
+            res.send('No se pudo borrar la pelicula')
+        }
+    },
+    deleteProductSerie: async (req, res) => {
+        try {
+            let serieSearch = await Serie.findByPk(req.params.id)
+            await Promise.all([serieSearch.removeGenres(await serieSearch.getGenres()), serieSearch.removeIdioms(await serieSearch.getIdioms()), serieSearch.removeUsers(await serieSearch.getUsers())])
+            fs.existsSync('./public/img/products-images/', serieSearch.image)
+            ? fs.unlinkSync(`./public/img/products-images/${serieSearch.image}`)
+            : console.log('No se encontró el archivo');
+            await Serie.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            res.redirect('/admin/series')  
+        } catch (error) {
+            res.send('No se pudo borrar la pelicula')
+        }
     },
     agregaGeneros: async (req, res) => {
         const { gender } = req.body
@@ -367,7 +390,7 @@ let controller = {
         })
         res.send(genreCreate)
     },
-    agregaIdiomas: async (req, res) => {
+    /* agregaIdiomas: async (req, res) => {
         const {idiom} = req.body
         let [ idiomCreate] = await Idiom.findOrCreate({
             where: {
@@ -384,7 +407,11 @@ let controller = {
             }
         })
         res.send(rolCreate)
-    }
+    },
+    consultas: async (req, res) => {
+        let genresmovies = await moviegenre.findAll()
+        res.send(genresmovies)
+    } */
 }
 
 module.exports = controller
