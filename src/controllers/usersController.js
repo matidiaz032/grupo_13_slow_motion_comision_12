@@ -15,10 +15,6 @@ const deleteImageEdit = (req, element) => {
     return element.image
 }
 
-const usersFilePath = path.join(__dirname, "../database/users.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-const writeJson = (path, db) => fs.writeFileSync(path, JSON.stringify(db),'utf-8');
-
 let controller = {
     login: (req, res) => {
         res.render('./users/login', {
@@ -37,29 +33,34 @@ let controller = {
 
         if(errors.isEmpty()) {
             
-            let user = users.find(user => user.email === req.body.email.toLowerCase());
-
-            req.session.user = {
-                id: user.id,
-                name: user.name,
-                lastName: user.lastName,
-                email: user.email,
-                avatar: user.avatar,
-                rol: user.rol
-            }
-
-            if (req.body.recordarme) {
-                const TIME_IN_MILISECONDS = 600000
-                res.cookie('userSlowMotion', req.session.user, {
-                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
-                    httpOnly: true,
-                    secure: true
-                });
-            }
-
-            res.locals.user = req.session.user;
-
-            return res.redirect('/');
+            User.findByPk({
+                where: {
+                    email: req.body.email.toLowerCase()
+                }
+            })
+            .then(user => {
+                req.session.user = {
+                    id: user.id,
+                    name: user.name,
+                    lastName: user.lastName,
+                    email: user.email,
+                    avatar: user.avatar,
+                    rol: user.rol
+                }
+    
+                if (req.body.recordarme) {
+                    const TIME_IN_MILISECONDS = 600000
+                    res.cookie('userSlowMotion', req.session.user, {
+                        expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                        httpOnly: true,
+                        secure: true
+                    });
+                }
+    
+                res.locals.user = req.session.user;
+    
+                return res.redirect('/');
+            })
 
         } else {
             return res.render('./users/login', { 
