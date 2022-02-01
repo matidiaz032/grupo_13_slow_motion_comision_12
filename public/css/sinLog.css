@@ -1,67 +1,37 @@
-.sinLog {
+.notFound {
     display: flex;
     flex-direction: column;
     align-items: center
 }
 
-.sinLog .header-sinLog {
-    background-color: transparent;
-    height: 4rem;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: fixed;
-    z-index: 9999;
-}
-
-.sinLog .header-sinLog .btn-header {
-    background-color: var(--lightblue);
-    font-family: var(--averia);
-    font-size: 14px;
-    padding: 0.5rem 0.25rem;
-    margin: 0 0.25rem;
-    border-radius: 0.5rem;
-    color: var(--yellow);
-}
-
-.sinLog .header-sinLog .btn-header:hover {
-    background-color: var(--yellow);
-    color: var(--lightblue);
-}
-
-
-
-
-
-
-.sinLog .contain-section1 .section1 {
+.notFound .contain-section1 .section1 {
     display: flex;
     max-width: 100vw;
-    margin: 1rem 0;
+    margin: 4rem 0 1rem 0;
     position: relative;
+    height: 27rem;
 }
 
-.sinLog .contain-section1 .section1 .img {
+.notFound .contain-section1 .section1 .img {
     height: 14rem;
     width: 33vw;
     background-size: 100% 100%;
     box-shadow: inset 0px -30px 20px -7px rgba(0,0,0,1), inset 0px 20px 20px -7px rgba(0,0,0,1);
 }
 
-.sinLog .contain-section1 .section1 .img1 {
+.notFound .contain-section1 .section1 .img1 {
     background-image: url('../img/peliculas/luca.jpg');
 }
 
-.sinLog .contain-section1 .section1 .img2 {
+.notFound .contain-section1 .section1 .img2 {
     background-image: url('../img/peliculas/blackPanther.jpg');
 }
 
-.sinLog .contain-section1 .section1 .img3 {
+.notFound .contain-section1 .section1 .img3 {
     background-image: url('../img/peliculas/joker700.jpg');
 }
 
-.sinLog .contain-section1 .section1 .img4 {
+.notFound .contain-section1 .section1 .img4 {
     background-image: url('../img/peliculas/unEspiayMedio.jpg');
     display: none;
 }
@@ -71,7 +41,7 @@
 
 
 
-.sinLog .contain-section1 .logo{
+.notFound .contain-section1 .logo{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,38 +49,47 @@
     position: absolute;
     height: 8rem;
     width: 100%;
-    top: 15rem;
+    top: 17rem;
 }
 
-.sinLog .contain-section1 .logo #description1 {
+.notFound .contain-section1 .logo .txt {
     width: 90vw;
     color: var(--blue);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    font-size: 1.1rem;
+    font-size: 2rem;
     font-family: var(--averia);
     text-align: center;
+    text-shadow: 0px 0px 1rem var(--blue);
+    animation: transp 8s linear;
 }
 
-.sinLog .contain-section1 .logo .logA {
+@keyframes transp {
+    0% { color:#2940d300; text-shadow: 0px 0px 1rem#2940d300}
+    95% { color:#2940d300; text-shadow: 0px 0px 1rem#2940d300}
+    100% { color:#2940d3; text-shadow: 0px 0px 1rem var(--blue)}
+}
+
+.notFound .contain-section1 .logo .logA {
     text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.sinLog .contain-section1 .logo .logA img{
+.notFound .contain-section1 .logo .logA img{
     height: 5rem;
     position: relative;
-    animation: soft 15s linear;
+    transform: rotate(180deg);
+    animation: soft 8s linear;
 }
 
 @keyframes soft {
-    0% { left: -13rem;}
-    20% { left: -13rem;}
-    100% { left: 0;}
+    0% { left: -13rem; transform: none}
+    20% { left: -13rem; transform: none}
+    90% { transform: none }
+    100% { left: 0; transform: rotate(180deg);}
 }
 
-.sinLog .contain-section1 .logo .logA p {
+.notFound .contain-section1 .logo .logA p {
     display: flex;
     width: 3.75rem;
     font-size: 2rem;
@@ -124,161 +103,143 @@
     50% { text-shadow: 0px 0px 1rem var(--blue),  0px 0px 0.2rem var(--blue) }
 }
 
-
-
-
-
-.sinLog .contain-section2 .section2 {
-    display: flex;
-    max-width: 95vw;
-    margin-top: 9rem;
-    margin-bottom: 5rem;
-    position: relative;
-}
-
-.sinLog .contain-section2 .section2 .img {
-    height: 18rem;
-    width: 31vw;
-    background-size: 100% 100%;
-    box-shadow: inset 0px -30px 20px -7px rgba(0,0,0,1), inset 0px 20px 20px -7px rgba(0,0,0,1);
-}
-
-.sinLog .contain-section2 .section2 .img1 {
-    background-image: url('../img/series/friends.jpg');
-}
-
-.sinLog .contain-section2 .section2 .img2 {
-    background-image: url('../img/series/CasaDePapel720x1080.jpg');
-}
-
-.sinLog .contain-section2 .section2 .img3 {
-    background-image: url('../img/peliculas/Anabelle940x1392.jpg');
-}
-
-.sinLog .contain-section2 .section2 .img4 {
-    background-image: url('../img/peliculas/unEspiayMedio.jpg');
+.notFound .contain-section2 {
     display: none;
-}
-
-.sinLog .contain-section2 .logo{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    position: absolute;
-    height: 5rem;
-    width: 100%;
-    top: 17rem;
-}
-
-.sinLog .contain-section2 .logo #description2 {
-    width: 90vw;
-    color: var(--blue);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    font-size: 1.1rem;
-    font-family: var(--averia);
-    text-align: center;
 }
 
 
 @media (min-width: 768px) {
 
-    .sinLog .contain-section1 .section1 {
+    .notFound .contain-section1 .section1 {
         justify-content: flex-end;
         width: 100vw;
+        margin: 7rem 0 1rem 0;
     }
 
 
-    .sinLog .contain-section1 .section1 .img {
+    .notFound .contain-section1 .section1 .img {
         height: 22rem;
         width: 19vw;
     }
 
-    .sinLog .contain-section1 .logo .logA img{
+    .notFound .contain-section1 .logo .logA img{
         animation: soft 8s linear;
+        transform: rotate(180deg);
     }
     
     @keyframes soft {
-        0% { left: -13rem;}
-        20% { left: -13rem;}
-        100% { left: 0;}
+        0% { left: -13rem; transform: none}
+        20% { left: -13rem; transform: none}
+        90% { transform: none }
+        100% { left: 0; transform: rotate(180deg);}
     }
 
-    .sinLog .contain-section1 .logo{
+    .notFound .contain-section1 .logo{
         top: 9rem;
         left: -14rem;
     }
 
-    .sinLog .contain-section1 .logo #description1 {
+    .notFound .contain-section1 .logo .txt {
         width: 37vw;
     }
 
+    /* .notFound .contain-section2 {
+        display: block;
+    }
 
-
-
-    
-
-
-    .sinLog .contain-section2 .section2 {
+    .notFound .contain-section2 .section2 {
+        display: flex;
+        justify-content: flex-start;
         width: 95vw;
         margin-top: 3rem;
         margin-bottom: 3rem;
-        justify-content: flex-start;
+        max-width: 95vw;
+        position: relative;
     }
 
-    .sinLog .contain-section2 .section2 .img {
+    .notFound .contain-section2 .section2 .img {
         height: 22rem;
         width: 20vw;
+        background-size: 100% 100%;
+        box-shadow: inset 0px -30px 20px -7px rgba(0,0,0,1), inset 0px 20px 20px -7px rgba(0,0,0,1);
     }
 
-    .sinLog .contain-section2 .logo{
+    .notFound .contain-section2 .section2 .img1 {
+        background-image: url('../img/series/friends.jpg');
+    }
+    
+    .notFound .contain-section2 .section2 .img2 {
+        background-image: url('../img/series/CasaDePapel720x1080.jpg');
+    }
+    
+    .notFound .contain-section2 .section2 .img3 {
+        background-image: url('../img/peliculas/Anabelle940x1392.jpg');
+    }
+    
+    .notFound .contain-section2 .section2 .img4 {
+        background-image: url('../img/peliculas/unEspiayMedio.jpg');
+        display: none;
+    }
+
+    .notFound .contain-section2 .logo{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
         width: 38vw;
         left: 28rem;
         top: 7rem;
+        height: 5rem;
     }
 
-    .sinLog .contain-section2 .logo #description2 {
-        width: 30vw
-    }
+    .notFound .contain-section2 .logo .txt {
+        width: 30vw;
+        color: var(--blue);
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        font-size: 1.1rem;
+        font-family: var(--averia);
+        text-align: center;
+    } */
 }
 
 @media (min-width: 1024px) {
 
-    .sinLog .header-sinLog .btn-header {
+    .notFound .header-notFound .btn-header {
         font-size: 2rem
     }
 
-    .sinLog .contain-section1 .section1 {
+    .notFound .contain-section1 .section1 {
         width: 95vw;
     }
 
 
-    .sinLog .contain-section1 .section1 .img {
+    .notFound .contain-section1 .section1 .img {
         height: 40rem;
         width: 15vw;
     }
 
-    .sinLog .contain-section1 .logo .logA img{
+    .notFound .contain-section1 .logo .logA img{
         animation: soft 8s linear;
         height: 8rem;
     }
 
-    .sinLog .contain-section1 .section1 .img4 {
+    .notFound .contain-section1 .section1 .img4 {
         display: block;
     }
 
-    .sinLog .contain-section1 .logo .logA p{
+    .notFound .contain-section1 .logo .logA p{
         font-size: 3.5rem;
     }
 
-    .sinLog .contain-section1 .logo{
+    .notFound .contain-section1 .logo{
         top: 10rem;
         left: -11vw;
         width: 50%;
         height: 14rem;
     }
 
-    .sinLog .contain-section1 .logo #description1 {
+    .notFound .contain-section1 .logo #description1 {
         width: 28vw;
         margin-top: 2rem;
         font-size: 1.5rem;
@@ -291,26 +252,26 @@
     
 
 
-    .sinLog .contain-section2 .section2 {
+    /* .notFound .contain-section2 .section2 {
         width: 95vw;
         margin-top: 3rem;
         margin-bottom: 3rem;
         justify-content: flex-start;
     }
 
-    .sinLog .contain-section2 .section2 .img {
+    .notFound .contain-section2 .section2 .img {
         height: 40rem;
     }
 
-    .sinLog .contain-section2 .logo{
+    .notFound .contain-section2 .logo{
         width: 38vw;
         left: 28rem;
         top: 7rem;
     }
 
-    .sinLog .contain-section2 .logo #description2 {
+    .notFound .contain-section2 .logo #description2 {
         width: 30vw
-    }
+    } */
 
 
 

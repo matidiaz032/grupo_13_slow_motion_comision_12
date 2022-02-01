@@ -32,12 +32,9 @@ module.exports = (sequelize) => {
                   type: DataTypes.TEXT('tiny'),
                   alowNull: false
             },
-            idiom: {
-                  type: DataTypes.TEXT('tiny'),
-                  defaultValue: 'ingles',
-            },
             subtitle: {
                   type: DataTypes.TEXT('tiny'),
+                  defaultValue: 'No'
             },
             image: {
                   type: DataTypes.STRING(100),

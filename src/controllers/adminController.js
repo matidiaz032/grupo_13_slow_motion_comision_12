@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { Movie, Serie, Genre, Price } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
+const { Movie, Serie, Genre, Price, Idiom, Rol } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 const deleteImageEdit = (req, element) => {
     if(req.file) {
         if(element.image !== 'default.png') {
@@ -115,12 +115,12 @@ let controller = {
         })
     },
 
-    store: (req, res) => {
-        const { name, description, duration, appreciation, seasons, age, director, movieSeries, gender, idiom, subtitle, video, price } = req.body;
+    store: async (req, res) => {
+        const { name, description, duration, appreciation, seasons, age, director, movieSeries, genre, idiom, subtitle, video, price } = req.body;
         let lastId = 1;
         let uploadType = movieSeries;
 
-        if (uploadType === 'movie') {
+        /* if (uploadType === 'movie') {
             movies.forEach(movie => {
                 if (movie.id > lastId) {
                     lastId = movie.id
@@ -178,46 +178,87 @@ let controller = {
             writeJson(seriesFilePath, series)
         }
         
-        res.redirect('/admin')
+        res.redirect('/admin') */
     
 
 
 
                 /* Hecho con try catch, ver como se guardan aqui*/
-
-        /* if (uploadType === 'movie') {
-        try {
-            let movieCreate = await Movie.create({
-                title: name,
-                description,
-                trailer: video.substr(video.indexOf('=') + 1),
-                duration,
-                rating: appreciation,
-                age,
-                director,
-                idiom,
-                subtitle,
-                image: req.file ? req.file.filename : 'default.png',
-            });
-            let [genreCreate] = await Genre.findOrCreate({
-                where: {
-                    name: gender
-                }
-            });
-            let [priceCreate] = await Price.findOrCreate({
+        if (uploadType === 'movie') {
+            try {
+                let movieCreate = await Movie.create({
+                    title: name,
+                    description,
+                    trailer: video.substr(video.indexOf('=') + 1),
+                    duration: Number(duration),
+                    rating: Number(appreciation),
+                    age,
+                    director,
+                    subtitle,
+                    image: req.file ? req.file.filename : 'default.png',
+                });
+                let genreSearch = await Genre.findAll({
                     where: {
-                        buy: price[0],
-                        rental: price[1],
-                        discount: price[2]
+                        name: genre
                     }
-            })
-            await movieCreate.addGenre(genreCreate)
-            await priceCreate.addMovie(movieCreate)
-            res.send(movieCreate)
-        } catch (error) {
-            res.send('fallo la creacion de movie')
-        } */
-
+                });
+                let idiomSearch = await Idiom.findAll({
+                    where: {
+                        name: idiom
+                    }
+                })
+                let [priceCreate] = await Price.findOrCreate({
+                        where: {
+                            buy: price[0],
+                            rental: price[1],
+                            discount: price[2]
+                        }
+                })
+                await movieCreate.addGenre(genreSearch)
+                await priceCreate.addMovie(movieCreate)
+                await movieCreate.addIdiom(idiomSearch)
+                res.redirect('/admin')
+            } catch (error) {
+                res.send('fallo la creacion de movie')
+            }
+        } else if(uploadType === 'serie') {
+            try {
+                let serieCreate = await Serie.create({
+                    title: name,
+                    description,
+                    trailer: video.substr(video.indexOf('=') + 1),
+                    seasons: Number(seasons),
+                    rating: Number(appreciation),
+                    age,
+                    director,
+                    subtitle,
+                    image: req.file ? req.file.filename : 'default.png',
+                });
+                let genreSearch = await Genre.findAll({
+                    where: {
+                        name: genre
+                    }
+                });
+                let idiomSearch = await Idiom.findAll({
+                    where: {
+                        name: idiom
+                    }
+                })
+                let [priceCreate] = await Price.findOrCreate({
+                        where: {
+                            buy: price[0],
+                            rental: price[1],
+                            discount: price[2]
+                        }
+                })
+                await serieCreate.addGenre(genreSearch)
+                await priceCreate.addSerie(serieCreate)
+                await serieCreate.addIdiom(idiomSearch)
+                res.redirect('/admin')
+            } catch (error) {
+                res.send('fallo la creacion de serie')
+            }
+        }
     },
     
     editMovie: (req, res) => {
@@ -316,6 +357,33 @@ let controller = {
 
         writeJson(seriesFilePath, series)
         res.redirect('/admin/series')
+    },
+    agregaGeneros: async (req, res) => {
+        const { gender } = req.body
+        let [genreCreate] = await Genre.findOrCreate({
+            where: {
+                name: gender
+            }
+        })
+        res.send(genreCreate)
+    },
+    agregaIdiomas: async (req, res) => {
+        const {idiom} = req.body
+        let [ idiomCreate] = await Idiom.findOrCreate({
+            where: {
+                name: idiom
+            }
+        })
+        res.send(idiomCreate)
+    },
+    agregaUser: async (req, res) => {
+        const {user} = req.body
+        let [ rolCreate] = await Rol.findOrCreate({
+            where: {
+                type: user
+            }
+        })
+        res.send(rolCreate)
     }
 }
 

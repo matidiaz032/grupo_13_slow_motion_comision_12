@@ -23,37 +23,37 @@ fs.readdirSync(__dirname).filter(file => {
 
 
 
-const { Genre, Movie, Serie, Price, User, Card, Rol } = sequelize.models   //Desestructura todos los modelos para poder usarlos
+const { Genre, Movie, Serie, Price, User, Card, Rol, Idiom } = sequelize.models   //Desestructura todos los modelos para poder usarlos
 
 /*   Aqui comienzan todas las conecciones(asociaciones) */
 
-Price.hasMany(Movie,{
-  foreignKey: 'priceId'
-})         
-Movie.belongsTo(Price, {
-  foreignKey: 'priceId'
-})
-Price.hasMany(Serie,{
-  foreignKey: 'priceId'
-})
-Serie.belongsTo(Price, {
-  foreignKey: 'priceId'
-})
+Price.hasMany(Movie)         
+Movie.belongsTo(Price)
+Price.hasMany(Serie)
+Serie.belongsTo(Price)
+
+
+Idiom.belongsToMany(Movie, {through: 'movieIdiom', timestamps: false})
+Movie.belongsToMany(Idiom, {through: 'movieIdiom', timestamps: false})
+Idiom.belongsToMany(Serie, {through: 'serieIdiom', timestamps: false})
+Serie.belongsToMany(Idiom, {through: 'serieIdiom', timestamps: false})
+
 
 Movie.belongsToMany(Genre, {through: 'movieGenre', timestamps: false})
 Genre.belongsToMany(Movie, {through: 'movieGenre', timestamps: false})
-
 Serie.belongsToMany(Genre, {through: 'serieGenre', timestamps: false})
 Genre.belongsToMany(Serie, {through: 'serieGenre', timestamps: false})
 
+
 Movie.belongsToMany(User, {through: 'movieFavorites', timestamps: false})
 User.belongsToMany(Movie, {through: 'movieFavorites', timestamps: false})
-
 Serie.belongsToMany(User, {through: 'serieFavorites', timestamps: false})
 User.belongsToMany(Serie, {through: 'serieFavorites', timestamps: false})
 
+
 Card.belongsTo(User)
 User.hasMany(Card)
+
 
 User.belongsTo(Rol)
 Rol.hasMany(User)

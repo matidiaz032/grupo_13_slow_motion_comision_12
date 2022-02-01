@@ -31,10 +31,6 @@ module.exports = (sequelize) => {
                   type: DataTypes.TEXT('tiny'),
                   alowNull: false
             },
-            idiom: {
-                  type: DataTypes.TEXT('tiny'),
-                  default: 'ingles',
-            },
             subtitle: {
                   type: DataTypes.TEXT('tiny'),
             },
