@@ -41,11 +41,12 @@ let controller = {
             .then(user => {
                 req.session.user = {
                     id: user.id,
-                    name: user.name,
-                    lastName: user.lastName,
+                    name: user.first_name,
+                    lastName: user.last_name,
+                    userName: user.user_name,
                     email: user.email,
                     avatar: user.avatar,
-                    rol: user.rol
+                    rol: user.RolId,
                 }
     
                 if (req.body.recordarme) {
