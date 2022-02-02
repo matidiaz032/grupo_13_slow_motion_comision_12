@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-const controller = require('../controllers/sinLogController.js');
+const controller = require('../controllers/notFoundController.js');
 
 router.get('/', controller.index);
 

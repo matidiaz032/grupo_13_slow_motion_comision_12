@@ -33,7 +33,7 @@ let controller = {
 
         if(errors.isEmpty()) {
             
-            User.findByPk({
+            User.findOne({
                 where: {
                     email: req.body.email.toLowerCase()
                 }
@@ -71,58 +71,10 @@ let controller = {
         }
 
     },
-    logOut: (req, res) => {
-        req.session.destroy();
-        /* if(req.cookies.slowMotion){
-            res.cookie('slowMotion', "", { maxAge: -1 })
-        } */
-        res.redirect('/')
-    },
     loadRegister: async (req, res) => {
-        const errors = validationResult(req)
-        /* if(errors.isEmpty()) {
-            const { name, lastName, userName, email, pass1} = req.body;
-            let lastId = 0
-            users.forEach(user => {
-                if (user.id > lastId) {
-                    lastId = user.id
-                }
-            });
-    
-            let newUser = {
-                id: lastId + 1,
-                name,
-                lastName,
-                userName,
-                email: email.toLowerCase(), 
-                pass: bcrypt.hashSync(pass1),
-                rol: "ROL_USER",
-                avatar: req.file ? req.file.filename : "default-avatar.jpg",
-                phone: '',
-                dateOfBirth: '',
-                gender: '',
-                favorites: '',
-                address: '',
-                country: '',
-                province: '',
-                city: '',
-            }
-    
-            users.push(newUser)
-            writeJson(usersFilePath, users)
-    
-            res.redirect('/users/login')
-        } else {
-            let old = req.body;
-            res.render('./users/register', {
-                title: 'Register',
-                errors: errors.mapped(),
-                old,
-                session: req.session
-            })
-        } */
+        const errors = validationResult(req);
 
-                /* Hecho con try catch, ver como se guardan */
+        /* Hecho con try catch, ver como se guardan */
         if(errors.isEmpty()) {
             const { name, lastName, userName, email, pass1} = req.body;
             try {

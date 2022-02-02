@@ -1,8 +1,5 @@
 const { check, body } = require('express-validator');
-const path = require('path')
-const fs = require('fs')
-const usersFilePath = path.join(__dirname, "../database/users.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+const { User } = require('../database/models/index.js');
 
 
 module.exports = [
@@ -23,13 +20,17 @@ module.exports = [
     .withMessage('Debe ingresar un email valido'),
 
     body('email').custom((value) => {
-        if(users.find(user=>{ 
-            return user.email == value 
-        })) {
-            return false
-        };
-        return true
-    }).withMessage('Email asociado con otra cuenta'),
+       return User.findOne({ 
+            where: {
+                email: value
+            } 
+        })
+        .then(user => {
+            if(user){
+                return Promise.reject('Email ya registrado')
+            }
+        })
+    }),
 
     check('pass1')
     .notEmpty()
