@@ -23,24 +23,21 @@
     </div>
     <!-- grid section movies -->
     <div class="contain-grid">
-        <% genderFilter.forEach(gender => { %>
             <div class="contain-list">
-                <span class="gender__grid"><%- gender.name %></span>
+                <span class="gender__grid">Peliculas</span>
                 <div class="movies__section">
-                    <% movies.forEach(elem => {
-                        if(gender.id === elem.gender) { %>
+                    <% movies.forEach(elem => { %>
                         <div class="contain-img">
                             <a href="/products/serialMovie/<%- elem.id %>">
                                 <img src="/img/products-images/<%- elem.image %>" alt="">
                             </a>
                         </div>
-                    <% } }) %>
+                    <% } ) %>
                     <div>
                         <button type="button" class="see-more">Ver más</button>
                     </div>
                 </div>
             </div>
-        <% }) %>
     </div>
     <!-- Footer section -->
     <%- include('../partials/footer')  %>

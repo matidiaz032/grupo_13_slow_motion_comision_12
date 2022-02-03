@@ -5,6 +5,9 @@
         <!-- Logo mobile and tablet -->
         <%- include ('../partials/logoMobileADmin') %>
         <br><br><br><br><br><br><br><br><br>
+        <% data.forEach(elem => { %>
+            <h1><%- elem.name %> </h1>
+        <% }) %> 
         <br><br><br><br><br><br><br><br><br>
         <!-- Footer -->
         <%- include ('../partials/adminFooter') %>

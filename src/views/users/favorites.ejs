@@ -1,0 +1,42 @@
+<%- include('../partials/head') %>
+
+<body class="favorites">
+
+      <%- include('../partials/header') %>
+
+      <div class="contain-grid">
+            <div class="contain-list">
+                <span class="gender__grid">Peliculas</span>
+                <div class="movies__section">
+                        <% movies.forEach(elem => { %>
+                              <div class="contain-img">
+                              <a href="/products/serialMovie/<%- elem.id %>">
+                                    <img src="/img/products-images/<%- elem.image %>" alt="">
+                              </a>
+                              <form action="/users/favorites?id=<%- elem.id %>_method=DELETE" method="post" class="upload-files" enctype="multipart/form-data"><button type="submit">ELIMINAR DE FAVORITOS</button></form>
+                              </div>
+                        <% } ) %>
+                </div>
+            </div>
+            <div class="contain-list">
+                <span class="gender__grid">Series</span>
+                <div class="movies__section">
+                    <% series.forEach(elem => { %>
+                        <div class="contain-img">
+                            <a href="/products/serialSerie/<%- elem.id %>">
+                                <img src="/img/products-images/<%- elem.image %>" alt="">
+                            </a>
+                        </div>
+                    <% } ) %>
+                </div>
+            </div>
+      </div>
+
+
+
+
+
+
+
+
+</body>

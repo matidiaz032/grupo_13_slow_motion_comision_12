@@ -292,7 +292,7 @@ let controller = {
             await Promise.all([movieSearch.addGenre(genreSearch), movieSearch.addIdiom(idiomSearch), priceCreate.addMovie(movieSearch)])
             res.redirect('/admin')
         } catch (error) {
-            res.send('no se modifico')
+            res.send(error.message)
         }
     },
     editSuccessSerie: async (req, res) => {
@@ -351,7 +351,7 @@ let controller = {
             })
             res.redirect('/admin/movies')  
         } catch (error) {
-            res.send('No se pudo borrar la pelicula')
+            res.send(error.message)
         }
     },
     deleteProductSerie: async (req, res) => {
@@ -371,7 +371,7 @@ let controller = {
             res.send('No se pudo borrar la pelicula')
         }
     },
-    agregaGeneros: async (req, res) => {
+    /* agregaGeneros: async (req, res) => {
         const { gender } = req.body
         let [genreCreate] = await Genre.findOrCreate({
             where: {
@@ -379,7 +379,7 @@ let controller = {
             }
         })
         res.send(genreCreate)
-    },
+    }, */
     /* agregaIdiomas: async (req, res) => {
         const {idiom} = req.body
         let [ idiomCreate] = await Idiom.findOrCreate({

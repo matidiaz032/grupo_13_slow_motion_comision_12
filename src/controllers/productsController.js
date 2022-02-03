@@ -1,24 +1,30 @@
 const movies  = require('../database/movies');
 const series = require('../database/series');
 const gender = require('../database/genres')
+const { User, Rol, Movie, Genre } = require('../database/models/index.js');
 
 let controller = {
-    movies: (req, res) => {
-        let genderFilter = []
-        gender.forEach(gender => {
-            movies.forEach(movie => {
-                if(gender.id === movie.gender && !genderFilter.includes(gender)
-                ) {
-                    genderFilter.push(gender)
+    movies: async (req, res) => {
+        try {
+            let allGenres = await Genre.findAll()
+
+            let allMovies = await Movie.findAll({
+                include: {
+                    model: Genre
                 }
-            });
-        })
-        res.render('./product/indexMovies', {
-            title: 'Movies',
-            movies,
-            genderFilter,
-            session: req.session
-        })
+            })
+            console.log(allMovies[0].dataValues.Genres)
+            res.render('./product/indexMovies', {
+                title: 'Movies',
+                movies: allMovies,
+                genderFilter: allGenres,
+                session: req.session
+            })
+            
+        } catch (error) {
+            console.log(error.message)
+        }
+
     },
     series: (req, res) => {
         let genderFilter = []

@@ -23,12 +23,22 @@
     </div>
     <!-- grid section movies -->
     <div class="contain-grid">
+
+
+        genre        idGenre    name
+        movies      idMovie
+
+        movie   Genres [{name: Accion}, {name: Comedia}]
+
         <% genderFilter.forEach(gender => { %>
             <div class="contain-list">
                 <span class="gender__grid"><%- gender.name %></span>
                 <div class="movies__section">
-                    <% series.forEach(elem => {
-                        if(gender.id === elem.gender) { %>
+                    <% series.Genres.forEach(elem => {
+
+
+
+                        if(genre.name === elem.name) { %>
                         <div class="contain-img">
                             <a href="/products/serialSerie/<%- elem.id %>">
                                 <img src="/img/products-images/<%- elem.image %>" alt="">

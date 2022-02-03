@@ -199,39 +199,9 @@
     .conteinHeader header .optFoot {
         margin-right: 0.5rem;
     }
-
-    .conteinHeader header .optFoot .menu {
-        display: none;
-    }
     
     .conteinHeader header .optFoot .cart { 
         font-size: 20px;
-    }
-
-    .conteinHeader header .optFoot .RegAndLog {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        font-family: var(--averia);
-        margin-left: 0.5rem;
-    }
-    
-    .conteinHeader header .optFoot .RegAndLog a{
-        color: var(--lightblue);
-        text-decoration: none;
-        transition-property: font-size;
-        transition-duration: 3s;
-        transition-delay: 0s;
-        font-size: 16px;
-    }
-    
-    .conteinHeader header .optFoot .RegAndLog a:hover {
-        transition-property: font-size;
-        transition-duration: 1s;
-        transition-delay: 0s;
-        font-size: 20px;
-        cursor: pointer;
     }
 
 }
@@ -247,7 +217,7 @@
 
     .conteinHeader header .logo {
         flex-direction: column;
-        margin-left: 3rem;
+        margin-left: 1rem;
         width: 9rem;
     }
 
@@ -261,7 +231,7 @@
     }
 
     .conteinHeader header .logo .logA img {
-        height: 4rem;
+        height: 3.5rem;
     }
     .conteinHeader header .logo .logA p {
         display: flex;
@@ -269,11 +239,11 @@
         align-items: center;
         margin: 0 0;
         width: 9rem;
-        font-size: 28px;
+        font-size: 25px;
     }
     
     .conteinHeader header .nav {
-        width: 60vw;
+        width: 55vw;
     }
 
     .conteinHeader header .nav a {
@@ -293,24 +263,44 @@
 
     .conteinHeader header .nav .in {
         height: 20px;
-        width: 18vw;
     }
+
+    .conteinHeader header .nav .in:hover {
+        animation: in 0.3s linear;
+    }
+    @keyframes in{
+        from {width: 14vw;}
+        to {width: 17vw;}
+    }
+    
 
     .conteinHeader header .optFoot .cart { 
         font-size: 28px;
     }
     
+    .conteinHeader header .optFoot .menu {
+        display: none;
+    }
+
     .conteinHeader header .optFoot .RegAndLog {
         margin-left: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        font-family: var(--averia);
     }
 
     .conteinHeader header .optFoot .RegAndLog .avatar-header {
-        width: 12%;
+        height: 4rem;
+        width: 4rem;
     }
 
     .conteinHeader header .optFoot .RegAndLog .avatar-header img {
         border-radius: 50%;
         cursor: pointer;
+        height: 100%;
+        width: 100%;
     }
 
     .conteinHeader header .optFoot .RegAndLog a{
@@ -319,20 +309,35 @@
         transition-property: font-size;
         transition-duration: 3s;
         transition-delay: 0s;
-        font-size: 20px;
+        font-size: 17px;
     }
     
-    .conteinHeader header .optFoot .RegAndLog a:hover {
+    .conteinHeader header .optFoot .RegAndLog .sesion a:hover {
         transition-property: font-size;
         transition-duration: 1s;
         transition-delay: 0s;
-        font-size: 28px;
+        font-size: 17.5px;
         cursor: pointer;
     }
 
-    .conteinHeader header .optFoot .RegAndLog .a-avatar img:hover {
-        border: 2px solid var(--lightblue);
+    .conteinHeader header .optFoot .RegAndLog .containSesion {
+        width: 12rem;
+        display: flex;
+        flex-direction: row;
+    }
+    .conteinHeader header .optFoot .RegAndLog .containSesion .sesion{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .conteinHeader header .optFoot .RegAndLog .a-avatar img {
+        border: 1px solid var(--lightblue);
         border-radius: 50%;
+    }
+
+    .conteinHeader header .optFoot .RegAndLog .a-avatar img:hover {
         cursor: pointer;
     }
 
