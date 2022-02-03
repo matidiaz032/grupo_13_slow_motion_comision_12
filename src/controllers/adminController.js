@@ -1,5 +1,4 @@
 const fs = require("fs");
-/* const path = require("path"); */
 const { Op } = require('sequelize')
 const { Movie, Serie, Genre, Price, Idiom, Rol , User } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 const deleteImageEdit = (req, element) => {
@@ -12,15 +11,6 @@ const deleteImageEdit = (req, element) => {
     }
     return element.image
 }
-
-/* const moviesFilePath = path.join(__dirname, "../database/movies.json");
-const seriesFilePath = path.join(__dirname, "../database/series.json");
-const genresFilePath = path.join(__dirname, "../database/genres.json");
-const movies = JSON.parse(fs.readFileSync(moviesFilePath, "utf-8"));
-const series = JSON.parse(fs.readFileSync(seriesFilePath, "utf-8"));
-const genres = JSON.parse(fs.readFileSync(genresFilePath, "utf-8"));
-const writeJson = (path, db) => fs.writeFileSync(path, JSON.stringify(db),'utf-8'); */
-
 
 let controller = {
     index: (req, res) => {

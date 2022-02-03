@@ -15,5 +15,6 @@ router.get('/register', controller.register);
 router.post('/register', upload.single('userImage'), registryValidator, controller.loadRegister);
 router.get('/profile', auth_users, controller.profile);
 router.get('/logout', controller.logout);
+router.get('/favorites', controller.favorites)
 
 module.exports = router;

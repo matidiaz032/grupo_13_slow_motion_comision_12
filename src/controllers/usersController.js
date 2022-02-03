@@ -39,13 +39,15 @@ let controller = {
                 }
             })
             .then(user => {
+                console.log(user)
                 req.session.user = {
                     id: user.id,
-                    name: user.name,
-                    lastName: user.lastName,
+                    firstName: user.first_name,
+                    user_lastName: user.last_name,
+                    userName: user.user_name,
                     email: user.email,
                     avatar: user.avatar,
-                    rol: user.rol
+                    rol: user.RolId
                 }
     
                 if (req.body.recordarme) {
@@ -115,6 +117,12 @@ let controller = {
             res.cookie('userSlowMotion', '', { maxAge: -1 })
         }
         res.redirect('/');
+    },
+    favorites: (req, res) => {
+        res.render('users/favorites', {
+            title: 'favorites',
+            session: req.session
+        })
     }
 }
 

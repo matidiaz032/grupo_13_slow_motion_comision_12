@@ -23,7 +23,7 @@
                     <div class="avatar-header">
                         <a href="/users/profile" class="a-avatar"><img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image"></a>
                     </div>
-                    <% if (session.user.rol === "ROL_ADMIN") { %>
+                    <% if (session.user.rol === 3) { %>
                         <li class="list-item"><a href="/admin">Ir al Admin</a></li>
                     <% } %>
                     <li class="list-item"><a href="/users/logout">Cerrar Sesión</a></li>
