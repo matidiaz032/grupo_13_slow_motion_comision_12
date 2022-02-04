@@ -1,40 +1,31 @@
 const { Movie, Serie, Genre, Price, Idiom, Rol , User } = require('../database/models/index.js');
 
 let controller = {
-    movies: (req, res) => {
-        let genderFilter = []
-        gender.forEach(gender => {
-            movies.forEach(movie => {
-                if(gender.id === movie.gender && !genderFilter.includes(gender)
-                ) {
-                    genderFilter.push(gender)
-                }
-            });
-        })
-        res.render('./product/indexMovies', {
-            title: 'Movies',
-            movies,
-            genderFilter,
-            session: req.session
-        })
+    movies: async (req, res) => {
+        try {
+            let genresId = await Promise.all([Genre.findAll(), Movie.findAll({include:{model:Genre}})])
+            res.render('./product/indexMovies', {
+                title: 'Movies',
+                genres: genresId[0],
+                movies: genresId[1],
+                session: req.session
+            })
+        } catch (error) {
+            res.send('No se encuentra los generos buscado')
+        }
     },
-    series: (req, res) => {
-        let genderFilter = []
-        gender.forEach(gender => {
-            series.forEach(serie => {
-                if(gender.id === serie.gender && !genderFilter.includes(gender)
-                ) {
-                    genderFilter.push(gender)
-                }
-            });
-        })
-        
-        res.render('./product/indexSeries', {
-            title: 'Series',
-            series,
-            genderFilter,
-            session: req.session
-        })
+    series: async (req,res) => {
+        try {
+            let genresId = await promise.all([Genre.findAll(), Serie.findAll({include:{model:Genre}})])
+            re.render('./products/series', {
+                title: 'series',
+                genres: genresId[0],
+                movies: genresId[1],
+                session: req.session
+            })
+        } catch (error) {
+            res.send('No se encuentra los generos buscado')
+        }
     },
     serialMovie: async (req,res)=>{
         try {
