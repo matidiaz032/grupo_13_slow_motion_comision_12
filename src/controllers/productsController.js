@@ -20,7 +20,6 @@ let controller = {
                 genderFilter: allGenres,
                 session: req.session
             })
-            
         } catch (error) {
             console.log(error.message)
         }

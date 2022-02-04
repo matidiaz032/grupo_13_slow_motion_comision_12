@@ -1,47 +1,33 @@
-const movies  = require('../database/movies');
-const series = require('../database/series');
-const gender = require('../database/genres')
-
-
+const { Movie, Serie, Genre, Price, Idiom, Rol , User } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 
 let controller = {
-    index: (req, res) => {
-        let countOfers = 1;
-        let countPopular = 1;
-        let moviesSeries = [
-            ...movies,
-            ...series
-        ];
-        let ofers = moviesSeries.filter(elem => {
-            if(countOfers <= 10 && elem.id % 2 === 0) {
-                countOfers++
-                return elem
-            }
-        });
-        let popular = moviesSeries.filter(elem => {
-            if(countPopular <= 10 && elem.id % 2 !== 0) {
-                countPopular++
-                return elem
-            }
-        });
-        let movies3 = movies.filter(elem => {
-            if(elem.id <= 10) {
-                return elem
-            }
-        });
-        let series3 = series.filter(elem => {
-            if(elem.id <= 10) {
-                return elem
-            }
-        });
-        res.render('index', {
-            title: 'SLOW MOTION',
-            movies3,
-            series3,
-            popular,
-            ofers,
-            session: req.session
-        })
+    index: async (req, res) => {
+        try {
+            let allMovies = await Movie.findAll({
+                include: {
+                    model: Price
+                },
+                limit: 8
+            })
+            let allSeries = await Serie.findAll({
+                include: {
+                    model: Price
+                },
+                limit: 8
+            })
+            let allMovieSerie = [...allMovies, ...allSeries]
+            let popular = allMovieSerie.filter(elem => elem.rating > 7)
+            res.render('index', {
+                title: 'SLOW MOTION',
+                movies3: allMovies,
+                series3: allSeries,
+                popular,
+                ofers: allMovieSerie,
+                session: req.session
+            })
+        } catch (error) {
+            console.log(error.message)
+        }
     },
     faq: (req,res)=>{
         res.render("./faq", {
