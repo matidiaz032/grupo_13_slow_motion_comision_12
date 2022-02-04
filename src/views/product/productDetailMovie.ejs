@@ -36,7 +36,9 @@
                 </div>
             </div>
             <div class="opcionesPelicula">
-                <p>Idioma: <%- detailMovie.idiom %></p>
+                <p>Idioma: <% detailMovie.Idioms.forEach(element => { %>
+                    <%= element.name %>
+                <% }) %></p>
                 <p class="espacios">|</p>
                 <p>Subtítulos: <%- detailMovie.subtitle %></p>
                 <p class="espacios">|</p>
@@ -45,7 +47,7 @@
             <div class="contenedor-estadisticas">
                 <div>
                     <div class="estrella">
-                    <h5><%= detailMovie.appreciation%> </h5>
+                    <h5><%= detailMovie.rating%> </h5>
                     <i class="fas fa-star"></i>
                 </div>
                 <p>Calificación</p>
@@ -67,7 +69,9 @@
             <div class="container-director">
                 <h5>Director: <%= detailMovie.director%></h5>
                 <h5>Año: <%= detailMovie.age.substr(0,4) %> </h5>
-                <h5>Género: <%- genre.name %></h5>
+                <h5>Género: <% detailMovie.Genres.forEach(element => { %>
+                    <%= element.name %>
+                <% }) %></h5>
             </div>
             <div class="icons">
                 <a href=""><i class="fas fa-heart"></i> Añadir a favoritos</a>
