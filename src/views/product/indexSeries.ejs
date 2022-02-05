@@ -23,34 +23,27 @@
     </div>
     <!-- grid section movies -->
     <div class="contain-grid">
-
-
-        genre        idGenre    name
-        movies      idMovie
-
-        movie   Genres [{name: Accion}, {name: Comedia}]
-
-        <% genderFilter.forEach(gender => { %>
+        <% genres.forEach(elem => { %>
             <div class="contain-list">
-                <span class="gender__grid"><%- gender.name %></span>
+                <span class="gender__grid"><%- elem.name %></span>
                 <div class="movies__section">
-                    <% series.Genres.forEach(elem => {
-
-
-
-                        if(genre.name === elem.name) { %>
-                        <div class="contain-img">
-                            <a href="/products/serialSerie/<%- elem.id %>">
-                                <img src="/img/products-images/<%- elem.image %>" alt="">
-                            </a>
-                        </div>
-                    <% } }) %>
+                    <% series.forEach(element => {
+                        element.Genres.forEach(i => {
+                            if(elem.name == i.name) { %>
+                                <div class="contain-img">
+                                    <a href="/products/serialSerie/<%= element.id %>">
+                                        <img src="/img/products-images/<%= element.image %>" alt="">
+                                    </a>
+                                </div>
+                            <% } %>
+                        <% } ) %>
+                    <% } ) %>
                     <div>
                         <button type="button" class="see-more">Ver más</button>
                     </div>
                 </div>
             </div>
-        <% }) %>
+        <% } ) %>
     </div>
     <!-- Footer section -->
     <%- include('../partials/footer')  %>

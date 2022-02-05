@@ -23,21 +23,27 @@
     </div>
     <!-- grid section movies -->
     <div class="contain-grid">
+        <% genres.forEach(elem => { %>
             <div class="contain-list">
-                <span class="gender__grid">Peliculas</span>
+                <span class="gender__grid"><%- elem.name %></span>
                 <div class="movies__section">
-                    <% movies.forEach(elem => { %>
-                        <div class="contain-img">
-                            <a href="/products/serialMovie/<%- elem.id %>">
-                                <img src="/img/products-images/<%- elem.image %>" alt="">
-                            </a>
-                        </div>
+                    <% movies.forEach(element => {
+                        element.Genres.forEach(i => {
+                            if(elem.name == i.name) { %>
+                                <div class="contain-img">
+                                    <a href="/products/serialMovie/<%= element.id %>">
+                                        <img src="/img/products-images/<%= element.image %>" alt="">
+                                    </a>
+                                </div>
+                            <% } %>
+                        <% } ) %>
                     <% } ) %>
                     <div>
                         <button type="button" class="see-more">Ver más</button>
                     </div>
                 </div>
             </div>
+        <% } ) %>
     </div>
     <!-- Footer section -->
     <%- include('../partials/footer')  %>

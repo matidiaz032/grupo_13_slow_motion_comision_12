@@ -1,69 +1,93 @@
-const movies  = require('../database/movies');
-const series = require('../database/series');
-const gender = require('../database/genres')
-const { User, Rol, Movie, Genre } = require('../database/models/index.js');
+const { Movie, Serie, Genre, Price, Idiom } = require('../database/models/index.js');
 
 let controller = {
     movies: async (req, res) => {
         try {
-            let allGenres = await Genre.findAll()
-
-            let allMovies = await Movie.findAll({
-                include: {
-                    model: Genre
-                }
-            })
-            console.log(allMovies[0].dataValues.Genres)
+            let genreMovies = await Promise.all([Genre.findAll(), Movie.findAll({
+                include:{
+                    model: Genre,
+                },
+            })])
             res.render('./product/indexMovies', {
                 title: 'Movies',
-                movies: allMovies,
-                genderFilter: allGenres,
+                genres: genreMovies[0],
+                movies: genreMovies[1],
                 session: req.session
             })
         } catch (error) {
-            console.log(error.message)
+            res.send('No se encuentra los generos buscado')
         }
-
     },
-    series: (req, res) => {
-        let genderFilter = []
-        gender.forEach(gender => {
-            series.forEach(serie => {
-                if(gender.id === serie.gender && !genderFilter.includes(gender)
-                ) {
-                    genderFilter.push(gender)
+    series: async (req,res) => {
+        try {
+            let genreSeries = await Promise.all([Genre.findAll(), Serie.findAll({
+                include:{
+                    model: Genre
                 }
-            });
-        })
-        
-        res.render('./product/indexSeries', {
-            title: 'Series',
-            series,
-            genderFilter,
-            session: req.session
-        })
+            })])
+            res.render('./product/indexSeries', {
+                title: 'series',
+                genres: genreSeries[0],
+                series: genreSeries[1],
+                session: req.session
+            })
+        } catch (error) {
+            res.send('No se encuentra los generos buscado')
+        }
     },
-    serialMovie: (req,res)=>{
-        let id = +req.params.id;
-        let detailMovie = movies.find(movie =>movie.id ===id) 
-        let genre = gender.find(elem => elem.id === detailMovie.id)
-        res.render('product/productDetailMovie', {
-            title: 'Movie Detail',
-            detailMovie,
-            genre,
-            session: req.session
-        })
+    serialMovie: async (req,res)=>{
+        try {
+            await Promise.all([Genre.findAll(), Idiom.findAll()])
+            let detailMovie = await Movie.findByPk(req.params.id, {
+                include: [Price, {
+                    model: Genre,
+                    attributes: ['name'],
+                    through: {
+                        attributes: [],
+                    }
+                }, {
+                    model: Idiom,
+                    attributes: ['name'],
+                    through: {
+                        attributes: [],
+                    }
+                }],
+            })
+            res.render('product/productDetailMovie',{
+                title: 'Movie Detail',
+                detailMovie,
+                session: req.session
+            })
+        } catch (error) {
+            res.send('No se encontró una pelicula')
+        }
     },
-    serialSerie: (req,res)=>{
-        let id = +req.params.id;
-        let detailSerie = series.find(serie =>serie.id ===id) 
-        let genre = gender.find(elem => elem.id === detailSerie.id)
-        res.render('product/productDetailSerie', {
-            title: 'Serie Detail',
-            detailSerie,
-            genre,
-            session: req.session
-        })
+    serialSerie: async (req,res)=>{
+        try {
+            await Promise.all([Genre.findAll(), Idiom.findAll()])
+            let detailSerie = await Serie.findByPk(req.params.id, {
+                include: [Price, {
+                    model: Genre,
+                    attributes: ['name'],
+                    through: {
+                        attributes: [],
+                    }
+                }, {
+                    model: Idiom,
+                    attributes: ['name'],
+                    through: {
+                        attributes: [],
+                    }
+                }],
+            })
+            res.render('product/productDetailSerie',{
+                title: 'Movie Detail',
+                detailSerie,
+                session: req.session
+            })
+        } catch (error) {
+            res.send('No se encontró una pelicula')
+        }
     }, 
     
     cart: (req, res) => {

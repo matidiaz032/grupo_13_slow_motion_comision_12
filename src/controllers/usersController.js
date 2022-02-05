@@ -87,7 +87,7 @@ let controller = {
                     password: bcrypt.hashSync(pass1),
                     avatar: req.file ? req.file.filename : "default-avatar.jpg",
                 })
-                let rolCreate = await Rol.findOne({where: {type: 2}})
+                let rolCreate = await Rol.findOne({where: {type: 0}})
                 await rolCreate.addUser(userCreate)
                 res.redirect('/users/login')
             } catch (error) {
