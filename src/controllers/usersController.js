@@ -1,6 +1,5 @@
 const bcrypt = require("bcryptjs");
 const fs = require("fs");
-const path = require("path");
 const { validationResult } = require('express-validator')
 const { User, Rol, Movie, Serie } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 
@@ -70,7 +69,6 @@ let controller = {
                 session: req.session
             });
         }
-
     },
     loadRegister: async (req, res) => {
         const errors = validationResult(req);
@@ -102,7 +100,6 @@ let controller = {
                 session: req.session
             })
         }
-
     },
     profile: (req, res) => {
         res.render('users/userProfile', {

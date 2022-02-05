@@ -371,37 +371,6 @@ let controller = {
             res.send('No se pudo borrar la pelicula')
         }
     },
-    /* agregaGeneros: async (req, res) => {
-        const { gender } = req.body
-        let [genreCreate] = await Genre.findOrCreate({
-            where: {
-                name: gender
-            }
-        })
-        res.send(genreCreate)
-    }, */
-    /* agregaIdiomas: async (req, res) => {
-        const {idiom} = req.body
-        let [ idiomCreate] = await Idiom.findOrCreate({
-            where: {
-                name: idiom
-            }
-        })
-        res.send(idiomCreate)
-    },
-    agregaUser: async (req, res) => {
-        const {user} = req.body
-        let [ rolCreate] = await Rol.findOrCreate({
-            where: {
-                type: user
-            }
-        })
-        res.send(rolCreate)
-    },
-    consultas: async (req, res) => {
-        let genresmovies = await moviegenre.findAll()
-        res.send(genresmovies)
-    } */
 }
 
 module.exports = controller

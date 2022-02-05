@@ -1,4 +1,4 @@
-const { Movie, Serie, Genre, Price, Idiom, Rol , User } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
+const { Movie, Serie, Price } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 
 let controller = {
     index: async (req, res) => {

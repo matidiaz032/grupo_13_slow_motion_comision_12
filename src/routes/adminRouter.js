@@ -16,9 +16,5 @@ router.put('/products/movie/:id', upload.single('productImage'), controller.edit
 router.put('/products/serie/:id', upload.single('productImage'), controller.editSuccessSerie);
 router.delete('/deleteProductMovie/:id', controller.deleteProductMovie);
 router.delete('/deleteProductSerie/:id', controller.deleteProductSerie);
-/* router.post('/genre', controller.agregaGeneros);
-router.post('/idiom', controller.agregaIdiomas)
-router.post('/user', controller.agregaUser)
-router.get('/consulta', controller.consultas) */
 
 module.exports = router;

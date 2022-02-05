@@ -6,8 +6,8 @@ const auth_users = require('../middlewares/auth_users');
 const registryValidator = require('../validations/registryValidator')
 const loginValidator = require('../validations/loginValidator')
 
-/* Se carga la imagen aunque el registro tenga errores y no se cree el usuario, 
-y no puedo validar que la contrase;a sea estrictamente alfanumerico.  */
+/* Se carga la imagen aunque el registro falle y no se cree el usuario (lo mismo sucede con productos), 
+y no puedo validar que la contraseña sea estrictamente alfanumerico.  */
 
 router.get('/login',  controller.login);
 router.post('/login', loginValidator, controller.loadLogin);

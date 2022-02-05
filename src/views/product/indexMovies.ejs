@@ -23,19 +23,19 @@
     </div>
     <!-- grid section movies -->
     <div class="contain-grid">
-        <% genres.forEach(elem => { %>
+        <% genres.forEach(elem => { let count = 0 %>
             <div class="contain-list">
                 <span class="gender__grid"><%- elem.name %></span>
                 <div class="movies__section">
                     <% movies.forEach(element => {
                         element.Genres.forEach(i => {
-                            if(elem.name == i.name) { %>
+                            if(elem.name == i.name && count < 4) { %>
                                 <div class="contain-img">
                                     <a href="/products/serialMovie/<%= element.id %>">
                                         <img src="/img/products-images/<%= element.image %>" alt="">
                                     </a>
                                 </div>
-                            <% } %>
+                            <% count += 1 } %>
                         <% } ) %>
                     <% } ) %>
                     <div>
