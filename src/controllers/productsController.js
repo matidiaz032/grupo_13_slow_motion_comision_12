@@ -17,10 +17,10 @@ let controller = {
     series: async (req,res) => {
         try {
             let genresId = await promise.all([Genre.findAll(), Serie.findAll({include:{model:Genre}})])
-            re.render('./products/series', {
+            res.render('./products/indexSeries', {
                 title: 'series',
                 genres: genresId[0],
-                movies: genresId[1],
+                series: genresId[1],
                 session: req.session
             })
         } catch (error) {
