@@ -18,6 +18,7 @@
 @import url('adminHeader.css');
 @import url('adminFooter.css');
 @import url('faq.css');
+@import url('adminUsers.css');
 
 :root {
     --black: #000000;

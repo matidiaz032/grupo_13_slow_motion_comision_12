@@ -5,9 +5,36 @@
         <!-- Logo mobile and tablet -->
         <%- include ('../partials/logoMobileADmin') %>
         <br><br><br><br><br><br><br><br><br>
-        <% data.forEach(elem => { %>
-            <h1><%- elem.name %> </h1>
-        <% }) %> 
+        
+        <main class="information-users">
+            <div class="information__users">
+                <div class="id-information">
+                    <p class="id-user">Id</p>
+                </div>
+                <div class="name-information">
+                    <p class="name-user">Usuario</p>
+                </div>
+                <div class="user-option">
+                    <p class="rol-user">Rol</p>
+                </div>
+            </div>
+            <div class="capsule-users">
+                <% data.forEach(elem => { %>
+                    <div class="table-users">
+                        <div class="title-id">
+                            <p><%- elem.id %></p>
+                        </div>
+                        <div class="title-name">
+                            <p><%- elem.name %></p>
+                        </div>
+                        <div class="title-rol">
+                            <p><%- elem.rol %></p>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </main>
+
         <br><br><br><br><br><br><br><br><br>
         <!-- Footer -->
         <%- include ('../partials/adminFooter') %>

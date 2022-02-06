@@ -94,19 +94,27 @@ let controller = {
         })
     },
     motionUsers: (req, res) => {
-        User.findAll({
-            where: {
-                [Op.or]: [
-                    {type: 0},
-                    {type: 1}
-                ]
-            }
-        }).then(data => {
+        // User.findAll()
+        // .then(data => {
+        //     res.render('./admin/motionUsers', {
+        //         title: 'Admin - Page : Users',
+        //         allUsers: data,
+        //         id: data.id,
+        //         userName: data.userName,
+        //         rol: data.rol
+        //     })
+        // })
+        try {
+            let usersMotion = Promise.all([Rol.findAll(), User.findAll()])
             res.render('./admin/motionUsers', {
-                title: 'Admin - Page : Users',
-                allUsers: data
+                title: 'Movies',
+                rol: usersMotion[0],
+                movies: usersMotion[1],
+                session: req.session
             })
-        })
+        } catch (error) {
+            res.send('No se encuentra los generos buscado')
+        }
     },
     upload: (req, res) => {
         Promise.all([Genre.findAll(), Idiom.findAll()])

@@ -1,0 +1,27 @@
+.information-users {
+    display: flex;
+    width: 90%;
+    margin: 0 0 0 auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-evenly;
+}
+
+.information-users .information__users {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-around;
+    background: linear-gradient(45deg, #232323, #fff);
+}
+
+.information-users .capsule-users {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: space-around;
+}
