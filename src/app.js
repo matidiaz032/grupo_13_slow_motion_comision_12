@@ -7,7 +7,6 @@ const session = require('express-session'); // Express-session Module
 const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookieSession');
 const PORT = 3000;
-
 const auth_adminCheck = require('./middlewares/auth_adminCheck.js');
 
 // Middlewares

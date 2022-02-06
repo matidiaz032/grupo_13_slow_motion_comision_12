@@ -9,7 +9,7 @@
         <div class="nav">
             <a href="/products/movies">Peliculas</a>
             <a href="/products/series">Series</a>
-            <a href="/favoritos">Favoritos</a>
+            <a href="/users/favorites">Favoritos</a>
             <input class="in" type="text" placeholder="Buscar...">
         </div>
         <div class="optFoot">
@@ -20,13 +20,17 @@
             </div>
             <div class="RegAndLog">
                 <% if (typeof session.user !== "undefined") { %>
-                    <div class="avatar-header">
-                        <a href="/users/profile" class="a-avatar"><img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image"></a>
+                    <div class="containSesion">
+                        <div class="avatar-header">
+                            <a href="/users/profile" class="a-avatar"><img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image"></a>
+                        </div>
+                        <div class="sesion">
+                            <% if (session.user.rol == 2 || session.user.rol == 3) { %>
+                                <li class="list-item"><a href="/admin">Ir al Admin</a></li>
+                            <% } %>
+                            <li class="list-item"><a href="/users/logout">Cerrar Sesión</a></li>
+                        </div>
                     </div>
-                    <% if (session.user.rol == 2 || session.user.rol == 3) { %>
-                        <li class="list-item"><a href="/admin">Ir al Admin</a></li>
-                    <% } %>
-                    <li class="list-item"><a href="/users/logout">Cerrar Sesión</a></li>
                 <% } else { %>
                     <li class="list-item"><a href="/users/login">Iniciar Sesión%></a></li>
                     <li class="list-item"><a href="/users/register">Registrarse%></a></li>

@@ -1,13 +1,17 @@
-const { Movie, Serie, Genre, Price, Idiom, Rol , User } = require('../database/models/index.js');
+const { Movie, Serie, Genre, Price, Idiom } = require('../database/models/index.js');
 
 let controller = {
     movies: async (req, res) => {
         try {
-            let genresId = await Promise.all([Genre.findAll(), Movie.findAll({include:{model:Genre}})])
+            let genreMovies = await Promise.all([Genre.findAll(), Movie.findAll({
+                include:{
+                    model: Genre,
+                },
+            })])
             res.render('./product/indexMovies', {
                 title: 'Movies',
-                genres: genresId[0],
-                movies: genresId[1],
+                genres: genreMovies[0],
+                movies: genreMovies[1],
                 session: req.session
             })
         } catch (error) {
@@ -16,11 +20,15 @@ let controller = {
     },
     series: async (req,res) => {
         try {
-            let genresId = await promise.all([Genre.findAll(), Serie.findAll({include:{model:Genre}})])
-            res.render('./products/indexSeries', {
+            let genreSeries = await Promise.all([Genre.findAll(), Serie.findAll({
+                include:{
+                    model: Genre
+                }
+            })])
+            res.render('./product/indexSeries', {
                 title: 'series',
-                genres: genresId[0],
-                series: genresId[1],
+                genres: genreSeries[0],
+                series: genreSeries[1],
                 session: req.session
             })
         } catch (error) {
@@ -45,7 +53,6 @@ let controller = {
                     }
                 }],
             })
-            //res.send(detailMovie)
             res.render('product/productDetailMovie',{
                 title: 'Movie Detail',
                 detailMovie,
@@ -73,7 +80,6 @@ let controller = {
                     }
                 }],
             })
-            //res.send(detailSerie)
             res.render('product/productDetailSerie',{
                 title: 'Movie Detail',
                 detailSerie,

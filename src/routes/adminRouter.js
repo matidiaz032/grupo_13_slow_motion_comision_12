@@ -6,7 +6,7 @@ const upload = require('../middlewares/uploadImagesProduct')
 router.get('/', controller.index);
 router.get('/movies', controller.movies);
 router.get('/series', controller.series);
-router.get('/motionUsers', controller.motionUsers);
+/* router.get('/motionUsers', controller.motionUsers); */
 router.get('/form', controller.upload);
 router.post('/form', upload.single('productImage') ,controller.store);
 router.get('/statistics', controller.statistics);
@@ -16,9 +16,5 @@ router.put('/products/movie/:id', upload.single('productImage'), controller.edit
 router.put('/products/serie/:id', upload.single('productImage'), controller.editSuccessSerie);
 router.delete('/deleteProductMovie/:id', controller.deleteProductMovie);
 router.delete('/deleteProductSerie/:id', controller.deleteProductSerie);
-router.post('/genre', controller.agregaGeneros);
-/* router.post('/idiom', controller.agregaIdiomas)
-router.post('/user', controller.agregaUser)
-router.get('/consulta', controller.consultas) */
 
 module.exports = router;

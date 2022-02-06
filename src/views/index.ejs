@@ -94,30 +94,27 @@
             <h3 class="text"><a href="/ofert">En Oferta:</a></h3>
             <div class="row">
                 <div class="row__inner">
-            
-                  <% popular.forEach(elem => { %>
-                      <div class="tile">
-                          
-                          <div class="tile__media">
-                              <img class="tile__img" src="./img/products-images/<%- elem.image %>" />
-                          </div>
-                          <div class="tile__details">
-                              <div class="tile__title">
-                                  <%- elem.title %>
-                              </div>
-                          </div>
-                      </div>
-                  <% }) %> 
-            
+                    <% popular.forEach(elem => { %>
+                        <div class="tile">
+                                <div class="tile__media">
+                                    <img class="tile__img" src="./img/products-images/<%- elem.image %>" />
+                                </div>
+                                <div class="tile__details">
+                                    <div class="tile__title">
+                                        <%- elem.title %>
+                                    </div>
+                                </div>  
+                        </div>
+                    <% }) %> 
                 </div>
               </div>
         </div>
         <div class="film film4">
             <h3 class="text"><a href="/popular">Populares:</a></h3>
             <div class="row">
-                <div class="row__inner">
-            
+                <div class="row__inner"> 
                   <% ofers.forEach(elem => { %>
+                    <% if (elem.Price.discount > 5) { %>
                       <div class="tile">
                           
                           <div class="tile__media">
@@ -129,6 +126,7 @@
                               </div>
                           </div>
                       </div>
+                      <% } %> 
                   <% }) %> 
             
                 </div>

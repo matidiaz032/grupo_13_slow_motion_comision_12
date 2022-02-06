@@ -1,5 +1,4 @@
 const fs = require("fs");
-/* const path = require("path"); */
 const { Op } = require('sequelize')
 const { Movie, Serie, Genre, Price, Idiom, Rol , User } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 const deleteImageEdit = (req, element) => {
@@ -12,15 +11,6 @@ const deleteImageEdit = (req, element) => {
     }
     return element.image
 }
-
-/* const moviesFilePath = path.join(__dirname, "../database/movies.json");
-const seriesFilePath = path.join(__dirname, "../database/series.json");
-const genresFilePath = path.join(__dirname, "../database/genres.json");
-const movies = JSON.parse(fs.readFileSync(moviesFilePath, "utf-8"));
-const series = JSON.parse(fs.readFileSync(seriesFilePath, "utf-8"));
-const genres = JSON.parse(fs.readFileSync(genresFilePath, "utf-8"));
-const writeJson = (path, db) => fs.writeFileSync(path, JSON.stringify(db),'utf-8'); */
-
 
 let controller = {
     index: (req, res) => {
@@ -302,7 +292,7 @@ let controller = {
             await Promise.all([movieSearch.addGenre(genreSearch), movieSearch.addIdiom(idiomSearch), priceCreate.addMovie(movieSearch)])
             res.redirect('/admin')
         } catch (error) {
-            res.send('no se modifico')
+            res.send(error.message)
         }
     },
     editSuccessSerie: async (req, res) => {
@@ -361,7 +351,7 @@ let controller = {
             })
             res.redirect('/admin/movies')  
         } catch (error) {
-            res.send('No se pudo borrar la pelicula')
+            res.send(error.message)
         }
     },
     deleteProductSerie: async (req, res) => {
@@ -381,37 +371,6 @@ let controller = {
             res.send('No se pudo borrar la pelicula')
         }
     },
-    agregaGeneros: async (req, res) => {
-        const { gender } = req.body
-        let [genreCreate] = await Genre.findOrCreate({
-            where: {
-                name: gender
-            }
-        })
-        res.send(genreCreate)
-    },
-    /* agregaIdiomas: async (req, res) => {
-        const {idiom} = req.body
-        let [ idiomCreate] = await Idiom.findOrCreate({
-            where: {
-                name: idiom
-            }
-        })
-        res.send(idiomCreate)
-    },
-    agregaUser: async (req, res) => {
-        const {user} = req.body
-        let [ rolCreate] = await Rol.findOrCreate({
-            where: {
-                type: user
-            }
-        })
-        res.send(rolCreate)
-    },
-    consultas: async (req, res) => {
-        let genresmovies = await moviegenre.findAll()
-        res.send(genresmovies)
-    } */
 }
 
 module.exports = controller

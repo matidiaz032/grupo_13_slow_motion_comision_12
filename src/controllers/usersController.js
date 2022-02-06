@@ -1,8 +1,7 @@
 const bcrypt = require("bcryptjs");
 const fs = require("fs");
-const path = require("path");
 const { validationResult } = require('express-validator')
-const { User, Rol } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
+const { User, Rol, Movie, Serie } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 
 const deleteImageEdit = (req, element) => {
     if(req.file) {
@@ -70,7 +69,6 @@ let controller = {
                 session: req.session
             });
         }
-
     },
     loadRegister: async (req, res) => {
         const errors = validationResult(req);
@@ -87,7 +85,7 @@ let controller = {
                     password: bcrypt.hashSync(pass1),
                     avatar: req.file ? req.file.filename : "default-avatar.jpg",
                 })
-                let rolCreate = await Rol.findOne({where: {type: 2}})
+                let rolCreate = await Rol.findOne({where: {type: 0}})
                 await rolCreate.addUser(userCreate)
                 res.redirect('/users/login')
             } catch (error) {
@@ -102,7 +100,6 @@ let controller = {
                 session: req.session
             })
         }
-
     },
     profile: (req, res) => {
         res.render('users/userProfile', {
@@ -116,7 +113,47 @@ let controller = {
             res.cookie('userSlowMotion', '', { maxAge: -1 })
         }
         res.redirect('/');
-    }
+    },
+    favorites: async (req, res) => {
+        try {
+            let user = await User.findAll({
+                where: {id: req.session.user.id},
+                include: [{
+                    model: Movie
+                }, {
+                    model: Serie
+                }]
+            })
+            res.render('users/favorites', {
+                title: 'favorites',
+                movies: user[0].Movies,
+                series: user[0].Series,
+                session: req.session
+            })
+        } catch (error) {
+            console.log(error.message)
+        }
+    },
+    addFavorite: async (req, res) => {
+        try {
+            let movieSearch = await Movie.findByPk(req.query.id)
+            let userSearch = await User.findByPk(req.session.user.id)
+            await userSearch.addMovie(movieSearch)
+            res.send('success')
+        } catch (error) {
+            console.log(error.message)
+        }
+    },
+    destroyFavorite: async (req, res) => {
+        try {
+            let userSearch = await User.findByPk(req.session.user.id)
+            let movieDelete = await Movie.findByPk(req.query.id)
+            await userSearch.removeMovies(movieDelete)
+            res.redirect('/users/favorites')
+        } catch (error) {
+            res.send(error.message)
+        }
+    },
 }
 
 module.exports = controller;
