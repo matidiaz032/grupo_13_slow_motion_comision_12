@@ -250,7 +250,7 @@ let controller = {
                     }
                 }],
             })
-            console.log('aca si llego')
+
             res.render('./admin/adminEditSerie', {
                 title: 'Edit',
                 product,
@@ -342,7 +342,7 @@ let controller = {
             await Promise.all([serieSearch.addGenre(genreSearch), serieSearch.addIdiom(idiomSearch), priceCreate.addMovie(serieSearch)])
             res.redirect('/admin')
         } catch (error) {
-            res.send('no se modifico')
+            res.send('no se modifico la serie')
         }
     },
     deleteProductMovie: async (req, res) => {
