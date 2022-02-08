@@ -104,17 +104,24 @@ let controller = {
         //         rol: data.rol
         //     })
         // })
-        try {
-            let usersMotion = Promise.all([Rol.findAll(), User.findAll()])
-            res.render('./admin/motionUsers', {
-                title: 'Movies',
-                rol: usersMotion[0],
-                movies: usersMotion[1],
-                session: req.session
+        //try {
+            //let usersMotion = Promise.all([User.findAll(), Rol.findAll()])
+            User.findAll()
+            .then(data => {
+                res.render('./admin/motionUsers', {
+                    title: 'Admin - Page : Users',
+                    users: data
             })
-        } catch (error) {
-            res.send('No se encuentra los generos buscado')
-        }
+        })
+        //     res.render('./admin/motionUsers', {
+        //         title: 'Movies',
+        //         user: usersMotion[0],
+        //         rol: usersMotion[1],
+        //         session: req.session
+        //     })
+        // } catch (error) {
+        //     res.send('No se encuentra los generos buscado')
+        // }
     },
     upload: (req, res) => {
         Promise.all([Genre.findAll(), Idiom.findAll()])
