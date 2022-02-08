@@ -346,7 +346,7 @@ let controller = {
                     name: idiom
                 }
             })
-            await Promise.all([serieSearch.addGenre(genreSearch), serieSearch.addIdiom(idiomSearch), priceCreate.addMovie(serieSearch)])
+            await Promise.all([serieSearch.addGenre(genreSearch), serieSearch.addIdiom(idiomSearch), priceCreate.addSerie(serieSearch)])
             res.redirect('/admin')
         } catch (error) {
             res.send('no se modifico')
