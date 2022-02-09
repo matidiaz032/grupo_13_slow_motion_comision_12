@@ -12,21 +12,36 @@ setInterval(() => {
 }, 5000)
 
 const $ = (elem) => {
-    return document.querySelector(elem)
+    return document.getElementsByClassName(elem)
 }
 
-let row__inner = $('.row__inner')
-var move = new Hammer($('.row__inner'))
+let row__inner = $('row__inner')
 let count = 0
-move.on('panleft', () => {
-    if(row__inner.style.left !== '-74rem') {
-            row__inner.style.left = `${count}rem`;
+
+var movies = new Hammer(row__inner[0])
+movies.on('panleft', () => {
+    if(row__inner[0].style.left !== '-74rem') {
+            row__inner[0].style.left = `${count}rem`;
             count -= 1
     }
 })
-move.on('panright', () => {
-    if(row__inner.style.left !== '0rem') {
-        row__inner.style.left = `${count}rem`;
+movies.on('panright', () => {
+    if(row__inner[0].style.left !== '0rem') {
+        row__inner[0].style.left = `${count}rem`;
+        count += 1
+    }
+})
+
+let series = new Hammer(row__inner[1])
+series.on('panleft', () => {
+    if(row__inner[1].style.left !== '-74rem') {
+        row__inner[1].style.left = `${count}rem`;
+        count -= 1
+    }
+})
+series.on('panright', () => {
+    if(row__inner[1].style.left !== '0rem') {
+        row__inner[1].style.left = `${count}rem`;
         count += 1
     }
 })

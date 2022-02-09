@@ -247,30 +247,25 @@
     }
 
     .conteinHeader header .nav a {
-        transition-property: font-size;
-        transition-duration: 3s;
-        transition-delay: 0s;
+        transition: font-size 3s;
         font-size: 19px;
     }
     
     .conteinHeader header .nav a:hover {
-        transition-property: font-size;
-        transition-duration: 1s;
-        transition-delay: 0s;
+        transition: font-size 1s;
         font-size: 27px;
         cursor: pointer;
     }
 
     .conteinHeader header .nav .in {
         height: 20px;
+        width: 11vw;
+        transition: all 1s;
     }
 
     .conteinHeader header .nav .in:hover {
         animation: in 0.3s linear;
-    }
-    @keyframes in{
-        from {width: 14vw;}
-        to {width: 17vw;}
+        width: 16vw;
     }
     
 

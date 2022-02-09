@@ -10,10 +10,12 @@
                 <div class="movies__section">
                         <% movies.forEach(elem => { %>
                               <div class="contain-img">
-                              <a href="/products/serialMovie/<%- elem.id %>">
+                                <a href="/products/serialMovie/<%- elem.id %>">
                                     <img src="/img/products-images/<%- elem.image %>" alt="">
-                              </a>
-                              <form action="/users/favorites?id=<%- elem.id %>_method=DELETE" method="post" class="upload-files" enctype="multipart/form-data"><button type="submit">ELIMINAR DE FAVORITOS</button></form>
+                                </a>
+                                <form action="/users/favorites?_method=DELETE&id=<%-elem.id%>&product=Movie" method="post" class="upload-files" >
+                                    <button type="submit">ELIMINAR DE FAVORITOS</button>
+                                </form>
                               </div>
                         <% } ) %>
                 </div>
@@ -26,6 +28,9 @@
                             <a href="/products/serialSerie/<%- elem.id %>">
                                 <img src="/img/products-images/<%- elem.image %>" alt="">
                             </a>
+                            <form action="/users/favorites?_method=DELETE&id=<%-elem.id%>&product=Serie" method="post" class="upload-files" >
+                                <button type="submit">ELIMINAR DE FAVORITOS</button>
+                            </form>
                         </div>
                     <% } ) %>
                 </div>

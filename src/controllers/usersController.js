@@ -135,23 +135,44 @@ let controller = {
         }
     },
     addFavorite: async (req, res) => {
-        try {
-            let movieSearch = await Movie.findByPk(req.query.id)
-            let userSearch = await User.findByPk(req.session.user.id)
-            await userSearch.addMovie(movieSearch)
-            res.send('success')
-        } catch (error) {
-            console.log(error.message)
+        if(req.query.product === 'Movie') {
+            try {
+                let movieSearch = await Movie.findByPk(req.query.id)
+                let userSearch = await User.findByPk(req.session.user.id)
+                await userSearch.addMovie(movieSearch)
+                res.redirect('/users/favorites')
+            } catch (error) {
+                console.log(error.message)
+            }
+        } else {
+            try {
+                let serieSearch = await Serie.findByPk(req.query.id)
+                let userSearch = await User.findByPk(req.session.user.id)
+                await userSearch.addSerie(serieSearch)
+                res.redirect('/users/favorites')
+            } catch (error) {
+                console.log(error.message)
+            }
         }
     },
     destroyFavorite: async (req, res) => {
-        try {
-            let userSearch = await User.findByPk(req.session.user.id)
-            let movieDelete = await Movie.findByPk(req.query.id)
-            await userSearch.removeMovies(movieDelete)
-            res.redirect('/users/favorites')
-        } catch (error) {
-            res.send(error.message)
+        let userSearch = await User.findByPk(req.session.user.id)
+        if(req.query.product === 'Movie') {
+            try {
+                let movieDelete = await Movie.findByPk(req.query.id)
+                await userSearch.removeMovies(movieDelete)
+                res.redirect('/users/favorites')
+            } catch (error) {
+                res.send(error.message)
+            }
+        } else {
+            try {
+                let serieDelete = await Serie.findByPk(req.query.id)
+                await userSearch.removeSeries(serieDelete)
+                res.redirect('/users/favorites')
+            } catch (error) {
+                res.send(error.message)
+            }
         }
     },
 }
