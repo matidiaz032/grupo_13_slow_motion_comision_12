@@ -1,4 +1,4 @@
-    <%- include('../partials/head') %> 
+<%- include('../partials/head') %> 
 
 <body class="indexProducts">
 
@@ -23,27 +23,22 @@
     </div>
     <!-- grid section movies -->
     <div class="contain-grid">
-        <% genres.forEach(elem => { let count = 0 %>
             <div class="contain-list">
-                <a href="/products/movies?genre=<%= elem.name %>"><span class="gender__grid"><%- elem.name %></span></a>
+                <span class="gender__grid"><%- genre %></span>
                 <div class="movies__section">
                     <% movies.forEach(element => {
                         element.Genres.forEach(i => {
-                            if(elem.name == i.name && count < 4) { %>
+                            if(genre == i.name) { %>
                                 <a href="/products/serialMovie/<%= element.id %>">
                                     <div class="contain-img">
                                         <img src="/img/products-images/<%= element.image %>" alt="">
                                     </div>
                                 </a>
-                            <% count += 1 } %>
+                            <% } %>
                         <% } ) %>
                     <% } ) %>
-                    <div>
-                        <a href="/products/movies?genre=<%= elem.name %>"><button type="button" class="see-more">Ver más</button></a>
-                    </div>
                 </div>
             </div>
-        <% } ) %>
     </div>
     <!-- Footer section -->
     <%- include('../partials/footer')  %>
