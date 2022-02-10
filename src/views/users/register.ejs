@@ -60,7 +60,7 @@
                         <label for="terms" style="color: yellow;">Acepta los terminos y condiciones</label>
                         <input type="checkbox" name="terms" id="terms">
                         <% if (locals.errors && errors.terms) { %>
-                            <small><%= errors.image.terms %></small>
+                            <small><%= errors.terms.msg %></small>
                         <% } %>
                     </div>
                     <div class="btn-enviar-form">

@@ -45,7 +45,7 @@
                         <div class="avatar-header">
                             <a href="/users/profile"><img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image"></a>
                         </div>
-                        <% if (session.user.rol === "ROL_ADMIN") { %>
+                        <% if (session.user.rol == 2 || session.user.rol == 3) { %>
                             <li class="list-item"><a href="/admin/">Ir al Admin</a></li>
                         <% } %>
                         <li class="list-item"><a href="/users/logout">Cerrar Sesión</a></li>
@@ -55,10 +55,11 @@
                     <% } %>    
                     <li class="list-item">
                         <form action="">
-                            <input type="search-header" id="search-header">
+                            <input type="search-header" id="search-header" placeholder="Buscar...">
                         </form>
                     </li>
-                    <li class="list-item"><a href="">Ver Generos</a></li>
+                    <li class="list-item"><a href="/products/movies">Peliculas</a></li>
+                    <li class="list-item"><a href="/products/series">Series</a></li>
                 </ul>
             </nav>
         </div>
