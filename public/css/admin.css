@@ -7,7 +7,8 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin: 0 0 1em;
+    padding-left: 10%;
+    margin: 0 auto;
 }
 
 .img a {
@@ -16,117 +17,92 @@
     height: 20vh;
     flex-flow: column nowrap;
     align-items: center;
+    justify-content: center;
 }
 
 .img a img {
     display: inline-block;
     width: 65%;
     height: 65%;
-    margin: auto 0 1% 11%;
+    margin: 1em auto 0;
     filter: drop-shadow(2px 4px 6px black);
     z-index: -1;
 }
 
-.img span {
+.img .img-span {
+    display: flex;
     color: var(--yellow);
-    margin: auto 0 auto 32px;
+    margin: 0 auto 1em;
     font-family: var(--averia);
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 .database { 
-    height: 100vh;   
+    width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-around;
-    padding-left: 30px;
+    padding-left: 10%;
 }
 
 .database .products {
-    width: 75vw;
-    height: 20vh;
+    width: 90%;
     border: none;
-    background: transparent;
-    padding: 5px 0;
-}
-
-.database .products .section__database {
-    width: 100%;
-    height: 100%;
     background: linear-gradient(-45deg, #000, #232323);
-    border-radius: 20px;
-    padding: 33px 0;
-    box-shadow: 0 0 8px 0 var(--black);
+    margin: 0 0 2em;
+    border-radius: 2em;
 }
 
-.database .products .section__database:hover {
-    background: #fff;
-}
-
-.section__database .button-options {
+.database .products a {
+    display: inline-block;
     width: 100%;
-    height: 100%;
-    display: block;
+    color: var(--yellow);
     text-align: center;
 }
 
-.section__database a {
-    display: inline-block;
-    color: var(--yellow);
-}
-
-.section__database .button-options i {
-    font-size: 40px;
-}
-
-.button-options span {
-    display: none;
+.database .products a i {
+    font-size: 3em;
+    padding: 10% 0;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
 
+    .body-admin .img {
+        padding: 4em 0 0;
+    }
+
     .body-admin .img a img {
         display: inline-block;
-        width: 65%;
-        height: 65%;
-        margin: auto 0 0 5%;
+        margin: 3em auto;
         filter: drop-shadow(2px 4px 6px black);
         z-index: -1;
     }
 
-    .products .section__database {
-        padding: 25px 0;
+    .database {
+        padding-left: 0;
     }
 
-    .section__database .button-options i {
-        font-size: 3em;
+    .database .products a i {
+        padding: 6% 0;
     }
 
 }
-@media only screen and (min-width: 1024px) /* and (max-width: 1440px) */ {
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
 
-    .body-admin .img {
-        padding: 0 0 0 1em;
-        margin: 1em 0;
-    }
-
-    .database {
+    .body-admin .database {
         width: 100vw;
-        height: 66vh;
         flex-direction: row;
         flex-wrap: wrap;
-        padding: 0;
+        padding: 0 1em;
     }
 
     .body-admin .database .products {
-        width: 50%;
-        height: 50%;
-        padding: 10px;
-    }
-
-    .database .products .section__database {
-        padding: 57px 0;
+        width: 45%;
+        padding: 1em;
     }
 
 }

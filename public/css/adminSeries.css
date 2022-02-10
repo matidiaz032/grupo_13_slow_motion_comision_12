@@ -1,12 +1,15 @@
 .seriesInformation {
-    width: 85%;
-    height: 1.5em;
-    margin: 1em 0 0 2.5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    padding: 0 1% 0 11%;
 }
 
 .seriesInformation .information-series {
     width: 100%;
-    height: 2em;
+    padding: 1.3% 0;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -43,52 +46,62 @@
     font-family: var(--averia);
 }
 
-.seriesInformation .table-series {
+.seriesInformation .capsule-series {
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.seriesInformation .capsule-series .table-series {
+    display: flex;
+    width: 100%;
     justify-content: space-around;
     flex-wrap: nowrap;
     background: linear-gradient(45deg, #232323, #d8c371);
+    align-items: center;
 }
 
-.seriesInformation .table-series .series-id {
+.seriesInformation .capsule-series .table-series .series-id {
     width: 0;
     flex-grow: .7;
     margin: auto;
 }
 
-.seriesInformation .table-series .series-id p {
+.seriesInformation .capsule-series .table-series .series-id p {
     width: 2em;
     text-align: center;
     padding: 5% 0;
     font-family: var(--averia);
 }
 
-.seriesInformation .table-series .titleName-series {
+.seriesInformation .capsule-series .table-series .titleName-series {
     flex-grow: 2;
 }
 
-.seriesInformation .table-series .titleName-series p {
+.seriesInformation .capsule-series .table-series .titleName-series p {
     width: auto;
     text-align: center;
     padding: 2% 0;
     font-family: var(--averia);
 }
 
-.seriesInformation .table-series .titleOption-series {
+.seriesInformation .capsule-series .table-series .titleOption-series {
     flex-grow: .2;
 }
 
-.capsule-series .table-series .optionSeries-product a i {
+.seriesInformation .capsule-series .table-series .optionSeries-product a i {
     color: var(--black);
     padding: 5px;
 }
 
-.capsule-series .table-series .element-series-delete form .delete-series {
+.seriesInformation .capsule-series .table-series .element-series-delete form .delete-series {
     background: transparent;
     border: none;
 }
 
-.capsules-series .table-series .element-series-delete form .delete-series i {
+.seriesInformation .capsules-series .table-series .element-series-delete form .delete-series i {
     color: var(--black);
     background: transparent;
     padding: 5px;
@@ -134,28 +147,39 @@
 @media only screen and (min-width:768px) and (max-width:1024px){
 
     .seriesInformation {
-        margin: 1em auto 0;
+        padding: 1em;
+    }
+
+    .seriesInformation .information-series {
+        align-items: center;
+        padding: 0;
     }
     
-    .seriesInformation .table-series .series-id {
-        width: 0;
+    .seriesInformation .capsule-series .table-series {
+        padding: .5em 0;
+    }
+
+    .seriesInformation .capsule-series .table-series .titleSeries-id {
         flex-grow: .5;
+        padding: 0 0 0 2em;
     }
 
-    .seriesInformation .table-series .series-id p {
-        width: 12em;
+    .seriesInformation .capsule-series .table-series .titleSeries-id p {
+        width: 10em;
     }
 
-    .seriesInformation .table-series .titleName-series p {
-        padding: 5% 0;
+    .seriesInformation .capsule-series .table-series .titleName-series p {
+        padding: 0 5em;
     }
 
-    .seriesInformation .table-series .optionProduct-series a i {
-        padding: 15px;
+    .seriesInformation .capsule-series .table-series .optionProduct-series {
+        width: 3em;
+        padding: 0;
     }
 
-    .seriesInformation .table-series .element-series-delete form .delete-series i {
-        padding: 15px;
+    .seriesInformation .capsule-series .table-series .element-series-delete {
+        width: 3em;
+        padding: 0;
     }
 
     .add-product-series {
@@ -180,6 +204,10 @@
 
     .seriesInformation {
         margin: 1em auto 0;
+    }
+
+    .seriesInformation .information-series .titleName-series {
+        padding: 0 3em 0 0;
     }
 
     .add-product-series {

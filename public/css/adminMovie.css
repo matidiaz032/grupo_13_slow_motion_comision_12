@@ -160,7 +160,6 @@
     }
     
     .moviesInformation .capsule-table .table-movie .title-id {
-        /*width: 0;*/
         flex-grow: .5;
         padding: 0 0 0 2em;
     }
