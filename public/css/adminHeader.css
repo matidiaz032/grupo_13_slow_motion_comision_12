@@ -249,4 +249,8 @@
     .header-desktop .nav-header-desktop .menu-header {
         display: none;
     }
+
+    .body-admin .img {
+        padding: 4em 0 0;
+    }
 }

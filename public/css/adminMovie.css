@@ -109,7 +109,7 @@
 
 .add-product {
     width: 10em;
-    margin: 2em 5em 4em;
+    margin: 2em 5em 1em;
 }
 
 .add-product .button-product {
@@ -147,7 +147,7 @@
 @media only screen and (min-width:768px) and (max-width:1024px){
 
     .moviesInformation {
-        padding: 1em;
+        padding: 1em 3em;
     }
 
     .moviesInformation .flex-information {
@@ -155,40 +155,55 @@
         padding: 0;
     }
 
+    .moviesInformation .flex-information .title-name {
+        flex-grow: 7;
+    }
+
+    .moviesInformation .flex-information .title-name .name-product {
+        padding: 2% 0 2% 10%;
+    }
+
+    .moviesInformation .flex-information .title-option {
+        flex-grow: 1;
+    }
+
     .moviesInformation .capsule-table .table-movie {
         padding: .5em 0;
     }
     
     .moviesInformation .capsule-table .table-movie .title-id {
-        flex-grow: .5;
-        padding: 0 0 0 2em;
+        flex-grow: 1;
     }
 
     .moviesInformation .capsule-table .table-movie .title-id p {
-        width: 10em;
+        padding: 0 0 0 1.5em;
+    }
+
+    .moviesInformation .capsule-table .table-movie .title-name {
+        flex-grow: 7;
     }
 
     .moviesInformation .capsule-table .table-movie .title-name p {
-        padding: 0 5em;
+        padding: 2% 0 2% 10%;
     }
 
     .moviesInformation .capsule-table .table-movie .option-product {
-        width: 3em;
-        padding: 0;
+        padding: 2.2%;
     }
 
     .moviesInformation .capsule-table .table-movie .element-delete {
-        width: 3em;
-        padding: 0;
+        padding: 2.2%;
     }
 
     .add-product {
-        width: 14em;
-        margin: 5% auto;
+        width: 100%;
+        padding: 1em 0;
+        margin: 0;
     }
 
     .add-product .button-product {
-        height: 3em;
+        width: 15em;
+        margin: 0 auto;
     }
 
     .add-product .button-product a i {
@@ -203,28 +218,84 @@
 @media only screen and (min-width:1024px) and (max-width:1440px) {
 
     .moviesInformation {
-        margin: 1em auto 0;
+        padding: 0 5em;
+        margin: 1em auto;
+    }
+    
+    .moviesInformation .flex-information {
+        justify-content: space-between;
+    }
+
+    .moviesInformation .flex-information .title-id {
+        flex-grow: .2;
+        padding: 0 0 0 2%;
+    }
+
+    .moviesInformation .flex-information .title-id .id-product {
+        padding: 2% 0;
     }
 
     .moviesInformation .flex-information .title-name {
-        padding: 0 3em 0 0;
+        flex-grow: .2;
+        padding: 0 0 0 10%;
+    }
+
+    .moviesInformation .flex-information .title-name .name-product {
+        padding: 2% 0;
+    }
+
+    .moviesInformation .flex-information .title-option {
+        flex-grow: .2;
+        width: 0;
+        padding: 0 0 0 15%;
+    }
+
+    .moviesInformation .flex-information .title-option .option-product {
+        padding: 2% 0 0;
+    }
+
+    .moviesInformation .capsule-table .table-movie .title-id {
+        flex-grow: .2;
+    }
+
+    .moviesInformation .capsule-table .table-movie .title-id p {
+        width: 14em;
+        text-align: center;
+    }
+
+    .moviesInformation .capsule-table .table-movie .title-name {
+        flex-grow: 6;
+        width: 100%;
+        padding: 0 0 0 7%;
+    }
+
+    .moviesInformation .capsule-table .table-movie .option-product {
+        flex-grow: .2;
+        width: 4em;
+    }
+
+    .moviesInformation .capsule-table .table-movie .element-delete {
+        flex-grow: .2;
+        width: 4em;
     }
 
     .add-product {
-        width: 14em;
+        padding: 0 15% 0 0;
         margin: 5% auto;
     }
 
     .add-product .button-product {
-        height: 3em;
+        width: 10em;
     }
 
     .add-product .button-product a i {
-        font-size: 1.2em;
+        padding: 5%;
+        font-size: 1.5em;
     }
 
     .add-product .button-product a p {
-        font-size: 1.3em;
+        padding: 5%;
+        font-size: 1.5em;
     }
 
 }

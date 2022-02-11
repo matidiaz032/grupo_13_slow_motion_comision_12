@@ -94,7 +94,6 @@
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
 
     .body-admin .database {
-        width: 100vw;
         flex-direction: row;
         flex-wrap: wrap;
         padding: 0 1em;

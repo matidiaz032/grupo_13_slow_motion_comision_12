@@ -109,7 +109,7 @@
 
 .add-product-series {
     width: 10em;
-    margin: 2em 5em 4em;
+    margin: 2em 5em 1em;
 }
 
 .add-product-series .button-product-series {
@@ -147,12 +147,24 @@
 @media only screen and (min-width:768px) and (max-width:1024px){
 
     .seriesInformation {
-        padding: 1em;
+        padding: 1em 3em;
     }
 
     .seriesInformation .information-series {
         align-items: center;
         padding: 0;
+    }
+
+    .seriesInformation .information-series .titleName-series {
+        flex-grow: 7;
+    }
+
+    .seriesInformation .information-series .titleName-series .nameProduct-series {
+        padding: 2% 0 2% 10%;
+    }
+
+    .seriesInformation .information-series .titleOption-series {
+        flex-grow: 1;
     }
     
     .seriesInformation .capsule-series .table-series {
@@ -160,35 +172,38 @@
     }
 
     .seriesInformation .capsule-series .table-series .titleSeries-id {
-        flex-grow: .5;
-        padding: 0 0 0 2em;
+        flex-grow: 1;
     }
 
     .seriesInformation .capsule-series .table-series .titleSeries-id p {
-        width: 10em;
+        padding: 0 0 0 1.5em;
+    }
+
+    .seriesInformation .capsule-series .table-series .titleName-series {
+        flex-grow: 7;
     }
 
     .seriesInformation .capsule-series .table-series .titleName-series p {
-        padding: 0 5em;
+        padding: 2% 0 2% 10%;
     }
 
     .seriesInformation .capsule-series .table-series .optionProduct-series {
-        width: 3em;
-        padding: 0;
+        padding: 2.2%;
     }
 
     .seriesInformation .capsule-series .table-series .element-series-delete {
-        width: 3em;
-        padding: 0;
+       padding: 2.2%;
     }
 
     .add-product-series {
-        width: 14em;
-        margin: 5% auto;
+        width: 100%;
+        padding: 1em 0;
+        margin: 0;
     }
 
     .add-product-series .button-product-series {
-        height: 3em;
+        width: 15em;
+        margin: 0 auto;
     }
 
     .add-product-series .button-product-series a i {
@@ -203,28 +218,84 @@
 @media only screen and (min-width:1024px) and (max-width:1440px) {
 
     .seriesInformation {
-        margin: 1em auto 0;
+        padding: 0 5em;
+        margin: 1em auto;
+    }
+
+    .seriesInformation .information-series {
+        justify-content: space-between;
+    }
+
+    .seriesInformation .information-series .series-id {
+        flex-grow: .2;
+        padding: 0 0 0 2%;
+    }
+
+    .seriesInformation .information-series .series-id .idProduct-series {
+        padding: 2% 0;
     }
 
     .seriesInformation .information-series .titleName-series {
-        padding: 0 3em 0 0;
+        flex-grow: .2;
+        padding: 0 0 0 10%;
+    }
+
+    .seriesInformation .information-series .titleName-series .nameProduct-series {
+        padding: 2% 0;
+    }
+
+    .seriesInformation .information-series .titleOption-series {
+        flex-grow: .2;
+        width: 0;
+        padding: 0 0 0 15%; 
+    }
+
+    .seriesInformation .information-series .titleOption-series .optionProduct-series {
+        padding: 2% 0 0;
+    }
+
+    .seriesInformation .capsule-series .table-series .series-id {
+        flex-grow: .2;
+    }
+
+    .seriesInformation .capsule-series .table-series .series-id .titleSeries-id {
+        width: 14em;
+        text-align: center;
+    }
+
+    .seriesInformation .capsule-series .table-series .titleName-series {
+        flex-grow: 6;
+        width: 100%;
+        padding: 0 0 0 7%;
+    }
+
+    .seriesInformation .capsule-series .table-series .optionSeries-product {
+        flex-grow: .2;
+        width: 4em;
+    }
+
+    .seriesInformation .capsule-series .table-series .element-series-delete {
+        flex-grow: .2;
+        width: 4em;
     }
 
     .add-product-series {
-        width: 14em;
+        padding: 0 15% 0 0;
         margin: 5% auto;
     }
 
     .add-product-series .button-product-series {
-        height: 3em;
+        width: 10em;
     }
 
     .add-product-series .button-product-series a i {
-        font-size: 1.2em;
+        padding: 5%;
+        font-size: 1.5em;
     }
 
     .add-product-series .button-product-series a p {
-        font-size: 1.3em;
+        padding: 5%;
+        font-size: 1.5em;
     }
     
 }

@@ -1,5 +1,4 @@
 .block-footer {
-    height: 3em;
     display: block;
     background: transparent;
     box-shadow: none;
@@ -9,6 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-left: 10%;
 }
 
 .flex-copyright p {
@@ -24,3 +24,15 @@
     z-index: -1;
     filter: drop-shadow(2px 4px 6px #000);
 }
+
+@media only screen and (min-width:768px) and (max-width:1024px){
+
+    .block-footer {
+        width: 100%;
+    }
+
+    .flex-copyright {
+        padding: 0;
+    }
+}
+/* @media only screen and (min-width:1024px) and (max-width:1440px){} */
