@@ -13,7 +13,7 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
-    background: linear-gradient(-45deg, #fff, #232323);
+    background: linear-gradient(#d8c371, #232323 0%);
 }
 
 .seriesInformation .information-series .series-id {
@@ -24,6 +24,7 @@
     text-align: center;
     padding: 5% 0;
     font-family: var(--averia);
+    color: var(--yellow);
 }
 
 .seriesInformation .information-series .titleName-series {
@@ -34,6 +35,7 @@
     text-align: center;
     padding: 2% 0;
     font-family: var(--averia);
+    color: var(--yellow);
 }
 
 .seriesInformation .information-series .titleOption-series {
@@ -44,6 +46,7 @@
     text-align: center;
     padding: 5% 0;
     font-family: var(--averia);
+    color: var(--yellow);
 }
 
 .seriesInformation .capsule-series {
@@ -59,50 +62,53 @@
     width: 100%;
     justify-content: space-around;
     flex-wrap: nowrap;
-    background: linear-gradient(45deg, #232323, #d8c371);
+    background: linear-gradient(#232323, #000);
     align-items: center;
 }
 
-.seriesInformation .capsule-series .table-series .series-id {
+.seriesInformation .capsule-series .table-series .titleSeries-id {
     width: 0;
     flex-grow: .7;
     margin: auto;
 }
 
-.seriesInformation .capsule-series .table-series .series-id p {
+.seriesInformation .capsule-series .table-series .titleSeries-id p {
     width: 2em;
     text-align: center;
     padding: 5% 0;
     font-family: var(--averia);
+    color: var(--yellow);
 }
 
-.seriesInformation .capsule-series .table-series .titleName-series {
+.seriesInformation .capsule-series .table-series .titleSeries-name {
     flex-grow: 2;
 }
 
-.seriesInformation .capsule-series .table-series .titleName-series p {
+.seriesInformation .capsule-series .table-series .titleSeries-name p {
     width: auto;
     text-align: center;
     padding: 2% 0;
     font-family: var(--averia);
+    color: var(--yellow);
 }
 
-.seriesInformation .capsule-series .table-series .titleOption-series {
+.seriesInformation .capsule-series .table-series .optionSeries-product {
     flex-grow: .2;
 }
 
 .seriesInformation .capsule-series .table-series .optionSeries-product a i {
-    color: var(--black);
+    color: var(--yellow);
     padding: 5px;
 }
 
 .seriesInformation .capsule-series .table-series .element-series-delete form .delete-series {
     background: transparent;
     border: none;
+    color: var(--yellow);
 }
 
 .seriesInformation .capsules-series .table-series .element-series-delete form .delete-series i {
-    color: var(--black);
+    color: var(--yellow);
     background: transparent;
     padding: 5px;
 }
@@ -179,15 +185,15 @@
         padding: 0 0 0 1.5em;
     }
 
-    .seriesInformation .capsule-series .table-series .titleName-series {
+    .seriesInformation .capsule-series .table-series .titleSeries-name {
         flex-grow: 7;
     }
 
-    .seriesInformation .capsule-series .table-series .titleName-series p {
+    .seriesInformation .capsule-series .table-series .titleSeries-name p {
         padding: 2% 0 2% 10%;
     }
 
-    .seriesInformation .capsule-series .table-series .optionProduct-series {
+    .seriesInformation .capsule-series .table-series .optionSeries-product {
         padding: 2.2%;
     }
 
@@ -254,16 +260,16 @@
         padding: 2% 0 0;
     }
 
-    .seriesInformation .capsule-series .table-series .series-id {
+    .seriesInformation .capsule-series .table-series .titleSeries-id {
         flex-grow: .2;
     }
 
-    .seriesInformation .capsule-series .table-series .series-id .titleSeries-id {
+    .seriesInformation .capsule-series .table-series .titleSeries-id p {
         width: 14em;
         text-align: center;
     }
 
-    .seriesInformation .capsule-series .table-series .titleName-series {
+    .seriesInformation .capsule-series .table-series .titleSeries-name {
         flex-grow: 6;
         width: 100%;
         padding: 0 0 0 7%;
