@@ -27,43 +27,86 @@
     display: none;
 }
 
-.index .carousel {
+.index .carouselDesktop {
     display: none;
 }
 
 
 
-@keyframes cambio {
-    0% {margin-left: 0;}
-    20% {margin-left: 0;}
-    
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
-    
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
-    
-    75% {margin-left: -300%;}
-    100% {margin-left: -300%;}
-}
+                /* Carrusel Mobile y Tablet */
+.index .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+  
+  /* Hide the images by default */
+  .index .slideshow-container .mySlides {
+    display: none;
+    height: 12rem;
+  }
+  .index .slideshow-container .mySlides img{
+    width: 95%;
+    height: 100%;
+    margin: 0 2.5%;
+    border-radius: 5px;
+  }
+  
+  /* Boton siguiente y previo */
+  .index .slideshow-container .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Posicion del boton siguiente*/
+  .index .slideshow-container .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* Hover de las peliculas no seleccionadas */
+  .index .slideshow-container .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  
+  .index .slideshow-container .active {
+    background-color: #717171;
+  }
+  
+  /* Animacion fade */
+  .index .slideshow-container .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+                /* Fin carrusel Mobile y tablet */
 
+
+
+
+
+                /* Listado de productos en Home */
 .index .products {
     flex-direction: column;
     font-size: 1.20rem;
     font-family: var(--averia);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .row {
 
@@ -102,50 +145,6 @@
     border-radius: 0.3rem;
 }
 
-/* .tile__details {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    font-size: 10px;
-    opacity: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
-    transition: 450ms opacity
-}
- 
-.tile__details::after,
-.tile__details::before {
-    content: '';
-    top: 50%;
-    left: 50%;
-}
-    
-
-.tile__details::after {
-    margin-top: 25px;
-    margin-left: 25px;
-    width: 50px;
-    height: 50px;
-    border: 3px solid #ecf0f1;
-    line-height: 50px;
-    text-align: center;
-    border-radius: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 1;
-}
-
-.tile__details::before {
-    content: '▶';
-    left: 0;
-    width: 100%;
-    font-size: 30px;
-    margin-left: 7px;
-    margin-top: -18px;
-    text-align: center;
-    z-index: 2;
-} */
-
   .tile:hover{
       opacity: 1
   }
@@ -158,8 +157,7 @@
 
 
 .row__inner:hover {
-
-    transform: translate3d(1.5rem, 0, 0)
+    transform: translate3d(1.5rem, 0, 0);
 }
 
 .row__inner:hover .tile {
@@ -167,26 +165,19 @@
     opacity: .3
 }
 
-
-  
   .row__inner:hover .tile:hover {
       transform: scale(1.1);
       opacity: 1;
+  }
+  .row__inner .tile img:hover {
+      cursor: pointer;
   }
 
 
 .tile {
     transform: translate3d(0.5rem, 0, 0)
 }
-
-
-
-
-
-
-
-
-
+                /* Fin listado de productos en Home */
 
 
 
@@ -236,6 +227,10 @@
     display: none;
 }
 
+
+
+
+
 @media (min-width: 425px) {
 
     .index .products .film .demo img {
@@ -244,6 +239,9 @@
     }
 
 }
+
+
+
 
 @media (min-width: 768px) {
 
@@ -268,61 +266,8 @@
         padding: 3px;
     }
 
-    .index .carousel {
-        display: block;
-        width: 98%;
-        margin: auto;
-        overflow: hidden;
-    }
-
-    .index .carousel #carousel { 
-        perspective: 500px; 
-        background: var(--black); 
-        padding-top: 3%; 
-        font-size:0; 
-        margin-bottom: -4rem; 
-        overflow: hidden; 
-    }
-    .index .carousel #spinner { 
-        transform-style: preserve-3d; 
-        height: 300px; 
-        transform-origin: 50% 50% -500px; 
-        transition: 1s; 
-        object-fit: cover;
-    } 
-    .index .carousel #spinner img { 
-        width: 42%; max-width: 425px; 
-        height: 12rem;
-        position: absolute; left: 30%;
-        transform-origin: 50% 50% -500px;
-        outline:1px solid white; 
-        object-fit: fill;
-        border-radius: 5px;
-        border: outset 1px white;
-    }
-    .index .carousel figure#spinner img:nth-child(1) { transform:rotateY(0deg); 
-    }
-    .index .carousel figure#spinner img:nth-child(2) { transform: rotateY(-45deg); }
-    .index .carousel figure#spinner img:nth-child(3) { transform: rotateY(-90deg); }
-    .index .carousel figure#spinner img:nth-child(4) { transform: rotateY(-135deg); }
-    .index .carousel figure#spinner img:nth-child(5){ transform: rotateY(-180deg); }
-    .index .carousel figure#spinner img:nth-child(6){ transform: rotateY(-225deg); }
-    .index .carousel figure#spinner img:nth-child(7){ transform: rotateY(-270deg); }
-    .index .carousel figure#spinner img:nth-child(8){ transform: rotateY(-315deg); }
-    .index .carousel #carousel ~ span { 
-        color: white; 
-        display: inline-block; 
-        text-decoration: none; 
-        font-size: 2rem; 
-        transition: 0.5s color; 
-        position: relative; 
-        margin-top: -19%; 
-        border-bottom: none; 
-        line-height: 0; 
-    }
-    .index .carousel div#carousel ~ span:hover{ 
-        color: var(--blue); 
-        cursor: pointer; 
+    .index .slideshow-container .mySlides {
+        height: 15rem;
     }
 
     .index .products .film .demo img {
@@ -346,6 +291,10 @@
 
     .index .options {
         margin-top: 6rem;
+    }
+
+    .index .slideshow-container {
+        display: none;
     }
 
     .index .options .barOptions {
@@ -381,25 +330,72 @@
         cursor: pointer;
     }
 
-    .index .carousel {
+
+
+
+
+
+
+                    /* Carrusel Desktop */
+    .index .carouselDesktop {
+        display: block;
         width: 95%;
+        margin: auto;
+        overflow: hidden;
     }
 
-    .index .carousel div#carousel { 
+    .index .carouselDesktop #carousel { 
+        perspective: 500px; 
+        background: var(--black); 
+        padding-top: 3%; 
+        font-size:0; 
+        overflow: hidden; 
         margin-bottom: 0rem; 
     }
-    .index .carousel figure#spinner { 
+    .index .carouselDesktop #spinner { 
+        transform-style: preserve-3d; 
+        object-fit: cover;
         transform-origin: 50% 50% -47rem; 
         height: 320px; 
         transition: 1.5s; 
     } 
-    .index .carousel figure#spinner img { 
+    .index .carouselDesktop #spinner img { 
+        position: absolute; left: 30%;
+        outline:1px solid white; 
+        object-fit: fill;
+        border-radius: 5px;
         max-width: 38rem;
         width: 50%; 
         height: 18rem;
         transform-origin: 50% 50% -47rem;
         border: inset 2px white;
     }
+    .index .carouselDesktop figure#spinner img:nth-child(1) { transform:rotateY(0deg); 
+    }
+    .index .carouselDesktop figure#spinner img:nth-child(2) { transform: rotateY(-45deg); }
+    .index .carouselDesktop figure#spinner img:nth-child(3) { transform: rotateY(-90deg); }
+    .index .carouselDesktop figure#spinner img:nth-child(4) { transform: rotateY(-135deg); }
+    .index .carouselDesktop figure#spinner img:nth-child(5){ transform: rotateY(-180deg); }
+    .index .carouselDesktop figure#spinner img:nth-child(6){ transform: rotateY(-225deg); }
+    .index .carouselDesktop figure#spinner img:nth-child(7){ transform: rotateY(-270deg); }
+    .index .carouselDesktop figure#spinner img:nth-child(8){ transform: rotateY(-315deg); }
+    .index .carouselDesktop #carousel ~ span { 
+        color: white; 
+        display: inline-block; 
+        text-decoration: none; 
+        font-size: 2rem; 
+        transition: 0.5s color; 
+        position: relative; 
+        margin-top: -19%; 
+        border-bottom: none; 
+        line-height: 0; 
+    }
+    .index .carouselDesktop div#carousel ~ span:hover{ 
+        color: var(--blue); 
+        cursor: pointer; 
+    }
+                    /* Fin carrusel Desktop */
+
 
     .index .products {
         font-size: 2rem;

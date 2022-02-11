@@ -2,37 +2,79 @@ const { Movie, Serie, Genre, Price, Idiom } = require('../database/models/index.
 
 let controller = {
     movies: async (req, res) => {
-        try {
-            let genreMovies = await Promise.all([Genre.findAll(), Movie.findAll({
-                include:{
-                    model: Genre,
-                },
-            })])
-            res.render('./product/indexMovies', {
-                title: 'Movies',
-                genres: genreMovies[0],
-                movies: genreMovies[1],
-                session: req.session
-            })
-        } catch (error) {
-            res.send('No se encuentra los generos buscado')
+        if(req.query.genre) {
+            try {
+                let genre = await Genre.findOne({
+                    where: {
+                        name: req.query.genre
+                    }
+                })
+                let allMovies = await Movie.findAll({
+                    include: {
+                        model: Genre
+                    }
+                })
+                res.render('./product/oneGenreMovies', {
+                    title: `Movies ${genre.name}`,
+                    genre: genre.name,
+                    movies: allMovies,
+                    session: req.session
+                }) 
+            } catch (error) {
+                res.send(error.message)
+            }
+        } else {
+            try {
+                let genreMovies = await Promise.all([Genre.findAll(), Movie.findAll({
+                    include:{
+                        model: Genre,
+                    },
+                })])
+                res.render('./product/indexMovies', {
+                    title: 'Movies',
+                    genres: genreMovies[0],
+                    movies: genreMovies[1],
+                    session: req.session
+                })
+            } catch (error) {
+                res.send('No se encuentra los generos buscado')
+            }  
         }
     },
     series: async (req,res) => {
-        try {
-            let genreSeries = await Promise.all([Genre.findAll(), Serie.findAll({
-                include:{
+        if(req.query.genre) {
+            let genre = await Genre.findOne({
+                where: {
+                    name: req.query.genre
+                }
+            })
+            let allSeries = await Serie.findAll({
+                include: {
                     model: Genre
                 }
-            })])
-            res.render('./product/indexSeries', {
-                title: 'series',
-                genres: genreSeries[0],
-                series: genreSeries[1],
+            })
+            res.render('./product/oneGenreSeries', {
+                title: `Series ${genre.name}`,
+                genre: genre.name,
+                series: allSeries,
                 session: req.session
             })
-        } catch (error) {
-            res.send('No se encuentra los generos buscado')
+        } else {
+            try {
+                let genreSeries = await Promise.all([Genre.findAll(), Serie.findAll({
+                    include:{
+                        model: Genre
+                    }
+                })])
+                res.render('./product/indexSeries', {
+                    title: 'series',
+                    genres: genreSeries[0],
+                    series: genreSeries[1],
+                    session: req.session
+                })
+            } catch (error) {
+                res.send('No se encuentra los generos buscado')
+            }
         }
     },
     serialMovie: async (req,res)=>{
@@ -81,7 +123,7 @@ let controller = {
                 }],
             })
             res.render('product/productDetailSerie',{
-                title: 'Movie Detail',
+                title: 'Serie Detail',
                 detailSerie,
                 session: req.session
             })

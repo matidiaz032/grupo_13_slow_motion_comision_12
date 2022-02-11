@@ -5,7 +5,7 @@ module.exports = (sequelize) => {
       const User = sequelize.define('User', {
             first_name: {
                   type: DataTypes.TEXT('tiny'),
-                  alowNull: false,
+                  alowNull: false,  
                 },
             last_name: {
                   type: DataTypes.TEXT('tiny'),

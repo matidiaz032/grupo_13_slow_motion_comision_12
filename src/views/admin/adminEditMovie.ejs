@@ -40,11 +40,14 @@
                     <label for="idiom">Idioma:</label>
                     <div class="form-check-container">
                         <% idioms.forEach(idiom => { %>
-                            <input type="checkbox" name="idiom" value="<%- idiom.name %>" <% for (let i = 0; i < product.Idioms.length; i++) {
-                            if(idiom.name === product.Idioms[i].name) {
-                                %> checked <%
-                            }
-                        } %>><%- idiom.name %></input>
+                            <input type="checkbox" 
+                                name="idiom" 
+                                value="<%- idiom.name %>" 
+                                <% for (let i = 0; i < product.Idioms.length; i++) {
+                                    if(idiom.name === product.Idioms[i].name) {
+                                        %> checked <%
+                                    }
+                                } %>><%- idiom.name %></input>
                         <% }) %>
                     </div>
                 </div>

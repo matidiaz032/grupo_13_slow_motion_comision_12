@@ -15,8 +15,8 @@ router.get('/register', controller.register);
 router.post('/register', upload.single('userImage'), registryValidator, controller.loadRegister);
 router.get('/profile', auth_users, controller.profile);
 router.get('/logout', controller.logout);
-router.get('/favorites', controller.favorites)
-router.post('/favorites', controller.addFavorite)
-router.delete('/favorites', controller.destroyFavorite)
+router.get('/favorites', auth_users, controller.favorites)
+router.post('/favorites', auth_users, controller.addFavorite)
+router.delete('/favorites', auth_users, controller.destroyFavorite)
 
 module.exports = router;

@@ -88,7 +88,7 @@
     display: block;
     position: absolute;
     background-color: #000000d0;
-    height: 15rem;
+    height: 25rem;
     width: 8rem;
     right: 1rem;
     top: 3rem;
@@ -128,6 +128,10 @@
 @keyframes openInput{
     from {width: 0rem;}
     to {width: 6rem;}
+}
+
+.conteinHeader header .optFoot .menu .options-menu .list-item #search-header:selected{
+    outline: none;
 }
 
 .conteinHeader header .optFoot .RegAndLog {
@@ -195,6 +199,10 @@
         height: 16px;
         width: 6rem;
     }
+    .conteinHeader header .nav .in:focus {
+        outline: none;
+        padding: 2px;
+    }
 
     .conteinHeader header .optFoot {
         margin-right: 0.5rem;
@@ -247,30 +255,25 @@
     }
 
     .conteinHeader header .nav a {
-        transition-property: font-size;
-        transition-duration: 3s;
-        transition-delay: 0s;
+        transition: font-size 3s;
         font-size: 19px;
     }
     
     .conteinHeader header .nav a:hover {
-        transition-property: font-size;
-        transition-duration: 1s;
-        transition-delay: 0s;
+        transition: font-size 1s;
         font-size: 27px;
         cursor: pointer;
     }
 
     .conteinHeader header .nav .in {
         height: 20px;
+        width: 11vw;
+        transition: all 1s;
     }
 
     .conteinHeader header .nav .in:hover {
         animation: in 0.3s linear;
-    }
-    @keyframes in{
-        from {width: 14vw;}
-        to {width: 17vw;}
+        width: 16vw;
     }
     
 
