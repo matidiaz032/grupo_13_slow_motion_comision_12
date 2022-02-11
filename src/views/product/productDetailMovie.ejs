@@ -38,6 +38,7 @@
                 </div>
             </div>
             <div class="opcionesPelicula">
+                <p>Descuento: <%= detailMovie.Price.discount%>%</p>
                 <p>Idioma: <% detailMovie.Idioms.forEach(element => { %>
                     <%= element.name %>
                 <% }) %></p>
@@ -76,12 +77,16 @@
                 <% }) %></h5>
             </div>
             <div class="icons">
-                <form action='/users/favorites?id=<%- detailMovie.id %>&product=Movie' method="post"><button type="submit"><i class="fas fa-heart"></i>Añadir a favoritos</button></form>
-                <a href=""><i class="fas fa-cart-plus"></i> Añadir a carrito</a>
+                <form action='/users/favorites?id=<%- detailMovie.id %>&product=Movie' method="post">
+                    <button type="submit"><i class="fas fa-heart"></i>Añadir a favoritos</button>
+                    <a href=""><i class="fas fa-cart-plus"></i> Añadir a carrito</a>
+                </form>
             </div>
             <div class="botones">
                 <button type="button" class="compra" id="comprar-serie" onclick="location.href='/products/cart'">COMPRAR</button>
+                <h5 style="color:white">$<%= detailMovie.Price.buy%></h5>
                 <button type="button" class="alquilo" id="alquilo-serie" onclick="location.href='/products/cart'">ALQUILAR</button>
+                <h5 style="color:white">$<%= detailMovie.Price.rental%></h5>
             </div>
     </main>
 
