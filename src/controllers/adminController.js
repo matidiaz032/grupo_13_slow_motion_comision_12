@@ -94,18 +94,6 @@ let controller = {
         })
     },
     motionUsers: (req, res) => {
-        // User.findAll()
-        // .then(data => {
-        //     res.render('./admin/motionUsers', {
-        //         title: 'Admin - Page : Users',
-        //         allUsers: data,
-        //         id: data.id,
-        //         userName: data.userName,
-        //         rol: data.rol
-        //     })
-        // })
-        //try {
-            //let usersMotion = Promise.all([User.findAll(), Rol.findAll()])
             User.findAll()
             .then(data => {
                 res.render('./admin/motionUsers', {
@@ -113,15 +101,6 @@ let controller = {
                     users: data
             })
         })
-        //     res.render('./admin/motionUsers', {
-        //         title: 'Movies',
-        //         user: usersMotion[0],
-        //         rol: usersMotion[1],
-        //         session: req.session
-        //     })
-        // } catch (error) {
-        //     res.send('No se encuentra los generos buscado')
-        // }
     },
     upload: (req, res) => {
         Promise.all([Genre.findAll(), Idiom.findAll()])
@@ -168,7 +147,7 @@ let controller = {
                         }
                 })
                 await Promise.all([movieCreate.addGenre(genreIdiom[0]), movieCreate.addIdiom(genreIdiom[1]), priceCreate.addMovie(movieCreate)])
-                res.redirect('/admin')
+                res.redirect('/admin/movies')
             } catch (error) {
                 res.send('fallo la creacion de movie')
             }
@@ -204,7 +183,7 @@ let controller = {
                         }
                 })
                 await Promise.all([serieCreate.addGenre(genreIdiom[0]), serieCreate.addIdiom(genreIdiom[1]), priceCreate.addSerie(serieCreate)])
-                res.redirect('/admin')
+                res.redirect('/admin/series')
             } catch (error) {
                 res.send('fallo la creacion de serie')
             }
