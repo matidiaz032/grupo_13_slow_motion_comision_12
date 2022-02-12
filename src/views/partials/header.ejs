@@ -10,7 +10,10 @@
             <a href="/products/movies">Peliculas</a>
             <a href="/products/series">Series</a>
             <a href="/users/favorites">Favoritos</a>
-            <input class="in" type="text" placeholder="Buscar...">
+            <form action="/products/search" method="GET">
+                <input type="search" class="in" name="keywords" placeholder="Buscar...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
         </div>
         <div class="optFoot">
             <div class="cart">

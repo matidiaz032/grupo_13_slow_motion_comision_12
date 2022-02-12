@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const { Movie, Serie, Genre, Price, Idiom } = require('../database/models/index.js');
 
 let controller = {
@@ -131,12 +132,28 @@ let controller = {
             res.send('No se encontró una pelicula')
         }
     }, 
-    
     cart: (req, res) => {
         res.render('./product/productCart', {
             title: 'Cart',
             session: req.session
         })
+    },
+    search: (req, res) => {
+        let allMovies = Movie.findAll({
+            where: {
+                title: {
+                    [Op.substring]: req.query.keywords
+                }
+            }
+        })
+        let allSeries = Serie.findAll({
+            where: {
+                title: {
+                    [Op.substring]: req.query.keywords
+                }
+            }
+        })
+        .then(result => res.send(result))
     }
 }
 
