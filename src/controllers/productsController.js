@@ -138,22 +138,28 @@ let controller = {
             session: req.session
         })
     },
-    search: (req, res) => {
-        let allMovies = Movie.findAll({
+    search: async (req, res) => {
+        let allMovies = await Movie.findAll({
             where: {
                 title: {
                     [Op.substring]: req.query.keywords
                 }
             }
         })
-        let allSeries = Serie.findAll({
+        let allSeries = await Serie.findAll({
             where: {
                 title: {
                     [Op.substring]: req.query.keywords
                 }
             }
         })
-        .then(result => res.send(result))
+        let all = [...allMovies, ...allSeries]
+
+        res.render('./product/searchSuccess', { 
+            title: 'Search Success',
+            all,
+            session: req.session
+         })
     }
 }
 
