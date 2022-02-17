@@ -4,36 +4,45 @@
         <%- include ('../partials/adminHeader') %>
         <!-- Logo mobile and tablet -->
         <%- include ('../partials/logoMobileADmin') %>
-        <br><br><br><br><br><br><br><br><br>
         
         <main class="information-users">
-            <div class="information__users">
-                <div class="id-information">
+            <div class="information__users-flex">
+                <div class="information__users-id">
                     <p class="id-user">Id</p>
                 </div>
-                <div class="name-information">
-                    <p class="name-user">Usuario</p>
+                <div class="information__users-first">
+                    <p class="firstName-users">Nombre</p>
                 </div>
-                <div class="user-option">
-                    <p class="rol-user">Rol</p>
+                <div class="information__users-last">
+                    <p class="lastName-users">Apellido</p>
+                </div>
+                <div class="information__users-rol">
+                    <p class="rol-users">Rol</p>
                 </div>
             </div>
-            <div class="capsule-users">
+            <div class="information__user-flex">
                 <% users.forEach(elem => { %>
-                    <div class="table-users">
-                        <div class="title-id">
-                            <p><%- elem.id %></p>
+                    <div class="users-information">
+                        <div class="information__user-id">
+                            <p class="user-id"><%- elem.id %></p>
                         </div>
-                        
-                        <div class="title-rol">
-                            <p><%- elem.rol %></p>
+                        <div class="information__user-first">
+                            <p class="firstName__user"><%- elem.first_name %></p>
+                        </div>
+                        <div class="information__user-last">
+                            <p class="lastName__user"><%- elem.last_name %></p>
+                        </div>
+                        <div class="information__user-rol">
+                            <p class="rol-user"><%- [elem.rol] %> Admin</p>
                         </div>
                     </div>
+                    <!-- <div class="information__user">
+                        <p class="rol-user"></p>
+                    </div> -->
                 <% }) %>
             </div>
         </main>
 
-        <br><br><br><br><br><br><br><br><br>
         <!-- Footer -->
         <%- include ('../partials/adminFooter') %>
     </body>
