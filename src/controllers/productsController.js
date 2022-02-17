@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const { Movie, Serie, Genre, Price, Idiom } = require('../database/models/index.js');
 
 let controller = {
@@ -131,12 +132,34 @@ let controller = {
             res.send('No se encontró la seríe')
         }
     }, 
-    
     cart: (req, res) => {
         res.render('./product/productCart', {
             title: 'Cart',
             session: req.session
         })
+    },
+    search: async (req, res) => {
+        let allMovies = await Movie.findAll({
+            where: {
+                title: {
+                    [Op.substring]: req.query.keywords
+                }
+            }
+        })
+        let allSeries = await Serie.findAll({
+            where: {
+                title: {
+                    [Op.substring]: req.query.keywords
+                }
+            }
+        })
+        let all = [...allMovies, ...allSeries]
+
+        res.render('./product/searchSuccess', { 
+            title: 'Search Success',
+            all,
+            session: req.session
+         })
     }
 }
 
