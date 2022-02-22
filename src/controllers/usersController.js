@@ -102,6 +102,27 @@ let controller = {
         }
     },
     profile: (req, res) => {
+
+        /* try {
+            let user = await User.findAll({
+                where: {id: req.session.user.id},
+                include: [{
+                    model: Movie
+                }, {
+                    model: Serie
+                }]
+            })
+            let all = [...user[0].Movies, ...user[0].Series]
+            res.render('users/favorites', {
+                title: 'favorites',
+                movies: user[0].Movies,
+                series: user[0].Series,
+                session: req.session
+            })
+        } catch (error) {
+            console.log(error.message)
+        } */
+
         res.render('users/userProfile', {
             title: 'User Profile',
             session: req.session
