@@ -11,3 +11,5 @@ function burguer () {
         optionsBurguer.classList.remove("active")
     }
 }
+
+searchBar.addEventListener('submit', e => searchInput.value == '' && e.preventDefault())

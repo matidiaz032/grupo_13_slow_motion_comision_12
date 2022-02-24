@@ -25,13 +25,17 @@
     <div class="contain-grid">
             <div class="contain-list">
                 <div class="movies__section">
-                    <% all.forEach(element => {  %>
-                        <a href="/products/serialMovie/<%= element.id %>">
-                            <div class="contain-img separation-search">
-                                <img src="/img/products-images/<%= element.image %>" alt="">
-                            </div>
-                        </a>
-                    <% }) %>
+                    <% if (all.length !== 0) { %>
+                        <% all.forEach(element => {  %>
+                            <a href="/products/serialMovie/<%= element.id %>">
+                                <div class="contain-img separation-search">
+                                    <img src="/img/products-images/<%= element.image %>" alt="">
+                                </div>
+                            </a>
+                        <% }) %>
+                    <% } else { %>
+                        <h2 class="no-results">No se encontraron resultados para la búsqueda</h2>
+                    <% } %>
                 </div>
             </div>
     </div>

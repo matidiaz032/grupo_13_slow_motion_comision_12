@@ -3,8 +3,9 @@ const router = express.Router();
 const controller = require('../controllers/usersController');
 const upload = require('../middlewares/uploadImagesUser')
 const auth_users = require('../middlewares/auth_users');
-const registryValidator = require('../validations/registryValidator')
-const loginValidator = require('../validations/loginValidator')
+const registryValidator = require('../validations/registryValidator');
+const loginValidator = require('../validations/loginValidator');
+const profileValidator = require('../validations/profileValidator');
 
 /* Se carga la imagen aunque el registro falle y no se cree el usuario (lo mismo sucede con productos), 
 y no puedo validar que la contraseña sea estrictamente alfanumerico.  */
@@ -14,6 +15,7 @@ router.post('/login', loginValidator, controller.loadLogin);
 router.get('/register', controller.register);
 router.post('/register', upload.single('userImage'), registryValidator, controller.loadRegister);
 router.get('/profile', auth_users, controller.profile);
+router.post('/profile', profileValidator, controller.optionalProfile);
 router.get('/logout', controller.logout);
 router.get('/favorites', auth_users, controller.favorites)
 router.post('/favorites', auth_users, controller.addFavorite)
