@@ -12,8 +12,8 @@ const storage = multer.diskStorage({
 })
 
 const fileFilter = function(req, file,cb) {
-    if(!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)){
-        req.fileValidationError = "Debe cargar una imagen (.jpg, .jpeg, .png, .gif)";
+    if(!file.originalname.match(/\.(jpg|jpeg|png|gif|webp|svg)$/)){
+        req.fileValidationError = "Debe cargar una imagen (.jpg, .jpeg, .png, .gif, .webp, .svg)";
         return cb(null,false,req.fileValidationError);
     }
     cb(null,true);

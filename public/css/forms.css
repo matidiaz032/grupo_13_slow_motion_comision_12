@@ -72,6 +72,10 @@
     color: red;
 }
 
+.forms-container .form-input-container .checkbox small {
+    color: red;
+}
+
 .forms-container .form-input-container .form-check #recordarme {
     background-color: var(--lightblue);
     margin: 0.5rem 0;

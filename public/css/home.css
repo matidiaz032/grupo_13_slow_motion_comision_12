@@ -3,13 +3,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.index .options .barOptions {
+.index .options .contain-options {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 1.5rem;
+    height: auto;
     width: 86vw;
     margin: 1.5rem 0;
     border-radius: 120px;
@@ -18,13 +20,81 @@
     font-family: var(--averia);
 }
 
-.index .options .barOptions a {
-    text-decoration: none;
+.index .options .contain-options .contain-titles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    width: 86vw;
+    margin: 0.2rem 0;
     color: var(--blue);
+    font-family: var(--averia);
 }
 
-.index .options .barOptions #navOpt {
+.index .options a {
+    text-decoration: none;
+    color: var(--blue);
+    text-align: center;
+}
+
+.index .options .contain-options #navOpt {
     display: none;
+}
+
+
+/* .index .options .barOptions .genresBurguer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 5rem;
+}
+
+.index .options .barOptions .genres-menu{
+    display: none;
+    position: absolute;
+    top: 1.1rem;
+    left: -3.5rem;
+    z-index: 3;
+    height: 10rem;
+    width: 16rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+} */
+
+.index .options .contain-options .genresBurguer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.index .options .contain-options .genresBurguer,
+.index .options .contain-options .estrenos,
+.index .options .contain-options .ofers{
+    width: 20%;
+}
+
+
+.index .options .contain-options .contain-lists{
+    width: 80%;
+}
+
+.index .options .contain-options .contain-lists .genres-menu{
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
+}
+.index .options .contain-options .contain-lists .genres-menu li{
+    width: 13rem;
+    margin: 3px 0;
+}
+
+
+
+.index .options .barOptions .genresBurguer .iconGenre i{
+    padding: 3px 3px 0 3px;
 }
 
 .index .carouselDesktop {
@@ -282,6 +352,15 @@
     .index .products .film3 {
         display: flex;
     }
+
+    .index .slideshow-container .prev, .next {
+        padding: 22px;
+      }
+      
+      /* Posicion del boton siguiente*/
+      .index .slideshow-container .next {
+        padding: 22px;
+      }
 }
 
 

@@ -3,17 +3,6 @@ const fs = require("fs");
 const { validationResult } = require('express-validator')
 const { User, Rol, Movie, Serie } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 
-const deleteImageEdit = (req, element) => {
-    if(req.file) {
-        if(element.image !== 'default-avatar.jpg') {
-            fs.unlinkSync(`./public/img/users-images/${element.image}`);
-            return req.file.filename
-        }
-        return req.file.filename
-    }
-    return element.image
-}
-
 let controller = {
     login: (req, res) => {
         res.render('./users/login', {
@@ -93,6 +82,7 @@ let controller = {
             }
         } else {
             let old = req.body;
+            deleteImageUser(req)
             res.render('./users/register', {
                 title: 'Register',
                 errors: errors.mapped(),
@@ -196,6 +186,13 @@ let controller = {
             }
         }
     },
+}
+
+const deleteImageUser = (req) => {
+    if(req.file) {
+        fs.unlinkSync(`./public/img/users-images/${req.file.filename}`);
+    }
+    return true
 }
 
 module.exports = controller;
