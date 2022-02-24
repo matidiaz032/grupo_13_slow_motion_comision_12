@@ -129,7 +129,7 @@ let controller = {
                 session: req.session
             })
         } catch (error) {
-            res.send('No se encontró una pelicula')
+            res.send('No se encontró la seríe')
         }
     }, 
     cart: (req, res) => {

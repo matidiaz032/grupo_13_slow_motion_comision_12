@@ -1,7 +1,7 @@
 .all-section-movie, .all-section-series {
     display: flex;
     flex-direction: column;
-    margin: 0 0 0 1em;
+    margin: 0 0 0 2em;
 }
 
 .statistic__movies, .statistic__series {
@@ -18,9 +18,7 @@
 
 .table__statistic-movies, .table__statistic-series {
     width: 90%;
-    height: 90%;
     margin: 1em auto;
-    background: var(--black)
 }
 
 .table__statistic-movies .info__statistic-movies, .table__statistic-series .info__statistic-series {
@@ -35,13 +33,12 @@
 .table__statistic-movies .info__statistic-movies .title__statistic-movies, .table__statistic-series .info__statistic-series .title__statistic-series {
     display: block;
     color: var(--yellow);
-    font-size: 15px;
-    margin: 5px 0;
+    font-size: 1em;
+    margin: 5% 0;
 }
 
 .table__statistic-movies .info__statistic-movies .dashboard-movies, .table__statistic-series .info__statistic-series .dashboard__series {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -51,10 +48,10 @@
 
 .table__statistic-movies .info__statistic-movies .dashboard-movies .dashboard-info-movies, .table__statistic-series .info__statistic-series .dashboard__series .dashboard__info-series {
     width: 84%;
-    height: 205px;
+    height: 180px;
     background: var(--blue);
     border-radius: 50%;
-    margin: 15px 8%;
+    margin: 1em 8%;
 }
 
 .table__statistic-movies .info__statistic-movies .dashboard-movies .information, .table__statistic-series .info__statistic-series .dashboard__series .information-series {
@@ -64,17 +61,15 @@
 
 .table__statistic-movies .info__statistic-movies .dashboard-movies .information span, .table__statistic-series .info__statistic-series .dashboard__series .information-series span {
     color: var(--yellow);
-    padding: 3px 5px;
+    padding: 2% 3%;
     font-family: var(--averia);
 }
 
 .statistic__movies:last-child, .statistic__series:last-child {
-    padding: 1em 0;
-    margin-bottom: 1em;
-
+    margin-bottom: .5em;
 }
 
-.addition-board, .delete-board {
+/* .addition-board, .delete-board {
     display: block;
     width: 90%;
     height: 2em;
@@ -93,9 +88,22 @@
     display: block;
     padding: 7px 0;
     font-family: var(--averia);
-}
+} */
 
 @media only screen and (min-width:768px) and (max-width:1024px){
+
+    .all-section-movie, .all-section-series {
+        margin: 0 auto;
+    }
+
+    .table__statistic-movies, .table__statistic-series {
+        width: 95%;
+        margin: 1em;
+    }
+
+    .table__statistic-movies .info__statistic-movies .title__statistic-movies, .table__statistic-series .info__statistic-series .title__statistic-series {
+        font-size: 1.5em;
+    }
 
     .table__statistic-movies .info__statistic-movies .dashboard-movies, .table__statistic-series .info__statistic-series .dashboard__series {
         flex-direction: row;
@@ -106,6 +114,7 @@
         width: 50%;
         height: 300px;
         padding: 2% 0;
+        margin: 1em;
     }
 
     .table__statistic-movies .info__statistic-movies .dashboard-movies .information, .table__statistic-series .info__statistic-series .dashboard__series .information-series {
@@ -113,19 +122,39 @@
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: space-evenly;
+        width: 44.7%;
     }
 }
 
-@media only screen and (min-width:1024px) and (max-width:1440px) {
+@media only screen and (min-width:1024px) {
+
+    .all-section-products {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
     .all-section-movie, .all-section-series {
         flex-direction: row;
         flex-wrap: wrap;
+        width: 100%;
+        margin: 1em auto;
     }
 
     .statistic__movies, .statistic__series {
-        width: 45vw;
-        padding: 0 0 1em 0;
+        width: 100%;
+        margin: .5em;
     }
+
+    .statistic__movies:last-child,
+    .statistic__series:last-child {
+        width: 100%;
+        margin-bottom: .5em;
+    }
+
+    /* .statistic__movies, .statistic__series {
+        width: 35%;
+        margin: 1em;
+    } */
 
     .table__statistic-movies .info__statistic-movies .dashboard-movies .dashboard-info-movies, .table__statistic-series .info__statistic-series .dashboard__series .dashboard__info-series {
         width: 84%;

@@ -1,8 +1,6 @@
 let menu = document.querySelector('.menu');
 let iconBurguer = document.querySelector('.iconBurguer');
-let optionsBurguer = document.querySelector('.options-menu');
-let searchBar = document.querySelector('#search');
-let searchInput = document.querySelector('.in');
+let optionsBurguer = document.querySelector('.options-menu')
 
 function burguer () {
     if(!iconBurguer.classList.contains("desactive")) {

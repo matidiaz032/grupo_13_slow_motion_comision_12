@@ -52,11 +52,6 @@ span a:hover {
     cursor: pointer;
 }
 
-/* buscador sin resultados */
-.movies__section h2 {
-    color: var(--yellow);
-}
-
 .indexProducts .gender__grid{
     font-family: var(--averia);
     font-weight: bold;

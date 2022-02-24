@@ -1,7 +1,7 @@
 .information-users {
     display: flex;
     width: 90%;
-    margin: 0 0 0 auto;
+    margin: 0 0 9.25em auto;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
@@ -9,19 +9,198 @@
     justify-content: space-evenly;
 }
 
-.information-users .information__users {
+.information-users .information__users-flex {
     display: flex;
     flex-wrap: nowrap;
-    width: 100%;
+    width: 90%;
     justify-content: space-around;
-    background: linear-gradient(45deg, #232323, #fff);
+    background: linear-gradient(-45deg, #000, #232323);
+    padding: 1% 0%;
+    align-items: center;
 }
 
-.information-users .capsule-users {
-    width: 100%;
+.information-users .information__users-flex .information__users-id {
+    width: 3em;
+    flex-grow: .2;
+}
+
+.information-users .information__users-flex .information__users-first {
+    width: 5em;
+    flex-grow: 2;
+}
+
+.information-users .information__users-flex .information__users-last {
+    width: 5em;
+}
+
+.information-users .information__users-flex .information__users-id .id-user,
+.information-users .information__users-flex .information__users-first .firstName-users,
+.information-users .information__users-flex .information__users-last .lastName-users {
+    color: var(--yellow);
+    font-family: var(--averia);
+    text-align: center;
+}
+
+.information__users-rol {
+    display: none;
+}
+
+.information-users .information__user-flex {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    width: 90%;
+    justify-content: space-around;
+    background: linear-gradient(-45deg, #000, #232323);
+}
+
+.information-users .information__user-flex .users-information {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
     align-items: center;
-    align-content: space-around;
+}
+
+.information-users .information__user-flex .users-information .information__user-id {
+    flex-grow: .2;
+    width: 3em;
+    margin: auto;
+}
+
+.information-users .information__user-flex .users-information .information__user-id .user-id {
+    text-align: center;
+    padding: 5% 0;
+    font-family: var(--averia);
+    color: var(--yellow);
+}
+
+.information-users .information__user-flex .users-information .information__user-first {
+    flex-grow: 2;
+    width: 5em;
+}
+
+.information-users .information__user-flex .users-information .information__user-first .firstName__user {
+    text-align: center;
+    padding: 5% 0;
+    font-family: var(--averia);
+    color: var(--yellow)
+}
+
+.information-users .information__user-flex .users-information .information__user-last {
+    flex-grow: 2;
+    width: 3em;
+}
+
+.information-users .information__user-flex .users-information .information__user-last .lastName__user {
+    text-align: center;
+    padding: 5% 0;
+    font-family: var(--averia);
+    color: var(--yellow);
+}
+
+.information__user-rol {
+    display: none;
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px){
+
+    .information-users {
+        margin: 1em auto;
+    }
+
+    .information-users .information__users-flex .information__users-first {
+        width: 3em;
+    } 
+    .information-users .information__users-flex .information__users-last {
+        width: 3.5em;
+        flex-grow: 2;
+    }
+
+    .information__users-rol {
+        display: block;
+    }
+
+    .information-users .information__users-flex .information__users-rol {
+        flex-grow: 2;
+    }
+
+    .information-users .information__users-flex .information__users-rol .rol-users {
+        text-align: center;
+        padding: 5% 0;
+        font-family: var(--averia);
+        color: var(--yellow);
+    }
+
+    .information__user-rol {
+        display: block;
+    }
+
+    .information-users .information__user-flex .users-information .information__user-last {
+        width: 5em;
+    }
+
+    .information-users .information__user-flex .users-information .information__user-rol {
+        flex-grow: 2;
+    }
+    
+    .information-users .information__user-flex .users-information .information__user-rol .rol-user {
+        text-align: center;
+        padding: 5% 0;
+        font-family: var(--averia);
+        color: var(--yellow);
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    .information-users {
+        margin: 1em auto;
+    }
+
+    .information-users .information__users-flex {
+        padding: .5% 0;
+    }
+
+    .information-users .information__users-flex .information__users-first {
+        width: 3em;
+    } 
+    .information-users .information__users-flex .information__users-last {
+        width: 3.5em;
+        flex-grow: 2;
+    }
+
+    .information__users-rol {
+        display: block;
+    }
+
+    .information-users .information__users-flex .information__users-rol {
+        flex-grow: 2;
+    }
+
+    .information-users .information__users-flex .information__users-rol .rol-users {
+        text-align: center;
+        padding: 5% 0;
+        font-family: var(--averia);
+        color: var(--yellow);
+    }
+
+    .information__user-rol {
+        display: block;
+    }
+
+    .information-users .information__user-flex .users-information .information__user-last {
+        width: 5em;
+    }
+
+    .information-users .information__user-flex .users-information .information__user-rol {
+        flex-grow: 2;
+    }
+    
+    .information-users .information__user-flex .users-information .information__user-rol .rol-user {
+        text-align: center;
+        padding: 5% 0;
+        font-family: var(--averia);
+        color: var(--yellow);
+    }
 }

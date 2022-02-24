@@ -37,68 +37,27 @@ let controller = {
         })
     },
     statistics: (req, res) => {
-    //    (lastMovieIdiom) => {
-    //         if(movies.filter(movie => movie.idiom === "español")){
-    //             for(lastMovieIdiom = 0; lastMovieIdiom<movies.length; lastMovieIdiom++){
-    //                 lastMovieIdiom = idiom
-    //             }
-    //         }
-    //     }
-        /* let moviesIdiom = [
-            idiom = 
-            [
-                "español",
-                "ingles"
-            ]
-        ] ;
-        let idiomSpain = moviesIdiom.map(movies => movies.idiom === "español");
-        for(idiomSpain = 0; idiomSpain<=movies.length; idiomSpain++){
-            return idiomSpain
-        } */
-        /* let spainLanguajes =  movies.forEach(movie => movie.idiom === req.params.idiom);
-        for(let i; i <= movies.idiom.length; i++){
-            return idiom
-        } */
-        /*spainLanguajes.forEach(idiom => {
-            if(idiom === "español" && idiom == spainLanguajes){
-                spainLanguajes = idiom
-                spainLanguajes++
-                return spainLanguajes
-            }
-        }) */
-        // let idiom = movies.forEach(elementIdiom => {
-        //     if(elementIdiom === movies.idiom && movies.idiom == "español"){
-        //         idiom.filter(languajes => {
-        //             if(languajes === "español"){
-        //                 idiom = languajes
-        //                 idiom++
-        //                 return idiom
-        //             }
-        //         })
-        //     }
-        // })
-
-        /*let idiom;
-        if(idiom === movies.idiom){
-            movies.forEach(elementIdiom => {
-                if(elementIdiom.idiom == "español"){
-                    elementIdiom++
-                   return elementIdiom
-                }
+        Promise.all([Movie.findAll(), Serie.findAll(), Idiom.findAll()])
+        .then(data => {
+            res.render('./admin/adminStatistics', {
+                title: 'Admin : Estadisticas',
+                movies: data[0],
+                series: data[1],
+                idiom: data[2]
             })
-        }*/
-        res.render('./admin/adminStatistics', {
-            title: 'Admin : Estadisticas',
-            movies,
-            series
         })
     },
     motionUsers: (req, res) => {
-            User.findAll()
+            User.findAll({
+                include: {
+                model: Rol
+                }
+                })
             .then(data => {
                 res.render('./admin/motionUsers', {
                     title: 'Admin - Page : Users',
-                    users: data
+                    users: data,
+                    rol: Rol
             })
         })
     },
