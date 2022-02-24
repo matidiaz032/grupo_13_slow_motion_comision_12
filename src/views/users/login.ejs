@@ -1,0 +1,49 @@
+    <%- include('../partials/head') %>
+
+<body>
+    <main>
+        <div class="logo-container-forms">
+            <a class="logo-forms" href="/">
+                <img src="/img/Blanco.svg" alt="Logo Slow Motion">
+                <p>SLOW MOTION</p>
+            </a>
+        </div>
+        <div class="forms-container">
+            <form action="/users/login" method="POST">
+                <div class="form-title">
+                    <h2>Inicia Sesión</h2>
+                </div>
+                <div class="form-input-container">
+                    <div class="form-input">
+                        <input type="email" name="email" placeholder="Correo Electronico">
+                        <% if (locals.errors && errors.email) { %>
+                            <small class="text-danger"> <%= errors.email.msg %>  </small>
+                        <% } %>                   
+                    </div>
+                    <div class="form-input">
+                        <input type="password" name="password" placeholder="Contraseña">
+                        <% if (locals.errors && errors.password) { %>
+                            <small class="text-danger"> <%= errors.password.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="form-input">
+                        <% if (locals.errors && errors.custom) { %>
+                            <small class="text-danger"> <%= errors.custom.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" name="recordarme" id="recordarme">
+                        <label for="recordarme">Recordarme</label>
+                    </div>
+                    <a class="link-form" href="register.html">¿Olvidaste tu contraseña?</a>
+                    <div class="btn-enviar-form">
+                        <input class="send-login" type="submit" value="Iniciar Sesión">
+                    </div>
+                    <a class="link-form" href="/users/register">¿Primera vez aquí? Suscribirse.</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer')  %>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<%- include('../partials/head') %>
+
+<body class="body-admin">
+    <!-- Header -->
+    <%- include ('../partials/adminHeader') %>
+    <!-- Logo mobile and tablet -->
+    <%- include ('../partials/logoMobileAdmin') %> 
+    
+    <!-- Series section -->
+    <main class="seriesInformation">
+        <div class="information-series">
+            <div class="series-id">
+                <p class="idProduct-series">Id</p>
+            </div>
+            <div class="titleName-series">
+                <p class="nameProduct-series">Titulo</p>
+            </div>
+            <div class="titleOption-series">
+                <p class="optionProduct-series">Opcion</p>
+            </div>
+        </div>
+        <div class="capsule-series">
+            <% series.forEach(series => { %>
+                <div class="table-series">
+                    <div class="titleSeries-id">
+                        <p><%- series.id %></p>
+                    </div>
+                    <div class="titleSeries-name">
+                        <p><%- series.title %></p>
+                    </div>
+                    <div class="optionSeries-product">
+                        <a href="/admin/products/serie/<%- series.id %>/edit"><i class="far fa-edit"></i></a>
+                    </div>
+                    <div class="element-series-delete">
+                        <form action="/admin/deleteProductSerie/<%- series.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="delete-series"><i class="far fa-trash-alt"></i></button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+
+    <div class="add-product-series">
+        <div class="button-product-series">
+            <a href="/admin/form"><i class="fas fa-upload"></i><p>Series</p></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('../partials/adminFooter') %>
+</body>
+</html>

@@ -1,0 +1,107 @@
+.body-admin {
+    background: linear-gradient(45deg, #000000, #2940D3);
+    overflow-x: hidden;
+}
+
+.img {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding-left: 10%;
+    margin: 0 auto;
+}
+
+.img a {
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.img a img {
+    display: inline-block;
+    width: 65%;
+    height: 65%;
+    margin: 1em auto 0;
+    filter: drop-shadow(2px 4px 6px black);
+    z-index: -1;
+}
+
+.img .img-span {
+    display: flex;
+    color: var(--yellow);
+    margin: 0 auto 1em;
+    font-family: var(--averia);
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.database { 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 10%;
+}
+
+.database .products {
+    width: 90%;
+    border: none;
+    background: linear-gradient(-45deg, #000, #232323);
+    margin: 0 0 2em;
+    border-radius: 2em;
+}
+
+.database .products a {
+    display: inline-block;
+    width: 100%;
+    color: var(--yellow);
+    text-align: center;
+}
+
+.database .products a i {
+    font-size: 3em;
+    padding: 10% 0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .body-admin .img {
+        padding: 4em 0 0;
+    }
+
+    .body-admin .img a img {
+        display: inline-block;
+        margin: 3em auto;
+        filter: drop-shadow(2px 4px 6px black);
+        z-index: -1;
+    }
+
+    .database {
+        padding-left: 0;
+    }
+
+    .database .products a i {
+        padding: 6% 0;
+    }
+
+}
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+
+    .body-admin .database {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 1em;
+    }
+
+    .body-admin .database .products {
+        width: 45%;
+        padding: 1em;
+    }
+
+}

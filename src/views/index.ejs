@@ -1,0 +1,152 @@
+    <%- include('partials/head') %> 
+    
+<body class="index">
+
+    <%- include('partials/header') %>
+      
+    <section class="options">
+        <div class="barOptions">
+            <nav id="navOpt">
+                <h3>Generos</h3>
+                <i class="fas fa-align-justify"></i>
+            </nav>
+            <a href=""><h3>Estrenos</h3></a>
+            <a href=""><h3>Ofertas</h3></a>
+        </div>
+    </section>
+    </div>
+
+
+
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <img src="./img/series/dbzcarrito.jpg" >
+        </div>
+      
+        <div class="mySlides fade">
+          <img src="./img/peliculas/thor-banner.jpg" >
+        </div>
+      
+        <div class="mySlides fade">
+          <img src="./img/peliculas/Vikingos1280.jpg" >
+        </div>
+      
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+
+
+    <div class="carouselDesktop">
+        <div id="carousel">
+            <figure id="spinner">
+                <img src="./img/peliculas/Anabelle341x192.jpg" alt>
+                <img src="./img/peliculas/carritoelPermiso.jpg" alt>
+                <img src="./img/peliculas/carritoGreebland.jpg" alt>
+                <img src="./img/peliculas/carritoVarios.jpg" alt>
+                <img src="./img/series/dbzcarrito.jpg" alt>
+                <img src="./img/peliculas/thor-banner.jpg" alt>
+                <img src="./img/peliculas/Vikingos1280.jpg" alt>
+                <img src="./img/series/WestWorld1920x1080.jpg" alt>
+            </figure>
+        </div>
+    <span style="float:left" class="ss-icon" onclick="galleryspin('-')"><i class="fas fa-arrow-left"></i></span>
+    <span style="float:right" class="ss-icon" onclick="galleryspin('')"><i class="fas fa-arrow-right"></i></span>
+    </div>
+    <div class="products">
+        <div class="film film1">
+            <h3 class="text"><a href="/products/movies">Peliculas:</a></h3>
+            <div class="row">
+                <div class="row__inner">
+                <% movies3.forEach(elem => { %>
+                    <div class="tile">
+                        <div class="tile__media">
+                            <a href="/products/serialMovie/<%= elem.id %>">
+                                <img class="tile__img" src="./img/products-images/<%- elem.image %>" />
+                            </a>
+                        </div>
+                    </div>
+                <% }) %> 
+                </div>
+            </div>
+        </div>
+        <div class="film film2">
+            <h3 class="text"><a href="/products/series">Series:</a></h3>
+            <div class="row">
+                <div class="row__inner">
+                  <% series3.forEach(elem => { %>
+                      <div class="tile">
+                          <div class="tile__media">
+                                <a href="/products/serialSerie/<%= elem.id %>">
+                                    <img class="tile__img" src="./img/products-images/<%- elem.image %>" />
+                                </a>
+                          </div>
+                          
+                      </div>
+                  <% }) %> 
+            
+                </div>
+              </div>
+
+
+        </div>
+        <div class="film film3">
+            <h3 class="text"><a href="/ofert">En Oferta:</a></h3>
+            <div class="row">
+                <div class="row__inner">
+                    <% popular.forEach(elem => { %>
+                        <div class="tile">
+                                <div class="tile__media">
+                                    <% if(elem.duration) {%> 
+                                        <a href="/products/serialMovie/<%= elem.id %>">
+                                            <img class="tile__img" src="./img/products-images/<%- elem.image %>" />
+                                        </a>
+                                    <% } else { %>
+                                        <a href="/products/serialSerie/<%= elem.id %>">
+                                            <img class="tile__img" src="./img/products-images/<%- elem.image %>" />
+                                        </a>
+                                    <% } %> 
+                                </div>
+                              
+                        </div>
+                    <% }) %> 
+                </div>
+              </div>
+        </div>
+        <div class="film film4">
+            <h3 class="text"><a href="/popular">Populares:</a></h3>
+            <div class="row">
+                <div class="row__inner"> 
+                  <% ofers.forEach(elem => { %>
+                    <% if (elem.Price.discount > 5) { %>
+                      <div class="tile">
+                          
+                          <div class="tile__media">
+                            <% if(elem.duration) {%> 
+                                <a href="/products/serialMovie/<%= elem.id %>">
+                                    <img class="tile__img" src="./img/products-images/<%- elem.image %>" />
+                                </a>
+                            <% } else { %>
+                                <a href="/products/serialSerie/<%= elem.id %>">
+                                    <img class="tile__img" src="./img/products-images/<%- elem.image %>" />
+                                </a>
+                            <% } %> 
+                          </div>
+                         
+                      </div>
+                      <% } %> 
+                  <% }) %> 
+            
+                </div>
+              </div>
+        </div>
+    </div>
+    <%- include('partials/footer')  %> 
+    <%- include('partials/scripts.ejs') %>
+    <script src="./js/hammer.js"></script>
+    <script src="./js/carousel.js"></script>
+</body>
+</html>

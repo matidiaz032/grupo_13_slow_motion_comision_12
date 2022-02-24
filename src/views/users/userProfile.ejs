@@ -1,0 +1,122 @@
+<%- include('../partials/head') %>
+
+<body class="user-profile">
+    <%- include('../partials/header') %> 
+
+    <div class="profile-container">
+        <div class="profile-title">
+            <h2>Perfil del usuario</h2>
+        </div>
+        <div class="container-img-name">
+            <div class="user-avatar">
+                <img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image">
+            </div>
+            <div class="user-name">
+                <h3><%= session.user.name %> <%= session.user.lastName %></h3>
+            </div>
+        </div>
+        <div class="container-user-data">
+            <div class="user-email">
+                <p><%= session.user.email %></p>
+            </div>
+            <div class="user-pass">
+                <p>********</p>
+            </div>
+            <div class="user-edit-form forms-container">
+                <form action="/users/profile" method="post">
+
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <input type="text" name="phone" placeholder="Teléfono" value="<%= user.phone %>">
+                            <% if (locals.errors && errors.phone) { %>
+                                <small><%- errors.phone.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <label for="dateOfBirth" class="label-profile">Fecha de nacimiento</label>
+                            <input type="date" name="dateOfBirth" value="<%= user.date_of_birth %>">
+                            <% if (locals.errors && errors.dateOfBirth) { %>
+                                <small><%- errors.dateOfBirth.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <label for="genre" class="label-profile">Género</label>
+                            <select name="genre">
+                                <option value="masculino" <%= user.genre == "masculino" && 'selected' %>>Masculino</option>
+                                <option value="femenino" <%= user.genre == "femenino" && 'selected' %>>Femenino</option>
+                                <option value="otro" <%= user.genre == "otro" && 'selected' %>>Otro</option>
+                                <option value="abcd" <%= user.genre == "abcd" && 'selected' %>>abcd</option>
+                            </select>
+                            <% if (locals.errors && errors.genre) { %>
+                                <small><%- errors.genre.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <input type="text" name="address" placeholder="Dirección" value="<%= user.address %>">
+                            <% if (locals.errors && errors.address) { %>
+                                <small><%- errors.address.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <input type="text" name="country" placeholder="País" value="<%= user.country %>">
+                            <% if (locals.errors && errors.country) { %>
+                                <small><%- errors.country.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <input type="text" name="province" placeholder="Provincia" value="<%= user.province %>">
+                            <% if (locals.errors && errors.province) { %>
+                                <small><%- errors.province.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <input type="text" name="city" placeholder="Ciudad" value="<%= user.city %>">
+                            <% if (locals.errors && errors.city) { %>
+                                <small><%- errors.city.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="user-edit">
+                        <input type="submit" value="Editar perfil">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container-user-options">
+            <div class="container-user-favorite">
+                <h3>Mis favoritos</h3>
+                <div class="user-favorites">
+                    <div class="movie-favorite">
+                        <img src="/img/Series/BlackMirror720x1080.jpg" alt="">
+                    </div>
+                    <div class="movie-favorite">
+                        <img src="/img/Peliculas/MortalKombat720x1080.jpg" alt="">
+                    </div>
+                    <div class="movie-favorite">
+                        <img src="/img/Peliculas/MortalKombat720x1080.jpg" alt="">
+                    </div>
+                    <div class="movie-favorite">
+                        <img src="/img/Series/BlackMirror720x1080.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="container-user-data">
+                
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer')  %>
+</body>

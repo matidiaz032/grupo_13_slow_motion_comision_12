@@ -1,0 +1,70 @@
+<div class="conteinHeader">
+    <header>
+        <div class="logo">
+            <a class="logA" href="/">
+                <img src="/img/Blanco.svg" alt="">
+                <p>SLOW MOTION</p>
+            </a>
+        </div>
+        <div class="nav">
+            <a href="/products/movies">Peliculas</a>
+            <a href="/products/series">Series</a>
+            <a href="/users/favorites">Favoritos</a>
+            <form action="/products/search" method="GET" id="search">
+                <input type="search" class="in" name="keywords" placeholder="Buscar...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <div class="optFoot">
+            <div class="cart">
+                <a href="/products/cart">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+            <div class="RegAndLog">
+                <% if (typeof session.user !== "undefined") { %>
+                    <div class="containSesion">
+                        <div class="avatar-header">
+                            <a href="/users/profile" class="a-avatar"><img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image"></a>
+                        </div>
+                        <div class="sesion">
+                            <% if (session.user.rol == 2 || session.user.rol == 3) { %>
+                                <li class="list-item"><a href="/admin">Ir al Admin</a></li>
+                            <% } %>
+                            <li class="list-item"><a href="/users/logout">Cerrar Sesión</a></li>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <li class="list-item"><a href="/users/login">Iniciar Sesión%></a></li>
+                    <li class="list-item"><a href="/users/register">Registrarse%></a></li>
+                <% } %>
+            </div>
+            <nav class="menu" onclick="burguer()">
+                <div class="iconBurguer">
+                    <i class="fas fa-align-justify" ></i>
+                </div>
+                <ul class="options-menu">
+                    <% if (typeof session.user !== "undefined") { %>
+                        <div class="avatar-header">
+                            <a href="/users/profile"><img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image"></a>
+                        </div>
+                        <% if (session.user.rol == 2 || session.user.rol == 3) { %>
+                            <li class="list-item"><a href="/admin/">Ir al Admin</a></li>
+                        <% } %>
+                        <li class="list-item"><a href="/users/logout">Cerrar Sesión</a></li>
+                    <% } else { %>
+                        <li class="list-item"><a href="/users/login">Iniciar Sesión%></a></li>
+                        <li class="list-item"><a href="/users/register">Registrarse%></a></li>
+                    <% } %>    
+                    <li class="list-item">
+                        <form id="search" action="">
+                            <input type="search-header" id="search-header" placeholder="Buscar...">
+                        </form>
+                    </li>
+                    <li class="list-item"><a href="/products/movies">Peliculas</a></li>
+                    <li class="list-item"><a href="/products/series">Series</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</div>

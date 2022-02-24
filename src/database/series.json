@@ -1,0 +1,115 @@
+[
+    {
+        "id": 1,
+        "title": "The Walking Dead",
+        "description": "The Walking Dead tiene lugar después del inicio de un apocalipsis zombi mundial. Los zombis, coloquialmente llamados «caminantes», se arrastran hacia los humanos vivos y otras criaturas para comerlos; se sienten atraídos por el ruido, como los disparos, y por diferentes aromas, por ejemplo humanos.",
+        "trailer": "uwgohmYnDu0&t=6s",
+        "appreciation": "4",
+        "seasons": 11,
+        "age": "2010-10",
+        "director": "Frank Darabont",
+        "idiom": [
+            "ingles",
+            "español"
+        ],
+        "subtitle": "Latino",
+        "image": "1639438310216.jpg",
+        "gender": 9,
+        "subGender": "",
+        "price": {
+            "buy": 800,
+            "rental": 450,
+            "discount": null
+        }
+    },
+    {
+        "id": 2,
+        "title": "Sex Education",
+        "description": "Sex Education gira en torno a Otis, un adolescente calificado como \"bicho raro\" en el instituto, a lo que se le une el hecho de ser virgen. Sin embargo, este vive con su madre sexóloga, por lo que siempre ha tenido un amplio conocimiento respecto al tema.",
+        "trailer": "mmksLpityps",
+        "appreciation": "4",
+        "seasons": 3,
+        "age": "2019-01",
+        "director": "Laurie Nunn",
+        "idiom": [
+            "ingles",
+            "español"
+        ],
+        "subtitle": "Latino",
+        "image": "1639449058940.jpg",
+        "gender": 6,
+        "subGender": "",
+        "price": {
+            "buy": 900,
+            "rental": 550,
+            "discount": null
+        }
+    },
+    {
+        "id": 3,
+        "title": "What if?",
+        "description": "El espacio explora lo que sucedería si los principales momentos de las películas del Universo Cinematográfico de Marvel ocurrieran de manera diferente.",
+        "trailer": "DexqOGh_tzQ",
+        "appreciation": "4",
+        "seasons": 1,
+        "age": "2021-08",
+        "director": "Bryan Andrews",
+        "idiom": [
+            "ingles",
+            "español"
+        ],
+        "subtitle": "Latino",
+        "image": "1639449936242.jpeg",
+        "gender": 10,
+        "subGender": "",
+        "price": {
+            "buy": 600,
+            "rental": 350,
+            "discount": null
+        }
+    },
+    {
+        "id": 4,
+        "title": "La casa de papel",
+        "description": "Una banda organizada de ladrones se propone cometer el atraco del siglo en la Fábrica Nacional de Moneda y Timbre. Cinco meses de preparación quedarán reducidos a once días para poder llevar a cabo con éxito el gran golpe.",
+        "trailer": "3y-6iaveY6c",
+        "appreciation": "4",
+        "seasons": 5,
+        "age": "2017-05",
+        "director": "Jesús Colmenar, Miguel Ángel Vivas",
+        "idiom": "español",
+        "subtitle": "Latino",
+        "image": "1639450111991.jpg",
+        "gender": 1,
+        "subGender": "",
+        "price": {
+            "buy": 700,
+            "rental": 350,
+            "discount": null
+        }
+    },
+    {
+        "id": 5,
+        "title": "WandaVision",
+        "description": "Con vidas suburbanas idealizadas, los seres superpoderosos Wanda y Vision comienzan a sospechar que nada es lo que parece.",
+        "trailer": "UuhqbcMNrME",
+        "appreciation": "5",
+        "seasons": 1,
+        "age": "2021-01",
+        "director": "Matt Shakman",
+        "idiom": [
+            "ingles",
+            "español",
+            "otro"
+        ],
+        "subtitle": "Latino",
+        "image": "1639450228326.png",
+        "gender": 3,
+        "subGender": "",
+        "price": {
+            "buy": 800,
+            "rental": 500,
+            "discount": null
+        }
+    }
+]

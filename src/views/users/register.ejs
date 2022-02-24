@@ -1,0 +1,76 @@
+    <%- include('../partials/head') %>
+    
+<body>
+    <main>
+        <div class="logo-container-forms">
+            <a class="logo-forms" href="/">
+                <img src="/img/Blanco.svg" alt="Logo Slow Motion">
+                <p>SLOW MOTION</p>
+            </a>
+        </div>
+        <div class="forms-container">
+            <form action="/users/register" method="post" enctype="multipart/form-data">
+                <div class="form-title title-center-register">
+                    <h2>Crear Cuenta</h2>
+                </div>
+                <div class="form-input-container">
+                    <div class="form-input">
+                        <input type="text" name="name" placeholder="Nombre" value="<%- locals.old && old.name %>">
+                        <% if (locals.errors && errors.name) { %>
+                            <small><%- errors.name.msg %></small>
+                        <% } %>                 
+                    </div>
+                    <div class="form-input">
+                        <input type="text" name="lastName" placeholder="Apellido" value="<%- locals.old && old.lastName %>">
+                        <% if (locals.errors && errors.lastName) { %>
+                            <small><%= errors.lastName.msg %></small>
+                        <% } %>  
+                    </div>
+                    <div class="form-input">
+                        <input type="text" name="userName" placeholder="Nombre de usuario" value="<%- locals.old && old.userName %>">
+                        <% if (locals.errors && errors.userName) { %>
+                            <small><%= errors.userName.msg %></small>
+                        <% } %> 
+                    </div>
+                    <div class="form-input">
+                        <input type="email" name="email" placeholder="Correo Electronico" value="<%- locals.old && old.email %>">
+                        <% if (locals.errors && errors.email) { %>
+                            <small><%= errors.email.msg %></small>
+                        <% } %> 
+                    </div>
+                    <div class="form-input">
+                        <input type="password" name="pass1" placeholder="Contraseña: Alfanumerico">
+                        <% if (locals.errors && errors.pass1) { %>
+                            <small><%= errors.pass1.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="form-input">
+                        <input type="password" name="pass2" placeholder="Repetir Contraseña">
+                        <% if (locals.errors && errors.pass2) { %>
+                            <small><%= errors.pass2.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="form-input">
+                        <input type="file" name="userImage" placeholder="Ingrese un avatar">
+                        <% if (locals.errors && errors.image) { %>
+                            <small><%= errors.image.msg %></small>
+                        <% } %>
+                    </div>
+                    <div>
+                        <label for="terms" style="color: yellow;">Acepta los terminos y condiciones</label>
+                        <input type="checkbox" name="terms" id="terms">
+                        <% if (locals.errors && errors.terms) { %>
+                            <small><%= errors.terms.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="btn-enviar-form">
+                        <input class="send-login" type="submit" value="Registrarse">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <%- include('../partials/footer')  %>
+</body>
+</html>

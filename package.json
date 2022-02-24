@@ -1,0 +1,33 @@
+{
+  "name": "proyecto-formar",
+  "version": "1.0.0",
+  "description": ">Slow Motion ofrece películas y series a aquellos clientes que extrañan el Videoclub de la esquina de nuestra casa. Orientado a estas personas que ven innecesario adquirir una suscripción en sitios que solo les ofrece esa opción, ya que no lo necesitan para mas que ver una pelicula algun que otro fin de semana. Por un precio menor a una suscripcion mensual, pueden adquirir el alquiler o venta de una película o serie.",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matidiaz032/grupo_13_slow_motion_comision_12.git"
+  },
+  "author": "Grupo13-Comision12",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matidiaz032/grupo_13_slow_motion_comision_12/issues"
+  },
+  "homepage": "https://github.com/matidiaz032/grupo_13_slow_motion_comision_12#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.16.1"
+  }
+}

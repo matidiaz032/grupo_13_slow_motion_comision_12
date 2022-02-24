@@ -1,0 +1,307 @@
+.seriesInformation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    padding: 0 1% 0 11%;
+}
+
+.seriesInformation .information-series {
+    width: 100%;
+    padding: 1.3% 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background: linear-gradient(#d8c371, #232323 0%);
+}
+
+.seriesInformation .information-series .series-id {
+    flex-grow: .7;
+}
+
+.seriesInformation .information-series .series-id .idProduct-series {
+    text-align: center;
+    padding: 5% 0;
+    font-family: var(--averia);
+    color: var(--yellow);
+}
+
+.seriesInformation .information-series .titleName-series {
+    flex-grow: 2;
+}
+
+.seriesInformation .information-series .titleName-series .nameProduct-series {
+    text-align: center;
+    padding: 2% 0;
+    font-family: var(--averia);
+    color: var(--yellow);
+}
+
+.seriesInformation .information-series .titleOption-series {
+    flex-grow: .2;
+}
+
+.seriesInformation .information-series .titleOption-series .optionProduct-series {
+    text-align: center;
+    padding: 5% 0;
+    font-family: var(--averia);
+    color: var(--yellow);
+}
+
+.seriesInformation .capsule-series {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.seriesInformation .capsule-series .table-series {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    background: linear-gradient(#232323, #000);
+    align-items: center;
+}
+
+.seriesInformation .capsule-series .table-series .titleSeries-id {
+    width: 0;
+    flex-grow: .7;
+    margin: auto;
+}
+
+.seriesInformation .capsule-series .table-series .titleSeries-id p {
+    width: 2em;
+    text-align: center;
+    padding: 5% 0;
+    font-family: var(--averia);
+    color: var(--yellow);
+}
+
+.seriesInformation .capsule-series .table-series .titleSeries-name {
+    flex-grow: 2;
+}
+
+.seriesInformation .capsule-series .table-series .titleSeries-name p {
+    width: auto;
+    text-align: center;
+    padding: 2% 0;
+    font-family: var(--averia);
+    color: var(--yellow);
+}
+
+.seriesInformation .capsule-series .table-series .optionSeries-product {
+    flex-grow: .2;
+}
+
+.seriesInformation .capsule-series .table-series .optionSeries-product a i {
+    color: var(--yellow);
+    padding: 5px;
+}
+
+.seriesInformation .capsule-series .table-series .element-series-delete form .delete-series {
+    background: transparent;
+    border: none;
+    color: var(--yellow);
+}
+
+.seriesInformation .capsules-series .table-series .element-series-delete form .delete-series i {
+    color: var(--yellow);
+    background: transparent;
+    padding: 5px;
+}
+
+.add-product-series {
+    width: 10em;
+    margin: 2em 5em 1em;
+}
+
+.add-product-series .button-product-series {
+    width: 80%;
+    height: 2em;
+    margin: 0 10% 0 20%;
+    padding: 0 5%;
+}
+
+.add-product-series .button-product-series a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+    background: linear-gradient(45deg, #39A9CB, #d8c371);
+    border-radius: 2em;
+    border: 1px solid var(--black);
+    box-shadow: 1px 1px 8px 0 var(--black);
+}
+
+.add-product-series .button-product-series a i {
+    border: none;
+    color: var(--lightblack);
+}
+
+.add-product-series .button-product-series a p {
+    border: none;
+    color: var(--lightblack);
+    font-family: var(--staatliches);
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px){
+
+    .seriesInformation {
+        padding: 1em 3em;
+    }
+
+    .seriesInformation .information-series {
+        align-items: center;
+        padding: 0;
+    }
+
+    .seriesInformation .information-series .titleName-series {
+        flex-grow: 7;
+    }
+
+    .seriesInformation .information-series .titleName-series .nameProduct-series {
+        padding: 2% 0 2% 10%;
+    }
+
+    .seriesInformation .information-series .titleOption-series {
+        flex-grow: 1;
+    }
+    
+    .seriesInformation .capsule-series .table-series {
+        padding: .5em 0;
+    }
+
+    .seriesInformation .capsule-series .table-series .titleSeries-id {
+        flex-grow: 1;
+    }
+
+    .seriesInformation .capsule-series .table-series .titleSeries-id p {
+        padding: 0 0 0 1.5em;
+    }
+
+    .seriesInformation .capsule-series .table-series .titleSeries-name {
+        flex-grow: 7;
+    }
+
+    .seriesInformation .capsule-series .table-series .titleSeries-name p {
+        padding: 2% 0 2% 10%;
+    }
+
+    .seriesInformation .capsule-series .table-series .optionSeries-product {
+        padding: 2.2%;
+    }
+
+    .seriesInformation .capsule-series .table-series .element-series-delete {
+       padding: 2.2%;
+    }
+
+    .add-product-series {
+        width: 100%;
+        padding: 1em 0;
+        margin: 0;
+    }
+
+    .add-product-series .button-product-series {
+        width: 15em;
+        margin: 0 auto;
+    }
+
+    .add-product-series .button-product-series a i {
+        font-size: 1.2em;
+    }
+
+    .add-product-series .button-product-series a p {
+        font-size: 1.3em;
+    }
+
+}
+@media only screen and (min-width:1024px) and (max-width:1440px) {
+
+    .seriesInformation {
+        padding: 0 5em;
+        margin: 1em auto;
+    }
+
+    .seriesInformation .information-series {
+        justify-content: space-between;
+    }
+
+    .seriesInformation .information-series .series-id {
+        flex-grow: .2;
+        padding: 0 0 0 2%;
+    }
+
+    .seriesInformation .information-series .series-id .idProduct-series {
+        padding: 2% 0;
+    }
+
+    .seriesInformation .information-series .titleName-series {
+        flex-grow: .2;
+        padding: 0 0 0 10%;
+    }
+
+    .seriesInformation .information-series .titleName-series .nameProduct-series {
+        padding: 2% 0;
+    }
+
+    .seriesInformation .information-series .titleOption-series {
+        flex-grow: .2;
+        width: 0;
+        padding: 0 0 0 15%; 
+    }
+
+    .seriesInformation .information-series .titleOption-series .optionProduct-series {
+        padding: 2% 0 0;
+    }
+
+    .seriesInformation .capsule-series .table-series .titleSeries-id {
+        flex-grow: .2;
+    }
+
+    .seriesInformation .capsule-series .table-series .titleSeries-id p {
+        width: 14em;
+        text-align: center;
+    }
+
+    .seriesInformation .capsule-series .table-series .titleSeries-name {
+        flex-grow: 6;
+        width: 100%;
+        padding: 0 0 0 7%;
+    }
+
+    .seriesInformation .capsule-series .table-series .optionSeries-product {
+        flex-grow: .2;
+        width: 4em;
+    }
+
+    .seriesInformation .capsule-series .table-series .element-series-delete {
+        flex-grow: .2;
+        width: 4em;
+    }
+
+    .add-product-series {
+        padding: 0 15% 0 0;
+        margin: 5% auto;
+    }
+
+    .add-product-series .button-product-series {
+        width: 10em;
+    }
+
+    .add-product-series .button-product-series a i {
+        padding: 5%;
+        font-size: 1.5em;
+    }
+
+    .add-product-series .button-product-series a p {
+        padding: 5%;
+        font-size: 1.5em;
+    }
+    
+}

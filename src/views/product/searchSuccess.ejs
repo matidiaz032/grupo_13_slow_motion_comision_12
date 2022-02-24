@@ -1,0 +1,46 @@
+    <%- include('../partials/head') %> 
+
+<body class="indexProducts">
+
+    <!-- Header section -->
+    <%- include('../partials/header') %> 
+
+    <!-- Options section -->
+    <div class="section-cart">
+        <div class="options">
+            <span class="options__list"><a href="#">Estrenos</a></span>
+            <span class="options__list"><a href="#">Historial</a></span>
+            <span class="options__list"><a href="#">Mis compras</a></span>
+        </div>
+    </div>
+    <div class="section-cartDesktop">
+        <div class="options-desktop">
+            <span class="options__list-desktop"><a href="#">Estrenos</a></span>
+            <span class="options__list-desktop"><a href="#">Historial</a></span>
+            <span class="options__list-desktop"><a href="#">Mis compras</a></span>
+            <span class="options__list-desktop"><a href="#">Ayuda</a></span>
+        </div>
+    </div>
+    <!-- grid section movies -->
+    <div class="contain-grid">
+            <div class="contain-list">
+                <div class="movies__section">
+                    <% if (all.length !== 0) { %>
+                        <% all.forEach(element => {  %>
+                            <a href="/products/serialMovie/<%= element.id %>">
+                                <div class="contain-img separation-search">
+                                    <img src="/img/products-images/<%= element.image %>" alt="">
+                                </div>
+                            </a>
+                        <% }) %>
+                    <% } else { %>
+                        <h2 class="no-results">No se encontraron resultados para la búsqueda</h2>
+                    <% } %>
+                </div>
+            </div>
+    </div>
+    <!-- Footer section -->
+    <%- include('../partials/footer')  %>
+    <%- include('../partials/scripts.ejs') %>
+</body>
+</html>

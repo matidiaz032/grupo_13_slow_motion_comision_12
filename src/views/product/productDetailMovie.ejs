@@ -1,0 +1,99 @@
+ <%- include('../partials/head') %> 
+
+<body class="contain-body">
+    
+    <%- include('../partials/header') %>
+
+    <main class="contenido">
+        <div class="contenedor-padre">
+            <div class="image-container">
+                <iframe src="https://www.youtube.com/embed/<%- detailMovie.trailer %>?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="corazon">
+                    <form action='/users/favorites?id=<%- detailMovie.id %>&product=Movie' method="post">
+                        <button type="submit"><i class="fas fa-heart"></i></button>
+                    </form>
+                    <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="contein-options">
+            <div class="barOptions">
+                <nav id="navOpt">
+                    <h3>Generos</h3>
+                    <i class="fas fa-align-justify"></i>
+                </nav>
+                <a href=""><h3>Historial</h3></a>
+                <a href=""><h3>Lista de deseos</h3></a>
+                <a href=""><h3>Estrenos</h3></a>
+                <a href=""><h3>Ofertas</h3></a>
+            </div>
+        </div>
+        <div class="title">
+            <h3><%= detailMovie.title %></h3>
+        </div>
+            <div class="contenedor-box2">
+                <img src="/img/products-images/<%= detailMovie.image%>">
+                <div class="play">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <div class="opcionesPelicula">
+                <p>Descuento: <%= detailMovie.Price.discount%>%</p>
+                <p>Idioma: <% detailMovie.Idioms.forEach(element => { %>
+                    <%= element.name %>
+                <% }) %></p>
+                <p class="espacios">|</p>
+                <p>Subtítulos: <%- detailMovie.subtitle %></p>
+                <p class="espacios">|</p>
+                <p>Calidad: HD</p>
+            </div>
+            <div class="contenedor-estadisticas">
+                <div>
+                    <div class="estrella">
+                    <h5><%= detailMovie.rating%> </h5>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Calificación</p>
+                </div>
+                <p class="espacios">|</p>
+                <div class="estadisticas">
+                    <h5>PG-18</h5>
+                    <p>Clasificación</p>
+                </div>
+                <p class="espacios">|</p>
+                <div class="estadisticas">
+                    <h5><%= detailMovie.duration%></h5>
+                    <p>Duración</p>
+                </div>
+            </div>
+            <div class="resumen-movie">
+                <p><%= detailMovie.description%></p>
+            </div>
+            <div class="container-director">
+                <h5>Director: <%= detailMovie.director%></h5>
+                <h5>Año: <%= detailMovie.age.substr(0,4) %> </h5>
+                <h5>Género: <% detailMovie.Genres.forEach(element => { %>
+                    <%= element.name %>
+                <% }) %></h5>
+            </div>
+            <div class="icons">
+                <form action='/users/favorites?id=<%- detailMovie.id %>&product=Movie' method="post">
+                    <button type="submit"><i class="fas fa-heart"></i>Añadir a favoritos</button>
+                    <a href=""><i class="fas fa-cart-plus"></i> Añadir a carrito</a>
+                </form>
+            </div>
+            <div class="botones">
+                <button type="button" class="compra" id="comprar-serie" onclick="location.href='/products/cart'">COMPRAR</button>
+                <h5 style="color:white">$<%= detailMovie.Price.buy%></h5>
+                <button type="button" class="alquilo" id="alquilo-serie" onclick="location.href='/products/cart'">ALQUILAR</button>
+                <h5 style="color:white">$<%= detailMovie.Price.rental%></h5>
+            </div>
+    </main>
+
+    <%- include('../partials/footer')  %>
+    <%- include('../partials/scripts.ejs') %>
+
+</body>
+
+</html>
+

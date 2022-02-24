@@ -1,0 +1,80 @@
+.user-profile .profile-container {
+    margin-top: 4rem;
+    color: #ffffff;
+    font-family: var(--averia);
+}
+
+.user-profile .profile-container .profile-title {
+    padding: 1rem;
+}
+
+.user-profile .profile-container .container-img-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-profile .profile-container .user-avatar {
+    width: 20%;
+}
+
+.user-profile .profile-container .user-avatar img {
+    border-radius: 50%;
+}
+
+.profile-container .user-name h3 {
+    color: var(--yellow);
+}
+
+.user-profile .profile-container .container-user-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-edit-form {
+    width: 80%;
+}
+
+.user-profile .profile-container .container-user-data .user-edit {
+    margin: 1rem 0;
+}
+
+.forms-container .form-input-container .form-input .label-profile {
+    color: var(--lightblue);
+    font-size: 1.2rem;
+}
+
+.user-profile .profile-container .container-user-data .user-edit input {
+    color: var(--yellow);
+    background-color: var(--lightblue);
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    border: none;
+}
+
+.user-profile .container-user-favorite .user-favorites {
+    display: flex;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.user-profile .container-user-favorite h3 {
+    padding: .5rem 1rem;
+}
+
+.user-profile .container-user-favorite .user-favorites img {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .user-profile .profile-container {
+        margin-top: 7rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .user-profile .profile-container {
+        margin-top: 8rem;
+    }
+}

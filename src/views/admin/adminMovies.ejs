@@ -1,0 +1,55 @@
+<%- include('../partials/head') %>
+
+<body class="body-admin">
+    <!-- Header -->
+    <%- include ('../partials/adminHeader') %>
+    <!-- Logo mobile and tablet -->
+    <%- include ('../partials/logoMobileAdmin') %>
+    
+
+    <!-- Movies section -->
+    <main class="moviesInformation">
+        <div class="flex-information">
+            <div class="title-id">
+                <p class="id-product">Id</p>
+            </div>
+            <div class="title-name">
+                <p class="name-product">Titulo</p>
+            </div>
+            <div class="title-option">
+                <p class="option-product">Opcion</p>
+            </div>
+        </div>
+        <div class="capsule-table">
+            <% movies.forEach(movie => { %>
+                <div class="table-movie">
+                    <div class="title-id">
+                        <p><%- movie.id %></p>
+                    </div>
+                    <div class="title-name">
+                        <p><%- movie.title %></p>
+                    </div>
+                    <div class="option-product">
+                        <a href="/admin/products/movie/<%- movie.id %>/edit"><i class="far fa-edit"></i></a>
+                    </div>
+                    <div class="element-delete">
+                        <form action="/admin/deleteProductMovie/<%- movie.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="delete-movie"><i class="far fa-trash-alt"></i></button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+    
+    
+    <div class="add-product">
+        <div class="button-product">
+            <a href="/admin/form"><i class="fas fa-upload"></i><p>Peliculas</p></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('../partials/adminFooter') %>
+</body>
+</html>
