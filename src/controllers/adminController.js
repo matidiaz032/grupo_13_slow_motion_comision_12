@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { Op } = require('sequelize')
+const { Op, DataTypes } = require('sequelize')
 const { Movie, Serie, Genre, Price, Idiom, Rol , User } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 const deleteImageEdit = (req, element) => {
     if(req.file) {
@@ -36,16 +36,54 @@ let controller = {
             })
         })
     },
-    statistics: (req, res) => {
-        Promise.all([Movie.findAll(), Serie.findAll(), Idiom.findAll()])
-        .then(data => {
+    statistics: async (req, res) => {
+        let spainAdmin = Movie.findAll({
+            // include : {
+                // model: Idiom,
+                where : {
+                    Idiom: "español" 
+                }
+            //}
+        })
+        let seriesAdmin = Serie.findAll({
+            include : {
+                model: Idiom
+            }
+        })
+        // ([Movie.findAll({
+        //     include: {
+        //         model: Idiom
+        //     }
+        // }), 
+        // Serie.findAll({
+        //     include: {
+        //         model: Idiom
+        //     }
+        // })])
+        // let moviesAdmin = Movie.findAll({
+        //     include: {
+        //         model: Idiom
+        //     }
+        // })
+        // let seriesAdmin = Serie.findAll({
+        //     include: {
+        //         model: Idiom
+        //     }
+        // })
+        // let productsAdmin = [moviesAdmin, seriesAdmin]
+        // let spanishLanguaje = productsAdmin.filter(elem => elem.idiom === "español")
+        // let englishLanguaje = productsAdmin.filter(elem => elem.idiom === "ingles")
+        // let idiom = [spanishLanguaje, englishLanguaje]
+            // res.send(moviesAdmin)
             res.render('./admin/adminStatistics', {
                 title: 'Admin : Estadisticas',
-                movies: data[0],
-                series: data[1],
-                idiom: data[2]
+                movies: spainAdmin,
+                series: seriesAdmin,
+                // idiom,
+                //movies: data
+                //series: data[1],
+                // idiom: data[2]
             })
-        })
     },
     motionUsers: (req, res) => {
             User.findAll({

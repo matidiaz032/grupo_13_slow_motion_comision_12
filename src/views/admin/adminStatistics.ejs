@@ -16,13 +16,13 @@
                             <div class="dashboard-info-movies"></div>
                             <div class="information">
                                 <span class="info__movies amount">Total de peliculas : <%- movies.length %></span>
-                                <span class="info__movies spain">Peliculas en español : <% idiom.forEach(element => { %>
-                                    <% if (element == idiom && idiom === 3) { %>
-                                        <%- idiom %> 
-                                    <% } %>
-                                <% }) %> </span>
-                                    <span class="info__movies english">Peliculas en ingles :</span>
-                                <span class="info__movies languages">Peliculas en otro idioma :</span>
+                                <% movies.forEach(movie => { %>
+                                    <% movie.Idioms.forEach(idiom => { %>
+                                        <% if (idiom.name === spainAdmin) { %>
+                                            <span class="info__movies bought">Total de peliculas : <%- movies.Idioms.length %></span> 
+                                        <% } %>
+                                    <% }) %>
+                                <% }) %>
                             </div>
                         </div>
                     </div>
