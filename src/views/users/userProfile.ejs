@@ -49,7 +49,6 @@
                                 <option value="masculino" <%= user.genre == "masculino" && 'selected' %>>Masculino</option>
                                 <option value="femenino" <%= user.genre == "femenino" && 'selected' %>>Femenino</option>
                                 <option value="otro" <%= user.genre == "otro" && 'selected' %>>Otro</option>
-                                <option value="abcd" <%= user.genre == "abcd" && 'selected' %>>abcd</option>
                             </select>
                             <% if (locals.errors && errors.genre) { %>
                                 <small><%- errors.genre.msg %></small>
