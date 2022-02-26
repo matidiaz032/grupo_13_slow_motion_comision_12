@@ -9,24 +9,27 @@
             </a>
         </div>
         <div class="forms-container">
-            <form action="/users/login" method="POST">
+            <form action="/users/login" method="POST" id="form">
                 <div class="form-title">
                     <h2>Inicia Sesión</h2>
                 </div>
                 <div class="form-input-container">
                     <div class="form-input">
-                        <input type="email" name="email" placeholder="Correo Electronico">
+                        <input type="email" name="email" id="email" placeholder="Correo Electronico">
+                        <small class="text-danger" id="emailErrors"></small>
                         <% if (locals.errors && errors.email) { %>
-                            <small class="text-danger"> <%= errors.email.msg %>  </small>
+                            <small class="text-danger"><%= errors.email.msg %></small>
                         <% } %>                   
                     </div>
                     <div class="form-input">
-                        <input type="password" name="password" placeholder="Contraseña">
+                        <input type="password" name="password" id="pass" placeholder="Contraseña">
+                        <small class="text-danger" id="passErrors"></small>
                         <% if (locals.errors && errors.password) { %>
                             <small class="text-danger"> <%= errors.password.msg %></small>
                         <% } %>
                     </div>
                     <div class="form-input">
+                        <small class="text-danger" id="submitErrors"></small>
                         <% if (locals.errors && errors.custom) { %>
                             <small class="text-danger"> <%= errors.custom.msg %></small>
                         <% } %>
@@ -45,5 +48,6 @@
         </div>
     </main>
     <%- include('../partials/footer')  %>
+    <script src="../js/login.js"></script>
 </body>
 </html>

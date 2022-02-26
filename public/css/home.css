@@ -64,8 +64,14 @@
 
 .index .options .contain-options .genresBurguer{
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: center;
+}
+
+.index .options .contain-options .genresBurguer h3{
+    width: 5rem;
+    text-align: center;
 }
 
 .index .options .contain-options .genresBurguer,
@@ -79,15 +85,21 @@
     width: 80%;
 }
 
-.index .options .contain-options .contain-lists .genres-menu{
+.index .options .contain-options .contain-titles .genres-menu{
     display: none;
+    position: absolute;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
+    width: 20rem;
+    height: 11.3rem;
     padding: 10px;
+    z-index: 2;
+    top: 1.3rem;
+    left: -2rem;
+    border-radius: 0 0 15px 15px;
 }
-.index .options .contain-options .contain-lists .genres-menu li{
-    width: 13rem;
+.index .options .contain-options .contain-titles .genres-menu li{
+    width: 9rem;
     margin: 3px 0;
 }
 

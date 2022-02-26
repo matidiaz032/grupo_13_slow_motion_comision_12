@@ -12,17 +12,22 @@
                     <div class="iconGenre">
                         <i class="fas fa-align-justify" ></i>
                     </div>
+                    <ul class="genres-menu">
+                        <% genres.forEach(elem => { %>
+                            <li class="list-item"><a href="/products/movies"><%- elem.name %></a></li>
+                        <% } ) %>
+                    </ul>
                 </nav>
                 <a href="" class="estrenos"><h3>Estrenos</h3></a>
                 <a href="" class="ofers"><h3>Ofertas</h3></a>
             </div>
-            <div class="contain-lists">
+            <!-- <div class="contain-lists">
                 <ul class="genres-menu">
                     <% genres.forEach(elem => { %>
                         <li class="list-item"><a href="/products/movies"><%- elem.name %></a></li>
                     <% } ) %>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </section>
     </div>

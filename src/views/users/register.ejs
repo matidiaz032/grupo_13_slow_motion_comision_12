@@ -9,45 +9,51 @@
             </a>
         </div>
         <div class="forms-container">
-            <form action="/users/register" method="post" enctype="multipart/form-data">
+            <form action="/users/register" method="post" enctype="multipart/form-data" id="form">
                 <div class="form-title title-center-register">
                     <h2>Crear Cuenta</h2>
                 </div>
                 <div class="form-input-container">
                     <div class="form-input">
                         <input type="text" name="name" id="name" placeholder="Nombre" value="<%- locals.old && old.name %>">
+                        <small id="nameErrors"></small>
                         <% if (locals.errors && errors.name) { %>
-                            <small id="nameErrors"><%- errors.name.msg %></small>
+                            <small><%- errors.name.msg %></small>
                         <% } %>                 
                     </div>
                     <div class="form-input">
                         <input type="text" name="lastName" id="lastName" placeholder="Apellido" value="<%- locals.old && old.lastName %>">
+                        <small id="lastNameErrors"></small>
                         <% if (locals.errors && errors.lastName) { %>
-                            <small id="lastNameErrors"><%= errors.lastName.msg %></small>
+                            <small><%= errors.lastName.msg %></small>
                         <% } %>  
                     </div>
                     <div class="form-input">
                         <input type="text" name="userName" id="userName" placeholder="Nombre de usuario" value="<%- locals.old && old.userName %>">
+                        <small id="userNameErrors"></small>
                         <% if (locals.errors && errors.userName) { %>
-                            <small id="userNameErrors"><%= errors.userName.msg %></small>
+                            <small><%= errors.userName.msg %></small>
                         <% } %> 
                     </div>
                     <div class="form-input">
                         <input type="email" name="email" id="email" placeholder="Correo Electronico" value="<%- locals.old && old.email %>">
+                        <small id="emailErrors"></small>
                         <% if (locals.errors && errors.email) { %>
-                            <small id="emailErrors"><%= errors.email.msg %></small>
+                            <small><%= errors.email.msg %></small>
                         <% } %> 
                     </div>
                     <div class="form-input">
                         <input type="password" name="pass1" id="pass1" placeholder="Contraseña: Alfanumerico">
+                        <small id="pass1Errors"></small>
                         <% if (locals.errors && errors.pass1) { %>
-                            <small id="pass1Errors"><%= errors.pass1.msg %></small>
+                            <small><%= errors.pass1.msg %></small>
                         <% } %>
                     </div>
                     <div class="form-input">
                         <input type="password" name="pass2" id="pass2" placeholder="Repetir Contraseña">
+                        <small id="pass2Errors"></small>
                         <% if (locals.errors && errors.pass2) { %>
-                            <small id="pass2Errors"><%= errors.pass2.msg %></small>
+                            <small><%= errors.pass2.msg %></small>
                         <% } %>
                     </div>
                     <div class="form-input">
@@ -56,11 +62,13 @@
                     <div class="checkbox">
                         <label for="terms" style="color: yellow;">Acepta los terminos y condiciones</label>
                         <input type="checkbox" name="terms" id="terms">
+                        <small id="termsErrors"></small>
                         <% if (locals.errors && errors.terms) { %>
-                            <small id="termsErrors"><%= errors.terms.msg %></small>
+                            <small><%= errors.terms.msg %></small>
                         <% } %>
                     </div>
                     <div class="btn-enviar-form">
+                        <small id="submitErrors"></small>
                         <input class="send-login" type="submit" value="Registrarse">
                     </div>
                 </div>

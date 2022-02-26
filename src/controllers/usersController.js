@@ -38,7 +38,7 @@ let controller = {
                 }
     
                 if (req.body.recordarme) {
-                    const TIME_IN_MILISECONDS = 600000
+                    const TIME_IN_MILISECONDS = 6000000
                     res.cookie('userSlowMotion', req.session.user, {
                         expires: new Date(Date.now() + TIME_IN_MILISECONDS),
                         httpOnly: true,
