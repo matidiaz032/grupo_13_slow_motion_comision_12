@@ -50,6 +50,11 @@ User.belongsToMany(Movie, {through: 'movieFavorites', timestamps: false})
 Serie.belongsToMany(User, {through: 'serieFavorites', timestamps: false})
 User.belongsToMany(Serie, {through: 'serieFavorites', timestamps: false})
 
+Movie.belongsToMany(User, {through: 'movieOrders', timestamps: false})
+User.belongsToMany(Movie, {through: 'movieOrders', timestamps: false})
+Serie.belongsToMany(User, {through: 'serieOrders', timestamps: false})
+User.belongsToMany(Serie, {through: 'serieOrders', timestamps: false})
+
 
 Card.belongsTo(User)
 User.hasMany(Card)
@@ -58,7 +63,7 @@ User.hasMany(Card)
 User.belongsTo(Rol)
 Rol.hasMany(User)
 
-/* Aqui terminan las coneccion(asociaciones) */
+/* Aqui terminan las conecciones(asociaciones) */
 
 
 module.exports = { 

@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
--- Host: localhost    Database: slow_motion_DB
+-- Host: localhost    Database: slow_motion_db
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.4.22-MariaDB
 
@@ -24,10 +24,10 @@ DROP TABLE IF EXISTS `cards`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cards` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `bank` tinytext DEFAULT NULL,
-  `type` tinytext DEFAULT NULL,
-  `number` int(11) DEFAULT NULL,
-  `expiration_date` date DEFAULT NULL,
+  `bank` tinytext NOT NULL,
+  `type` tinytext NOT NULL,
+  `number` int(11) NOT NULL,
+  `expiration_date` date NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   `UserId` int(11) DEFAULT NULL,
@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS `genres`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `genres` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` tinytext DEFAULT NULL,
+  `name` tinytext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -79,7 +79,7 @@ DROP TABLE IF EXISTS `idioms`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `idioms` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` tinytext DEFAULT NULL,
+  `name` tinytext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -175,6 +175,32 @@ INSERT INTO `movieidiom` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),
 UNLOCK TABLES;
 
 --
+-- Table structure for table `movieorders`
+--
+
+DROP TABLE IF EXISTS `movieorders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `movieorders` (
+  `MovieId` int(11) NOT NULL,
+  `UserId` int(11) NOT NULL,
+  PRIMARY KEY (`MovieId`,`UserId`),
+  KEY `UserId` (`UserId`),
+  CONSTRAINT `movieorders_ibfk_1` FOREIGN KEY (`MovieId`) REFERENCES `movies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `movieorders_ibfk_2` FOREIGN KEY (`UserId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `movieorders`
+--
+
+LOCK TABLES `movieorders` WRITE;
+/*!40000 ALTER TABLE `movieorders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `movieorders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `movies`
 --
 
@@ -183,15 +209,15 @@ DROP TABLE IF EXISTS `movies`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) DEFAULT NULL,
-  `description` varchar(500) DEFAULT NULL,
-  `trailer` varchar(300) DEFAULT NULL,
-  `duration` int(11) DEFAULT NULL,
-  `rating` decimal(3,1) DEFAULT NULL,
-  `age` date DEFAULT NULL,
-  `director` tinytext DEFAULT NULL,
+  `title` varchar(100) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `trailer` varchar(300) NOT NULL,
+  `duration` int(11) NOT NULL,
+  `rating` decimal(3,1) NOT NULL,
+  `age` date NOT NULL,
+  `director` tinytext NOT NULL,
   `subtitle` tinytext DEFAULT 'No',
-  `image` varchar(100) DEFAULT NULL,
+  `image` varchar(100) NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   `PriceId` int(11) DEFAULT NULL,
@@ -221,9 +247,9 @@ DROP TABLE IF EXISTS `prices`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prices` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `buy` int(11) DEFAULT NULL,
-  `rental` int(11) DEFAULT NULL,
-  `discount` int(11) DEFAULT NULL,
+  `buy` int(11) NOT NULL,
+  `rental` int(11) NOT NULL,
+  `discount` int(11) DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -343,6 +369,32 @@ INSERT INTO `serieidiom` VALUES (1,1),(1,2),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),
 UNLOCK TABLES;
 
 --
+-- Table structure for table `serieorders`
+--
+
+DROP TABLE IF EXISTS `serieorders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `serieorders` (
+  `SerieId` int(11) NOT NULL,
+  `UserId` int(11) NOT NULL,
+  PRIMARY KEY (`SerieId`,`UserId`),
+  KEY `UserId` (`UserId`),
+  CONSTRAINT `serieorders_ibfk_1` FOREIGN KEY (`SerieId`) REFERENCES `series` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `serieorders_ibfk_2` FOREIGN KEY (`UserId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `serieorders`
+--
+
+LOCK TABLES `serieorders` WRITE;
+/*!40000 ALTER TABLE `serieorders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `serieorders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `series`
 --
 
@@ -351,15 +403,15 @@ DROP TABLE IF EXISTS `series`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `series` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) DEFAULT NULL,
-  `description` varchar(500) DEFAULT NULL,
-  `trailer` varchar(300) DEFAULT NULL,
-  `seasons` int(11) DEFAULT NULL,
-  `rating` decimal(3,1) unsigned DEFAULT NULL,
-  `age` date DEFAULT NULL,
-  `director` tinytext DEFAULT NULL,
-  `subtitle` tinytext DEFAULT NULL,
-  `image` varchar(100) DEFAULT NULL,
+  `title` varchar(100) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `trailer` varchar(300) NOT NULL,
+  `seasons` int(11) NOT NULL,
+  `rating` decimal(3,1) unsigned NOT NULL,
+  `age` date NOT NULL,
+  `director` tinytext NOT NULL,
+  `subtitle` tinytext NOT NULL,
+  `image` varchar(100) NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   `PriceId` int(11) DEFAULT NULL,
@@ -388,11 +440,11 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `first_name` tinytext DEFAULT NULL,
-  `last_name` tinytext DEFAULT NULL,
-  `user_name` varchar(20) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `password` varchar(100) DEFAULT NULL,
+  `first_name` tinytext NOT NULL,
+  `last_name` tinytext NOT NULL,
+  `user_name` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `avatar` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `date_of_birth` datetime DEFAULT NULL,
@@ -422,7 +474,7 @@ INSERT INTO `users` VALUES (1,'Angel Guillermo','Montaña','Angel','angelguiller
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'slow_motion_DB'
+-- Dumping routines for database 'slow_motion_db'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -434,4 +486,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-08 16:45:16
+-- Dump completed on 2022-02-25 23:21:54
