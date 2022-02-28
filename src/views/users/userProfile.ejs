@@ -23,11 +23,12 @@
                 <p>********</p>
             </div>
             <div class="user-edit-form forms-container">
-                <form action="/users/profile" method="post">
+                <form action="/users/profile" id="form" method="post">
 
                     <div class="form-input-container">
                         <div class="form-input">
-                            <input type="text" name="phone" placeholder="Teléfono" value="<%= user.phone %>">
+                            <input type="text" name="phone" id="phone" placeholder="Teléfono" value="<%= user.phone %>">
+                            <small class="text-danger" id="phoneErrors"></small>
                             <% if (locals.errors && errors.phone) { %>
                                 <small><%- errors.phone.msg %></small>
                             <% } %>
@@ -36,7 +37,8 @@
                     <div class="form-input-container">
                         <div class="form-input">
                             <label for="dateOfBirth" class="label-profile">Fecha de nacimiento</label>
-                            <input type="date" name="dateOfBirth" value="<%= user.date_of_birth %>">
+                            <input type="date" id="date" name="dateOfBirth" value="<%= finalDate %>">
+                            <small class="text-danger" id="dateErrors"></small>
                             <% if (locals.errors && errors.dateOfBirth) { %>
                                 <small><%- errors.dateOfBirth.msg %></small>
                             <% } %>
@@ -89,6 +91,7 @@
                     </div>
                     <div class="user-edit">
                         <input type="submit" value="Editar perfil">
+                        <small class="text-danger" id="submitErrors"></small>
                     </div>
                 </form>
             </div>
@@ -118,4 +121,5 @@
     </div>
 
     <%- include('../partials/footer')  %>
+    <script src="../js/profile.js"></script>
 </body>

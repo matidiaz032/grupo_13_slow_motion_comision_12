@@ -94,11 +94,15 @@ let controller = {
     profile: async (req, res) => {
         let userSession = req.session.user;
         let userFind = await User.findByPk(userSession.id);
+
+        /* conversión del formato de fecha para pasarle al value */
+        const finalDate = new Date(userFind.date_of_birth).toISOString().slice(0,10);
         
         res.render('users/userProfile', {
             title: 'User Profile',
             session: req.session,
-            user: userFind
+            user: userFind,
+            finalDate
         })
     },
     optionalProfile: async (req, res) => {

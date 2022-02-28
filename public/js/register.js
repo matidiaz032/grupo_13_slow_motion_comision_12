@@ -72,7 +72,7 @@ window.addEventListener('load', function() {
     $userName.addEventListener('blur', function(){
         switch (true) {
             case !$userName.value.trim():
-                $userNameErrors.innerHTML = 'El campo apellido es obligatorio'
+                $userNameErrors.innerHTML = 'El nombre de usuario es obligatorio'
                 $userName.style.color = 'red'
                 validationErrors = true
                 break;
@@ -121,7 +121,7 @@ window.addEventListener('load', function() {
                 validationErrors = true
                 break;
             case !regExPass.test($pass1.value):
-                $pass1Errors.innerHTML = 'No es una contraseña válida'
+                $pass1Errors.innerHTML = 'La contraseña debe ser mayor a 6 caracteres y debe contener letras y numeros'
                 $pass1.style.color = 'red'
                 validationErrors = true
                 break;
