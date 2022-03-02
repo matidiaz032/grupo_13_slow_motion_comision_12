@@ -20,6 +20,10 @@ window.addEventListener('load', function() {
     let $genre = $('#genre');
     let $genreErrors = $('#genreErrors');
 
+    let $address = $('#address');
+    let $addressErrors = $('#addressErrors');
+    let regExAddress = /^\w+\s+\d+$/gm
+
     let validationErrors = false;
 
     $phone.addEventListener('blur', function(){
@@ -93,6 +97,23 @@ window.addEventListener('load', function() {
                 $genreErrors.innerHTML = 'Debe seleccionar un género del listado';
                 $genre.style.color = 'red';
                 validationErrors = true;
+                break;
+        }
+    })
+
+    $address.addEventListener('blur', function(){
+        switch (true) {
+            case !regExAddress.test($address.value):
+                $addressErrors.innerHTML = 'La direccion debe contener calle y numero';
+                $address.style.color = 'red';
+                validationErrors = true;
+                break;
+            default:
+                $addressErrors.innerHTML = '';
+                $address.style.color = '#2940D3';
+                $address.style.backgroundColor = '#d8c371';
+                $address.style.border = 'none';
+                validationErrors = false;
                 break;
         }
     })
