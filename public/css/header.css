@@ -13,7 +13,7 @@
     border-bottom-right-radius: 0.5rem;
     justify-content: space-between;
     box-shadow: 0px -13px 15px 9px rgba(57,169,203,1);
-    z-index: 2;
+    z-index: 9999;
 }
 
 .conteinHeader header .logo{

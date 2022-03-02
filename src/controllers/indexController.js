@@ -1,4 +1,4 @@
-const { Movie, Serie, Price } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
+const { Movie, Serie, Price, Genre } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 
 let controller = {
     index: async (req, res) => {
@@ -15,6 +15,7 @@ let controller = {
                 },
                 limit: 8
             })
+            let genres = await Genre.findAll()
             let allMovieSerie = [...allMovies, ...allSeries]
             let popular = allMovieSerie.filter(elem => elem.rating > 7)
             res.render('index', {
@@ -22,6 +23,7 @@ let controller = {
                 movies3: allMovies,
                 series3: allSeries,
                 popular,
+                genres,
                 ofers: allMovieSerie,
                 session: req.session
             })

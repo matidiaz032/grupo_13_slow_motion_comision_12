@@ -1,16 +1,6 @@
 const fs = require("fs");
 const { Op, DataTypes } = require('sequelize')
 const { Movie, Serie, Genre, Price, Idiom, Rol , User } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
-const deleteImageEdit = (req, element) => {
-    if(req.file) {
-        if(element.image !== 'default.png') {
-            fs.unlinkSync(`./public/img/products-images/${element.image}`);
-            return req.file.filename
-        }
-        return req.file.filename
-    }
-    return element.image
-}
 
 let controller = {
     index: (req, res) => {
@@ -331,6 +321,17 @@ let controller = {
             res.send('No se pudo borrar la pelicula')
         }
     },
+}
+
+const deleteImageEdit = (req, element) => {
+    if(req.file) {
+        if(element.image !== 'default.png') {
+            fs.unlinkSync(`./public/img/products-images/${element.image}`);
+            return req.file.filename
+        }
+        return req.file.filename
+    }
+    return element.image
 }
 
 module.exports = controller

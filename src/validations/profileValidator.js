@@ -10,22 +10,23 @@ module.exports = [
     .isDate()
     .withMessage('Debe ingresar una fecha válida'),
 
-    body('genre').custom(value => value !== 'masculino' || value !== 'femenino' || value !== 'otro' ? false : true)
-    .withMessage('Debe elegir un sexo válido'),
+    check('genre')
+    .isIn(['masculino', 'femenino', 'otro'])
+    .withMessage('Debe seleccionar un dato del listado'),
 
     check('address')
-    .isAlphanumeric()
+    .isString()
     .withMessage('Formato de dirección invalido'),
 
     check('country')
-    .isAlpha()
+    .isString()
     .withMessage('Debe elegir un país existente'),
 
     check('province')
-    .isAlpha()
+    .isString()
     .withMessage('Debe elegir una provincia existente'),
 
     check('city')
-    .isAlpha()
+    .isString()
     .withMessage('Debe elegir una ciudad existente')
 ]

@@ -1,4 +1,4 @@
-const { check, body } = require('express-validator');
+const { check, body} = require('express-validator');
 const { User } = require('../database/models/index.js');
 
 
@@ -35,13 +35,13 @@ module.exports = [
     check('pass1')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña')
-    .isAlphanumeric()
-    .withMessage('La contraseña debe ser alfanumerica (A-Z y 0-9)')
     .isLength({
         min: 6,
         max: 16
     })
-    .withMessage('La contraseña debe tener entre 6 y 16 caracteres'),
+    .withMessage('La contraseña debe tener entre 6 y 16 caracteres')
+    .isAlphanumeric()
+    .withMessage('La contraseña debe ser alfanumerica'),
 
     body('pass2').custom((value, {req}) => value !== req.body.pass1 ? false : true)
     .withMessage('Las contraseñas no coinciden'),

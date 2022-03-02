@@ -3,17 +3,6 @@ const fs = require("fs");
 const { validationResult } = require('express-validator')
 const { User, Rol, Movie, Serie } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 
-const deleteImageEdit = (req, element) => {
-    if(req.file) {
-        if(element.image !== 'default-avatar.jpg') {
-            fs.unlinkSync(`./public/img/users-images/${element.image}`);
-            return req.file.filename
-        }
-        return req.file.filename
-    }
-    return element.image
-}
-
 let controller = {
     login: (req, res) => {
         res.render('./users/login', {
@@ -49,7 +38,7 @@ let controller = {
                 }
     
                 if (req.body.recordarme) {
-                    const TIME_IN_MILISECONDS = 600000
+                    const TIME_IN_MILISECONDS = 6000000
                     res.cookie('userSlowMotion', req.session.user, {
                         expires: new Date(Date.now() + TIME_IN_MILISECONDS),
                         httpOnly: true,
@@ -93,6 +82,7 @@ let controller = {
             }
         } else {
             let old = req.body;
+            deleteImageUser(req)
             res.render('./users/register', {
                 title: 'Register',
                 errors: errors.mapped(),
@@ -104,11 +94,15 @@ let controller = {
     profile: async (req, res) => {
         let userSession = req.session.user;
         let userFind = await User.findByPk(userSession.id);
+
+        /* conversión del formato de fecha para pasarle al value */
+        const finalDate = new Date(userFind.date_of_birth).toISOString().slice(0,10);
         
         res.render('users/userProfile', {
             title: 'User Profile',
             session: req.session,
-            user: userFind
+            user: userFind,
+            finalDate
         })
     },
     optionalProfile: async (req, res) => {
@@ -212,6 +206,13 @@ let controller = {
             }
         }
     },
+}
+
+const deleteImageUser = (req) => {
+    if(req.file) {
+        fs.unlinkSync(`./public/img/users-images/${req.file.filename}`);
+    }
+    return true
 }
 
 module.exports = controller;

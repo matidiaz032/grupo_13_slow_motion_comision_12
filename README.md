@@ -34,19 +34,20 @@ ___
  
 ## Enlace a la retrospectiva
 
--[Sprint 1](./feedback-weekly.md/retro1Sprint.md)
+[Sprint 1](./feedback-weekly.md/retroSprint1.md)
 
 
--[Sprint 1](./feedback-weekly.md/retro2Sprint2.md)
-
-[Weekly 2](./feedback-weekly.md/weekly2Sprint.md)
+[Sprint 2](./feedback-weekly.md/retroSprint2.md)
 
 
--[Sprint 3](./feedback-weekly.md/retro3Sprint.md)
+[Retro Sprint 3](./feedback-weekly.md/retroSprint3.md)
+[Weekly 3](./feedback-weekly.md/weeklySprint3.md)
 
-[Weekly 4](./feedback-weekly.md/weekly3Sprint.md)
+[Sprint 4](./feedback-weekly.md/retroSprint4.md)
+[Weekly 4](./feedback-weekly.md/weeklySprint4.md)
 
+[Sprint 5](./feedback-weekly.md/retroSprint5.md)
+[Weekly 5](./feedback-weekly.md/weeklySprint5.md)
 
-
-
-
+[Sprint 6](./feedback-weekly.md/retroSprint6.md)
+[Weekly 6](./feedback-weekly.md/weeklySprint6.md)
