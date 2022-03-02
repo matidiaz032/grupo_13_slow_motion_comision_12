@@ -34,5 +34,22 @@
     .flex-copyright {
         padding: 0;
     }
+
 }
-/* @media only screen and (min-width:1024px) and (max-width:1440px){} */
+
+@media only screen and (min-width:1024px) and (max-width:1440px){
+
+    .block-footer {
+        width: 100%;
+    }
+
+    .flex-copyright {
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .flex-copyright p {
+        padding: 0 1% 0 0;
+    }
+
+}

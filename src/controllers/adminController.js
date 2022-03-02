@@ -36,66 +36,35 @@ let controller = {
             })
         })
     },
-    statistics: async (req, res) => {
-        let spainAdmin = Movie.findAll({
-            // include : {
-                // model: Idiom,
-                where : {
-                    Idiom: "español" 
-                }
-            //}
-        })
-        let seriesAdmin = Serie.findAll({
-            include : {
-                model: Idiom
-            }
-        })
-        // ([Movie.findAll({
-        //     include: {
-        //         model: Idiom
-        //     }
-        // }), 
-        // Serie.findAll({
-        //     include: {
-        //         model: Idiom
-        //     }
-        // })])
-        // let moviesAdmin = Movie.findAll({
-        //     include: {
-        //         model: Idiom
-        //     }
+    statistics: (req, res) => {
+        let idioms = Idiom.findAll()
+        // Idiom.findAll({
+        //     include : [{association: 'Movie'}]
         // })
-        // let seriesAdmin = Serie.findAll({
-        //     include: {
-        //         model: Idiom
-        //     }
-        // })
-        // let productsAdmin = [moviesAdmin, seriesAdmin]
-        // let spanishLanguaje = productsAdmin.filter(elem => elem.idiom === "español")
-        // let englishLanguaje = productsAdmin.filter(elem => elem.idiom === "ingles")
-        // let idiom = [spanishLanguaje, englishLanguaje]
-            // res.send(moviesAdmin)
+        let movies = Movie.findByPk(req.params.id,{
+            include : [{association : 'Idiom'}]
+        })
+        .then(data =>{
             res.render('./admin/adminStatistics', {
                 title: 'Admin : Estadisticas',
-                movies: spainAdmin,
-                series: seriesAdmin,
+                idioms: data
+                // movies: spainAdmin,
+                // series: seriesAdmin,
                 // idiom,
                 //movies: data
                 //series: data[1],
                 // idiom: data[2]
             })
+        })
     },
     motionUsers: (req, res) => {
-            User.findAll({
-                include: {
-                model: Rol
-                }
-                })
-            .then(data => {
-                res.render('./admin/motionUsers', {
-                    title: 'Admin - Page : Users',
-                    users: data,
-                    rol: Rol
+        User.findAll({
+            include : [{association: 'Rol'}]
+        })
+        .then(users =>{
+            res.render('./admin/motionUsers', {
+                title: 'Admin - Page : Users',
+                users,
             })
         })
     },

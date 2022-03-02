@@ -33,8 +33,8 @@ Price.hasMany(Serie)
 Serie.belongsTo(Price)
 
 
-Idiom.belongsToMany(Movie, {through: 'movieIdiom', association: 'idiomMovie', timestamps: false})
-Movie.belongsToMany(Idiom, {through: 'movieIdiom', association: 'idiomMovie', timestamps: false})
+Idiom.belongsToMany(Movie, {through: 'movieIdiom', timestamps: false})
+Movie.belongsToMany(Idiom, {through: 'movieIdiom', timestamps: false})
 Idiom.belongsToMany(Serie, {through: 'serieIdiom', timestamps: false})
 Serie.belongsToMany(Idiom, {through: 'serieIdiom', timestamps: false})
 
@@ -55,8 +55,8 @@ Card.belongsTo(User)
 User.hasMany(Card)
 
 
-User.belongsTo(Rol)
-Rol.hasMany(User)
+User.belongsTo(Rol)//, {through: 'userRol', association: 'rolUser', timestamps: false})
+Rol.hasMany(User)//, {through: 'userRol', association: 'rolUser', timestamps: false})
 
 /* Aqui terminan las coneccion(asociaciones) */
 

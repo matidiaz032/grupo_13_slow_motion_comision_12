@@ -12,4 +12,11 @@ module.exports = (sequelize) => {
             sequelize: sequelize,
             modelName: 'rol'
       })
+      Rol.associate = function(models){
+            Rol.hasMany(models.User, {
+                  as: 'Users',
+                  foreingnKey : 'RolId'
+            })
+            return Rol
+      }
 }

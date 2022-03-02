@@ -1,4 +1,4 @@
- .form__files-desktop {
+.form__files-desktop {
     display: none;
 }
 
@@ -38,18 +38,18 @@
 
     .form__files-desktop {
         display: block;
-        width: 97%;
-        height: 100%;
+        width: 100%;
+        padding: 0 1em;
+        margin: 0 0 3em;
     }
 
     .form__files-desktop .form-caption {
-        padding: 0 0 0 70px;
+        width: 100%;
     }
 
     .form__files-desktop .form-caption .upload-files {
         background: linear-gradient(45deg, #000, #232323);
-        border-radius: 25px;
-        width: 500px;
+        border-radius: 10%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -57,41 +57,236 @@
         justify-content: space-around;
         align-items: flex-start;
         box-shadow: 1px 1px 8px 0 var(--black);
-        margin: 0 auto;
+        margin: 0 1em;
         padding: 1rem 0;
         font-family: var(--averia);
     }
 
     .form__files-desktop .form-caption .upload-files .contain__date {
-        width: 400px;
+        width: 70%;
         color: var(--yellow);
-    }
-
-    .form__files-desktop .form-caption .upload-files .contain__date label {
-        color: var(--yellow);
-        margin: 0;
-        padding: 0;
+        padding: .5em;
     }
 
     .form__files-desktop .form-caption .upload-files .contain__date .input {
+        width: 100%;
         background: linear-gradient(45deg, #000, #232323);
         font-family: var(--averia);
         color: var(--yellow);
         border: none;
         border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
     }
 
-    .form__files-desktop .form-caption .upload-files .contain__date .input:first-child {
-        width: 400px;
-        padding: 6px 15px;
+    .form__files-desktop > .form-caption > .upload-files > .contain__date:first-child {
+        padding: .5em;
+    }
+
+    .form__files-desktop .form-caption .upload-files .contain__date .up {
+        padding: 2%;
+    }
+
+    .form__files-desktop .form-caption .upload-files .contain__date .select-input {
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 2% 3%;
+        text-align: center;
+    }
+
+    .form__files-desktop > .form-caption > .upload-files > .contain__date:nth-child(2) {
+        width: 35%;
+      }
+
+    .form__files-desktop > .form-caption > .upload-files > .contain__date:nth-child(3) {
+        width: 70%;
+    }
+
+    .form__files-desktop > .form-caption > .upload-files > .contain__date:nth-child(4) {
+        display: none;
+    }
+
+    .form__files-desktop .form-caption .upload-files .flex__organized {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .form__files-desktop .form-caption .upload-files .flex__organized .contain__date-organized {
+        width: 70%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktop > .form-caption > .upload-files > .flex__organized > .contain__date-organized:last-child {
+        padding: 0 .5em;
+    }
+
+    .form__files-desktop .form-caption .upload-files .flex__organized .contain__date-organized .input__organized {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktop > .form-caption > .upload-files > .flex__organized > .contain__date-organized:last-child > .input__organized:last-child {
+        padding: 4%;
+    }
+
+    .form__files-desktop .form-caption .upload-files .flex__organized > .contain__info-flex {
+        display: flex;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktop .form-caption .upload-files .flex__organized > .contain__info-flex .title-genre {
+        margin: .3em 0;
+    }
+
+    .form__files-desktop .form-caption .upload-files .flex__organized > .contain__info-flex .genre-flex input {
+        margin: .5em 1em;
+    }
+
+    .form__files-desktop .form-caption .upload-files .flex__organized > .contain__info-flex .title-idiom {
+        margin: .3em 0;
+    }
+
+    .form__files-desktop .form-caption .upload-files .flex__organized > .contain__info-flex .title-subtitle {
+        margin: .3em 0;
+    }
+
+    .form__files-desktop .form-caption .upload-files .flex__organized > .contain__info-flex .form-check-container input {
+        margin:  .5em 1em;
+    }
+
+    .form__files-desktop .form-caption .upload-files .organized-imgUrl {
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .form__files-desktop .form-caption .upload-files .organized-imgUrl .contain__dateImg {
+        width: 100%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+    .form__files-desktop .form-caption .upload-files .organized-imgUrl .contain__dateUrl {
+        width: 100%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktop .form-caption .upload-files .organized-imgUrl .contain__dateImg .input-img {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktop .form-caption .upload-files .organized-imgUrl .contain__dateUrl .input-url {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktop .form-caption .upload-files .organized-priceDiscount {
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .form__files-desktop .form-caption .upload-files .organized-priceDiscount .contain__datePrice {
+        width: 100%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktop .form-caption .upload-files .organized-priceDiscount .contain__datePrice .input-price {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktop .form-caption .upload-files .organized-priceDiscount .contain__dateRental {
+        width: 100%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktop .form-caption .upload-files .organized-priceDiscount .contain__dateRental .input-rental {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktop .form-caption .upload-files .organized-priceDiscount .contain__dateDiscount {
+        width: 100%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktop .form-caption .upload-files .organized-priceDiscount .contain__dateDiscount .input-discount {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktop .form-caption .upload-files .contain__date:last-child {
+        width: 24%;
+        color: var(--yellow);
+        padding: 1em 1em 0;
+        margin: 0 auto;
     }
 
     .form__files-desktop .form-caption .upload-files .contain__date .input-enter {
-        background: linear-gradient(45deg, #000, #232323);
+        width: 100%;
+        background: linear-gradient(45deg, #000, #2940D3, transparent);
         font-family: var(--averia);
         color: var(--yellow);
         border: none;
-        border-bottom: 1px solid var(--lightblue);
-        padding: 6px 15px;
+        /*border-bottom: 1px solid var(--lightblue);*/
+        border-radius: 1em;
+        padding: 1em;
     }
 }

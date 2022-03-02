@@ -4,79 +4,100 @@
     <%- include ('../partials/adminHeader') %>
     <!-- Logo mobile and tablet -->
     <%- include ('../partials/logoMobileADmin') %>
-    <div class="form__files-desktop">
-        <div class="form-caption">
-            <form action="/admin/products/movie/<%- product.id %>?_method=PUT" method="post" class="upload-files" enctype="multipart/form-data">
-                <div class="contain__date">
-                    <input type="text" name="name" id="nombre" placeholder="Nombre" class="input" value='<%- product.title %>'>
+    <div class="form__files-desktopMovie">
+        <div class="form-captionMovie">
+            <form action="/admin/products/movie/<%- product.id %>?_method=PUT" method="post" class="edit-filesMovie" enctype="multipart/form-data">
+                <div class="contain__titleMovie">
+                    <input type="text" name="name" id="nombre" placeholder="Nombre" class="input__title-movie" value='<%- product.title %>'>
                 </div>
-                <div class="contain__date">
+                <div class="contain__descriptionMovie">
                     <textarea type="text" name="description" id="comentario" placeholder="Descripción" class="input"><%- product.description %></textarea required>
                 </div>
-                <div class="contain__date">
-                    <input type="datetime" name="duration" id="duration" placeholder="Duración" class="input" value="<%- product.duration %>">
-                </div>
-                <div class="contain__date">
-                    <input type="number" name="appreciation" id="appreciation" placeholder="Calificación" class="input" value='<%-product.rating  %>'>
-                </div>
-                <div class="contain__date">
-                    <label for="genre">Genero:</label>
-                    <% genres.forEach(genre => { %>
-                        <input type="checkbox" name="genre" value="<%- genre.name %>" <% for (let i = 0; i < product.Genres.length; i++) {
-                            if(genre.name === product.Genres[i].name) {
-                                %> checked <%
-                            }
-                        } %>><%- genre.name %></input> 
-                    <% }) %>
-                </div>
-                <div class="contain__date">
-                    <label for="year">Año:</label>
-                    <input type="month" name="age" id="age" placeholder="Año" class="input" value="<%- product.age.substring(0,7) %>">
-                </div>
-                <div class="contain__date">
-                    <input type="text" name="director" id="director" placeholder="Director" class="input" value="<%- product.director %>">
-                </div>
-                <div class="contain__date">
-                    <label for="idiom">Idioma:</label>
-                    <div class="form-check-container">
-                        <% idioms.forEach(idiom => { %>
-                            <input type="checkbox" 
-                                name="idiom" 
-                                value="<%- idiom.name %>" 
-                                <% for (let i = 0; i < product.Idioms.length; i++) {
-                                    if(idiom.name === product.Idioms[i].name) {
-                                        %> checked <%
-                                    }
-                                } %>><%- idiom.name %></input>
-                        <% }) %>
+                <div class="info__movie-edit">
+                    <div class="contain__durationMovie">
+                        <input type="datetime" name="duration" id="duration" placeholder="Duración" class="input" value="<%- product.duration %>">
+                    </div>
+                    <div class="contain__appreciationMovie">
+                        <input type="number" name="appreciation" id="appreciation" placeholder="Calificación" class="input" value='<%-product.rating  %>'>
+                    </div>
+                    <div class="contain__date-director">
+                        <input type="text" name="director" id="director" placeholder="Director" class="input" value="<%- product.director %>">
+                    </div>
+                    <div class="contain__date-years">
+                        <label for="year">Año:</label>
+                        <input type="month" name="age" id="age" placeholder="Año" class="input" value="<%- product.age.substring(0,7) %>">
                     </div>
                 </div>
-                <div class="contain__date">
-                    <label for="idiom">Subtitulos:</label>
-                    <div class="form-check-container">
-                        <input type="radio" name="subtitle" value="Latino" <%- product.subtitle === "Latino" ? 'checked' : '' %>>Si
-                        <input type="radio" name="subtitle" value="No" <%- product.subtitle === "No" ? 'checked' : '' %>>No
+                <div class="edit__movie-config">
+                    <div class="contain__date-genre">
+                        <label for="genre" class="editGenre"><b>Genero:</b></label>
+                        <div class="date__genre-flex">
+                            <% genres.forEach(genre => { %>
+                                <div class="item__genreMovie">
+                                    <input type="checkbox" name="genre" value="<%- genre.name %>" <% for (let i = 0; i < product.Genres.length; i++) {
+                                        if(genre.name === product.Genres[i].name) {
+                                            %> checked <%
+                                        } 
+                                    } %>><b class="item__editGenre"><%- genre.name %></b><br>
+                                </div>
+                            <% }) %>
+                        </div><br>
+                    </div>
+                    <div class="contain__date-idiom">
+                        <label for="idiom">Idioma:</label>
+                        <div class="containIdiom">
+                            <% idioms.forEach(idiom => { %>
+                                <div class="idiom__editMovie">
+                                    <input type="checkbox" 
+                                    name="idiom" 
+                                    value="<%- idiom.name %>" 
+                                    <% for (let i = 0; i < product.Idioms.length; i++) {
+                                        if(idiom.name === product.Idioms[i].name) {
+                                            %> checked <%
+                                        }
+                                    } %>><b><%- idiom.name %></b><br>
+                                </div>
+                            <% }) %>
+                        </div><br>
+                    </div>
+                    <div class="contain__date-subtitle">
+                        <label for="idiom">Subtitulos:</label>
+                        <div class="option__subtitle">
+                            <div class="contain__subtitle">
+                                <input type="radio" name="subtitle" value="Latino" <%- product.subtitle === "Latino" ? 'checked' : '' %>><b>Si</b><br>
+                            </div>
+                            <div class="contain__subtitle">
+                                <input type="radio" name="subtitle" value="No" <%- product.subtitle === "No" ? 'checked' : '' %>><b>No</b><br>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="contain__date">
-                    <label for="productImage">Cargar imagen de portada</label>
-                    <input type="file" name="productImage" class="input">
+                <div class="imgUrl__flex">
+                    <div class="contain__date-img">
+                        <label for="productImage">Cargar imagen de portada</label>
+                        <input type="file" name="productImage" class="input">
+                    </div>
+                    <div class="contain__date-url">
+                        <label for="video">Pegar URL del trailer</label>
+                        <input type="url" name="video" class="input" value="https://www.youtube.com/watch?v=<%- product.trailer %>">
+                    </div>
                 </div>
-                <div class="contain__date">
-                    <label for="video">Pegar URL del trailer</label>
-                    <input type="url" name="video" class="input" value="https://www.youtube.com/watch?v=<%- product.trailer %>">
+                <div class="contain__edit-price">
+                    <div class="contain__date-price">
+                        <b class="price-list">Venta:</b>
+                        <input type="number" name="price" id="buyPrice" placeholder="Precio de venta" class="input" value="<%- product.Price.buy %>">
+                    </div>
+                    <div class="contain__date-rental">
+                        <b class="price-rental">Alquiler:</b>
+                        <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input" value="<%- product.Price.rental %>">
+                    </div>
+                    <div class="contain__date-discount">
+                        <b class="price-discount">Descuento:</b>
+                        <input type="number" name="price" id="discount" placeholder="Descuento" class="input" value="<%- product.Price.discount %>" required>
+                    </div>
                 </div>
-                <div class="contain__date">
-                    <input type="number" name="price" id="buyPrice" placeholder="Precio de venta" class="input" value="<%- product.Price.buy %>">
-                </div>
-                <div class="contain__date">
-                    <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input" value="<%- product.Price.rental %>">
-                </div>
-                <div class="contain__date">
-                    <input type="number" name="price" id="discount" placeholder="Descuento" class="input" value="<%- product.Price.discount %>" required>
-                </div>
-                <div class="contain__date">
-                    <input type="submit" value="Cargar" class="input-enter">
+                <div class="contain__edit-enter">
+                    <input type="submit" value="Editar" class="input__edit-enter">
                 </div>
             </form>
         </div>
@@ -84,7 +105,7 @@
     <div class="form__files">
         <div class="error">
             <p>
-                Lo siento, solo es posible cargar archivos desde su ordenador
+                Lo siento, solo es posible editar archivos desde su ordenador
             </p>
         </div>
     </div>
