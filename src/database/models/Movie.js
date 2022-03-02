@@ -44,4 +44,11 @@ module.exports = (sequelize) => {
             sequelize: sequelize,
             modelName: 'movie'
       })
+      Movie.associate = function(models){
+            Movie.belongsTo(models.Idiom, {
+                  as: 'Idiom',
+                  foreignKey : 'idiomProdcuts'
+            })
+            return Movie
+      }
 }

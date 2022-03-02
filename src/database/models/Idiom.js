@@ -12,4 +12,11 @@ module.exports = (sequelize) => {
             modelName: 'idiom',
             timestamps: false
       })
+      Idiom.associate = function(models){
+            Idiom.hasMany(models.Movie, {
+                  as: 'Movie',
+                  foreignKey : 'idiomProducts'
+            })
+            return Idiom
+      }
 }

@@ -60,8 +60,8 @@ Card.belongsTo(User)
 User.hasMany(Card)
 
 
-User.belongsTo(Rol)
-Rol.hasMany(User)
+User.belongsTo(Rol)//, {through: 'userRol', association: 'rolUser', timestamps: false})
+Rol.hasMany(User)//, {through: 'userRol', association: 'rolUser', timestamps: false})
 
 /* Aqui terminan las conecciones(asociaciones) */
 

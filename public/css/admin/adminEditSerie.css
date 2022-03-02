@@ -1,0 +1,410 @@
+.form__files-desktopSerie {
+    display: none;
+}
+
+.form__files {
+    padding: 7.1em 0 9.4em;
+    margin: 0 0 0 2em;
+}
+
+.form__files .error {
+        width: 100%;
+        height: 100px;
+        border: none;
+        border-radius: 25px;
+        background: var(--lightblack)
+}
+
+
+.form__files .error p {
+    color: var(--yellow);
+    font-family: var(--averia);
+    padding: 37px 14px;
+    text-align: center;
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px) {
+    .form__files {
+        padding-bottom: 6em;
+        margin: 0 1em;
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    
+    .form__files {
+        display: none;
+    }
+
+    .form__files-desktopSerie {
+        display: block;
+        width: 100%;
+        padding: 0 1em;
+        margin: 0 0 3em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie {
+        width: 100%;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie {
+        background: linear-gradient(45deg, #000, #232323);
+        border-radius: 10%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-around;
+        align-items: flex-start;
+        box-shadow: 1px 1px 8px 0 var(--black);
+        margin: 0 1em;
+        padding: 1rem 0;
+        font-family: var(--averia);
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__titleSerie {
+        width: 70%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__titleSerie .input__title-serie {
+        display: block;
+        width: 40%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__descriptionSerie {
+        width: 70%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__descriptionSerie .input {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit {
+        display: flex;
+        width: 70%;
+        justify-content: space-evenly;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__season-serie {
+        width: 70%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__season-serie .input {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__appreciation-serie {
+        width: 70%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__appreciation-serie .input {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__date-years label {
+        color: var(--yellow)
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__date-years .input {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 4%;
+        text-align: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__date-director {
+        width: 70%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__date-director .input {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config {
+        width: 70%;
+        display: flex;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-genre {
+        width: 100%;
+        display: flex;
+        color: var(--yellow);
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-genre .editGenre {
+        margin: .3em 0;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-genre .date__genre-flex {
+        width: 100%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-genre .date__genre-flex .item__genreSerie {
+        display: flex;
+        align-items: center;
+        padding: 0 0 2%;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-genre .date__genre-flex .item__genreSerie .item__editGenre {
+        padding: 0 0 0 5%;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-idiom {
+        width: 100%;
+        display: flex;
+        color: var(--yellow);
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-idiom label {
+        margin: .3em 0;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-idiom .containIdiom {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-idiom .containIdiom .idiom__editSerie {
+        display: flex;
+        align-items: center;
+        padding: 0 0 2%;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-idiom .containIdiom .idiom__editSerie b {
+        padding: 0 0 0 5%;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-subtitle {
+        display: flex;
+        color: var(--yellow);
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-subtitle label {
+        margin: .3em 0;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-subtitle .option__subtitle {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0.5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-subtitle .option__subtitle .contain__subtitle {
+        display: flex;
+        align-items: center;
+        padding: 0 0 10%;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-subtitle .option__subtitle .contain__subtitle b {
+        padding: 0 0 0 5%;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .imgUrl__flex {
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .imgUrl__flex .contain__date-img {
+        width: 70%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .imgUrl__flex .contain__date-img .input {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: .9em;
+        text-align: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .imgUrl__flex .contain__date-url {
+        width: 70%;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .imgUrl__flex .contain__date-url .input {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__edit-price {
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__edit-price .contain__date-price {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__edit-price .contain__date-price .price-list {
+        margin: 0.5em 0;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__edit-price .contain__date-price .input {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__edit-price .contain__date-rental {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__edit-price .contain__date-rental .price-rental {
+        margin: 0.5em 0;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__edit-price .contain__date-rental .input {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__edit-price .contain__date-discount {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        color: var(--yellow);
+        padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__edit-price .contain__date-discount .price-discount {
+        margin: 0.5em 0;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__edit-price .contain__date-discount .input {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #232323);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__edit-enter {
+        width: 15%;
+        color: var(--yellow);
+        padding: 1em 1em 0;
+        margin: 0 auto;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__edit-enter .input__edit-enter {
+        width: 100%;
+        background: linear-gradient(45deg, #000, #2940D3, transparent);
+        font-family: var(--averia);
+        color: var(--yellow);
+        border: none;
+        border-bottom: 1px solid var(--lightblue);
+        border-radius: 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+}

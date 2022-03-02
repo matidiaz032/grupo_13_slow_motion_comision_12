@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { Op } = require('sequelize')
+const { Op, DataTypes } = require('sequelize')
 const { Movie, Serie, Genre, Price, Idiom, Rol , User } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 
 let controller = {
@@ -27,27 +27,34 @@ let controller = {
         })
     },
     statistics: (req, res) => {
-        Promise.all([Movie.findAll(), Serie.findAll(), Idiom.findAll()])
-        .then(data => {
+        let idioms = Idiom.findAll()
+        // Idiom.findAll({
+        //     include : [{association: 'Movie'}]
+        // })
+        let movies = Movie.findByPk(req.params.id,{
+            include : [{association : 'Idiom'}]
+        })
+        .then(data =>{
             res.render('./admin/adminStatistics', {
                 title: 'Admin : Estadisticas',
-                movies: data[0],
-                series: data[1],
-                idiom: data[2]
+                idioms: data
+                // movies: spainAdmin,
+                // series: seriesAdmin,
+                // idiom,
+                //movies: data
+                //series: data[1],
+                // idiom: data[2]
             })
         })
     },
     motionUsers: (req, res) => {
-            User.findAll({
-                include: {
-                model: Rol
-                }
-                })
-            .then(data => {
-                res.render('./admin/motionUsers', {
-                    title: 'Admin - Page : Users',
-                    users: data,
-                    rol: Rol
+        User.findAll({
+            include : [{association: 'Rol'}]
+        })
+        .then(users =>{
+            res.render('./admin/motionUsers', {
+                title: 'Admin - Page : Users',
+                users,
             })
         })
     },

@@ -19,6 +19,8 @@
 @import url('./admin/adminFooter.css');
 @import url('faq.css');
 @import url('./admin/adminUsers.css');
+@import url('./admin/adminEditMovie.css');
+@import url('./admin/adminEditSerie.css');
 
 :root {
     --black: #000000;
