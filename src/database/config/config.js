@@ -5,7 +5,7 @@ module.exports = {
     "database": "slow_motion_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "logging": false          // Evita que se consologueen las instrucciones SQL
+    "logging": false         // Evita que se consologueen las instrucciones SQL
   },
   "test": {
     "username": "root",

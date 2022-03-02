@@ -47,11 +47,12 @@
                     <div class="form-input-container">
                         <div class="form-input">
                             <label for="genre" class="label-profile">Género</label>
-                            <select name="genre">
+                            <select name="genre" id="genre">
                                 <option value="masculino" <%= user.genre == "masculino" && 'selected' %>>Masculino</option>
                                 <option value="femenino" <%= user.genre == "femenino" && 'selected' %>>Femenino</option>
                                 <option value="otro" <%= user.genre == "otro" && 'selected' %>>Otro</option>
                             </select>
+                            <small class="text-danger" id="genreErrors"></small>
                             <% if (locals.errors && errors.genre) { %>
                                 <small><%- errors.genre.msg %></small>
                             <% } %>
