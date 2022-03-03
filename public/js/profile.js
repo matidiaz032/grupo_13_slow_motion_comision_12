@@ -22,7 +22,7 @@ window.addEventListener('load', function() {
 
     let $address = $('#address');
     let $addressErrors = $('#addressErrors');
-    let regExAddress = /^\w+\s+\d+$/gm
+    let regExAddress = /\D+\d{1,5}/gi;
 
     let validationErrors = false;
 
@@ -102,18 +102,22 @@ window.addEventListener('load', function() {
     })
 
     $address.addEventListener('blur', function(){
+        console.log($address.value);
+        console.log(!regExAddress.test($address.value));
+
+
         switch (true) {
             case !regExAddress.test($address.value):
-                $addressErrors.innerHTML = 'La direccion debe contener calle y numero';
-                $address.style.color = 'red';
-                validationErrors = true;
+                $addressErrors.innerText = 'La direccion debe contener calle y numero'
+                $address.style.color = 'red'
+                validationErrors = true
                 break;
             default:
-                $addressErrors.innerHTML = '';
-                $address.style.color = '#2940D3';
-                $address.style.backgroundColor = '#d8c371';
-                $address.style.border = 'none';
-                validationErrors = false;
+                $addressErrors.innerText = ''
+                $address.style.color = '#2940D3'
+                $address.style.backgroundColor = '#d8c371'
+                $address.style.border = 'none'
+                validationErrors = false
                 break;
         }
     })
