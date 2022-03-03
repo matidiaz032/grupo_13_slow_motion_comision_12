@@ -60,7 +60,8 @@
                     </div>
                     <div class="form-input-container">
                         <div class="form-input">
-                            <input type="text" name="address" placeholder="Dirección" value="<%= user.address %>">
+                            <input type="text" name="address" id="address" placeholder="Dirección" value="<%= user.address %>">
+                            <small class="text-danger" id="addressErrors"></small>
                             <% if (locals.errors && errors.address) { %>
                                 <small><%- errors.address.msg %></small>
                             <% } %>
