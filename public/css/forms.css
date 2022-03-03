@@ -54,7 +54,18 @@
 
 .forms-container .form-input-container .form-input {
     margin-bottom: 1rem;
+    position: relative;
 }
+
+.forms-container .form-input-container .form-input i{
+    position: absolute;
+    right: 2rem;
+    color: var(--blue);
+    font-size: 2rem;
+    top: 1rem;
+    display: none;
+}
+
 
 .forms-container .form-input-container .form-input input {
     width: 100%;
@@ -62,6 +73,21 @@
     background-color: var(--yellow);
     padding: 1rem;
     margin: 0.5rem 0px 0.5rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: outset;
+  -webkit-text-fill-color: black;
+  box-shadow: 0 0 0px 1000px var(--yellow) inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .forms-container .form-input-container .form-input input::placeholder {

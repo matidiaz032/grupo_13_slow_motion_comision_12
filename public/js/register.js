@@ -19,9 +19,10 @@ window.addEventListener('load', function() {
     let $pass2Errors = $('#pass2Errors')
     let $terms = $('#terms');
     let $termsErrors = $('#termsErrors')
+    let $check = document.querySelectorAll('#checkOk')
     let regExAlpha = /^[a-zA-Z\sñáéíóúü]*$/
     let regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
-    let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/
+    let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}$/
 
     let validationErrors = false;
 
@@ -30,11 +31,13 @@ window.addEventListener('load', function() {
             case !$name.value.trim():
                 $nameErrors.innerHTML = 'El campo nombre es obligatorio'
                 $name.style.color = 'red'
+                $check[0].style.display = 'none'
                 validationErrors = true
                 break;
             case !regExAlpha.test($name.value) || $name.value.length < 3:
                 $nameErrors.innerHTML = 'No es un nombre válido'
                 $name.style.color = 'red'
+                $check[0].style.display = 'none'
                 validationErrors = true
                 break;
             default:
@@ -42,6 +45,7 @@ window.addEventListener('load', function() {
                 $name.style.color = '#2940D3'
                 $name.style.backgroundColor = '#d8c371'
                 $name.style.border = 'none'
+                $check[0].style.display = 'block'
                 validationErrors = false
                 break;
         }
@@ -52,11 +56,13 @@ window.addEventListener('load', function() {
             case !$lastName.value.trim():
                 $lastNameErrors.innerHTML = 'El campo apellido es obligatorio'
                 $lastName.style.color = 'red'
+                $check[1].style.display = 'none'
                 validationErrors = true
                 break;
             case !regExAlpha.test($lastName.value) || $lastName.value.length < 3:
                 $lastNameErrors.innerHTML = 'No es un nombre válido'
                 $lastName.style.color = 'red'
+                $check[1].style.display = 'none'
                 validationErrors = true
                 break;
             default:
@@ -64,6 +70,7 @@ window.addEventListener('load', function() {
                 $lastName.style.color = '#2940D3'
                 $lastName.style.backgroundColor = '#d8c371'
                 $lastName.style.border = 'none'
+                $check[1].style.display = 'block'
                 validationErrors = false
                 break;
         }
@@ -74,11 +81,13 @@ window.addEventListener('load', function() {
             case !$userName.value.trim():
                 $userNameErrors.innerHTML = 'El nombre de usuario es obligatorio'
                 $userName.style.color = 'red'
+                $check[2].style.display = 'none'
                 validationErrors = true
                 break;
             case !regExAlpha.test($userName.value) || $userName.value.length < 3:
                 $lastNameErrors.innerHTML = 'No es un nombre válido'
                 $userName.style.color = 'red'
+                $check[2].style.display = 'none'
                 validationErrors = true
                 break;
             default:
@@ -86,6 +95,7 @@ window.addEventListener('load', function() {
                 $userName.style.color = '#2940D3'
                 $userName.style.backgroundColor = '#d8c371'
                 $userName.style.border = 'none'
+                $check[2].style.display = 'block'
                 validationErrors = false
                 break;
         }
@@ -96,11 +106,13 @@ window.addEventListener('load', function() {
             case !$email.value.trim():
                 $emailErrors.innerHTML = 'El campo email es obligatorio'
                 $email.style.color = 'red'
+                $check[3].style.display = 'none'
                 validationErrors = true
                 break;
             case !regExEmail.test($email.value):
                 $emailErrors.innerHTML = 'No es un email válido'
                 $email.style.color = 'red'
+                $check[3].style.display = 'none'
                 validationErrors = true
                 break;
             default:
@@ -108,6 +120,7 @@ window.addEventListener('load', function() {
                 $email.style.color = '#2940D3'
                 $email.style.backgroundColor = '#d8c371'
                 $email.style.border = 'none'
+                $check[3].style.display = 'block'
                 validationErrors = false
                 break;
         }
@@ -118,11 +131,13 @@ window.addEventListener('load', function() {
             case !$pass1.value.trim():
                 $pass1Errors.innerHTML = 'El campo contraseña es obligatorio'
                 $pass1.style.color = 'red'
+                $check[4].style.display = 'none'
                 validationErrors = true
                 break;
             case !regExPass.test($pass1.value):
                 $pass1Errors.innerHTML = 'La contraseña debe ser mayor a 6 caracteres y debe contener letras y numeros'
                 $pass1.style.color = 'red'
+                $check[4].style.display = 'none'
                 validationErrors = true
                 break;
             default:
@@ -130,6 +145,7 @@ window.addEventListener('load', function() {
                 $pass1.style.color = '#2940D3'
                 $pass1.style.border = 'none'
                 $pass1.style.backgroundColor = '#d8c371'
+                $check[4].style.display = 'block'
                 validationErrors = false
                 break;
         }
@@ -140,11 +156,13 @@ window.addEventListener('load', function() {
             case !$pass2.value.trim():
                 $pass2Errors.innerHTML = 'El campo repetir contraseña es obligatorio'
                 $pass2.style.color = 'red'
+                $check[5].style.display = 'none'
                 validationErrors = true
                 break;
             case $pass2.value !== $pass1.value || $pass2.value.length < 6:
                 $pass2Errors.innerHTML = 'Las contraseñas no coinciden'
                 $pass2.style.color = 'red'
+                $check[5].style.display = 'none'
                 validationErrors = true
                 break;
             default:
@@ -152,6 +170,7 @@ window.addEventListener('load', function() {
                 $pass2.style.color = '#2940D3'
                 $pass2.style.backgroundColor = '#d8c371'
                 $pass2.style.border = 'none'
+                $check[5].style.display = 'block'
                 validationErrors = false
                 break;
         }

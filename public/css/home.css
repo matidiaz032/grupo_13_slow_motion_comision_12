@@ -94,15 +94,19 @@
     height: 11.3rem;
     padding: 10px;
     z-index: 2;
-    top: 1.3rem;
+    top: 1.6rem;
     left: -2rem;
     border-radius: 0 0 15px 15px;
+    background: rgb(0,0,0);;
+    background: linear-gradient(0deg, rgba(216,195,113,0.5105392498796393) 0%, rgba(0,0,0,0.6814075972185749) 100%);
 }
 .index .options .contain-options .contain-titles .genres-menu li{
     width: 9rem;
     margin: 3px 0;
 }
-
+.index .options .contain-options .contain-titles .genres-menu li a{
+    color: var(--lightblue);
+}
 
 
 .index .options .barOptions .genresBurguer .iconGenre i{
@@ -477,7 +481,7 @@
         font-size: 2rem; 
         transition: 0.5s color; 
         position: relative; 
-        margin-top: -19%; 
+        margin-top: -12rem; 
         border-bottom: none; 
         line-height: 0; 
     }

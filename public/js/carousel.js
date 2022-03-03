@@ -19,9 +19,42 @@ let count = 0
 
 var movies = new Hammer(row__inner[0])
 movies.on('panleft', () => {
-    if(row__inner[0].style.left !== '-74rem') {
-            row__inner[0].style.left = `${count}rem`;
-            count -= 1
+    let width = window.screen.width;
+    if(width <= 320) {
+        if(row__inner[0].style.left !== '-74rem') {
+                row__inner[0].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 425 && width > 320) {
+        if(row__inner[0].style.left !== '-67rem') {
+                row__inner[0].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 768 && width > 425) {
+        if(row__inner[0].style.left !== '-46rem') {
+                row__inner[0].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 1024 && width > 768) {
+        if(row__inner[0].style.left !== '-32rem') {
+                row__inner[0].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 1440 && width > 1024) {
+        if(row__inner[0].style.left !== '-29rem') {
+                row__inner[0].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 1920 && width > 1440) {
+        if(row__inner[0].style.left !== '-20rem') {
+                row__inner[0].style.left = `${count}rem`;
+                count -= 1
+        }
     }
 })
 movies.on('panright', () => {
@@ -33,9 +66,42 @@ movies.on('panright', () => {
 
 let series = new Hammer(row__inner[1])
 series.on('panleft', () => {
-    if(row__inner[1].style.left !== '-74rem') {
-        row__inner[1].style.left = `${count}rem`;
-        count -= 1
+    let width = window.screen.width;
+    if(width <= 320) {
+        if(row__inner[1].style.left !== '-74rem') {
+                row__inner[1].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 425 && width > 320) {
+        if(row__inner[1].style.left !== '-67rem') {
+                row__inner[1].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 768 && width > 425) {
+        if(row__inner[1].style.left !== '-46rem') {
+                row__inner[1].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 1024 && width > 768) {
+        if(row__inner[1].style.left !== '-32rem') {
+                row__inner[1].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 1440 && width > 1024) {
+        if(row__inner[1].style.left !== '-29rem') {
+                row__inner[1].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 1920 && width > 1440) {
+        if(row__inner[1].style.left !== '-20rem') {
+                row__inner[1].style.left = `${count}rem`;
+                count -= 1
+        }
     }
 })
 series.on('panright', () => {
@@ -44,6 +110,71 @@ series.on('panright', () => {
         count += 1
     }
 })
+
+let popular = new Hammer(row__inner[2])
+popular.on('panleft', () => {
+    let width = window.screen.width;
+    if(width <= 768 && width > 425) {
+        if(row__inner[2].style.left !== '-46rem') {
+                row__inner[2].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 1024 && width > 768) {
+        if(row__inner[2].style.left !== '-32rem') {
+                row__inner[2].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 1440 && width > 1024) {
+        if(row__inner[2].style.left !== '-29rem') {
+                row__inner[2].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 1920 && width > 1440) {
+        if(row__inner[2].style.left !== '-20rem') {
+                row__inner[2].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+})
+popular.on('panright', () => {
+    if(row__inner[2].style.left !== '0rem') {
+        row__inner[2].style.left = `${count}rem`;
+        count += 1
+    }
+})
+
+let ofers = new Hammer(row__inner[3])
+ofers.on('panleft', () => {
+    let width = window.screen.width;
+    if(width <= 1024 && width > 768) {
+        if(row__inner[3].style.left !== '-32rem') {
+                row__inner[3].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 1440 && width > 1024) {
+        if(row__inner[3].style.left !== '-29rem') {
+                row__inner[3].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+    if(width <= 1920 && width > 1440) {
+        if(row__inner[3].style.left !== '-20rem') {
+                row__inner[3].style.left = `${count}rem`;
+                count -= 1
+        }
+    }
+})
+ofers.on('panright', () => {
+    if(row__inner[3].style.left !== '0rem') {
+        row__inner[3].style.left = `${count}rem`;
+        count += 1
+    }
+})
+
 
 
 
