@@ -10,6 +10,7 @@ router.get('/serialSerie/:id', controller.serialSerie);
 router.get('/cart', auth_users, controller.cart);
 router.get('/search', controller.search);
 router.get('/premieres', controller.premieres)
+router.get('/ofers', controller.ofers)
 /* router.get('/searchSuccess', controller.search); */
 
 module.exports = router;
