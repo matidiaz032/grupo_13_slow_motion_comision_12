@@ -12,7 +12,6 @@ function genres () {
         h3.innerText = 'X'
         iconGenre.style.display = 'none'
         optionsGenre.style.display = 'flex'
-        optionsGenre.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
         containOptions.style.borderRadius = '15px';
     } else {
         iconGenre.classList.remove('open');

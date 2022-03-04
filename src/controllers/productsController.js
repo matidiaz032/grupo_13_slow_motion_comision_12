@@ -160,6 +160,33 @@ let controller = {
             all,
             session: req.session
          })
+    },
+    premieres: async (req, res) => {
+        try {
+            let movies = await Movie.findAll({
+                include: {
+                    model: Genre
+                },
+            })
+            let series = await Serie.findAll({
+                include: {
+                    model: Genre
+                },
+            })
+            Date.prototype.toPremier = function() { return this.getFullYear() - 2 +"-"+(this.getMonth()+1)+"-"+this.getDate(); }
+            let actual = new Date().toPremier()
+            moviesPremier = movies.filter(elem => elem.age >= actual)
+            seriesPremier = series.filter(elem => elem.age >= actual)
+            res.render('./product/premieres', {
+                title: 'Premieres',
+                moviesPremier,
+                seriesPremier,
+                session: req.session
+            })
+            
+        } catch (error) {
+            res.send(error)
+        }
     }
 }
 
