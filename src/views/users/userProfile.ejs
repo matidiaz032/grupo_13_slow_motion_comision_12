@@ -5,7 +5,7 @@
 
     <div class="profile-container">
         <div class="profile-title">
-            <h2>Perfil del usuario</h2>
+            <h2>Perfil del usuario</h2> 
         </div>
         <div class="container-img-name">
             <div class="user-avatar">
@@ -22,11 +22,19 @@
             <div class="user-pass">
                 <p>********</p>
             </div>
+            <div class="user-edit">
+                <a href="/users/profile-auth">
+                    <input type="button" value="Modificar datos de inicio de sesión">
+                </a>
+            </div>
             <div class="user-edit-form forms-container">
                 <form action="/users/profile" id="form" method="post">
-
+                    <div class="profile-title">
+                        <h2>Datos opcionales</h2> 
+                    </div>
                     <div class="form-input-container">
                         <div class="form-input">
+                            <label for="phone" class="label-profile">Teléfono</label>
                             <input type="text" name="phone" id="phone" placeholder="Teléfono" value="<%= user.phone %>">
                             <small class="text-danger" id="phoneErrors"></small>
                             <% if (locals.errors && errors.phone) { %>
@@ -95,7 +103,7 @@
                         </div>
                     </div>
                     <div class="user-edit">
-                        <input type="submit" value="Editar perfil">
+                        <input type="submit" value="Modificar datos opcionales">
                         <small class="text-danger" id="submitErrors"></small>
                     </div>
                 </form>
