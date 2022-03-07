@@ -1,0 +1,92 @@
+<%- include('../partials/head') %>
+
+<body class="user-profile">
+    <%- include('../partials/header') %> 
+
+    <div class="profile-container">
+        <div class="profile-title">
+            <h2>Edicion de perfil de <%= user.user_name %></h2> 
+        </div>
+        <div class="container-img-name">
+            <div class="user-avatar">
+                <img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image">
+            </div>
+        </div>
+        <div class="container-user-data">
+            <div class="user-edit-form forms-container">
+                <form action="/users/profile-auth" id="form-auth" method="post">
+                    <div class="profile-title">
+                        <h2>Datos de inicio de sesión</h2> 
+                    </div>
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <label for="first_name" class="label-profile">Nombre</label>
+                            <input type="text" name="first_name" id="first_name" placeholder="Nombre" value="<%= user.first_name %>">
+                            <small class="text-danger" id="first_nameErrors"></small>
+                            <% if (locals.errors && errors.first_name) { %>
+                                <small><%- errors.first_name.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <label for="last_name" class="label-profile">Apellido</label>
+                            <input type="text" name="last_name" id="last_name" placeholder="Apellido" value="<%= user.last_name %>">
+                            <small class="text-danger" id="last_nameErrors"></small>
+                            <% if (locals.errors && errors.last_name) { %>
+                                <small><%- errors.last_name.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <label for="user_name" class="label-profile">Nombre de usuario</label>
+                            <input type="text" name="user_name" id="user_name" placeholder="Nombre de usuario" value="<%= user.user_name %>">
+                            <small class="text-danger" id="user_nameErrors"></small>
+                            <% if (locals.errors && errors.user_name) { %>
+                                <small><%- errors.user_name.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <label for="email" class="label-profile">Email</label>
+                            <input type="text" name="email" id="email" placeholder="Email" value="<%= user.email %>">
+                            <small class="text-danger" id="emailErrors"></small>
+                            <% if (locals.errors && errors.email) { %>
+                                <small><%- errors.email.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <label for="actualPassword" class="label-profile">Contraseña actual</label>
+                            <input type="text" name="actualPassword" id="actualPassword" placeholder="Contraseña actual" value="">
+                            <small class="text-danger" id="actualPasswordErrors"></small>
+                            <% if (locals.errors && errors.actualPassword) { %>
+                                <small><%- errors.actualPassword.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="form-input-container">
+                        <div class="form-input">
+                            <label for="newPassword" class="label-profile">Contraseña nueva</label>
+                            <input type="text" name="newPassword" id="newPassword" placeholder="Contraseña nueva" value="">
+                            <small class="text-danger" id="newPasswordErrors"></small>
+                            <% if (locals.errors && errors.newPassword) { %>
+                                <small><%- errors.newPassword.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="user-edit">
+                        <input type="submit" value="Modificar datos de inicio de sesión">
+                        <small class="text-danger" id="submitErrors"></small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer')  %>
+    <script src="../js/profile.js"></script>
+</body>
