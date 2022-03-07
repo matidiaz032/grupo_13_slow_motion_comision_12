@@ -147,7 +147,7 @@ let controller = {
     },
     favorites: async (req, res) => {
         try {
-            let user = await User.findAll({
+            let user = await User.findOne({
                 where: {id: req.session.user.id},
                 include: [{
                     model: Movie
@@ -157,8 +157,8 @@ let controller = {
             })
             res.render('users/favorites', {
                 title: 'favorites',
-                movies: user[0].Movies,
-                series: user[0].Series,
+                movies: user.Movies,
+                series: user.Series,
                 session: req.session
             })
         } catch (error) {
