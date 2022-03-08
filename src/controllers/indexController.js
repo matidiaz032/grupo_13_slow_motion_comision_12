@@ -2,6 +2,7 @@ const { Movie, Serie, Price, Genre } = require('../database/models/index.js'); /
 
 let controller = {
     index: async (req, res) => {
+        
         try {
             let allMovies = await Movie.findAll({
                 include: {

@@ -1,43 +1,10 @@
-function showHide() {
-    let movieSeries = document.querySelector('#movieSeries').value;
-    let seasons = document.querySelector('#seasons');
-    let duration = document.querySelector('#duration')
-
-    if (movieSeries == 'serie') {
-        duration.setAttribute("style", "display:none")
-        // duration.setAttribute("style", "width:0")
-        // duration.setAttribute("style", "padding:0")
-        //duration.setAttribute('hidden')
-        //seasons.toggleAttribute('hidden')
-        duration.toggleAttribute('required')
-        seasons.setAttribute("style", "display:block")
-        // seasons.setAttribute("style", "width:70%")
-        // seasons.setAttribute("style", "padding:.5em")
-        seasons.toggleAttribute('required')
-        //seasons.removeAttribute("hidden");
-    } else if(movieSeries == 'movie') {
-        duration.setAttribute("style", "display:block")
-        // duration.setAttribute("style", "width:70%")
-        // duration.setAttribute("style", "padding:.5em")
-        duration.toggleAttribute('required')
-        seasons.setAttribute("style", "display:none")
-        // seasons.setAttribute("style", "width:0")
-        // seasons.setAttribute("style", "padding:0")
-        //seasons.setAttribute('hidden')
-        //duration.toggleAttribute('hidden')
-        seasons.toggleAttribute('required')
-        console.log(movieSeries);
-    };
-}
-
-
 function qs(element) {
     return document.querySelector(element)
 };
 
 window.addEventListener('load', function () {
 
-    // Formulary of charge
+    // Formulary of edition
     let $formCharge = qs('#form');
 
     // Name
@@ -51,10 +18,6 @@ window.addEventListener('load', function () {
     // Seasons
     let $seasons = qs('#seasons');
     let $seasonsErrors = qs('#seasonsErrors');
-
-    // Duration
-    let $duration = qs('#duration');
-    let $durationErrors = qs('#durationErrors');
 
     // Appreciation
     let $appreciation = qs('#appreciation');
@@ -70,18 +33,6 @@ window.addEventListener('load', function () {
     let actualYear = actualDate.getFullYear();
     let $ageErrors = qs('#ageErrors');
 
-    // Genre
-    //let $genreCheck = qs('input[type=checkbox]');
-    let $genreCheck = document.querySelectorAll("input[type=checkbox]");
-    let $genreCheckErrors = qs('#genreErrors');
-    // let emptyCheck = [].filter.call( $genreCheck, function( el ) {
-    //     return !el.checked
-    // });
-
-    // Idiom
-    let $idiom = qs('#idiom');
-    let $idiomErrors = qs('#idiomErrors');
-
     // Subtitle
     let $subtitle = qs('#subtitle');
     let $subtitleErrors = qs('#subtitleErrors');
@@ -90,10 +41,6 @@ window.addEventListener('load', function () {
     let $file = qs('#file');
     let $imagePreview = qs('#imgPreview');
     let $fileErrors = qs('#fileErrors');
-
-    // Url
-    let $video = qs('#video');
-    let $videoErrors = qs('#videoErrors');
 
     // Price
     let $buyPrice = qs('#buyPrice');
@@ -117,7 +64,7 @@ window.addEventListener('load', function () {
 
     $name.addEventListener('blur', function(){
         if(!$name.value.trim()){
-            $name.innerHTML = 'El título es obligatorio'
+            $nameErrors.innerHTML = 'El título es obligatorio'
             $name.style.color = '#ff0000'
             $name.toggleAttribute('required')
             validationErrors = true
@@ -175,27 +122,6 @@ window.addEventListener('load', function () {
             $seasons.style.backgroundColor = '#d8c371'
             $seasons.style.border = 'none'
             $seasons.toggleAttribute('required')
-            validationErrors = false
-        }
-    })
-
-    $duration.addEventListener('blur', function(){
-        if(!$duration.value.trim()){
-            $durationErrors.innerHTML = 'La duracion es obligatoria'
-            $duration.style.color = '#ff0000'
-            $duration.toggleAttribute('required')
-            validationErrors = true
-        } else if (!regExNmbr.test($duration.value)){
-            $durationErrors.innerHTML = 'La duracion no es válida'
-            $duration.style.color = '#ff0000'
-            $duration.toggleAttribute('required')
-            validationErrors = true
-        } else {
-            $durationErrors.innerHTML = 'La duracion es valida'
-            $duration.style.color = '#2940D3'
-            $duration.style.backgroundColor = '#d8c371'
-            $duration.style.border = 'none'
-            $duration.toggleAttribute('required')
             validationErrors = false
         }
     })
@@ -373,29 +299,6 @@ window.addEventListener('load', function () {
             $discount.toggleAttribute('required')
             validationErrors = false
         }
-    })
-
-    $formCharge.addEventListener('submit', function(event){
-        let error = false;
-        event.preventDefault();
-
-        // let error = false;
-        let elementsForm = this.elements;
-
-        for (let index = 0; index < elementsForm.length; index++){
-            if(elementsForm[index].value == ""){
-                elementsForm[index].classList.add('submitErrors')
-                elementsForm[index].style.backgroundColor = 'rgba(255, 0, 0, 0.2)'
-                submitErrors.style.color = 'red'
-                submitErrors.innerHTML = 'Los campos señalados son obligatorios'
-                error = true;
-            }
-        }
-
-        if(!error && !validationErrors) {
-            $formCharge.submit()
-        }
-
     })
 
 })

@@ -1,12 +1,17 @@
 <%- include('../partials/head') %>
 <body class="body-admin">
-    <!-- Header-->
+    <!-- Header -->
     <%- include ('../partials/adminHeader') %>
     <!-- Logo mobile and tablet -->
     <%- include ('../partials/logoMobileADmin') %>
+
+    <!-- Menu admin -->
+    <%- include ('../partials/adminMenu') %>
+
+    <!-- Form charge -->
     <div class="form__files-desktop">
         <div class="form-caption">
-            <form action="/admin/form" method="post" class="upload-files" enctype="multipart/form-data">
+            <form action="/admin/form" method="post" id="form" class="upload-files" enctype="multipart/form-data">
                 <div class="contain__date">
                     <label for="movieSeries" class="up">A subir:</label>
                     <select name="movieSeries" id="movieSeries" class="select-input" onchange="showHide()" >
@@ -15,78 +20,140 @@
                     </select>
                 </div>
                 <div class="contain__date">
-                <input type="text" name="name" id="nombre" placeholder="Nombre" class="input" required>
+                <input type="text" name="name" id="name" placeholder="Nombre" class="input" >
+                <small class="text-errors submitErrors" id="nameErrors"></small>
+                        <% if (locals.errors && errors.name) { %>
+                            <small class="text-error submitErrors"><%= errors.name.msg %></small>
+                        <% } %> 
                 </div>
                 <div class="contain__date">
-                    <textarea type="text" name="description" id="comentario" placeholder="Descripción" class="input"></textarea required>
+                    <textarea type="text" name="description" id="description" placeholder="Descripción" class="input"></textarea>
+                    <small class="text-errors submitErrors" id="descriptionErrors"></small>
+                    <% if (locals.errors && errors.description) { %>
+                        <small class="text-errors submitErrors"><%= errors.description.msg %></small>
+                    <% } %> 
                 </div>
-               
                 <div class="flex__organized">
                     <div class="contain__date-organized">
                         <input type="number" name="seasons" id="seasons" placeholder="Temporadas" class="input__organized" hidden>
+                        <small class="text-errors submitErrors" id="seasonsErrors"></small>
+                        <% if (locals.errors && errors.seasons) { %>
+                            <small class="text-errors submitErrors"><%= errors.seasons.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="contain__date-organized">
                         <input type="number" name="duration" id="duration" placeholder="Duración en minutos" class="input__organized">
+                        <small class="text-errors submitErrors" id="durationErrors"></small>
+                        <% if (locals.errors && errors.duration) { %>
+                            <small class="text-errors submitErrors"><%= errors.duration.msg %></small>
+                        <% } %>
                     </div>
                     <div class="contain__date-organized">
-                        <input type="number" step="any" name="appreciation" id="appreciation" placeholder="Calificación" class="input__organized" required>
+                        <input type="number" step="any" name="appreciation" id="appreciation" placeholder="Calificación" class="input__organized">
+                        <small class="text-errors submitErrors" id="appreciationErrors"></small>
+                        <% if (locals.errors && errors.appreciation) { %>
+                            <small class="text-errors submitErrors"><%= errors.appreciation.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="contain__date-organized">
-                        <input type="text" name="director" id="director" placeholder="Director" class="input__organized" required>
+                        <input type="text" name="director" id="director" placeholder="Director" class="input__organized">
+                        <small class="text-errors submitErrors" id="directorErrors"></small>
+                        <% if (locals.errors && errors.director) { %>
+                            <small class="text-errors submitErrors"><%= errors.director.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="contain__date-organized">
                         <label for="year">Año:</label>
-                        <input type="month" name="age" id="age" placeholder="Año" class="input__organized" required>
+                        <input type="month" name="age" id="age" placeholder="Año" class="input__organized" >
+                        <small class="text-errors submitErrors" id="ageErrors"></small>
+                        <% if (locals.errors && errors.age) { %>
+                            <small class="text-errors submitErrors"><%= errors.age.msg %></small>
+                        <% } %>
                     </div>
                 </div>
                 <div class="flex__organized">
                     <div class="contain__info-flex">
                         <label for="genre" class="title-genre"><b>Genero:</b></label>
-                        <div class="genre-flex">
+                        <div class="form-check-container">
                             <% genres.forEach(genre => { %>
-                                <input type="checkbox" name="genre" value="<%- genre.name %>"><b><%- genre.name %></b></input><br>
+                                <input type="checkbox" id="<%- genre.id %>" class="genre" name="genre" value="<%- genre.name %>"><b><%- genre.name %></b><br>
                             <% }) %>
                         </div>
+                        <small class="text-errors submitErrors" id="genreErrors"></small>
+                        <% if (locals.errors && errors.genre) { %>
+                            <small class="text-errors submitErrors"><%= errors.genre.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="contain__info-flex">
                         <label for="idiom" class="title-idiom">Idioma:</label>
                         <div class="form-check-container">
                             <% idioms.forEach(idiom => { %>
-                                <input type="checkbox" name="idiom" value="<%- idiom.name %>"><b><%- idiom.name %></b></input><br>
+                                <input type="checkbox" name="idiom" class="idiom" id="<%- idiom.id%> " value="<%- idiom.name %>"><b><%- idiom.name %></b><br>
                             <% }) %>
                         </div>
+                        <small class="text-errors submitErrors" id="idiomErrors"></small>
+                        <% if (locals.errors && errors.idiom) { %>
+                            <small class="text-errors submitErrors"><%= errors.idiom.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="contain__info-flex">
                         <label for="idiom" class="title-subtitle">Subtitulos:</label>
-                        <div class="form-check-container">
-                            <input type="radio" name="subtitle" value="Latino" checked><b>Si</b><br class="separated-options">
-                            <input type="radio" name="subtitle" value="No"><b>No</b>
-                        </div>
+                        <select class="form-check-container" id="subtitle">
+                            <option value="0" selected disable></option>
+                            <option type="radio" name="subtitle" value="Latino"><b>Si</b><br class="separated-options"></option>
+                            <option type="radio" name="subtitle" value="No"><b>No</b></option>
+                        </select>
+                        <small class="text-errors submitErrors" id="subtitleErrors"></small>
+                        <% if (locals.errors && errors.subtitle) { %>
+                            <small class="text-errors submitErrors"><%= errors.subtitle.msg %></small>
+                        <% } %>
                     </div>
                 </div>
                 <div class="organized-imgUrl">
                     <div class="contain__dateImg">
                         <label for="productImage">Cargar imagen de portada</label><br>
-                        <input type="file" name="productImage" class="input-img">
+                        <div id="imgPreview"></div>
+                        <input type="file" name="productImage" id="file" class="input-img">
+                        <small class="text-errors submitErrors" id="fileErrors"></small>
+                        <% if (locals.errors && errors.file) { %>
+                            <small class="text-errors submitErrors"><%= errors.file.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="contain__dateUrl">
                         <label for="video">Pegar URL del trailer</label><br>
-                        <input type="url" name="video" class="input-url" required>
+                        <input type="url" name="video" class="input-url">
+                        <small class="text-errors submitErrors" id="directorErrors"></small>
+                        <% if (locals.errors && errors.director) { %>
+                            <small class="text-errors submitErrors"><%= errors.director.msg %></small>
+                        <% } %> 
                     </div>
                 </div>
                 <div class="organized-priceDiscount">
                     <div class="contain__datePrice">
-                        <input type="number" name="price" id="buyPrice" placeholder="Precio de venta" class="input-price" required>
+                        <input type="number" name="price" id="buyPrice" placeholder="Precio de venta" class="input-price">
+                        <small class="text-errors submitErrors" id="buyPriceErrors"></small>
+                        <% if (locals.errors && errors.buyPrice) { %>
+                            <small class="text-errors submitErrors"><%= errors.buyPrice.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="contain__dateRental">
-                        <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input-rental" required>
+                        <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input-rental">
+                        <small class="text-errors submitErrors" id="rentalPriceErrors"></small>
+                        <% if (locals.errors && errors.rentalPrice) { %>
+                            <small class="text-errors submitErrors"><%= errors.rentalPrice.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="contain__dateDiscount">
-                        <input type="number" name="price" id="discount" placeholder="Descuento" class="input-discount" required>
+                        <input type="number" name="price" id="discount" placeholder="Descuento" class="input-discount">
+                        <small class="text-errors submitErrors" id="discountErrors"></small>
+                        <% if (locals.errors && errors.discount) { %>
+                            <small class="text-errors submitErrors"><%= errors.discount.msg %></small>
+                        <% } %> 
                     </div>
                 </div>
                 <div class="contain__date">
-                    <input type="submit" value="Cargar" class="input-enter">
+                    <span id="submitErrors"></span>
+                    <button type="submit" value="Cargar" class="input-enter">Cargar</button>
                 </div>
             </form>
         </div>
