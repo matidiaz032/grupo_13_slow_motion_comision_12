@@ -107,9 +107,9 @@
         width: 70%;
     }
 
-    .form__files-desktop > .form-caption > .upload-files > .contain__date:nth-child(4) {
+    /* .form__files-desktop > .form-caption > .upload-files > .contain__date:nth-child(4) {
         display: none;
-    }
+    } */
 
     .form__files-desktop .form-caption .upload-files .flex__organized {
         width: 70%;
@@ -167,6 +167,11 @@
 
     .form__files-desktop .form-caption .upload-files .flex__organized > .contain__info-flex .form-check-container input {
         margin:  .5em 1em;
+    }
+
+    .form__files-desktop > .form-caption > .upload-files > .flex__organized > .contain__info-flex:last-child > .form-check-container {
+        height: fit-content;
+        margin: .5em 1em;
     }
 
     .form__files-desktop .form-caption .upload-files .organized-imgUrl {

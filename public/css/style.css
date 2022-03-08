@@ -21,6 +21,7 @@
 @import url('./admin/adminUsers.css');
 @import url('./admin/adminEditMovie.css');
 @import url('./admin/adminEditSerie.css');
+@import url('./admin/mainMenuAdmin.css');
 
 :root {
     --black: #000000;
