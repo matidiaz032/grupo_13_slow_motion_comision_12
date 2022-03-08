@@ -64,8 +64,15 @@
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__titleSerie {
         width: 70%;
+        display: flex;
+        flex-direction: column;
         color: var(--yellow);
         padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__titleSerie .section-titleSeasons {
+        text-align: center;
+        margin: .5em 0;
     }
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__titleSerie .input__title-serie {
@@ -84,8 +91,15 @@
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__descriptionSerie {
         width: 70%;
+        display: flex;
+        flex-direction: column;
         color: var(--yellow);
         padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__descriptionSerie .section-descriptionSeasons {
+        text-align: center;
+        margin: .5em 0;
     }
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .contain__descriptionSerie .input {
@@ -108,8 +122,15 @@
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__season-serie {
         width: 70%;
+        display: flex;
+        flex-direction: column;
         color: var(--yellow);
         padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__season-serie .section-seasons {
+        text-align: center;
+        margin: .5em 0;
     }
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__season-serie .input {
@@ -125,9 +146,16 @@
     }
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__appreciation-serie {
+        display: flex;
+        flex-direction: column;
         width: 70%;
         color: var(--yellow);
         padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__appreciation-serie .section-appreciation {
+        text-align: center;
+        margin: .5em 0;
     }
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__appreciation-serie .input {
@@ -142,8 +170,16 @@
         text-align: center;
     }
 
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__date-years {
+        display: flex;
+        flex-direction: column;
+        margin: .5em 0;
+    }
+
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__date-years label {
-        color: var(--yellow)
+        color: var(--yellow);
+        text-align: center;
+        margin: .5em 0;
     }
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__date-years .input {
@@ -154,14 +190,21 @@
         border: none;
         border-bottom: 1px solid var(--lightblue);
         border-radius: 1em;
-        padding: 4%;
+        padding: .8em;
         text-align: center;
     }
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__date-director {
         width: 70%;
+        display: flex;
+        flex-direction: column;
         color: var(--yellow);
         padding: .5em;
+    }
+
+    .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__date-director .section-Director {
+        text-align: center;
+        margin: .5em 0;
     }
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .info__serie-edit .contain__date-director .input {
@@ -244,10 +287,11 @@
     }
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-subtitle .option__subtitle {
-        width: 100%;
+        height: fit-content;
         display: flex;
         flex-direction: column;
-        padding: 0.5em;
+        padding: .3em;
+        margin: .5em 1em
     }
 
     .form__files-desktopSerie .form-captionSerie .edit-filesSerie .edit__serie-config .contain__date-subtitle .option__subtitle .contain__subtitle {
