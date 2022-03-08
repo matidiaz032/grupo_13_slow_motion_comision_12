@@ -33,13 +33,15 @@ let indexRouter = require('./routes/indexRouter');
 let usersRouter = require('./routes/usersRouter');
 let productsRouter = require('./routes/productsRouter');
 let adminRouter = require('./routes/adminRouter');
-let notFoundRouter = require('./routes/notFoundRouter.js');
+let notFoundRouter = require('./routes/notFoundRouter');
+let cartRouter = require('./routes/cartRouter')
 
     /* Routes */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/admin', auth_adminCheck, adminRouter);
+app.use('/cart', cartRouter)
 app.use('*', notFoundRouter);
 
 
