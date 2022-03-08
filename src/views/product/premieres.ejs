@@ -1,0 +1,55 @@
+<%- include('../partials/head') %> 
+
+<body class="indexProducts">
+
+    <!-- Header section -->
+    <%- include('../partials/header') %> 
+
+    <!-- Options section -->
+    <div class="section-cart">
+        <div class="options">
+            <span class="options__list"><a href="#">Estrenos</a></span>
+            <span class="options__list"><a href="#">Historial</a></span>
+            <span class="options__list"><a href="#">Mis compras</a></span>
+        </div>
+    </div>
+    <div class="section-cartDesktop">
+        <div class="options-desktop">
+            <span class="options__list-desktop"><a href="#">Estrenos</a></span>
+            <span class="options__list-desktop"><a href="#">Historial</a></span>
+            <span class="options__list-desktop"><a href="#">Mis compras</a></span>
+            <span class="options__list-desktop"><a href="#">Ayuda</a></span>
+        </div>
+    </div>
+    <!-- grid section movies -->
+    <div class="contain-grid">
+        <div class="contain-list">
+            <span class="gender__grid">Peliculas</span>
+            <div class="movies__section">
+                    <% moviesPremier.forEach(elem => { %>
+                          <div class="contain-img">
+                            <a href="/products/serialMovie/<%- elem.id %>">
+                                <img src="/img/products-images/<%- elem.image %>" alt="">
+                            </a>
+                          </div>
+                    <% } ) %>
+            </div>
+        </div>
+        <div class="contain-list">
+            <span class="gender__grid">Series</span>
+            <div class="movies__section">
+                <% seriesPremier.forEach(elem => { %>
+                    <div class="contain-img">
+                        <a href="/products/serialSerie/<%- elem.id %>">
+                            <img src="/img/products-images/<%- elem.image %>" alt="">
+                        </a>
+                    </div>
+                <% } ) %>
+            </div>
+        </div>
+    </div>
+    <!-- Footer section -->
+    <%- include('../partials/footer')  %>
+    <%- include('../partials/scripts.ejs') %>
+</body>
+</html>

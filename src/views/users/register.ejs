@@ -16,6 +16,7 @@
                 <div class="form-input-container">
                     <div class="form-input">
                         <input type="text" name="name" id="name" placeholder="Nombre" value="<%- locals.old && old.name %>">
+                        <i class="far fa-check-circle" id="checkOk"></i>
                         <small id="nameErrors"></small>
                         <% if (locals.errors && errors.name) { %>
                             <small><%- errors.name.msg %></small>
@@ -23,6 +24,7 @@
                     </div>
                     <div class="form-input">
                         <input type="text" name="lastName" id="lastName" placeholder="Apellido" value="<%- locals.old && old.lastName %>">
+                        <i class="far fa-check-circle" id="checkOk"></i>
                         <small id="lastNameErrors"></small>
                         <% if (locals.errors && errors.lastName) { %>
                             <small><%= errors.lastName.msg %></small>
@@ -30,6 +32,7 @@
                     </div>
                     <div class="form-input">
                         <input type="text" name="userName" id="userName" placeholder="Nombre de usuario" value="<%- locals.old && old.userName %>">
+                        <i class="far fa-check-circle" id="checkOk"></i>
                         <small id="userNameErrors"></small>
                         <% if (locals.errors && errors.userName) { %>
                             <small><%= errors.userName.msg %></small>
@@ -37,6 +40,7 @@
                     </div>
                     <div class="form-input">
                         <input type="email" name="email" id="email" placeholder="Correo Electronico" value="<%- locals.old && old.email %>">
+                        <i class="far fa-check-circle" id="checkOk"></i>
                         <small id="emailErrors"></small>
                         <% if (locals.errors && errors.email) { %>
                             <small><%= errors.email.msg %></small>
@@ -44,6 +48,7 @@
                     </div>
                     <div class="form-input">
                         <input type="password" name="pass1" id="pass1" placeholder="Contraseña">
+                        <i class="far fa-check-circle" id="checkOk"></i>
                         <small id="pass1Errors"></small>
                         <% if (locals.errors && errors.pass1) { %>
                             <small><%= errors.pass1.msg %></small>
@@ -51,6 +56,7 @@
                     </div>
                     <div class="form-input">
                         <input type="password" name="pass2" id="pass2" placeholder="Repetir Contraseña">
+                        <i class="far fa-check-circle" id="checkOk"></i>
                         <small id="pass2Errors"></small>
                         <% if (locals.errors && errors.pass2) { %>
                             <small><%= errors.pass2.msg %></small>

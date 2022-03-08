@@ -18,8 +18,8 @@
                         <% } ) %>
                     </ul>
                 </nav>
-                <a href="" class="estrenos"><h3>Estrenos</h3></a>
-                <a href="" class="ofers"><h3>Ofertas</h3></a>
+                <a href="/products/premieres" class="estrenos"><h3>Estrenos</h3></a>
+                <a href="/products/ofers" class="ofers"><h3>Ofertas</h3></a>
             </div>
             <!-- <div class="contain-lists">
                 <ul class="genres-menu">
@@ -38,15 +38,15 @@
 
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
-          <img src="./img/series/dbzcarrito.jpg" >
+          <a href="/products/serialSerie/24"><img src="./img/series/dbzcarrito.jpg" ></a>
         </div>
       
         <div class="mySlides fade">
-          <img src="./img/peliculas/thor-banner.jpg" >
+          <a href="/products/ofers"><img src="./img/peliculas/discount.jpg" ></a>
         </div>
       
         <div class="mySlides fade">
-          <img src="./img/peliculas/Vikingos1280.jpg" >
+          <a href="/products/serialSerie/18"><img src="./img/peliculas/Vikingos1280.jpg" ></a>
         </div>
       
         <!-- Next and previous buttons -->
@@ -59,14 +59,14 @@
     <div class="carouselDesktop">
         <div id="carousel">
             <figure id="spinner">
-                <img src="./img/peliculas/Anabelle341x192.jpg" alt>
-                <img src="./img/peliculas/carritoelPermiso.jpg" alt>
-                <img src="./img/peliculas/carritoGreebland.jpg" alt>
-                <img src="./img/peliculas/carritoVarios.jpg" alt>
-                <img src="./img/series/dbzcarrito.jpg" alt>
-                <img src="./img/peliculas/thor-banner.jpg" alt>
-                <img src="./img/peliculas/Vikingos1280.jpg" alt>
-                <img src="./img/series/WestWorld1920x1080.jpg" alt>
+                <a href="/products/serialMovie/48"><img src="./img/peliculas/FreeGuy1200x700.jpg" alt></a>
+                <a href="/products/serialMovie/36"><img src="./img/peliculas/ruega-por-nosotros.jpg" alt></a>
+                <a href="/products/serialMovie/47"><img src="./img/peliculas/carritoGreebland.jpg" alt></a>
+                <a href="/products/serialSerie/19"><img src="./img/series/rickAndMorty.jpg" alt></a>
+                <a href="/products/serialSerie/24"><img src="./img/series/dbzcarrito.jpg" alt></a>
+                <a href="/products/serialMovie/21"><img src="./img/peliculas/EndGame1280x720.jpg" alt></a>
+                <a href="/products/serialSerie/10"><img src="./img/series/WestWorld1920x1080.jpg" alt></a>
+                <a href="/products/serialSerie/18"><img src="./img/peliculas/Vikingos1280.jpg" alt></a>
             </figure>
         </div>
     <span style="float:left" class="ss-icon" onclick="galleryspin('-')"><i class="fas fa-arrow-left"></i></span>
@@ -110,7 +110,7 @@
 
         </div>
         <div class="film film3">
-            <h3 class="text"><a href="/ofert">En Oferta:</a></h3>
+            <h3 class="text"><a href="/popular">Populares:</a></h3>
             <div class="row">
                 <div class="row__inner">
                     <% popular.forEach(elem => { %>
@@ -133,13 +133,11 @@
               </div>
         </div>
         <div class="film film4">
-            <h3 class="text"><a href="/popular">Populares:</a></h3>
+            <h3 class="text"><a href="/ofers">Ofertas:</a></h3>
             <div class="row">
                 <div class="row__inner"> 
                   <% ofers.forEach(elem => { %>
-                    <% if (elem.Price.discount > 5) { %>
                       <div class="tile">
-                          
                           <div class="tile__media">
                             <% if(elem.duration) {%> 
                                 <a href="/products/serialMovie/<%= elem.id %>">
@@ -153,7 +151,6 @@
                           </div>
                          
                       </div>
-                      <% } %> 
                   <% }) %> 
             
                 </div>

@@ -50,10 +50,10 @@ User.belongsToMany(Movie, {through: 'movieFavorites', timestamps: false})
 Serie.belongsToMany(User, {through: 'serieFavorites', timestamps: false})
 User.belongsToMany(Serie, {through: 'serieFavorites', timestamps: false})
 
-Movie.belongsToMany(User, {through: 'movieOrders', timestamps: false})
-User.belongsToMany(Movie, {through: 'movieOrders', timestamps: false})
-Serie.belongsToMany(User, {through: 'serieOrders', timestamps: false})
-User.belongsToMany(Serie, {through: 'serieOrders', timestamps: false})
+Movie.belongsToMany(User, {through: 'movieOrders', as: 'movieCart', timestamps: false})
+User.belongsToMany(Movie, {through: 'movieOrders', as: 'movieCart', timestamps: false})
+Serie.belongsToMany(User, {through: 'serieOrders', as: 'serieCart', timestamps: false})
+User.belongsToMany(Serie, {through: 'serieOrders', as: 'serieCart', timestamps: false})
 
 
 Card.belongsTo(User)

@@ -160,6 +160,49 @@ let controller = {
             all,
             session: req.session
          })
+    },
+    premieres: async (req, res) => {
+        try {
+            let movies = await Movie.findAll()
+            let series = await Serie.findAll()
+            Date.prototype.toPremier = function() { return this.getFullYear() - 2 +"-"+(this.getMonth()+1)+"-"+this.getDate(); }
+            let actual = new Date().toPremier()
+            moviesPremier = movies.filter(elem => elem.age >= actual)
+            seriesPremier = series.filter(elem => elem.age >= actual)
+            res.render('./product/premieres', {
+                title: 'Premieres',
+                moviesPremier,
+                seriesPremier,
+                session: req.session
+            })
+            
+        } catch (error) {
+            res.send(error)
+        }
+    },
+    ofers: async (req, res) => {
+        try {
+            let movies = await Movie.findAll({
+                include: {
+                    model: Price
+                }
+            })
+            let series = await Serie.findAll({
+                include: {
+                    model: Price
+                }
+            })
+            let ofersMovies = movies.filter(elem => elem.Price.discount >= 30)
+            let ofersSeries = series.filter(element => element.Price.discount >= 30)
+            res.render('./product/ofers', {
+                title: 'ofers',
+                ofersMovies,
+                ofersSeries,
+                session: req.session
+            })
+        } catch (error) {
+            console.log(error.message)
+        }
     }
 }
 

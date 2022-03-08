@@ -18,6 +18,6 @@ module.exports = (sequelize) => {
       }, {
             timestamps: false,
             sequelize: sequelize,
-            modelName: 'price'
+            /* modelName: 'price' */
       })
 }

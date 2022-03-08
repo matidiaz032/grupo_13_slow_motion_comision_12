@@ -138,6 +138,47 @@ let controller = {
             })
         }
     },
+    profileAuth: async (req, res) => {
+        let userSession = req.session.user;
+        let userFind = await User.findByPk(userSession.id);
+        
+        res.render('users/userProfileAuth', {
+            title: 'User Profile Auth',
+            session: req.session,
+            user: userFind
+        })
+    },
+    optionalProfileAuth: async (req, res) => {
+        const errors = validationResult(req);
+        let userSession = req.session.user;
+        let userFind = await User.findByPk(userSession.id);
+
+        if (errors.isEmpty()) {
+            const { first_name, last_name, user_name, email, newPassword } = req.body;
+            try {
+                await User.update({
+                    first_name,
+                    last_name,
+                    user_name,
+                    email,
+                    password: newPassword
+                }, {
+                    where: { id: userSession.id }
+                })
+
+                res.redirect('/users/profile');
+            } catch (error) {
+                res.send(error);
+            }
+        } else {
+            res.render('users/userProfileAuth', {
+                title: 'User Profile Auth',
+                errors: errors.mapped(),
+                session: req.session,
+                user: userFind
+            })
+        }
+    },
     logout: (req, res) => {
         req.session.destroy();
         if (req.cookies.userSlowMotion) {
@@ -147,7 +188,7 @@ let controller = {
     },
     favorites: async (req, res) => {
         try {
-            let user = await User.findAll({
+            let user = await User.findOne({
                 where: {id: req.session.user.id},
                 include: [{
                     model: Movie
@@ -157,8 +198,8 @@ let controller = {
             })
             res.render('users/favorites', {
                 title: 'favorites',
-                movies: user[0].Movies,
-                series: user[0].Series,
+                movies: user.Movies,
+                series: user.Series,
                 session: req.session
             })
         } catch (error) {

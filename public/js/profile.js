@@ -20,6 +20,18 @@ window.addEventListener('load', function() {
     let $genre = $('#genre');
     let $genreErrors = $('#genreErrors');
 
+    let $address = $('#address');
+    let $addressErrors = $('#addressErrors');
+    let regExAddress = /^\D+\s\D?\s?\d{1,5}$/gim;
+
+    let $country = $('#country');
+    let $countryErrors = $('#countryErrors');
+    let $province = $('#province');
+    let $provinceErrors = $('#provinceErrors');
+    let $city = $('#city');
+    let $cityErrors = $('#cityErrors');
+    let regExText = /^[a-zA-Z\sñáéíóúü ]*$/;
+
     let validationErrors = false;
 
     $phone.addEventListener('blur', function(){
@@ -93,6 +105,75 @@ window.addEventListener('load', function() {
                 $genreErrors.innerHTML = 'Debe seleccionar un género del listado';
                 $genre.style.color = 'red';
                 validationErrors = true;
+                break;
+        }
+    })
+
+    $address.addEventListener('blur', function(){
+        if (regExAddress.test($address.value)) {
+            $addressErrors.innerHTML = ''
+            $address.style.color = '#2940D3'
+            $address.style.backgroundColor = '#d8c371'
+            $address.style.border = 'none'
+            validationErrors = false
+        } else if (!regExAddress.test($address.value)) {
+            $addressErrors.innerHTML = 'La direccion debe contener calle y numero'
+            $address.style.color = 'red'
+            validationErrors = true
+        }
+    })
+
+    $country.addEventListener('blur', function(e){
+        console.log(e.target.value);
+        switch (true) {
+            case !regExText.test($country.value):
+                $countryErrors.innerHTML = 'Debe ingresar un país válido';
+                $country.style.color = 'red';
+                validationErrors = true;
+                break;
+            default:
+                console.log("else");
+                $countryErrors.innerHTML = '';
+                $country.style.color = '#2940D3';
+                $country.style.backgroundColor = '#d8c371';
+                $country.style.border = 'none';
+                validationErrors = false;
+                break;
+        }
+    })
+
+    $province.addEventListener('blur', function(){
+        switch (true) {
+            case !regExText.test($province.value):
+                $provinceErrors.innerHTML = 'Debe ingresar una provincia válida';
+                $province.style.color = 'red';
+                validationErrors = true;
+                break;
+            default:
+                console.log("else");
+                $provinceErrors.innerHTML = '';
+                $province.style.color = '#2940D3';
+                $province.style.backgroundColor = '#d8c371';
+                $province.style.border = 'none';
+                validationErrors = false;
+                break;
+        }
+    })
+
+    $city.addEventListener('blur', function(){
+        switch (true) {
+            case !regExText.test($city.value):
+                $cityErrors.innerHTML = 'Debe ingresar una provincia válida';
+                $city.style.color = 'red';
+                validationErrors = true;
+                break;
+            default:
+                console.log("else");
+                $cityErrors.innerHTML = '';
+                $city.style.color = '#2940D3';
+                $city.style.backgroundColor = '#d8c371';
+                $city.style.border = 'none';
+                validationErrors = false;
                 break;
         }
     })

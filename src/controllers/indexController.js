@@ -2,6 +2,7 @@ const { Movie, Serie, Price, Genre } = require('../database/models/index.js'); /
 
 let controller = {
     index: async (req, res) => {
+        
         try {
             let allMovies = await Movie.findAll({
                 include: {
@@ -17,14 +18,15 @@ let controller = {
             })
             let genres = await Genre.findAll()
             let allMovieSerie = [...allMovies, ...allSeries]
-            let popular = allMovieSerie.filter(elem => elem.rating > 7)
+            let popular = allMovieSerie.filter(elem => elem.rating > 5)
+            let ofers = allMovieSerie.filter(elem => elem.Price.discount > 5)
             res.render('index', {
                 title: 'SLOW MOTION',
                 movies3: allMovies,
                 series3: allSeries,
-                popular,
+                popular: popular.slice(0,8),
                 genres,
-                ofers: allMovieSerie,
+                ofers: ofers.slice(0,8),
                 session: req.session
             })
         } catch (error) {
