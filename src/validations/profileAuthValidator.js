@@ -33,16 +33,12 @@ module.exports = [
     body('actualPassword')
     .custom((value, {req}) => {
         let user = User.find( user => user.email == req.body.email);
+        console.log(user);
 
         if(user) {
-            if(bcrypt.compareSync(value, user.password) ) {
-                return true;
-            } else {
-                return false
-            }
-            
+            bcrypt.compareSync(value, user.password) ? true : false   
         } else {
-            return false;
+            return false
         }
     }).withMessage('La contraseña actual es incorrecta'),
 

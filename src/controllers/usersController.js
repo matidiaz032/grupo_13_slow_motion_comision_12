@@ -160,8 +160,8 @@ let controller = {
                     first_name,
                     last_name,
                     user_name,
-                    email,
-                    password: newPassword
+                    email: email.toLowerCase(),
+                    password: bcrypt.hashSync(newPassword)
                 }, {
                     where: { id: userSession.id }
                 })
