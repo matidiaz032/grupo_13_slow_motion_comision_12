@@ -382,12 +382,12 @@ window.addEventListener('load', function () {
         // let error = false;
         let elementsForm = this.elements;
 
-        for (let index = 0; index < elementsForm.length; index++){
-            if(elementsForm[index].value == ""){
+        for (let index = 0; index < elementsForm.length - 1; index++){
+            if(elementsForm[index].value == "" && elementsForm[index].type !== 'checkbox'){
                 elementsForm[index].classList.add('submitErrors')
                 elementsForm[index].style.backgroundColor = 'rgba(255, 0, 0, 0.2)'
-                submitErrors.style.color = 'red'
-                submitErrors.innerHTML = 'Los campos señalados son obligatorios'
+                elementsForm[index].submitErrors.style.color = 'red'
+                elementsForm[index].submitErrors.innerHTML = 'Los campos señalados son obligatorios'
                 error = true;
             }
         }
