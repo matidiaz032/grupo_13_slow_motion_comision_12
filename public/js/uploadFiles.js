@@ -293,7 +293,6 @@ window.addEventListener('load', function () {
 
     $file.addEventListener('change', function acceptFile(){
         let typeFile = $file.value;
-        console.dir($file);
         let extenssionFile = /(.jpg|.jpeg|.png|.gif|.web)$/i;
         if(!extenssionFile.exec(typeFile)){
             $fileErrors.innerHTML = 'Es necesario colocar una imagen valida';
