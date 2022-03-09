@@ -1,6 +1,6 @@
 ### Weekly.MD
 
-## QUINTO SPRINT   DAILY/WEEKLY
+## SEXTO SPRINT   DAILY/WEEKLY
 
 Iniciando el año entregando el sprint anterior con mucho esfuerzo y dedicación, nos encontramos con el primer sprint que se inicia este año y con las dificultades que eso conlleva, ya que, a estas alturas todo es más complejo.
 En cuanto a las tareas que se han repartido de la mejor manera posible y entendiendo que a unos se les complica más que al otro hemos demostrado una ves mas que estamos dispuestos a ayudarnos.

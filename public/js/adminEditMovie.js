@@ -33,6 +33,12 @@ window.addEventListener('load', function () {
     let actualYear = actualDate.getFullYear();
     let $ageErrors = qs('#ageErrors');
 
+    let $genreCheck = document.querySelectorAll('#genre');
+    let $genreCheckErrors = qs('#genreErrors');
+
+    let $idiom = document.querySelectorAll('#idiom');
+    let $idiomErrors = qs('#idiomErrors');
+
     // Subtitle
     let $subtitle = qs('#subtitle');
     let $subtitleErrors = qs('#subtitleErrors');
@@ -201,6 +207,44 @@ window.addEventListener('load', function () {
         }
     })
 
+    function genreValid() {
+        var suma=0;
+
+        for (let i = 0; i < $genreCheck.length; i++) {
+            $genreCheck[i].addEventListener("click", genreValid);
+            if($genreCheck[i].checked != true){
+                suma=suma+1;
+            }
+        }
+        if(suma == 13) {
+            $genreCheckErrors.innerHTML= 'Debes seleccionar al menos un genero';
+            validationErrors = true
+        } else {
+            $genreCheckErrors.innerHTML= '';
+            validationErrors = false
+        }       
+    }
+    genreValid()
+
+    function idiomValid() {
+        var suma=0;
+
+        for (let i = 0; i < $idiom.length; i++) {
+            $idiom[i].addEventListener("click", idiomValid);
+            if($idiom[i].checked != true){
+                suma=suma+1;
+            }
+        }
+        if(suma == 7) {
+            $idiomErrors.innerHTML= 'Debes seleccionar al menos un idioma';
+            validationErrors = true
+        } else {
+            $idiomErrors.innerHTML= '';
+            validationErrors = false
+        }       
+    }
+    idiomValid()
+
     $subtitle.addEventListener('blur', function(){
         if($subtitle.value.trim() && $subtitle.value === "0"){
             $subtitleErrors.innerHTML = 'Es necesario seleccionar una opcion';
@@ -217,7 +261,7 @@ window.addEventListener('load', function () {
         }
     })
 
-    $file.addEventListener('change', function acceptFile(){
+    /* $file.addEventListener('change', function acceptFile(){
         let typeFile = $file.value;
         let extenssionFile = /(.jpg|.jpeg|.png|.gif|.web)$/i;
         if(!extenssionFile.exec(typeFile)){
@@ -236,7 +280,7 @@ window.addEventListener('load', function () {
                 $fileErrors.innerHTML = 'Imagen subida';
             }
         }
-    })
+    }) */
 
     $buyPrice.addEventListener('blur', function(){
         if($buyPrice.value.trim() && $buyPrice.value === 0 ){
@@ -271,7 +315,6 @@ window.addEventListener('load', function () {
             $rentalPrice.toggleAttribute('required')
             validationErrors = true
         } else {
-            $rentalPriceErrors.innerHTML = 'El comentario es valido'
             $rentalPrice.style.color = '#2940D3'
             $rentalPrice.style.backgroundColor = '#d8c371'
             $rentalPrice.style.border = 'none'
@@ -301,15 +344,18 @@ window.addEventListener('load', function () {
         }
     })
 
+    console.log(validationErrors)
+    
     $formCharge.addEventListener('submit', function(event){
         let error = false;
         event.preventDefault();
-
+        
         // let error = false;
         let elementsForm = this.elements;
-
+        
         for (let index = 0; index < elementsForm.length; index++){
-            if(elementsForm[index].value == ""){
+            console.log(elementsForm)
+            if(elementsForm[index].value == "" && elementsForm[index].type !== 'file'){
                 elementsForm[index].classList.add('submitErrors')
                 elementsForm[index].style.backgroundColor = 'rgba(255, 0, 0, 0.2)'
                 submitErrors.style.color = 'red'
@@ -317,6 +363,8 @@ window.addEventListener('load', function () {
                 error = true;
             }
         }
+        console.log(error)
+        console.log(validationErrors)
 
         if(!error && !validationErrors) {
             $formCharge.submit()

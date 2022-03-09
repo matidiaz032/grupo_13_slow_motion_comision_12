@@ -76,7 +76,7 @@
                         <label for="genre" class="title-genre"><b>Genero:</b></label>
                         <div class="form-check-container">
                             <% genres.forEach(genre => { %>
-                                <input type="checkbox" id="<%- genre.id %>" class="genre" name="genre" value="<%- genre.name %>"><b><%- genre.name %></b><br>
+                                <input type="checkbox" id="genre" class="genre" name="genre" value="<%- genre.name %>"><b><%- genre.name %></b><br>
                             <% }) %>
                         </div>
                         <small class="text-errors" id="genreErrors"></small>
@@ -88,7 +88,7 @@
                         <label for="idiom" class="title-idiom">Idioma:</label>
                         <div class="form-check-container">
                             <% idioms.forEach(idiom => { %>
-                                <input type="checkbox" name="idiom" class="idiom" id="<%- idiom.id%> " value="<%- idiom.name %>"><b><%- idiom.name %></b><br>
+                                <input type="checkbox" name="idiom" class="idiom" id="idiom" value="<%- idiom.name %>"><b><%- idiom.name %></b><br>
                             <% }) %>
                         </div>
                         <small class="text-errors" id="idiomErrors"></small>
@@ -121,10 +121,10 @@
                     </div>
                     <div class="contain__dateUrl">
                         <label for="video">Pegar URL del trailer</label><br>
-                        <input type="url" name="video" class="input-url">
-                        <small class="text-errors" id="directorErrors"></small>
-                        <% if (locals.errors && errors.director) { %>
-                            <small class="text-errors"><%= errors.director.msg %></small>
+                        <input type="url" name="video" id="video" class="input-url">
+                        <small class="text-errors submitErrors" id="videoErrors"></small>
+                        <% if (locals.errors && errors.video) { %>
+                            <small class="text-errors submitErrors"><%= errors.video.msg %></small>
                         <% } %> 
                     </div>
                 </div>
@@ -159,6 +159,6 @@
     </div>
     <!-- Footer -->
     <%- include ('../partials/adminFooter') %>
-    <!-- <script src="/js/uploadFiles.js"></script> -->
+    <script src="/js/uploadFiles.js"></script>
 </body>
 </html>

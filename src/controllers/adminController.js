@@ -297,6 +297,8 @@ let controller = {
     editSuccessSerie: async (req, res) => {
         const { name, description, appreciation, seasons, age, director, genre, idiom, subtitle, video, price } = req.body;
 
+        const errors = validationResult(req)
+
         try {
             let serieSearch = await Serie.findByPk(req.params.id)
             await Promise.all([serieSearch.removeGenres(await serieSearch.getGenres()), serieSearch.removeIdioms(await serieSearch.getIdioms())])
@@ -331,7 +333,34 @@ let controller = {
                 }
             })
             await Promise.all([serieSearch.addGenre(genreSearch), serieSearch.addIdiom(idiomSearch), priceCreate.addSerie(serieSearch)])
-            res.redirect('/admin')
+            if(errors.isEmpty()) {
+                res.redirect('/admin')
+            } else {
+                let product = await Serie.findByPk(req.params.id, {
+                    include: [Price, {
+                        model: Genre,
+                        attributes: ['name'],
+                        through: {
+                            attributes: [],
+                        }
+                    }, {
+                        model: Idiom,
+                        attributes: ['name'],
+                        through: {
+                            attributes: [],
+                        }
+                    }],
+                })
+                let genreIdiom = await Promise.all([Genre.findAll(), Idiom.findAll()])
+                res.render('./admin/adminEditSerie', {
+                    title: 'Edit',
+                    product,
+                    genres: genreIdiom[0],
+                    idioms: genreIdiom[1],
+                    errors,
+                    session: req.session
+                })
+            }
         } catch (error) {
             res.send('no se modifico la serie')
         }
