@@ -19,8 +19,9 @@ module.exports = [
     .isEmail()
     .withMessage('Debe ingresar un email valido'),
 
-    body('email').custom((value) => {
-       return User.findOne({ 
+    body('email')
+        .custom((value) => {
+        return User.findOne({ 
             where: {
                 email: value
             } 

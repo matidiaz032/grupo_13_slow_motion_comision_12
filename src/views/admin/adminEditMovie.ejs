@@ -70,6 +70,10 @@
                                     } %>><b class="item__editGenre"><%- genre.name %></b><br>
                                 </div>
                             <% }) %>
+                            <small class="text-errors submitErrors" id="genreErrors"></small>
+                            <% if (locals.errors && errors.genre) { %>
+                                <small class="text-errors submitErrors"><%= errors.genre.msg %></small>
+                            <% } %> 
                         </div><br>
                         <small class="text-errors" id="genreErrors"></small>
                         <% if (locals.errors && errors.genre) { %>
@@ -91,6 +95,10 @@
                                     } %>><b><%- idiom.name %></b><br>
                                 </div>
                             <% }) %>
+                            <small class="text-errors submitErrors" id="idiomErrors"></small>
+                            <% if (locals.errors && errors.idiom) { %>
+                                <small class="text-errors submitErrors"><%= errors.idiom.msg %></small>
+                            <% } %> 
                         </div><br>
                         <small class="text-errors" id="idiomErrors"></small>
                         <% if (locals.errors && errors.idiom) { %>
@@ -99,13 +107,17 @@
                     </div>
                     <div class="contain__date-subtitle">
                         <label for="idiom">Subtitulos:</label>
-                        <select class="contain__subtitle" id="subtitle">
-                                <option type="radio" name="subtitle" value="Latino" <%- product.subtitle === "Latino" ? 'checked' : '' %>><b>Si</b></option>
-                                <option type="radio" name="subtitle" value="No" <%- product.subtitle === "No" ? 'checked' : '' %>><b>No</b></option>
-                        </select>
-                        <small class="text-errors" id="subtitleErrors"></small>
+                        <div class="option__subtitle">
+                            <div class="contain__subtitle">
+                                <input type="radio" name="subtitle" value="Latino" <%- product.subtitle === "Latino" ? 'checked' : '' %>><b>Si</b><br>
+                            </div>
+                            <div class="contain__subtitle">
+                                <input type="radio" name="subtitle" value="No" <%- product.subtitle === "No" ? 'checked' : '' %>><b>No</b><br>
+                            </div>
+                        </div>
+                         <small class="text-errors submitErrors" id="subtitleErrors"></small>
                         <% if (locals.errors && errors.subtitle) { %>
-                            <small class="text-errors"><%= errors.subtitle.msg %></small>
+                            <small class="text-errors submitErrors"><%= errors.subtitle.msg %></small>
                         <% } %>
                     </div>
                 </div>
