@@ -63,7 +63,7 @@
                         <div class="date__genre-flex">
                             <% genres.forEach(genre => { %>
                                 <div class="item__genreSerie">
-                                    <input type="checkbox" name="genre" value="<%- genre.name %>" <% for (let i = 0; i < product.Genres.length; i++) {
+                                    <input type="checkbox" name="genre" id="genre" value="<%- genre.name %>" <% for (let i = 0; i < product.Genres.length; i++) {
                                         if(genre.name === product.Genres[i].name) {
                                             %> checked <%
                                         }
@@ -81,7 +81,7 @@
                         <div class="containIdiom">
                             <% idioms.forEach(idiom => { %>
                                 <div class="idiom__editSerie">
-                                    <input type="checkbox" name="idiom" value="<%- idiom.name %>" <% for (let i = 0; i < product.Idioms.length; i++) {
+                                    <input type="checkbox" name="idiom" id="idiom" value="<%- idiom.name %>" <% for (let i = 0; i < product.Idioms.length; i++) {
                                     if(idiom.name === product.Idioms[i].name) {
                                     %> checked <%
                                 }
@@ -136,7 +136,8 @@
                     </div>
                 </div>
                 <div class="contain__edit-enter">
-                    <input type="submit" value="Editar" class="input__edit-enter">
+                    <span id="submitErrors"></span>
+                    <button type="submit" value="Editar" class="input__edit-enter">Editar</button>
                 </div>
             </form>
         </div>
@@ -150,6 +151,7 @@
     </div>
     <!-- Footer -->
     <%- include ('../partials/adminFooter') %>
+    <script src="/js/adminEditSerie.js"></script>
     
 </body>
 </html>
