@@ -34,7 +34,7 @@
                     </div>
                     <div class="contain__appreciationMovie">
                         <b class="section-appreciation">Apreciacion:</b>
-                        <input type="number" name="appreciation" id="appreciation" placeholder="Calificación" class="input" value='<%-product.rating  %>'>
+                        <input type="number" step="any" name="appreciation" id="appreciation" placeholder="Calificación" class="input" value='<%-product.rating  %>'>
                         <small class="text-errors" id="appreciationErrors"></small>
                         <% if (locals.errors && errors.appreciation) { %>
                             <small class="text-errors"><%= errors.appreciation.msg %></small>
@@ -141,7 +141,7 @@
                     <div class="contain__date-rental">
                         <b class="price-rental">Alquiler:</b>
                         <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input" value="<%- product.Price.rental %>">
-                        <small class="text-errors" id="discountErrors"></small>
+                        <small class="text-errors" id="rentalPriceErrors"></small>
                         <% if (locals.errors && errors.price) { %>
                             <small class="text-errors"><%= errors.price.msg %></small>
                         <% } %>

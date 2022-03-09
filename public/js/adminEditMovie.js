@@ -294,7 +294,7 @@ window.addEventListener('load', function () {
             $buyPrice.toggleAttribute('required')
             validationErrors = true;
         } else {
-            $buyPriceErrors.innerHTML = 'El comentario es valido'
+            $buyPriceErrors.innerHTML = 'El precio es valido'
             $buyPrice.style.color = '#2940D3'
             $buyPrice.style.backgroundColor = '#d8c371'
             $buyPrice.style.border = 'none'
@@ -310,7 +310,7 @@ window.addEventListener('load', function () {
             $rentalPrice.toggleAttribute('required')
             validationErrors = true;
         } else if (!regExPrice.test($rentalPrice.value)){
-            $rentalPriceErrors.innerHTML = 'El título no es válido'
+            $rentalPriceErrors.innerHTML = 'El precio no es válido'
             $rentalPrice.style.color = '#ff0000'
             $rentalPrice.toggleAttribute('required')
             validationErrors = true
@@ -330,12 +330,12 @@ window.addEventListener('load', function () {
             $discount.toggleAttribute('required')
             validationErrors = true;
         } else if (!regExNmbr.test($discount.value)){
-            $discountErrors.innerHTML = 'El título no es válido'
+            $discountErrors.innerHTML = 'El descuento no es válido'
             $discount.style.color = '#ff0000'
             $discount.toggleAttribute('required')
             validationErrors = true
         } else {
-            $discountErrors.innerHTML = 'El comentario es valido'
+            $discountErrors.innerHTML = 'El descuento es valido'
             $discount.style.color = '#2940D3'
             $discount.style.backgroundColor = '#d8c371'
             $discount.style.border = 'none'
@@ -344,7 +344,7 @@ window.addEventListener('load', function () {
         }
     })
 
-    console.log(validationErrors)
+
     
     $formCharge.addEventListener('submit', function(event){
         let error = false;
