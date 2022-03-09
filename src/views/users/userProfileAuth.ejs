@@ -51,7 +51,7 @@
                     <div class="form-input-container">
                         <div class="form-input">
                             <label for="email" class="label-profile">Email</label>
-                            <input type="text" name="email" id="email" placeholder="Email" value="<%= user.email %>">
+                            <input type="email" name="email" id="email" placeholder="Email" value="<%= user.email %>">
                             <small class="text-danger" id="emailErrors"></small>
                             <% if (locals.errors && errors.email) { %>
                                 <small><%- errors.email.msg %></small>
@@ -61,7 +61,7 @@
                     <div class="form-input-container">
                         <div class="form-input">
                             <label for="actualPassword" class="label-profile">Contraseña actual</label>
-                            <input type="text" name="actualPassword" id="actualPassword" placeholder="Contraseña actual" value="">
+                            <input type="password" name="actualPassword" id="actualPassword" placeholder="Contraseña actual" value="">
                             <small class="text-danger" id="actualPasswordErrors"></small>
                             <% if (locals.errors && errors.actualPassword) { %>
                                 <small><%- errors.actualPassword.msg %></small>
@@ -71,7 +71,7 @@
                     <div class="form-input-container">
                         <div class="form-input">
                             <label for="newPassword" class="label-profile">Contraseña nueva</label>
-                            <input type="text" name="newPassword" id="newPassword" placeholder="Contraseña nueva" value="">
+                            <input type="password" name="newPassword" id="newPassword" placeholder="Contraseña nueva" value="">
                             <small class="text-danger" id="newPasswordErrors"></small>
                             <% if (locals.errors && errors.newPassword) { %>
                                 <small><%- errors.newPassword.msg %></small>
@@ -88,5 +88,5 @@
     </div>
 
     <%- include('../partials/footer')  %>
-    <script src="../js/profile.js"></script>
+    <script src="../js/profileAuth.js"></script>
 </body>
