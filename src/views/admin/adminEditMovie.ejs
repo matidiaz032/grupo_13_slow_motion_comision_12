@@ -9,23 +9,46 @@
             <form action="/admin/products/movie/<%- product.id %>?_method=PUT" method="post" class="edit-filesMovie" enctype="multipart/form-data">
                 <div class="contain__titleMovie">
                     <input type="text" name="name" id="nombre" placeholder="Nombre" class="input__title-movie" value='<%- product.title %>'>
+                    <small class="text-errors submitErrors" id="nameErrors"></small>
+                    <% if (locals.errors && errors.name) { %>
+                        <small class="text-error submitErrors"><%= errors.name.msg %></small>
+                    <% } %> 
                 </div>
                 <div class="contain__descriptionMovie">
                     <textarea type="text" name="description" id="comentario" placeholder="Descripción" class="input"><%- product.description %></textarea required>
+                    <small class="text-errors submitErrors" id="descriptionErrors"></small>
+                    <% if (locals.errors && errors.description) { %>
+                        <small class="text-errors submitErrors"><%= errors.description.msg %></small>
+                    <% } %> 
                 </div>
                 <div class="info__movie-edit">
                     <div class="contain__durationMovie">
                         <input type="datetime" name="duration" id="duration" placeholder="Duración" class="input" value="<%- product.duration %>">
+                        <% if (locals.errors && errors.duration) { %>
+                            <small class="text-errors submitErrors"><%= errors.duration.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="contain__appreciationMovie">
-                        <input type="number" name="appreciation" id="appreciation" placeholder="Calificación" class="input" value='<%-product.rating  %>'>
+                        <input type="number" step="any" name="appreciation" id="appreciation" placeholder="Calificación" class="input" value='<%-product.rating  %>'>
+                        <small class="text-errors submitErrors" id="appreciationErrors"></small>
+                        <% if (locals.errors && errors.appreciation) { %>
+                            <small class="text-errors submitErrors"><%= errors.appreciation.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="contain__date-director">
                         <input type="text" name="director" id="director" placeholder="Director" class="input" value="<%- product.director %>">
+                        <small class="text-errors submitErrors" id="directorErrors"></small>
+                        <% if (locals.errors && errors.director) { %>
+                            <small class="text-errors submitErrors"><%= errors.director.msg %></small>
+                        <% } %> 
                     </div>
                     <div class="contain__date-years">
                         <label for="year">Año:</label>
                         <input type="month" name="age" id="age" placeholder="Año" class="input" value="<%- product.age.substring(0,7) %>">
+                        <small class="text-errors submitErrors" id="ageErrors"></small>
+                        <% if (locals.errors && errors.age) { %>
+                            <small class="text-errors submitErrors"><%= errors.age.msg %></small>
+                        <% } %>
                     </div>
                 </div>
                 <div class="edit__movie-config">
@@ -41,6 +64,10 @@
                                     } %>><b class="item__editGenre"><%- genre.name %></b><br>
                                 </div>
                             <% }) %>
+                            <small class="text-errors submitErrors" id="genreErrors"></small>
+                            <% if (locals.errors && errors.genre) { %>
+                                <small class="text-errors submitErrors"><%= errors.genre.msg %></small>
+                            <% } %> 
                         </div><br>
                     </div>
                     <div class="contain__date-idiom">
@@ -58,6 +85,10 @@
                                     } %>><b><%- idiom.name %></b><br>
                                 </div>
                             <% }) %>
+                            <small class="text-errors submitErrors" id="idiomErrors"></small>
+                            <% if (locals.errors && errors.idiom) { %>
+                                <small class="text-errors submitErrors"><%= errors.idiom.msg %></small>
+                            <% } %> 
                         </div><br>
                     </div>
                     <div class="contain__date-subtitle">
@@ -70,6 +101,10 @@
                                 <input type="radio" name="subtitle" value="No" <%- product.subtitle === "No" ? 'checked' : '' %>><b>No</b><br>
                             </div>
                         </div>
+                         <small class="text-errors submitErrors" id="subtitleErrors"></small>
+                        <% if (locals.errors && errors.subtitle) { %>
+                            <small class="text-errors submitErrors"><%= errors.subtitle.msg %></small>
+                        <% } %>
                     </div>
                 </div>
                 <div class="imgUrl__flex">

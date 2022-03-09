@@ -1,5 +1,6 @@
 const fs = require("fs");
 const { Op, DataTypes } = require('sequelize')
+const { validationResult } = require('express-validator')
 const { Movie, Serie, Genre, Price, Idiom, Rol , User } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 
 let controller = {
@@ -71,78 +72,96 @@ let controller = {
     },
     store: async (req, res) => {
         const { name, description, duration, appreciation, seasons, age, director, movieSeries, genre, idiom, subtitle, video, price } = req.body;
-        if (movieSeries === 'movie') {
-            try {
-                let movieCreate = await Movie.create({
-                    title: name,
-                    description,
-                    trailer: video.substr(video.indexOf('=') + 1),
-                    duration: Number(duration),
-                    rating: Number(appreciation),
-                    age,
-                    director,
-                    subtitle,
-                    image: req.file ? req.file.filename : 'default.png',
-                });
-                let genreIdiom = await Promise.all([Genre.findAll({
-                        where: {
-                            name: genre
-                        }
-                    }),
+
+        const errors = validationResult(req)
+        
+        if(errors.isEmpty()) {
+            if (movieSeries === 'movie') {
+                try {
+                    let movieCreate = await Movie.create({
+                        title: name,
+                        description,
+                        trailer: video.substr(video.indexOf('=') + 1),
+                        duration: Number(duration),
+                        rating: Number(appreciation),
+                        age,
+                        director,
+                        subtitle,
+                        image: req.file ? req.file.filename : 'default.png',
+                    });
+                    let genreIdiom = await Promise.all([Genre.findAll({
+                            where: {
+                                name: genre
+                            }
+                        }),
+                        Idiom.findAll({
+                            where: {
+                                name: idiom
+                            }
+                        })
+                    ])
+                    let [priceCreate] = await Price.findOrCreate({
+                            where: {
+                                buy: price[0],
+                                rental: price[1],
+                                discount: price[2]
+                            }
+                    })
+                    await Promise.all([movieCreate.addGenre(genreIdiom[0]), movieCreate.addIdiom(genreIdiom[1]), priceCreate.addMovie(movieCreate)])
+                    res.redirect('/admin/movies')
+                } catch (error) {
+                    res.send('fallo la creacion de movie')
+                }
+            } else if(movieSeries === 'serie') {
+                try {
+                    let serieCreate = await Serie.create({
+                        title: name,
+                        description,
+                        trailer: video.substr(video.indexOf('=') + 1),
+                        seasons: Number(seasons),
+                        rating: Number(appreciation),
+                        age,
+                        director,
+                        subtitle,
+                        image: req.file ? req.file.filename : 'default.png',
+                    });
+                    let genreIdiom = await Promise.all([Genre.findAll({
+                            where: {
+                                name: genre
+                            }
+                        }),
                     Idiom.findAll({
-                        where: {
-                            name: idiom
-                        }
+                            where: {
+                                name: idiom
+                            }
+                        })
+                    ])
+                    let [priceCreate] = await Price.findOrCreate({
+                            where: {
+                                buy: price[0],
+                                rental: price[1],
+                                discount: price[2]
+                            }
                     })
-                ])
-                let [priceCreate] = await Price.findOrCreate({
-                        where: {
-                            buy: price[0],
-                            rental: price[1],
-                            discount: price[2]
-                        }
-                })
-                await Promise.all([movieCreate.addGenre(genreIdiom[0]), movieCreate.addIdiom(genreIdiom[1]), priceCreate.addMovie(movieCreate)])
-                res.redirect('/admin/movies')
-            } catch (error) {
-                res.send('fallo la creacion de movie')
+                    await Promise.all([serieCreate.addGenre(genreIdiom[0]), serieCreate.addIdiom(genreIdiom[1]), priceCreate.addSerie(serieCreate)])
+                    res.redirect('/admin/series')
+                } catch (error) {
+                    res.send('fallo la creacion de serie')
+                }
             }
-        } else if(movieSeries === 'serie') {
-            try {
-                let serieCreate = await Serie.create({
-                    title: name,
-                    description,
-                    trailer: video.substr(video.indexOf('=') + 1),
-                    seasons: Number(seasons),
-                    rating: Number(appreciation),
-                    age,
-                    director,
-                    subtitle,
-                    image: req.file ? req.file.filename : 'default.png',
-                });
-                let genreIdiom = await Promise.all([Genre.findAll({
-                        where: {
-                            name: genre
-                        }
-                    }),
-                Idiom.findAll({
-                        where: {
-                            name: idiom
-                        }
-                    })
-                ])
-                let [priceCreate] = await Price.findOrCreate({
-                        where: {
-                            buy: price[0],
-                            rental: price[1],
-                            discount: price[2]
-                        }
+        } else {
+            Promise.all([Genre.findAll(), Idiom.findAll()])
+            .then(data => {
+                res.render('./admin/uploadFiles', {
+                    title: 'Admin - Page : Form',
+                    genres: data[0],
+                    idioms: data[1],
+                    old: req.body,
+                    errors: errors.mapped(),
+                    session: req.session
                 })
-                await Promise.all([serieCreate.addGenre(genreIdiom[0]), serieCreate.addIdiom(genreIdiom[1]), priceCreate.addSerie(serieCreate)])
-                res.redirect('/admin/series')
-            } catch (error) {
-                res.send('fallo la creacion de serie')
-            }
+            })
+            .catch((error) => res.send('No cargaron idiomas y generos'))
         }
     },
     editMovie: async (req, res) => {
@@ -206,6 +225,9 @@ let controller = {
     },
     editSuccessMovie: async (req, res) => {
         const { name, description, duration, appreciation, age, director, genre, idiom, subtitle, video, price } = req.body;
+
+        const errors = validationResult(req)
+
         try {
             let movieSearch = await Movie.findByPk(req.params.id)
             await Promise.all([movieSearch.removeGenres(await movieSearch.getGenres()), movieSearch.removeIdioms(await movieSearch.getIdioms())])
@@ -240,7 +262,34 @@ let controller = {
                 }
             })
             await Promise.all([movieSearch.addGenre(genreSearch), movieSearch.addIdiom(idiomSearch), priceCreate.addMovie(movieSearch)])
-            res.redirect('/admin')
+            if(errors.isEmpty()) {
+                res.redirect('/admin')
+            } else {
+                let product = await Movie.findByPk(req.params.id, {
+                    include: [Price, {
+                        model: Genre,
+                        attributes: ['name'],
+                        through: {
+                            attributes: [],
+                        }
+                    }, {
+                        model: Idiom,
+                        attributes: ['name'],
+                        through: {
+                            attributes: [],
+                        }
+                    }],
+                })
+                let genreIdiom = await Promise.all([Genre.findAll(), Idiom.findAll()])
+                res.render('./admin/adminEditMovie', {
+                    title: 'Edit',
+                    product,
+                    genres: genreIdiom[0],
+                    idioms: genreIdiom[1],
+                    errors,
+                    session: req.session
+                })
+            }
         } catch (error) {
             res.send(error.message)
         }
@@ -291,7 +340,7 @@ let controller = {
         try {
             let movieSearch = await Movie.findByPk(req.params.id)
             await Promise.all([movieSearch.removeGenres(await movieSearch.getGenres()), movieSearch.removeIdioms(await movieSearch.getIdioms(), movieSearch.removeUsers(await movieSearch.getUsers()))])
-            fs.existsSync('./public/img/products-images/', movieSearch.image)
+            fs.existsSync('./public/img/products-images/', movieSearch.image) && movieSearch.image !== 'default.png'
             ? fs.unlinkSync(`./public/img/products-images/${movieSearch.image}`)
             : console.log('No se encontró el archivo');
             await Movie.destroy({
@@ -308,7 +357,7 @@ let controller = {
         try {
             let serieSearch = await Serie.findByPk(req.params.id)
             await Promise.all([serieSearch.removeGenres(await serieSearch.getGenres()), serieSearch.removeIdioms(await serieSearch.getIdioms()), serieSearch.removeUsers(await serieSearch.getUsers())])
-            fs.existsSync('./public/img/products-images/', serieSearch.image)
+            fs.existsSync('./public/img/products-images/', serieSearch.image) && serieSearch.image !== 'default.png'
             ? fs.unlinkSync(`./public/img/products-images/${serieSearch.image}`)
             : console.log('No se encontró el archivo');
             await Serie.destroy({

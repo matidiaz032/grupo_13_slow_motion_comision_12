@@ -117,7 +117,7 @@ window.addEventListener('load', function () {
 
     $name.addEventListener('blur', function(){
         if(!$name.value.trim()){
-            $name.innerHTML = 'El título es obligatorio'
+            $nameErrors.innerHTML = 'El título es obligatorio'
             $name.style.color = '#ff0000'
             $name.toggleAttribute('required')
             validationErrors = true
@@ -383,7 +383,7 @@ window.addEventListener('load', function () {
         let elementsForm = this.elements;
 
         for (let index = 0; index < elementsForm.length; index++){
-            if(elementsForm[index].value == ""){
+            if(elementsForm[index].value !== "on"){
                 elementsForm[index].classList.add('submitErrors')
                 elementsForm[index].style.backgroundColor = 'rgba(255, 0, 0, 0.2)'
                 submitErrors.style.color = 'red'
