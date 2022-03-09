@@ -1,0 +1,36 @@
+
+Guille:
+-Presentacion de integrantes del equipo 
+-Que se vende en el e-commerce
+-Mostrar el home page en version desktop y mobile
+-Mostrar vista de productos(Accediendo desde el boton de navegacion correspondiente)
+
+//Todos extrañamos el videoClub de la esquina de nuestro hogar.
+Nosotros somos el grupo 13 de esta comision, esta conformado por Elias Galeano, Matias Diaz ambos de Buenos Aires
+y quien les habla, Angel Montaña de San Juan. Les vamos a mostrar nuestro ecommerce el cual
+esta pensado para la venta y alquiler de peliculas y series.
+Ahora mismo estamos viendo la pantalla de nuestro home el cual contiene un header,
+un carrusel y un listado de productos. Al final de este encontramos el footer.
+El home es responsive y cambia segun las necesidades de un tactil
+o un raton.
+Al acceder por el listado mismo accedemos a un sublistado de peliculas o series,
+tambien podemos acceder mediante el header.
+Aqui tambien podemos seguir accediendo a listados especificos.
+
+
+
+Matias:
+-Mostrar vista de detalle de producto(Accediendo desde la tarjeta de algun producto)
+-Mostrar rutas protegidas si el usuario no esta logueado
+-Registro: Mostrar validaciones back y registrarse
+-Loguin: Mostrar validaciones back y loguearse como administrador
+-Mostrar carrito de compras
+
+
+
+Elias:
+-Mostrar Dashboard del administrador y funcionalidades
+-Mostrar carga de producto
+-Mostrar edicion de producto
+-Mostrar eliminacion de producto
+-Cierre 
