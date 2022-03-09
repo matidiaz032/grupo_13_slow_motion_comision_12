@@ -6,7 +6,7 @@
     <%- include ('../partials/logoMobileADmin') %>
     <div class="form__files-desktopMovie">
         <div class="form-captionMovie">
-            <form action="/admin/products/movie/<%- product.id %>?_method=PUT" method="post" class="edit-filesMovie" enctype="multipart/form-data">
+            <form action="/admin/products/movie/<%- product.id %>?_method=PUT" method="post" id="form" class="edit-filesMovie" enctype="multipart/form-data">
                 <div class="contain__titleMovie">
                     <b class="section-titleSeasons">Título:</b>
                     <input type="text" name="name" id="name" placeholder="Nombre" class="input__title-movie" value='<%- product.title %>'>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="contain__appreciationMovie">
                         <b class="section-appreciation">Apreciacion:</b>
-                        <input type="number" name="appreciation" id="appreciation" placeholder="Calificación" class="input" value='<%-product.rating  %>'>
+                        <input type="number" step="any" name="appreciation" id="appreciation" placeholder="Calificación" class="input" value='<%-product.rating  %>'>
                         <small class="text-errors" id="appreciationErrors"></small>
                         <% if (locals.errors && errors.appreciation) { %>
                             <small class="text-errors"><%= errors.appreciation.msg %></small>
@@ -63,7 +63,7 @@
                         <div class="date__genre-flex">
                             <% genres.forEach(genre => { %>
                                 <div class="item__genreMovie">
-                                    <input type="checkbox" name="genre" value="<%- genre.name %>" <% for (let i = 0; i < product.Genres.length; i++) {
+                                    <input type="checkbox" name="genre" id="genre" value="<%- genre.name %>" <% for (let i = 0; i < product.Genres.length; i++) {
                                         if(genre.name === product.Genres[i].name) {
                                             %> checked <%
                                         } 
@@ -75,10 +75,6 @@
                                 <small class="text-errors submitErrors"><%= errors.genre.msg %></small>
                             <% } %> 
                         </div><br>
-                        <small class="text-errors" id="genreErrors"></small>
-                        <% if (locals.errors && errors.genre) { %>
-                            <small class="text-errors"><%= errors.genre.msg %></small>
-                        <% } %>
                     </div>
                     <div class="contain__date-idiom">
                         <label for="idiom">Idioma:</label>
@@ -87,6 +83,7 @@
                                 <div class="idiom__editMovie">
                                     <input type="checkbox" 
                                     name="idiom" 
+                                    id="idiom"
                                     value="<%- idiom.name %>" 
                                     <% for (let i = 0; i < product.Idioms.length; i++) {
                                         if(idiom.name === product.Idioms[i].name) {
@@ -101,19 +98,15 @@
                             <% } %> 
                         </div><br>
                         <small class="text-errors" id="idiomErrors"></small>
-                        <% if (locals.errors && errors.idiom) { %>
-                            <small class="text-errors"><%= errors.idiom.msg %></small>
-                        <% } %> 
                     </div>
                     <div class="contain__date-subtitle">
                         <label for="idiom">Subtitulos:</label>
                         <div class="option__subtitle">
-                            <div class="contain__subtitle">
-                                <input type="radio" name="subtitle" value="Latino" <%- product.subtitle === "Latino" ? 'checked' : '' %>><b>Si</b><br>
-                            </div>
-                            <div class="contain__subtitle">
-                                <input type="radio" name="subtitle" value="No" <%- product.subtitle === "No" ? 'checked' : '' %>><b>No</b><br>
-                            </div>
+                            <select class="form-check-container" name="subtitle" id="subtitle">
+                                <option value="0" selected disable></option>
+                                <option type="radio" value="Latino" <%- product.subtitle === "Latino" ? 'selected' : '' %>><b>Si</b><br class="separated-options"></option>
+                                <option type="radio" value="No" <%- product.subtitle === "No" ? 'selected' : '' %>>><b>No</b></option>
+                            </select>
                         </div>
                          <small class="text-errors submitErrors" id="subtitleErrors"></small>
                         <% if (locals.errors && errors.subtitle) { %>
@@ -149,8 +142,8 @@
                         <b class="price-rental">Alquiler:</b>
                         <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input" value="<%- product.Price.rental %>">
                         <small class="text-errors" id="rentalPriceErrors"></small>
-                        <% if (locals.errors && errors.rentalPrice) { %>
-                            <small class="text-errors"><%= errors.rentalPrice.msg %></small>
+                        <% if (locals.errors && errors.price) { %>
+                            <small class="text-errors"><%= errors.price.msg %></small>
                         <% } %>
                     </div>
                     <div class="contain__date-discount">
@@ -164,7 +157,7 @@
                 </div>
                 <div class="contain__edit-enter">
                     <span id="submitErrors"></span>
-                    <buttom type="submit" value="Editar" class="input__edit-enter">Editar</buttom>
+                    <button type="submit" value="Editar" class="input__edit-enter">Editar</button>
                 </div>
             </form>
         </div>
