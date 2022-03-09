@@ -386,8 +386,8 @@ window.addEventListener('load', function () {
             if(elementsForm[index].value !== "on"){
                 elementsForm[index].classList.add('submitErrors')
                 elementsForm[index].style.backgroundColor = 'rgba(255, 0, 0, 0.2)'
-                submitErrors.style.color = 'red'
-                submitErrors.innerHTML = 'Los campos señalados son obligatorios'
+                elementsForm[index].submitErrors.style.color = 'red'
+                elementsForm[index].submitErrors.innerHTML = 'Los campos señalados son obligatorios'
                 error = true;
             }
         }

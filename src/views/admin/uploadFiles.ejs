@@ -28,9 +28,9 @@
                 </div>
                 <div class="contain__date">
                     <textarea type="text" name="description" id="description" placeholder="Descripción" class="input"></textarea>
-                    <small class="text-errors submitErrors" id="descriptionErrors"></small>
+                    <small class="text-errors" id="descriptionErrors"></small>
                     <% if (locals.errors && errors.description) { %>
-                        <small class="text-errors submitErrors"><%= errors.description.msg %></small>
+                        <small class="text-errors"><%= errors.description.msg %></small>
                     <% } %> 
                 </div>
                 <div class="flex__organized">
@@ -47,24 +47,24 @@
                     </div>
                     <div class="contain__date-organized">
                         <input type="number" step="any" name="appreciation" id="appreciation" placeholder="Calificación" class="input__organized">
-                        <small class="text-errors submitErrors" id="appreciationErrors"></small>
+                        <small class="text-errors" id="appreciationErrors"></small>
                         <% if (locals.errors && errors.appreciation) { %>
-                            <small class="text-errors submitErrors"><%= errors.appreciation.msg %></small>
+                            <small class="text-errors"><%= errors.appreciation.msg %></small>
                         <% } %> 
                     </div>
                     <div class="contain__date-organized">
                         <input type="text" name="director" id="director" placeholder="Director" class="input__organized">
-                        <small class="text-errors submitErrors" id="directorErrors"></small>
+                        <small class="text-errors" id="directorErrors"></small>
                         <% if (locals.errors && errors.director) { %>
-                            <small class="text-errors submitErrors"><%= errors.director.msg %></small>
+                            <small class="text-errors"><%= errors.director.msg %></small>
                         <% } %> 
                     </div>
                     <div class="contain__date-organized">
                         <label for="year">Año:</label>
                         <input type="month" name="age" id="age" placeholder="Año" class="input__organized" >
-                        <small class="text-errors submitErrors" id="ageErrors"></small>
+                        <small class="text-errors" id="ageErrors"></small>
                         <% if (locals.errors && errors.age) { %>
-                            <small class="text-errors submitErrors"><%= errors.age.msg %></small>
+                            <small class="text-errors"><%= errors.age.msg %></small>
                         <% } %>
                     </div>
                 </div>
@@ -76,9 +76,9 @@
                                 <input type="checkbox" id="<%- genre.id %>" class="genre" name="genre" value="<%- genre.name %>"><b><%- genre.name %></b><br>
                             <% }) %>
                         </div>
-                        <small class="text-errors submitErrors" id="genreErrors"></small>
+                        <small class="text-errors" id="genreErrors"></small>
                         <% if (locals.errors && errors.genre) { %>
-                            <small class="text-errors submitErrors"><%= errors.genre.msg %></small>
+                            <small class="text-errors"><%= errors.genre.msg %></small>
                         <% } %> 
                     </div>
                     <div class="contain__info-flex">
@@ -88,9 +88,9 @@
                                 <input type="checkbox" name="idiom" class="idiom" id="<%- idiom.id%> " value="<%- idiom.name %>"><b><%- idiom.name %></b><br>
                             <% }) %>
                         </div>
-                        <small class="text-errors submitErrors" id="idiomErrors"></small>
+                        <small class="text-errors" id="idiomErrors"></small>
                         <% if (locals.errors && errors.idiom) { %>
-                            <small class="text-errors submitErrors"><%= errors.idiom.msg %></small>
+                            <small class="text-errors"><%= errors.idiom.msg %></small>
                         <% } %> 
                     </div>
                     <div class="contain__info-flex">
@@ -100,9 +100,9 @@
                             <option type="radio" value="Latino"><b>Si</b><br class="separated-options"></option>
                             <option type="radio" value="No"><b>No</b></option>
                         </select>
-                        <small class="text-errors submitErrors" id="subtitleErrors"></small>
+                        <small class="text-errors" id="subtitleErrors"></small>
                         <% if (locals.errors && errors.subtitle) { %>
-                            <small class="text-errors submitErrors"><%= errors.subtitle.msg %></small>
+                            <small class="text-errors"><%= errors.subtitle.msg %></small>
                         <% } %>
                     </div>
                 </div>

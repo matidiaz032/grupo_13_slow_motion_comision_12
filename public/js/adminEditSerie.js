@@ -301,4 +301,27 @@ window.addEventListener('load', function () {
         }
     })
 
+    $formCharge.addEventListener('submit', function(event){
+        let error = false;
+        event.preventDefault();
+
+        // let error = false;
+        let elementsForm = this.elements;
+
+        for (let index = 0; index < elementsForm.length; index++){
+            if(elementsForm[index].value == ""){
+                elementsForm[index].classList.add('submitErrors')
+                elementsForm[index].style.backgroundColor = 'rgba(255, 0, 0, 0.2)'
+                submitErrors.style.color = 'red'
+                submitErrors.innerHTML = 'Los campos señalados son obligatorios'
+                error = true;
+            }
+        }
+
+        if(!error && !validationErrors) {
+            $formCharge.submit()
+        }
+
+    })
+
 })

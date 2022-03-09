@@ -133,6 +133,7 @@
                     <div class="contain__date-rental">
                         <b class="price-rental">Alquiler:</b>
                         <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input" value="<%- product.Price.rental %>" >
+                        <small class="text-errors" id="rentalPriceErrors"></small>
                         <% if (locals.errors && errors.rentalPrice) { %>
                             <small class="text-errors"><%= errors.rentalPrice.msg %></small>
                         <% } %>
@@ -147,7 +148,8 @@
                     </div>
                 </div>
                 <div class="contain__edit-enter">
-                    <input type="submit" value="Editar" class="input__edit-enter">
+                    <span id="submitErrors"></span>
+                    <buttom type="submit" value="Editar" class="input__edit-enter">Editar</buttom>
                 </div>
             </form>
         </div>
