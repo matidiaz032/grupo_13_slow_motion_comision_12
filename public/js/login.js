@@ -13,7 +13,6 @@ window.addEventListener('load', function() {
     let regExAlpha = /^[a-zA-Z\sñáéíóúü]*$/
     let regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
     let regExPass = /^(?=.*\d)(?=.*[a-zA-Z0-9]).{6,16}$/
-
     let validationErrors = false;
 
     $email.addEventListener('blur', function(){

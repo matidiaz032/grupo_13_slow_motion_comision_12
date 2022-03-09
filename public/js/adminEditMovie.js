@@ -197,7 +197,7 @@ window.addEventListener('load', function () {
                 validationErrors = true;
                 break;  
             default:
-                $ageErrors.innerHTML = 'al fin';
+                $ageErrors.innerHTML = 'La fecha es correcto';
                 $age.style.color = '#2940D3';
                 $age.style.backgroundColor = '#d8c371';
                 $age.style.border = 'none';
@@ -294,7 +294,7 @@ window.addEventListener('load', function () {
             $buyPrice.toggleAttribute('required')
             validationErrors = true;
         } else {
-            $buyPriceErrors.innerHTML = 'El comentario es valido'
+            $buyPriceErrors.innerHTML = 'El precio es valido'
             $buyPrice.style.color = '#2940D3'
             $buyPrice.style.backgroundColor = '#d8c371'
             $buyPrice.style.border = 'none'
@@ -305,16 +305,17 @@ window.addEventListener('load', function () {
 
     $rentalPrice.addEventListener('blur', function(){
         if($rentalPrice.value.trim() && $rentalPrice.value === 0 ){
-            $rentalPriceErrors.innerHTML = 'Es necesario seleccionar un idioma';
+            $rentalPriceErrors.innerHTML = 'Es necesario colocar un precio de alquiler';
             $rentalPrice.style.color = 'red';
             $rentalPrice.toggleAttribute('required')
             validationErrors = true;
         } else if (!regExPrice.test($rentalPrice.value)){
-            $rentalPriceErrors.innerHTML = 'El título no es válido'
+            $rentalPriceErrors.innerHTML = 'El precio no es válido'
             $rentalPrice.style.color = '#ff0000'
             $rentalPrice.toggleAttribute('required')
             validationErrors = true
         } else {
+            $rentalPriceErrors.innerHTML = 'El precio es correcto'
             $rentalPrice.style.color = '#2940D3'
             $rentalPrice.style.backgroundColor = '#d8c371'
             $rentalPrice.style.border = 'none'
@@ -325,17 +326,17 @@ window.addEventListener('load', function () {
 
     $discount.addEventListener('blur', function(){
         if($discount.value.trim() && $discount.value === 0 ){
-            $discountErrors.innerHTML = 'Es necesario seleccionar un idioma';
+            $discountErrors.innerHTML = 'Es necesario colocar el descuento';
             $discount.style.color = 'red';
             $discount.toggleAttribute('required')
             validationErrors = true;
         } else if (!regExNmbr.test($discount.value)){
-            $discountErrors.innerHTML = 'El título no es válido'
+            $discountErrors.innerHTML = 'El descuento no es válido'
             $discount.style.color = '#ff0000'
             $discount.toggleAttribute('required')
             validationErrors = true
         } else {
-            $discountErrors.innerHTML = 'El comentario es valido'
+            $discountErrors.innerHTML = 'El descuento es valido'
             $discount.style.color = '#2940D3'
             $discount.style.backgroundColor = '#d8c371'
             $discount.style.border = 'none'
@@ -344,7 +345,7 @@ window.addEventListener('load', function () {
         }
     })
 
-    console.log(validationErrors)
+
     
     $formCharge.addEventListener('submit', function(event){
         let error = false;

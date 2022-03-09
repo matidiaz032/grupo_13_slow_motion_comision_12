@@ -121,11 +121,15 @@
                     <div class="contain__date-price">
                         <b class="price-list">Venta:</b>
                         <input type="number" name="price" id="buyPrice" placeholder="Precio de venta" class="input" value="<%- product.Price.buy %>" >
+                        <small class="text-errors" id="buyPriceErrors"></small>
+                        <% if (locals.errors && errors.buyPrice) { %>
+                            <small class="text-errors"><%= errors.buyPrice.msg %></small>
+                        <% } %>
                     </div>
                     <div class="contain__date-rental">
                         <b class="price-rental">Alquiler:</b>
                         <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input" value="<%- product.Price.rental %>" >
-                        <small class="text-errors" id="discountErrors"></small>
+                        <small class="text-errors" id="rentalPriceErrors"></small>
                         <% if (locals.errors && errors.price) { %>
                             <small class="text-errors"><%= errors.price.msg %></small>
                         <% } %>
@@ -133,6 +137,10 @@
                     <div class="contain__date-discount">
                         <b class="price-discount">Descuento:</b>
                         <input type="number" name="price" id="discount" placeholder="Descuento" class="input" value="<%- product.Price.discount %>" >
+                        <small class="text-errors" id="discountErrors"></small>
+                        <% if (locals.errors && errors.discount) { %>
+                            <small class="text-errors"><%= errors.discount.msg %></small>
+                        <% } %>
                     </div>
                 </div>
                 <div class="contain__edit-enter">
