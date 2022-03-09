@@ -154,19 +154,23 @@ let controller = {
         let userFind = await User.findByPk(userSession.id);
 
         if (errors.isEmpty()) {
-            const { first_name, last_name, user_name, email, newPassword } = req.body;
+            const { first_name, last_name, user_name, email, actualPassword, newPassword } = req.body;
             try {
                 await User.update({
                     first_name,
                     last_name,
                     user_name,
                     email: email.toLowerCase(),
-                    password: bcrypt.hashSync(newPassword)
+                    password: newPassword == "" ? bcrypt.hashSync(actualPassword) : bcrypt.hashSync(newPassword)
                 }, {
                     where: { id: userSession.id }
                 })
 
-                res.redirect('/users/profile');
+                req.session.destroy();
+                if (req.cookies.userSlowMotion) {
+                    res.cookie('userSlowMotion', '', { maxAge: -1 });
+                }
+                res.redirect('/users/login');
             } catch (error) {
                 res.send(error);
             }

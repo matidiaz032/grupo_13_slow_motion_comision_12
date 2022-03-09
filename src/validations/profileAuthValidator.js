@@ -1,4 +1,5 @@
 const { check, body } = require('express-validator');
+const bcrypt = require('bcryptjs');
 const { User } = require('../database/models/index.js');
 
 module.exports = [
@@ -32,24 +33,18 @@ module.exports = [
 
     body('actualPassword')
     .custom((value, {req}) => {
-        let user = User.find( user => user.email == req.body.email);
-        console.log(user);
-
-        if(user) {
-            bcrypt.compareSync(value, user.password) ? true : false   
-        } else {
-            return false
-        }
-    }).withMessage('La contraseña actual es incorrecta'),
-
-    check('newPassword')
-    .notEmpty()
-    .withMessage('La contraseña nueva es obligatoria')
-    .isLength({
-        min: 6,
-        max: 16
-    })
-    .withMessage('La contraseña debe tener entre 6 y 16 caracteres')
-    .isAlphanumeric()
-    .withMessage('La contraseña debe ser alfanumerica'),
+        return User.findOne({
+            where: {
+                email: req.session.user.email
+            }
+        })
+        .then(user => {
+            if(!bcrypt.compareSync(req.body.actualPassword, user.dataValues.password)) {
+                return Promise.reject()
+            }
+        })
+        .catch(() => {
+            return Promise.reject('La contraseña actual es incorrecta')
+        })
+    }),
 ]
