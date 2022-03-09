@@ -70,16 +70,10 @@ window.addEventListener('load', function () {
     let actualYear = actualDate.getFullYear();
     let $ageErrors = qs('#ageErrors');
 
-    // Genre
-    //let $genreCheck = qs('input[type=checkbox]');
-    let $genreCheck = document.querySelectorAll("input[type=checkbox]");
+    let $genreCheck = document.querySelectorAll('#genre');
     let $genreCheckErrors = qs('#genreErrors');
-    // let emptyCheck = [].filter.call( $genreCheck, function( el ) {
-    //     return !el.checked
-    // });
 
-    // Idiom
-    let $idiom = qs('#idiom');
+    let $idiom = document.querySelectorAll('#idiom');
     let $idiomErrors = qs('#idiomErrors');
 
     // Subtitle
@@ -275,6 +269,44 @@ window.addEventListener('load', function () {
         }
     })
 
+    function genreValid() {
+        var suma=0;
+
+        for (let i = 0; i < $genreCheck.length; i++) {
+            $genreCheck[i].addEventListener("click", genreValid);
+            if($genreCheck[i].checked != true){
+                suma=suma+1;
+            }
+        }
+        if(suma == 13) {
+            $genreCheckErrors.innerHTML= 'Debes seleccionar al menos un genero';
+            validationErrors = true
+        } else {
+            $genreCheckErrors.innerHTML= '';
+            validationErrors = false
+        }       
+    }
+    genreValid()
+
+    function idiomValid() {
+        var suma=0;
+
+        for (let i = 0; i < $idiom.length; i++) {
+            $idiom[i].addEventListener("click", idiomValid);
+            if($idiom[i].checked != true){
+                suma=suma+1;
+            }
+        }
+        if(suma == 7) {
+            $idiomErrors.innerHTML= 'Debes seleccionar al menos un idioma';
+            validationErrors = true
+        } else {
+            $idiomErrors.innerHTML= '';
+            validationErrors = false
+        }       
+    }
+    idiomValid()
+
     $subtitle.addEventListener('blur', function(){
         if($subtitle.value.trim() && $subtitle.value === "0"){
             $subtitleErrors.innerHTML = 'Es necesario seleccionar una opcion';
@@ -309,6 +341,27 @@ window.addEventListener('load', function () {
                 readerImg.readAsDataURL($file.files[0]);
                 $fileErrors.innerHTML = 'Imagen subida';
             }
+        }
+    })
+
+    $video.addEventListener('blur', function(){
+        if(!$video.value.trim()){
+            $videoErrors.innerHTML = 'El trailer es obligatorio'
+            $video.style.color = '#ff0000'
+            $video.toggleAttribute('required')
+            validationErrors = true
+        } else if (!regExAlpha.test($name.value)){
+            $videoErrors.innerHTML = 'El trailer no es válido'
+            $video.style.color = '#ff0000'
+            $video.toggleAttribute('required')
+            validationErrors = true
+        } else {
+            $videoErrors.innerHTML = 'El trailer es valido'
+            $video.style.color = '#2940D3'
+            $video.style.backgroundColor = '#d8c371'
+            $video.style.border = 'none'
+            $video.toggleAttribute('required')
+            validationErrors = false
         }
     })
 

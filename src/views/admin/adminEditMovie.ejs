@@ -125,6 +125,10 @@
                     <div class="contain__date-rental">
                         <b class="price-rental">Alquiler:</b>
                         <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input" value="<%- product.Price.rental %>">
+                        <small class="text-errors" id="discountErrors"></small>
+                        <% if (locals.errors && errors.price) { %>
+                            <small class="text-errors"><%= errors.price.msg %></small>
+                        <% } %>
                     </div>
                     <div class="contain__date-discount">
                         <b class="price-discount">Descuento:</b>

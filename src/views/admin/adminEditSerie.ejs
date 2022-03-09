@@ -34,7 +34,7 @@
                     </div>
                     <div class="contain__appreciation-serie">
                         <b class="section-appreciation">Apreciacion:</b>
-                        <input type="number" name="appreciation" id="appreciation" placeholder="Calificación" class="input" value='<%-product.rating  %>'>
+                        <input type="number" step="any" name="appreciation" id="appreciation" placeholder="Calificación" class="input" value='<%-product.rating  %>'>
                         <small class="text-errors" id="appreciationErrors"></small>
                         <% if (locals.errors && errors.appreciation) { %>
                             <small class="text-errors"><%= errors.appreciation.msg %></small>
@@ -111,10 +111,6 @@
                         <label for="productImage">Cargar imagen de portada</label><br>
                         <div id="imgPreview"></div>
                         <input type="file" name="productImage" class="input">
-                        <small class="text-errors" id="fileErrors"></small>
-                        <% if (locals.errors && errors.file) { %>
-                            <small class="text-errors"><%= errors.file.msg %></small>
-                        <% } %> 
                     </div>
                     <div class="contain__date-url">
                         <label for="video">Pegar URL del trailer</label>
@@ -125,25 +121,18 @@
                     <div class="contain__date-price">
                         <b class="price-list">Venta:</b>
                         <input type="number" name="price" id="buyPrice" placeholder="Precio de venta" class="input" value="<%- product.Price.buy %>" >
-                        <small class="text-errors" id="buyPriceErrors"></small>
-                        <% if (locals.errors && errors.buyPrice) { %>
-                            <small class="text-errors"><%= errors.buyPrice.msg %></small>
-                        <% } %>
                     </div>
                     <div class="contain__date-rental">
                         <b class="price-rental">Alquiler:</b>
                         <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input" value="<%- product.Price.rental %>" >
-                        <% if (locals.errors && errors.rentalPrice) { %>
-                            <small class="text-errors"><%= errors.rentalPrice.msg %></small>
+                        <small class="text-errors" id="discountErrors"></small>
+                        <% if (locals.errors && errors.price) { %>
+                            <small class="text-errors"><%= errors.price.msg %></small>
                         <% } %>
                     </div>
                     <div class="contain__date-discount">
                         <b class="price-discount">Descuento:</b>
                         <input type="number" name="price" id="discount" placeholder="Descuento" class="input" value="<%- product.Price.discount %>" >
-                        <small class="text-errors" id="discountErrors"></small>
-                        <% if (locals.errors && errors.discount) { %>
-                            <small class="text-errors"><%= errors.discount.msg %></small>
-                        <% } %> 
                     </div>
                 </div>
                 <div class="contain__edit-enter">
@@ -161,6 +150,6 @@
     </div>
     <!-- Footer -->
     <%- include ('../partials/adminFooter') %>
-    <script src="/js/adminEditSerie.js"></script>
+    
 </body>
 </html>
