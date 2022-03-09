@@ -197,7 +197,7 @@ window.addEventListener('load', function () {
                 validationErrors = true;
                 break;  
             default:
-                $ageErrors.innerHTML = 'al fin';
+                $ageErrors.innerHTML = 'La fecha es correcto';
                 $age.style.color = '#2940D3';
                 $age.style.backgroundColor = '#d8c371';
                 $age.style.border = 'none';
@@ -305,7 +305,7 @@ window.addEventListener('load', function () {
 
     $rentalPrice.addEventListener('blur', function(){
         if($rentalPrice.value.trim() && $rentalPrice.value === 0 ){
-            $rentalPriceErrors.innerHTML = 'Es necesario seleccionar un idioma';
+            $rentalPriceErrors.innerHTML = 'Es necesario colocar un precio de alquiler';
             $rentalPrice.style.color = 'red';
             $rentalPrice.toggleAttribute('required')
             validationErrors = true;
@@ -315,6 +315,7 @@ window.addEventListener('load', function () {
             $rentalPrice.toggleAttribute('required')
             validationErrors = true
         } else {
+            $rentalPriceErrors.innerHTML = 'El precio es correcto'
             $rentalPrice.style.color = '#2940D3'
             $rentalPrice.style.backgroundColor = '#d8c371'
             $rentalPrice.style.border = 'none'
@@ -325,7 +326,7 @@ window.addEventListener('load', function () {
 
     $discount.addEventListener('blur', function(){
         if($discount.value.trim() && $discount.value === 0 ){
-            $discountErrors.innerHTML = 'Es necesario seleccionar un idioma';
+            $discountErrors.innerHTML = 'Es necesario colocar el descuento';
             $discount.style.color = 'red';
             $discount.toggleAttribute('required')
             validationErrors = true;

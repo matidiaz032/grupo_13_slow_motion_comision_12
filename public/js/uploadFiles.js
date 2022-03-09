@@ -255,7 +255,7 @@ window.addEventListener('load', function () {
                 validationErrors = true;
                 break;  
             default:
-                $ageErrors.innerHTML = 'al fin';
+                $ageErrors.innerHTML = 'La fecha es correcto';
                 $age.style.color = '#2940D3';
                 $age.style.backgroundColor = '#d8c371';
                 $age.style.border = 'none';
