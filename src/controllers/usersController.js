@@ -183,6 +183,9 @@ let controller = {
             })
         }
     },
+    changeAvatar : (req, res) => {
+        res.send(req.body)
+    },
     logout: (req, res) => {
         req.session.destroy();
         if (req.cookies.userSlowMotion) {

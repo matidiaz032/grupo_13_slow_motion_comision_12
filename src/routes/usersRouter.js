@@ -17,6 +17,7 @@ router.get('/profile', auth_users, controller.profile);
 router.post('/profile', profileValidator, controller.optionalProfile);
 router.get('/profile-auth', auth_users, controller.profileAuth);
 router.post('/profile-auth', profileAuthValidator, controller.optionalProfileAuth);
+router.post('/change-avatar', controller.changeAvatar);
 router.get('/logout', controller.logout);
 router.get('/favorites', auth_users, controller.favorites)
 router.post('/favorites', auth_users, controller.addFavorite)
