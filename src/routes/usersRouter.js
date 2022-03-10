@@ -7,13 +7,11 @@ const registryValidator = require('../validations/registryValidator');
 const loginValidator = require('../validations/loginValidator');
 const profileValidator = require('../validations/profileValidator');
 const profileAuthValidator = require('../validations/profileAuthValidator');
+const authUsers = require('../middlewares/authUsers');
 
-
-/* No puedo validar que la contraseña sea estrictamente alfanumerico desde el back. */
-
-router.get('/login',  controller.login);
+router.get('/login', authUsers, controller.login);
 router.post('/login', loginValidator, controller.loadLogin);
-router.get('/register', controller.register);
+router.get('/register', authUsers, controller.register);
 router.post('/register', upload.single('userImage'), registryValidator, controller.loadRegister);
 router.get('/profile', auth_users, controller.profile);
 router.post('/profile', profileValidator, controller.optionalProfile);

@@ -1,7 +1,7 @@
 .information-users {
     display: flex;
     width: 90%;
-    margin: 0 0 9.25em auto;
+    margin: 3em 0 8.25em auto;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
