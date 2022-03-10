@@ -362,9 +362,6 @@ window.addEventListener('load', function () {
             }
         }
 
-        console.log(error)
-        console.log(validationErrors);
-
         if(!error && !validationErrors) {
             $formCharge.submit()
         }
