@@ -134,9 +134,6 @@
                     </div>
                     <div class="contain__dateRental">
                         <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input-rental">
-                        <small class="text-errors submitErrors" id="rentalPriceErrors"></small>
-                            <small class="text-errors submitErrors"><%= errors.price.msg %></small>
-                        <% } %> 
                         <small class="text-errors submitErrors" id="discountErrors"></small>
                         <% if (locals.errors && errors.price) { %>
                             <small class="text-errors submitErrors"><%= errors.price.msg %></small>
