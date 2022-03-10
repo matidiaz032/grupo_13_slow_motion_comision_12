@@ -8,8 +8,12 @@
             <h2>Perfil del usuario</h2> 
         </div>
         <div class="container-img-name">
-            <div class="user-avatar">
+            <div class="user-avatar" id="divAvatar">
                 <img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image">
+                <button class="btn-hover" id="btnAdd">
+                    <i class="fas fa-upload"></i><br>
+                    <h4>Cambiar Avatar</h4>
+                </button>
             </div>
             <div class="user-name">
                 <h3><%= session.user.name %> <%= session.user.lastName %></h3>
@@ -135,4 +139,5 @@
 
     <%- include('../partials/footer')  %>
     <script src="../js/profile.js"></script>
+    <script src="../js/newAvatar.js"></script>
 </body>
