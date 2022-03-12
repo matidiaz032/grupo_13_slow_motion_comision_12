@@ -1,7 +1,84 @@
+.bg-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.d-none {
+    display: none;
+}
+
+.modal {
+    background-color: wheat;
+    border-radius: 1rem;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+    background-color: var(--lightblack);
+    color: var(--yellow);
+}
+
+.modal span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.modal .container-btn-modal {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-around;
+}
+
+.modal .container-btn-modal .btn-confirm, .modal .container-btn-modal .btn-cancel {
+    background-color: var(--blue);
+    color: var(--yellow);
+    border: none;
+    border-radius: 10rem;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+}
+
+.modal .container-btn-modal .btn-confirm {
+    background-color: var(--lightblue);
+    color: white;
+}
+
+.modal .container-btn-modal .btn-confirm:hover {
+    background-color: var(--blue);
+}
+
+.modal .container-btn-modal .btn-cancel {
+    background-color: red;
+    color: white;
+}
+
+.modal .container-btn-modal .btn-cancel:hover {
+    background-color: tomato;
+}
+
 .user-profile .profile-container {
     margin-top: 4rem;
     color: #ffffff;
     font-family: var(--averia);
+    position: relative;
 }
 
 .user-profile .profile-container .profile-title {
@@ -16,6 +93,7 @@
 
 .user-profile .profile-container .user-avatar {
     width: 20%;
+    z-index: 0;
 }
 
 .user-profile .profile-container .user-avatar img {
@@ -51,6 +129,11 @@
     border-radius: 1rem;
     padding: .5rem 1rem;
     border: none;
+    cursor: pointer;
+}
+
+.user-profile .profile-container .container-user-data .user-edit input:hover {
+    background-color: var(--blue);
 }
 
 .user-profile .container-user-favorite .user-favorites {

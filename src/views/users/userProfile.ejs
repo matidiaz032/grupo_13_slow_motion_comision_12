@@ -1,143 +1,157 @@
 <%- include('../partials/head') %>
 
 <body class="user-profile">
-    <%- include('../partials/header') %> 
+  <%- include('../partials/header') %>
 
-    <div class="profile-container">
-        <div class="profile-title">
-            <h2>Perfil del usuario</h2> 
+  <div class="profile-container">
+    <form action="/users/change-avatar" method="post">
+      <div class="d-none" id="bg-modal">
+        <div class="modal">
+          <p>¿Está seguro de que desea modificar la imagen de avatar?</p>
+          <div class="container-btn-modal">
+            <button type="submit" class="btn-confirm">Confirmar</button>
+            <button type="button" class="btn-cancel" id="btnCancel">Cancelar</button>
+          </div>
         </div>
-        <div class="container-img-name">
-            <div class="user-avatar" id="divAvatar">
-                <img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image">
-                <button class="btn-hover" id="btnAdd">
-                    <i class="fas fa-upload"></i><br>
-                    <h4>Cambiar Avatar</h4>
-                </button>
+      </div>
+      <div class="profile-title">
+        <h2>Perfil del usuario</h2>
+      </div>
+      <div class="container-img-name">
+        <div class="user-avatar" id="divAvatar">
+          <img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image">
+          <label for="changeAvatar" class="btn-hover" id="btnAdd">
+            <input type="file" name="changeAvatar" id="changeAvatar" style="display: none;">
+            <div class="btn-text">
+              <i class="fas fa-upload"></i><br>
+              <h4>Cambiar Avatar</h4>
             </div>
-            <div class="user-name">
-                <h3><%= session.user.name %> <%= session.user.lastName %></h3>
-            </div>
+          </label>
         </div>
-        <div class="container-user-data">
-            <div class="user-email">
-                <p><%= session.user.email %></p>
-            </div>
-            <div class="user-pass">
-                <p>********</p>
-            </div>
-            <div class="user-edit">
-                <a href="/users/profile-auth">
-                    <input type="button" value="Modificar datos de inicio de sesión">
-                </a>
-            </div>
-            <div class="user-edit-form forms-container">
-                <form action="/users/profile" id="form" method="post">
-                    <div class="profile-title">
-                        <h2>Datos opcionales</h2> 
-                    </div>
-                    <div class="form-input-container">
-                        <div class="form-input">
-                            <label for="phone" class="label-profile">Teléfono</label>
-                            <input type="text" name="phone" id="phone" placeholder="Teléfono" value="<%= user.phone %>">
-                            <small class="text-danger" id="phoneErrors"></small>
-                            <% if (locals.errors && errors.phone) { %>
-                                <small><%- errors.phone.msg %></small>
-                            <% } %>
-                        </div>
-                    </div>
-                    <div class="form-input-container">
-                        <div class="form-input">
-                            <label for="dateOfBirth" class="label-profile">Fecha de nacimiento</label>
-                            <input type="date" id="date" name="dateOfBirth" value="<%= finalDate %>">
-                            <small class="text-danger" id="dateErrors"></small>
-                            <% if (locals.errors && errors.dateOfBirth) { %>
-                                <small><%- errors.dateOfBirth.msg %></small>
-                            <% } %>
-                        </div>
-                    </div>
-                    <div class="form-input-container">
-                        <div class="form-input">
-                            <label for="genre" class="label-profile">Género</label>
-                            <select name="genre" id="genre">
-                                <option value="masculino" <%= user.genre == "masculino" && 'selected' %>>Masculino</option>
-                                <option value="femenino" <%= user.genre == "femenino" && 'selected' %>>Femenino</option>
-                                <option value="otro" <%= user.genre == "otro" && 'selected' %>>Otro</option>
-                            </select>
-                            <small class="text-danger" id="genreErrors"></small>
-                            <% if (locals.errors && errors.genre) { %>
-                                <small><%- errors.genre.msg %></small>
-                            <% } %>
-                        </div>
-                    </div>
-                    <div class="form-input-container">
-                        <div class="form-input">
-                            <input type="text" name="address" id="address" placeholder="Dirección" value="<%= user.address %>">
-                            <small class="text-danger" id="addressErrors"> </small>
-                            <% if (locals.errors && errors.address) { %>
-                                <small><%- errors.address.msg %></small>
-                            <% } %>
-                        </div>
-                    </div>
-                    <div class="form-input-container">
-                        <div class="form-input">
-                            <input type="text" name="country" id="country" placeholder="País" value="<%= user.country %>">
-                            <small class="text-danger" id="countryErrors"> </small>
-                            <% if (locals.errors && errors.country) { %>
-                                <small><%- errors.country.msg %></small>
-                            <% } %>
-                        </div>
-                    </div>
-                    <div class="form-input-container">
-                        <div class="form-input">
-                            <input type="text" name="province" id="province" placeholder="Provincia" value="<%= user.province %>">
-                            <small class="text-danger" id="provinceErrors"> </small>
-                            <% if (locals.errors && errors.province) { %>
-                                <small><%- errors.province.msg %></small>
-                            <% } %>
-                        </div>
-                    </div>
-                    <div class="form-input-container">
-                        <div class="form-input">
-                            <input type="text" name="city" id="city" placeholder="Ciudad" value="<%= user.city %>">
-                            <small class="text-danger" id="cityErrors"> </small>
-                            <% if (locals.errors && errors.city) { %>
-                                <small><%- errors.city.msg %></small>
-                            <% } %>
-                        </div>
-                    </div>
-                    <div class="user-edit">
-                        <input type="submit" value="Modificar datos opcionales">
-                        <small class="text-danger" id="submitErrors"></small>
-                    </div>
-                </form>
-            </div>
+        <div class="user-name">
+          <h3><%= session.user.name %> <%= session.user.lastName %></h3>
         </div>
-        <div class="container-user-options">
-            <div class="container-user-favorite">
-                <h3>Mis favoritos</h3>
-                <div class="user-favorites">
-                    <div class="movie-favorite">
-                        <img src="/img/Series/BlackMirror720x1080.jpg" alt="">
-                    </div>
-                    <div class="movie-favorite">
-                        <img src="/img/Peliculas/MortalKombat720x1080.jpg" alt="">
-                    </div>
-                    <div class="movie-favorite">
-                        <img src="/img/Peliculas/MortalKombat720x1080.jpg" alt="">
-                    </div>
-                    <div class="movie-favorite">
-                        <img src="/img/Series/BlackMirror720x1080.jpg" alt="">
-                    </div>
-                </div>
+      </div>
+    </form>
+    <div class="container-user-data">
+      <div class="user-email">
+        <p><%= session.user.email %></p>
+      </div>
+      <div class="user-pass">
+        <p>********</p>
+      </div>
+      <div class="user-edit">
+        <a href="/users/profile-auth">
+          <input type="button" value="Modificar datos de inicio de sesión">
+        </a>
+      </div>
+      <div class="user-edit-form forms-container">
+        <form action="/users/profile" id="form" method="post">
+          <div class="profile-title">
+            <h2>Datos opcionales</h2>
+          </div>
+          <div class="form-input-container">
+            <div class="form-input">
+              <label for="phone" class="label-profile">Teléfono</label>
+              <input type="text" name="phone" id="phone" placeholder="Teléfono" value="<%= user.phone %>">
+              <small class="text-danger" id="phoneErrors"></small>
+              <% if (locals.errors && errors.phone) { %>
+              <small><%- errors.phone.msg %></small>
+              <% } %>
             </div>
-            <div class="container-user-data">
-                
+          </div>
+          <div class="form-input-container">
+            <div class="form-input">
+              <label for="dateOfBirth" class="label-profile">Fecha de nacimiento</label>
+              <input type="date" id="date" name="dateOfBirth" value="<%= finalDate %>">
+              <small class="text-danger" id="dateErrors"></small>
+              <% if (locals.errors && errors.dateOfBirth) { %>
+              <small><%- errors.dateOfBirth.msg %></small>
+              <% } %>
             </div>
-        </div>
+          </div>
+          <div class="form-input-container">
+            <div class="form-input">
+              <label for="genre" class="label-profile">Género</label>
+              <select name="genre" id="genre">
+                <option value="masculino" <%= user.genre == "masculino" && 'selected' %>>Masculino</option>
+                <option value="femenino" <%= user.genre == "femenino" && 'selected' %>>Femenino</option>
+                <option value="otro" <%= user.genre == "otro" && 'selected' %>>Otro</option>
+              </select>
+              <small class="text-danger" id="genreErrors"></small>
+              <% if (locals.errors && errors.genre) { %>
+              <small><%- errors.genre.msg %></small>
+              <% } %>
+            </div>
+          </div>
+          <div class="form-input-container">
+            <div class="form-input">
+              <input type="text" name="address" id="address" placeholder="Dirección" value="<%= user.address %>">
+              <small class="text-danger" id="addressErrors"> </small>
+              <% if (locals.errors && errors.address) { %>
+              <small><%- errors.address.msg %></small>
+              <% } %>
+            </div>
+          </div>
+          <div class="form-input-container">
+            <div class="form-input">
+              <input type="text" name="country" id="country" placeholder="País" value="<%= user.country %>">
+              <small class="text-danger" id="countryErrors"> </small>
+              <% if (locals.errors && errors.country) { %>
+              <small><%- errors.country.msg %></small>
+              <% } %>
+            </div>
+          </div>
+          <div class="form-input-container">
+            <div class="form-input">
+              <input type="text" name="province" id="province" placeholder="Provincia" value="<%= user.province %>">
+              <small class="text-danger" id="provinceErrors"> </small>
+              <% if (locals.errors && errors.province) { %>
+              <small><%- errors.province.msg %></small>
+              <% } %>
+            </div>
+          </div>
+          <div class="form-input-container">
+            <div class="form-input">
+              <input type="text" name="city" id="city" placeholder="Ciudad" value="<%= user.city %>">
+              <small class="text-danger" id="cityErrors"> </small>
+              <% if (locals.errors && errors.city) { %>
+              <small><%- errors.city.msg %></small>
+              <% } %>
+            </div>
+          </div>
+          <div class="user-edit">
+            <input type="submit" id="btnSubmit" value="Modificar datos opcionales">
+            <small class="text-danger" id="submitErrors"></small>
+          </div>
+        </form>
+      </div>
     </div>
+    <div class="container-user-options">
+      <div class="container-user-favorite">
+        <h3>Mis favoritos</h3>
+        <div class="user-favorites">
+          <div class="movie-favorite">
+            <img src="/img/Series/BlackMirror720x1080.jpg" alt="">
+          </div>
+          <div class="movie-favorite">
+            <img src="/img/Peliculas/MortalKombat720x1080.jpg" alt="">
+          </div>
+          <div class="movie-favorite">
+            <img src="/img/Peliculas/MortalKombat720x1080.jpg" alt="">
+          </div>
+          <div class="movie-favorite">
+            <img src="/img/Series/BlackMirror720x1080.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="container-user-data">
 
-    <%- include('../partials/footer')  %>
-    <script src="../js/profile.js"></script>
-    <script src="../js/newAvatar.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <%- include('../partials/footer')  %>
+  <script src="../js/profile.js"></script>
+  <script src="../js/newAvatar.js"></script>
 </body>

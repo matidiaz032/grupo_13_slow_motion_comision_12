@@ -153,9 +153,20 @@ select:-webkit-autofill:focus {
     display: none;
 }
 
+.container-img-name .user-avatar .btn-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
 .container-img-name .user-avatar i, .container-img-name .user-avatar h4 {
     color: var(--yellow);
     padding: .2rem 0;
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
