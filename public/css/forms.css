@@ -135,6 +135,40 @@ select:-webkit-autofill:focus {
     background-color: var(--blue);
 }
 
+.container-img-name .user-avatar {
+    position: relative;
+}
+
+.container-img-name .user-avatar .btn-change-avatar {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10rem;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.container-img-name .user-avatar .btn-hover {
+    display: none;
+}
+
+.container-img-name .user-avatar .btn-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.container-img-name .user-avatar i, .container-img-name .user-avatar h4 {
+    color: var(--yellow);
+    padding: .2rem 0;
+    cursor: pointer;
+}
+
 @media (min-width: 768px) {
     .logo-container-forms .logo-forms {
         width: 35%;
