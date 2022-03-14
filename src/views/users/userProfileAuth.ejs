@@ -7,11 +7,6 @@
         <div class="profile-title">
             <h2>Edicion de perfil de <%= user.user_name %></h2> 
         </div>
-        <div class="container-img-name">
-            <div class="user-avatar">
-                <img src="/img/users-images/<%= session.user.avatar %>" alt="Avatar image">
-            </div>
-        </div>
         <div class="container-user-data">
             <div class="user-edit-form forms-container">
                 <form action="/users/profile-auth" id="form-auth" method="post">

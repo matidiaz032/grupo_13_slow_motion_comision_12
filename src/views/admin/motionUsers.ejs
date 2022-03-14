@@ -33,7 +33,13 @@
                             <p class="lastName__user"><%- elem.last_name %></p>
                         </div>
                         <div class="information__user-rol">
-                            <p class="rol-user"> <%- elem.Rolld.id %></p> 
+                            <% if (elem.Rol.id === 3) { %>
+                                <p class="rol-user">S. Admin</p>
+                            <% } else if (elem.Rol.id === 2) { %>
+                                <p class="rol-user">Admin</p>
+                            <% } else { %>
+                                <p class="rol-user">Usuario</p>
+                            <% } %>
                         </div>
                     </div>
                     <!-- <div class="information__user">

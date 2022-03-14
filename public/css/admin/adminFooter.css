@@ -1,7 +1,10 @@
 .block-footer {
+    width: 97.5%;
+    height: auto;
     display: block;
     background: transparent;
     box-shadow: none;
+    padding: 0 0 1em;
 }
 
 .flex-copyright {
@@ -29,6 +32,8 @@
 
     .block-footer {
         width: 100%;
+        padding: 1.4em 0;
+        margin: 0;
     }
 
     .flex-copyright {
@@ -41,6 +46,8 @@
 
     .block-footer {
         width: 100%;
+        padding: 1.2em 0;
+        margin: 0;
     }
 
     .flex-copyright {
