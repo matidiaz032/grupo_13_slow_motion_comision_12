@@ -3,7 +3,9 @@ const { Movie, Serie, Price, Genre } = require('../database/models/index.js'); /
 let controller = {
     index: async (req, res) => {
         
-        req.session.cart = []
+        if(!req.session.cart) {
+            req.session.cart = []
+        }
 
         try {
             let allMovies = await Movie.findAll({

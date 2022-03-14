@@ -133,7 +133,7 @@ let controller = {
         }
     }, 
     cart: (req, res) => {
-        res.render('./product/productCart', {
+        return res.render('./product/productCart', {
             title: 'Cart',
             session: req.session
         })
