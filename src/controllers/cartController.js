@@ -1,4 +1,4 @@
-const { Movie, Serie, Genre, Price, Idiom, Rol , User } = require('../database/models/index.js');
+const { Movie, Serie, Genre, Price, Idiom, Rol , User, Cart } = require('../database/models/index.js');
 
 const productVerify = (cart, id, cond) => {
 
@@ -48,14 +48,14 @@ module.exports = {
                             model: Price
                         }
                     });
-    
+            
                     if(!movie) {
                         return res.status(500).json({
                             ok : false,
                             msg : 'Comuníquese con el administrador!'
                         })
                     };
-    
+                    
                     let { id, title, image, description, duration } = movie;
                     let productCart = {
                         id,
@@ -67,6 +67,14 @@ module.exports = {
                         type: "buy"
                     };
                     req.session.cart.push(productCart);
+
+
+                    let cart = await Cart.findAll({
+                        where: {
+                            UserId: req.session.user.id
+                        }
+                    })
+                    await cart[0].addMovie(movie)
                 }
 
                 return res.status(200).json({
@@ -105,6 +113,14 @@ module.exports = {
                         type: "buy"
                     };
                     req.session.cart.push(productCart)
+                    
+
+                    let cart = await Cart.findAll({
+                        where: {
+                            UserId: req.session.user.id
+                        }
+                    })
+                    await cart[0].addSerie(serie)
     
                 }
 
@@ -120,7 +136,7 @@ module.exports = {
             console.log(error.message)
         }
     },
-    editType: (req, res) => {
+    editType: async (req, res) => {
         try {
             if(req.query.product === 'Movie') {
                 
@@ -131,11 +147,27 @@ module.exports = {
                     })
                 };
 
-                req.session.cart.forEach(element => {
+                let movie = await Movie.findByPk(req.params.id)
+                let cartDB = await Cart.findAll({
+                    where: {
+                        UserId: req.session.user.id
+                    }
+                })
+
+                req.session.cart.forEach(async element => {
                     if(element.id == req.params.id && element.duration) {
-                        element.type === "buy" ? element.type = "rental" : element.type = "buy"
+                        if(element.type === "buy") {
+                            element.type = "rental"
+                            await cartDB[0].removeMovies(movie)
+                            await cartDB[1].addMovies(movie)
+                        } else {
+                            element.type = "buy"
+                            await cartDB[1].removeMovies(movie)
+                            await cartDB[0].addMovies(movie)
+                        }
                     }
                 });
+
 
                 return res.status(200).json({
                     ok: true,
@@ -153,9 +185,25 @@ module.exports = {
                     })
                 };
 
-                req.session.cart.forEach(element => {
+
+                let serie = await Serie.findByPk(req.params.id)
+                let cartDB = await Cart.findAll({
+                    where: {
+                        UserId: req.session.user.id
+                    }
+                })
+
+                req.session.cart.forEach( async element => {
                     if(element.id == req.params.id && element.seasons) {
-                        element.type === "buy" ? element.type = "rental" : element.type = "buy"
+                        if(element.type === "buy") {
+                            element.type = "rental"
+                            await cartDB[0].removeSeries(serie)
+                            await cartDB[1].addSeries(serie)
+                        } else {
+                            element.type = "buy"
+                            await cartDB[1].removeSeries(serie)
+                            await cartDB[0].addSeries(serie)
+                        }
                     }
                 });
 
@@ -171,8 +219,9 @@ module.exports = {
             console.log(error.message)
         }
     },
-    remove: (req, res) => {
+    remove: async (req, res) => {
         try {
+            console.log(req.session.cart)
             if(req.query.product === 'Movie') {
                 let exist = productVerify(req.session.cart, req.params.id, "Movie")
                 req.session.cart = req.session.cart.filter(elem => {
@@ -182,7 +231,14 @@ module.exports = {
                         return elem
                     }
                 })
-                console.log(req.session.cart)
+                let cartDB = await Cart.findAll({
+                    where: {
+                        userId: req.session.user.id
+                    }
+                })
+                let movieDelete = await Movie.findByPk(req.params.id)
+                await cartDB[0].removeMovies(movieDelete)
+                await cartDB[1].removeMovies(movieDelete)
             } else {
                 let exist = productVerify(req.session.cart, req.params.id, "Serie")
                 req.session.cart = req.session.cart.filter(elem => {
@@ -192,6 +248,14 @@ module.exports = {
                         return elem
                     }
                 })
+                let cartDB = await Cart.findAll({
+                    where: {
+                        userId: req.session.user.id
+                    }
+                })
+                let serieDelete = await Serie.findByPk(req.params.id)
+                await cartDB[0].removeSeries(serieDelete)
+                await cartDB[1].removeSeries(serieDelete)
                 console.log(req.session.cart)
             }
             return res.status(200).json({

@@ -152,6 +152,7 @@ const loadCart = (data) => {
                             <option value="rental" ${validatorRental(element)}>Alquilar</option>
                         </select>
                         <div class="price"><p>$${validatorPrice(element)}</p></div>
+                        <div class="price"><p>Descuento de %${element.Price.discount}</p></div>
                     </div>
                     <div class="box__movie">
                         <h1 class="title-product">${element.title}</h1>
@@ -181,6 +182,7 @@ const loadCart = (data) => {
                             <option value="rental" ${validatorRental(element)}>Alquilar</option>
                         </select>
                         <div class="price"><p>$${validatorPrice(element)}</p></div>
+                        <div class="price"><p>Descuento de %${element.Price.discount}</p></div>
                     </div>
                     <div class="box__movie">
                         <h1 class="title-product">${element.title}</h1>

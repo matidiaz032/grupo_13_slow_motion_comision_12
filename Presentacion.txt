@@ -5,8 +5,8 @@ Guille:
 -Mostrar el home page en version desktop y mobile
 -Mostrar vista de productos(Accediendo desde el boton de navegacion correspondiente)
 
-//Todos extrañamos el videoClub de la esquina de nuestro hogar.
-Nosotros somos el grupo 13 de esta comision, esta conformado por Elias Galeano, Matias Diaz ambos de Buenos Aires
+//Todos extrañamos el videoClub de la esquina de nuestro hogar por ello el grupo 13 de esta comision les trae una alternativa,
+el grupo esta conformado por Elias Galeano, Matias Diaz ambos de Buenos Aires
 y quien les habla, Angel Montaña de San Juan. Les vamos a mostrar nuestro ecommerce el cual
 esta pensado para la venta y alquiler de peliculas y series.
 Ahora mismo estamos viendo la pantalla de nuestro home el cual contiene un header,
@@ -29,6 +29,21 @@ Matias:
 
 
 Elias:
+
+//La necesidad de poder administrar nuestros productos, gestionar la nformacion de usuarios.
+nos lleva a la necesidad de poder presentar un producto cuyas caracteristicas no solo se enfoquen en la experiencia del usuario "cliente",
+sino tambien, en el usuario "administrador".
+
+Entonces iniciamos con un dashboard con un diseño mobile first, cuyas caracteristicas intuitivas
+lo hacen facil de gestionarse tanto desde un celular una pc, una tablet.
+con 4 opciones definidas de la siguiente manera:
+2 opciones para productos (series y pleiculas): En la que gestionamos lo que mostramos de los productos,
+como lo mostramos, vemos la cantidad de productos con posibilidad de ejecutar el abm correspondiente.
+1 opcion para usuarios: En la que mostramos la informacion de usuarios, vemos cuantos usuarios tenemos y 
+podemos ver que rol tiene definido en la plataforma.
+1 para mensajes (que esta en preparacion): El cual se gestionaran las distintas solicitudes y pedidos de los usuarios.
+
+
 -Mostrar Dashboard del administrador y funcionalidades
 -Mostrar carga de producto
 -Mostrar edicion de producto

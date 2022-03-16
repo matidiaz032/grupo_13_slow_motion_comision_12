@@ -32,6 +32,13 @@
     font-family: var(--averia);
 }
 
+.index .options .contain-options .contain-titles .estrenos h3:hover{
+    cursor: pointer;
+}
+.index .options .contain-options .contain-titles .ofers h3:hover{
+    cursor: pointer;
+}
+
 .index .options a {
     text-decoration: none;
     color: var(--blue);
@@ -72,6 +79,13 @@
 .index .options .contain-options .genresBurguer h3{
     width: 5rem;
     text-align: center;
+}
+.index .options .contain-options .genresBurguer h3:hover{
+    cursor: pointer;
+}
+
+.index .options .contain-options .genresBurguer .iconGenre i:hover{
+    cursor: pointer;
 }
 
 .index .options .contain-options .genresBurguer,

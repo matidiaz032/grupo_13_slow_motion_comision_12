@@ -74,6 +74,8 @@ let controller = {
         const { name, description, duration, appreciation, seasons, age, director, movieSeries, genre, idiom, subtitle, video, price } = req.body;
 
         const errors = validationResult(req)
+
+        console.log(req.body)
         
         if(errors.isEmpty()) {
             if (movieSeries === 'movie') {

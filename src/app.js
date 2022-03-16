@@ -48,7 +48,7 @@ app.use('*', notFoundRouter);
 
         // Sincronisa la base de datos con express //
 /* const { db } = require('./database/models/index.js')     //Requiere la coneccion de SQL
-db.sync({force: true }).then(() => {                      //Sincronisa la base de datos
+db.sync({force: false }).then(() => {                      //Sincronisa la base de datos
     app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}  
     http://localhost:${PORT}`));                            //Conecta sequelize con App
 }).catch((error) => console.log('no se conecto')) */
