@@ -23,10 +23,10 @@ Matias:
 -Mostrar vista de detalle de producto(Accediendo desde la tarjeta de algun producto)
 -Mostrar rutas protegidas si el usuario no esta logueado
 -Registro: Mostrar validaciones back y registrarse
--Loguin: Mostrar validaciones back y loguearse como administrador
+-Login: Mostrar validaciones back y loguearse como administrador
 -Mostrar carrito de compras
 
-
+//Tenemos esta vista que ordena cada producto por genero, dando click a la flecha muestra el listado de todos los productos de ese mismo genero. Seleccionando en un producto se puede ver el detalle, en donde hay mas informacion sobre el mismo. Si se quiere realizar alguna acción sin estar logueado te redirige al login, donde tenemos validaciones, una vez logueados ya podemos seleccionar productos y realizar cualquier acción como por ej elegir nuestros favoritos o añadir al carrito en donde se puede eliminar o editar las selecciones.
 
 Elias:
 
