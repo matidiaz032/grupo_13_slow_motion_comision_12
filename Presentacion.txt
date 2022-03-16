@@ -30,37 +30,25 @@ Matias:
 
 Elias:
 
-//La necesidad de poder administrar nuestros productos, gestionar la nformacion de usuarios.
-nos lleva a la necesidad de poder presentar un producto cuyas caracteristicas no solo se enfoquen en la experiencia del usuario "cliente",
-sino tambien, en el usuario "administrador".
-
-Entonces iniciamos con un dashboard con un diseño mobile first, cuyas caracteristicas intuitivas
-lo hacen facil de gestionarse tanto desde un celular una pc, una tablet.
-con 4 opciones definidas de la siguiente manera:
-2 opciones para productos (series y pleiculas): En la que gestionamos lo que mostramos de los productos,
-como lo mostramos, vemos la cantidad de productos con posibilidad de ejecutar el abm correspondiente.
-1 opcion para usuarios: En la que mostramos la informacion de usuarios, vemos cuantos usuarios tenemos y 
-podemos ver que rol tiene definido en la plataforma.
-1 para mensajes (que esta en preparacion): El cual se gestionaran las distintas solicitudes y pedidos de los usuarios.
-
-
 -Mostrar Dashboard del administrador y funcionalidades
 -Mostrar carga de producto
 -Mostrar edicion de producto
 -Mostrar eliminacion de producto
 -Cierre
 
-//La necesidad de poder administrar nuestros productos y gestionar la informacion de usuarios.
-nos lleva a la necesidad de poder presentar un e-commerce cuyas caracteristicas no solo se enfoquen en la experiencia del usuario "cliente",
-sino tambien, en el usuario "administrador".
+//La necesidad de tener que administrar nuestros productos, gestionar la nformacion de usuarios.
+nos lleva a la creacion de un producto cuyas caracteristicas no solo se enfoquen en la experiencia del usuario "cliente",
+sino tambien, del usuario "administrador".
 
 Mostrar Home del admin:
     Entonces iniciamos con un dashboard con un diseño mobile first, cuyas caracteristicas intuitivas
     lo hacen facil de gestionarse tanto desde un celular, una pc o una tablet.
     con 4 opciones definidas de la siguiente manera:
-    * 2 opciones para productos (series y pleiculas)
-    * 1 opcion para usuarios
-    * 1 para mensajes
+    2 opciones para productos (series y pleiculas): En la que gestionamos lo que mostramos de los productos,
+    como lo mostramos, vemos la cantidad de productos con posibilidad de ejecutar el abm correspondiente.
+    1 opcion para usuarios: En la que mostramos la informacion de usuarios, vemos cuantos usuarios tenemos y 
+    podemos ver que rol tiene definido en la plataforma.
+    1 para mensajes (que esta en preparacion): El cual se gestionaran las distintas solicitudes y pedidos de los usuarios.
 
     ingresar en el admin movie y realizar scroll por la pantalla
         Iniciando el recorrido de productos de peliculas en este caso. Aquí vemos que podemos gestionar lo que mostramos de los productos,
