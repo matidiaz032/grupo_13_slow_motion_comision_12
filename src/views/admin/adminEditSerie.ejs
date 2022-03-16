@@ -4,6 +4,10 @@
     <%- include ('../partials/adminHeader') %>
     <!-- Logo mobile and tablet -->
     <%- include ('../partials/logoMobileADmin') %>
+
+    <!-- Menu admin -->
+    <%- include ('../partials/adminMenu') %>
+
     <div class="form__files-desktopSerie">
         <div class="form-captionSerie">
             <form action="/admin/products/serie/<%- product.id %>?_method=PUT" method="post" id="form" class="edit-filesSerie" enctype="multipart/form-data">
