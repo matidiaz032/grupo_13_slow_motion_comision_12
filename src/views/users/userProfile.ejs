@@ -4,13 +4,15 @@
   <%- include('../partials/header') %>
 
   <div class="profile-container">
-    <form action="/users/change-avatar" method="post">
+    <form action="/users/change-avatar?_method=PUT" method="post" enctype="multipart/form-data">
       <div class="d-none" id="bg-modal">
         <div class="modal">
+          <p>Para ejecutar el cambio de imagen debera volver iniciar sesión</p>
+          <br>
           <p>¿Está seguro de que desea modificar la imagen de avatar?</p>
           <div class="container-btn-modal">
             <button type="submit" class="btn-confirm">Confirmar</button>
-            <button type="button" class="btn-cancel" id="btnCancel">Cancelar</button>
+            <button type="reset" class="btn-cancel" id="btnCancel">Cancelar</button>
           </div>
         </div>
       </div>
