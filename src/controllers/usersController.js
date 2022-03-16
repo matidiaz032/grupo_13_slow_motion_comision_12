@@ -183,8 +183,34 @@ let controller = {
             })
         }
     },
-    changeAvatar : (req, res) => {
-        res.send(req.body)
+    changeAvatar : async (req, res) => {
+        const errors = validationResult(req);
+        const finalDate = new Date(userFind.date_of_birth).toISOString().slice(0,10);
+        let userSession = req.session.user;
+        let userFind = await User.findByPk(userSession.id);
+
+        if (errors.isEmpty()) {
+            try {
+                await User.update({
+                    avatar: req.file.filename
+                }, {
+                    where: { id: userSession.id }
+                })
+                res.redirect('/users/profile');
+
+            } catch (error) {
+                res.send(error)
+            }
+        } else {
+            res.render('users/userProfile', {
+                title: 'User Profile',
+                errors: errors.mapped(),
+                session: req.session,
+                user: userFind,
+                finalDate
+            })
+        }
+        
     },
     logout: (req, res) => {
         req.session.destroy();
