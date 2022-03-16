@@ -10,11 +10,11 @@ setInterval(() => {
     spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
 }, 5000)
 
-const $ = (elem) => {
+const selec = (elem) => {
     return document.getElementsByClassName(elem)
 }
 
-let row__inner = $('row__inner')
+let row__inner = selec('row__inner')
 let count = 0
 
 var movies = new Hammer(row__inner[0])

@@ -12,4 +12,4 @@ function burguer () {
     }
 }
 
-searchBar.addEventListener('submit', e => searchInput.value == '' && e.preventDefault())
+/* searchBar.addEventListener('submit', e => searchInput.value == '' && e.preventDefault()) */

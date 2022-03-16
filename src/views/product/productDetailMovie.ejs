@@ -12,7 +12,7 @@
                     <form action='/users/favorites?id=<%- detailMovie.id %>&product=Movie' method="post">
                         <button type="submit"><i class="fas fa-heart"></i></button>
                     </form>
-                    <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="/products/cart" onclick="addMovieCart('<%- detailMovie.id %>')"><i class="fas fa-shopping-cart"></i></a>
                 </div>
             </div>
         </div>
@@ -79,8 +79,8 @@
             <div class="icons">
                 <form action='/users/favorites?id=<%- detailMovie.id %>&product=Movie' method="post">
                     <button type="submit"><i class="fas fa-heart"></i>Añadir a favoritos</button>
-                    <a href=""><i class="fas fa-cart-plus"></i> Añadir a carrito</a>
                 </form>
+                <a href="/products/cart" onclick="addMovieCart('<%- detailMovie.id %>')"><i class="fas fa-cart-plus"></i> Añadir a carrito</a>
             </div>
             <div class="botones">
                 <button type="button" class="compra" id="comprar-serie" onclick="location.href='/products/cart'">COMPRAR</button>

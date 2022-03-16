@@ -14,20 +14,13 @@
                     </div>
                     <ul class="genres-menu">
                         <% genres.forEach(elem => { %>
-                            <li class="list-item"><a href="/products/movies"><%- elem.name %></a></li>
+                            <li class="list-item"><a href="products/movies?genre=<%- elem.name %>"><%- elem.name %></a></li>
                         <% } ) %>
                     </ul>
                 </nav>
                 <a href="/products/premieres" class="estrenos"><h3>Estrenos</h3></a>
                 <a href="/products/ofers" class="ofers"><h3>Ofertas</h3></a>
             </div>
-            <!-- <div class="contain-lists">
-                <ul class="genres-menu">
-                    <% genres.forEach(elem => { %>
-                        <li class="list-item"><a href="/products/movies"><%- elem.name %></a></li>
-                    <% } ) %>
-                </ul>
-            </div> -->
         </div>
     </section>
     </div>
