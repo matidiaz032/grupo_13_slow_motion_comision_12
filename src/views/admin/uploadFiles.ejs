@@ -131,13 +131,24 @@
                 <div class="organized-priceDiscount">
                     <div class="contain__datePrice">
                         <input type="number" name="price" id="buyPrice" placeholder="Precio de venta" class="input-price">
+                        <small class="text-errors submitErrors" id="buyPriceErrors"></small>
+                        <% if (locals.errors && errors.price) { %>
+                            <small class="text-errors submitErrors"><%= errors.price.msg %></small>
+                        <% } %>
                     </div>
                     <div class="contain__dateRental">
                         <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input-rental">
-                        <small class="text-errors submitErrors" id="discountErrors"></small>
+                        <small class="text-errors submitErrors" id="rentalPriceErrors"></small>
                         <% if (locals.errors && errors.price) { %>
                             <small class="text-errors submitErrors"><%= errors.price.msg %></small>
-                        <% } %> 
+                        <% } %>
+                    </div>
+                    <div class="contain__dateDiscount">
+                        <input type="number" name="price" id="discount" placeholder="Descuento" class="input-discount" >
+                        <small class="text-errors" id="discountErrors"></small>
+                        <% if (locals.errors && errors.price) { %>
+                            <small class="text-errors submitErrors"><%= errors.price.msg %></small>
+                        <% } %>
                     </div>
                 </div>
                 <div class="contain__date">

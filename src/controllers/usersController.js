@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const fs = require("fs");
 const { validationResult } = require('express-validator')
-const { User, Rol, Movie, Serie } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
+const { User, Rol, Movie, Serie, Cart, Price } = require('../database/models/index.js'); //Requiere los modelos para poder usar directamente la variable
 
 let controller = {
     login: (req, res) => {
@@ -16,40 +16,113 @@ let controller = {
             session: req.session
         })
     },
-    loadLogin: (req, res) => {
+    loadLogin: async (req, res) => {
         const errors = validationResult(req)
 
         if(errors.isEmpty()) {
             
-            User.findOne({
+            let user = await User.findOne({
                 where: {
                     email: req.body.email.toLowerCase()
-                }
+                },
             })
-            .then(user => {
-                req.session.user = {
-                    id: user.id,
-                    name: user.first_name,
-                    lastName: user.last_name,
-                    userName: user.user_name,
-                    email: user.email,
-                    avatar: user.avatar,
-                    rol: user.RolId,
-                }
+            
+            req.session.user = {
+                id: user.id,
+                name: user.first_name,
+                lastName: user.last_name,
+                userName: user.user_name,
+                email: user.email,
+                avatar: user.avatar,
+                rol: user.RolId,
+            }
     
-                if (req.body.recordarme) {
-                    const TIME_IN_MILISECONDS = 6000000
-                    res.cookie('userSlowMotion', req.session.user, {
-                        expires: new Date(Date.now() + TIME_IN_MILISECONDS),
-                        httpOnly: true,
-                        secure: true
-                    });
-                }
-    
-                res.locals.user = req.session.user;
-    
-                return res.redirect('/');
+            
+            if (req.body.recordarme) {
+                const TIME_IN_MILISECONDS = 6000000
+                res.cookie('userSlowMotion', req.session.user, {
+                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                    httpOnly: true,
+                    secure: true
+                });
+            }
+            
+            res.locals.user = req.session.user;
+            
+            req.session.cart = []
+
+            let cart = await Cart.findAll({
+                where: {
+                    UserId: user.id
+                },
+                include: [{
+                    model: Movie,
+                    include: {
+                        model: Price
+                    }
+                }, {
+                    model: Serie,
+                    include: {
+                        model: Price
+                    }
+                },{
+                    model: User
+                }]
             })
+            if(cart[0]) {
+                cart[0].Movies.forEach(element => {
+                    req.session.cart.push({
+                        id: element.id,
+                        title: element.title,
+                        duration: element.duration,
+                        image: element.image,
+                        description: element.description,
+                        Price: element.Price,
+                        type: "buy"
+                    })
+                });
+                cart[0].Series.forEach(element => {
+                    req.session.cart.push({
+                        id: element.id,
+                        title: element.title,
+                        seasons: element.seasons,
+                        image: element.image,
+                        description: element.description,
+                        Price: element.Price,
+                        type: "buy"
+                    })
+                })
+                cart[1].Movies.forEach(element => {
+                    req.session.cart.push({
+                        id: element.id,
+                        title: element.title,
+                        duration: element.duration,
+                        image: element.image,
+                        description: element.description,
+                        Price: element.Price,
+                        type: "rental"
+                    })
+                });
+                cart[1].Series.forEach(element => {
+                    req.session.cart.push({
+                        id: element.id,
+                        title: element.title,
+                        seasons: element.seasons,
+                        image: element.image,
+                        description: element.description,
+                        Price: element.Price,
+                        type: "rental"
+                    })
+                })
+            } else {
+                await user.createCart({
+                    type: 'buy',
+                })
+                await user.createCart({
+                    type: 'rental'
+                })
+            }
+            return res.redirect('/');
 
         } else {
             return res.render('./users/login', { 
