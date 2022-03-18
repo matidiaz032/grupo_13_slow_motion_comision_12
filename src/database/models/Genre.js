@@ -10,6 +10,7 @@ module.exports = (sequelize) => {
       }, {
             timestamps: false,
             sequelize: sequelize,
-            modelName: 'genre'
+            modelName: 'genre',
+            tableName: 'genres'
       })
 }

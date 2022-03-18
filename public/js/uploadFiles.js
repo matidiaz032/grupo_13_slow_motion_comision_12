@@ -98,8 +98,8 @@ window.addEventListener('load', function () {
     let $discountErrors = qs('#discountErrors');
 
     // Regular expressions
-    let regExAlpha = /^[a-zA-Z0-9-\sñáéíóúüª!:?'¡].{3,50}$/;
-    let regExAlphaText = /^[a-zA-Z0-9-\sñáéíóúü:=%&$·"!¿/[ª!?'¡].{3,500}$/;
+    let regExAlpha = /^[a-zA-Z0-9-\sñáéíóúüª!:?'¡].{5,50}$/;
+    let regExAlphaText = /^[a-zA-Z0-9-\sñáéíóúü:=%&$·"!¿/[ª!?'¡].{20,500}$/;
     let regExNmbr = /^[0-9].{0,2}$/;
     let regExPrice = /^[0-9].{0,5}$/;
 
@@ -128,18 +128,18 @@ window.addEventListener('load', function () {
 
     $description.addEventListener('blur', function(){
         if(!$description.value.trim()){
-            $descriptionErrors.innerHTML = 'El comentario es obligatorio'
+            $descriptionErrors.innerHTML = 'La descripcion es obligatorio'
             $description.style.color = '#ff0000'
             $description.toggleAttribute('required')
             validationErrors = true
         } else if (!regExAlphaText.test($description.value)){
-            $descriptionErrors.innerHTML = 'El comentario no es válido'
+            $descriptionErrors.innerHTML = 'La descripcion no es válida'
             $description.style.color = '#ff0000'
             $description.toggleAttribute('required')
             $description.onKeyPress('')
             validationErrors = true
         } else {
-            $descriptionErrors.innerHTML = 'El comentario es valido'
+            $descriptionErrors.innerHTML = 'La descripcion es valida'
             $description.style.color = '#2940D3'
             $description.style.backgroundColor = '#d8c371'
             $description.style.border = 'none'
@@ -160,7 +160,7 @@ window.addEventListener('load', function () {
             $seasons.toggleAttribute('required')
             validationErrors = true
         } else {
-            $seasonsErrors.innerHTML = 'La temporada es valida'
+            $seasonsErrors.innerHTML = 'La cantidad de temporadas es valida'
             $seasons.style.color = '#2940D3'
             $seasons.style.backgroundColor = '#d8c371'
             $seasons.style.border = 'none'
@@ -192,17 +192,17 @@ window.addEventListener('load', function () {
 
     $appreciation.addEventListener('blur', function(){
         if(!$appreciation.value.trim()){
-            $appreciationErrors.innerHTML = 'El comentario es obligatorio'
+            $appreciationErrors.innerHTML = 'La calificacion es obligatoria'
             $appreciation.style.color = '#ff0000'
             $appreciation.toggleAttribute('required')
             validationErrors = true
         } else if (!regExNmbr.test($appreciation.value)){
-            $appreciationErrors.innerHTML = 'El comentario no es válido'
+            $appreciationErrors.innerHTML = 'La calificacion no es válida'
             $appreciation.style.color = '#ff0000'
             $appreciation.toggleAttribute('required')
             validationErrors = true
         } else {
-            $appreciationErrors.innerHTML = 'El comentario es valido'
+            $appreciationErrors.innerHTML = 'La calificacion es valida'
             $appreciation.style.color = '#2940D3'
             $appreciation.style.backgroundColor = '#d8c371'
             $appreciation.style.border = 'none'
@@ -213,17 +213,17 @@ window.addEventListener('load', function () {
 
     $director.addEventListener('blur', function(){
         if(!$director.value.trim()){
-            $directorErrors.innerHTML = 'El nombre es obligatorio'
+            $directorErrors.innerHTML = 'El director es obligatorio'
             $director.style.color = '#ff0000'
             $director.toggleAttribute('required')
             validationErrors = true
         } else if (!regExAlpha.test($director.value)){
-            $directorErrors.innerHTML = 'El nombre no es válido'
+            $directorErrors.innerHTML = 'El director no es válido'
             $director.style.color = '#ff0000'
             $director.toggleAttribute('required')
             validationErrors = true
         } else {
-            $directorErrors.innerHTML = 'El nombre es valido'
+            $directorErrors.innerHTML = 'El nombre de director es valido'
             $director.style.color = '#2940D3'
             $director.style.backgroundColor = '#d8c371'
             $director.style.border = 'none'

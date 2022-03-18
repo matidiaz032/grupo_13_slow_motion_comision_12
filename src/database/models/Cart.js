@@ -9,6 +9,7 @@ module.exports = (sequelize) => {
             },
       }, {
             sequelize: sequelize,
-            modelName: 'cart'
+            modelName: 'cart',
+            tableName: 'carts'
       })
 }

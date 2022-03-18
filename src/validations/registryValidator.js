@@ -5,15 +5,30 @@ const { User } = require('../database/models/index.js');
 module.exports = [
     check('name')
     .notEmpty()
-    .withMessage('Debe ingresar un nombre'),
+    .withMessage('Debe ingresar un nombre')
+    .isLength({
+        min: 2,
+        max: 25
+    })
+    .withMessage('El nombre debe tener entre 2 y 25 caracteres'),
 
     check('lastName')
     .notEmpty()
-    .withMessage('Debe ingresar un apellido'),
+    .withMessage('Debe ingresar un apellido')
+    .isLength({
+        min: 2,
+        max: 25
+    })
+    .withMessage('El apellido debe tener entre 2 y 25 caracteres'),
 
     check('userName')
     .notEmpty()
-    .withMessage('Debe ingresar un nombre de usuario'),
+    .withMessage('Debe ingresar un nombre de usuario')
+    .isLength({
+        min: 2,
+        max: 25
+    })
+    .withMessage('El nombre de usuario debe tener entre 2 y 25 caracteres'),
 
     check('email')
     .isEmail()
@@ -37,7 +52,7 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes escribir tu contraseña')
     .isLength({
-        min: 6,
+        min: 8,
         max: 16
     })
     .withMessage('La contraseña debe tener entre 6 y 16 caracteres')

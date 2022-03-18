@@ -3,7 +3,7 @@ const { check, body} = require('express-validator');
 module.exports = [
     check('name')
     .notEmpty()
-    .withMessage('Esto es del back'),
+    .withMessage('Debe ingresar el titulo'),
 
     check('description')
     .notEmpty()
@@ -15,7 +15,6 @@ module.exports = [
     
     check('appreciation')
     .notEmpty()
-    .isDecimal()
     .withMessage('Debe ingresar una calificacion valida del 0.0 al 10.0'),
 
     check('director')
@@ -24,7 +23,7 @@ module.exports = [
 
     check('age')
     .notEmpty()
-    .withMessage('Debe ingresar un director'),
+    .withMessage('Debe ingresar una fecha valida'),
 
     check('genre')
     .notEmpty()
@@ -47,6 +46,6 @@ module.exports = [
 
     check('price')
     .notEmpty()
-    .withMessage('Debe ingresar un valor'),
+    .withMessage('Debe ingresar un precio'),
 
 ]

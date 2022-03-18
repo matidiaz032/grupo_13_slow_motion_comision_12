@@ -42,7 +42,8 @@ module.exports = (sequelize) => {
             }
       }, {
             sequelize: sequelize,
-            modelName: 'movie'
+            modelName: 'movie',
+            tableName: 'movies'
       })
       Movie.associate = function(models){
             Movie.belongsTo(models.Idiom, {

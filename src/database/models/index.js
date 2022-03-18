@@ -33,29 +33,29 @@ Price.hasMany(Serie)
 Serie.belongsTo(Price)
 
 /* Idiomas de peliculas */
-Idiom.belongsToMany(Movie, {through: 'movieIdiom', timestamps: false})
-Movie.belongsToMany(Idiom, {through: 'movieIdiom', timestamps: false})
-Idiom.belongsToMany(Serie, {through: 'serieIdiom', timestamps: false})
-Serie.belongsToMany(Idiom, {through: 'serieIdiom', timestamps: false})
+Idiom.belongsToMany(Movie, {through: 'movieidiom', timestamps: false})
+Movie.belongsToMany(Idiom, {through: 'movieidiom', timestamps: false})
+Idiom.belongsToMany(Serie, {through: 'serieidiom', timestamps: false})
+Serie.belongsToMany(Idiom, {through: 'serieidiom', timestamps: false})
 
 /* Generos de pelicula */
-Movie.belongsToMany(Genre, {through: 'movieGenre', timestamps: false})
-Genre.belongsToMany(Movie, {through: 'movieGenre', timestamps: false})
-Serie.belongsToMany(Genre, {through: 'serieGenre', timestamps: false})
-Genre.belongsToMany(Serie, {through: 'serieGenre', timestamps: false})
+Movie.belongsToMany(Genre, {through: 'moviegenre', timestamps: false})
+Genre.belongsToMany(Movie, {through: 'moviegenre', timestamps: false})
+Serie.belongsToMany(Genre, {through: 'seriegenre', timestamps: false})
+Genre.belongsToMany(Serie, {through: 'seriegenre', timestamps: false})
 
 /* Favoritos */
-Movie.belongsToMany(User, {through: 'movieFavorites', timestamps: false})
-User.belongsToMany(Movie, {through: 'movieFavorites', timestamps: false})
-Serie.belongsToMany(User, {through: 'serieFavorites', timestamps: false})
-User.belongsToMany(Serie, {through: 'serieFavorites', timestamps: false})
+Movie.belongsToMany(User, {through: 'moviefavorites', timestamps: false})
+User.belongsToMany(Movie, {through: 'moviefavorites', timestamps: false})
+Serie.belongsToMany(User, {through: 'seriefavorites', timestamps: false})
+User.belongsToMany(Serie, {through: 'seriefavorites', timestamps: false})
 
 
 /* Carrito */
-Cart.belongsToMany(Movie, {through: 'movieCarts', timestamps: false})
-Movie.belongsToMany(Cart, {through: 'movieCarts', timestamps: false})
-Cart.belongsToMany(Serie, {through: 'serieCarts', timestamps: false})
-Serie.belongsToMany(Cart, {through: 'serieCarts', timestamps: false})
+Cart.belongsToMany(Movie, {through: 'moviecarts', timestamps: false})
+Movie.belongsToMany(Cart, {through: 'moviecarts', timestamps: false})
+Cart.belongsToMany(Serie, {through: 'seriecarts', timestamps: false})
+Serie.belongsToMany(Cart, {through: 'seriecarts', timestamps: false})
 
 Cart.belongsTo(User);
 User.hasMany(Cart);
@@ -63,10 +63,10 @@ User.hasMany(Cart);
 
 
 /* Order */
-Order.belongsToMany(Movie, {through: 'movieOrder', timestamps: false})
-Movie.belongsToMany(Order, {through: 'movieOrder', timestamps: false})
-Order.belongsToMany(Serie, {through: 'serieOrder', timestamps: false})
-Serie.belongsToMany(Order, {through: 'serieOrder', timestamps: false})
+Order.belongsToMany(Movie, {through: 'movieorder', timestamps: false})
+Movie.belongsToMany(Order, {through: 'movieorder', timestamps: false})
+Order.belongsToMany(Serie, {through: 'serieorder', timestamps: false})
+Serie.belongsToMany(Order, {through: 'serieorder', timestamps: false})
 
 Order.belongsTo(User);
 User.hasMany(Order);
