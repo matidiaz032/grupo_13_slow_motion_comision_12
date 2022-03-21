@@ -136,7 +136,7 @@ const loadCart = (data) => {
             let product = `
             <section class="detail-cart">
                 <article class="section__article">
-                    <div class="box__movie">
+                    <div class="box__movie" id="conteinImage">
                         <div class="ProductImg">
                             <img src="/img/products-images/${element.image}" alt="">
                         </div>
@@ -166,7 +166,7 @@ const loadCart = (data) => {
             let product = `
             <section class="detail-cart">
                 <article class="section__article">
-                    <div class="box__movie">
+                    <div class="box__movie" id="conteinImage">
                         <div class="ProductImg">
                             <img src="/img/products-images/${element.image}" alt="">
                         </div>
