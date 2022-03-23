@@ -109,19 +109,19 @@ window.addEventListener('load', function () {
     let validationErrors = false;
 
     $name.addEventListener('blur', function(){
-        if($name.value.trim()){
-            $nameErrors.innerHTML = '*'
+        if(!$name.value.trim()){
+            $nameErrors.innerHTML = 'Es necesario un titulo'
             $nameErrors.style.color = '#ff0000'
             $name.toggleAttribute('required')
             validationErrors = true
         } else if (!regExAlpha.test($name.value)){
-            $nameErrors.innerHTML = '*1'
+            $nameErrors.innerHTML = 'No es un titulo valido'
             $nameErrors.style.color = '#ff0000'
             $name.toggleAttribute('required')
             validationErrors = true
         } else {
             $nameErrors.innerHTML = 'El título es valido'
-            $name.style.color = '#2940D3'
+            $nameErrors.style.color = '#2940D3'
             $name.style.backgroundColor = '#d8c371'
             $name.style.border = 'none'
             $name.toggleAttribute('required')
@@ -131,19 +131,19 @@ window.addEventListener('load', function () {
 
     $description.addEventListener('blur', function(){
         if(!$description.value.trim()){
-            $descriptionErrors.innerHTML = 'La descripcion es obligatorio'
-            $description.style.color = '#ff0000'
+            $descriptionErrors.innerHTML = 'La descripcion es obligatoria'
+            $descriptionErrors.style.color = '#ff0000'
             $description.toggleAttribute('required')
             validationErrors = true
         } else if (!regExAlphaText.test($description.value)){
             $descriptionErrors.innerHTML = 'La descripcion no es válida'
-            $description.style.color = '#ff0000'
+            $descriptionErrors.style.color = '#ff0000'
             $description.toggleAttribute('required')
             $description.onKeyPress('')
             validationErrors = true
         } else {
             $descriptionErrors.innerHTML = 'La descripcion es valida'
-            $description.style.color = '#2940D3'
+            $descriptionErrors.style.color = '#2940D3'
             $description.style.backgroundColor = '#d8c371'
             $description.style.border = 'none'
             $description.toggleAttribute('required')
@@ -153,18 +153,18 @@ window.addEventListener('load', function () {
 
     $seasons.addEventListener('blur', function(){
         if(!$seasons.value.trim()){
-            $seasonsErrors.innerHTML = '*'
+            $seasonsErrors.innerHTML = 'Debe ingresar temporadas'
             $seasonsErrors.style.color = '#ff0000'
             $seasons.toggleAttribute('required')
             validationErrors = true
         } else if (!regExNmbr.test($seasons.value)){
-            $seasonsErrors.innerHTML = '*'
+            $seasonsErrors.innerHTML = 'No es una cantidad de temporadas valida'
             $seasonsErrors.style.color = '#ff0000'
             $seasons.toggleAttribute('required')
             validationErrors = true
         } else {
             $seasonsErrors.innerHTML = 'La cantidad de temporadas es valida'
-            $seasons.style.color = '#2940D3'
+            $seasonsErrors.style.color = '#2940D3'
             $seasons.style.backgroundColor = '#d8c371'
             $seasons.style.border = 'none'
             $seasons.toggleAttribute('required')
@@ -174,18 +174,18 @@ window.addEventListener('load', function () {
 
     $duration.addEventListener('blur', function(){
         if(!$duration.value.trim()){
-            $durationErrors.innerHTML = '*'
+            $durationErrors.innerHTML = 'Debe ingresar una duracion'
             $durationErrors.style.color = '#ff0000'
             $duration.toggleAttribute('required')
             validationErrors = true
         } else if (!regExNmbr.test($duration.value)){
-            $durationErrors.innerHTML = '*'
+            $durationErrors.innerHTML = 'La duracion no es valida'
             $durationErrors.style.color = '#ff0000'
             $duration.toggleAttribute('required')
             validationErrors = true
         } else {
             $durationErrors.innerHTML = 'La duracion es valida'
-            $duration.style.color = '#2940D3'
+            $durationErrors.style.color = '#2940D3'
             $duration.style.backgroundColor = '#d8c371'
             $duration.style.border = 'none'
             $duration.toggleAttribute('required')
@@ -196,17 +196,17 @@ window.addEventListener('load', function () {
     $appreciation.addEventListener('blur', function(){
         if(!$appreciation.value.trim()){
             $appreciationErrors.innerHTML = 'La calificacion es obligatoria'
-            $appreciation.style.color = '#ff0000'
+            $appreciationErrors.style.color = '#ff0000'
             $appreciation.toggleAttribute('required')
             validationErrors = true
         } else if (!regExNmbr.test($appreciation.value)){
             $appreciationErrors.innerHTML = 'La calificacion no es válida'
-            $appreciation.style.color = '#ff0000'
+            $appreciationErrors.style.color = '#ff0000'
             $appreciation.toggleAttribute('required')
             validationErrors = true
         } else {
             $appreciationErrors.innerHTML = 'La calificacion es valida'
-            $appreciation.style.color = '#2940D3'
+            $appreciationErrors.style.color = '#2940D3'
             $appreciation.style.backgroundColor = '#d8c371'
             $appreciation.style.border = 'none'
             $appreciation.toggleAttribute('required')
@@ -217,17 +217,17 @@ window.addEventListener('load', function () {
     $director.addEventListener('blur', function(){
         if(!$director.value.trim()){
             $directorErrors.innerHTML = 'El director es obligatorio'
-            $director.style.color = '#ff0000'
+            $directorErrors.style.color = '#ff0000'
             $director.toggleAttribute('required')
             validationErrors = true
         } else if (!regExAlpha.test($director.value)){
             $directorErrors.innerHTML = 'El director no es válido'
-            $director.style.color = '#ff0000'
+            $directorErrors.style.color = '#ff0000'
             $director.toggleAttribute('required')
             validationErrors = true
         } else {
             $directorErrors.innerHTML = 'El nombre de director es valido'
-            $director.style.color = '#2940D3'
+            $directorErrors.style.color = '#2940D3'
             $director.style.backgroundColor = '#d8c371'
             $director.style.border = 'none'
             $director.toggleAttribute('required')
@@ -240,26 +240,26 @@ window.addEventListener('load', function () {
         let yearMovie = dateMovie.getFullYear();
         switch (true) {
             case !regExAlpha.test($age.value):
-                $ageErrors.innerHTML = '*';
-                $ageErrors.style.color = 'red';
+                $ageErrors.innerHTML = 'Debe ingresar una fecha';
+                $ageErrors.style.color = '#ff0000';
                 $age.toggleAttribute('required')
                 validationErrors = true;
                 break;
             case yearMovie > actualYear:
                 $ageErrors.innerHTML = 'La fecha seleccionada no puede ser mayor a la fecha actual';
-                $ageErrors.style.color = 'red';
+                $ageErrors.style.color = '#ff0000';
                 $age.toggleAttribute('required')
                 validationErrors = true;
                 break;  
             case yearMovie < 1900:
                 $ageErrors.innerHTML = 'La fecha seleccionada no puede ser menor a 1900';
-                $ageErrors.style.color = 'red';
+                $ageErrors.style.color = '#ff0000';
                 $age.toggleAttribute('required')
                 validationErrors = true;
                 break;  
             default:
                 $ageErrors.innerHTML = 'La fecha es correcto';
-                $age.style.color = '#2940D3';
+                $ageErrors.style.color = '#2940D3';
                 $age.style.backgroundColor = '#d8c371';
                 $age.style.border = 'none';
                 $age.toggleAttribute('required')
@@ -278,11 +278,12 @@ window.addEventListener('load', function () {
             }
         }
         if(suma == 13) {
-            $genreCheckErrors.innerHTML= '*';
-            $genreCheckErrors.style.color = 'red';
+            $genreCheckErrors.innerHTML= 'Necesario al menos 1 genero';
+            $genreCheckErrors.style.color = '#ff0000';
             validationErrors = true
         } else {
             $genreCheckErrors.innerHTML= '';
+            $genreCheckErrors.style.color = '#2940D3'
             validationErrors = false
         }       
     }
@@ -298,8 +299,8 @@ window.addEventListener('load', function () {
             }
         }
         if(suma == 7) {
-            $idiomErrors.innerHTML= '*';
-            $idiomErrors.style.color = 'red';
+            $idiomErrors.innerHTML= 'Necesario al menos un idioma';
+            $idiomErrors.style.color = '#ff0000';
             validationErrors = true
         } else {
             $idiomErrors.innerHTML= '';
@@ -311,12 +312,12 @@ window.addEventListener('load', function () {
     $subtitle.addEventListener('blur', function(){
         if($subtitle.value.trim() && $subtitle.value === "0"){
             $subtitleErrors.innerHTML = 'Es necesario seleccionar una opcion';
-            $subtitle.style.color = 'red';
+            $subtitleErrors.style.color = '#ff0000';
             $subtitle.toggleAttribute('required')
             validationErrors = true;
         } else {
             $subtitleErrors.innerHTML = 'Selección valida'
-            $subtitle.style.color = '#2940D3'
+            $subtitleErrors.style.color = '#2940D3'
             $subtitle.style.backgroundColor = '#d8c371'
             $subtitle.style.border = 'none'
             $subtitle.toggleAttribute('required')
@@ -347,18 +348,18 @@ window.addEventListener('load', function () {
 
     $video.addEventListener('blur', function(){
         if(!$video.value.trim()){
-            $videoErrors.innerHTML = '*'
-            $video.style.color = '#ff0000'
+            $videoErrors.innerHTML = 'Debe ingresar el link del trailer'
+            $videoErrors.style.color = '#ff0000'
             $video.toggleAttribute('required')
             validationErrors = true
         } else if (!regExAlpha.test($name.value)){
             $videoErrors.innerHTML = 'El trailer no es válido'
-            $video.style.color = '#ff0000'
+            $videoErrors.style.color = '#ff0000'
             $video.toggleAttribute('required')
             validationErrors = true
         } else {
             $videoErrors.innerHTML = 'El trailer es valido'
-            $video.style.color = '#2940D3'
+            $videoErrors.style.color = '#2940D3'
             $video.style.backgroundColor = '#d8c371'
             $video.style.border = 'none'
             $video.toggleAttribute('required')
@@ -368,18 +369,18 @@ window.addEventListener('load', function () {
 
     $buyPrice.addEventListener('blur', function(){
         if($buyPrice.value.trim() && $buyPrice.value === 0 ){
-            $buyPriceErrors.innerHTML = '*';
-            $buyPrice.style.color = 'red';
+            $buyPriceErrors.innerHTML = 'Debe ingresar un precio';
+            $buyPriceErrors.style.color = '#ff0000';
             $buyPrice.toggleAttribute('required')
             validationErrors = true;
         } else if (!regExPrice.test($buyPrice.value)){
             $buyPriceErrors.innerHTML = 'El precio no es válido'
-            $buyPrice.style.color = '#ff0000'
+            $buyPriceErrors.style.color = '#ff0000'
             $buyPrice.toggleAttribute('required')
             validationErrors = true;
         } else {
             $buyPriceErrors.innerHTML = 'El precio es valido'
-            $buyPrice.style.color = '#2940D3'
+            $buyPriceErrors.style.color = '#2940D3'
             $buyPrice.style.backgroundColor = '#d8c371'
             $buyPrice.style.border = 'none'
             $buyPrice.toggleAttribute('required')
@@ -389,18 +390,18 @@ window.addEventListener('load', function () {
 
     $rentalPrice.addEventListener('blur', function(){
         if($rentalPrice.value.trim() && $rentalPrice.value === 0 ){
-            $rentalPriceErrors.innerHTML = '*';
-            $rentalPrice.style.color = 'red';
+            $rentalPriceErrors.innerHTML = 'Debe ingresar un precio';
+            $rentalPriceErrors.style.color = '#ff0000';
             $rentalPrice.toggleAttribute('required')
             validationErrors = true;
         } else if (!regExPrice.test($rentalPrice.value)){
             $rentalPriceErrors.innerHTML = 'El precio no es válido'
-            $rentalPrice.style.color = '#ff0000'
+            $rentalPriceErrors.style.color = '#ff0000'
             $rentalPrice.toggleAttribute('required')
             validationErrors = true
         } else {
             $rentalPriceErrors.innerHTML = 'El precio es valido'
-            $rentalPrice.style.color = '#2940D3'
+            $rentalPriceErrors.style.color = '#2940D3'
             $rentalPrice.style.backgroundColor = '#d8c371'
             $rentalPrice.style.border = 'none'
             $rentalPrice.toggleAttribute('required')
@@ -410,18 +411,18 @@ window.addEventListener('load', function () {
 
     $discount.addEventListener('blur', function(){
         if($discount.value.trim() && $discount.value === 0 ){
-            $discountErrors.innerHTML = '*';
-            $discount.style.color = 'red';
+            $discountErrors.innerHTML = 'Debe ingresar el descuento';
+            $discountErrors.style.color = '#ff0000';
             $discount.toggleAttribute('required')
             validationErrors = true;
         } else if (!regExNmbr.test($discount.value)){
             $discountErrors.innerHTML = 'El descuento no es válido'
-            $discount.style.color = '#ff0000'
+            $discountErrors.style.color = '#ff0000'
             $discount.toggleAttribute('required')
             validationErrors = true
         } else {
             $discountErrors.innerHTML = 'El descuento es valido'
-            $discount.style.color = '#2940D3'
+            $discountErrors.style.color = '#2940D3'
             $discount.style.backgroundColor = '#d8c371'
             $discount.style.border = 'none'
             $discount.toggleAttribute('required')

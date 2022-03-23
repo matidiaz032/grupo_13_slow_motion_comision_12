@@ -7,15 +7,13 @@ Guille:
 
 //Todos extrañamos el videoClub de la esquina de nuestro hogar por ello el grupo 13 de esta comision les trae una alternativa,
 el grupo esta conformado por Elias Galeano, Matias Diaz ambos de Buenos Aires
-y quien les habla, Angel Montaña de San Juan. Les vamos a mostrar nuestro ecommerce el cual
-esta pensado para la venta y alquiler de peliculas y series.
-Ahora mismo estamos viendo la pantalla de nuestro home el cual contiene un header,
+y quien les habla, Angel Montaña de San Juan. Slow Motion esta pensado para la venta y alquiler de peliculas y series.
+Ahora mismo estamos viendo la pagina principal la cual contiene un header,
 un carrusel y un listado de productos. Al final de este encontramos el footer.
 El home es responsive y cambia segun las necesidades de un tactil
-o un raton.
-Al acceder por el listado mismo accedemos a un sublistado de peliculas o series,
-tambien podemos acceder mediante el header.
-Aqui tambien podemos seguir accediendo a listados especificos.
+o un raton usando la libreria HammerJs.
+La pagina utiliza el motor de plantillas de EJS, y en su mayor parte hacemos uso de flexbox para los estilos
+Al acceder por el pequeño listado debajo o por el header mismo accedemos a un sublistado de peliculas o series.
 
 
 
@@ -36,29 +34,17 @@ Elias:
 -Mostrar eliminacion de producto
 -Cierre
 
-//La necesidad de tener que administrar nuestros productos, gestionar la nformacion de usuarios.
-nos lleva a la creacion de un producto cuyas caracteristicas no solo se enfoquen en la experiencia del usuario "cliente",
-sino tambien, del usuario "administrador".
+//Ante a necesidad de tener que administrar nuestros productos, gestionar la informacion de usuarios. 
+nos lleva a la creacion de un producto cuyas caracteristicas no solo se enfoquen en la experiencia del usuario "cliente", 
+sino tambien, del usuario "administrador". Mostrar Home del admin: Entonces iniciamos con un dashboard con un diseño mobile first,
+cuyas caracteristicas intuitivas lo hacen facil de gestionarse tanto desde un celular, una pc o una tablet. con 4 opciones definidas
+de la siguiente manera: 2 opciones para productos (series y pleiculas): En la que gestionamos lo que mostramos de los productos,
+como lo mostramos, vemos la cantidad de productos con posibilidad de ejecutar el abm correspondiente y todo esto es posible
+gracias a sequelize que nos permite que nos permite interactuar con nuestras bases de datos de manera relacional Almacenar
+(agregar, modificar, eliminar) datos. 
 
-Mostrar Home del admin:
-    Entonces iniciamos con un dashboard con un diseño mobile first, cuyas caracteristicas intuitivas
-    lo hacen facil de gestionarse tanto desde un celular, una pc o una tablet.
-    con 4 opciones definidas de la siguiente manera:
-    2 opciones para productos (series y pleiculas): En la que gestionamos lo que mostramos de los productos,
-    como lo mostramos, vemos la cantidad de productos con posibilidad de ejecutar el abm correspondiente.
-        ingresar en el admin movie y realizar scroll por la pantalla
-            Iniciando el recorrido de productos de peliculas en este caso. Aquí vemos que podemos gestionar lo que mostramos de los productos,
-            como lo mostramos, vemos la cantidad de productos en las que se puede ejecutar el abm correspondiente a cada producto.
-
-            Ingresar al formulario de carga de peliculas:
-                - Al ingresar al formulario de carga vemos que datos debemos ingresar para que las validaciones tanto del front como del back hagan su trabajo y se ejecute todo de una forma segura (completar el formulario con datos correspondientes para mostrar la carga del producto finalizada)
-                Vemos ademas que la misma carga creada se puede editar (entrar en la edicion y editar el titulo) y posteriormente sino genera intereses o por motivos varios podemos directamente eliminarla.
-        Volver al home del admin
-    1 opcion para usuarios: En la que mostramos la informacion de usuarios, vemos cuantos usuarios tenemos y 
-    podemos ver que rol tiene definido en la plataforma.
-    1 para mensajes (que esta en preparacion): El cual se gestionaran las distintas solicitudes y pedidos de los usuarios.
-            
-    Ingresar a la opcion de usuarios:
-        En la que mostramos la informacion de usuarios, vemos cuantos usuarios tenemos y podemos ver que rol tienen definido en la plataforma.
-
-    1 para mensajes (que esta en preparacion): El cual se gestionaran las distintas solicitudes y distintos pedidos de revision por los usuarios.
+● Acceder a los datos. ● Manipularlos, combinarlos. ● Y Analizarlos. Ingresar al formulario de carga de peliculas: 
+- Al ingresar al formulario de carga vemos que datos debemos ingresar para que las validaciones tanto del front como del 
+back hagan su trabajo y se ejecute todo de una forma segura (completar el formulario con datos correspondientes para mostrar
+ la carga del producto finalizada) Vemos ademas que la misma carga creada se puede editar (entrar en la edicion y editar el titulo)
+  y posteriormente sino genera intereses o por motivos varios podemos directamente eliminarla.
