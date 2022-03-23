@@ -34,7 +34,7 @@ Elias:
 -Mostrar eliminacion de producto
 -Cierre
 
-Elias: //Ante a necesidad de tener que administrar nuestros productos, gestionar la informacion de usuarios. 
+//Ante a necesidad de tener que administrar nuestros productos, gestionar la informacion de usuarios. 
 nos lleva a la creacion de un producto cuyas caracteristicas no solo se enfoquen en la experiencia del usuario "cliente", 
 sino tambien, del usuario "administrador". Mostrar Home del admin: Entonces iniciamos con un dashboard con un diseño mobile first,
 cuyas caracteristicas intuitivas lo hacen facil de gestionarse tanto desde un celular, una pc o una tablet. con 4 opciones definidas

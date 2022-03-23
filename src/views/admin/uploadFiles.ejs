@@ -122,32 +122,32 @@
                     <div class="contain__dateUrl">
                         <label for="video">Pegar URL del trailer</label><br>
                         <input type="url" name="video" id="video" class="input-url">
-                        <small class="text-errors submitErrors" id="videoErrors"></small>
+                        <small class="text-errors" id="videoErrors"></small>
                         <% if (locals.errors && errors.video) { %>
-                            <small class="text-errors submitErrors"><%= errors.video.msg %></small>
+                            <small class="text-errors"><%= errors.video.msg %></small>
                         <% } %> 
                     </div>
                 </div>
                 <div class="organized-priceDiscount">
                     <div class="contain__datePrice">
                         <input type="number" name="price" id="buyPrice" placeholder="Precio de venta" class="input-price">
-                        <small class="text-errors submitErrors" id="buyPriceErrors"></small>
-                        <% if (locals.errors && errors.price) { %>
-                            <small class="text-errors submitErrors"><%= errors.price.msg %></small>
+                        <small class="text-errors" id="buyPriceErrors"></small>
+                        <% if (locals.errors && errors.buyPrice) { %>
+                            <small class="text-errors"><%= errors.buyPrice.msg %></small>
                         <% } %>
                     </div>
                     <div class="contain__dateRental">
                         <input type="number" name="price" id="rentalPrice" placeholder="Precio de alquiler" class="input-rental">
-                        <small class="text-errors submitErrors" id="rentalPriceErrors"></small>
+                        <small class="text-errors" id="rentalPriceErrors"></small>
                         <% if (locals.errors && errors.price) { %>
-                            <small class="text-errors submitErrors"><%= errors.price.msg %></small>
+                            <small class="text-errors"><%= errors.price.msg %></small>
                         <% } %>
                     </div>
                     <div class="contain__dateDiscount">
                         <input type="number" name="price" id="discount" placeholder="Descuento" class="input-discount" >
                         <small class="text-errors" id="discountErrors"></small>
-                        <% if (locals.errors && errors.price) { %>
-                            <small class="text-errors submitErrors"><%= errors.price.msg %></small>
+                        <% if (locals.errors && errors.discount) { %>
+                            <small class="text-errors"><%= errors.discount.msg %></small>
                         <% } %>
                     </div>
                 </div>
