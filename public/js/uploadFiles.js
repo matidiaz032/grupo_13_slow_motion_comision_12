@@ -33,6 +33,9 @@ function qs(element) {
 
 window.addEventListener('load', function () {
 
+    // Errors
+    //let submitErrors = qs('.text-errors')
+
     // Formulary of charge
     let $formCharge = qs('#form');
 
@@ -106,14 +109,14 @@ window.addEventListener('load', function () {
     let validationErrors = false;
 
     $name.addEventListener('blur', function(){
-        if(!$name.value.trim()){
-            $nameErrors.innerHTML = 'El título es obligatorio'
-            $name.style.color = '#ff0000'
+        if($name.value.trim()){
+            $nameErrors.innerHTML = '*'
+            $nameErrors.style.color = '#ff0000'
             $name.toggleAttribute('required')
             validationErrors = true
         } else if (!regExAlpha.test($name.value)){
-            $nameErrors.innerHTML = 'El título no es válido'
-            $name.style.color = '#ff0000'
+            $nameErrors.innerHTML = '*1'
+            $nameErrors.style.color = '#ff0000'
             $name.toggleAttribute('required')
             validationErrors = true
         } else {
@@ -127,14 +130,14 @@ window.addEventListener('load', function () {
     })
 
     $description.addEventListener('blur', function(){
-        if(!$description.value.trim()){
-            $descriptionErrors.innerHTML = 'El comentario es obligatorio'
-            $description.style.color = '#ff0000'
+        if($description.value.trim() || $description == null || /^\s+$/.test($description.value)){
+            $descriptionErrors.innerHTML = '*'
+            $descriptionErrors.style.color = '#ff0000'
             $description.toggleAttribute('required')
             validationErrors = true
         } else if (!regExAlphaText.test($description.value)){
-            $descriptionErrors.innerHTML = 'El comentario no es válido'
-            $description.style.color = '#ff0000'
+            $descriptionErrors.innerHTML = '*'
+            $descriptionErrors.style.color = '#ff0000'
             $description.toggleAttribute('required')
             $description.onKeyPress('')
             validationErrors = true
@@ -150,13 +153,13 @@ window.addEventListener('load', function () {
 
     $seasons.addEventListener('blur', function(){
         if(!$seasons.value.trim()){
-            $seasonsErrors.innerHTML = 'La temporada es obligatoria'
-            $seasons.style.color = '#ff0000'
+            $seasonsErrors.innerHTML = '*'
+            $seasonsErrors.style.color = '#ff0000'
             $seasons.toggleAttribute('required')
             validationErrors = true
         } else if (!regExNmbr.test($seasons.value)){
-            $seasonsErrors.innerHTML = 'La temporada no es válida'
-            $seasons.style.color = '#ff0000'
+            $seasonsErrors.innerHTML = '*'
+            $seasonsErrors.style.color = '#ff0000'
             $seasons.toggleAttribute('required')
             validationErrors = true
         } else {
@@ -171,13 +174,13 @@ window.addEventListener('load', function () {
 
     $duration.addEventListener('blur', function(){
         if(!$duration.value.trim()){
-            $durationErrors.innerHTML = 'La duracion es obligatoria'
-            $duration.style.color = '#ff0000'
+            $durationErrors.innerHTML = '*'
+            $durationErrors.style.color = '#ff0000'
             $duration.toggleAttribute('required')
             validationErrors = true
         } else if (!regExNmbr.test($duration.value)){
-            $durationErrors.innerHTML = 'La duracion no es válida'
-            $duration.style.color = '#ff0000'
+            $durationErrors.innerHTML = '*'
+            $durationErrors.style.color = '#ff0000'
             $duration.toggleAttribute('required')
             validationErrors = true
         } else {
@@ -192,13 +195,13 @@ window.addEventListener('load', function () {
 
     $appreciation.addEventListener('blur', function(){
         if(!$appreciation.value.trim()){
-            $appreciationErrors.innerHTML = 'El comentario es obligatorio'
-            $appreciation.style.color = '#ff0000'
+            $appreciationErrors.innerHTML = '*'
+            $appreciationErrors.style.color = '#ff0000'
             $appreciation.toggleAttribute('required')
             validationErrors = true
         } else if (!regExNmbr.test($appreciation.value)){
-            $appreciationErrors.innerHTML = 'El comentario no es válido'
-            $appreciation.style.color = '#ff0000'
+            $appreciationErrors.innerHTML = '*'
+            $appreciationErrors.style.color = '#ff0000'
             $appreciation.toggleAttribute('required')
             validationErrors = true
         } else {
@@ -213,13 +216,13 @@ window.addEventListener('load', function () {
 
     $director.addEventListener('blur', function(){
         if(!$director.value.trim()){
-            $directorErrors.innerHTML = 'El nombre es obligatorio'
-            $director.style.color = '#ff0000'
+            $directorErrors.innerHTML = '*'
+            $directorErrors.style.color = '#ff0000'
             $director.toggleAttribute('required')
             validationErrors = true
         } else if (!regExAlpha.test($director.value)){
-            $directorErrors.innerHTML = 'El nombre no es válido'
-            $director.style.color = '#ff0000'
+            $directorErrors.innerHTML = '*'
+            $directorErrors.style.color = '#ff0000'
             $director.toggleAttribute('required')
             validationErrors = true
         } else {
@@ -237,20 +240,20 @@ window.addEventListener('load', function () {
         let yearMovie = dateMovie.getFullYear();
         switch (true) {
             case !regExAlpha.test($age.value):
-                $ageErrors.innerHTML = 'Esta fecha no es válida';
-                $age.style.color = 'red';
+                $ageErrors.innerHTML = '*';
+                $ageErrors.style.color = 'red';
                 $age.toggleAttribute('required')
                 validationErrors = true;
                 break;
             case yearMovie > actualYear:
                 $ageErrors.innerHTML = 'La fecha seleccionada no puede ser mayor a la fecha actual';
-                $age.style.color = 'red';
+                $ageErrors.style.color = 'red';
                 $age.toggleAttribute('required')
                 validationErrors = true;
                 break;  
             case yearMovie < 1900:
                 $ageErrors.innerHTML = 'La fecha seleccionada no puede ser menor a 1900';
-                $age.style.color = 'red';
+                $ageErrors.style.color = 'red';
                 $age.toggleAttribute('required')
                 validationErrors = true;
                 break;  
@@ -266,7 +269,7 @@ window.addEventListener('load', function () {
     })
 
     function genreValid() {
-        var suma=0;
+        let suma=0;
 
         for (let i = 0; i < $genreCheck.length; i++) {
             $genreCheck[i].addEventListener("click", genreValid);
@@ -275,7 +278,8 @@ window.addEventListener('load', function () {
             }
         }
         if(suma == 13) {
-            $genreCheckErrors.innerHTML= 'Debes seleccionar al menos un genero';
+            $genreCheckErrors.innerHTML= '*';
+            $genreCheckErrors.style.color = 'red';
             validationErrors = true
         } else {
             $genreCheckErrors.innerHTML= '';
@@ -285,7 +289,7 @@ window.addEventListener('load', function () {
     genreValid()
 
     function idiomValid() {
-        var suma=0;
+        let suma=0;
 
         for (let i = 0; i < $idiom.length; i++) {
             $idiom[i].addEventListener("click", idiomValid);
@@ -294,7 +298,8 @@ window.addEventListener('load', function () {
             }
         }
         if(suma == 7) {
-            $idiomErrors.innerHTML= 'Debes seleccionar al menos un idioma';
+            $idiomErrors.innerHTML= '*';
+            $idiomErrors.style.color = 'red';
             validationErrors = true
         } else {
             $idiomErrors.innerHTML= '';
@@ -342,7 +347,7 @@ window.addEventListener('load', function () {
 
     $video.addEventListener('blur', function(){
         if(!$video.value.trim()){
-            $videoErrors.innerHTML = 'El trailer es obligatorio'
+            $videoErrors.innerHTML = '*'
             $video.style.color = '#ff0000'
             $video.toggleAttribute('required')
             validationErrors = true
@@ -363,7 +368,7 @@ window.addEventListener('load', function () {
 
     $buyPrice.addEventListener('blur', function(){
         if($buyPrice.value.trim() && $buyPrice.value === 0 ){
-            $buyPriceErrors.innerHTML = 'Es necesario colocar precio de venta';
+            $buyPriceErrors.innerHTML = '*';
             $buyPrice.style.color = 'red';
             $buyPrice.toggleAttribute('required')
             validationErrors = true;
@@ -384,7 +389,7 @@ window.addEventListener('load', function () {
 
     $rentalPrice.addEventListener('blur', function(){
         if($rentalPrice.value.trim() && $rentalPrice.value === 0 ){
-            $rentalPriceErrors.innerHTML = 'Es necesario seleccionar un idioma';
+            $rentalPriceErrors.innerHTML = '*';
             $rentalPrice.style.color = 'red';
             $rentalPrice.toggleAttribute('required')
             validationErrors = true;
@@ -405,7 +410,7 @@ window.addEventListener('load', function () {
 
     $discount.addEventListener('blur', function(){
         if($discount.value.trim() && $discount.value === 0 ){
-            $discountErrors.innerHTML = 'Es necesario seleccionar un idioma';
+            $discountErrors.innerHTML = '*';
             $discount.style.color = 'red';
             $discount.toggleAttribute('required')
             validationErrors = true;
@@ -425,28 +430,28 @@ window.addEventListener('load', function () {
     })
 
     $formCharge.addEventListener('submit', function(event){
-        let error = false;
+        //let error = false;
         event.preventDefault();
 
-        // let error = false;
+        let error = false;
         let elementsForm = this.elements;
 
 
         for (let index = 0; index < elementsForm.length; index++){
 
-            console.log(document.querySelector('#movieSeries'))
+            //console.log(document.querySelector('#movieSeries'))
 
             if(document.querySelector('#movieSeries').value == 'movie') {
-                if(elementsForm[index].value == "" && elementsForm[index].type !== 'file' && elementsForm[index].id !== 'seasons'){
-                    elementsForm[index].classList.add('submitErrors')
+                if(elementsForm[index].value.trim() && !/^\s+$/.test(elementsForm[index].value) && elementsForm[index].type !== 'file' && elementsForm[index].id !== 'seasons'){
+                    elementsForm[index].classList.add('text-errors')
                     elementsForm[index].style.backgroundColor = 'rgba(255, 0, 0, 0.2)'
                     submitErrors.style.color = 'red'
                     submitErrors.innerHTML = 'Los campos señalados son obligatorios'
                     error = true;
                 }
             } else {
-                if(elementsForm[index].value == "" && elementsForm[index].type !== 'file' && elementsForm[index].id !== 'duration'){
-                    elementsForm[index].classList.add('submitErrors')
+                if(elementsForm[index].value.trim() && elementsForm[index].type !== 'file' && elementsForm[index].id !== 'duration'){
+                    elementsForm[index].classList.add('text-errors')
                     elementsForm[index].style.backgroundColor = 'rgba(255, 0, 0, 0.2)'
                     submitErrors.style.color = 'red'
                     submitErrors.innerHTML = 'Los campos señalados son obligatorios'
@@ -455,8 +460,8 @@ window.addEventListener('load', function () {
             }
 
         }
-        console.log(error)
-        console.log(validationErrors)
+        // console.log(error)
+        // console.log(validationErrors)
 
         if(!error && !validationErrors) {
             $formCharge.submit()

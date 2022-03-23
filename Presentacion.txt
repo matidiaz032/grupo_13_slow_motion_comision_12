@@ -46,18 +46,17 @@ Mostrar Home del admin:
     con 4 opciones definidas de la siguiente manera:
     2 opciones para productos (series y pleiculas): En la que gestionamos lo que mostramos de los productos,
     como lo mostramos, vemos la cantidad de productos con posibilidad de ejecutar el abm correspondiente.
+        ingresar en el admin movie y realizar scroll por la pantalla
+            Iniciando el recorrido de productos de peliculas en este caso. Aquí vemos que podemos gestionar lo que mostramos de los productos,
+            como lo mostramos, vemos la cantidad de productos en las que se puede ejecutar el abm correspondiente a cada producto.
+
+            Ingresar al formulario de carga de peliculas:
+                - Al ingresar al formulario de carga vemos que datos debemos ingresar para que las validaciones tanto del front como del back hagan su trabajo y se ejecute todo de una forma segura (completar el formulario con datos correspondientes para mostrar la carga del producto finalizada)
+                Vemos ademas que la misma carga creada se puede editar (entrar en la edicion y editar el titulo) y posteriormente sino genera intereses o por motivos varios podemos directamente eliminarla.
+        Volver al home del admin
     1 opcion para usuarios: En la que mostramos la informacion de usuarios, vemos cuantos usuarios tenemos y 
     podemos ver que rol tiene definido en la plataforma.
     1 para mensajes (que esta en preparacion): El cual se gestionaran las distintas solicitudes y pedidos de los usuarios.
-
-    ingresar en el admin movie y realizar scroll por la pantalla
-        Iniciando el recorrido de productos de peliculas en este caso. Aquí vemos que podemos gestionar lo que mostramos de los productos,
-        como lo mostramos, vemos la cantidad de productos en las que se puede ejecutar el abm correspondiente a cada producto.
-
-        Ingresar al formulario de carga de peliculas:
-            - Al ingresar al formulario de carga vemos que datos debemos ingresar para que las validaciones tanto del front como del back hagan su trabajo y se ejecute todo de una forma segura (completar el formulario con datos correspondientes para mostrar la carga del producto finalizada)
-              Vemos ademas que la misma carga creada se puede editar (entrar en la edicion y editar el titulo) y posteriormente sino genera intereses o por motivos varios podemos directamente eliminarla.
-        Volver al home del admin
             
     Ingresar a la opcion de usuarios:
         En la que mostramos la informacion de usuarios, vemos cuantos usuarios tenemos y podemos ver que rol tienen definido en la plataforma.
