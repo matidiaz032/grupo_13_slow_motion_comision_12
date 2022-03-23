@@ -1,0 +1,46 @@
+<%- include('../partials/head') %> 
+
+<body class="body-admin">
+
+    <!-- Header section -->
+    <%- include('../partials/adminHeader') %> 
+
+    <%- include('../partials/logoMobileAdmin') %> >
+
+    <%- include('../partials/adminMenu') %> >
+
+    <!-- grid section movies -->
+    <div class="contain-grid">
+            <div class="contain-list">
+                <div class="movies__section">
+                    <% if (all.length !== 0 && all.length !== User) { %>
+                        <% all.forEach(element => {  %>
+                            <a href="/products/serialMovie/<%= element.id %>">
+                                <div class="contain-img separation-search">
+                                    <img src="/img/products-images/<%= element.image %>" alt="">
+                                </div>
+                            </a>
+                        <% }) %> <% } else if ({:all.length == User && all.length !== 0}) { %>
+                            <% all.forEach(element => {  %>
+                                <a href="/admin/motionUsers/<%= User.id %>">
+                                    <div class="contain-img separation-search">
+                                        <img src="/img/products-images/<%= element.User.image %>" alt="">
+                                    </div>
+                                    <div class="contain-img separation-search">
+                                        <p><%= element.User.first_name %></p>
+                                    </div>
+                                    <div class="contain-img separation-search">
+                                        <p><%= element.Userlast_name %></p>
+                                    </div>
+                                </a>
+                            <% }) %>
+                    <% } else { %>
+                        <h2 class="no-results">No se encontraron resultados para la búsqueda</h2>
+                    <% } %>
+                </div>
+            </div>
+    </div>
+    <!-- Footer section -->
+    <%- include('../partials/adminFooter')  %>
+</body>
+</html>

@@ -59,6 +59,36 @@ let controller = {
             })
         })
     },
+    searchAdmin: async (req, res) => {
+        let allMoviesAdmin = await Movie.findAll({
+            where: {
+                title: {
+                    [Op.substring]: req.query.keywords
+                }
+            }
+        })
+        let allUserAdmin = await User.findAll({
+            where: {
+                title: {
+                    [Op.substring]: req.query.keywords
+                }
+            }
+        })
+        let allSeriesAdmin = await Serie.findAll({
+            where: {
+                title: {
+                    [Op.substring]: req.query.keywords
+                }
+            }
+        })
+        let all = [...allMoviesAdmin, ...allSeriesAdmin, ...allUserAdmin]
+
+        res.render('./admin/searchingSuccess', { 
+            title: 'Search Success',
+            all,
+            session: req.session
+         })
+    },
     upload: (req, res) => {
         Promise.all([Genre.findAll(), Idiom.findAll()])
             .then(data => {
