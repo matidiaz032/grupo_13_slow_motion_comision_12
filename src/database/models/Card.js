@@ -21,6 +21,7 @@ module.exports = (sequelize) => {
             },
       }, {
             sequelize: sequelize,
-            modelName: 'card'
+            modelName: 'card',
+            tableName: 'cards'
       })
 }

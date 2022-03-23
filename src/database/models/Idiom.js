@@ -10,7 +10,8 @@ module.exports = (sequelize) => {
       }, {
             sequelize: sequelize,
             modelName: 'idiom',
-            timestamps: false
+            timestamps: false,
+            tableName: 'idioms'
       })
       Idiom.associate = function(models){
             Idiom.hasMany(models.Movie, {

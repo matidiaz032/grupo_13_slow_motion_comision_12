@@ -11,7 +11,6 @@ const getCarrito = async () => {
         if(cart.ok) {
             loadCart(cart.data)
         }
-        console.log(cart)
     } catch (error) {
         console.log(error.message)
     }
@@ -26,7 +25,6 @@ const addMovieCart = async (id) => {
         if(cart.ok) {
             loadCart(cart.data)
         }
-        console.log(cart)
     } catch (error) {
         console.log(error.message)
     }
@@ -41,7 +39,6 @@ const addSerieCart = async (id) => {
         if(cart.ok) {
             loadCart(cart.data)
         }
-        console.log(cart)
     } catch (error) {
         console.log(error.message)
     }
@@ -56,7 +53,6 @@ const editTypeMovie = async (id) => {
         if(cart.ok) {
             loadCart(cart.data)
         }
-        console.log(cart)
     } catch (error) {
         console.log(error.message)
     }
@@ -71,7 +67,6 @@ const editTypeSerie = async (id) => {
         if(cart.ok) {
             loadCart(cart.data)
         }
-        console.log(cart)
     } catch (error) {
         console.log(error.message)
     }
@@ -141,8 +136,8 @@ const loadCart = (data) => {
             let product = `
             <section class="detail-cart">
                 <article class="section__article">
-                    <div class="box__movie">
-                        <div class="img">
+                    <div class="box__movie" id="conteinImage">
+                        <div class="ProductImg">
                             <img src="/img/products-images/${element.image}" alt="">
                         </div>
                     </div>
@@ -156,13 +151,13 @@ const loadCart = (data) => {
                     </div>
                     <div class="box__movie">
                         <h1 class="title-product">${element.title}</h1>
-                        <p class="android-p">${element.description}</p>
+                        <p class="android-p">${element.description.substring(0,90)}...</p>
                         <p class="tableDesktop-p">${element.description}</p>
                     </div>
                 </article>
                 <div class="modify-selection">
                     <button class="delete" ${typeRemove(element)})"><i class="far fa-trash-alt"></i></button>
-                    <button class="modify"><i class="far fa-edit"></i></button>
+                   
                 </div>
             </section>
             `;
@@ -171,8 +166,8 @@ const loadCart = (data) => {
             let product = `
             <section class="detail-cart">
                 <article class="section__article">
-                    <div class="box__movie">
-                        <div class="img">
+                    <div class="box__movie" id="conteinImage">
+                        <div class="ProductImg">
                             <img src="/img/products-images/${element.image}" alt="">
                         </div>
                     </div>
@@ -186,13 +181,12 @@ const loadCart = (data) => {
                     </div>
                     <div class="box__movie">
                         <h1 class="title-product">${element.title}</h1>
-                        <p class="android-p">${element.description}</p>
+                        <p class="android-p">${element.description.substring(0,90)}...</p>
                         <p class="tableDesktop-p">${element.description}</p>
                     </div>
                 </article>
                 <div class="modify-selection">
                     <button class="delete" ${typeRemove(element)}><i class="far fa-trash-alt"></i></button>
-                    <button class="modify"><i class="far fa-edit"></i></button>
                 </div>
             </section>
             `;

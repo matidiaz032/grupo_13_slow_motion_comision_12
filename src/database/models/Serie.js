@@ -40,6 +40,7 @@ module.exports = (sequelize) => {
             }
       }, {
             sequelize: sequelize,
-            modelName: 'serie'
+            modelName: 'serie',
+            tableName: 'series'
       })
 }

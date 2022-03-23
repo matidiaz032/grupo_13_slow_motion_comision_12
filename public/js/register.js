@@ -22,7 +22,7 @@ window.addEventListener('load', function() {
     let $check = document.querySelectorAll('#checkOk')
     let regExAlpha = /^[a-zA-Z\sñáéíóúü]*$/
     let regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
-    let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}$/
+    let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/
 
     let validationErrors = false;
 
@@ -135,7 +135,7 @@ window.addEventListener('load', function() {
                 validationErrors = true
                 break;
             case !regExPass.test($pass1.value):
-                $pass1Errors.innerHTML = 'La contraseña debe ser mayor a 6 caracteres y debe contener letras y numeros'
+                $pass1Errors.innerHTML = 'La contraseña debe ser mayor a 8 caracteres y debe contener letras y numeros'
                 $pass1.style.color = 'red'
                 $check[4].style.display = 'none'
                 validationErrors = true

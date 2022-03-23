@@ -50,7 +50,8 @@ module.exports = (sequelize) => {
             }
       }, {
             sequelize: sequelize,
-            modelName: 'user'
+            modelName: 'user',
+            tableName: 'users'
       })
       User.associate = function(models){
             User.belongsTo(models.Rol, {

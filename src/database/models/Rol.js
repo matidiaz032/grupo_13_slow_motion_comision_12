@@ -10,7 +10,8 @@ module.exports = (sequelize) => {
       }, {
             timestamps: false,
             sequelize: sequelize,
-            modelName: 'rol'
+            modelName: 'rol',
+            tableName: 'rols'
       })
       Rol.associate = function(models){
             Rol.hasMany(models.User, {
