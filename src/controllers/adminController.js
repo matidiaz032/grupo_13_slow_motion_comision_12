@@ -67,9 +67,16 @@ let controller = {
                 }
             }
         })
-        let allUserAdmin = await User.findAll({
+        let allUserFirst = await User.findAll({
             where: {
-                title: {
+                first_name: {
+                    [Op.substring]: req.query.keywords
+                }
+            }
+        })
+        let allUserLast = await User.findAll({
+            where: {
+                last_name: {
                     [Op.substring]: req.query.keywords
                 }
             }
@@ -81,10 +88,10 @@ let controller = {
                 }
             }
         })
-        let all = [...allMoviesAdmin, ...allSeriesAdmin, ...allUserAdmin]
+        let all = [...allMoviesAdmin, ...allSeriesAdmin, ...allUserFirst, ...allUserLast]
 
         res.render('./admin/searchingSuccess', { 
-            title: 'Search Success',
+            title: 'Admin : Search Success',
             all,
             session: req.session
          })

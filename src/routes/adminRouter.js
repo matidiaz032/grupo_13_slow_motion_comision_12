@@ -10,6 +10,7 @@ router.get('/', controller.index);
 router.get('/movies', controller.movies);
 router.get('/series', controller.series);
 router.get('/motionUsers', controller.motionUsers);
+router.get('/searching', controller.searchAdmin);
 router.get('/form', controller.upload);
 router.post('/form', upload.single('productImage'), productValidator, controller.store);
 router.get('/statistics', controller.statistics);

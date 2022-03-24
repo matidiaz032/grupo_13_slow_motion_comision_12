@@ -1,6 +1,5 @@
 .contain-header {
-    width: 10vw;
-    height: 100vh;
+    width: 1.2em;
     font-size: 28px;
     color: #fff;
     position: fixed;
@@ -19,13 +18,11 @@
 }
 
 .header-mobile {
-    width: 10vw;
-    height: 100vh;
+    width: 100%;
 }
 
 .nav-header {
-    width: 10vw;
-    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
@@ -36,7 +33,6 @@
 .nav-header .checkbtn {
     display: block;
     width: 100%;
-    height: 100vh;
     padding: 269px 10px;
     background: var(--black);
     z-index: 200;
@@ -50,8 +46,6 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 100vw;
-    height: 100vh;
     position: relative;
     background: var(--black);
     left: -100px;
@@ -61,9 +55,9 @@
 
 .flex-list .li__flex-items {
     display: inline-block;
-    width: 96vw;
-    margin: 15px 0 21px 26px;
-    padding: 20px 0;
+    width: 10em;
+    margin: 0.5em 0 0.5em 2em;
+    padding: 0.8em 0;
 }
 
 .flex-list .li__flex-items .ref-decoration {
@@ -84,7 +78,7 @@
 }
 
 .flex-list .li__flex-items a span {
-    font-size: 25px;
+    font-size: .8em;
 }
 
 #check {
@@ -95,88 +89,20 @@
     left: 320px;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    
     .contain-header {
-        width: 100vw;
-        height: 10vh;
-        display: block;
+        width: 27.5em                                                         ;
         background: var(--black);
-    }
-
-    .menu-header {
-        display: none;
-    }
-
-    .header-desktop {
-        display: none;
+        padding: .2em 0 0;
     }
 
     .header-mobile {
-        width: 100vw;
-        height: 10vh;
-    }
-
-    .nav-header {
-        width: 100vw;
-        height: 100%;
-        padding: 10px 0;
-        margin: 0 0 10px 0;
-        flex-direction: row-reverse;
-    }
-
-    .nav-header .checkbtn {
-        display: inline-block;
-        font-size: 30px;
-        padding: 2px;
-        margin: 2px 13px 2px 0;
-        width: 5%;
-        height: 57%;
-    }
-
-    .checkbtn .fa-angle-right {
-        display: none;
-    }
-
-    .checkbtn .fa-bars {
-        display: inline-block;
-    }
-
-    .flex-list {
-        top: -1000px;
-        left: 43px;
-        margin-top: 12px;
-        z-index: -1;
-        justify-content: space-evenly;
-    }
-
-    #check:checked ~ .flex-list {
-        top: 0;
-        left: 43px;
-    }
-
-    .flex-list .li__flex-items {
-        width: 100vw;
-        display: block;
-        margin: 0 20px;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    .contain-header {
-        width: 100%;
-        height: 12vh;
-        background: none;
-    }
-
-    .header-mobile {
-        width: 0;
-        height: 0;
         display: none;
     }
 
     .header-desktop {
         width: 100%;
-        height: 12vh;
         display: flex;
         flex-wrap: nowrap;
         background: var(--black);
@@ -187,13 +113,96 @@
     }
 
     .header-desktop .img-logo {
-        width: 250px;
         display: flex;
-        flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
         align-content: flex-start;
-        margin: 0 0 0 50px;
+        margin: auto 0 auto 2%;
+    }
+
+    .header-desktop .img-logo a img {
+        display: inline-block;
+        width: 85px;
+    }
+
+    .header-desktop .img-logo .title__logo-span {
+        font-size: 25px;
+        padding: 0 .1em;
+        text-align: center;
+    }
+
+    .header-desktop .special-input {
+        padding: .4em;
+        margin: auto 0 auto 4%;;
+    }
+
+    .header-desktop .special-input form input {
+        border: none;
+        border-radius: 25px;
+        font-size: 20px;
+        padding: 0 5px;
+        font-family: var(--averia);
+    }
+
+    .header-desktop .special-input form button {
+        background: none;
+        color: #fff;
+        border: none;
+        font-size: .8em;
+    }
+
+    .header-desktop .icons-options {
+        margin: 0 3% 0 0;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .header-desktop .icons-options .items__flex-icons {
+        padding: 0 7px;
+    }
+
+    .header-desktop .icons-options .items__flex-icons a i {
+        color: var(--yellow);
+    }
+
+    .header-desktop .nav-header-desktop .menu-header {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    .contain-header {
+        width: 100%;
+        background: var(--black);
+        border-end-end-radius: 25px;
+        border-bottom-left-radius: 25px;
+        padding: .3 0 0;
+    }
+
+    .header-mobile {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    .header-desktop {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between;
+    }
+
+    .header-desktop .img-logo {
+        width: 10em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: flex-start;
+        margin: 1%;
     }
 
     .header-desktop .img-logo a img {
@@ -211,21 +220,24 @@
     }
 
     .header-desktop .special-input {
-        padding: 10px;
-        width: 350px;
-        height: 56px;
+        width: 30%;
+        padding: 0 0 0 2em;
         margin: auto 0;
     }
 
-    .header-desktop .special-input input {
-        margin: 5px 38px;
-        width: 80%;
+    .header-desktop .special-input form input {
         border: none;
-        height: 80%;
         border-radius: 25px;
         font-size: 20px;
         padding: 0 5px;
         font-family: var(--averia);
+    }
+
+    .header-desktop .special-input form button {
+        background: none;
+        color: #fff;
+        border: none;
+        font-size: .8em;
     }
 
     .header-desktop .icons-options {
@@ -250,7 +262,4 @@
         display: none;
     }
 
-    .body-admin .img {
-        padding: 4em 0 0;
-    }
 }
