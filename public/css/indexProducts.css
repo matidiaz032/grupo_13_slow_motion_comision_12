@@ -156,6 +156,7 @@ span a:hover {
     
     .indexProducts .contain-grid .contain-list .movies__section .contain-img {
         height: 20rem;
+        margin-bottom: 2rem;
     }
     
 }
