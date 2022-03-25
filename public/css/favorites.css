@@ -32,13 +32,84 @@
 
 .favorites .contain-grid .contain-list .movies__section .contain-img {
       width: 30vw;
-      height: 13rem;
-      margin: 0.5rem 0.2rem;
+      margin: 0.5rem 0.2rem 0.5rem 0.2rem;
 }
 
 .favorites .contain-grid .contain-list .movies__section .contain-img img{
       width: 100%;
       height: 100%;
       box-shadow: 0px 0px 14px -3px rgb(255,255,255);
-      border-radius: 0.3rem
+      border-radius: 0.3rem;
+      margin-bottom: 3px;
+      transition: all 0.7s;
+}
+
+.favorites .form-favorite {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+}
+
+.favorites .button-favorite {
+      border-radius: 15px;
+      width: 5rem;
+      background-color: var(--blue);
+      border-style: groove;
+      font-family: var(--averia);
+      color: var(--yellow);
+      font-size: 0.5rem;
+      padding: 3px 5px;
+      transition: all 1s;
+}
+
+.favorites .button-favorite:hover {
+      cursor: pointer;
+      color: black;
+      background-color: var(--lightblue);
+}
+
+@media (min-width: 768px) {
+      
+      .favorites .form-favorite {
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 0.5rem;
+      }
+
+      .favorites .button-favorite {
+            width: 6rem;
+            font-size: 0.7rem;
+      }
+
+      .favorites .contain-grid .contain-list .movies__section .contain-img {
+            width: 27vw;
+            margin: 0.5rem 0.2rem 2rem 0.2rem;
+      }
+
+      .favorites .contain-grid .contain-list .movies__section .contain-img img:hover{
+            transform: scale(1.05);
+            box-shadow: none;
+            cursor: pointer;
+      }
+
+      .favorites .contain-grid .contain-list .gender__grid:hover{
+            transition: all ;
+      }
+}
+  
+@media (min-width: 1024px) {
+      
+      .favorites .contain-grid .contain-list .movies__section .contain-img {
+            width: 22vw;
+      }
+
+}
+
+@media (min-width: 1440px) {
+      
+      .favorites .contain-grid .contain-list .movies__section .contain-img {
+            width: 18vw;
+      }
+
 }
