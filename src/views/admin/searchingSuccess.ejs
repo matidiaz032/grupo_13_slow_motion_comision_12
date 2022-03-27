@@ -1,0 +1,121 @@
+<%- include('../partials/head') %> 
+
+<body class="body-admin">
+
+    <!-- Header section -->
+    <%- include('../partials/adminHeader') %> 
+
+    <%- include('../partials/logoMobileAdmin') %>
+
+    <%- include('../partials/adminMenu') %>
+
+    <!-- grid section result search mobile -->
+    <section class="result-search">
+            <article class="result-article">
+                <div class="info__table-detail">
+                    <!-- <div class="row-info-search">
+                        <div class="row__info-detail">
+                            <span>Imagen</span>
+                        </div>
+                        <div class="row__info-detail">
+                            <span>Titulo</span>
+                        </div>
+                        <div class="row__info-detail">
+                            <span>Description</span>
+                        </div>
+                        <div class="row__info-detail">
+                            <span>Rating</span>
+                        </div>
+                        <div class="row__info-detail">
+                            <span>Director</span>
+                        </div>
+                        <div class="row__info-detail">
+                            <span>Opcion</span>
+                        </div>
+                    </div> -->
+                    <div class="col-info-result">
+                        <% if (all.length !== 0) { %>
+                            <% all.forEach(element => {  %>
+                                <div class="gallery-result">
+                                    <div class="result__search">
+                                        <div class="row__info-detail">
+                                            <span><%- element.title %> </span>
+                                        </div>
+                                        <img src="/img/products-images/<%= element.image %>" alt="">
+                                    </div>
+                                    <div class="flex__synopsis-information">
+                                        <div class="result__search">
+                                            <div class="row__info-detail">
+                                                <span>Descripcion</span>
+                                            </div>
+                                            <p><%= element.description %> </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex-contain-info">
+                                        <div class="result__searching-secondary">
+                                            <% if (element == all.Movie) { %>
+                                                <di  v class="row__info-secondary">
+                                                    <span>Duration</span>
+                                                </div>
+                                                <p><%= element.duration %> </p>
+                                            <% } else { %>
+                                                <div class="row__info-secondary">
+                                                    <span>Temporadas</span>
+                                                </div>
+                                                <p><%= element.seasons %> </p>
+                                            <% } %>
+                                        </div>
+                                        <div class="result__searching-secondary">
+                                            <div class="row__info-secondary">
+                                                <span>Director</span>
+                                            </div>
+                                            <p><%= element.director %> </p>
+                                        </div>
+                                        <div class="result__searching-secondary">
+                                            <div class="row__info-secondary">
+                                                <span>Rating</span>
+                                            </div>
+                                            <p><%= element.rating %> </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex__synopsis-information">
+                                        <div class="result__search">
+                                            <div class="row__info-detail">
+                                                <span>Opcion</span>
+                                            </div>
+                                            <div class="options-result">
+                                                <% if (element == all.Movie) { %>
+                                                    <div class="link__redirection-edit">
+                                                        <a href="../admin/products/movie/<%- element.id %>/edit"><i class="far fa-edit"></i></a>
+                                                    </div>
+                                                    <div class="delete__form-result">
+                                                        <form action="../admin/deleteProductMovie/<%- element.id %>?_method=DELETE" method="POST">
+                                                            <button type="submit" class="deleteResult"><i class="far fa-trash-alt"></i></button>
+                                                        </form>
+                                                    </div>
+                                                <% } else { %>
+                                                    <div class="link__redirection-edit">
+                                                        <a href="../admin/products/serie/<%- element.id %>/edit"><i class="far fa-edit"></i></a>
+                                                    </div>
+                                                    <div class="delete__form-result">
+                                                        <form action="../admin/deleteProductSerie/<%- element.id %>?_method=DELETE" method="POST">
+                                                            <button type="submit" class="deleteResult"><i class="far fa-trash-alt"></i></button>
+                                                        </form>
+                                                    </div>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        <% } else { %>
+                            <h2 class="no-results">No se encontraron resultados para la peli</h2>
+                        <% } %>
+                    </div>
+                </div>
+            </article>
+    </section>
+    <!-- Footer section -->
+    <%- include('../partials/adminFooter')  %>
+</body>
+</html>

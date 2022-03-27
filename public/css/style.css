@@ -22,6 +22,7 @@
 @import url('./admin/adminEditSerie.css');
 @import url('./admin/mainMenuAdmin.css');
 @import url('style-product-cart.css');
+@import url('./admin/searchingAdmin.css');
 
 :root {
     --black: #000000;

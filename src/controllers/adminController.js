@@ -59,6 +59,109 @@ let controller = {
             })
         })
     },
+    searchAdmin: async (req, res) => {
+        let allMoviesAdmin = await Movie.findAll({
+            where: {
+                title: {
+                    [Op.substring]: req.query.keywordsAdmin
+                }
+            }
+        })
+        let allSeriesAdmin = await Serie.findAll({
+            where: {
+                title: {
+                    [Op.substring]: req.query.keywordsAdmin
+                }
+            }
+        })
+        let users = await User.findAll({
+            where: {
+                first_name: {
+                    [Op.substring]: req.query.keywordsAdmin,
+                },
+                last_name: {
+                    [Op.substring]: req.query.keywordsAdmin
+                }
+            }
+        })
+        let all = [...allMoviesAdmin, ...allSeriesAdmin, ...users]
+
+        res.render('./admin/searchingSuccess', { 
+            title: 'Admin : Search Success',
+            all,
+            session: req.session
+         })
+    },
+    // searchAdminAll: (req, res) => {
+    //     let apiSearch = [Movie, Serie, User];
+    //     apiSearch[0].findAll({
+    //         where: {
+    //             title: {[Op.substring]: '%' + req.query.keywords + '%'},
+    //         }
+    //     })
+    //         .then(dataMovie => {
+    //             return res.JSON(dataMovie)
+    //         })
+        // apiSearch[1]
+        //     .findAll({
+        //         where: {
+        //             title: {[Op.substring]: '%' + req.query.keywords + '%'}
+        //         }
+        //     })
+        //     .then(series => {
+        //         return res.JSON(series)
+        //     })
+        // apiSearch[2]
+        //     .findAll({
+        //         where: {
+        //             first_name: {[Op.substring]: '%' + req.query.keywords + '%'},
+        //             last_name: {[Op.substring]: '%' + req.query.keywords + '%'}
+        //         }
+        //     })
+        //     .then(users => {
+        //         return res.JSON(users)
+        //     })
+    //     res.render('./admin/searchingSuccess', { 
+    //         title: 'Admin : Search Success',
+    //         data,
+    //         session: req.session
+    //      })
+    // },
+    // searchAdminone: (req, res) => {
+    //     let apiSearch = [Movie, Serie, User, Rol];
+    //     apiSearch.Movie
+    //         .findByPk(req.params.title)
+    //         .then(movie => {
+    //             return res.JSON({
+    //                 total: movie.length,
+    //                 data: movie,
+    //                 status: 200
+    //             })
+    //         })
+    //     apiSearch.Serie
+    //         .findByPk(req.params.title)
+    //         .then(serie => {
+    //             return res.JSON({
+    //                 total: serie.length,
+    //                 data: serie,
+    //                 status: 200
+    //             })
+    //         })
+    //     apiSearch.User
+    //         .findByPk(req.params.first_name)
+    //         .then(user => {
+    //             return res.JSON({
+    //                 total: user.length,
+    //                 data: user,
+    //                 status: 200
+    //             })
+    //         })
+        
+    //     res.render('./admin/searchingSuccess', { 
+    //         title: 'Admin : Search Success',
+    //         session: req.session
+    //      })
+    // },
     upload: (req, res) => {
         Promise.all([Genre.findAll(), Idiom.findAll()])
             .then(data => {
