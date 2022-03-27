@@ -35,6 +35,12 @@
     color: var(--yellow);
 }
 
+.contenedor-padre  .corazon button {
+    border: none;
+    background-color: transparent;
+    color: var(--yellow);
+}
+
 .contenedor-padre  .corazon a {
     color: var(--yellow);
 }
@@ -138,6 +144,8 @@
 
 }
 .contenido .botones button:hover {
+    background-color: var(--yellow);
+    color: var(--lightblue);
     cursor : pointer;
 }
 
@@ -162,13 +170,6 @@
 .contenido .title h3 {
     width: 100%;
     text-align: center;
-}
-
-
-@media (max-width: 326px){
-    .fa-play::before {
-        top: 210px;
-    }
 }
 
 
@@ -219,6 +220,7 @@
     .contenedor-padre  .corazon {
         font-size: 3rem ;
     }
+
     .contenedor-box2 img {
         margin-top: 12rem;
         width: 13rem;
@@ -344,7 +346,7 @@
         .container-pd .contenedor-box2 img {
             margin-top: 0;
             margin-left: 2rem;
-            top: 50%;
+            top: 60%;
             width: 30%;
             height: 70%;
         }
@@ -368,8 +370,9 @@
         }
 
         .fa-play::before{
-            left: 171px;
-            top: 150px;
+            left: 16%;
+            top: 60%;
+            font-size: 80px;
         }
 
         .contenido .contenedor-estadisticas {
@@ -397,6 +400,12 @@
             color: var(--blue);
             background-color: black;
             border: none;
+            cursor: pointer;
+        }
+
+        .contenido .icons a i:hover,
+        .contenido .icons button:hover {
+            color: var(--lightblue);
         }
 
         .contenido .icons a:link,
@@ -408,5 +417,12 @@
 
         .contenido .icons i{
             font-size: 3rem;
+        }
+
+        .contenido .icons button i:hover,
+        .contenido .icons a:hover,
+        .contenido .icons a i:hover {
+            color: var(--lightblue);
+            cursor: pointer;
         }
 }
