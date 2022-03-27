@@ -431,7 +431,7 @@ window.addEventListener('load', function () {
     })
 
     $formCharge.addEventListener('submit', function(event){
-        //let error = false;
+        
         event.preventDefault();
 
         let error = false;
@@ -440,10 +440,9 @@ window.addEventListener('load', function () {
 
         for (let index = 0; index < elementsForm.length; index++){
 
-            //console.log(document.querySelector('#movieSeries'))
 
             if(document.querySelector('#movieSeries').value == 'movie') {
-                if(elementsForm[index].value.trim() && !/^\s+$/.test(elementsForm[index].value) && elementsForm[index].type !== 'file' && elementsForm[index].id !== 'seasons'){
+                if(elementsForm[index].value == "" && elementsForm[index].type !== 'file' && elementsForm[index].id !== 'seasons'){
                     elementsForm[index].classList.add('text-errors')
                     elementsForm[index].style.backgroundColor = 'rgba(255, 0, 0, 0.2)'
                     submitErrors.style.color = 'red'
@@ -461,8 +460,8 @@ window.addEventListener('load', function () {
             }
 
         }
-        // console.log(error)
-        // console.log(validationErrors)
+        console.log(error)
+        console.log(validationErrors)
 
         if(!error && !validationErrors) {
             $formCharge.submit()
