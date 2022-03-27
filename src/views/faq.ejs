@@ -1,6 +1,6 @@
-<%- include('partials/head') %>
-<body>
-    <%- include('partials/header') %>
+<%- include('./partials/head') %>
+<body class="faq-motion">
+    <%- include('./partials/header') %>
     <br>
     <div class="section-cart">
         <div class="options">
@@ -25,10 +25,10 @@
         </div>
         <div class="query-container">
             <ul class="faq-question">
-                <li id="1" class="option__faq"><a href="#"><i class="fas fa-file-invoice-dollar"></i><h4>Consultas administrativas</h4></a></li>
-                <li id="2" class="option__faq"><a href="#"><i class="fas fa-cogs"></i><h4>Consultas tecnicas</h4></a></li>
-                <li id="3" class="option__faq"><a href="#"><i class="fas fa-laptop-code"></i><h4>Consultas sobre la plataforma</h4></a></li>
-                <li id="4" class="option__faq"><a href="#"><i class="fas fa-comment-dots"></i><h4>Chatea con nosotros</h4></a></li>
+                <li id="faq1" class="option__faq"><a href="#"><i class="fas fa-file-invoice-dollar"></i><h4>Consultas administrativas</h4></a></li>
+                <li id="faq2" class="option__faq"><a href="#"><i class="fas fa-cogs"></i><h4>Consultas tecnicas</h4></a></li>
+                <li id="faq3" class="option__faq"><a href="#"><i class="fas fa-laptop-code"></i><h4>Consultas sobre la plataforma</h4></a></li>
+                <li id="faq4" class="option__faq"><a href="#"><i class="fas fa-comment-dots"></i><h4>Chatea con nosotros</h4></a></li>
             </ul>
             <section class="col-opt">
                 <article class="query__box">
@@ -38,10 +38,10 @@
                     </div>
                     <div class="list__box">
                         <ul class="list__description">
-                            <li class="item__list-administrative">Facturación</li>
-                            <li class="item__list-administrative">Reembolso</li>
-                            <li class="item__list-administrative">Descuento no obetnido</li>
-                            <li class="item__list-administrative">Datos personales</li> 
+                            <li class="item__list administrative">Facturación</li>
+                            <li class="item__list administrative">Reembolso</li>
+                            <li class="item__list administrative">Descuento no obetnido</li>
+                            <li class="item__list administrative">Datos personales</li> 
                         </ul>
                     </div>
                 </article>
@@ -52,10 +52,10 @@
                     </div>
                     <div class="list__box">
                         <ul class="list__description">
-                            <li class="item__list-technique">Problemas con la calidad del producto</li>
-                            <li class="item__list-technique">Problemas con el idioma y/o subtitulo</li>
-                            <li class="item__list-technique">El producto no se habilito</li>
-                            <li class="item__list-technique">El producto es defectuoso</li>
+                            <li class="item__list technique">Problemas con la calidad del producto</li>
+                            <li class="item__list technique">Problemas con el idioma y/o subtitulo</li>
+                            <li class="item__list technique">El producto no se habilito</li>
+                            <li class="item__list technique">El producto es defectuoso</li>
                         </ul>
                     </div>
                 </article>
@@ -66,10 +66,10 @@
                     </div>
                     <div class="list__box">
                         <ul class="list__description">
-                            <li>Problemas con mi perfil</li>
-                            <li>Problemas al cargar formas de pago</li>
-                            <li>Problemas al modificar datos personales</li>
-                            <li>Problemas en general con la plataforma</li>
+                            <li class="item__list platform">Problemas con mi perfil</li>
+                            <li class="item__list platform">Problemas al cargar formas de pago</li>
+                            <li class="item__list platform">Problemas al modificar datos personales</li>
+                            <li class="item__list platform">Problemas en general con la plataforma</li>
                         </ul>
                     </div>
                 </article>
@@ -90,5 +90,6 @@
             </section>
         </div>
     </section>
-    <%- include('partials/footer') %>  
+    <%- include('./partials/footer') %>
 </body>
+</html>

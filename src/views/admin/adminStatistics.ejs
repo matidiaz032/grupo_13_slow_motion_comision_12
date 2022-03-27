@@ -4,6 +4,8 @@
     <%- include ('../partials/adminHeader') %>
     <!-- Logo -->
     <%- include ('../partials/logoMobileAdmin') %>
+    <!-- Admin menu -->
+    <%- include('../partials/adminMenu') %>
     
     <!-- Section movies statistics -->
     <div class="all-section-products">
@@ -11,107 +13,17 @@
             <section class="statistic__movies">
                 <article class="table__statistic-movies">
                     <div class="info__statistic-movies">
-                        <h2 class="title__statistic-movies">Informacion de peliculas</h2>
+                        <h2 class="title__statistic-movies">Informacion de general</h2>
                         <div class="dashboard-movies">
-                            <div class="dashboard-info-movies"></div>
                             <div class="information">
                                 <span class="info__movies amount">Total de peliculas : <%- movies.length %></span>
-                                <% movies.forEach(movie => { %>
-                                    <% movie.Idioms.forEach(idiom => { %>
-                                        <% if (idiom.name === spainAdmin) { %>
-                                            <span class="info__movies bought">Total de peliculas : <%- movies.Idioms.length %></span> 
-                                        <% } %>
-                                    <% }) %>
-                                <% }) %>
+                                <span class="info__movies amount">Total de series : <%- series.length %>  </span>
+                                <span class="info__movies amount">Total de series : <%- users.length %>  </span>
                             </div>
                         </div>
                     </div>
                 </article>
             </section>
-            <!-- <section class="statistic__movies">
-                <article class="table__statistic-movies">
-                    <div class="info__statistic-movies">
-                        <h2 class="title__statistic-movies">Peliculas compradas</h2>
-                        <div class="dashboard-movies">
-                            <div class="dashboard-info-movies"></div>
-                            <div class="information">
-                                <span class="info__movies bought">Total de peliculas :</span>
-                                <span class="info__movies bought-spain">Peliculas en español :</span>
-                                <span class="info__movies bought-english">Peliculas en ingles :</span>
-                                <span class="info__movies bought-languages">Peliculas en otro idioma :</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <section class="statistic__movies">
-                <article class="table__statistic-movies">
-                    <div class="info__statistic-movies">
-                        <h2 class="title__statistic-movies">Peliculas alquiladas</h2>
-                        <div class="dashboard-movies">
-                            <div class="dashboard-info-movies"></div>
-                            <div class="information">
-                                <span class="info__movies rented-amount">Total de peliculas :</span>
-                                <span class="info__movies rented-spain">Peliculas en español :</span>
-                                <span class="info__movies rented-english">Peliculas en ingles :</span>
-                                <span class="info__movies rented-languages">Peliculas en otro idioma :</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </section> -->
-        </div>
-        
-        <!-- Section series statistics -->
-        <div class="all-section-series">
-            <section class="statistic__series">
-                <article class="table__statistic-series">
-                    <div class="info__statistic-series">
-                        <h2 class="title__statistic-series">Informacion de Series</h2>
-                        <div class="dashboard__series">
-                            <div class="dashboard__info-series"></div>
-                            <div class="information-series">
-                                <span class="info__series">Total de series : <%- series.length %></span>
-                                <span class="info__series spain">series en español :</span>
-                                <span class="info__series english">series en ingles :</span>
-                                <span class="info__series languages">series en otro idioma :</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <!-- <section class="statistic__series">
-                <article class="table__statistic-series">
-                    <div class="info__statistic-series">
-                        <h2 class="title__statistic-series">Series compradas</h2>
-                        <div class="dashboard__series">
-                            <div class="dashboard__info-series"></div>
-                            <div class="information-series">
-                                <span class="info__series-amount">Total de series :</span>
-                                <span class="info__series-amount spain">series en español :</span>
-                                <span class="info__series-amount english">series en ingles :</span>
-                                <span class="info__series-amount languages">series en otro idioma :</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <section class="statistic__series">
-                <article class="table__statistic-series">
-                    <div class="info__statistic-series">
-                        <h2 class="title__statistic-series">Series alquiladas</h2>
-                        <div class="dashboard__series">
-                            <div class="dashboard__info-series"></div>
-                            <div class="information-series">
-                                <span class="info__series-rented">Total de series :</span>
-                                <span class="info__series-rented spain">series en español :</span>
-                                <span class="info__series-rented english">series en ingles :</span>
-                                <span class="info__series-rented languages">series en otro idioma :</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </section> -->
         </div>
     </div>
 

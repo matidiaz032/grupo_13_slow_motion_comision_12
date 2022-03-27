@@ -3,6 +3,7 @@
     font-size: 28px;
     color: #fff;
     position: fixed;
+    z-index: 1;
 }
 
 .menu-header {
@@ -92,7 +93,7 @@
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     
     .contain-header {
-        width: 27.5em                                                         ;
+        width: 100%;                                                         ;
         background: var(--black);
         padding: .2em 0 0;
     }
