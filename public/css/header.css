@@ -23,6 +23,12 @@
     margin: 0px 1rem 0px;
 }
 
+.conteinHeader header #buttonSearch{
+    background: none;
+    border: none;
+    color: var(--lightblue);
+}
+
 .conteinHeader header .logo .logA {
     text-decoration: none;
     display: flex;

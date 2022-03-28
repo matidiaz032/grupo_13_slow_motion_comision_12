@@ -55,9 +55,9 @@ module.exports = [
         min: 8,
         max: 16
     })
-    .withMessage('La contraseña debe tener entre 6 y 16 caracteres')
+    .withMessage('La contraseña debe tener entre 8 y 16 caracteres')
     .isAlphanumeric()
-    .withMessage('La contraseña debe ser alfanumerica'),
+    .withMessage('La contraseña debe ser alfanumerica, sin simbolos'),
 
     body('pass2').custom((value, {req}) => value !== req.body.pass1 ? false : true)
     .withMessage('Las contraseñas no coinciden'),

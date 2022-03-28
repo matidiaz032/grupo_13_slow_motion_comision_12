@@ -349,16 +349,14 @@
             justify-content: flex-end;                           
         }
 
-        .container-pd .contenedor-box2 {
-
-        }
-
         .container-pd .contenedor-box2 img {
             margin-top: 0;
             margin-left: 2rem;
-            top: 60%;
+            top: 35%;
             width: 30%;
             height: 70%;
+            max-height: 30rem;
+            max-width: 25rem
         }
 
         .container-pd .contenedor-box2 img:hover,
@@ -444,4 +442,10 @@
             color: var(--lightblue);
             cursor: pointer;
         }
+
+
+
+    @media (min-width: 1440px) {
+        
+    }
 }
