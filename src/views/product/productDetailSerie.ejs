@@ -33,9 +33,9 @@
                 <h3><%= detailSerie.title %></h3>
             </div>
             <div class="contenedor-box2">
-                <a href="https://www.youtube.com/watch?v=<%= detailSerie.trailer%>" target="_blank"><img src="/img/products-images/<%= detailSerie.image%>"></a>
+                <a href="https://www.youtube.com/watch?v=<%= detailSerie.trailer%>" id="trailer" target="_blank"><img src="/img/products-images/<%= detailSerie.image%>"></a>
                 <div class="play">
-                    <i class="fas fa-play"></i>
+                    <i class="fas fa-play" id="icon-play"></i>
                 </div>
             </div>
             <div class="opcionesPelicula">
@@ -85,17 +85,18 @@
                 <a href="/products/cart" onclick="addSerieCart('<%- detailSerie.id %>')"><i class="fas fa-cart-plus"></i> Añadir a carrito</a>
             </div>
             <div class="botones">
-                <button type="button" class="compra" id="comprar-serie" onclick="location.href='/products/cart'">COMPRAR</button>
-                <h5>$<%= detailSerie.Price.buy%></h5>
-                <button type="button" class="alquilo" id="alquilo-serie" onclick="location.href='/products/cart'">ALQUILAR</button>
-                <h5>$<%= detailSerie.Price.rental%></h5>
+                <div class="btn-cont">
+                    <button type="button" class="compra" id="comprar-serie" onclick="location.href='/products/cart'">COMPRAR</button>
+                    <h5>$<%= detailSerie.Price.buy%></h5>
+                    <button type="button" class="alquilo" id="alquilo-serie" onclick="location.href='/products/cart'">ALQUILAR</button>
+                    <h5>$<%= detailSerie.Price.rental%></h5>
+                </div>
             </div>
         </div>
     </main>
 
     <%- include('../partials/footer')  %>
     <%- include('../partials/scripts.ejs') %>
-
 </body>
 </html>
 

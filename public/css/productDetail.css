@@ -105,6 +105,7 @@
     top: 125px;
     left: 17px;
     z-index: 0;
+    border-radius: .5rem;
 }
 .contenedor .play {
     font-size: 3rem;
@@ -136,6 +137,14 @@
     font-family: var(--staatliches);
     border: var(--lightblue);  
 }
+
+.contenido .botones .btn-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 65%;
+}
+
 .contenido .botones button {
     background-color: var(--lightblue);
     color: var(--yellow);
@@ -336,7 +345,8 @@
         
         .contenido .botones {
             order: 2;
-            margin-top: 2rem;                             
+            margin-top: 2rem;  
+            justify-content: flex-end;                           
         }
 
         .container-pd .contenedor-box2 {
@@ -349,6 +359,14 @@
             top: 60%;
             width: 30%;
             height: 70%;
+        }
+
+        .container-pd .contenedor-box2 img:hover,
+        .container-pd .contenedor-box2 i:hover {
+            cursor: pointer;
+            box-shadow: 0px 0px 14px -3px rgb(255,255,255);
+            border-radius: 0.3rem;
+            transition: all 0.7s;
         }
 
         .fa-play::before {
@@ -370,6 +388,7 @@
         }
 
         .fa-play::before{
+            display: none;
             left: 16%;
             top: 60%;
             font-size: 80px;
