@@ -17,7 +17,6 @@
 }
 .contenedor-padre .image-container {
     position: relative;
-    height: 8rem;
 }
 
 .contenedor-padre .image-container iframe{
@@ -36,6 +35,12 @@
     color: var(--yellow);
 }
 
+.contenedor-padre  .corazon button {
+    border: none;
+    background-color: transparent;
+    color: var(--yellow);
+}
+
 .contenedor-padre  .corazon a {
     color: var(--yellow);
 }
@@ -44,9 +49,13 @@
     margin: 0 5px 0 5px;
 }
 
+.container-pd {
+    padding: .5rem 1rem;
+}
+
 .contenido .opcionesPelicula {
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-around;
     margin-top: 1rem;
     font-family: var(--averia);
 }
@@ -78,7 +87,7 @@
 .contenido .resumen-movie {
     color: var(--yellow);
     text-align: justify;
-    margin: 3rem 1rem;
+    margin: 1.5rem .5rem;
     font-family: var(--averia);
 }
 .contenido .container-director {
@@ -88,15 +97,15 @@
     justify-content: space-around;
     margin: 2rem 0;
     font-family: var(--averia);
-    margin-top: -1rem;
 }
 .contenedor-box2 img {
-    width:5rem;
-    height: 5rem;
+    width:8rem;
+    height: 8rem;
     position:absolute ;
-    top: 140px;
+    top: 125px;
     left: 17px;
     z-index: 0;
+    border-radius: .5rem;
 }
 .contenedor .play {
     font-size: 3rem;
@@ -108,8 +117,8 @@
     color: var(--lightblue);
     font-size: 25px;
     opacity: 0.4;
-    left: 50px;
-    top: 169px;
+    left: 70px;
+    top: 175px;
 
 }
 .contenedor .play i {
@@ -124,11 +133,18 @@
 .contenido .botones {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     font-family: var(--staatliches);
-    border: var(--lightblue);
-
-    
+    border: var(--lightblue);  
 }
+
+.contenido .botones .btn-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 65%;
+}
+
 .contenido .botones button {
     background-color: var(--lightblue);
     color: var(--yellow);
@@ -137,10 +153,14 @@
 
 }
 .contenido .botones button:hover {
+    background-color: var(--yellow);
+    color: var(--lightblue);
     cursor : pointer;
 }
 
-
+.contenido .botones h5 {
+    color: var(--yellow);
+}
 
 .contenido .icons {
     display: none;
@@ -149,36 +169,16 @@
 .contenido .title {
     display: flex;
     color:var(--lightblue);
-    justify-content: flex-start;
+    justify-content: flex-end;
     font-family: var(--staatliches);
-    font-size: 1.5rem;
-    margin-left: 7rem;
-    margin-right: 2rem;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-left: 9rem;
 }
 
-
-@media (min-width: 350px){
-
-    .contenedor-box2 img {
-        top: 175px;
-
-    }
-    .fa-play::before {
-        top: 205px;
-    }
-}
-
-/* mobile L*/
-@media (min-width: 425px){
-
-    .contenedor-box2 img {
-        top: 197px;
-
-    }
-    .fa-play::before {
-        top: 224px;
-    }
-
+.contenido .title h3 {
+    width: 100%;
+    text-align: center;
 }
 
 
@@ -212,9 +212,7 @@
     }
     
 
-    .contenido .opcionesPelicula{
-        margin-top: 5%;
-    }
+    
     .contenido .resumen-movie {
         font-size: 2rem;
     }
@@ -231,6 +229,7 @@
     .contenedor-padre  .corazon {
         font-size: 3rem ;
     }
+
     .contenedor-box2 img {
         margin-top: 12rem;
         width: 13rem;
@@ -238,9 +237,7 @@
     }
 
     .contenido .title {
-        margin-top: 10rem;
         font-size: 2.5rem;
-        margin-left: 15rem;
     }
 } 
 
@@ -263,21 +260,15 @@
         .contenido .title {
             color: var(--lightblue);
             font-size: 3rem;
-            font-family: var(--staatliches);
-            display: flex;
-            justify-content: flex-start;
-            margin-top: 4rem;
-            margin-left: 25rem;
         }
 
 
 
         .contenido .opcionesPelicula{
             order: 1;
-            justify-content: flex-start;
-            flex-direction: column;
-            margin-left: 30px;
-            margin-top: 2%;
+            margin-left: auto;
+            margin-bottom: 1rem;
+            width: 65%;
         }
 
         .contenido .opcionesPelicula .espacios {
@@ -354,18 +345,28 @@
         
         .contenido .botones {
             order: 2;
-            margin-top: 2rem;                             
+            margin-top: 2rem;  
+            justify-content: flex-end;                           
         }
 
-        .contenedor-box2 {
-            position: static;
-            display: flex;
+        .container-pd .contenedor-box2 {
+
         }
-        .contenedor-box2 img {
-            width: 300px;
-            height: 300px;
-            left: 30px;
-            top: 20px;
+
+        .container-pd .contenedor-box2 img {
+            margin-top: 0;
+            margin-left: 2rem;
+            top: 60%;
+            width: 30%;
+            height: 70%;
+        }
+
+        .container-pd .contenedor-box2 img:hover,
+        .container-pd .contenedor-box2 i:hover {
+            cursor: pointer;
+            box-shadow: 0px 0px 14px -3px rgb(255,255,255);
+            border-radius: 0.3rem;
+            transition: all 0.7s;
         }
 
         .fa-play::before {
@@ -387,8 +388,10 @@
         }
 
         .fa-play::before{
-            left: 171px;
-            top: 150px;
+            display: none;
+            left: 16%;
+            top: 60%;
+            font-size: 80px;
         }
 
         .contenido .contenedor-estadisticas {
@@ -397,7 +400,8 @@
 
         .contenido .title {
             font-family: var(--staatliches);
-            
+            text-align: center;
+            margin-left: 0;
         }
 
         .contenido .icons{
@@ -415,6 +419,12 @@
             color: var(--blue);
             background-color: black;
             border: none;
+            cursor: pointer;
+        }
+
+        .contenido .icons a i:hover,
+        .contenido .icons button:hover {
+            color: var(--lightblue);
         }
 
         .contenido .icons a:link,
@@ -426,5 +436,12 @@
 
         .contenido .icons i{
             font-size: 3rem;
+        }
+
+        .contenido .icons button i:hover,
+        .contenido .icons a:hover,
+        .contenido .icons a i:hover {
+            color: var(--lightblue);
+            cursor: pointer;
         }
 }

@@ -24,7 +24,7 @@ Matias:
 -Login: Mostrar validaciones back y loguearse como administrador
 -Mostrar carrito de compras
 
-//Tenemos esta vista que ordena cada producto por genero, dando click a la flecha muestra el listado de todos los productos de ese mismo genero. Seleccionando en un producto se puede ver el detalle, en donde hay mas informacion sobre el mismo. Si se quiere realizar alguna acción sin estar logueado te redirige al login, donde tenemos validaciones, una vez logueados ya podemos seleccionar productos y realizar cualquier acción como por ej elegir nuestros favoritos o añadir al carrito en donde se puede eliminar o editar las selecciones.
+//Tenemos esta vista que ordena cada producto por genero, dando click a la flecha muestra el listado de todos los productos de ese mismo genero. Seleccionando en un producto se puede ver el detalle, en donde hay mas informacion sobre el mismo. Si se quiere realizar alguna acción sin estar logueado, utilizando middlewares, te redirige al login, donde si no tenes un usario cargado podes seleccionar la opcion de "primera vez aqui?" que te redirige a la vista de registro, donde tenemos validaciones utilizando express validator para el back y js para el front, una vez registrado el usuario, volvemos al login donde tambien tenemos la funcion de recordar al usuario utilizando cookie parser. Una vez logureados ya podemos seleccionar productos y realizar cualquier acción como por ej elegir nuestros favoritos o añadir al carrito en donde se puede eliminar o editar las selecciones.
 
 Elias:
 
