@@ -1,3 +1,7 @@
+.faq-motion {
+    font-family: var(--averia);
+}
+
 .faq-section {
     width: 90%;
     padding: 1em 0;
@@ -70,6 +74,10 @@
 
 @media only screen and (min-width: 768px) and (max-width:1024px) {
 
+    .faq-section .title-faq .main-title {
+        font-size: 2em;
+    }
+
     .faq-section .query-container .faq-question {
         flex-direction: row;
     }
@@ -89,7 +97,11 @@
 
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+
+    .faq-section .title-faq .main-title {
+        font-size: 2.5em;
+    }
 
     .faq-section .query-container {
         flex-direction: row;
@@ -108,7 +120,7 @@
         width: 100%;
         background: none;
         box-shadow: none;
-        margin: 1em 0;
+        margin: 1.1em 0;
         border-radius: 0;
     }
 
@@ -117,19 +129,21 @@
         display: flex;
         flex-direction: column;
         background: linear-gradient(#000, #232323);
-        padding: 3.5em;
+        padding: 2.5em;
     }
 
 }
 
-/* .faq-section .query-container .query__box {
+.faq-section .query-container .query__box {
     width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    margin: 2.05em 0;
 }
 
 .faq-section .query-container .query__box .title__query-box {
+    width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -137,12 +151,14 @@
 
 .faq-section .query-container .query__box .title__article{
     display: block;
+    color: var(--yellow);
     font-size: 1em;
     text-align: center;
     padding: 0 0 0.3em;
 }
 
 .faq-section .query-container .query__box .description__paragraph {
+    color: var(--yellow);
     font-size: .9em;
 }
 
@@ -151,5 +167,25 @@
 }
 
 .faq-section .query-container .query__box .list__box .list__description {
-    color: var(--lightblack);
-} */
+    color: var(--yellow);
+}
+
+.faq-section > .query-container > .query__box > .list__box > .list__description:last-child {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.faq-section .query-container .query__box .list__box .list__description .item__list-chat {
+    margin: 0.5em 0 0;
+}
+
+.faq-section .query-container .query__box .list__box .item__list-chat a {
+    color: #fff;
+}
+
+.faq-section .query-container .query__box .list__box .item__list-chat a i {
+    color: #fff;
+}
+

@@ -38,7 +38,7 @@ let controller = {
             title: "Slow Motion : Ayuda",
             session: req.session
         })
-    }
+      }
 }
 
 module.exports = controller

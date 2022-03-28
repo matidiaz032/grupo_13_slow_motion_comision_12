@@ -13,26 +13,6 @@
     <section class="result-search">
             <article class="result-article">
                 <div class="info__table-detail">
-                    <!-- <div class="row-info-search">
-                        <div class="row__info-detail">
-                            <span>Imagen</span>
-                        </div>
-                        <div class="row__info-detail">
-                            <span>Titulo</span>
-                        </div>
-                        <div class="row__info-detail">
-                            <span>Description</span>
-                        </div>
-                        <div class="row__info-detail">
-                            <span>Rating</span>
-                        </div>
-                        <div class="row__info-detail">
-                            <span>Director</span>
-                        </div>
-                        <div class="row__info-detail">
-                            <span>Opcion</span>
-                        </div>
-                    </div> -->
                     <div class="col-info-result">
                         <% if (all.length !== 0) { %>
                             <% all.forEach(element => {  %>
@@ -48,34 +28,32 @@
                                             <div class="row__info-detail">
                                                 <span>Descripcion</span>
                                             </div>
-                                            <p><%= element.description %> </p>
+                                            <p><%- element.description %></p>
                                         </div>
                                     </div>
                                     <div class="flex-contain-info">
                                         <div class="result__searching-secondary">
-                                            <% if (element == all.Movie) { %>
-                                                <di  v class="row__info-secondary">
+                                            <div class="row__info-secondary">
+                                                <% if (element.duration) { %>
                                                     <span>Duration</span>
-                                                </div>
-                                                <p><%= element.duration %> </p>
-                                            <% } else { %>
-                                                <div class="row__info-secondary">
+                                                    <p><%- element.duration %></p>
+                                                <% } else { %>
                                                     <span>Temporadas</span>
-                                                </div>
-                                                <p><%= element.seasons %> </p>
-                                            <% } %>
+                                                    <p><%- element.seasons %></p>
+                                                <% } %>
+                                            </div>
                                         </div>
                                         <div class="result__searching-secondary">
                                             <div class="row__info-secondary">
                                                 <span>Director</span>
                                             </div>
-                                            <p><%= element.director %> </p>
+                                            <p><%- element.director %></p>
                                         </div>
                                         <div class="result__searching-secondary">
                                             <div class="row__info-secondary">
                                                 <span>Rating</span>
                                             </div>
-                                            <p><%= element.rating %> </p>
+                                            <p><%- element.rating %></p>
                                         </div>
                                     </div>
                                     <div class="flex__synopsis-information">
@@ -109,7 +87,7 @@
                                 </div>
                             <% }) %>
                         <% } else { %>
-                            <h2 class="no-results">No se encontraron resultados para la peli</h2>
+                            <h2 class="no-results">No se encontraron resultados para la busqueda</h2>
                         <% } %>
                     </div>
                 </div>

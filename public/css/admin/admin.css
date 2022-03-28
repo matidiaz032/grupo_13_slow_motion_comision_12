@@ -1,30 +1,64 @@
 .body-admin {
     background: linear-gradient(45deg, #000000, #2940D3);
     overflow-x: hidden;
+    font-family: var(--averia);
+}
+
+.body-admin .special-inputMobile {
+    width: 100%;
+    padding: 1em 0 0 2.1em;
+}
+
+.body-admin .special-inputMobile form {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.body-admin .special-inputMobile form input {
+    position: absolute;
+    background: var(--black);
+    color: var(--yellow);
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: .2em .6em;
+    font-family: var(--averia);
+}
+
+.body-admin .special-inputMobile form button {
+    background: transparent;
+    border-radius: 1em;
+    padding: 0.7em 0;
+    color: #fff;
+    border: none;
+    font-size: .8em;
+    position: relative;
+    margin: 0 0 0 15em;
 }
 
 .body-admin .img {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    padding: 4em 0 0;
+    padding: 1em 0 0 2.1em;
     margin: 0 auto;
 }
 
 .img a {
     display: flex;
-    width: 100%;
-    height: 20vh;
+    width: 60%;
+    height: 7em;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .img a img {
     display: inline-block;
     width: 65%;
     height: 65%;
-    margin: 1em auto 0;
     filter: drop-shadow(2px 4px 6px black);
     z-index: -1;
 }
@@ -70,9 +104,12 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .body-admin .special-inputMobile {
+        display: none;
+    }
 
     .body-admin .img {
-        padding: 4em 0 0;
+        padding: 5em 0 0;
     }
 
     .body-admin .img a img {
@@ -92,6 +129,14 @@
 
 }
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
+
+    .body-admin .special-inputMobile {
+        display: none;
+    }
+
+    .body-admin .img {
+        padding: 5em 0 0;
+    }
 
     .body-admin .database {
         flex-direction: row;

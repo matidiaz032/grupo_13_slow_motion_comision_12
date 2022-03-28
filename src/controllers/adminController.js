@@ -27,25 +27,27 @@ let controller = {
             })
         })
     },
-    statistics: (req, res) => {
-        let idioms = Idiom.findAll()
-        // Idiom.findAll({
-        //     include : [{association: 'Movie'}]
-        // })
-        let movies = Movie.findByPk(req.params.id,{
+    statistics: async (req, res) => {
+        let movies = await Movie.findAll(req.params.id,{
             include : [{association : 'Idiom'}]
         })
-        .then(data =>{
-            res.render('./admin/adminStatistics', {
-                title: 'Admin : Estadisticas',
-                idioms: data
-                // movies: spainAdmin,
-                // series: seriesAdmin,
-                // idiom,
-                //movies: data
-                //series: data[1],
-                // idiom: data[2]
-            })
+
+        let series = await Serie.findAll(req.params.id,{
+            include : [{association : 'Idiom'}]
+        })
+
+        let users = await User.findAll()
+        User.findAll({
+            
+        })
+
+
+        
+        res.render('./admin/adminStatistics', {
+            title: 'Admin : Estadisticas',
+            movies,
+            series,
+            users
         })
     },
     motionUsers: (req, res) => {
@@ -74,94 +76,14 @@ let controller = {
                 }
             }
         })
-        let users = await User.findAll({
-            where: {
-                first_name: {
-                    [Op.substring]: req.query.keywordsAdmin,
-                },
-                last_name: {
-                    [Op.substring]: req.query.keywordsAdmin
-                }
-            }
-        })
-        let all = [...allMoviesAdmin, ...allSeriesAdmin, ...users]
+        let all = [...allMoviesAdmin, ...allSeriesAdmin];
 
         res.render('./admin/searchingSuccess', { 
             title: 'Admin : Search Success',
             all,
             session: req.session
-         })
+        })
     },
-    // searchAdminAll: (req, res) => {
-    //     let apiSearch = [Movie, Serie, User];
-    //     apiSearch[0].findAll({
-    //         where: {
-    //             title: {[Op.substring]: '%' + req.query.keywords + '%'},
-    //         }
-    //     })
-    //         .then(dataMovie => {
-    //             return res.JSON(dataMovie)
-    //         })
-        // apiSearch[1]
-        //     .findAll({
-        //         where: {
-        //             title: {[Op.substring]: '%' + req.query.keywords + '%'}
-        //         }
-        //     })
-        //     .then(series => {
-        //         return res.JSON(series)
-        //     })
-        // apiSearch[2]
-        //     .findAll({
-        //         where: {
-        //             first_name: {[Op.substring]: '%' + req.query.keywords + '%'},
-        //             last_name: {[Op.substring]: '%' + req.query.keywords + '%'}
-        //         }
-        //     })
-        //     .then(users => {
-        //         return res.JSON(users)
-        //     })
-    //     res.render('./admin/searchingSuccess', { 
-    //         title: 'Admin : Search Success',
-    //         data,
-    //         session: req.session
-    //      })
-    // },
-    // searchAdminone: (req, res) => {
-    //     let apiSearch = [Movie, Serie, User, Rol];
-    //     apiSearch.Movie
-    //         .findByPk(req.params.title)
-    //         .then(movie => {
-    //             return res.JSON({
-    //                 total: movie.length,
-    //                 data: movie,
-    //                 status: 200
-    //             })
-    //         })
-    //     apiSearch.Serie
-    //         .findByPk(req.params.title)
-    //         .then(serie => {
-    //             return res.JSON({
-    //                 total: serie.length,
-    //                 data: serie,
-    //                 status: 200
-    //             })
-    //         })
-    //     apiSearch.User
-    //         .findByPk(req.params.first_name)
-    //         .then(user => {
-    //             return res.JSON({
-    //                 total: user.length,
-    //                 data: user,
-    //                 status: 200
-    //             })
-    //         })
-        
-    //     res.render('./admin/searchingSuccess', { 
-    //         title: 'Admin : Search Success',
-    //         session: req.session
-    //      })
-    // },
     upload: (req, res) => {
         Promise.all([Genre.findAll(), Idiom.findAll()])
             .then(data => {
