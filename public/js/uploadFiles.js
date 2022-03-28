@@ -450,7 +450,7 @@ window.addEventListener('load', function () {
                     error = true;
                 }
             } else {
-                if(elementsForm[index].value.trim() && elementsForm[index].type !== 'file' && elementsForm[index].id !== 'duration'){
+                if(elementsForm[index].value == "" && elementsForm[index].type !== 'file' && elementsForm[index].id !== 'duration'){
                     elementsForm[index].classList.add('text-errors')
                     elementsForm[index].style.backgroundColor = 'rgba(255, 0, 0, 0.2)'
                     submitErrors.style.color = 'red'
