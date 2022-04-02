@@ -298,7 +298,7 @@ CREATE TABLE `movies` (
   `rating` decimal(3,1) NOT NULL,
   `age` date NOT NULL,
   `director` tinytext NOT NULL,
-  `subtitle` tinytext DEFAULT 'No',
+  `subtitle` tinytext NOT NULL,
   `image` varchar(100) NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
