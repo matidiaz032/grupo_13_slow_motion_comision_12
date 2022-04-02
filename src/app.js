@@ -55,5 +55,5 @@ db.sync({force: false }).then(() => {                      //Sincronisa la base 
 
 
 /* Server  */
-app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
+app.listen(process.env.PORT || PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
 http://localhost:${PORT}`));
