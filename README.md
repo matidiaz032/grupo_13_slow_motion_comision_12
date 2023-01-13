@@ -2,7 +2,7 @@
 
 >Slow Motion ofrece películas y series a aquellos clientes que extrañan el Videoclub de la esquina de nuestra casa. Orientado a estas personas que ven innecesario adquirir una suscripción en sitios que solo les ofrece esa opción, ya que no lo necesitan para mas que ver una pelicula algun que otro fin de semana. Por un precio menor a una suscripcion mensual, pueden adquirir el alquiler o venta de una película o serie.
 
-
+*Para levantar el proyecto, instalar las dependencias con `npm install`, luego colocar las variables de entorno usadas en `src/database/models/index.js`, seguido a ello levantar la app con `npm run start`*
 
 ___
 ### Sitios de referencia
