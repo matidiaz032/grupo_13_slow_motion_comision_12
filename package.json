@@ -2,10 +2,10 @@
   "name": "proyecto-formar",
   "version": "1.0.0",
   "description": ">Slow Motion ofrece películas y series a aquellos clientes que extrañan el Videoclub de la esquina de nuestra casa. Orientado a estas personas que ven innecesario adquirir una suscripción en sitios que solo les ofrece esa opción, ya que no lo necesitan para mas que ver una pelicula algun que otro fin de semana. Por un precio menor a una suscripcion mensual, pueden adquirir el alquiler o venta de una película o serie.",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

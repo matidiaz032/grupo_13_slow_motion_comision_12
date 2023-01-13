@@ -5,9 +5,9 @@ const morgan = require('morgan')
 const methodOverride = require('method-override');
 const session = require('express-session'); // Express-session Module
 const cookieParser = require('cookie-parser');
-const cookieSession = require('./middlewares/cookieSession');
+const cookieSession = require('./src/middlewares/cookieSession');
 const PORT = 3000;
-const auth_adminCheck = require('./middlewares/auth_adminCheck.js');
+const auth_adminCheck = require('./src/middlewares/auth_adminCheck.js');
 
 // Middlewares
 app.use(express.static("public"));
@@ -17,7 +17,7 @@ app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/src/views'));
 
 // configuration express-sessions
 app.use(session({
@@ -29,12 +29,12 @@ app.use(cookieParser());
 app.use(cookieSession);
 
     /* Enrutadores */
-let indexRouter = require('./routes/indexRouter');
-let usersRouter = require('./routes/usersRouter');
-let productsRouter = require('./routes/productsRouter');
-let adminRouter = require('./routes/adminRouter');
-let notFoundRouter = require('./routes/notFoundRouter');
-let cartRouter = require('./routes/cartRouter')
+let indexRouter = require('./src/routes/indexRouter');
+let usersRouter = require('./src/routes/usersRouter');
+let productsRouter = require('./src/routes/productsRouter');
+let adminRouter = require('./src/routes/adminRouter');
+let notFoundRouter = require('./src/routes/notFoundRouter');
+let cartRouter = require('./src/routes/cartRouter')
 
     /* Routes */
 app.use('/', indexRouter);
